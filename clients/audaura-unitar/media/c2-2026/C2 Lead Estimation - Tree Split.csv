@@ -1,0 +1,28 @@
+TABLE 1 — C2 2026 Total Media Split: Tree A vs Tree B,,,,
+,Tree A (University / UIU),Tree B (UC Homegrown),Total C2,
+Total Spend,RM3352612,RM476850,RM3829462,
+Budget Share,87.5%,12.5%,100%,
+Projected Leads,37168,4335,41503,
+Blended CPL,RM90,RM110,RM99,
+Campaign Mode,CBO,ABO (geo-fenced per state),,
+
+TABLE 2 — Platform Split by Tree,,,,,,
+Platform,Tree A Spend,Tree A %,Tree A Leads,Tree B Spend,Tree B %,Tree B Leads
+Google SEM,RM1005784,30%,10092,RM181203,38%,1172
+Meta LG + MSG,RM1843937,55%,25162,RM271805,57%,2939
+TikTok,RM502892,15%,1914,RM23843,5%,TOF only
+Total,RM3352612,100%,37168,RM476850,100%,4111
+
+TABLE 3 — Tree B (UC) Drill-Down by State / Campus,,,,,,,,
+Priority,State,Campus,Budget %,Spend (RM),C1 CPL,Proj. Leads,Net Gap
+Tier 1,Kedah,Sungai Petani,23%,RM109675,RM106,1034,1528
+Tier 1,Kelantan,Kota Bharu,18%,RM85833,RM80,1073,501
+Tier 1,Perak,Ipoh,13%,RM61991,RM86,721,334
+Tier 2,Sabah,Kota Kinabalu,12%,RM57222,RM120,477,423
+Tier 2,Johor,Johor Bahru,10%,RM47685,RM289,165,547
+Tier 2,Pahang,Kuantan,9%,RM42917,RM103,417,252
+Tier 3,Penang,Penang,5%,RM23843,RM240,99,307
+Tier 3,Sarawak,Kuching,5%,RM23843,RM155,154,226
+Tier 3,Melaka,Melaka,3%,RM14306,RM83,172,149
+Maintenance,Terengganu,Terengganu,2%,RM9537,RM69,138,6
+Total,,,100%,RM476852,RM110 avg,4450,4273

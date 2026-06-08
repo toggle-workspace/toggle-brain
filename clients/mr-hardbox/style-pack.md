@@ -1,0 +1,32 @@
+---
+client: Mr.Hardbox
+slug: mr-hardbox
+last_reviewed: 2026-06-08
+---
+
+# Mr.Hardbox — Style Pack
+
+> Base: `prompts/style-packs/toggle-default.md`. This file overrides only what differs.
+
+## Voice overrides
+- Tone: [override or "inherits default"]
+- Words we use for this client:
+- Words to avoid for this client:
+- Reference to brand voice doc (Drive link):
+
+## Visual overrides
+- Primary colors:
+- Typography:
+- Logo usage rules:
+- Motion / animation guidelines:
+- Reference images: `assets/reference-images/mr-hardbox/`
+
+## Platform tone
+- TikTok:
+- Meta:
+- LinkedIn:
+- Other:
+
+## Examples of "yes / no"
+- ✓ This works:
+- ✗ This doesn't:

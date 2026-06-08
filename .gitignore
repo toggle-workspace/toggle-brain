@@ -1,0 +1,38 @@
+# macOS
+.DS_Store
+._*
+
+# Editor
+.vscode/
+.idea/
+*.swp
+*~
+
+# Logs
+*.log
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# Heavy binaries — keep them in Drive, not git
+clients/*/assets/master/
+clients/*/assets/raw/
+clients/*/assets/exports/
+clients/*/03-media/raw/
+
+# Common heavy file types under clients/<x>/assets/ — preview-size only in git
+clients/*/assets/**/*.psd
+clients/*/assets/**/*.ai
+clients/*/assets/**/*.indd
+clients/*/assets/**/*.aep
+clients/*/assets/**/*.prproj
+clients/*/assets/**/*.fig
+clients/*/assets/**/*.mov
+clients/*/assets/**/*.mp4
+clients/*/assets/**/*.zip
+
+# Local-only scratch
+**/scratch/
+**/_local/

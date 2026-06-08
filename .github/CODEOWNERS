@@ -1,0 +1,48 @@
+# Toggle Brain — CODEOWNERS
+#
+# Hard-gate: pricing only. Everything else is suggested-reviewer.
+# See CONTRIBUTING.md for the rule of zones.
+#
+# Format: <path>  @user1 @user2  OR  @org/team
+# GitHub picks the LAST matching rule per file — most specific last.
+
+# ── Default catch-all (suggested) ────────────────────────────────────────────
+*                                       @toggle-workspace/leads
+
+# ── Hard-gated: pricing ──────────────────────────────────────────────────────
+# Mispriced quotes go out the door. PR + 1 reviewer required.
+/brain/pricing/                         @toggle-workspace/pricing-owners
+/brain/pricing/CHANGELOG.md             @toggle-workspace/pricing-owners
+
+# ── Brain (suggested reviewer by area) ───────────────────────────────────────
+/brain/services/                        @toggle-workspace/services-leads
+/brain/voice/                           @toggle-workspace/voice-owners
+/brain/positioning/                     @toggle-workspace/voice-owners
+/brain/case-studies/                    @toggle-workspace/case-study-owners
+/brain/team/                            @toggle-workspace/leads
+/brain/verticals/                       @toggle-workspace/services-leads
+/brain/geos/                            @toggle-workspace/leads
+/brain/partners-stack/                  @toggle-workspace/ops
+/brain/process.md                       @toggle-workspace/leads
+/brain/glossary.md                      @toggle-workspace/leads
+
+# ── Templates & playbooks (suggested reviewer) ───────────────────────────────
+/templates/                             @toggle-workspace/leads
+/playbooks/                             @toggle-workspace/leads
+
+# ── Generators & prompts (no required reviewer — iterate fast) ───────────────
+/generators/                            @toggle-workspace/automation
+/prompts/                               @toggle-workspace/automation
+
+# ── Client folders (auto-assigned to the lead on the account) ────────────────
+# Add a per-client line here as accounts get a permanent lead.
+# Example:
+# /clients/audaura-unitar/             @yi-yang
+/clients/                               @toggle-workspace/account-leads
+
+# ── Governance files ─────────────────────────────────────────────────────────
+/CLAUDE.md                              @toggle-workspace/leads
+/README.md                              @toggle-workspace/leads
+/MAP.md                                 @toggle-workspace/leads
+/CONTRIBUTING.md                        @toggle-workspace/leads
+/.github/                               @toggle-workspace/leads
