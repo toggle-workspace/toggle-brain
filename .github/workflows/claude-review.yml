@@ -1,0 +1,82 @@
+name: Claude Code Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  review:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Generate review
+        id: review
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+          BASE_SHA: ${{ github.event.pull_request.base.sha }}
+          HEAD_SHA: ${{ github.event.pull_request.head.sha }}
+        run: |
+          pip install anthropic -q
+
+          python3 << 'EOF'
+          import os, subprocess, sys, anthropic
+
+          diff = subprocess.check_output(
+              ["git", "diff", os.environ["BASE_SHA"], os.environ["HEAD_SHA"]],
+              text=True
+          )
+
+          if not diff.strip():
+              print("No diff — skipping review")
+              with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+                  f.write("skip=true\n")
+              sys.exit(0)
+
+          client = anthropic.Anthropic()
+          msg = client.messages.create(
+              model="claude-sonnet-4-6",
+              max_tokens=1024,
+              messages=[{
+                  "role": "user",
+                  "content": f"""Review this PR diff for Toggle Brain, the internal knowledge repo for Toggle Solutions (digital agency).
+
+Check for:
+- Zone boundary violations (client content written into brain/, service facts in clients/, etc.)
+- Fact duplication across brain/ files
+- Missing CHANGELOG.md entry when brain/pricing/ is touched
+- Missing or stale last_reviewed: frontmatter on brain/ files
+- Broken or missing cross-references between files
+- Content placed in the wrong zone per the five-zone architecture (brain/, generators/, prompts/, templates/, clients/)
+
+Be concise. Only flag real issues — skip praise. If nothing is wrong, say so in one line.
+
+```diff
+{diff[:15000]}
+```"""
+              }]
+          )
+
+          review = msg.content[0].text
+
+          # Write to file so next step can post it
+          with open("review.md", "w") as f:
+              f.write(f"## Claude Code Review\n\n{review}\n")
+
+          with open(os.environ["GITHUB_OUTPUT"], "a") as f:
+              f.write("skip=false\n")
+          EOF
+
+      - name: Post PR comment
+        if: steps.review.outputs.skip != 'true'
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          gh pr comment "$PR_NUMBER" --body-file review.md
