@@ -85,6 +85,18 @@ When a quote is sent, drop a copy into `archive/quotes/YYYY-MM-DD-<client>-<scop
 
 ---
 
+## Contributing changes
+
+Before pushing any changes to this repo, run the `/git-contribute` skill — it enforces the branch → commit → PR workflow and prevents direct pushes to `main`.
+
+Skills are located at:
+- `.claude/skills/` — Claude Code local resolution
+- `.agents/skills/` — multi-agent / cross-platform resolution
+
+Both locations hold the same skills. Use whichever your tool resolves first.
+
+---
+
 ## What does NOT belong at root
 
 - Service descriptions → `brain/services/`

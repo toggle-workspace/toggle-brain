@@ -13,16 +13,25 @@ Contributors must never push directly to `main`. This skill enforces the branch 
 
 ## Workflow
 
-### 1. Check Current Branch
+### 1. Pull Latest Changes
+
+Always sync with the remote before branching to avoid conflicts.
+
+```bash
+git checkout main
+git pull origin main
+```
+
+### 2. Check Current Branch
 
 ```bash
 git branch --show-current
 git status --short
 ```
 
-If already on `main` or a protected branch, proceed to step 2. If already on a feature branch, skip to step 3.
+If already on `main` or a protected branch, proceed to step 3. If already on a feature branch, skip to step 4.
 
-### 2. Create & Checkout a Branch
+### 3. Create & Checkout a Branch
 
 Branch naming: `<type>/<short-description>` — lowercase kebab, matches the commit type.
 
@@ -35,7 +44,7 @@ git checkout -b docs/update-brain-services
 
 **Never push to `main` directly.** If the user is on `main`, stop and create a branch first.
 
-### 3. Stage & Commit
+### 4. Stage & Commit
 
 Follow the `git-commit` skill — analyze the diff, stage logically grouped files, generate a conventional commit message.
 
@@ -47,7 +56,7 @@ git commit -m "<type>[scope]: <description>"
 
 See `git-commit` skill for commit types, scopes, and message rules.
 
-### 4. Push the Branch
+### 5. Push the Branch
 
 ```bash
 git push -u origin <branch-name>
@@ -59,21 +68,39 @@ If the branch already exists on remote:
 git push
 ```
 
-### 5. Create the Pull Request
+### 6. Create the Pull Request
+
+Use the repo's PR template. Fill in each section based on the diff before running.
 
 ```bash
 gh pr create \
   --base main \
   --title "<type>[scope]: <description>" \
   --body "$(cat <<'EOF'
-## Summary
-- <bullet of what changed and why>
+## What changed
+- <1–3 specific bullets>
 
-## Changes
-- <files or areas touched>
+## Zone(s) touched
+- [ ] `brain/pricing/` — **CHANGELOG.md entry added** (mandatory)
+- [ ] `brain/` (other)
+- [ ] `templates/`
+- [ ] `playbooks/`
+- [ ] `generators/`
+- [ ] `prompts/`
+- [ ] `clients/<slug>/`
+- [ ] `archive/`
+- [ ] Root governance (`CLAUDE.md` / `README.md` / `MAP.md` / `CONTRIBUTING.md`)
 
-## Notes
-<anything reviewers should know>
+## Checklist
+- [ ] If I touched `brain/pricing/`, I added a `CHANGELOG.md` entry and updated `last_reviewed:`.
+- [ ] If I touched `brain/`, I checked I'm not duplicating a fact that already exists elsewhere.
+- [ ] If I added a client deliverable, the client folder's `CLIENT.md` is up to date.
+- [ ] If I sent a quote, a copy is in `archive/quotes/` for future price anchoring.
+- [ ] No client work writes back into `brain/` (open a separate PR for that).
+- [ ] No heavy binaries (>5 MB) committed — they're in Drive, linked here if needed.
+
+## Notes for reviewer
+<anything non-obvious — why this approach, what you're unsure about>
 EOF
 )"
 ```
