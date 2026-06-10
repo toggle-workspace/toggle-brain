@@ -1,0 +1,27 @@
+name: Notify toggle-docs on push
+
+on:
+  push:
+    branches: [main]
+
+jobs:
+  dispatch:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Trigger docs sync
+        uses: actions/github-script@v7
+        with:
+          github-token: ${{ secrets.DOCS_DISPATCH_TOKEN }}
+          script: |
+            await github.rest.repos.createDispatchEvent({
+              owner: 'toggle-workspace',
+              repo: 'toggle-docs',
+              event_type: 'sync-content',
+              client_payload: {
+                sha: context.sha,
+                ref: context.ref,
+                actor: context.actor
+              }
+            });
+            console.log(`Dispatched sync-content event with sha: ${context.sha}`);
