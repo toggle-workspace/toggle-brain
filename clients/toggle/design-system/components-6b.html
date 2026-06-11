@@ -1,0 +1,404 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toggle — Components 6b: Containers & Data</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root,.light{
+  --color-brand-primary:#4A7BF7; --color-brand-primary-deep:#3056C9;
+  --color-surface-canvas:#FFFFFF; --color-surface-card:#F2F3F6; --color-surface-callout:#DDE5FE; --color-surface-raised:#FFFFFF;
+  --color-text-primary:#0F0F0F; --color-text-body:#4A4A4A; --color-text-secondary:#6B7280; --color-text-inverse:#FFFFFF;
+  --color-border-subtle:#E4E6EE; --color-border-default:#D2D6E2; --color-border-strong:#9AA0A8;
+  --color-state-focus-ring:#3056C9; --color-state-error:#C03028; --color-state-success:#0B6B4D; --color-state-warning:#A4541C; --color-state-info:#3056C9;
+  --cat2:#2ECC9B; --cat2-text:#0E7A57; --cat3:#F59EC9; --cat4:#8E6BE6; --cat6:#2C2C36;
+  --hover-wash:#0F0F0F0F;
+  --elev-2:0 4px 12px #0A12241F;
+  --radius-sm:4px; --radius-md:8px; --radius-lg:12px; --radius-xl:16px; --radius-pill:999px;
+  --dur-fast:150ms; --dur-base:250ms; --ease:cubic-bezier(.22,1,.36,1);
+  --duo-a:#4A7BF7; --duo-b:#FAFAFA;
+}
+.dark{
+  --color-brand-primary:#4A7BF7; --color-brand-primary-deep:#6E95F9;
+  --color-surface-canvas:#0A1224; --color-surface-card:#121C33; --color-surface-callout:#18254A; --color-surface-raised:#1A2540;
+  --color-text-primary:#FFFFFF; --color-text-body:#B0B8C9; --color-text-secondary:#9CA3B5; --color-text-inverse:#0F0F0F;
+  --color-border-subtle:#1F2A44; --color-border-default:#2A3756; --color-border-strong:#44537A;
+  --color-state-focus-ring:#6E95F9; --color-state-error:#FF7A70; --color-state-success:#3DD6A3; --color-state-warning:#F5B07A; --color-state-info:#6E95F9;
+  --cat2:#2ECC9B; --cat2-text:#2ECC9B; --cat3:#F59EC9; --cat4:#8E6BE6; --cat6:#6B7489;
+  --hover-wash:#FFFFFF14;
+  --elev-2:none;
+  --duo-a:#0A1224; --duo-b:#4A7BF7;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Inter Tight",Inter,sans-serif;background:#E9EBF1;padding:32px;font-size:14px}
+.mode{max-width:1240px;margin:0 auto 40px;background:var(--color-surface-canvas);color:var(--color-text-primary);padding:40px 48px;border-radius:8px}
+.mode>h2{font-size:24px;font-weight:800;color:var(--color-brand-primary);margin:0 0 24px}
+h3{font-size:16px;font-weight:700;margin:32px 0 14px;border-top:1px solid var(--color-border-subtle);padding-top:22px}
+.row{display:flex;gap:20px;align-items:stretch;flex-wrap:wrap;margin-bottom:14px}
+.num{font-variant-numeric:tabular-nums}
+
+/* ============ CARD FAMILY ============ */
+.card{background:var(--color-surface-card);border-radius:var(--radius-lg);padding:24px;max-width:340px}
+.card h4{font-size:17px;font-weight:700;margin:0 0 6px;color:var(--color-text-primary)}
+.card p{font-size:14px;color:var(--color-text-body);line-height:1.5;margin:0}
+.card .kick{font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--color-brand-primary-deep);text-transform:uppercase;margin-bottom:8px}
+a.card{display:block;text-decoration:none;transition:background-color var(--dur-fast) var(--ease)}
+a.card:hover{background:color-mix(in srgb,var(--color-surface-card),var(--color-text-primary) 6%)}   /* state.hover */
+a.card:active{background:color-mix(in srgb,var(--color-surface-card),var(--color-text-primary) 12%)} /* state.active */
+a.card:focus-visible{outline:2px solid var(--color-state-focus-ring);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){a.card{transition:none}}
+
+/* stat card */
+.card-stat{position:relative;padding-top:30px;text-align:center}
+.card-stat::before{content:"";position:absolute;top:0;left:0;right:0;height:7px;border-radius:var(--radius-lg) var(--radius-lg) 0 0;background:var(--color-brand-primary)}
+.card-stat .n{font-size:44px;font-weight:800;line-height:1;color:var(--color-text-primary);font-variant-numeric:tabular-nums}
+.card-stat.focal .n{color:var(--color-brand-primary)}
+.card-stat .l{font-size:15px;font-weight:700;margin-top:10px}
+.card-stat .r{font-size:13px;color:var(--color-text-body);margin-top:4px}
+.statgrid{display:grid;gap:16px}
+.statgrid.up3{grid-template-columns:repeat(3,minmax(0,1fr));max-width:760px}
+.statgrid.up4{grid-template-columns:repeat(4,minmax(0,1fr));max-width:980px}
+.statgrid .card-stat{max-width:none}
+
+/* service card */
+a.card-svc,.card-svc{display:flex;flex-direction:column;min-height:220px}
+.chip40{display:inline-flex;width:40px;height:40px;border-radius:var(--radius-lg);background:var(--color-surface-canvas);color:var(--color-brand-primary-deep);align-items:center;justify-content:center;margin-bottom:14px}
+.dark .chip40{background:var(--color-surface-raised);color:var(--color-brand-primary)}
+.card-svc .arr{margin-top:auto;align-self:flex-end;color:var(--color-brand-primary-deep);width:20px;height:20px;transition:transform var(--dur-fast) var(--ease)}
+a.card-svc:hover .arr{transform:translate(2px,-2px)}
+@media (prefers-reduced-motion:reduce){a.card-svc:hover .arr{transform:none}}
+
+/* case-study card */
+.card-cs{padding:0;overflow:hidden}
+.card-cs .img{height:140px;background:linear-gradient(135deg,var(--duo-a) 0%,var(--duo-b) 100%);position:relative}
+.card-cs .img::after{content:"duotone image area — blueprint-blue shadows / paper-white highlights";position:absolute;left:0;right:0;bottom:0;display:flex;align-items:flex-end;justify-content:center;font-size:12px;color:#fff;background:linear-gradient(transparent,rgba(10,18,36,.82));text-align:center;padding:26px 20px 10px}
+.dark .card-cs .img::after{content:"duotone image area — navy shadows / blueprint-blue highlights"}
+.card-cs .bd{padding:20px 24px 24px}
+.card-cs .stat-line{font-size:13px;font-weight:700;color:var(--color-brand-primary-deep);margin-top:10px}
+.card-cs .more{display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:700;color:var(--color-brand-primary-deep);margin-top:12px}
+
+/* persona card */
+.card-persona{background:var(--color-surface-callout);position:relative;padding-left:30px}
+.card-persona::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;border-radius:var(--radius-lg) 0 0 var(--radius-lg);background:var(--color-brand-primary)}
+.card-persona .chip-budget{float:right;background:var(--color-surface-canvas);border:1.5px solid var(--color-brand-primary);color:var(--color-text-primary);font-weight:700;font-size:13px;border-radius:var(--radius-md);padding:6px 10px;text-align:center;line-height:1.2}
+.card-persona ul{margin:12px 0 0;padding:0;list-style:none}
+.card-persona li{font-size:13px;color:var(--color-text-body);line-height:1.45;padding:5px 0 5px 16px;position:relative}
+.card-persona li::before{content:"";position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:50%;background:var(--color-brand-primary)}
+
+/* testimonial card */
+.card-quote{max-width:420px;margin:0}
+.card-quote blockquote{margin:0;font-size:17px;font-weight:700;line-height:1.45;color:var(--color-text-primary)}
+.card-quote blockquote::before{content:"“";color:var(--color-brand-primary);font-size:34px;line-height:0;vertical-align:-10px;margin-right:2px}
+.card-quote figcaption{margin-top:14px;font-size:13px;color:var(--color-text-body)}
+.card-quote figcaption b{color:var(--color-text-primary)}
+.card-quote .logo{margin-top:10px;font-size:13px;font-weight:800;letter-spacing:.04em;color:var(--color-text-body)}
+
+/* team card */
+.card-team{padding:0;overflow:hidden;width:min(260px,100%)}
+.card-team .pic{aspect-ratio:4/5;background:linear-gradient(160deg,var(--duo-a) 10%,var(--duo-b) 95%);position:relative}
+.card-team .pic::after{content:"duotone portrait — rectangular, 4:5, eye-line upper third";position:absolute;left:0;right:0;bottom:0;display:flex;align-items:flex-end;justify-content:center;font-size:12px;color:#fff;background:linear-gradient(transparent,rgba(10,18,36,.82));padding:26px 12px 10px;text-align:center}
+.card-team .bd{padding:16px 20px 20px}
+.card-team .nm{font-size:15px;font-weight:700}
+.card-team .role{font-size:13px;color:var(--color-text-body);margin-top:2px}
+.card-team .tenure{font-size:13px;color:var(--color-text-body);margin-top:8px;border-top:1px solid var(--color-border-subtle);padding-top:8px}
+
+/* ============ TAG / CHIP ============ */
+.tag{display:inline-flex;align-items:center;gap:6px;height:24px;padding:0 10px;border-radius:var(--radius-sm);font-size:13px;font-weight:500}
+.tag-neutral{background:var(--color-surface-card);color:var(--color-text-body)}
+.dark .tag-neutral{background:var(--color-surface-raised)}
+.tag-accent{background:transparent;border:1.5px solid var(--cat2);color:var(--color-text-primary)}
+.tag-accent.c3{border-color:var(--cat3)} .tag-accent.c4{border-color:var(--cat4)}
+.tag-status{font-weight:700}
+.tag-status .dot{width:7px;height:7px;border-radius:50%;background:currentColor;flex:none}
+.tag-ok{color:var(--color-state-success);background:color-mix(in srgb,var(--color-state-success),transparent 90%)}
+.tag-warn{color:var(--color-state-warning);background:color-mix(in srgb,var(--color-state-warning),transparent 90%)}
+.tag-bad{color:var(--color-state-error);background:color-mix(in srgb,var(--color-state-error),transparent 90%)}
+.tag-info{color:var(--color-state-info);background:color-mix(in srgb,var(--color-state-info),transparent 90%)}
+
+/* ============ TABLE ============ */
+table.dt{border-collapse:collapse;font-size:13px;min-width:520px}
+table.dt th{background:var(--color-brand-primary-deep);color:#FFFFFF;font-weight:700;text-align:left;padding:11px 14px}
+.dark table.dt th{background:#3056C9}
+table.dt th.num,table.dt td.num{text-align:right}
+table.dt td{padding:11px 14px;color:var(--color-text-body);vertical-align:top;position:relative}
+table.dt tbody tr:nth-child(even) td{background:var(--color-surface-card)}
+table.dt td.k{color:var(--color-brand-primary-deep);font-weight:700;font-variant-numeric:tabular-nums}
+table.dt tr.total td{border-top:2px solid var(--color-border-strong);font-weight:700;color:var(--color-text-primary)}
+table.dt td.stripe{padding-left:19px}
+table.dt td.stripe::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--stripe,var(--color-brand-primary))}
+.tablewrap{overflow-x:auto}
+.tablewrap:focus-visible{outline:2px solid var(--color-state-focus-ring);outline-offset:2px}
+caption{caption-side:top;text-align:left;font-size:13px;color:var(--color-text-body);padding-bottom:8px}
+
+/* architectural variants strip */
+.archrow{display:flex;gap:48px;align-items:flex-end}
+.archrow figure{margin:0}
+.archrow figcaption{font-size:12px;color:var(--color-text-secondary);margin-top:8px;max-width:240px}
+.archrow svg{color:var(--color-brand-primary)}
+.archrow polygon{fill:none;stroke:var(--color-brand-primary);stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter}
+.archrow .f1{fill:var(--color-brand-primary)} .archrow .f2{fill:var(--cat2)} .archrow .f6l{fill:var(--cat6)}
+.archrow text{font-family:"Inter Tight";font-variant-numeric:tabular-nums}
+.archrow .bign{font-size:26px;font-weight:800;fill:var(--color-brand-primary)}
+.archrow .cap{font-size:11px;font-weight:500;fill:var(--color-text-secondary)}
+@media (min-width:768px) and (max-width:1023px){.statgrid.up4{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:767px){
+  .statgrid.up3,.statgrid.up4{grid-template-columns:1fr}
+  .mode{padding:24px 20px}
+  .card{max-width:none}
+}
+</style>
+</head>
+<body>
+
+<div class="mode light">
+<h2>Components 6b — Containers &amp; Data · light</h2>
+
+<h3>Card — base + interactive</h3>
+<div class="row">
+  <div class="card"><h4>Base card</h4><p>Surface card, radius.lg, padding space.5. The container every other card extends. Non-interactive by default.</p></div>
+  <a class="card" href="#"><span class="kick">Interactive</span><h4>Linked card</h4><p>Whole card is one link — hover wash, focus ring on the container, one target per card.</p></a>
+  <div class="card" aria-hidden="true"><div style="height:17px;width:60%;border-radius:4px;background:var(--color-border-subtle);margin-bottom:12px"></div><div style="height:13px;width:100%;border-radius:4px;background:var(--color-border-subtle);margin-bottom:8px"></div><div style="height:13px;width:80%;border-radius:4px;background:var(--color-border-subtle)"></div></div>
+</div>
+
+<h3>Card — stat (single · focal)</h3>
+<div class="row">
+  <div class="card card-stat focal" style="width:min(280px,100%)"><div class="n num">32,000+</div><div class="l">leads generated</div><div class="r">UNITAR · 2023–2026</div></div>
+  <div class="card card-stat" style="width:min(280px,100%)"><div class="n num">−47%</div><div class="l">cost per lead</div><div class="r">UNITAR · 2023–2026</div></div>
+</div>
+<h3>Stat — 3-up grid (one blue focal per surface)</h3>
+<div class="statgrid up3">
+  <div class="card card-stat focal"><div class="n num">300%</div><div class="l">Revenue Increase</div><div class="r">publication brand · TikTok Shop</div></div>
+  <div class="card card-stat"><div class="n num">200%</div><div class="l">More Orders</div><div class="r">same engagement</div></div>
+  <div class="card card-stat"><div class="n num">11.5x</div><div class="l">Return On Investment</div><div class="r">Toggle case data, 2026</div></div>
+</div>
+<h3>Stat — 4-up grid (Sunway plan)</h3>
+<div class="statgrid up4">
+  <div class="card card-stat focal"><div class="n num" style="font-size:38px;white-space:nowrap">155–195</div><div class="l" style="font-size:14px">Est. Leads / Month</div></div>
+  <div class="card card-stat"><div class="n num" style="font-size:38px;white-space:nowrap">RM&nbsp;15,000</div><div class="l" style="font-size:14px">Monthly Budget</div></div>
+  <div class="card card-stat"><div class="n num" style="font-size:38px">4</div><div class="l" style="font-size:14px">Markets</div></div>
+  <div class="card card-stat"><div class="n num" style="font-size:38px">3</div><div class="l" style="font-size:14px">Ad Platforms</div></div>
+</div>
+
+<h3>Stat — architectural variants (Stage 4 hooks)</h3>
+<div class="archrow">
+  <figure>
+    <svg viewBox="0 0 140 190" width="140" role="img" aria-label="Architectural stat column, stroke only: 32,000 plus leads, UNITAR">
+      <g transform="translate(70,178)">
+        <polygon points="0.0,-115.6 29.4,-98.6 0.0,-81.6 -29.4,-98.6"/>
+        <polygon points="-29.4,-98.6 0.0,-81.6 0.0,0.0 -29.4,-17.0"/>
+        <polygon points="29.4,-98.6 0.0,-81.6 0.0,0.0 29.4,-17.0"/>
+        <text class="bign" x="0" y="-148" text-anchor="middle">32,000+</text>
+        <text class="cap" x="0" y="-130" text-anchor="middle">leads · UNITAR 2023–2026</text>
+      </g>
+    </svg>
+    <figcaption>stat-as-column — stroke-only (fixed height encodes nothing; CHARTS.md §4.9)</figcaption>
+  </figure>
+  <figure>
+    <svg viewBox="0 0 220 210" width="220" role="img" aria-label="Channel mix as stacked blocks: Google 50, Meta 30, LinkedIn 20 percent">
+      <g transform="translate(80,200)">
+        <polygon class="f1" points="-25.98,-15 0,0 0,-69 -25.98,-84"/><polygon points="25.98,-15 0,0 0,-69 25.98,-84"/>
+        <polygon class="f2" points="-25.98,-84 0,-69 0,-110.4 -25.98,-125.4"/><polygon points="25.98,-84 0,-69 0,-110.4 25.98,-125.4"/>
+        <polygon class="f6l" points="-25.98,-125.4 0,-110.4 0,-138 -25.98,-153"/><polygon points="25.98,-125.4 0,-110.4 0,-138 25.98,-153"/>
+        <polygon points="0,-168 25.98,-153 0,-138 -25.98,-153"/>
+        <text class="cap" x="36" y="-34">Google 50%</text><text class="cap" x="36" y="-92">Meta 30%</text><text class="cap" x="36" y="-126">LinkedIn 20%</text>
+        <text class="cap" x="0" y="-180" text-anchor="middle" style="font-weight:700">RM 15K / mo</text>
+      </g>
+    </svg>
+    <figcaption>channel-mix-as-blocks — heights = budget share (CHARTS.md §4.13)</figcaption>
+  </figure>
+</div>
+
+<h3>Card — service (live-site pattern)</h3>
+<div class="row">
+  <a class="card card-svc" href="#">
+    <span class="chip40"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M4 20v-4M10 20v-7M16 20V9"/><path d="M14 10l6-6"/><path d="M15.5 4H20v4.5"/></svg></span>
+    <h4>Performance Marketing</h4>
+    <p>Drive growth with campaign optimization and performance creative, using audience and conversion data to guide what we produce and scale.</p>
+    <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M6 18L18 6M8 6h10v10"/></svg>
+  </a>
+  <a class="card card-svc" href="#">
+    <span class="chip40"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg></span>
+    <h4>Search Engine Optimisation</h4>
+    <p>Build organic visibility through technical SEO, keyword strategy, and content optimization that shows up in search results, AI answers, and featured snippets.</p>
+    <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M6 18L18 6M8 6h10v10"/></svg>
+  </a>
+</div>
+
+<h3>Card — case study</h3>
+<div class="row">
+  <a class="card card-cs" href="#" style="width:min(340px,100%)">
+    <div class="img" role="img" aria-label="UNITAR campaign imagery, duotone treatment"></div>
+    <div class="bd"><span class="kick">UNITAR · Higher-Ed</span><h4>From Moonshot to Milestone</h4>
+    <p>A leading Malaysian private university drowning in acquisition costs with no ceiling in sight. We rebuilt the funnel.</p>
+    <div class="stat-line num">32,000+ leads · −47% CPL</div>
+    <span class="more">Read more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M3 12h16.5M14 5.5l6.5 6.5L14 18.5"/></svg></span></div>
+  </a>
+  <a class="card card-cs" href="#" style="width:min(340px,100%)">
+    <div class="img" role="img" aria-label="Singlife campaign imagery, duotone treatment"></div>
+    <div class="bd"><span class="kick">Singlife · Insurance</span><h4>From Third to First in 90 Days</h4>
+    <p>A digital-first insurer sitting one position behind dominance in a fiercely contested market.</p>
+    <div class="stat-line num">Category leadership · 90 days</div>
+    <span class="more">Read more <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M3 12h16.5M14 5.5l6.5 6.5L14 18.5"/></svg></span></div>
+  </a>
+</div>
+
+<h3>Card — persona segment (proposal pattern)</h3>
+<div class="row">
+  <div class="card card-persona" style="width:min(360px,100%)">
+    <span class="chip-budget num">60%<br>Budget</span>
+    <h4>The Career Climber</h4>
+    <p style="font-size:13px;font-weight:700;color:var(--color-text-body)">Working Professional · 25–45</p>
+    <ul><li>Audit Associate / Junior Accountant at Big 4, BDO, Grant Thornton</li><li>Pain: stuck at a salary ceiling without a chartered qualification</li><li>Hook: 100% Online / Blended — finish ACCA without quitting your job</li></ul>
+  </div>
+</div>
+
+<h3>Card — testimonial</h3>
+<figure class="card card-quote">
+  <blockquote>They refused our first brief and rewrote it. Best decision of the engagement — CPL fell 47% once the funnel was fixed.</blockquote>
+  <figcaption><b>Marketing Director</b> · UNITAR<br><span style="color:var(--color-text-body)">[ composite — ships only with a client-approved quote ]</span><div class="logo">UNITAR</div></figcaption>
+</figure>
+
+<h3>Card — team</h3>
+<div class="row">
+  <div class="card card-team">
+    <div class="pic" role="img" aria-label="Viknesh — duotone portrait"></div>
+    <div class="bd"><div class="nm">Viknesh</div><div class="role">Sales &amp; Partnership Director</div>
+    <div class="tenure">CIMB / UNITAR / Singlife portfolio</div></div>
+  </div>
+  <div class="card card-team">
+    <div class="pic" role="img" aria-label="Zaid — duotone portrait"></div>
+    <div class="bd"><div class="nm">Zaid</div><div class="role">Growth Strategy</div>
+    <div class="tenure">32,000+ leads engineered · higher-ed / fintech</div></div>
+  </div>
+</div>
+
+<h3>Tag / chip</h3>
+<div class="row" style="align-items:center">
+  <span class="tag tag-neutral">Higher-Ed</span>
+  <span class="tag tag-accent">Meta</span>
+  <span class="tag tag-accent c3">Final-Year</span>
+  <span class="tag tag-accent c4">Phase 3</span>
+  <span class="tag tag-status tag-ok"><span class="dot" aria-hidden="true"></span>On target</span>
+  <span class="tag tag-status tag-warn"><span class="dot" aria-hidden="true"></span>Watch</span>
+  <span class="tag tag-status tag-bad"><span class="dot" aria-hidden="true"></span>Off target</span>
+  <span class="tag tag-status tag-info"><span class="dot" aria-hidden="true"></span>New</span>
+</div>
+
+<h3>Table — accent stripe + banding + total row</h3>
+<div class="tablewrap" role="region" aria-label="Monthly budget by channel — Sunway TES plan" tabindex="0">
+<table class="dt">
+  <caption>Monthly budget by channel — Sunway TES plan (RM)</caption>
+  <thead><tr><th scope="col">Channel</th><th scope="col">Markets</th><th class="num">Budget</th><th class="num">Target CPL</th></tr></thead>
+  <tbody>
+    <tr><td class="stripe" style="--stripe:var(--color-brand-primary)">Google Search</td><td>India · Pakistan · Brand</td><td class="num k">RM 7,500</td><td class="num k">&lt; RM 100</td></tr>
+    <tr><td class="stripe" style="--stripe:var(--cat2)">Meta</td><td>India · UAE · PK &amp; BD</td><td class="num k">RM 4,500</td><td class="num k">&lt; RM 80</td></tr>
+    <tr><td class="stripe" style="--stripe:var(--cat6)">LinkedIn</td><td>India · UAE · PK &amp; BD</td><td class="num k">RM 3,000</td><td class="num k">&lt; RM 120</td></tr>
+    <tr class="total"><td>Total</td><td></td><td class="num">RM 15,000</td><td></td></tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+<!-- ════════ DARK ════════ -->
+<div class="mode dark">
+<h2>Components 6b — Containers &amp; Data · dark</h2>
+
+<h3>Card — base + interactive</h3>
+<div class="row">
+  <div class="card"><h4>Base card</h4><p>surface.card.dark — tint elevation, no shadow.</p></div>
+  <a class="card" href="#"><span class="kick">Interactive</span><h4>Linked card</h4><p>Hover lightens the tint; focus ring in the dark focus color.</p></a>
+</div>
+
+<h3>Stat — 3-up</h3>
+<div class="statgrid up3">
+  <div class="card card-stat focal"><div class="n num">300%</div><div class="l">Revenue Increase</div><div class="r">publication brand · TikTok Shop</div></div>
+  <div class="card card-stat"><div class="n num">200%</div><div class="l">More Orders</div><div class="r">same engagement</div></div>
+  <div class="card card-stat"><div class="n num">11.5x</div><div class="l">Return On Investment</div><div class="r">Toggle case data, 2026</div></div>
+</div>
+
+<h3>Stat — architectural variant</h3>
+<div class="archrow">
+  <figure>
+    <svg viewBox="0 0 220 210" width="220" role="img" aria-label="Channel mix as stacked blocks, dark mode: Google 50, Meta 30, LinkedIn 20 percent — RM 15K monthly">
+      <g transform="translate(80,200)">
+        <polygon class="f1" points="-25.98,-15 0,0 0,-69 -25.98,-84"/><polygon points="25.98,-15 0,0 0,-69 25.98,-84"/>
+        <polygon class="f2" points="-25.98,-84 0,-69 0,-110.4 -25.98,-125.4"/><polygon points="25.98,-84 0,-69 0,-110.4 25.98,-125.4"/>
+        <polygon class="f6l" points="-25.98,-125.4 0,-110.4 0,-138 -25.98,-153"/><polygon points="25.98,-125.4 0,-110.4 0,-138 25.98,-153"/>
+        <polygon points="0,-168 25.98,-153 0,-138 -25.98,-153"/>
+        <text class="cap" x="36" y="-34">Google 50%</text><text class="cap" x="36" y="-92">Meta 30%</text><text class="cap" x="36" y="-126">LinkedIn 20%</text>
+        <text class="cap" x="0" y="-180" text-anchor="middle" style="font-weight:700">RM 15K / mo</text>
+      </g>
+    </svg>
+    <figcaption>slate segment re-mints to #6B7489 on navy (tokens §1.6)</figcaption>
+  </figure>
+</div>
+
+<h3>Card — service</h3>
+<div class="row">
+  <a class="card card-svc" href="#">
+    <span class="chip40"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M4 20v-4M10 20v-7M16 20V9"/><path d="M14 10l6-6"/><path d="M15.5 4H20v4.5"/></svg></span>
+    <h4>Performance Marketing</h4>
+    <p>Drive growth with campaign optimization and performance creative, using audience and conversion data to guide what we produce and scale.</p>
+    <svg class="arr" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M6 18L18 6M8 6h10v10"/></svg>
+  </a>
+</div>
+
+<h3>Card — case study + team</h3>
+<div class="row">
+  <a class="card card-cs" href="#" style="width:min(340px,100%)">
+    <div class="img" role="img" aria-label="UNITAR campaign imagery, dark duotone"></div>
+    <div class="bd"><span class="kick">UNITAR · Higher-Ed</span><h4>From Moonshot to Milestone</h4>
+    <p>Dark duotone: navy shadows, blueprint-blue highlights (tokens §1.7).</p>
+    <div class="stat-line num">32,000+ leads · −47% CPL</div></div>
+  </a>
+  <div class="card card-team">
+    <div class="pic" role="img" aria-label="Viknesh — duotone portrait, dark"></div>
+    <div class="bd"><div class="nm">Viknesh</div><div class="role">Sales &amp; Partnership Director</div>
+    <div class="tenure">CIMB / UNITAR / Singlife portfolio</div></div>
+  </div>
+</div>
+
+<h3>Card — persona + testimonial</h3>
+<div class="row">
+  <div class="card card-persona" style="width:min(360px,100%)">
+    <span class="chip-budget num">60%<br>Budget</span>
+    <h4>The Career Climber</h4>
+    <p style="font-size:13px;font-weight:700;color:var(--color-text-body)">Working Professional · 25–45</p>
+    <ul><li>Audit Associate / Junior Accountant at Big 4, BDO, Grant Thornton</li><li>Hook: finish ACCA without quitting your job</li></ul>
+  </div>
+  <figure class="card card-quote">
+    <blockquote>They refused our first brief and rewrote it. Best decision of the engagement.</blockquote>
+    <figcaption><b>Marketing Director</b> · UNITAR<br><span style="color:var(--color-text-body)">[ composite — ships only with a client-approved quote ]</span></figcaption>
+  </figure>
+</div>
+
+<h3>Tag / chip</h3>
+<div class="row" style="align-items:center">
+  <span class="tag tag-neutral">Higher-Ed</span>
+  <span class="tag tag-accent">Meta</span>
+  <span class="tag tag-accent c3">Final-Year</span>
+  <span class="tag tag-accent c4">Phase 3</span>
+  <span class="tag tag-status tag-ok"><span class="dot" aria-hidden="true"></span>On target</span>
+  <span class="tag tag-status tag-warn"><span class="dot" aria-hidden="true"></span>Watch</span>
+  <span class="tag tag-status tag-bad"><span class="dot" aria-hidden="true"></span>Off target</span>
+  <span class="tag tag-status tag-info"><span class="dot" aria-hidden="true"></span>New</span>
+</div>
+
+<h3>Table</h3>
+<div class="tablewrap" role="region" aria-label="Monthly budget by channel — Sunway TES plan" tabindex="0">
+<table class="dt">
+  <caption>Monthly budget by channel — Sunway TES plan (RM)</caption>
+  <thead><tr><th scope="col">Channel</th><th class="num">Budget</th><th class="num">Target CPL</th></tr></thead>
+  <tbody>
+    <tr><td class="stripe" style="--stripe:var(--color-brand-primary)">Google Search</td><td class="num k">RM 7,500</td><td class="num k">&lt; RM 100</td></tr>
+    <tr><td class="stripe" style="--stripe:var(--cat2)">Meta</td><td class="num k">RM 4,500</td><td class="num k">&lt; RM 80</td></tr>
+    <tr><td class="stripe" style="--stripe:var(--cat6)">LinkedIn</td><td class="num k">RM 3,000</td><td class="num k">&lt; RM 120</td></tr>
+    <tr class="total"><td>Total</td><td class="num">RM 15,000</td><td></td></tr>
+  </tbody>
+</table>
+</div>
+</div>
+
+</body>
+</html>

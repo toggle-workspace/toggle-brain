@@ -1,0 +1,286 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toggle — Components 6a: Inputs & Forms</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+/* Token CSS variables — values from tokens.json (light defaults, .dark overrides) */
+:root,.light{
+  --color-brand-primary:#4A7BF7; --color-brand-primary-deep:#3056C9;
+  --color-surface-canvas:#FFFFFF; --color-surface-card:#F2F3F6; --color-surface-callout:#DDE5FE;
+  --color-text-primary:#0F0F0F; --color-text-body:#4A4A4A; --color-text-secondary:#6B7280;
+  --color-text-muted:#9AA0A8; --color-text-inverse:#FFFFFF;
+  --color-border-subtle:#E4E6EE; --color-border-default:#D2D6E2; --color-border-strong:#9AA0A8;
+  --color-border-control:#6B7280;
+  --color-state-focus-ring:#3056C9; --color-state-error:#C03028; --color-state-success:#0B6B4D;
+  --hover-wash:#0F0F0F0F; --active-wash:#0F0F0F1F;
+  --radius-md:8px; --radius-xl:16px; --radius-pill:999px; --focus-w:2px; --focus-off:2px;
+  --dur-fast:150ms; --dur-base:250ms; --dur-slow:400ms; --ease:cubic-bezier(.22,1,.36,1);
+}
+.dark{
+  --color-brand-primary:#4A7BF7; --color-brand-primary-deep:#6E95F9;
+  --color-surface-canvas:#0A1224; --color-surface-card:#121C33; --color-surface-callout:#18254A;
+  --color-text-primary:#FFFFFF; --color-text-body:#B0B8C9; --color-text-secondary:#9CA3B5;
+  --color-text-muted:#6B7689; --color-text-inverse:#0F0F0F;
+  --color-border-subtle:#1F2A44; --color-border-default:#2A3756; --color-border-strong:#44537A;
+  --color-border-control:#6B7689;
+  --color-state-focus-ring:#6E95F9; --color-state-error:#FF7A70; --color-state-success:#3DD6A3;
+  --hover-wash:#FFFFFF14; --active-wash:#FFFFFF29;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Inter Tight",Inter,sans-serif;background:#E9EBF1;padding:32px;font-size:14px}
+.mode{max-width:1240px;margin:0 auto 40px;background:var(--color-surface-canvas);color:var(--color-text-primary);padding:40px 48px;border-radius:8px}
+.mode>h2{font-size:24px;font-weight:800;color:var(--color-brand-primary);margin:0 0 24px}
+h3{font-size:16px;font-weight:700;margin:32px 0 14px;border-top:1px solid var(--color-border-subtle);padding-top:22px}
+.row{display:flex;gap:16px;align-items:center;flex-wrap:wrap;margin-bottom:14px}
+.lab{font-size:12px;font-weight:500;color:var(--color-text-secondary);width:110px;flex:none}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:8px 32px}
+fieldset.bare{border:0;padding:0;margin:0;display:flex;gap:16px;align-items:center;flex-wrap:wrap}
+fieldset.bare legend{font-size:12px;font-weight:500;color:var(--color-text-secondary);float:left;width:110px;padding:0}
+
+/* ============ BUTTON ============ */
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;font-family:inherit;
+  font-weight:700;border-radius:var(--radius-pill);cursor:pointer;border:1.5px solid transparent;white-space:nowrap;
+  transition:background-color var(--dur-fast) var(--ease),border-color var(--dur-fast) var(--ease),color var(--dur-fast) var(--ease);
+  text-decoration:none}
+.btn:focus-visible{outline:var(--focus-w) solid var(--color-state-focus-ring);outline-offset:var(--focus-off)}
+.btn-md{height:40px;padding:0 22px;font-size:14px}
+.btn-sm{height:32px;padding:0 16px;font-size:13px}
+.btn-lg{height:48px;padding:0 28px;font-size:15px}
+.btn-primary{background:var(--color-brand-primary-deep);color:var(--color-text-inverse)}
+.btn-primary:hover{background:color-mix(in srgb,var(--color-brand-primary-deep),var(--color-text-primary) 10%)}   /* state.hover-fill */
+.btn-primary:active{background:color-mix(in srgb,var(--color-brand-primary-deep),var(--color-text-primary) 16%)}  /* state.active-fill */
+.dark .btn-primary{color:var(--color-surface-canvas)}
+.btn-secondary{background:transparent;border-color:var(--color-brand-primary-deep);color:var(--color-brand-primary-deep)}
+.btn-secondary:hover{background:var(--color-surface-callout)}
+.btn-secondary:active{background:color-mix(in srgb,var(--color-surface-callout),var(--color-brand-primary-deep) 12%)}
+.btn-ghost{background:transparent;color:var(--color-brand-primary-deep)}
+.btn-ghost:hover{background:var(--hover-wash)}
+.btn-ghost:active{background:var(--active-wash)}
+.btn-icon{width:40px;padding:0}
+.btn-icon.btn-sm{width:32px}.btn-icon.btn-lg{width:48px}
+.btn[disabled]{opacity:.4;pointer-events:none}
+.btn .spin{width:16px;height:16px;border-radius:50%;border:2px solid currentColor;border-top-color:transparent;animation:rot calc(var(--dur-slow)*2) linear infinite}
+@keyframes rot{to{transform:rotate(360deg)}}
+@media (prefers-reduced-motion:reduce){.btn .spin{animation:none;border-top-color:currentColor;opacity:.5}.btn{transition:none}}
+.btn svg{width:18px;height:18px;flex:none}
+label.btn{user-select:none}
+
+/* ============ INPUTS ============ */
+.field{display:flex;flex-direction:column;gap:6px;max-width:360px;margin-bottom:4px}
+.field label{font-size:13px;font-weight:500;color:var(--color-text-body)}
+.field .req{color:var(--color-state-error)}
+.control{height:44px;padding:0 14px;font:inherit;font-size:14px;color:var(--color-text-primary);
+  background:var(--color-surface-canvas);border:1px solid var(--color-border-default);border-radius:var(--radius-md);
+  transition:border-color var(--dur-fast) var(--ease);width:100%}
+.dark .control{background:var(--color-surface-card)}
+.control::placeholder{color:var(--color-text-secondary)}
+.control:hover{border-color:var(--color-border-strong)}
+.control:focus-visible{outline:var(--focus-w) solid var(--color-state-focus-ring);outline-offset:var(--focus-off);border-color:var(--color-state-focus-ring)}
+.control[disabled]{opacity:.4;pointer-events:none}
+.field.error .control{border-color:var(--color-state-error)}
+.field .msg{font-size:13px;color:var(--color-text-body);min-height:19px;display:block}  /* reserved line — no layout shift on error */
+.field.error .msg{color:var(--color-state-error)}
+textarea.control{height:auto;min-height:96px;padding:11px 14px;resize:vertical}
+.selectwrap{position:relative}
+.selectwrap svg{position:absolute;right:12px;top:50%;width:20px;height:20px;margin-top:-10px;pointer-events:none;color:var(--color-text-secondary)}
+select.control{appearance:none;padding-right:40px}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.filewrap{display:flex;align-items:center;gap:10px;min-height:44px;padding:6px 8px 6px 14px;flex-wrap:wrap;
+  border:1px dashed var(--color-border-strong);border-radius:var(--radius-md);color:var(--color-text-secondary);font-size:13px}
+.filewrap .btn{margin-left:auto}
+.filewrap:focus-within{outline:var(--focus-w) solid var(--color-state-focus-ring);outline-offset:var(--focus-off)}
+.check,.radio{display:flex;gap:10px;align-items:flex-start;font-size:14px;color:var(--color-text-body);cursor:pointer;max-width:360px}
+.check input,.radio input{appearance:none;width:20px;height:20px;flex:none;margin:0;border:1.5px solid var(--color-border-control);background:var(--color-surface-canvas);cursor:pointer}
+.dark .check input,.dark .radio input{background:var(--color-surface-card)}
+.check input{border-radius:4px}
+.radio input{border-radius:50%}
+.check input:checked{background-color:var(--color-brand-primary-deep);border-color:var(--color-brand-primary-deep);
+  background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="white" stroke-width="3.2" stroke-linecap="butt"><path d="M5 13l4.5 4.5L19 7"/></svg>');
+  background-size:14px;background-position:center;background-repeat:no-repeat}
+.dark .check input:checked{background-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="%230A1224" stroke-width="3.2" stroke-linecap="butt"><path d="M5 13l4.5 4.5L19 7"/></svg>')}
+.radio input:checked{border-color:var(--color-brand-primary-deep);
+  background:radial-gradient(circle, var(--color-surface-canvas) 0 3.5px, var(--color-brand-primary-deep) 4px)}  /* filled, knocked-out dot per spec */
+.dark .radio input:checked{background:radial-gradient(circle, var(--color-surface-card) 0 3.5px, var(--color-brand-primary-deep) 4px)}
+.check input:focus-visible,.radio input:focus-visible{outline:var(--focus-w) solid var(--color-state-focus-ring);outline-offset:var(--focus-off)}
+.check input[disabled],.radio input[disabled]{opacity:.4}
+
+/* ============ FORM COMPOSITION ============ */
+.consult{max-width:480px;background:var(--color-surface-card);border-radius:var(--radius-xl);padding:32px}
+.consult h4{font-size:22px;font-weight:700;margin:0 0 6px}  /* scale.h3 */
+.consult .sub{font-size:14px;color:var(--color-text-body);margin:0 0 22px;line-height:1.5}
+.consult .field{max-width:none;margin-bottom:16px}  /* space.4 */
+.consult .field .msg{min-height:0}
+.consult .field.error .msg,.consult .field .msg.show{min-height:19px}
+.consult .btn{width:100%;margin-top:24px}  /* space.5 */
+.consult .fine{font-size:13px;color:var(--color-text-body);margin-top:12px;text-align:center}
+.banner{display:flex;gap:10px;align-items:flex-start;border:1px solid var(--color-state-error);border-radius:var(--radius-md);padding:12px 14px;font-size:13px;color:var(--color-state-error);margin-bottom:16px;max-width:480px}
+.confirm{max-width:480px;background:var(--color-surface-card);border-radius:var(--radius-xl);padding:32px;text-align:center}
+.confirm h4{font-size:22px;font-weight:700;margin:0 0 8px}
+.confirm p{font-size:14px;color:var(--color-text-body);margin:0}
+@media (max-width:767px){
+  .grid2{grid-template-columns:1fr}
+  .control{font-size:16px}            /* iOS zoom suppression */
+  .consult,.confirm{padding:24px}     /* space.4 */
+  .mode{padding:24px 20px}
+}
+</style>
+</head>
+<body>
+
+<div class="mode light">
+<h2>Components 6a — Inputs &amp; Forms · light</h2>
+
+<h3>Button — variants × sizes</h3>
+<div class="row"><span class="lab">primary</span>
+  <button class="btn btn-primary btn-sm">Book a Consultation</button>
+  <button class="btn btn-primary btn-md">Book a Consultation</button>
+  <button class="btn btn-primary btn-lg">Book a Consultation</button>
+  <button class="btn btn-primary btn-md">Book a Consultation <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M3 12h16.5M14 5.5l6.5 6.5L14 18.5"/></svg></button>
+</div>
+<div class="row"><span class="lab">secondary</span>
+  <button class="btn btn-secondary btn-md">See the case studies</button>
+  <button class="btn btn-secondary btn-md">Download the audit <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M12 3v12M7 10.5l5 5 5-5M4 20h16"/></svg></button>
+</div>
+<div class="row"><span class="lab">ghost</span>
+  <button class="btn btn-ghost btn-md">View all services</button>
+</div>
+<div class="row"><span class="lab">icon-only</span>
+  <button class="btn btn-secondary btn-icon btn-md" aria-label="Next case study"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M3 12h16.5M14 5.5l6.5 6.5L14 18.5"/></svg></button>
+  <button class="btn btn-ghost btn-icon btn-md" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+</div>
+<div class="row"><span class="lab">states</span>
+  <button class="btn btn-primary btn-md" disabled>Disabled</button>
+  <button class="btn btn-primary btn-md" aria-busy="true"><span class="spin" aria-hidden="true"></span> Sending…</button>
+  <button class="btn btn-primary btn-md" style="outline:2px solid var(--color-state-focus-ring);outline-offset:2px">Focus-visible</button>
+</div>
+
+<h3>Inputs — the family</h3>
+<div class="grid2">
+<div class="field"><label for="l-name">Name <span class="req" aria-hidden="true">*</span></label><input id="l-name" name="name" class="control" type="text" placeholder="Full name" autocomplete="name" required><span class="msg"></span></div>
+<div class="field"><label for="l-email">Email <span class="req" aria-hidden="true">*</span></label><input id="l-email" name="email" class="control" type="email" placeholder="you@company.com" autocomplete="email" required><span class="msg">We reply here within 24 hours.</span></div>
+<div class="field"><label for="l-phone">Contact Number</label><input id="l-phone" name="phone" class="control" type="tel" placeholder="+(60) 123456789" inputmode="tel" autocomplete="tel"><span class="msg"></span></div>
+<div class="field"><label for="l-sel">Services You're Interested In</label><div class="selectwrap"><select id="l-sel" name="services" class="control"><option value="" disabled selected>Select services…</option><option>Performance Marketing</option><option>SEO</option><option>Web Development</option></select><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M5 9l7 7 7-7"/></svg></div><span class="msg"></span></div>
+<div class="field"><label for="l-ta">How can we help?</label><textarea id="l-ta" name="message" class="control" placeholder="Tell us where growth is stuck…"></textarea><span class="msg"></span></div>
+<div class="field"><span class="field" style="margin:0;gap:6px"><span style="font-size:13px;font-weight:500;color:var(--color-text-body)">Brand deck (optional)</span></span>
+  <div class="filewrap"><span id="l-filename">No file chosen — PDF, max 10 MB</span>
+    <label class="btn btn-secondary btn-sm" for="l-file">Choose file</label>
+    <input id="l-file" name="deck" type="file" class="vh" aria-describedby="l-filename">
+  </div><span class="msg"></span></div>
+<div class="field error"><label for="l-err">Email</label><input id="l-err" class="control" type="email" value="zaid@toggle" aria-invalid="true" aria-describedby="l-err-msg"><span class="msg" id="l-err-msg">Enter a complete email address — we reply here within 24 hours.</span></div>
+<div class="field"><label for="l-dis">Company (auto-filled)</label><input id="l-dis" class="control" type="text" value="Toggle Solutions" disabled><span class="msg"></span></div>
+</div>
+<div class="row" style="margin-top:18px">
+  <fieldset class="bare"><legend>choice controls</legend>
+  <label class="check"><input type="checkbox" checked> Send me the free brand audit checklist</label>
+  <label class="check"><input type="checkbox"> Unchecked</label>
+  <label class="check"><input type="checkbox" disabled> Disabled</label>
+  </fieldset>
+</div>
+<div class="row">
+  <fieldset class="bare"><legend>monthly budget</legend>
+  <label class="radio"><input type="radio" name="lr" checked> Monthly budget &lt; RM 10K</label>
+  <label class="radio"><input type="radio" name="lr"> RM 10–25K</label>
+  <label class="radio"><input type="radio" name="lr"> RM 25K+</label>
+  </fieldset>
+</div>
+
+<h3>Form composition — the consultation form (live-site copy)</h3>
+<form class="consult" novalidate>
+  <h4>Get a Free 30-Minute Consultation</h4>
+  <p class="sub">Submit the form and we will contact you within 24 hours to schedule a quick call. We will review your website and marketing, then share what we would improve first.</p>
+  <div class="field"><label for="c-name">Name <span class="req" aria-hidden="true">*</span></label><input id="c-name" name="name" class="control" type="text" autocomplete="name" required></div>
+  <div class="field"><label for="c-email">Email <span class="req" aria-hidden="true">*</span></label><input id="c-email" name="email" class="control" type="email" autocomplete="email" required></div>
+  <div class="field"><label for="c-phone">Contact Number</label><input id="c-phone" name="phone" class="control" type="tel" placeholder="+(60) 123456789" autocomplete="tel" inputmode="tel"></div>
+  <div class="field"><label for="c-url">Website URL</label><input id="c-url" name="website" class="control" type="url" autocomplete="url"></div>
+  <div class="field"><label for="c-svc">Services You're Interested In</label><div class="selectwrap"><select id="c-svc" name="services" class="control"><option value="" disabled selected>Select services…</option><option>Performance Marketing</option><option>Content Marketing</option><option>Branding</option><option>Web Development</option><option>SEO</option></select><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M5 9l7 7 7-7"/></svg></div></div>
+  <div class="field"><label for="c-help">How can we help?</label><textarea id="c-help" name="message" class="control"></textarea></div>
+  <button class="btn btn-primary btn-lg" type="submit">Book a Consultation <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M3 12h16.5M14 5.5l6.5 6.5L14 18.5"/></svg></button>
+  <p class="fine">Free brand audit · no sales pitches, no pressure · clear plan after the call</p>
+</form>
+
+<h3>Composition states — submitted / failed</h3>
+<div class="row" style="align-items:flex-start">
+  <div class="confirm" style="max-width:360px"><h4 tabindex="-1">Done — check your inbox.</h4><p>We reply within 24 hours. Nothing else to do here.</p></div>
+  <div style="max-width:360px"><div class="banner" role="alert"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true" style="flex:none"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5.5M12 7v1.2"/></svg>That didn't send — email us at hello@toggle.solutions and we'll take it from there.</div></div>
+</div>
+</div>
+
+<!-- ════════ DARK ════════ -->
+<div class="mode dark">
+<h2>Components 6a — Inputs &amp; Forms · dark</h2>
+
+<h3>Button — variants × sizes</h3>
+<div class="row"><span class="lab">primary</span>
+  <button class="btn btn-primary btn-sm">Book a Consultation</button>
+  <button class="btn btn-primary btn-md">Book a Consultation</button>
+  <button class="btn btn-primary btn-lg">Book a Consultation</button>
+  <button class="btn btn-primary btn-md">Book a Consultation <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M3 12h16.5M14 5.5l6.5 6.5L14 18.5"/></svg></button>
+</div>
+<div class="row"><span class="lab">secondary</span>
+  <button class="btn btn-secondary btn-md">See the case studies</button>
+  <button class="btn btn-secondary btn-icon btn-md" aria-label="Next case study"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M3 12h16.5M14 5.5l6.5 6.5L14 18.5"/></svg></button>
+</div>
+<div class="row"><span class="lab">ghost</span>
+  <button class="btn btn-ghost btn-md">View all services</button>
+  <button class="btn btn-ghost btn-icon btn-md" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+</div>
+<div class="row"><span class="lab">states</span>
+  <button class="btn btn-primary btn-md" disabled>Disabled</button>
+  <button class="btn btn-primary btn-md" aria-busy="true"><span class="spin" aria-hidden="true"></span> Sending…</button>
+  <button class="btn btn-primary btn-md" style="outline:2px solid var(--color-state-focus-ring);outline-offset:2px">Focus-visible</button>
+</div>
+
+<h3>Inputs</h3>
+<div class="grid2">
+<div class="field"><label for="d-name">Name <span class="req" aria-hidden="true">*</span></label><input id="d-name" class="control" type="text" placeholder="Full name"><span class="msg"></span></div>
+<div class="field"><label for="d-sel">Services You're Interested In</label><div class="selectwrap"><select id="d-sel" class="control"><option value="" disabled selected>Select services…</option></select><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M5 9l7 7 7-7"/></svg></div><span class="msg"></span></div>
+<div class="field error"><label for="d-err">Email</label><input id="d-err" class="control" type="email" value="zaid@toggle" aria-invalid="true" aria-describedby="d-err-msg"><span class="msg" id="d-err-msg">Enter a complete email address — we reply here within 24 hours.</span></div>
+<div class="field"><label for="d-dis">Company</label><input id="d-dis" class="control" type="text" value="Toggle Solutions" disabled><span class="msg"></span></div>
+<div class="field"><label for="d-ta">How can we help?</label><textarea id="d-ta" class="control" placeholder="Tell us where growth is stuck…"></textarea><span class="msg"></span></div>
+<div class="field"><span style="font-size:13px;font-weight:500;color:var(--color-text-body)">Brand deck (optional)</span>
+  <div class="filewrap"><span id="d-filename">No file chosen — PDF, max 10 MB</span>
+    <label class="btn btn-secondary btn-sm" for="d-file">Choose file</label>
+    <input id="d-file" type="file" class="vh" aria-describedby="d-filename">
+  </div><span class="msg"></span></div>
+</div>
+<div class="row" style="margin-top:18px">
+  <fieldset class="bare"><legend>choice controls</legend>
+  <label class="check"><input type="checkbox" checked> Send me the free brand audit checklist</label>
+  <label class="check"><input type="checkbox"> Unchecked</label>
+  <label class="check"><input type="checkbox" disabled> Disabled</label>
+  </fieldset>
+</div>
+<div class="row">
+  <fieldset class="bare"><legend>monthly budget</legend>
+  <label class="radio"><input type="radio" name="dr" checked> Monthly budget &lt; RM 10K</label>
+  <label class="radio"><input type="radio" name="dr"> RM 10–25K</label>
+  <label class="radio"><input type="radio" name="dr"> RM 25K+</label>
+  </fieldset>
+</div>
+
+<h3>Form composition — dark</h3>
+<form class="consult" novalidate>
+  <h4>Get a Free 30-Minute Consultation</h4>
+  <p class="sub">Submit the form and we will contact you within 24 hours to schedule a quick call. We will review your website and marketing, then share what we would improve first.</p>
+  <div class="field"><label for="d2-name">Name <span class="req" aria-hidden="true">*</span></label><input id="d2-name" name="name" class="control" type="text" autocomplete="name" required></div>
+  <div class="field"><label for="d2-email">Email <span class="req" aria-hidden="true">*</span></label><input id="d2-email" name="email" class="control" type="email" autocomplete="email" required></div>
+  <div class="field"><label for="d2-phone">Contact Number</label><input id="d2-phone" name="phone" class="control" type="tel" placeholder="+(60) 123456789" autocomplete="tel" inputmode="tel"></div>
+  <div class="field"><label for="d2-url">Website URL</label><input id="d2-url" name="website" class="control" type="url" autocomplete="url"></div>
+  <div class="field"><label for="d2-svc">Services You're Interested In</label><div class="selectwrap"><select id="d2-svc" name="services" class="control"><option value="" disabled selected>Select services…</option><option>Performance Marketing</option><option>SEO</option></select><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M5 9l7 7 7-7"/></svg></div></div>
+  <div class="field"><label for="d2-help">How can we help?</label><textarea id="d2-help" name="message" class="control"></textarea></div>
+  <button class="btn btn-primary btn-lg" type="submit">Book a Consultation <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M3 12h16.5M14 5.5l6.5 6.5L14 18.5"/></svg></button>
+  <p class="fine">Free brand audit · no sales pitches, no pressure · clear plan after the call</p>
+</form>
+
+<h3>Composition states — submitted / failed</h3>
+<div class="row" style="align-items:flex-start">
+  <div class="confirm" style="max-width:360px"><h4 tabindex="-1">Done — check your inbox.</h4><p>We reply within 24 hours. Nothing else to do here.</p></div>
+  <div style="max-width:360px"><div class="banner" role="alert"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true" style="flex:none"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5.5M12 7v1.2"/></svg>That didn't send — email us at hello@toggle.solutions and we'll take it from there.</div></div>
+</div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,285 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toggle — Components 6d: Disclosure & Supplementary</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root,.light{
+  --color-brand-primary:#4A7BF7; --color-brand-primary-deep:#3056C9;
+  --color-surface-canvas:#FFFFFF; --color-surface-card:#F2F3F6; --color-surface-raised:#FFFFFF; --color-surface-overlay:#FFFFFF;
+  --color-text-primary:#0F0F0F; --color-text-body:#4A4A4A; --color-text-secondary:#6B7280; --color-text-inverse:#FFFFFF;
+  --color-border-subtle:#E4E6EE; --color-border-default:#D2D6E2; --color-border-strong:#9AA0A8;
+  --color-state-focus-ring:#3056C9; --color-state-error:#C03028; --color-state-success:#0B6B4D; --scrim:#0A122499;
+  --hover-wash:#0F0F0F0F;
+  --elev-2:0 4px 12px #0A12241F; --elev-3:0 12px 32px #0A122429;
+  --radius-sm:4px; --radius-md:8px; --radius-lg:12px; --radius-xl:16px; --radius-pill:999px;
+  --dur-fast:150ms; --ease:cubic-bezier(.22,1,.36,1);
+  --duo-a:#4A7BF7; --duo-b:#FAFAFA;
+}
+.dark{
+  --color-brand-primary:#4A7BF7; --color-brand-primary-deep:#6E95F9;
+  --color-surface-canvas:#0A1224; --color-surface-card:#121C33; --color-surface-raised:#1A2540; --color-surface-overlay:#232F4D;
+  --color-text-primary:#FFFFFF; --color-text-body:#B0B8C9; --color-text-secondary:#9CA3B5; --color-text-inverse:#0F0F0F;
+  --color-border-subtle:#1F2A44; --color-border-default:#2A3756; --color-border-strong:#44537A;
+  --color-state-focus-ring:#6E95F9; --color-state-error:#FF7A70; --color-state-success:#3DD6A3; --scrim:#000000A6;
+  --hover-wash:#FFFFFF14;
+  --elev-2:none; --elev-3:none;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Inter Tight",Inter,sans-serif;background:#E9EBF1;padding:32px;font-size:14px}
+.mode{max-width:1240px;margin:0 auto 40px;background:var(--color-surface-canvas);color:var(--color-text-primary);padding:40px 48px;border-radius:8px}
+.mode>h2{font-size:24px;font-weight:800;color:var(--color-brand-primary);margin:0 0 24px}
+h3{font-size:16px;font-weight:700;margin:32px 0 14px;border-top:1px solid var(--color-border-subtle);padding-top:22px}
+.row{display:flex;gap:24px;align-items:flex-start;flex-wrap:wrap;margin-bottom:14px}
+:focus-visible{outline:2px solid var(--color-state-focus-ring);outline-offset:2px}
+.ic{width:20px;height:20px;flex:none}
+
+/* FAQ accordion */
+.faq{max-width:720px;width:100%}
+.faq details{border:1px solid var(--color-border-subtle);border-radius:var(--radius-lg);margin-bottom:10px;background:var(--color-surface-canvas)}
+.dark .faq details{background:var(--color-surface-card)}
+.faq summary{display:flex;align-items:center;gap:14px;padding:16px 20px;font-size:15px;font-weight:700;cursor:pointer;list-style:none;border-radius:var(--radius-lg)}
+.faq summary::-webkit-details-marker{display:none}
+.faq summary:hover{background:var(--hover-wash)}
+.faq summary .ic{margin-left:auto;color:var(--color-brand-primary-deep)}
+.faq details[open] summary .plus{display:none}
+.faq details:not([open]) summary .minus{display:none}
+.faq .a{padding:0 20px 18px;font-size:14px;line-height:1.55;color:var(--color-text-body);max-width:66ch}
+
+/* Modal */
+.modalwrap{position:relative;height:380px;border-radius:var(--radius-lg);overflow:hidden;background:var(--color-surface-card);width:100%;max-width:720px}
+.modalwrap .scrim{position:absolute;inset:0;background:var(--scrim)}
+.modal{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:min(440px,90%);background:var(--color-surface-overlay);border-radius:var(--radius-xl);padding:28px;box-shadow:var(--elev-3)}
+.modal h4{font-size:22px;font-weight:700;margin:0 36px 8px 0}
+.modal p{font-size:14px;color:var(--color-text-body);line-height:1.5;margin:0 0 20px}
+.modal .x{position:absolute;top:16px;right:16px;width:40px;height:40px;border:0;background:none;color:var(--color-text-body);border-radius:var(--radius-md);cursor:pointer;display:flex;align-items:center;justify-content:center}
+.modal .x:hover{background:var(--hover-wash)}
+.modal .cta{display:inline-flex;align-items:center;gap:8px;height:40px;padding:0 22px;border-radius:var(--radius-pill);background:var(--color-brand-primary-deep);color:var(--color-text-inverse);font-weight:700;font-size:14px;text-decoration:none;border:0;cursor:pointer}
+.dark .modal .cta{color:var(--color-surface-canvas)}
+.modal .ghost{background:none;color:var(--color-brand-primary-deep);margin-left:6px;border:0;height:40px;padding:0 14px;border-radius:var(--radius-pill);font:inherit;font-weight:700;font-size:14px;cursor:pointer}
+
+/* Toast */
+.toast{display:flex;gap:10px;align-items:flex-start;width:min(360px,100%);background:var(--color-surface-overlay);border:1px solid var(--color-border-default);border-left:4px solid var(--color-state-success);border-radius:var(--radius-md);padding:13px 16px;box-shadow:var(--elev-2);font-size:13.5px;color:var(--color-text-body)}
+.toast b{color:var(--color-text-primary)}
+.toast.err{border-left-color:var(--color-state-error)}
+.toast .ic{color:var(--color-state-success);width:18px;height:18px;margin-top:1px}
+.toast.err .ic{color:var(--color-state-error)}
+
+/* Tooltip */
+.tipwrap{position:relative;display:inline-block}
+.tip{position:absolute;bottom:calc(100% + 8px);left:50%;transform:translateX(-50%);background:var(--color-text-primary);color:var(--color-surface-canvas);font-size:13px;font-weight:500;padding:7px 11px;border-radius:var(--radius-sm);white-space:nowrap}
+.tip::after{content:"";position:absolute;top:100%;left:50%;margin-left:-5px;border:5px solid transparent;border-top-color:var(--color-text-primary)}
+.tipanchor{font-size:14px;border-bottom:1px dashed var(--color-border-strong);cursor:help}
+
+/* Breadcrumb */
+.crumb{display:flex;align-items:center;gap:8px;font-size:13px;list-style:none;padding:0;margin:0;flex-wrap:wrap}
+.crumb a{color:var(--color-text-body);text-decoration:none}
+.crumb a:hover{color:var(--color-text-primary);text-decoration:underline}
+.crumb .sep{color:var(--color-text-secondary);width:14px;height:14px}
+.crumb [aria-current]{color:var(--color-text-primary);font-weight:700}
+
+/* Pagination */
+.pager{display:flex;gap:6px;align-items:center;list-style:none;padding:0;margin:0}
+.pager a,.pager span.gap{display:inline-flex;align-items:center;justify-content:center;min-width:38px;height:38px;border-radius:var(--radius-pill);font-size:14px;font-weight:500;color:var(--color-text-body);text-decoration:none}
+.pager a:hover{background:var(--hover-wash);color:var(--color-text-primary)}
+.pager a[aria-current="page"]{background:var(--color-brand-primary-deep);color:var(--color-text-inverse);font-weight:700}
+.dark .pager a[aria-current="page"]{color:var(--color-surface-canvas)}
+.pager .ic{width:18px;height:18px}
+
+/* Empty + skeleton */
+.empty{border:1.5px dashed var(--color-border-strong);border-radius:var(--radius-lg);padding:36px 28px;text-align:center;max-width:420px;width:100%}
+.empty h4{font-size:15px;font-weight:700;margin:0 0 6px}
+.empty p{font-size:13px;color:var(--color-text-body);margin:0}
+.skel{width:min(340px,100%)}
+.skel .b{border-radius:var(--radius-sm);background:var(--color-border-subtle)}
+
+/* Avatar */
+.avatar{width:40px;height:40px;border-radius:var(--radius-md);background:linear-gradient(160deg,var(--duo-a),var(--duo-b));display:inline-flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px;overflow:hidden}
+.avatar.sm{width:32px;height:32px;font-size:12px}
+.avrow{display:flex;gap:12px;align-items:center}
+.avrow .who{font-size:13px}
+.avrow .who b{display:block;font-size:14px;color:var(--color-text-primary)}
+.avrow .who span{color:var(--color-text-body)}
+
+/* Divider */
+.div-plain{border:0;border-top:1px solid var(--color-border-subtle);margin:18px 0;width:100%}
+
+/* Dot-timeline */
+.tl{list-style:none;margin:0;padding:0;max-width:560px;position:relative}
+.tl::before{content:"";position:absolute;left:7px;top:8px;bottom:8px;width:2px;background:var(--color-border-subtle)}
+.tl li{position:relative;padding:0 0 26px 36px}
+.tl li:last-child{padding-bottom:0}
+.tl .node{position:absolute;left:0;top:3px;width:16px;height:16px;border-radius:50%;background:var(--color-surface-canvas);border:2.5px solid var(--color-brand-primary)}
+.tl li.done .node{background:var(--color-brand-primary)}
+.tl h5{font-size:14px;font-weight:700;margin:0 0 4px}
+.tl h5 .kick{color:var(--color-brand-primary-deep);text-transform:uppercase;letter-spacing:.06em;font-size:12px;display:block;margin-bottom:2px}
+.tl p{font-size:13.5px;color:var(--color-text-body);line-height:1.5;margin:0}
+</style>
+</head>
+<body>
+
+<div class="mode light">
+<h2>Components 6d — Disclosure &amp; Supplementary · light</h2>
+
+<h3>FAQ accordion (live-site questions; native details/summary)</h3>
+<div class="faq">
+  <details open>
+    <summary>What do I get in the Free Brand Audit?
+      <svg class="ic plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg>
+      <svg class="ic minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M4 12h16"/></svg>
+    </summary>
+    <div class="a">A written review of your website and marketing — what's working, what's leaking, and the first three things we would fix. Delivered within a week of the call, no strings attached.</div>
+  </details>
+  <details>
+    <summary>Do you require long-term contracts?
+      <svg class="ic plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg>
+      <svg class="ic minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M4 12h16"/></svg>
+    </summary>
+    <div class="a">Monthly retainers with a 3-month minimum — long enough for conversion data to mean something, short enough that we stay accountable.</div>
+  </details>
+  <details>
+    <summary>Who will I work with?
+      <svg class="ic plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg>
+      <svg class="ic minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M4 12h16"/></svg>
+    </summary>
+    <div class="a">Senior operators only — the people in the proposal are the people on the account. No junior account-manager layer.</div>
+  </details>
+</div>
+
+<h3>Modal / dialog (static render — scrim + overlay surface)</h3>
+<div class="modalwrap" aria-hidden="true">
+  <div class="scrim"></div>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="m-t">
+    <button class="x" aria-label="Close"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+    <h4 id="m-t">Leave this page?</h4>
+    <p>Your consultation form has unsaved details. We only ask once — your answers aren't stored until you submit.</p>
+    <button class="cta">Keep editing</button><button class="ghost">Discard</button>
+  </div>
+</div>
+
+<h3>Toast / notification</h3>
+<div class="row">
+  <div class="toast" role="status"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M4 13l5.5 5.5L20 6"/></svg><div><b>Sent.</b> We reply within 24 hours — watch your inbox.</div></div>
+  <div class="toast err" role="alert"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5.5M12 7v1.2"/></svg><div><b>That didn't send.</b> Email hello@toggle.solutions and we'll take it from there.</div></div>
+</div>
+
+<h3>Tooltip (hover/focus; static render)</h3>
+<div class="row" style="padding-top:40px;padding-left:80px">
+  <span class="tipwrap"><span class="tip" role="tooltip" id="tip1">Cost per lead, media only</span><span class="tipanchor" tabindex="0" aria-describedby="tip1">CPL</span></span>
+  <span class="tipwrap"><span class="tip" role="tooltip" id="tip2">Conversions API — outcome events fed back to the ad platform</span><span class="tipanchor" tabindex="0" aria-describedby="tip2">CAPI</span></span>
+</div>
+
+<h3>Breadcrumb</h3>
+<nav aria-label="Breadcrumb"><ol class="crumb">
+  <li><a href="#">Home</a></li>
+  <li><svg class="sep" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></li>
+  <li><a href="#">Our Work</a></li>
+  <li><svg class="sep" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></li>
+  <li><span aria-current="page">UNITAR</span></li>
+</ol></nav>
+
+<h3>Pagination</h3>
+<nav aria-label="Case studies pages"><ul class="pager">
+  <li><a href="#" aria-label="Previous page"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M21 12H4.5M10 5.5L3.5 12l6.5 6.5"/></svg></a></li>
+  <li><a href="#" aria-current="page">1</a></li>
+  <li><a href="#">2</a></li>
+  <li><a href="#">3</a></li>
+  <li><span class="gap" aria-hidden="true">…</span></li>
+  <li><a href="#">8</a></li>
+  <li><a href="#" aria-label="Next page"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M3 12h16.5M14 5.5l6.5 6.5L14 18.5"/></svg></a></li>
+</ul></nav>
+
+<h3>Empty state + loading skeleton</h3>
+<div class="row">
+  <div class="empty"><h4>No reports yet</h4><p>First read-out lands Friday Wk 1 — no projections shown as data.</p></div>
+  <div class="skel" aria-hidden="true">
+    <div class="b" style="height:17px;width:60%;margin-bottom:12px"></div>
+    <div class="b" style="height:13px;width:100%;margin-bottom:8px"></div>
+    <div class="b" style="height:13px;width:84%;margin-bottom:8px"></div>
+    <div class="b" style="height:13px;width:40%"></div>
+  </div>
+</div>
+
+<h3>Avatar (rounded-square — circular crops are banned on sales surfaces, BRAND-IDENTITY §7)</h3>
+<div class="row">
+  <div class="avrow"><span class="avatar" role="img" aria-label="Viknesh — duotone avatar">V</span><span class="who"><b>Viknesh</b><span>Sales &amp; Partnership Director</span></span></div>
+  <div class="avrow"><span class="avatar sm" role="img" aria-label="Zaid — duotone avatar">Z</span><span class="who"><b>Zaid</b><span>Growth Strategy</span></span></div>
+</div>
+
+<h3>Divider</h3>
+<hr class="div-plain">
+
+<h3>Dot-timeline (challenge → solution → result; the case-study spine)</h3>
+<ol class="tl">
+  <li class="done"><span class="node" aria-hidden="true"></span><h5><span class="kick">Challenge</span>Acquisition costs with no ceiling</h5><p>A leading Malaysian private university drowning in CPL — "we need more ads" was the incoming brief.</p></li>
+  <li class="done"><span class="node" aria-hidden="true"></span><h5><span class="kick">Solution</span>Rebuild the funnel, not the ads</h5><p>Diagnosis first: conditional lead forms, CRM scoring, CAPI outcome events — the lead-quality loop.</p></li>
+  <li><span class="node" aria-hidden="true"></span><h5><span class="kick">Result</span>32,000+ leads · −47% CPL</h5><p>Compounding across a 3-year engagement, optimised to enrolment, not form submits.</p></li>
+</ol>
+</div>
+
+<!-- DARK -->
+<div class="mode dark">
+<h2>Components 6d — Disclosure &amp; Supplementary · dark</h2>
+
+<h3>FAQ accordion</h3>
+<div class="faq">
+  <details open>
+    <summary>What does pricing look like?
+      <svg class="ic plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg>
+      <svg class="ic minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M4 12h16"/></svg>
+    </summary>
+    <div class="a">Monthly retainers scoped to the engagement model — Growth Audit, Integrated Partnership, Campaign Intensive, Market Entry, or Creative Performance Lab. The proposal carries the exact split.</div>
+  </details>
+  <details>
+    <summary>What results can I expect and how fast?
+      <svg class="ic plus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M12 4v16M4 12h16"/></svg>
+      <svg class="ic minus" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M4 12h16"/></svg>
+    </summary>
+    <div class="a">The first 30 days buy conversion data, not certainty. From week 6 we optimise to outcome events — and report against the numbers we committed to.</div>
+  </details>
+</div>
+
+<h3>Modal</h3>
+<div class="modalwrap" aria-hidden="true">
+  <div class="scrim"></div>
+  <div class="modal" role="dialog" aria-modal="true" aria-labelledby="m-t2">
+    <button class="x" aria-label="Close"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M5 5l14 14M19 5L5 19"/></svg></button>
+    <h4 id="m-t2">Leave this page?</h4>
+    <p>Your consultation form has unsaved details. We only ask once — your answers aren't stored until you submit.</p>
+    <button class="cta">Keep editing</button><button class="ghost">Discard</button>
+  </div>
+</div>
+
+<h3>Toast · tooltip · breadcrumb · pagination</h3>
+<div class="row">
+  <div class="toast" role="status"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M4 13l5.5 5.5L20 6"/></svg><div><b>Sent.</b> We reply within 24 hours — watch your inbox.</div></div>
+  <div class="toast err" role="alert"><svg class="ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><circle cx="12" cy="12" r="8.5"/><path d="M12 11v5.5M12 7v1.2"/></svg><div><b>That didn't send.</b> Email hello@toggle.solutions.</div></div>
+</div>
+<div class="row" style="padding-top:40px;padding-left:80px">
+  <span class="tipwrap"><span class="tip" role="tooltip" id="tip3">Cost per lead, media only</span><span class="tipanchor" tabindex="0" aria-describedby="tip3">CPL</span></span>
+</div>
+<nav aria-label="Breadcrumb"><ol class="crumb">
+  <li><a href="#">Home</a></li>
+  <li><svg class="sep" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M9 5l7 7-7 7"/></svg></li>
+  <li><span aria-current="page">UNITAR</span></li>
+</ol></nav>
+<div style="height:14px"></div>
+<nav aria-label="Pages"><ul class="pager">
+  <li><a href="#" aria-current="page">1</a></li><li><a href="#">2</a></li><li><a href="#">3</a></li>
+</ul></nav>
+
+<h3>Empty · skeleton · avatar · timeline</h3>
+<div class="row">
+  <div class="empty"><h4>No reports yet</h4><p>First read-out lands Friday Wk 1.</p></div>
+  <div class="avrow"><span class="avatar" role="img" aria-label="Viknesh — duotone avatar">V</span><span class="who"><b>Viknesh</b><span>Sales &amp; Partnership Director</span></span></div>
+</div>
+<ol class="tl" style="margin-top:18px">
+  <li class="done"><span class="node" aria-hidden="true"></span><h5><span class="kick">Challenge</span>Acquisition costs with no ceiling</h5><p>"We need more ads" was the incoming brief.</p></li>
+  <li><span class="node" aria-hidden="true"></span><h5><span class="kick">Result</span>32,000+ leads · −47% CPL</h5><p>Optimised to enrolment, not form submits.</p></li>
+</ol>
+</div>
+
+</body>
+</html>
