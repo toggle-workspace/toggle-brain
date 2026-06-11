@@ -106,6 +106,9 @@ When you don't know where something lives, look here. One question per line. Kee
 - TikTok production pipeline? → `playbooks/tiktok-production.md`
 - Creative review process? → `playbooks/creative-review.md`
 
+## Tools (runnable code)
+- Programmatic video rendering (Remotion / React)? → `tools/remotion/` (quickstart + house rules in its `README.md`)
+
 ## Cockpit (daily operating state)
 - Today's focus / top 3? → `cockpit/current.md`
 - Per-client todos? → `cockpit/todos/<client-slug>.md`
