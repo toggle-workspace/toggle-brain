@@ -106,6 +106,16 @@ git commit -m "feat(audaura-unitar): wk24 TikTok hook variants"
 
 ---
 
+## MCP server
+
+This repo is exposed as an MCP server via **[toggle-mcp](https://github.com/toggle-workspace/toggle-mcp)** — a separate repo that reads `content/` (a git submodule pointing here) and serves the knowledge base as MCP resources, prompts, and tools.
+
+- **Install**: follow `installations/toggle-mcp/install.md` (paste it into Claude Code — it runs the full setup)
+- **Auto-sync**: every push to `main` here triggers a rebuild in `toggle-mcp` via GitHub Actions (see `TOGGLE_BRAIN_SETUP.md`)
+- **Local dev**: the server lives at `~/Desktop/toggle-mcp` — run `npm run dev` there to test changes
+
+---
+
 ## Status
 
 Repo restructure landed June 2026 (see git history). Existing content migrated:

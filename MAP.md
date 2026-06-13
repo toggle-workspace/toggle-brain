@@ -128,6 +128,11 @@ When you don't know where something lives, look here. One question per line. Kee
 - UNITAR campaign naming convention? → `clients/audaura-unitar/CAMPAIGN-NAMING.md`
 - UNITAR weekly leads breakdown format? → `clients/audaura-unitar/WEEKLY-REPORT-FORMAT.md`
 
+## Installations (tooling setup)
+- How do I install the toggle-brain MCP server? → `installations/toggle-mcp/install.md`
+- Set up toggle-mcp auto-sync from toggle-brain? → `TOGGLE_BRAIN_SETUP.md`
+- How do I connect Google Drive to Claude Code? → `installations/google-drive/install.md`
+
 ## Governance
 - Branching / PR rules? → `CONTRIBUTING.md`
 - Who reviews what? → `.github/CODEOWNERS`
