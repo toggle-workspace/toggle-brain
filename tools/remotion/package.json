@@ -7,10 +7,12 @@
   "private": true,
   "dependencies": {
     "@remotion/cli": "4.0.475",
+    "@remotion/google-fonts": "4.0.475",
+    "@remotion/paths": "4.0.475",
+    "@remotion/tailwind-v4": "4.0.475",
     "react": "19.2.3",
     "react-dom": "19.2.3",
     "remotion": "4.0.475",
-    "@remotion/tailwind-v4": "4.0.475",
     "tailwindcss": "4.0.0"
   },
   "devDependencies": {
