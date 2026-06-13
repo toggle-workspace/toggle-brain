@@ -16,7 +16,7 @@ The Toggle Solutions internal knowledge repository. This file routes Claude (and
 | **`templates/`** | Empty shells — briefs, proposals, quotations, reports, decks. | **Copy out, don't edit here.** Templates seed `clients/`. |
 | **`clients/`** | Filled outputs per client — briefs, strategies, creative, media, reports, meetings, quotes. | **Never write back into `brain/`.** Outputs only. |
 
-Plus supporting zones: **`playbooks/`** (how-we-do-things runbooks), **`assets/`** (shared non-client binaries), **`archive/`** (closed engagements + quote ledger), **`cockpit/`** (daily operating state — focus, todos, journal, decisions; powers `/toggle-brief`, `/toggle-status`, `/toggle-decide`).
+Plus supporting zones: **`playbooks/`** (how-we-do-things runbooks), **`assets/`** (shared non-client binaries), **`archive/`** (closed engagements + quote ledger), **`cockpit/`** (daily operating state — focus, todos, journal, decisions; powers `/toggle-brief`, `/toggle-status`, `/toggle-decide`), **`tools/`** (runnable code shared by the team — currently `tools/remotion/`, the programmatic-video workspace).
 
 ---
 
@@ -38,6 +38,7 @@ Plus supporting zones: **`playbooks/`** (how-we-do-things runbooks), **`assets/`
 | Update pricing | edit the right file in `brain/pricing/` **and** add a `CHANGELOG.md` entry |
 | Record a case study | `brain/case-studies/<client>-<year>.md`, tag it in `_index.md` |
 | Capture a new partner/tool | `brain/partners-stack.md` |
+| Render / make a branded video (explainer, ad, reel, promo) | `/remotion-video` skill | drives `tools/remotion/` (quickstart in its `README.md`); canon in `clients/toggle/design-system/`; deliverables → `clients/<slug>/02-creative/` |
 | Look up team member | `brain/team/roster.md` + `brain/team/bios/<name>.md` |
 | Find anything | `MAP.md` (flat question → path index) |
 
