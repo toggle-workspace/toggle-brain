@@ -107,7 +107,8 @@ When you don't know where something lives, look here. One question per line. Kee
 - Creative review process? → `playbooks/creative-review.md`
 
 ## Tools (runnable code)
-- Programmatic video rendering (Remotion / React)? → `tools/remotion/` (quickstart + house rules in its `README.md`)
+- Make / render a branded video (explainer, ad, reel, promo)? → `/remotion-video` skill (drives `tools/remotion/`; canon in `clients/toggle/design-system/`; deliverables → `clients/<slug>/02-creative/`)
+- The Remotion workspace itself (quickstart, house rules, version pin)? → `tools/remotion/README.md`
 
 ## Cockpit (daily operating state)
 - Today's focus / top 3? → `cockpit/current.md`

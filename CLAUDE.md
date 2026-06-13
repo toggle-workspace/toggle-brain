@@ -38,7 +38,7 @@ Plus supporting zones: **`playbooks/`** (how-we-do-things runbooks), **`assets/`
 | Update pricing | edit the right file in `brain/pricing/` **and** add a `CHANGELOG.md` entry |
 | Record a case study | `brain/case-studies/<client>-<year>.md`, tag it in `_index.md` |
 | Capture a new partner/tool | `brain/partners-stack.md` |
-| Render programmatic video (React/Remotion) | `tools/remotion/` | quickstart + house rules in `tools/remotion/README.md`; finished deliverables go to `clients/<slug>/02-creative/` |
+| Render / make a branded video (explainer, ad, reel, promo) | `/remotion-video` skill | drives `tools/remotion/` (quickstart in its `README.md`); canon in `clients/toggle/design-system/`; deliverables → `clients/<slug>/02-creative/` |
 | Look up team member | `brain/team/roster.md` + `brain/team/bios/<name>.md` |
 | Find anything | `MAP.md` (flat question → path index) |
 
