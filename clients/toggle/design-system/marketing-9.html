@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Toggle — Marketing Asset Library (Stage 9)</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#4A7BF7;--deep:#3056C9;--deepd:#6E95F9;--canvas:#0A1224;--card:#121C33;--callout:#18254A;--ink:#FFFFFF;--body:#B0B8C9;--sec:#9CA3B5;--bs:#1F2A44;--slate:#6B7489;--inkL:#0F0F0F;--bodyL:#4A4A4A;--cardL:#F2F3F6;--bsL:#E4E6EE}
+*{box-sizing:border-box}
+body{background:#E9EBF1;margin:0;padding:40px;font-family:"Inter Tight",Inter,sans-serif}
+h2{font-size:18px;font-weight:800;color:var(--deep);max-width:1240px;margin:40px auto 6px}
+.note{max-width:1240px;margin:0 auto 16px;font-size:13px;color:#555}
+.shelf{max-width:1240px;margin:0 auto;display:flex;gap:24px;flex-wrap:wrap;align-items:flex-start}
+.frame{background:#fff;padding:10px;border-radius:8px;box-shadow:0 2px 12px rgba(10,18,36,.12)}
+.frame .cap{font-size:12px;color:#555;margin-top:8px;text-align:center}
+.scale{transform:scale(.3);transform-origin:top left}
+.holder1080{width:324px;height:324px;overflow:hidden}
+.holder1350{width:324px;height:405px;overflow:hidden}
+.holder628{width:360px;height:188.4px;overflow:hidden}
+.num{font-variant-numeric:tabular-nums}
+.wm{color:var(--ink)}
+.wm svg{height:100%;width:auto;display:block;fill:currentColor}
+.sq{width:1080px;height:1080px;background:var(--canvas);color:var(--ink);position:relative;padding:96px}
+.p45{width:1080px;height:1350px;background:var(--canvas);color:var(--ink);position:relative;padding:96px}
+.ls{width:1200px;height:628px;background:var(--canvas);color:var(--ink);position:relative;padding:72px 84px}
+.k{font-size:34px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--deepd)}
+.bigN{font-size:300px;font-weight:800;line-height:.95;color:var(--blue)}
+.bigT{font-size:74px;font-weight:800;line-height:1.15}
+.bigT em{font-style:normal;color:var(--blue)}
+.sub{font-size:40px;color:var(--body);line-height:1.4}
+.rcpt{font-size:32px;color:var(--body)}
+.cardrow{display:flex;gap:36px}
+.scard{flex:1;background:var(--card);border-radius:24px;padding:48px 36px;text-align:center;position:relative}
+.scard::before{content:"";position:absolute;top:0;left:0;right:0;height:12px;border-radius:24px 24px 0 0;background:var(--blue)}
+.scard .n{font-size:110px;font-weight:800;line-height:1}
+.scard.focal .n{color:var(--blue)}
+.scard .l{font-size:32px;font-weight:700;margin-top:16px}
+.wmrow{position:absolute;left:96px;bottom:84px;height:60px}
+.ls .wmrow{left:84px;bottom:60px;height:48px}
+.sealrow{position:absolute;right:96px;bottom:92px;font-size:32px;font-weight:700;color:var(--deepd)}
+.sealrow .br{font-weight:400}
+.ls .sealrow{right:84px;bottom:64px;font-size:26px}
+.caro{display:grid;grid-template-columns:repeat(5,1fr);gap:14px;max-width:1240px;margin:0 auto}
+.cslide{aspect-ratio:1;background:var(--canvas);color:var(--ink);border-radius:10px;padding:22px;position:relative;font-size:11px}
+.cslide .ck{font-size:8.5px;font-weight:700;letter-spacing:.06em;color:var(--deepd);text-transform:uppercase}
+.cslide .ct{font-size:15px;font-weight:800;line-height:1.2;margin-top:6px}
+.cslide .cb{font-size:10.5px;color:var(--body);margin-top:6px;line-height:1.45}
+.cslide .cn{font-size:30px;font-weight:800;color:var(--blue);line-height:1;margin-top:8px}
+.cslide .pgn{position:absolute;bottom:10px;right:12px;font-size:9px;color:var(--slate)}
+.sig{background:#fff;border-radius:8px;padding:24px;max-width:520px;font-size:13.5px;color:var(--bodyL)}
+.sig table{border-collapse:collapse}
+.sig .nm{font-size:15px;font-weight:700;color:var(--inkL)}
+.sig .rl{color:var(--bodyL)}
+.sig .ln{color:#3056C9;font-weight:700;text-decoration:none}
+.sig .sl{color:#9AA0A8;font-weight:700}
+.sig .sl .br{font-weight:400}
+.sig td{padding:1px 0}
+.sig .wmsig{height:20px;color:var(--inkL);margin-bottom:8px}
+.og{width:1200px;height:630px;background:var(--canvas);color:var(--ink);position:relative;padding:84px}
+.bc{width:1050px;height:600px;background:var(--canvas);color:var(--ink);position:relative;padding:72px}
+.bcL{width:1050px;height:600px;background:#fff;color:var(--inkL);position:relative;padding:72px}
+.iso polygon{fill:none;stroke:var(--blue);stroke-width:3;stroke-linecap:butt;stroke-linejoin:miter}
+.iso .fill{fill:var(--blue)}
+</style>
+</head>
+<body>
+
+<h2>9a · LinkedIn stat card — 1080×1080 · three variants (shown at 30%)</h2>
+<div class="note">V1 single big stat · V2 3-stat hero · V3 before/after. Wordmark bottom-left, seal bottom-right, one focal blue per card, receipt inline. No emoji, no headshots, no gradients.</div>
+<div class="shelf">
+  <div class="frame"><div class="holder1080"><div class="scale">
+    <div class="sq">
+      <div class="k">UNITAR · 2023–2026</div>
+      <div class="bigN num" style="margin-top:48px;font-size:225px">32,000+</div>
+      <div class="sub" style="margin-top:24px">leads — engineered, not bought.<br>CPL down 47% while volume scaled.</div>
+      <div class="wmrow wm"><svg viewBox="0 0 1432 392" aria-hidden="true"><use href="#wmk"/></svg></div>
+      <div class="sealrow"><span class="br">[&nbsp;</span>toggle.solutions<span class="br">&nbsp;]</span></div>
+    </div>
+  </div></div><div class="cap">V1 · single big stat</div></div>
+
+  <div class="frame"><div class="holder1080"><div class="scale">
+    <div class="sq">
+      <div class="bigT">How We Helped a Publication Brand Turn Budget into <em>Revenue</em></div>
+      <div class="cardrow" style="margin-top:84px">
+        <div class="scard focal"><div class="n num">11.5x</div><div class="l">Return on Investment</div></div>
+        <div class="scard"><div class="n num">+300%</div><div class="l">Revenue</div></div>
+        <div class="scard"><div class="n num">+200%</div><div class="l">Orders</div></div>
+      </div>
+      <div class="rcpt" style="margin-top:56px">Al Hidayah Publications · TikTok Shop · 2025</div>
+      <div class="wmrow wm"><svg viewBox="0 0 1432 392" aria-hidden="true"><use href="#wmk"/></svg></div>
+    </div>
+  </div></div><div class="cap">V2 · 3-stat hero</div></div>
+
+  <div class="frame"><div class="holder1080"><div class="scale">
+    <div class="sq">
+      <div class="k">CPL · indexed · UNITAR</div>
+      <div style="display:flex;gap:120px;align-items:flex-end;margin-top:120px">
+        <div><div class="num" style="font-size:200px;font-weight:800;color:var(--sec)">100</div><div class="rcpt">before</div></div>
+        <div><div class="num" style="font-size:200px;font-weight:800;color:var(--blue)">53</div><div class="rcpt">after the rebuild</div></div>
+      </div>
+      <div class="sub" style="margin-top:64px">Same budget. Rebuilt funnel. −47%.</div>
+      <div class="wmrow wm"><svg viewBox="0 0 1432 392" aria-hidden="true"><use href="#wmk"/></svg></div>
+      <div class="sealrow"><span class="br">[&nbsp;</span>toggle.solutions<span class="br">&nbsp;]</span></div>
+    </div>
+  </div></div><div class="cap">V3 · before/after</div></div>
+
+  <div class="frame"><div class="holder1350"><div class="scale">
+    <div class="p45">
+      <div class="k">Education media · our own spend data</div>
+      <div class="bigT" style="margin-top:64px">Where your next<br>student actually<br>comes from</div>
+      <div style="margin-top:84px;font-size:44px;line-height:1.75" class="num">
+        <div>Google search <b style="color:var(--blue)">RM 154</b> CPL</div>
+        <div>Meta <b>RM 291</b> CPL</div>
+        <div>TikTok <b>RM 525</b> CPL</div>
+      </div>
+      <div class="rcpt" style="margin-top:64px">Toggle education portfolio · Malaysia · 2025</div>
+      <div class="wmrow wm" style="bottom:96px"><svg viewBox="0 0 1432 392" aria-hidden="true"><use href="#wmk"/></svg></div>
+    </div>
+  </div></div><div class="cap">1080×1350 · 4:5 feed variant</div></div>
+</div>
+
+<h2>9a · LinkedIn carousel — 10-slide template</h2>
+<div class="note">hook → 2× problem → 3× insight → proof → micro case → the catch (honest disqualifier) → CTA. 1080×1080 each; minis show the full arc with real copy.</div>
+<div class="caro">
+  <div class="cslide"><span class="ck">Hook</span><div class="ct">Your CPL isn't rising because ads got worse.</div><div class="cn num">RM 525</div><div class="cb">what TikTok leads cost when the funnel is the problem.</div><span class="pgn num">1/10</span></div>
+  <div class="cslide"><span class="ck">Problem</span><div class="ct">The auction optimises to form-fillers.</div><div class="cb">Nobody tells the platform who enrolled — so it finds more people who fill forms and vanish.</div><span class="pgn num">2/10</span></div>
+  <div class="cslide"><span class="ck">Problem</span><div class="ct">Leads die in the inbox.</div><div class="cb">Median first response we audit: 20+ hours. Conversion triples under one hour.</div><span class="pgn num">3/10</span></div>
+  <div class="cslide"><span class="ck">Insight 1</span><div class="ct">Qualify inside the ad.</div><div class="cb">Conditional forms: status, level, mode — scored before sales ever sees the lead.</div><span class="pgn num">4/10</span></div>
+  <div class="cslide"><span class="ck">Insight 2</span><div class="ct">Route by score, answer in minutes.</div><div class="cb">High-intent → senior advisor. "Not sure yet" → nurture. Measured weekly.</div><span class="pgn num">5/10</span></div>
+  <div class="cslide"><span class="ck">Insight 3</span><div class="ct">Feed outcomes back.</div><div class="cb">CRM events → Conversions API. The algorithm retrains on revenue, not noise.</div><span class="pgn num">6/10</span></div>
+  <div class="cslide"><span class="ck">Proof</span><div class="ct">From week 6, CPL stops being a vanity number.</div><div class="cn num">−47%</div><div class="cb">UNITAR cost per lead, at scale.</div><span class="pgn num">7/10</span></div>
+  <div class="cslide"><span class="ck">Micro case</span><div class="ct">32,000+ leads, three years, one funnel.</div><div class="cb">Aggressive targets, 13 campuses, optimised to enrolment — not submits.</div><span class="pgn num">8/10</span></div>
+  <div class="cslide"><span class="ck">The catch</span><div class="ct">It needs CRM access.</div><div class="cb">No outcome events, no loop. We don't take the engagement without it.</div><span class="pgn num">9/10</span></div>
+  <div class="cslide"><span class="ck">CTA</span><div class="ct">Where is growth stuck?</div><div class="cb">30 minutes, your numbers, our first prescription — free. toggle.solutions</div><span class="pgn num">10/10</span></div>
+</div>
+
+<h2>9b · Meta + Google ad creative — 3 sizes × 3 hooks (representatives)</h2>
+<div class="note">One hook per asset · receipt inline · CTA lives in the platform button, never baked into the image · quote-led ships only with approved quotes.</div>
+<div class="shelf">
+  <div class="frame"><div class="holder1080"><div class="scale">
+    <div class="sq">
+      <div class="k">Higher-ed marketing</div>
+      <div class="bigN num" style="font-size:260px;margin-top:56px">−47%</div>
+      <div class="sub" style="margin-top:24px">cost per lead when the funnel —<br>not the ads — gets fixed.</div>
+      <div class="rcpt" style="margin-top:48px">UNITAR · 32,000+ leads · 2023–2026</div>
+      <div class="wmrow wm"><svg viewBox="0 0 1432 392" aria-hidden="true"><use href="#wmk"/></svg></div>
+    </div>
+  </div></div><div class="cap">stat-led · 1080×1080</div></div>
+  <div class="frame"><div class="holder1350"><div class="scale">
+    <div class="p45">
+      <div class="bigT" style="font-size:84px;line-height:1.25;margin-top:48px">"They refused our first brief — and rewrote it."</div>
+      <div class="rcpt" style="margin-top:56px">Marketing Director · UNITAR<br>[ composite — ships only with an approved quote ]</div>
+      <div style="margin-top:96px;font-size:44px;font-weight:700;color:var(--deepd)">Diagnosis before prescription.</div>
+      <div class="wmrow wm" style="bottom:96px"><svg viewBox="0 0 1432 392" aria-hidden="true"><use href="#wmk"/></svg></div>
+    </div>
+  </div></div><div class="cap">quote-led · 1080×1350</div></div>
+  <div class="frame"><div class="holder628"><div class="scale">
+    <div class="ls">
+      <div style="display:flex;gap:84px;align-items:center">
+        <div><div class="k" style="font-size:26px">Before</div><div class="num" style="font-size:130px;font-weight:800;color:var(--sec)">RM 291</div></div>
+        <div style="font-size:60px;color:var(--deepd)">→</div>
+        <div><div class="k" style="font-size:26px">After</div><div class="num" style="font-size:130px;font-weight:800;color:var(--blue)">RM 154</div></div>
+      </div>
+      <div style="font-size:30px;color:var(--body);margin-top:36px">Cost per lead, education portfolio — funnel fixed first.</div>
+      <div class="wmrow wm"><svg viewBox="0 0 1432 392" aria-hidden="true"><use href="#wmk"/></svg></div>
+      <div class="sealrow"><span class="br">[&nbsp;</span>toggle.solutions<span class="br">&nbsp;]</span></div>
+    </div>
+  </div></div><div class="cap">before/after · 1200×628</div></div>
+</div>
+
+<h2>9c · Email signature (one template; name/role swap for Viknesh / Zaid / generic)</h2>
+<div class="shelf">
+  <div class="sig"><table><tr><td>
+    <div class="wmsig"><svg viewBox="0 0 1432 392" style="height:20px;width:auto" aria-hidden="true"><use href="#wmk"/></svg></div>
+    <div class="nm">Viknesh</div>
+    <div class="rl">Sales &amp; Partnership Director · Toggle Solutions</div>
+    <div style="margin-top:6px"><a class="ln" href="tel:+60125688681">(+60) 125 688 681</a> · <a class="ln" href="https://toggle.solutions">toggle.solutions</a></div>
+    <div class="sl" style="margin-top:8px"><span class="br">[&nbsp;</span>Your Digital Growth Partner<span class="br">&nbsp;]</span></div>
+  </td></tr></table></div>
+  <div class="sig"><table><tr><td>
+    <div class="wmsig"><svg viewBox="0 0 1432 392" style="height:20px;width:auto" aria-hidden="true"><use href="#wmk"/></svg></div>
+    <div class="nm">Zaid</div>
+    <div class="rl">Growth Strategy · Toggle Solutions</div>
+    <div style="margin-top:6px"><a class="ln" href="mailto:hello@toggle.solutions">hello@toggle.solutions</a> · <a class="ln" href="https://toggle.solutions">toggle.solutions</a></div>
+    <div class="sl" style="margin-top:8px"><span class="br">[&nbsp;</span>Your Digital Growth Partner<span class="br">&nbsp;]</span></div>
+  </td></tr></table></div>
+</div>
+
+<h2>9c · OG image — 1200×630</h2>
+<div class="shelf">
+  <div class="frame"><div class="holder628" style="height:189px"><div class="scale">
+    <div class="og">
+      <div class="wm" style="height:64px"><svg viewBox="0 0 1432 392" aria-hidden="true"><use href="#wmk"/></svg></div>
+      <div style="font-size:64px;font-weight:800;line-height:1.15;margin-top:56px">Your Digital<br>Growth Partner</div>
+      <div style="font-size:30px;color:var(--body);margin-top:24px">Technical Growth Architecture · Malaysia &amp; ASEAN</div>
+      <svg class="iso" viewBox="-4 -4 230 270" style="position:absolute;right:84px;top:90px;width:200px">
+        <g><polygon points="90.1,0.0 135.1,26.0 45.0,78.0 0.0,52.0"/><polygon points="135.1,130.0 180.1,156.0 90.1,208.0 45.0,182.0"/><polygon points="135.1,130.0 45.0,182.0 45.0,78.0 135.1,26.0"/><polygon class="fill" points="180.1,208.0 90.1,260.0 90.1,208.0 180.1,156.0"/><polygon points="0.0,208.0 45.0,234.0 45.0,78.0 0.0,52.0"/><polygon points="45.0,234.0 90.1,260.0 90.1,208.0 45.0,182.0"/></g>
+      </svg>
+      <div class="sealrow" style="bottom:72px"><span class="br">[&nbsp;</span>toggle.solutions<span class="br">&nbsp;]</span></div>
+    </div>
+  </div></div><div class="cap">OG / Twitter card — favicon stays the current wordmark tile (Stage 1)</div></div>
+</div>
+
+<h2>9c · Business card — 90×54mm · 3mm bleed · 6mm safe · CMYK per TOKENS §1.9</h2>
+<div class="shelf">
+  <div class="frame"><div style="width:315px;height:180px;overflow:hidden"><div class="scale">
+    <div class="bc">
+      <div class="wm" style="height:56px"><svg viewBox="0 0 1432 392" aria-hidden="true"><use href="#wmk"/></svg></div>
+      <div style="position:absolute;left:72px;bottom:72px">
+        <div style="font-size:38px;font-weight:700">Viknesh</div>
+        <div style="font-size:26px;color:var(--body);margin-top:4px">Sales &amp; Partnership Director</div>
+        <div class="num" style="font-size:26px;color:var(--deepd);font-weight:700;margin-top:18px">(+60) 125 688 681 · toggle.solutions</div>
+      </div>
+    </div>
+  </div></div><div class="cap">front (dark)</div></div>
+  <div class="frame"><div style="width:315px;height:180px;overflow:hidden"><div class="scale">
+    <div class="bcL">
+      <svg class="iso" viewBox="-4 -4 449 326" style="position:absolute;left:72px;top:120px;width:380px">
+        <g><polygon points="90.1,0.0 135.1,26.0 45.0,78.0 0.0,52.0"/><polygon points="135.1,130.0 180.1,156.0 90.1,208.0 45.0,182.0"/><polygon points="135.1,130.0 45.0,182.0 45.0,78.0 135.1,26.0"/><polygon class="fill" points="180.1,208.0 90.1,260.0 90.1,208.0 180.1,156.0"/><polygon points="0.0,208.0 45.0,234.0 45.0,78.0 0.0,52.0"/><polygon points="45.0,234.0 90.1,260.0 90.1,208.0 45.0,182.0"/></g>
+      </svg>
+      <div style="position:absolute;right:72px;bottom:72px;font-size:26px;font-weight:700;color:#3056C9"><span style="font-weight:400">[&nbsp;</span>Your Digital Growth Partner<span style="font-weight:400">&nbsp;]</span></div>
+    </div>
+  </div></div><div class="cap">back (light)</div></div>
+</div>
+
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg"><symbol id="wmk" viewBox="0 0 1432 392"><path fill="currentColor" d="M1166.39 1.57487C1166.39 2.43389 1157.45 54.1188 1146.44 116.398C1135.43 178.678 1126.5 232.081 1126.5 234.944C1126.5 238.667 1127.77 241.244 1130.64 243.964C1134.47 247.4 1136.07 247.686 1147.4 247.686C1154.42 247.686 1160 247.973 1160 248.545C1160 249.261 1152.82 290.351 1151.23 298.799C1150.43 302.807 1149.63 303.523 1142.77 304.812C1120.27 309.107 1090.59 307.818 1072.88 301.948C1061.55 298.083 1049.75 288.347 1044.96 278.898C1041.61 272.169 1041.13 269.162 1041.29 254.129C1041.29 239.239 1044.16 221.486 1062.35 119.119C1074 54.4051 1083.41 1.00218 1083.41 0.715838C1083.41 0.286342 1102.08 0 1124.9 0C1154.26 0 1166.39 0.429496 1166.39 1.57487Z"/>
+<path fill="currentColor" d="M140.413 21.6189C140.413 22.9074 133.871 60.8478 131.637 72.5879L130.68 77.3125H155.571C171.527 77.3125 180.303 77.8852 180.303 78.7442C180.303 80.6054 172.485 125.418 171.527 129.856C170.73 133.006 170.091 133.149 145.678 133.436L120.787 133.865L111.533 186.123C101.321 243.821 101.002 246.971 104.672 248.259C106.108 248.689 116.798 249.118 128.606 249.118C148.391 249.118 150.146 249.261 149.349 251.552C148.87 252.984 146.636 265.583 144.243 279.614L139.775 305.241L100.523 304.669C66.058 304.096 60.1543 303.666 50.8998 300.946C30.7951 295.076 20.7428 285.054 17.7113 268.017C15.7965 256.849 16.4348 250.693 27.7636 187.411C32.7099 160.209 36.6989 136.872 36.6989 135.44C36.6989 133.436 34.3055 133.149 18.3495 133.149C6.86114 133.149 0 132.577 0 131.718C0 129.856 7.81846 85.0438 8.93536 80.4623C9.57368 77.4557 10.2118 77.3125 28.5613 77.3125H47.3895L51.0594 56.839C52.974 45.6716 55.2078 32.7862 56.1653 28.2047L57.7609 20.044H99.087C127.01 20.044 140.413 20.4735 140.413 21.6189Z"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M644.145 113.964C646.698 121.409 647.177 121.839 651.644 121.409L656.59 120.98L660.42 99.0745L664.09 77.3125H746.742L745.944 80.4623C745.475 82.2857 737.196 129.18 727.258 185.472L727.255 185.487L726.637 188.986C716.585 246.827 707.49 297.367 706.692 301.376C696.321 347.19 666.643 375.109 614.945 387.565C600.585 391.001 596.596 391.287 568.832 391.43C535.803 391.43 524.475 389.856 504.53 382.697C476.287 372.675 457.619 354.779 450.758 331.155C449.481 326.717 448.364 321.42 448.364 319.702V316.409H530.697L533.57 322.135C538.995 333.16 551.44 338.457 572.023 338.457C594.841 338.457 609.042 331.298 618.136 315.12C622.923 306.816 624.678 300.517 628.827 277.036C632.656 254.988 632.656 254.845 628.029 254.845C625.157 254.845 622.764 256.993 617.658 264.008C598.032 291.21 566.599 302.521 529.421 295.649C488.414 288.061 463.363 258.711 459.693 213.612C456.023 167.654 470.862 127.136 501.657 99.3609C512.029 90.0547 517.294 86.6186 528.145 81.894C552.078 71.5856 578.246 69.5813 600.585 76.1671C621.009 82.1803 638.241 97.2133 644.145 113.964ZM546.813 171.09C552.078 155.627 566.598 141.596 582.235 137.015C586.224 135.726 593.564 134.724 598.51 134.724C624.519 134.438 641.911 149.041 644.145 173.094C646.538 198.865 632.656 223.204 610.318 232.081C599.308 236.519 579.842 236.662 569.63 232.367C560.535 228.644 553.355 222.202 548.568 213.611C545.377 207.885 544.898 204.592 544.898 191.849C544.898 183.545 545.855 174.239 546.813 171.09Z"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M936.619 113.535C939.172 120.121 940.129 120.98 944.437 121.409C947.15 121.696 949.384 121.409 949.384 120.693C949.384 118.975 955.606 84.3279 956.564 80.4623L957.361 77.3125H998.049C1022.14 77.3125 1038.74 77.8852 1038.74 78.6011C1038.74 83.612 999.805 300.803 997.252 309.966C981.934 364.944 930.077 394.294 852.849 391.86C824.448 390.858 808.013 387.565 788.866 379.261C762.06 367.521 746.423 348.622 741.317 321.706L740.2 316.409H823.331L825.086 320.417C827.16 325.142 833.862 331.728 839.447 334.448C846.946 337.884 863.859 339.459 875.347 337.884C902.154 334.019 913.004 321.276 919.865 285.913L920.913 280.423C924.752 260.328 925.594 255.922 923.993 255.023C923.544 254.771 922.904 254.794 922.084 254.823C921.792 254.834 921.478 254.845 921.141 254.845C917.471 254.845 915.876 256.277 911.887 262.29C909.334 266.299 903.111 273.171 898.165 277.609C861.785 310.539 794.61 301.805 767.485 260.715C749.454 233.369 746.582 189.416 760.464 150.044C770.198 122.555 788.547 99.7904 812.64 85.7596C833.383 73.5901 864.816 69.1518 889.548 74.7354C910.451 79.46 929.439 95.0658 936.619 113.535ZM853.807 149.614C830.99 171.805 830.83 211.607 853.169 227.213C862.423 233.655 869.125 235.517 882.368 235.517C902.632 235.373 918.908 226.64 928.321 210.891C934.863 199.724 936.778 192.565 936.778 178.821C936.778 163.358 933.427 154.482 924.013 146.035C912.206 135.44 893.697 131.717 876.784 136.585C866.412 139.592 860.987 142.598 853.807 149.614Z"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M1352.75 76.883C1402.69 89.7684 1431.42 126.563 1431.26 177.246C1431.1 184.977 1430.3 194.999 1429.18 199.724L1427.11 208.314L1341.26 208.744L1255.26 209.03L1256.38 218.05C1257.65 228.931 1263.72 240.814 1270.74 245.539C1288.61 257.708 1324.99 254.272 1336.64 239.239L1341.1 233.512L1381.47 233.369C1406.52 233.369 1421.68 233.942 1421.68 234.801C1421.68 235.517 1419.93 240.385 1417.85 245.396C1401.1 285.197 1356.26 309.107 1298.34 309.25C1233.4 309.25 1190.32 279.327 1179.15 226.211C1176.92 215.759 1176.92 188.7 1179.31 176.53C1187.13 133.579 1212.82 101.508 1253.03 84.3279C1278.56 73.4469 1301.53 70.5835 1336 73.8764C1340.47 74.3059 1348.12 75.5944 1352.75 76.883ZM1263.08 161.354C1269.14 143.601 1284.14 129.999 1301.53 125.991C1311.59 123.843 1325.79 125.561 1333.92 129.999C1342.38 134.581 1349.08 145.319 1350.68 157.059L1351.79 164.647H1261.96L1263.08 161.354Z"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M345.927 75.3081C409.751 87.0481 448.364 137.301 440.706 199.008C439.588 207.598 437.195 219.052 435.44 224.349C420.441 267.873 379.594 299.944 328.854 307.818C314.653 310.109 285.134 309.823 271.731 307.246C222.746 298.083 187.962 267.587 177.91 224.922C174.878 211.894 174.878 185.407 177.75 171.519C188.281 121.982 231.043 83.7552 286.411 74.5923C299.814 72.4447 332.364 72.731 345.927 75.3081ZM297.42 137.158C281.624 142.169 269.976 153.766 262.955 171.376C258.328 182.973 257.211 207.026 260.721 217.907C266.944 237.092 281.305 247.686 301.409 247.686C315.929 247.686 325.503 244.393 335.555 236.232C350.873 223.777 358.053 207.026 357.894 184.691C357.894 161.64 350.714 147.323 335.715 139.449C325.982 134.295 309.387 133.292 297.42 137.158Z"/></symbol></svg>
+</body>
+</html>

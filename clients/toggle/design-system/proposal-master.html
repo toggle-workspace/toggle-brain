@@ -1,0 +1,472 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Toggle Solutions — Proposal Master (Stage 2, light mode)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#4A7BF7; --ink:#0F0F0F; --navy:#0A1224; --card:#F2F3F6; --callout:#DDE5FE;
+  --body:#4A4A4A; --caption:#9AA0A8; --struck:#6B7280; --teal:#2ECC9B; --pink:#F59EC9;
+  --purple:#8E6BE6; --orange:#F28B4C; --slate:#2C2C36; --paper:#FAFAFA; --border:#E4E6EE; --blue-deep:#3056C9;
+}
+*{box-sizing:border-box}
+body{background:#E9EBF1;margin:0;padding:40px 0 80px;font-family:"Inter Tight",Inter,-apple-system,"Segoe UI",sans-serif;color:var(--ink)}
+.dochead{max-width:1280px;margin:0 auto 12px;font-size:14px;color:#555}
+.dochead strong{color:var(--ink)}
+.note{max-width:1280px;margin:36px auto 10px;font-size:13px;font-weight:500;color:#667}
+.note b{color:var(--blue)}
+.slide{width:1280px;height:720px;background:#fff;margin:0 auto;position:relative;padding:56px 64px;box-shadow:0 2px 18px rgba(10,18,36,.14);overflow:hidden}
+.num{font-variant-numeric:tabular-nums}
+.watermark{position:absolute;top:30px;right:64px;font-size:13px;font-weight:500;color:var(--caption);letter-spacing:.02em}
+.h1{font-size:38px;font-weight:800;color:var(--blue);margin:0 0 8px;line-height:1.08}
+.kicker{font-size:15px;color:var(--body);margin:0 0 30px;max-width:72ch}
+.pill{display:inline-block;background:var(--blue-deep);color:#fff;font-weight:700;font-size:17px;border-radius:999px;padding:9px 26px;vertical-align:middle;margin-left:16px}
+.band{position:absolute;left:64px;right:64px;bottom:44px;background:var(--blue-deep);color:#fff;font-weight:700;font-size:14.5px;text-align:center;border-radius:8px;padding:13px 18px}
+.grid{display:grid;gap:20px}
+.cols2{grid-template-columns:1fr 1fr}.cols3{grid-template-columns:1fr 1fr 1fr}.cols4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--card);border-radius:10px;padding:24px}
+.callout{background:var(--callout);border-radius:10px;padding:24px}
+.topbar{position:relative;padding-top:30px}
+.topbar::before{content:"";position:absolute;top:0;left:0;right:0;height:7px;border-radius:10px 10px 0 0;background:var(--blue)}
+.topbar.t-teal::before{background:var(--teal)}.topbar.t-pink::before{background:var(--pink)}
+.topbar.t-purple::before{background:var(--purple)}.topbar.t-slate::before{background:var(--slate)}
+.stripe{position:relative;padding-left:30px}
+.stripe::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;border-radius:10px 0 0 10px;background:var(--blue)}
+.stripe.s-teal::before{background:var(--teal)}.stripe.s-pink::before{background:var(--pink)}
+.stripe.s-orange::before{background:var(--orange)}.stripe.s-purple::before{background:var(--purple)}
+.stat{font-size:44px;font-weight:800;color:var(--blue);line-height:1}
+.stat.inkstat{color:var(--ink)}
+.statlabel{font-size:15px;font-weight:700;color:var(--ink);margin-top:12px}
+.statcap{font-size:13.5px;color:var(--body);margin-top:6px;line-height:1.45}
+.cardtitle{font-size:17px;font-weight:700;margin:0 0 6px}
+.bodytext{font-size:14px;color:var(--body);line-height:1.5}
+ul.b{margin:12px 0 0;padding:0;list-style:none}
+ul.b li{font-size:13.5px;color:var(--body);line-height:1.45;padding:5px 0 5px 16px;position:relative}
+ul.b li::before{content:"";position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:50%;background:var(--blue)}
+.acc-teal ul.b li::before{background:var(--teal)}.acc-pink ul.b li::before{background:var(--pink)}
+.acc-slate ul.b li::before{background:var(--slate)}
+.chip{float:right;background:#fff;border:1.5px solid var(--blue);color:var(--ink);font-weight:700;font-size:13px;border-radius:8px;padding:6px 10px;text-align:center;line-height:1.2}
+.acc-teal .chip{border-color:var(--teal)}.acc-pink .chip{border-color:var(--pink)}
+.seal{font-weight:700;letter-spacing:.01em}
+.seal .br{font-weight:400}
+table.dt{width:100%;border-collapse:collapse;font-size:13.5px}
+table.dt th{background:var(--blue-deep);color:#fff;font-weight:700;text-align:left;padding:11px 14px}
+table.dt td{padding:11px 14px;color:var(--body);vertical-align:top}
+table.dt tr:nth-child(even) td{background:var(--card)}
+table.dt td.k{color:var(--blue-deep);font-weight:700}
+table.dt td.head{color:var(--ink);font-weight:700}
+.ncircle{display:inline-flex;width:34px;height:34px;border-radius:50%;background:var(--blue-deep);color:#fff;font-weight:700;font-size:13px;align-items:center;justify-content:center;flex:none}
+.wmk{height:34px;color:var(--ink)}
+.wmk svg{height:100%;width:auto;display:block}
+.iso polygon{fill:none;stroke:var(--blue);stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter}
+.iso polygon.fill{fill:var(--blue)}
+.iso rect{fill:none;stroke:var(--blue);stroke-width:1.5}
+.struck{color:var(--struck);text-decoration:line-through;text-decoration-thickness:.12em}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+.libnote{max-width:1280px;margin:64px auto 8px;padding-top:24px;border-top:2px solid #cfd3e0;font-size:15px;font-weight:700;color:#444}
+@page{size:1280px 720px;margin:0}
+@media print{*{-webkit-print-color-adjust:exact;print-color-adjust:exact}body{background:#fff;padding:0}.note,.dochead,.libnote{display:none}.slide{box-shadow:none;page-break-after:always}.slide:last-of-type{page-break-after:auto}}
+</style>
+</head>
+<body>
+
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg"><symbol id="wm" viewBox="0 0 1432 392"><path fill="currentColor" d="M1166.39 1.57487C1166.39 2.43389 1157.45 54.1188 1146.44 116.398C1135.43 178.678 1126.5 232.081 1126.5 234.944C1126.5 238.667 1127.77 241.244 1130.64 243.964C1134.47 247.4 1136.07 247.686 1147.4 247.686C1154.42 247.686 1160 247.973 1160 248.545C1160 249.261 1152.82 290.351 1151.23 298.799C1150.43 302.807 1149.63 303.523 1142.77 304.812C1120.27 309.107 1090.59 307.818 1072.88 301.948C1061.55 298.083 1049.75 288.347 1044.96 278.898C1041.61 272.169 1041.13 269.162 1041.29 254.129C1041.29 239.239 1044.16 221.486 1062.35 119.119C1074 54.4051 1083.41 1.00218 1083.41 0.715838C1083.41 0.286342 1102.08 0 1124.9 0C1154.26 0 1166.39 0.429496 1166.39 1.57487Z"/>
+<path fill="currentColor" d="M140.413 21.6189C140.413 22.9074 133.871 60.8478 131.637 72.5879L130.68 77.3125H155.571C171.527 77.3125 180.303 77.8852 180.303 78.7442C180.303 80.6054 172.485 125.418 171.527 129.856C170.73 133.006 170.091 133.149 145.678 133.436L120.787 133.865L111.533 186.123C101.321 243.821 101.002 246.971 104.672 248.259C106.108 248.689 116.798 249.118 128.606 249.118C148.391 249.118 150.146 249.261 149.349 251.552C148.87 252.984 146.636 265.583 144.243 279.614L139.775 305.241L100.523 304.669C66.058 304.096 60.1543 303.666 50.8998 300.946C30.7951 295.076 20.7428 285.054 17.7113 268.017C15.7965 256.849 16.4348 250.693 27.7636 187.411C32.7099 160.209 36.6989 136.872 36.6989 135.44C36.6989 133.436 34.3055 133.149 18.3495 133.149C6.86114 133.149 0 132.577 0 131.718C0 129.856 7.81846 85.0438 8.93536 80.4623C9.57368 77.4557 10.2118 77.3125 28.5613 77.3125H47.3895L51.0594 56.839C52.974 45.6716 55.2078 32.7862 56.1653 28.2047L57.7609 20.044H99.087C127.01 20.044 140.413 20.4735 140.413 21.6189Z"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M644.145 113.964C646.698 121.409 647.177 121.839 651.644 121.409L656.59 120.98L660.42 99.0745L664.09 77.3125H746.742L745.944 80.4623C745.475 82.2857 737.196 129.18 727.258 185.472L727.255 185.487L726.637 188.986C716.585 246.827 707.49 297.367 706.692 301.376C696.321 347.19 666.643 375.109 614.945 387.565C600.585 391.001 596.596 391.287 568.832 391.43C535.803 391.43 524.475 389.856 504.53 382.697C476.287 372.675 457.619 354.779 450.758 331.155C449.481 326.717 448.364 321.42 448.364 319.702V316.409H530.697L533.57 322.135C538.995 333.16 551.44 338.457 572.023 338.457C594.841 338.457 609.042 331.298 618.136 315.12C622.923 306.816 624.678 300.517 628.827 277.036C632.656 254.988 632.656 254.845 628.029 254.845C625.157 254.845 622.764 256.993 617.658 264.008C598.032 291.21 566.599 302.521 529.421 295.649C488.414 288.061 463.363 258.711 459.693 213.612C456.023 167.654 470.862 127.136 501.657 99.3609C512.029 90.0547 517.294 86.6186 528.145 81.894C552.078 71.5856 578.246 69.5813 600.585 76.1671C621.009 82.1803 638.241 97.2133 644.145 113.964ZM546.813 171.09C552.078 155.627 566.598 141.596 582.235 137.015C586.224 135.726 593.564 134.724 598.51 134.724C624.519 134.438 641.911 149.041 644.145 173.094C646.538 198.865 632.656 223.204 610.318 232.081C599.308 236.519 579.842 236.662 569.63 232.367C560.535 228.644 553.355 222.202 548.568 213.611C545.377 207.885 544.898 204.592 544.898 191.849C544.898 183.545 545.855 174.239 546.813 171.09Z"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M936.619 113.535C939.172 120.121 940.129 120.98 944.437 121.409C947.15 121.696 949.384 121.409 949.384 120.693C949.384 118.975 955.606 84.3279 956.564 80.4623L957.361 77.3125H998.049C1022.14 77.3125 1038.74 77.8852 1038.74 78.6011C1038.74 83.612 999.805 300.803 997.252 309.966C981.934 364.944 930.077 394.294 852.849 391.86C824.448 390.858 808.013 387.565 788.866 379.261C762.06 367.521 746.423 348.622 741.317 321.706L740.2 316.409H823.331L825.086 320.417C827.16 325.142 833.862 331.728 839.447 334.448C846.946 337.884 863.859 339.459 875.347 337.884C902.154 334.019 913.004 321.276 919.865 285.913L920.913 280.423C924.752 260.328 925.594 255.922 923.993 255.023C923.544 254.771 922.904 254.794 922.084 254.823C921.792 254.834 921.478 254.845 921.141 254.845C917.471 254.845 915.876 256.277 911.887 262.29C909.334 266.299 903.111 273.171 898.165 277.609C861.785 310.539 794.61 301.805 767.485 260.715C749.454 233.369 746.582 189.416 760.464 150.044C770.198 122.555 788.547 99.7904 812.64 85.7596C833.383 73.5901 864.816 69.1518 889.548 74.7354C910.451 79.46 929.439 95.0658 936.619 113.535ZM853.807 149.614C830.99 171.805 830.83 211.607 853.169 227.213C862.423 233.655 869.125 235.517 882.368 235.517C902.632 235.373 918.908 226.64 928.321 210.891C934.863 199.724 936.778 192.565 936.778 178.821C936.778 163.358 933.427 154.482 924.013 146.035C912.206 135.44 893.697 131.717 876.784 136.585C866.412 139.592 860.987 142.598 853.807 149.614Z"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M1352.75 76.883C1402.69 89.7684 1431.42 126.563 1431.26 177.246C1431.1 184.977 1430.3 194.999 1429.18 199.724L1427.11 208.314L1341.26 208.744L1255.26 209.03L1256.38 218.05C1257.65 228.931 1263.72 240.814 1270.74 245.539C1288.61 257.708 1324.99 254.272 1336.64 239.239L1341.1 233.512L1381.47 233.369C1406.52 233.369 1421.68 233.942 1421.68 234.801C1421.68 235.517 1419.93 240.385 1417.85 245.396C1401.1 285.197 1356.26 309.107 1298.34 309.25C1233.4 309.25 1190.32 279.327 1179.15 226.211C1176.92 215.759 1176.92 188.7 1179.31 176.53C1187.13 133.579 1212.82 101.508 1253.03 84.3279C1278.56 73.4469 1301.53 70.5835 1336 73.8764C1340.47 74.3059 1348.12 75.5944 1352.75 76.883ZM1263.08 161.354C1269.14 143.601 1284.14 129.999 1301.53 125.991C1311.59 123.843 1325.79 125.561 1333.92 129.999C1342.38 134.581 1349.08 145.319 1350.68 157.059L1351.79 164.647H1261.96L1263.08 161.354Z"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M345.927 75.3081C409.751 87.0481 448.364 137.301 440.706 199.008C439.588 207.598 437.195 219.052 435.44 224.349C420.441 267.873 379.594 299.944 328.854 307.818C314.653 310.109 285.134 309.823 271.731 307.246C222.746 298.083 187.962 267.587 177.91 224.922C174.878 211.894 174.878 185.407 177.75 171.519C188.281 121.982 231.043 83.7552 286.411 74.5923C299.814 72.4447 332.364 72.731 345.927 75.3081ZM297.42 137.158C281.624 142.169 269.976 153.766 262.955 171.376C258.328 182.973 257.211 207.026 260.721 217.907C266.944 237.092 281.305 247.686 301.409 247.686C315.929 247.686 325.503 244.393 335.555 236.232C350.873 223.777 358.053 207.026 357.894 184.691C357.894 161.64 350.714 147.323 335.715 139.449C325.982 134.295 309.387 133.292 297.42 137.158Z"/></symbol></svg>
+
+<div class="dochead"><strong>Toggle Solutions — Proposal Master (Stage 2).</strong> Light mode · 15-slide spine rebuilt with real Sunway TES copy + 3-slide Contrarian Library. Gray labels above each slide name the belief it must build. Spec: <code>PROPOSAL-MASTER.md</code>.</div>
+
+<!-- ════════ SLIDE 1 — TITLE ════════ -->
+<div class="note">Slide 1 · Title — <b>Belief:</b> "This was built for us by a firm with a settled identity."</div>
+<section class="slide">
+  <div class="wmk"><svg viewBox="0 0 1432 392"><use href="#wm"/></svg></div>
+  <div style="margin-top:118px;max-width:560px">
+    <div style="font-size:64px;font-weight:800;color:var(--blue);line-height:1.05">Sunway TES</div>
+    <div style="font-size:54px;font-weight:800;color:var(--ink);line-height:1.1;margin-top:6px">Marketing<br>Proposal</div>
+  </div>
+  <svg class="iso" viewBox="-4 -4 449 326" style="position:absolute;right:84px;top:120px;width:470px">
+    <g><polygon points="90.1,0.0 135.1,26.0 45.0,78.0 0.0,52.0"/><polygon points="135.1,130.0 180.1,156.0 90.1,208.0 45.0,182.0"/><polygon points="135.1,130.0 45.0,182.0 45.0,78.0 135.1,26.0"/><polygon class="fill" points="180.1,208.0 90.1,260.0 90.1,208.0 180.1,156.0"/><polygon points="0.0,208.0 45.0,234.0 45.0,78.0 0.0,52.0"/><polygon points="45.0,234.0 90.1,260.0 90.1,208.0 45.0,182.0"/></g>
+    <g transform="translate(216,110)"><polygon points="90.1,0.0 180.1,52.0 90.1,104.0 0.0,52.0"/><polygon points="180.1,104.0 225.2,130.0 135.1,182.0 90.1,156.0"/><polygon points="180.1,104.0 90.1,156.0 90.1,104.0 180.1,52.0"/><polygon points="225.2,182.0 135.1,234.0 135.1,182.0 225.2,130.0"/><polygon points="0.0,156.0 90.1,208.0 90.1,104.0 0.0,52.0"/><polygon points="90.1,208.0 135.1,234.0 135.1,182.0 90.1,156.0"/></g>
+  </svg>
+  <div class="seal" style="position:absolute;left:64px;bottom:48px;color:var(--blue);font-size:18px"><span class="br">[&nbsp;</span>Your Digital Growth Partner<span class="br">&nbsp;]</span></div>
+  <div class="seal" style="position:absolute;right:64px;bottom:48px;color:var(--blue);font-size:18px"><span class="br">[&nbsp;</span>toggle.solutions<span class="br">&nbsp;]</span></div>
+</section>
+
+<!-- ════════ SLIDE 2 — MARKET OPPORTUNITY ════════ -->
+<div class="note">Slide 2 · Market Opportunity — <b>Belief:</b> "There is a real, quantified pool of demand we are not capturing."</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">The Market Opportunity</h2>
+  <p class="kicker">Three high-growth ACCA markets where Sunway TES has a structural advantage.</p>
+  <div class="grid cols2">
+    <div class="callout" style="padding:36px">
+      <div class="stat num" style="font-size:56px">70–80K</div>
+      <div class="statlabel" style="font-size:18px">ACCA students in India</div>
+      <div class="statcap" style="font-size:15px">One of the fastest-growing ACCA markets globally — Big 4 hiring + GCC expansion fuelling demand.</div>
+    </div>
+    <div class="callout" style="padding:36px">
+      <div class="stat num inkstat" style="font-size:56px">45–55K</div>
+      <div class="statlabel" style="font-size:18px">ACCA students in Pakistan</div>
+      <div class="statcap" style="font-size:15px">The Pakistani ACCA pool is one of the largest globally — ripe for a Malaysian institution offering Western-equivalent learning at half the cost.</div>
+    </div>
+  </div>
+  <div class="card" style="margin-top:20px;padding:22px 28px">
+    <span style="font-weight:700">UAE &amp; Bangladesh — the expansion tier.</span>
+    <span class="bodytext"> UAE: Big 4 hiring + tax-free salary appeal — smaller pool, higher lead value. Bangladesh: Pakistan-adjacent test pool. Both sized by budget share in the channel plan (slides 7–8) rather than by student count.</span>
+  </div>
+</section>
+
+<!-- ════════ SLIDE 3 — AUDIENCE ════════ -->
+<div class="note">Slide 3 · Who We're Talking To — <b>Belief:</b> "They know our buyers better than we've articulated them ourselves."</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">Who We're Talking To</h2>
+  <p class="kicker">Three primary personas across India &amp; Pakistan — ages 21–45, English-speaking.</p>
+  <div class="grid cols3">
+    <div class="callout stripe">
+      <span class="chip num">60%<br>Budget</span>
+      <div class="cardtitle">The Career Climber</div>
+      <div style="font-size:13px;font-weight:700;color:var(--body)">Working Professional · 25–45</div>
+      <ul class="b"><li>Audit Associate / Junior Accountant at Big 4, BDO, Grant Thornton; BCom-holder in industry</li><li>Pain: stuck at a salary ceiling without a chartered qualification</li><li>Trigger: peers passing exams; bonus / promotion cycle</li><li>Hook: 100% Online / Blended — finish ACCA without quitting your job</li></ul>
+    </div>
+    <div class="callout stripe s-teal acc-teal">
+      <span class="chip num">30%<br>Budget</span>
+      <div class="cardtitle">The Fresh Graduate</div>
+      <div style="font-size:13px;font-weight:700;color:var(--body)">0–2 Years Out · 21–25</div>
+      <ul class="b"><li>BCom / B.Acc / B.Fin from a regional university</li><li>Pain: degree alone isn't getting interviews at top firms</li><li>Trigger: graduating class entering the job market</li><li>Hook: fastest path to a Big 4 offer — start with FIA / Skills</li></ul>
+    </div>
+    <div class="callout stripe s-pink acc-pink">
+      <span class="chip num">10%<br>Budget</span>
+      <div class="cardtitle">The Final-Year Student</div>
+      <div style="font-size:13px;font-weight:700;color:var(--body)">Final Sem · 21–23</div>
+      <ul class="b"><li>Final-year BCom / accounting student researching post-grad options</li><li>Pain: family pressure to commit to a global qualification</li><li>Trigger: final-year coursework + parents' joint decision</li><li>Hook: start ACCA before you graduate — get a head start</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ SLIDE 4 — STRATEGY AT A GLANCE ════════ -->
+<div class="note">Slide 4 · Strategy at a Glance — <b>Belief:</b> "RM15,000/month converts to a predictable lead machine — the whole plan fits on one slide."</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">Our Strategy at a Glance</h2>
+  <p class="kicker">A performance-first lead generation engine across 3 platforms and 4 markets.</p>
+  <div class="grid cols4">
+    <div class="card topbar" style="text-align:center"><div class="stat num inkstat" style="font-size:38px;white-space:nowrap">RM&nbsp;15,000</div><div class="statcap">Monthly Budget</div></div>
+    <div class="card topbar" style="text-align:center"><div class="stat num" style="white-space:nowrap">155–195</div><div class="statcap">Est. Leads / Month</div></div>
+    <div class="card topbar" style="text-align:center"><div class="stat num inkstat">4</div><div class="statcap">Markets</div></div>
+    <div class="card topbar" style="text-align:center"><div class="stat num inkstat">3</div><div class="statcap">Ad Platforms</div></div>
+  </div>
+  <div style="display:flex;margin-top:34px;border-radius:8px;overflow:hidden;height:58px;font-weight:800;font-size:19px;color:#fff;text-align:center">
+    <div class="num" style="flex:50;background:var(--blue);line-height:58px">50%</div>
+    <div class="num" style="flex:30;background:var(--teal);line-height:58px;color:var(--ink)">30%</div>
+    <div class="num" style="flex:20;background:var(--slate);line-height:58px">20%</div>
+  </div>
+  <div style="display:flex;text-align:center;margin-top:14px">
+    <div style="flex:50"><div style="font-weight:700;font-size:15px">Google Search</div><div class="statcap num">RM 7,500&nbsp; | &nbsp;~75–90 leads</div></div>
+    <div style="flex:30"><div style="font-weight:700;font-size:15px">Meta Ads</div><div class="statcap num">RM 4,500&nbsp; | &nbsp;~55–70 leads</div></div>
+    <div style="flex:20"><div style="font-weight:700;font-size:15px">LinkedIn Ads</div><div class="statcap num">RM 3,000&nbsp; | &nbsp;~25–35 leads</div></div>
+  </div>
+  <div style="margin-top:44px">
+    <div style="font-size:13.5px;font-weight:700;color:var(--blue-deep)">Geographic Targeting</div>
+    <div class="bodytext" style="margin-top:5px">India &nbsp;·&nbsp; Pakistan &nbsp;·&nbsp; UAE &nbsp;·&nbsp; Bangladesh &nbsp;—&nbsp; English Messaging &nbsp;·&nbsp; Romanized Hindi/Urdu Messaging</div>
+  </div>
+</section>
+
+<!-- ════════ SLIDE 5 — GOOGLE SEARCH ════════ -->
+<div class="note">Slide 5 · Google Search Strategy — <b>Belief:</b> "Every ringgit on Google has a named job and a CPL ceiling."</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1" style="display:inline-block">Google Search Strategy</h2><span class="pill num">RM 7,500</span>
+  <p class="kicker">Capture high-intent searches at the bottom of the funnel.</p>
+  <div class="grid cols3" style="height:492px">
+    <div class="card topbar t-slate acc-slate">
+      <div class="cardtitle">Brand</div>
+      <div class="stat num inkstat" style="font-size:34px;margin:8px 0 4px">RM 750</div>
+      <div class="statcap num">10% · 1 campaign</div>
+      <div class="num" style="font-weight:700;font-size:13.5px;margin-top:8px">CPL &lt; RM 70</div>
+      <ul class="b"><li>Sunway TES</li><li>Sunway College ACCA</li><li>Sunway TES online classes</li><li>Sunway ICAEW Malaysia</li><li>Sunway TES registration 2026</li></ul>
+    </div>
+    <div class="card topbar">
+      <div class="cardtitle">India · Generic Campaign</div>
+      <div class="stat num" style="font-size:34px;margin:8px 0 4px">RM 4,500</div>
+      <div class="statcap num">60% · daily RM 150</div>
+      <div class="num" style="font-weight:700;font-size:13.5px;margin-top:8px">CPL &lt; RM 100</div>
+      <ul class="b"><li>ACCA Platinum Learning Partner</li><li>Best ACCA online tuition India</li><li>ICAEW Partner in Learning online</li><li>ACCA for working professionals</li><li>Study ACCA for international career</li><li>Big 4 accounting qualifications</li></ul>
+    </div>
+    <div class="card topbar t-teal acc-teal">
+      <div class="cardtitle">Pakistan · Generic Campaign</div>
+      <div class="stat num" style="font-size:34px;margin:8px 0 4px;color:var(--ink)">RM 2,250</div>
+      <div class="statcap num">30% · daily RM 75</div>
+      <div class="num" style="font-weight:700;font-size:13.5px;margin-top:8px">CPL &lt; RM 100</div>
+      <ul class="b"><li>Karachi / Lahore / Islamabad / Peshawar / Multan</li><li>Global accounting qualification online</li><li>ACCA tuition with payment plans</li><li>Affordable alternative to UK ACCA</li><li>Online ACCA classes with mentors</li><li>ACCA prizewinner tuition centre</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ SLIDE 6 — BIDDING & KPI ════════ -->
+<div class="note">Slide 6 · Bidding &amp; KPI Targets — <b>Belief:</b> "They match tactics to data maturity instead of promising autopilot."</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">Google Search — Bidding &amp; KPI Targets</h2>
+  <p class="kicker">Match bidding strategy to data maturity. Don't ask automation to optimise on signals it doesn't have.</p>
+  <div class="grid cols2">
+    <div class="callout" style="padding:28px 32px">
+      <div class="cardtitle" style="font-size:19px;margin-bottom:18px">Bidding Strategy</div>
+      <div class="stripe s-orange" style="margin-bottom:18px;padding-left:18px"><div style="font-weight:700;font-size:14.5px">Phase 1: Cold Launch (Wk 1–3)</div><div style="color:var(--body);font-weight:700;font-size:13px;margin:2px 0">Maximize Clicks</div><div class="bodytext" style="font-size:13px">Brand + generic India. Build conversion volume before letting the algorithm bid on goals.</div></div>
+      <div class="stripe s-teal" style="margin-bottom:18px;padding-left:18px"><div style="font-weight:700;font-size:14.5px">Phase 2: Conversion Learning (Wk 4–8)</div><div style="color:var(--body);font-weight:700;font-size:13px;margin:2px 0">Maximize Conversions</div><div class="bodytext" style="font-size:13px">Switch India to Max Conversions once the campaign stabilises. Brand stays on Manual CPC.</div></div>
+      <div class="stripe s-purple" style="padding-left:18px"><div style="font-weight:700;font-size:14.5px">Phase 3: Efficiency Scaling (Wk 9+)</div><div style="color:var(--body);font-weight:700;font-size:13px;margin:2px 0">Target CPA</div><div class="bodytext" style="font-size:13px">Lock in target CPA per campaign once 30+ conversions accumulated. Pakistan remains on Max Clicks until volume warrants the switch.</div></div>
+    </div>
+    <div class="card" style="padding:28px 32px">
+      <div class="cardtitle" style="font-size:19px;margin-bottom:8px">CPL Targets by Campaign</div>
+      <div class="bodytext" style="font-size:13px;margin-bottom:14px">Baseline: re-anchored after 30 days of conversion data.</div>
+      <table class="dt num">
+        <tr><th>Campaign</th><th style="text-align:right">Target CPL</th></tr>
+        <tr><td>Sunway TES Brand (All Locations)</td><td class="k" style="text-align:right">RM 70</td></tr>
+        <tr><td>Search — India (Generic)</td><td class="k" style="text-align:right">RM 100</td></tr>
+        <tr><td>Search — Pakistan</td><td class="k" style="text-align:right">RM 100</td></tr>
+        <tr><td>Meta Lead Gen (All Markets)</td><td class="k" style="text-align:right">RM 80</td></tr>
+        <tr><td>LinkedIn Lead Gen (All Markets)</td><td class="k" style="text-align:right">RM 120</td></tr>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ SLIDE 7 — META ════════ -->
+<div class="note">Slide 7 · Meta Ads Strategy — <b>Belief:</b> "Each market gets its own message and budget — not a copy-paste campaign."</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1" style="display:inline-block">Meta Ads Strategy</h2><span class="pill num">RM 4,500</span>
+  <p class="kicker">Instant Form lead generation across Facebook + Instagram. English-first, prospecting-first, conditional logic to filter quality.</p>
+  <div class="card stripe" style="display:flex;gap:28px;align-items:center;margin-bottom:16px">
+    <div style="width:220px;flex:none"><div class="cardtitle">India</div><div class="stat num" style="font-size:30px">RM 2,250</div></div>
+    <div style="width:170px;flex:none"><div class="num" style="font-weight:700;font-size:14px">Daily RM 75</div><div class="statcap num">50% of Meta budget</div></div>
+    <div class="bodytext">Largest pool: 70–80K live ACCA students. 3+ creative variations testing Career Climber, Fresh Grad, and Final-Year angles in parallel.</div>
+  </div>
+  <div class="card stripe s-teal" style="display:flex;gap:28px;align-items:center;margin-bottom:16px">
+    <div style="width:220px;flex:none"><div class="cardtitle">UAE</div><div class="stat num inkstat" style="font-size:30px">RM 1,350</div></div>
+    <div style="width:170px;flex:none"><div class="num" style="font-weight:700;font-size:14px">Daily RM 45</div><div class="statcap num">30% of Meta budget</div></div>
+    <div class="bodytext">High-value lead market: Big 4 hiring + tax-free salary appeal. Lean on outcome creative: salary upside, Platinum credentials, foreign job opportunities.</div>
+  </div>
+  <div class="card stripe s-pink" style="display:flex;gap:28px;align-items:center">
+    <div style="width:220px;flex:none"><div class="cardtitle">Pakistan &amp; Bangladesh</div><div class="stat num inkstat" style="font-size:30px">RM 900</div></div>
+    <div style="width:170px;flex:none"><div class="num" style="font-weight:700;font-size:14px">Daily RM 30</div><div class="statcap num">20% of Meta budget</div></div>
+    <div class="bodytext">Price-sensitive but proud-of-international-brand audience. Lead with accessibility, Online Flexible mode, payment-plan-style proof points.</div>
+  </div>
+  <div class="band num">Target CPL &lt; RM 80&nbsp;&nbsp;|&nbsp;&nbsp;Audience: 21–55&nbsp;&nbsp;|&nbsp;&nbsp;≥ 3 creatives per location&nbsp;&nbsp;|&nbsp;&nbsp;Form Type: Instant Lead Gen (Conditional)</div>
+</section>
+
+<!-- ════════ SLIDE 8 — LINKEDIN ════════ -->
+<div class="note">Slide 8 · LinkedIn Ads Strategy — <b>Belief:</b> "They can reach exactly the professionals we want, at the firms we want."</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1" style="display:inline-block">LinkedIn Ads Strategy</h2><span class="pill num">RM 3,000</span>
+  <p class="kicker">Surgical targeting of finance professionals at the firms Sunway TES alumni already work for.</p>
+  <div class="grid cols3" style="margin-bottom:18px">
+    <div class="card topbar"><div class="cardtitle">India</div><div class="stat num" style="font-size:30px">RM 1,500</div><div class="statcap num"><b>Daily RM 50</b> &nbsp;·&nbsp; 50% of LinkedIn</div></div>
+    <div class="card topbar t-teal"><div class="cardtitle">UAE</div><div class="stat num inkstat" style="font-size:30px">RM 900</div><div class="statcap num"><b>Daily RM 30</b> &nbsp;·&nbsp; 30% of LinkedIn</div></div>
+    <div class="card topbar t-pink"><div class="cardtitle">Pakistan &amp; Bangladesh</div><div class="stat num inkstat" style="font-size:30px">RM 600</div><div class="statcap num"><b>Daily RM 20</b> &nbsp;·&nbsp; 20% of LinkedIn</div></div>
+  </div>
+  <div class="callout" style="padding:20px 24px">
+    <div style="font-weight:700;font-size:16px;color:var(--blue-deep);margin-bottom:12px">Surgical Targeting Layers</div>
+    <div class="grid cols2" style="gap:12px">
+      <div style="background:#fff;border-radius:8px;padding:14px 18px"><div style="font-weight:700;font-size:13.5px;color:var(--blue-deep)">Job Functions</div><div class="bodytext" style="font-size:13px">Accounting · Finance · Auditing → Audit Associate, Accounts Executive, Junior Accountant, Finance Analyst, Trainee Accountant, Management Trainee</div></div>
+      <div style="background:#fff;border-radius:8px;padding:14px 18px"><div style="font-weight:700;font-size:13.5px;color:var(--blue-deep)">Company Targets</div><div class="bodytext" style="font-size:13px">Big 4 (PwC, EY, KPMG, Deloitte) + BDO, Grant Thornton · Industries: Accounting, Financial Services, Banking, Investment Banking</div></div>
+      <div style="background:#fff;border-radius:8px;padding:14px 18px"><div style="font-weight:700;font-size:13.5px;color:var(--blue-deep)">Member Groups</div><div class="bodytext" style="font-size:13px">ACCA, ICAEW, CPA Australia, MICPA member groups + Financial Accounting, Auditing, IFRS, Tax Law interest groups</div></div>
+      <div style="background:#fff;border-radius:8px;padding:14px 18px"><div style="font-weight:700;font-size:13.5px;color:var(--blue-deep)">Education &amp; Seniority</div><div class="bodytext" style="font-size:13px">Bachelor of Commerce / Accounting / Finance / Economics · Entry-level, Associate, Mid-Senior · Exclude lower-tier institutions</div></div>
+    </div>
+  </div>
+  <div class="band num">Target CPL &lt; RM 120&nbsp;&nbsp;|&nbsp;&nbsp;Higher CPL, higher intent — LinkedIn validates lead quality vs Meta</div>
+</section>
+
+<!-- ════════ SLIDE 9 — CREATIVE STRATEGY ════════ -->
+<div class="note">Slide 9 · Creative Strategy — <b>Belief:</b> "Creative here is engineered, not guessed — one positioning, tested three ways."</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">Creative Strategy</h2>
+  <p class="kicker">One positioning. Three message axes. Tested in parallel from day one.</p>
+  <div class="callout" style="padding:20px 28px;margin-bottom:20px">
+    <div style="font-size:13px;font-weight:700;letter-spacing:.06em;color:var(--blue-deep)">POSITIONING STATEMENT</div>
+    <div style="font-size:20px;font-weight:700;margin-top:6px;line-height:1.35">The world-recognised accountancy qualification: taught by a 22-year ACCA Platinum partner with 233 world prizewinners; at a price and pace that fits your life.</div>
+  </div>
+  <div class="grid cols3">
+    <div class="card stripe"><div class="cardtitle">Angle 1 · Pedigree</div><div class="bodytext" style="font-size:13px;color:var(--body)">Lead with proof: Platinum, prizewinners, partnerships</div><ul class="b"><li>"Learn ACCA where 233 world prizewinners trained."</li><li><b>Hook:</b> institutional credibility</li><li><b>Use case:</b> cold prospects, comparison shoppers</li><li><b>Best for:</b> Final-Year Students, parents</li></ul></div>
+    <div class="card stripe s-teal acc-teal"><div class="cardtitle">Angle 2 · Outcome</div><div class="bodytext" style="font-size:13px;color:var(--body)">Lead with the destination: Big 4 jobs, global salaries</div><ul class="b"><li>"From Karachi to KPMG: the path starts at Sunway TES."</li><li><b>Hook:</b> career outcome + status</li><li><b>Use case:</b> warm middle-funnel + retargeting</li><li><b>Best for:</b> Working Professionals, Fresh Graduates</li></ul></div>
+    <div class="card stripe s-pink acc-pink"><div class="cardtitle">Angle 3 · Access</div><div class="bodytext" style="font-size:13px;color:var(--body)">Lead with the barrier-remover: online, affordable, flexible</div><ul class="b"><li>"Pass ACCA without quitting your job."</li><li><b>Hook:</b> lower friction / higher feasibility</li><li><b>Use case:</b> objection-handling, retargeting</li><li><b>Best for:</b> Working Professionals, Career Switchers</li></ul></div>
+  </div>
+</section>
+
+<!-- ════════ SLIDE 10 — MESSAGING BY PERSONA ════════ -->
+<div class="note">Slide 10 · Messaging by Persona — <b>Belief:</b> "Every persona sees a message built for their moment in the funnel."</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">Creative Strategy · Messaging by Persona</h2>
+  <p class="kicker">Each persona gets a different hook, primary visual, and CTA — mapped to where they sit in the funnel. Career Switcher runs as a retargeting-only persona inside the Career Climber pool.</p>
+  <table class="dt">
+    <tr><th style="width:14%">Persona</th><th style="width:19%">Hook</th><th style="width:24%">Headline Sample</th><th style="width:28%">Visual Direction</th><th>CTA</th></tr>
+    <tr><td class="k">Career Climber</td><td>Career stall + qualification ceiling</td><td class="head">"Finish ACCA without quitting your audit job."</td><td>Working professional at laptop, late evening, Big 4 office backdrop. Split-screen with mentor / online class.</td><td>Apply for the Online Cohort</td></tr>
+    <tr><td class="k">Fresh Graduate</td><td>Degree ≠ job offer</td><td class="head">"BCom won't get you to Big 4. ACCA will."</td><td>Recent graduate transformation: graduation cap → blazer + office. Time-lapse / before-after frames.</td><td>Get the Pathway Guide</td></tr>
+    <tr><td class="k">Final-Year Student</td><td>Family pressure + future-proofing</td><td class="head">"Start ACCA before you graduate. Beat your batch."</td><td>Final-year student, study desk, lifestyle imagery. Subtle parent presence / proud family.</td><td>Talk to an Advisor</td></tr>
+    <tr><td class="k">Career Switcher</td><td>Stuck in admin / non-finance role</td><td class="head">"You don't need to start over to enter finance."</td><td>Transition story narrative — bank teller / admin worker → accountant. Authentic UGC tone.</td><td>See the Switcher Path</td></tr>
+  </table>
+</section>
+
+<!-- ════════ SLIDE 11 — TESTING FRAMEWORK ════════ -->
+<div class="note">Slide 11 · Testing Framework — <b>Belief:</b> "Optimisation is a standing cadence, not a promise."</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">Creative Strategy · Testing Framework</h2>
+  <p class="kicker">Three creatives per location, refreshed every two weeks. We don't guess — we test.</p>
+  <div class="grid cols3" style="gap:14px">
+    <div class="callout" style="display:flex;gap:14px;padding:18px"><span class="ncircle num">01</span><div><div style="font-weight:700;font-size:14.5px">Headline Hook</div><div class="bodytext" style="font-size:13px">Question vs Benefit-led vs Statement</div></div></div>
+    <div class="callout" style="display:flex;gap:14px;padding:18px"><span class="ncircle num">02</span><div><div style="font-weight:700;font-size:14.5px">Visual Style</div><div class="bodytext" style="font-size:13px">Campus imagery vs Working-pro lifestyle vs UGC testimonial</div></div></div>
+    <div class="callout" style="display:flex;gap:14px;padding:18px"><span class="ncircle num">03</span><div><div style="font-weight:700;font-size:14.5px">Social Proof</div><div class="bodytext" style="font-size:13px">Alumni quote vs Prizewinner count vs Accreditation badge</div></div></div>
+    <div class="callout" style="display:flex;gap:14px;padding:18px"><span class="ncircle num">04</span><div><div style="font-weight:700;font-size:14.5px">CTA Language</div><div class="bodytext" style="font-size:13px">Apply Now vs Get Info vs Chat With Us vs Book a Call</div></div></div>
+    <div class="callout" style="display:flex;gap:14px;padding:18px"><span class="ncircle num">05</span><div><div style="font-weight:700;font-size:14.5px">Copy Length</div><div class="bodytext" style="font-size:13px">Short (2–3 lines) vs Medium vs Long with social-proof block</div></div></div>
+    <div class="callout" style="display:flex;gap:14px;padding:18px"><span class="ncircle num">06</span><div><div style="font-weight:700;font-size:14.5px">Lead Form Depth</div><div class="bodytext" style="font-size:13px">3-field vs 6-field vs Conditional with qualifier</div></div></div>
+  </div>
+  <div class="card" style="margin-top:18px;padding:18px 22px">
+    <div style="font-weight:700;font-size:15px;color:var(--blue-deep);margin-bottom:10px">Optimisation Cadence</div>
+    <div class="grid cols4" style="gap:12px">
+      <div style="background:#fff;border-radius:8px;padding:12px 14px"><div style="font-weight:700;font-size:13px;color:var(--blue-deep)">Daily</div><div class="bodytext num" style="font-size:13px">Budget rebalancing; pause underperformers (CTR &lt; 1%, CPL &gt; 50% over target)</div></div>
+      <div style="background:#fff;border-radius:8px;padding:12px 14px"><div style="font-weight:700;font-size:13px;color:var(--blue-deep)">Weekly</div><div class="bodytext num" style="font-size:13px">Creative refresh on bottom 30% performers, audience reads, form drop-off analysis</div></div>
+      <div style="background:#fff;border-radius:8px;padding:12px 14px"><div style="font-weight:700;font-size:13px;color:var(--blue-deep)">Bi-Weekly</div><div class="bodytext" style="font-size:13px">Strategic review — new hooks into rotation, cross-market learnings, message-market fit</div></div>
+      <div style="background:#fff;border-radius:8px;padding:12px 14px"><div style="font-weight:700;font-size:13px;color:var(--blue-deep)">Monthly</div><div class="bodytext" style="font-size:13px">CPL calibration based on enrolment data, channel mix rebalance</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ SLIDE 12 — LEAD FORM ════════ -->
+<div class="note">Slide 12 · Lead Form Strategy — <b>Belief:</b> "Lead quality is engineered inside the ad, before sales ever touches it."</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">Lead Form Strategy</h2>
+  <p class="kicker">Conditional Meta Instant Forms: qualify the lead inside the ad, save sales time downstream.</p>
+  <div class="grid cols2" style="gap:28px">
+    <div class="callout" style="padding:26px 30px">
+      <div style="font-weight:700;font-size:17px;color:var(--blue-deep);margin-bottom:14px">Instant Form — Question Logic</div>
+      <div style="font-weight:700;font-size:13.5px">Q1 — Which professional body are you interested in?</div>
+      <div class="bodytext" style="font-size:13px;margin-bottom:10px">ACCA · ICAEW · I'm not sure yet</div>
+      <div style="font-weight:700;font-size:13.5px">Q2 — What is your current status?</div>
+      <div class="bodytext" style="font-size:13px;margin-bottom:10px">Working Professional · Fresh Graduate · Final-Year Student</div>
+      <div style="font-weight:700;font-size:13.5px">Q3 — Preferred study mode?</div>
+      <div class="bodytext" style="font-size:13px;margin-bottom:10px">100% Online (Flexible) · Blended · On-Campus (Malaysia)</div>
+      <div style="font-weight:700;font-size:13.5px">Q4 — Which level are you starting at?</div>
+      <div class="bodytext" style="font-size:13px;margin-bottom:10px">Professional Level · Foundation (FIA / CFAB) · Subject-specific</div>
+      <div style="font-weight:700;font-size:13.5px">Auto-filled</div>
+      <div class="bodytext" style="font-size:13px">Full Name · Email · Phone · City / Country</div>
+    </div>
+    <div>
+      <div style="font-weight:800;font-size:22px;color:var(--blue);margin-bottom:16px">Why conditional logic wins</div>
+      <div style="display:flex;gap:14px;margin-bottom:14px"><span class="ncircle num">01</span><div><div style="font-weight:700;font-size:14.5px">Lead quality score before sales sees it</div><div class="bodytext" style="font-size:13px">Every lead arrives in CRM pre-tagged by qualification, status, mode, and level. Sales prioritises Working Professional + Professional Level first.</div></div></div>
+      <div style="display:flex;gap:14px;margin-bottom:14px"><span class="ncircle num">02</span><div><div style="font-weight:700;font-size:14.5px">Routing without manual triage</div><div class="bodytext" style="font-size:13px">ACCA Professional Level leads → senior advisor. Foundation leads → onboarding specialist. "Not sure yet" → nurture sequence.</div></div></div>
+      <div style="display:flex;gap:14px;margin-bottom:14px"><span class="ncircle num">03</span><div><div style="font-weight:700;font-size:14.5px">Drop-off telemetry feeds creative</div><div class="bodytext" style="font-size:13px">Form abandonment by question tells us which message-audience pairing is mismatched. We rewrite the creative or the targeting, not just the form.</div></div></div>
+      <div style="display:flex;gap:14px"><span class="ncircle num">04</span><div><div style="font-weight:700;font-size:14.5px">Conversions API marries it to outcomes</div><div class="bodytext" style="font-size:13px">Each form fill is matched back through CRM enrolment events, training Meta's algorithm to find leads that actually pay tuition — not just submit forms.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ SLIDE 13 — KPIs ════════ -->
+<div class="note">Slide 13 · KPIs &amp; Measurement — <b>Belief:</b> "We will know if this is working — by numbers we can hold them to."</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">KPIs &amp; Measurement</h2>
+  <p class="kicker">Daily monitoring. Weekly recalibration. Tracking against enrolment — not just lead volume.</p>
+  <div class="grid cols4" style="gap:20px">
+    <div class="callout"><div style="font-weight:700;font-size:14px">Cost Per Lead</div><div class="stat num inkstat" style="font-size:29px;margin:10px 0 8px">RM 70–120</div><div class="bodytext num" style="font-size:13px">Brand RM 70 · Search RM 100 · Meta RM 80 · LinkedIn RM 120</div></div>
+    <div class="callout"><div style="font-weight:700;font-size:14px">Lead Volume</div><div class="stat num inkstat" style="font-size:29px;margin:10px 0 8px">155–195 / mo</div><div class="bodytext" style="font-size:13px">Combined across all 3 channels and 4 markets</div></div>
+    <div class="callout"><div style="font-weight:700;font-size:14px">CTR (Search)</div><div class="stat num inkstat" style="font-size:29px;margin:10px 0 8px">&gt; 3.5%</div><div class="bodytext" style="font-size:13px">Above Education sector benchmark</div></div>
+    <div class="callout"><div style="font-weight:700;font-size:14px">CTR (Meta)</div><div class="stat num inkstat" style="font-size:29px;margin:10px 0 8px">&gt; 1.5%</div><div class="bodytext num" style="font-size:13px">LinkedIn target &gt; 1.2%</div></div>
+    <div class="callout"><div style="font-weight:700;font-size:14px">Conversion Rate</div><div class="stat num inkstat" style="font-size:29px;margin:10px 0 8px">&gt; 7%</div><div class="bodytext" style="font-size:13px">Landing page click → form submission</div></div>
+    <div class="callout"><div style="font-weight:700;font-size:14px">Form Completion</div><div class="stat num inkstat" style="font-size:29px;margin:10px 0 8px">70–85%</div><div class="bodytext" style="font-size:13px">Drop-off telemetry by question</div></div>
+    <div class="callout"><div style="font-weight:700;font-size:14px">Lead Quality Score</div><div class="stat num inkstat" style="font-size:29px;margin:10px 0 8px">≥ 6.5 / 10</div><div class="bodytext" style="font-size:13px">Tagged by CRM + sales feedback loop</div></div>
+    <div class="callout"><div style="font-weight:700;font-size:14px">Lead → Enrolment</div><div class="stat num" style="font-size:29px;margin:10px 0 8px">8–15%</div><div class="bodytext" style="font-size:13px">Channel ROI proxy — the only number that matters</div></div>
+  </div>
+  <div class="band">Reporting: live dashboard (daily) + written read-out (weekly) + strategic review (monthly)</div>
+</section>
+
+<!-- ════════ SLIDE 14 — LEAD-QUALITY LOOP ════════ -->
+<div class="note">Slide 14 · The Lead-Quality Loop — <b>Belief:</b> "Toggle optimises to enrolment revenue — most agencies stop at form submit." (Contrarian moment stated plainly — the artifact's one strikethrough is spent in the library.)</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">The Lead-Quality Loop</h2>
+  <p class="kicker">Most agencies stop at form submit. We connect Conversions API to your CRM so the algorithm learns who actually enrols.</p>
+  <div style="display:flex;gap:10px;align-items:stretch">
+    <div class="card topbar" style="flex:1"><span class="ncircle num">01</span><div style="font-weight:700;font-size:15px;margin:12px 0 8px">Lead submits Meta Instant Form</div><div class="bodytext" style="font-size:13px">Conditional answers (status, level, mode) captured + sent via webhook to your CRM.</div></div>
+    <div style="align-self:center;color:var(--blue);font-weight:800;font-size:20px">→</div>
+    <div class="card topbar t-teal" style="flex:1"><span class="ncircle num">02</span><div style="font-weight:700;font-size:15px;margin:12px 0 8px">CRM scores and routes</div><div class="bodytext" style="font-size:13px">Quality score applied based on answers. High-intent leads routed to senior advisor. Low-intent → nurture.</div></div>
+    <div style="align-self:center;color:var(--blue);font-weight:800;font-size:20px">→</div>
+    <div class="card topbar t-purple" style="flex:1"><span class="ncircle num">03</span><div style="font-weight:700;font-size:15px;margin:12px 0 8px">Outcome event fires back</div><div class="bodytext" style="font-size:13px">Enrolment / qualified-meeting / dead-lead events fire from CRM → Meta via Conversions API.</div></div>
+    <div style="align-self:center;color:var(--blue);font-weight:800;font-size:20px">→</div>
+    <div class="card topbar t-pink" style="flex:1"><span class="ncircle num">04</span><div style="font-weight:700;font-size:15px;margin:12px 0 8px">Algorithm retrains on revenue, not noise</div><div class="bodytext" style="font-size:13px">Meta optimises ad delivery for the audience that actually pays tuition — not just submits forms.</div></div>
+  </div>
+  <div class="band num" style="font-size:16px">Result: CPL stops being a vanity number. We optimise to cost-per-enrolment from week 6 onward.</div>
+</section>
+
+<!-- ════════ SLIDE 15 — THANK YOU ════════ -->
+<div class="note">Slide 15 · Thank You — <b>Belief:</b> "A named senior operator picks up when I call."</div>
+<section class="slide">
+  <div class="wmk"><svg viewBox="0 0 1432 392"><use href="#wm"/></svg></div>
+  <div style="margin-top:96px;font-size:64px;font-weight:800;color:var(--blue);line-height:1.1">Thank<br>You!</div>
+  <div style="position:absolute;left:64px;bottom:64px">
+    <div style="font-weight:700;font-size:19px">Viknesh <span style="font-weight:400;color:var(--body)">— Sales &amp; Partnership Director</span></div>
+    <div class="num" style="font-weight:700;font-size:18px;color:var(--blue);margin-top:6px">(+60) 125 688 681</div>
+    <div style="font-weight:700;font-size:18px;color:var(--blue);margin-top:2px">toggle.solutions</div>
+  </div>
+  <svg class="iso" viewBox="-150 -20 480 320" style="position:absolute;right:40px;top:170px;width:480px">
+    <!-- loop-form (placeholder pending trace of the Sunway Thank-You artwork — see SIGNATURE-DEVICES.md §A2) -->
+    <g transform="translate(0,40)">
+      <g transform="matrix(0.866,0.5,-0.866,0.5,0,0)"><rect x="0" y="0" width="260" height="150" rx="60"/><rect x="34" y="34" width="192" height="82" rx="41"/></g>
+    </g>
+    <g transform="translate(168,52)">
+      <polygon points="0,-46 39.8,-23 0,0 -39.8,-23"/>
+      <polygon points="39.8,23 0,46 0,0 39.8,-23"/>
+      <polygon class="fill" points="-39.8,23 0,46 0,0 -39.8,-23"/>
+    </g>
+  </svg>
+</section>
+
+<!-- ════════ CONTRARIAN SLIDE LIBRARY ════════ -->
+<div class="libnote">CONTRARIAN SLIDE LIBRARY — inserted per-deal where they earn their place. C1 carries the artifact's single strikethrough (SIGNATURE-DEVICES.md §B1).</div>
+
+<div class="note">Library C1 · Strikethrough framing — <b>Belief:</b> "They've already rejected the mistake everyone else makes."</div>
+<section class="slide" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <div style="font-size:15px;font-weight:700;letter-spacing:.05em;color:var(--body);margin-bottom:28px">MOST AGENCIES OPTIMISE FOR</div>
+  <div style="font-size:52px;font-weight:800"><s class="struck">Cost per lead</s><span class="sr"> — not cost per lead, but —</span></div>
+  <div style="font-size:58px;font-weight:800;color:var(--ink);margin-top:14px">Cost per <span style="color:var(--blue)">enrolment</span></div>
+  <div class="bodytext" style="font-size:17px;max-width:760px;margin-top:34px">A cheap lead that never enrols is the most expensive thing you can buy. Conversions API connects your CRM's enrolment events back to the ad platforms — so from week 6, the algorithm is trained on tuition revenue, not form submits.</div>
+</section>
+
+<div class="note">Library C2 · Disqualifier — <b>Belief:</b> "They turn money away — so their yes means something."</div>
+<section class="slide" style="display:flex;flex-direction:column;justify-content:center">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">We're not a fit if…</h2>
+  <p class="kicker">Worth checking before either of us spends another hour.</p>
+  <div style="margin-top:24px">
+    <div style="border-bottom:1px solid var(--border);padding:26px 4px;font-size:21px;font-weight:700">…the real blocker is sales follow-up, and you'd rather not hear that.<span style="display:block;font-size:14.5px;font-weight:400;color:var(--body);margin-top:6px">We benchmark first-response time before we spend. If leads die in the inbox, more leads won't fix it.</span></div>
+    <div style="border-bottom:1px solid var(--border);padding:26px 4px;font-size:21px;font-weight:700">…we can't get CRM access.<span style="display:block;font-size:14.5px;font-weight:400;color:var(--body);margin-top:6px;max-width:72ch">The lead-quality loop is the engine. Without enrolment events flowing back, we're guessing like everyone else — so we don't take the engagement.</span></div>
+    <div style="border-bottom:1px solid var(--border);padding:26px 4px;font-size:21px;font-weight:700">…you need a guaranteed CPL from day 1.<span style="display:block;font-size:14.5px;font-weight:400;color:var(--body);margin-top:6px;max-width:72ch">The first 30 days buy conversion data, not certainty. Plenty of agencies will promise the number anyway — it won't be us.</span></div>
+    <div style="padding:26px 4px;font-size:21px;font-weight:700">…the problem isn't marketing.<span style="display:block;font-size:14.5px;font-weight:400;color:var(--body);margin-top:6px;max-width:72ch">We refused a retainer in May 2026 because the client's real problem wasn't marketing — and said so publicly. We'll tell you, and walk.</span></div>
+  </div>
+</section>
+
+<div class="note">Library C3 · Assumption-buster — <b>Belief:</b> "Their advice comes from spend data, not opinion."</div>
+<section class="slide" style="display:flex;flex-direction:column;justify-content:center">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">What you'll be told. What the data says.</h2>
+  <p class="kicker">Three claims every education marketer hears — against our own media spend data.</p>
+  <table class="dt" style="margin-top:18px">
+    <tr><th style="width:38%">You'll be told</th><th>What the data says</th></tr>
+    <tr><td style="font-size:15px;color:var(--body)">"TikTok is where your students are."</td><td style="font-size:15px"><span class="head">Education CPLs from our own spend: </span><span class="k num">Google RM 154 · Facebook RM 291 · TikTok RM 525</span><span class="head"> — search intent wins for enrolment.</span> <span style="color:var(--body);font-size:13px">(Toggle education-portfolio data, Malaysia 2025 — domestic cost base; the lower IN/PK ceilings on slide 6 reflect those auctions.)</span></td></tr>
+    <tr><td style="font-size:15px;color:var(--body)">"You're hitting industry benchmark CPL — the campaign is healthy."</td><td style="font-size:15px"><span class="head">Benchmark CPL ≠ enrolment. Rebuilding the funnel past "benchmark-healthy" delivered </span><span class="k num">32,000+ leads at 47% lower CPL</span><span class="head"> for UNITAR.</span> <span style="color:var(--body);font-size:13px">(Toggle case data, UNITAR 2023–2026)</span></td></tr>
+    <tr><td style="font-size:15px;color:var(--body)">"Paid ads are the only way to move revenue fast."</td><td style="font-size:15px"><span class="head">Organic content + TikTok Shop generated </span><span class="k num">RM 200K revenue · 1,400+ orders · 20x ROAS</span><span class="head"> for a fresh-food brand.</span> <span style="color:var(--body);font-size:13px">(Toggle case data, published May 2026)</span></td></tr>
+  </table>
+</section>
+
+</body>
+</html>

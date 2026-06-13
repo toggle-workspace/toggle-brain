@@ -1,0 +1,319 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toggle — Components 6c: Structure</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root,.light{
+  --color-brand-primary:#4A7BF7; --color-brand-primary-deep:#3056C9;
+  --color-surface-canvas:#FFFFFF; --color-surface-card:#F2F3F6; --color-surface-callout:#DDE5FE;
+  --color-text-primary:#0F0F0F; --color-text-body:#4A4A4A; --color-text-secondary:#6B7280; --color-text-muted:#9AA0A8; --color-text-inverse:#FFFFFF;
+  --color-border-subtle:#E4E6EE; --color-border-default:#D2D6E2;
+  --color-state-focus-ring:#3056C9;
+  --hover-wash:#0F0F0F0F;
+  --radius-md:8px; --radius-lg:12px; --radius-pill:999px;
+  --dur-fast:150ms; --ease:cubic-bezier(.22,1,.36,1);
+  --duo-a:#4A7BF7; --duo-b:#FAFAFA;
+}
+.dark{
+  --color-brand-primary:#4A7BF7; --color-brand-primary-deep:#6E95F9;
+  --color-surface-canvas:#0A1224; --color-surface-card:#121C33; --color-surface-callout:#18254A;
+  --color-text-primary:#FFFFFF; --color-text-body:#B0B8C9; --color-text-secondary:#9CA3B5; --color-text-muted:#6B7689; --color-text-inverse:#0F0F0F;
+  --color-border-subtle:#1F2A44; --color-border-default:#2A3756;
+  --color-state-focus-ring:#6E95F9;
+  --hover-wash:#FFFFFF14;
+  --duo-a:#0A1224; --duo-b:#4A7BF7;
+}
+*{box-sizing:border-box}
+body{margin:0;font-family:"Inter Tight",Inter,sans-serif;background:#E9EBF1;padding:32px;font-size:14px}
+.mode{max-width:1240px;margin:0 auto 40px;background:var(--color-surface-canvas);color:var(--color-text-primary);padding:40px 0;border-radius:8px;overflow:hidden}
+.mode>h2{font-size:24px;font-weight:800;color:var(--color-brand-primary);margin:0 0 24px;padding:0 48px}
+.mode h3{font-size:16px;font-weight:700;margin:32px 48px 14px;border-top:1px solid var(--color-border-subtle);padding-top:22px}
+.note{font-size:13px;color:var(--color-text-body);margin:0 48px 12px}
+.wm{height:26px;display:inline-block;color:currentColor}
+.wm svg{height:100%;width:auto;display:block;fill:currentColor}
+a{color:inherit}
+:focus-visible{outline:2px solid var(--color-state-focus-ring);outline-offset:2px}
+
+/* ============ NAVIGATION ============ */
+.nav{display:flex;align-items:center;gap:32px;height:72px;padding:0 32px;background:var(--color-surface-canvas);border-bottom:1px solid var(--color-border-subtle)}
+.nav .wm{color:var(--color-text-primary)}
+.nav ul{display:flex;gap:8px;list-style:none;margin:0 0 0 auto;padding:0}
+.nav a.lnk{display:inline-flex;align-items:center;gap:5px;height:38px;padding:0 14px;border-radius:var(--radius-pill);font-size:14px;font-weight:500;color:var(--color-text-body);text-decoration:none;transition:background-color var(--dur-fast) var(--ease)}
+.nav a.lnk:hover{background:var(--hover-wash);color:var(--color-text-primary)}
+.nav a.lnk[aria-current="page"]{color:var(--color-text-primary);font-weight:700;background:var(--hover-wash)}
+.nav .cta{display:inline-flex;align-items:center;height:40px;padding:0 22px;border-radius:var(--radius-pill);background:var(--color-brand-primary-deep);color:var(--color-text-inverse);font-weight:700;font-size:14px;text-decoration:none}
+.dark .nav .cta{color:var(--color-surface-canvas)}
+.nav .burger{display:none;margin-left:auto;background:none;border:0;color:var(--color-text-primary);width:40px;height:40px;border-radius:var(--radius-md);cursor:pointer}
+.menu-mobile{display:none}
+@media (max-width:860px){
+  .nav ul,.nav .cta{display:none}
+  .nav .burger{display:inline-flex;align-items:center;justify-content:center}
+  .menu-mobile{display:block;background:var(--color-surface-canvas);border-bottom:1px solid var(--color-border-subtle);padding:8px 16px 20px}
+  .menu-mobile a{display:block;padding:13px 16px;font-size:16px;font-weight:500;color:var(--color-text-primary);text-decoration:none;border-radius:var(--radius-md)}
+  .menu-mobile a:hover{background:var(--hover-wash)}
+  .menu-mobile .cta-m{display:flex;justify-content:center;margin:12px 16px 0;height:48px;align-items:center;border-radius:var(--radius-pill);background:var(--color-brand-primary-deep);color:var(--color-text-inverse);font-weight:700;font-size:15px;text-decoration:none}
+  .dark .menu-mobile .cta-m{color:var(--color-surface-canvas)}
+}
+
+/* ============ HERO — homepage (strikethrough) ============ */
+.hero{padding:96px 32px 72px;background:var(--color-surface-canvas)}
+.hero .inner{max-width:1176px;margin:0 auto}
+.hero .struck{display:block;font-size:clamp(28px,5vw,56px);font-weight:800;line-height:1.08;color:var(--color-text-secondary)}
+.hero .struck s{text-decoration:line-through;text-decoration-thickness:.12em}
+.hero h1{margin:6px 0 0;font-size:clamp(34px,6vw,64px);font-weight:800;line-height:1.05;color:var(--color-text-primary);letter-spacing:-0.01em}
+.hero .sub{max-width:62ch;font-size:17px;line-height:1.55;color:var(--color-text-body);margin:22px 0 30px}
+.hero .cta{display:inline-flex;align-items:center;gap:8px;height:48px;padding:0 28px;border-radius:var(--radius-pill);background:var(--color-brand-primary-deep);color:var(--color-text-inverse);font-weight:700;font-size:15px;text-decoration:none}
+.dark .hero .cta{color:var(--color-surface-canvas)}
+.hero .cta svg{width:18px;height:18px}
+.logowall{display:flex;gap:12px 44px;flex-wrap:wrap;align-items:center;margin-top:56px;padding-top:28px;border-top:1px solid var(--color-border-subtle)}
+.logowall .ll{font-size:15px;font-weight:800;letter-spacing:.04em;color:var(--color-text-secondary)}
+.logowall .cap{width:100%;font-size:13px;color:var(--color-text-body);margin-bottom:2px}
+
+/* ============ HERO — page + case study ============ */
+.pagehero{padding:72px 32px 56px}
+.pagehero .inner,.cshero .inner{max-width:1176px;margin:0 auto}
+.kicker-seal{font-size:14px;font-weight:700;color:var(--color-brand-primary-deep);letter-spacing:.01em}
+.kicker-seal .br{font-weight:400}
+.pagehero h1{margin:10px 0 0;font-size:clamp(30px,5vw,48px);font-weight:800;line-height:1.1}
+.pagehero .sub{max-width:62ch;font-size:16px;line-height:1.55;color:var(--color-text-body);margin:16px 0 0}
+.cshero{padding:72px 32px 0}
+.cshero .grid{display:grid;grid-template-columns:1.1fr .9fr;gap:48px;align-items:center}
+.cshero .grid>*{min-width:0}
+.cshero .kick{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--color-brand-primary-deep)}
+.cshero h1{margin:10px 0 0;font-size:clamp(30px,4.5vw,44px);font-weight:800;line-height:1.12}
+.cshero .sub{font-size:16px;line-height:1.55;color:var(--color-text-body);margin:14px 0 0}
+.cshero .stats{display:flex;gap:24px 40px;margin-top:28px;flex-wrap:wrap}
+.cshero .stats .n{font-size:30px;font-weight:800;font-variant-numeric:tabular-nums;color:var(--color-text-primary)}
+.cshero .stats .focal .n{color:var(--color-brand-primary)}
+.cshero .stats .l{font-size:13px;color:var(--color-text-body);margin-top:3px}
+.cshero .img{aspect-ratio:4/3;border-radius:var(--radius-lg);background:linear-gradient(135deg,var(--duo-a),var(--duo-b));position:relative;overflow:hidden;border:1px solid var(--color-border-subtle)}
+.cshero .img::after{content:"duotone case imagery";position:absolute;left:0;right:0;bottom:0;text-align:center;font-size:12px;color:#fff;background:linear-gradient(transparent,rgba(10,18,36,.82));padding:26px 12px 10px}
+
+/* ============ SECTION HEADER ============ */
+.sect{padding:24px 32px;max-width:1240px}
+.sect .kicker{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--color-brand-primary-deep);margin:0 0 8px}
+.sect h2.t{font-size:28px;font-weight:800;line-height:1.15;margin:0}
+.sect .sub{font-size:15px;color:var(--color-text-body);margin:10px 0 0;max-width:72ch}
+.sect.center{text-align:center;margin:0 auto}
+.sect.center .sub{margin-left:auto;margin-right:auto}
+.sect.bracketed{position:relative;padding-right:200px}
+.sect.bracketed .seal{position:absolute;right:32px;top:28px}
+
+/* ============ FOOTER ============ */
+.foot{background:var(--color-surface-canvas);border-top:1px solid var(--color-border-subtle);padding:56px 32px 28px}
+.foot .cols{max-width:1176px;margin:0 auto;display:grid;grid-template-columns:2fr 1fr 1fr 1fr 1fr;gap:32px}
+.foot .wm{color:var(--color-text-primary)}
+.foot h4{font-size:13px;font-weight:700;margin:0 0 12px;color:var(--color-text-primary)}
+.foot ul{list-style:none;margin:0;padding:0}
+.foot li{margin-bottom:9px}
+.foot a{font-size:13px;color:var(--color-text-body);text-decoration:none}
+.foot a:hover{color:var(--color-text-primary);text-decoration:underline}
+.foot .base{max-width:1176px;margin:40px auto 0;padding-top:20px;border-top:1px solid var(--color-border-subtle);display:flex;gap:24px;flex-wrap:wrap;font-size:13px;color:var(--color-text-body)}
+.foot .base .legal{margin-left:auto;display:flex;gap:18px}
+.foot .base a{color:var(--color-text-body)}
+@media (max-width:767px){
+  .nav{padding:0 16px}
+  .foot .cols{grid-template-columns:1fr 1fr}
+  .cshero .grid{grid-template-columns:1fr}
+  .sect.bracketed{padding-right:32px}
+  .sect.bracketed .seal{position:static;display:inline-block;margin-bottom:10px}
+  .hero{padding:64px 20px 48px}
+}
+</style>
+</head>
+<body>
+
+<!-- ════════ DARK (web default) ════════ -->
+<div class="mode dark">
+<h2>Components 6c — Structure · dark (web default)</h2>
+
+<h3>Navigation — desktop</h3>
+<nav class="nav" aria-label="Main (dark)">
+  <a class="wm" href="/" aria-label="Toggle Solutions — home"><svg viewBox="0 0 1432 392" aria-hidden="true"><use href="#wmk"/></svg></a>
+  <ul>
+    <li><a class="lnk" href="#" aria-current="page">Our Work</a></li>
+    <li><a class="lnk" href="#">Services</a></li>
+    <li><a class="lnk" href="#">About <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M5 9l7 7 7-7"/></svg></a></li>
+    <li><a class="lnk" href="#">Contact</a></li>
+  </ul>
+  <a class="cta" href="#">Book a Consultation</a>
+  <button class="burger" aria-expanded="true" aria-controls="m-menu" aria-label="Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+</nav>
+<div class="menu-mobile" id="m-menu">
+  <a href="#" aria-current="page">Our Work</a><a href="#">Services</a><a href="#">About</a><a href="#">Contact</a>
+  <a class="cta-m" href="#">Book a Consultation</a>
+</div>
+<p class="note" style="margin-top:10px">Mobile: links + CTA collapse into the menu (shown when viewport ≤ 860px; resize to preview). The burger uses the system `menu` icon; `aria-expanded` + `aria-controls` wired.</p>
+
+<h3>Hero — homepage (THE strikethrough surface)</h3>
+<header class="hero">
+  <div class="inner">
+    <span class="struck"><s>Your Marketing Agency</s><span style="position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)"> — not a marketing agency, but —</span></span>
+    <h1>Your Digital Growth Partner</h1>
+    <p class="sub">A strategic growth partner for ambitious brands. We combine high-end design with data-driven performance to build systems that scale effortlessly.</p>
+    <a class="cta" href="#">Book a Consultation <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M3 12h16.5M14 5.5l6.5 6.5L14 18.5"/></svg></a>
+    <div class="logowall">
+      <span class="cap">Trusted by 50+ ambitious companies</span>
+      <span class="ll">CIMB</span><span class="ll">UNITAR</span><span class="ll">SINGLIFE</span><span class="ll">GREAT EASTERN</span><span class="ll">KUALESA</span><span class="ll">KITH &amp; KIN</span><span class="ll">GURULAB</span>
+    </div>
+  </div>
+</header>
+<p class="note">One strikethrough per artifact (SIGNATURE-DEVICES §B1) — the homepage hero is the site's standing utterance. Logo wall replaces the star-rating trust strip (BRAND-IDENTITY §4 drift fix, confirmed 2026-06-10). One CTA.</p>
+
+<h3>Hero — page (dark)</h3>
+<header class="pagehero">
+  <div class="inner">
+    <span class="kicker-seal"><span class="br">[&nbsp;</span>About<span class="br">&nbsp;]</span></span>
+    <h1>Senior-Led, In-House Execution</h1>
+    <p class="sub">You work directly with experienced operators who own both the strategy and the doing — faster decisions, fewer handoffs.</p>
+  </div>
+</header>
+
+<h3>Hero — case study</h3>
+<header class="cshero">
+  <div class="inner"><div class="grid">
+    <div>
+      <span class="kick">UNITAR · Higher-Ed</span>
+      <h1>From Moonshot to Milestone</h1>
+      <p class="sub">A leading Malaysian private university drowning in acquisition costs with no ceiling in sight. We rebuilt the funnel end to end.</p>
+      <div class="stats">
+        <div class="focal"><div class="n">32,000+</div><div class="l">leads · 2023–2026</div></div>
+        <div><div class="n">−47%</div><div class="l">cost per lead</div></div>
+        <div><div class="n">3 yrs</div><div class="l">compounding engagement</div></div>
+      </div>
+    </div>
+    <div class="img" role="img" aria-label="UNITAR campaign imagery, duotone treatment"></div>
+  </div></div>
+</header>
+
+<h3>Section header — three variants</h3>
+<div class="sect center">
+  <h2 class="t">Full Stack Digital Solutions</h2>
+  <p class="sub">From brand awareness to final scale, we cover it all.</p>
+</div>
+<div class="sect">
+  <p class="kicker">Case Studies</p>
+  <h2 class="t">Real Brands. Real Revenue.</h2>
+  <p class="sub">Join the 50+ ambitious companies that trust Toggle to scale their growth.</p>
+</div>
+<div class="sect bracketed">
+  <span class="seal kicker-seal"><span class="br">[&nbsp;</span>How We Engage<span class="br">&nbsp;]</span></span>
+  <h2 class="t">One Growth System Across Every Channel</h2>
+  <p class="sub">Paid media, creative, SEO, email, and analytics don't work in silos here — they work as one.</p>
+</div>
+
+<h3>Footer</h3>
+<footer class="foot">
+  <div class="cols">
+    <div>
+      <a class="wm" href="/" aria-label="Toggle Solutions — home"><svg viewBox="0 0 1432 392" aria-hidden="true"><use href="#wmk"/></svg></a>
+      <p style="font-size:13px;color:var(--color-text-body);max-width:30ch;margin:14px 0 0">Your Digital Growth Partner — Kuala Lumpur, Malaysia.</p>
+    </div>
+    <nav aria-label="Services"><h4>Services</h4><ul>
+      <li><a href="#">Performance Marketing</a></li><li><a href="#">Content Strategy &amp; Marketing</a></li><li><a href="#">Branding</a></li><li><a href="#">Web Development</a></li><li><a href="#">Email Marketing</a></li><li><a href="#">Reporting &amp; Analytics</a></li></ul></nav>
+    <nav aria-label="Company"><h4>Company</h4><ul>
+      <li><a href="#">About</a></li><li><a href="#">Our Work</a></li><li><a href="#">FAQ</a></li><li><a href="#">Contact</a></li></ul></nav>
+    <nav aria-label="Case studies"><h4>Case Studies</h4><ul>
+      <li><a href="#">UNITAR</a></li><li><a href="#">CIMB Bank</a></li><li><a href="#">Kith &amp; Kin</a></li><li><a href="#">Kualesa</a></li><li><a href="#">Singlife</a></li></ul></nav>
+    <nav aria-label="Social"><h4>Social</h4><ul>
+      <li><a href="#">LinkedIn</a></li><li><a href="#">Instagram</a></li></ul></nav>
+  </div>
+  <div class="base">
+    <span>© 2026 Toggle Solutions. All rights reserved.</span>
+    <span class="legal"><a href="#">Terms and Conditions</a><a href="#">Privacy Policy</a></span>
+  </div>
+</footer>
+</div>
+
+<!-- ════════ LIGHT ════════ -->
+<div class="mode light">
+<h2>Components 6c — Structure · light</h2>
+
+<h3>Navigation</h3>
+<nav class="nav" aria-label="Main (light)">
+  <a class="wm" href="/" aria-label="Toggle Solutions — home"><svg viewBox="0 0 1432 392" aria-hidden="true"><use href="#wmk"/></svg></a>
+  <ul>
+    <li><a class="lnk" href="#" aria-current="page">Our Work</a></li>
+    <li><a class="lnk" href="#">Services</a></li>
+    <li><a class="lnk" href="#">Contact</a></li>
+  </ul>
+  <a class="cta" href="#">Book a Consultation</a>
+  <button class="burger" aria-expanded="false" aria-controls="m-menu-l" aria-label="Menu"><svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="butt" stroke-linejoin="miter" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg></button>
+</nav>
+
+<div class="menu-mobile" id="m-menu-l">
+  <a href="#" aria-current="page">Our Work</a><a href="#">Services</a><a href="#">Contact</a>
+  <a class="cta-m" href="#">Book a Consultation</a>
+</div>
+
+<h3>Hero — page (service / about)</h3>
+<header class="pagehero">
+  <div class="inner">
+    <span class="kicker-seal"><span class="br">[&nbsp;</span>Services<span class="br">&nbsp;]</span></span>
+    <h1>Performance Marketing</h1>
+    <p class="sub">Drive growth with campaign optimization and performance creative, using audience and conversion data to guide what we produce and scale.</p>
+  </div>
+</header>
+
+<h3>Hero — case study (light / report context)</h3>
+<header class="cshero" style="padding-bottom:24px">
+  <div class="inner"><div class="grid">
+    <div>
+      <span class="kick">UNITAR · Higher-Ed</span>
+      <h1>From Moonshot to Milestone</h1>
+      <div class="stats">
+        <div class="focal"><div class="n">32,000+</div><div class="l">leads · 2023–2026</div></div>
+        <div><div class="n">−47%</div><div class="l">cost per lead</div></div>
+      </div>
+    </div>
+    <div class="img" role="img" aria-label="UNITAR campaign imagery, duotone treatment, light"></div>
+  </div></div>
+</header>
+
+<h3>Section header — centered + kicker</h3>
+<div class="sect center">
+  <h2 class="t">Full Stack Digital Solutions</h2>
+  <p class="sub">From brand awareness to final scale, we cover it all.</p>
+</div>
+<div class="sect">
+  <p class="kicker">Case Studies</p>
+  <h2 class="t">Real Brands. Real Revenue.</h2>
+</div>
+
+<h3>Section header — bracketed</h3>
+<div class="sect bracketed">
+  <span class="seal kicker-seal"><span class="br">[&nbsp;</span>Pricing<span class="br">&nbsp;]</span></span>
+  <h2 class="t">Five Ways to Engage</h2>
+  <p class="sub">Growth Audit · Integrated Partnership · Campaign Intensive · Market Entry · Creative Performance Lab.</p>
+</div>
+
+<h3>Footer (light — reports/print contexts)</h3>
+<footer class="foot">
+  <div class="cols" style="grid-template-columns:2fr 1fr 1fr">
+    <div>
+      <a class="wm" href="/" aria-label="Toggle Solutions — home"><svg viewBox="0 0 1432 392" aria-hidden="true"><use href="#wmk"/></svg></a>
+      <p style="font-size:13px;color:var(--color-text-body);max-width:30ch;margin:14px 0 0">Your Digital Growth Partner — Kuala Lumpur, Malaysia.</p>
+    </div>
+    <nav aria-label="Company"><h4>Company</h4><ul>
+      <li><a href="#">About</a></li><li><a href="#">Our Work</a></li><li><a href="#">Contact</a></li></ul></nav>
+    <nav aria-label="Social"><h4>Social</h4><ul>
+      <li><a href="#">LinkedIn</a></li><li><a href="#">Instagram</a></li></ul></nav>
+  </div>
+  <div class="base">
+    <span>© 2026 Toggle Solutions. All rights reserved.</span>
+    <span class="legal"><a href="#">Terms and Conditions</a><a href="#">Privacy Policy</a></span>
+  </div>
+</footer>
+</div>
+
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg"><symbol id="wmk" viewBox="0 0 1432 392"><path fill="currentColor" d="M1166.39 1.57487C1166.39 2.43389 1157.45 54.1188 1146.44 116.398C1135.43 178.678 1126.5 232.081 1126.5 234.944C1126.5 238.667 1127.77 241.244 1130.64 243.964C1134.47 247.4 1136.07 247.686 1147.4 247.686C1154.42 247.686 1160 247.973 1160 248.545C1160 249.261 1152.82 290.351 1151.23 298.799C1150.43 302.807 1149.63 303.523 1142.77 304.812C1120.27 309.107 1090.59 307.818 1072.88 301.948C1061.55 298.083 1049.75 288.347 1044.96 278.898C1041.61 272.169 1041.13 269.162 1041.29 254.129C1041.29 239.239 1044.16 221.486 1062.35 119.119C1074 54.4051 1083.41 1.00218 1083.41 0.715838C1083.41 0.286342 1102.08 0 1124.9 0C1154.26 0 1166.39 0.429496 1166.39 1.57487Z"/>
+<path fill="currentColor" d="M140.413 21.6189C140.413 22.9074 133.871 60.8478 131.637 72.5879L130.68 77.3125H155.571C171.527 77.3125 180.303 77.8852 180.303 78.7442C180.303 80.6054 172.485 125.418 171.527 129.856C170.73 133.006 170.091 133.149 145.678 133.436L120.787 133.865L111.533 186.123C101.321 243.821 101.002 246.971 104.672 248.259C106.108 248.689 116.798 249.118 128.606 249.118C148.391 249.118 150.146 249.261 149.349 251.552C148.87 252.984 146.636 265.583 144.243 279.614L139.775 305.241L100.523 304.669C66.058 304.096 60.1543 303.666 50.8998 300.946C30.7951 295.076 20.7428 285.054 17.7113 268.017C15.7965 256.849 16.4348 250.693 27.7636 187.411C32.7099 160.209 36.6989 136.872 36.6989 135.44C36.6989 133.436 34.3055 133.149 18.3495 133.149C6.86114 133.149 0 132.577 0 131.718C0 129.856 7.81846 85.0438 8.93536 80.4623C9.57368 77.4557 10.2118 77.3125 28.5613 77.3125H47.3895L51.0594 56.839C52.974 45.6716 55.2078 32.7862 56.1653 28.2047L57.7609 20.044H99.087C127.01 20.044 140.413 20.4735 140.413 21.6189Z"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M644.145 113.964C646.698 121.409 647.177 121.839 651.644 121.409L656.59 120.98L660.42 99.0745L664.09 77.3125H746.742L745.944 80.4623C745.475 82.2857 737.196 129.18 727.258 185.472L727.255 185.487L726.637 188.986C716.585 246.827 707.49 297.367 706.692 301.376C696.321 347.19 666.643 375.109 614.945 387.565C600.585 391.001 596.596 391.287 568.832 391.43C535.803 391.43 524.475 389.856 504.53 382.697C476.287 372.675 457.619 354.779 450.758 331.155C449.481 326.717 448.364 321.42 448.364 319.702V316.409H530.697L533.57 322.135C538.995 333.16 551.44 338.457 572.023 338.457C594.841 338.457 609.042 331.298 618.136 315.12C622.923 306.816 624.678 300.517 628.827 277.036C632.656 254.988 632.656 254.845 628.029 254.845C625.157 254.845 622.764 256.993 617.658 264.008C598.032 291.21 566.599 302.521 529.421 295.649C488.414 288.061 463.363 258.711 459.693 213.612C456.023 167.654 470.862 127.136 501.657 99.3609C512.029 90.0547 517.294 86.6186 528.145 81.894C552.078 71.5856 578.246 69.5813 600.585 76.1671C621.009 82.1803 638.241 97.2133 644.145 113.964ZM546.813 171.09C552.078 155.627 566.598 141.596 582.235 137.015C586.224 135.726 593.564 134.724 598.51 134.724C624.519 134.438 641.911 149.041 644.145 173.094C646.538 198.865 632.656 223.204 610.318 232.081C599.308 236.519 579.842 236.662 569.63 232.367C560.535 228.644 553.355 222.202 548.568 213.611C545.377 207.885 544.898 204.592 544.898 191.849C544.898 183.545 545.855 174.239 546.813 171.09Z"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M936.619 113.535C939.172 120.121 940.129 120.98 944.437 121.409C947.15 121.696 949.384 121.409 949.384 120.693C949.384 118.975 955.606 84.3279 956.564 80.4623L957.361 77.3125H998.049C1022.14 77.3125 1038.74 77.8852 1038.74 78.6011C1038.74 83.612 999.805 300.803 997.252 309.966C981.934 364.944 930.077 394.294 852.849 391.86C824.448 390.858 808.013 387.565 788.866 379.261C762.06 367.521 746.423 348.622 741.317 321.706L740.2 316.409H823.331L825.086 320.417C827.16 325.142 833.862 331.728 839.447 334.448C846.946 337.884 863.859 339.459 875.347 337.884C902.154 334.019 913.004 321.276 919.865 285.913L920.913 280.423C924.752 260.328 925.594 255.922 923.993 255.023C923.544 254.771 922.904 254.794 922.084 254.823C921.792 254.834 921.478 254.845 921.141 254.845C917.471 254.845 915.876 256.277 911.887 262.29C909.334 266.299 903.111 273.171 898.165 277.609C861.785 310.539 794.61 301.805 767.485 260.715C749.454 233.369 746.582 189.416 760.464 150.044C770.198 122.555 788.547 99.7904 812.64 85.7596C833.383 73.5901 864.816 69.1518 889.548 74.7354C910.451 79.46 929.439 95.0658 936.619 113.535ZM853.807 149.614C830.99 171.805 830.83 211.607 853.169 227.213C862.423 233.655 869.125 235.517 882.368 235.517C902.632 235.373 918.908 226.64 928.321 210.891C934.863 199.724 936.778 192.565 936.778 178.821C936.778 163.358 933.427 154.482 924.013 146.035C912.206 135.44 893.697 131.717 876.784 136.585C866.412 139.592 860.987 142.598 853.807 149.614Z"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M1352.75 76.883C1402.69 89.7684 1431.42 126.563 1431.26 177.246C1431.1 184.977 1430.3 194.999 1429.18 199.724L1427.11 208.314L1341.26 208.744L1255.26 209.03L1256.38 218.05C1257.65 228.931 1263.72 240.814 1270.74 245.539C1288.61 257.708 1324.99 254.272 1336.64 239.239L1341.1 233.512L1381.47 233.369C1406.52 233.369 1421.68 233.942 1421.68 234.801C1421.68 235.517 1419.93 240.385 1417.85 245.396C1401.1 285.197 1356.26 309.107 1298.34 309.25C1233.4 309.25 1190.32 279.327 1179.15 226.211C1176.92 215.759 1176.92 188.7 1179.31 176.53C1187.13 133.579 1212.82 101.508 1253.03 84.3279C1278.56 73.4469 1301.53 70.5835 1336 73.8764C1340.47 74.3059 1348.12 75.5944 1352.75 76.883ZM1263.08 161.354C1269.14 143.601 1284.14 129.999 1301.53 125.991C1311.59 123.843 1325.79 125.561 1333.92 129.999C1342.38 134.581 1349.08 145.319 1350.68 157.059L1351.79 164.647H1261.96L1263.08 161.354Z"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M345.927 75.3081C409.751 87.0481 448.364 137.301 440.706 199.008C439.588 207.598 437.195 219.052 435.44 224.349C420.441 267.873 379.594 299.944 328.854 307.818C314.653 310.109 285.134 309.823 271.731 307.246C222.746 298.083 187.962 267.587 177.91 224.922C174.878 211.894 174.878 185.407 177.75 171.519C188.281 121.982 231.043 83.7552 286.411 74.5923C299.814 72.4447 332.364 72.731 345.927 75.3081ZM297.42 137.158C281.624 142.169 269.976 153.766 262.955 171.376C258.328 182.973 257.211 207.026 260.721 217.907C266.944 237.092 281.305 247.686 301.409 247.686C315.929 247.686 325.503 244.393 335.555 236.232C350.873 223.777 358.053 207.026 357.894 184.691C357.894 161.64 350.714 147.323 335.715 139.449C325.982 134.295 309.387 133.292 297.42 137.158Z"/></symbol></svg>
+</body>
+</html>

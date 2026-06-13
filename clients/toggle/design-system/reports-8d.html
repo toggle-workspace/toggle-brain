@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Toggle — Report Masters (Stage 8d, light): Monthly + Weekly Leads</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{--blue:#4A7BF7;--deep:#3056C9;--ink:#0F0F0F;--body:#4A4A4A;--cap:#9AA0A8;--card:#F2F3F6;--callout:#DDE5FE;--bs:#E4E6EE;--bstr:#9AA0A8;--ok:#0B6B4D;--warn:#A4541C;--bad:#C03028;--teal:#2ECC9B;--slate:#2C2C36}
+*{box-sizing:border-box}
+body{background:#E9EBF1;margin:0;padding:40px 0 80px;font-family:"Inter Tight",Inter,sans-serif;color:var(--ink)}
+.note{max-width:980px;margin:36px auto 10px;font-size:13px;font-weight:500;color:#667}
+.page{width:980px;margin:0 auto 40px;background:#fff;padding:48px 56px;box-shadow:0 2px 18px rgba(10,18,36,.14)}
+.num{font-variant-numeric:tabular-nums}
+.seal{font-weight:700;color:var(--cap);font-size:13px}.seal .br{font-weight:400}
+.wm{height:22px;color:var(--ink);display:inline-block}
+.wm svg{height:100%;width:auto;display:block;fill:currentColor}
+.tophead{display:flex;justify-content:space-between;align-items:center;margin-bottom:8px}
+h1{font-size:26px;font-weight:800;margin:18px 0 2px}
+.meta{font-size:13.5px;color:var(--body)}
+h2{font-size:16px;font-weight:800;color:var(--deep);margin:30px 0 10px}
+p,li{font-size:13.5px;line-height:1.55;color:var(--body)}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th{background:var(--deep);color:#fff;font-weight:700;text-align:left;padding:9px 12px}
+th.r,td.r{text-align:right}
+td{padding:9px 12px;color:var(--body)}
+tbody tr:nth-child(even) td{background:var(--card)}
+td.k{color:var(--deep);font-weight:700}
+tr.total td{border-top:2px solid var(--bstr);font-weight:700;color:var(--ink)}
+.kpis{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.kpi{background:var(--card);border-radius:12px;padding:24px 14px 16px;text-align:center;position:relative}
+.kpi::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;border-radius:12px 12px 0 0;background:var(--blue)}
+.kpi .n{font-size:28px;font-weight:800;line-height:1;white-space:nowrap}
+.kpi.focal .n{color:var(--blue)}
+.kpi .l{font-size:12.5px;font-weight:700;margin-top:7px}
+.kpi .d{font-size:12px;color:var(--body);margin-top:3px}
+ul.tight{margin:8px 0 0;padding-left:18px}
+.headline{background:var(--callout);border-radius:8px;padding:14px 18px;font-size:14.5px;font-weight:700;color:var(--ink)}
+.stripe{position:relative;padding-left:17px}
+.stripe::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;background:var(--st,var(--blue))}
+</style>
+</head>
+<body>
+
+<div class="note"><b>Stage 8d-1 — Monthly client report master (light).</b> Belief: "I can run my own exec meeting from this one page." Sample month uses UNITAR-shaped data marked [SAMPLE].</div>
+<div class="page">
+  <div class="tophead"><span class="wm"><svg viewBox="0 0 1432 392" aria-hidden="true"><use href="#wmk"/></svg></span><span class="seal"><span class="br">[&nbsp;</span>Monthly Report<span class="br">&nbsp;]</span></span></div>
+  <h1>[SAMPLE Client] — May 2026</h1>
+  <p class="meta">Performance Marketing · prepared 11 June 2026 · data: platform + CRM (outcome events)</p>
+
+  <h2>The month in four numbers</h2>
+  <div class="kpis">
+    <div class="kpi focal"><div class="n num">4,812</div><div class="l">net leads</div><div class="d">+9% MoM</div></div>
+    <div class="kpi"><div class="n num">RM 41</div><div class="l">blended CPL</div><div class="d">−6% MoM</div></div>
+    <div class="kpi"><div class="n num">11.4%</div><div class="l">lead → qualified</div><div class="d">CRM-scored</div></div>
+    <div class="kpi"><div class="n num">RM 168K</div><div class="l">spend</div><div class="d">100% of plan</div></div>
+  </div>
+
+  <h2>Channel breakdown</h2>
+  <table>
+    <thead><tr><th>Channel</th><th class="r">Spend</th><th class="r">Leads</th><th class="r">CPL</th><th class="r">MoM Δ CPL</th></tr></thead>
+    <tbody>
+      <tr><td class="stripe" style="--st:var(--blue)">Meta</td><td class="r num k">RM 94,000</td><td class="r num">2,950</td><td class="r num k">RM 32</td><td class="r num">−8%</td></tr>
+      <tr><td class="stripe" style="--st:var(--teal)">Google</td><td class="r num k">RM 58,000</td><td class="r num">1,490</td><td class="r num k">RM 39</td><td class="r num">−4%</td></tr>
+      <tr><td class="stripe" style="--st:var(--slate)">TikTok</td><td class="r num k">RM 16,000</td><td class="r num">372</td><td class="r num k">RM 43</td><td class="r num">+2%</td></tr>
+      <tr class="total"><td>Total</td><td class="r num">RM 168,000</td><td class="r num">4,812</td><td class="r num">RM 41 (blended)</td><td></td></tr>
+    </tbody>
+  </table>
+
+  <h2>What we learned (only what changes decisions)</h2>
+  <ul class="tight">
+    <li>Outcome-trained Meta audiences beat lookalikes on qualified rate (+22%) — shifting 15% of prospecting budget next month.</li>
+    <li>BOF urgency hooks fatigued in week 3 — refresh cadence moves from 14 to 10 days.</li>
+    <li>TikTok CPL drift traces to one campus's creative pool — pausing, not scaling, until new variants test.</li>
+  </ul>
+
+  <h2>Next month's moves</h2>
+  <ul class="tight">
+    <li>Scale: Meta outcome-audiences +15% budget.</li>
+    <li>Test: two persona-split landing pages (Career Climber / Fresh Grad message match).</li>
+    <li>Pause: bottom-30% creatives on TikTok pending refresh.</li>
+  </ul>
+</div>
+
+<div class="note"><b>Stage 8d-2 — Weekly leads breakdown (UNITAR format, codified).</b> The exact binding format from clients/audaura-unitar/WEEKLY-REPORT-FORMAT.md, styled. Belief: "every Monday, the same shape — comparisons hold." Numbers [SAMPLE].</div>
+<div class="page">
+  <div class="tophead"><span class="wm"><svg viewBox="0 0 1432 392" aria-hidden="true"><use href="#wmk"/></svg></span><span class="seal"><span class="br">[&nbsp;</span>Weekly Leads Breakdown<span class="br">&nbsp;]</span></span></div>
+  <h1>UNITAR — Week 24</h1>
+  <p class="meta">Mon–Sun prior week · delivered Monday · format fixed (WEEKLY-REPORT-FORMAT.md)</p>
+
+  <h2>1 · Headline</h2>
+  <div class="headline num">Week 24: 1,284 net leads delivered (+12% WoW, +47% MoM). CPL RM38 (−9% WoW). Best campus: Johor (RM29). Watchlist: Shah Alam (RM61).</div>
+
+  <h2>2 · Net leads by split</h2>
+  <table><thead><tr><th>Segment</th><th class="r">Net leads</th><th class="r">% of total</th><th class="r">WoW Δ</th></tr></thead>
+  <tbody>
+    <tr><td>National</td><td class="r num">512</td><td class="r num">40%</td><td class="r num">+8%</td></tr>
+    <tr><td>Outstation</td><td class="r num">347</td><td class="r num">27%</td><td class="r num">+15%</td></tr>
+    <tr><td>Online</td><td class="r num">296</td><td class="r num">23%</td><td class="r num">+18%</td></tr>
+    <tr><td>Conventional</td><td class="r num">129</td><td class="r num">10%</td><td class="r num">−4%</td></tr>
+    <tr class="total"><td>Total</td><td class="r num">1,284</td><td class="r num">100%</td><td class="r num">+12%</td></tr>
+  </tbody></table>
+
+  <h2>3 · Per-campus net leads (ranked by gap remaining — worst first; all 10 campuses in the live report)</h2>
+  <table><thead><tr><th>Campus</th><th class="r">Leads (wk)</th><th class="r">Cumulative</th><th class="r">2026 target</th><th class="r">Gap remaining</th><th class="r">CPL (wk)</th></tr></thead>
+  <tbody>
+    <tr><td>Shah Alam</td><td class="r num">118</td><td class="r num">2,140</td><td class="r num">5,200</td><td class="r num k">3,060</td><td class="r num">RM 61</td></tr>
+    <tr><td>Kelantan</td><td class="r num">96</td><td class="r num">1,890</td><td class="r num">4,400</td><td class="r num k">2,510</td><td class="r num">RM 44</td></tr>
+    <tr><td>Johor</td><td class="r num">171</td><td class="r num">2,960</td><td class="r num">5,000</td><td class="r num k">2,040</td><td class="r num">RM 29</td></tr>
+    <tr><td colspan="6" style="font-size:12px;color:var(--cap)">… 7 more campuses in the live report — never truncate in delivery</td></tr>
+  </tbody></table>
+
+  <h2>4 · Channel mix</h2>
+  <table><thead><tr><th>Channel</th><th class="r">Spend</th><th class="r">Leads</th><th class="r">CPL</th><th class="r">WoW Δ</th></tr></thead>
+  <tbody>
+    <tr><td class="stripe" style="--st:var(--blue)">Meta</td><td class="r num k">RM 28,400</td><td class="r num">802</td><td class="r num k">RM 35</td><td class="r num">−11%</td></tr>
+    <tr><td class="stripe" style="--st:var(--teal)">Google</td><td class="r num k">RM 14,100</td><td class="r num">356</td><td class="r num k">RM 40</td><td class="r num">−5%</td></tr>
+    <tr><td class="stripe" style="--st:var(--slate)">TikTok</td><td class="r num k">RM 5,900</td><td class="r num">126</td><td class="r num k">RM 47</td><td class="r num">+3%</td></tr>
+  </tbody></table>
+
+  <h2>5 · Creative learnings (≤5, decision-changing only)</h2>
+  <ul class="tight">
+    <li>"Graduate employability" hook — CTR +38% on outstation segments — extending to 3 more campuses.</li>
+    <li>Long-form testimonial video — completion under 25% — cutting to 30s versions.</li>
+    <li>Shah Alam generic creative — CPL RM61 — replacing with campus-specific proof points.</li>
+  </ul>
+
+  <h2>6 · Next week's moves (3, specific)</h2>
+  <ul class="tight">
+    <li>Scale: Johor Meta budget +20% (CPL RM29, gap shrinking on plan).</li>
+    <li>Test: campus-specific creative on Shah Alam (2 variants).</li>
+    <li>Pause: TikTok conventional-segment adset (CPL drift 3 weeks running).</li>
+  </ul>
+</div>
+
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg"><symbol id="wmk" viewBox="0 0 1432 392"><path fill="currentColor" d="M1166.39 1.57487C1166.39 2.43389 1157.45 54.1188 1146.44 116.398C1135.43 178.678 1126.5 232.081 1126.5 234.944C1126.5 238.667 1127.77 241.244 1130.64 243.964C1134.47 247.4 1136.07 247.686 1147.4 247.686C1154.42 247.686 1160 247.973 1160 248.545C1160 249.261 1152.82 290.351 1151.23 298.799C1150.43 302.807 1149.63 303.523 1142.77 304.812C1120.27 309.107 1090.59 307.818 1072.88 301.948C1061.55 298.083 1049.75 288.347 1044.96 278.898C1041.61 272.169 1041.13 269.162 1041.29 254.129C1041.29 239.239 1044.16 221.486 1062.35 119.119C1074 54.4051 1083.41 1.00218 1083.41 0.715838C1083.41 0.286342 1102.08 0 1124.9 0C1154.26 0 1166.39 0.429496 1166.39 1.57487Z"/>
+<path fill="currentColor" d="M140.413 21.6189C140.413 22.9074 133.871 60.8478 131.637 72.5879L130.68 77.3125H155.571C171.527 77.3125 180.303 77.8852 180.303 78.7442C180.303 80.6054 172.485 125.418 171.527 129.856C170.73 133.006 170.091 133.149 145.678 133.436L120.787 133.865L111.533 186.123C101.321 243.821 101.002 246.971 104.672 248.259C106.108 248.689 116.798 249.118 128.606 249.118C148.391 249.118 150.146 249.261 149.349 251.552C148.87 252.984 146.636 265.583 144.243 279.614L139.775 305.241L100.523 304.669C66.058 304.096 60.1543 303.666 50.8998 300.946C30.7951 295.076 20.7428 285.054 17.7113 268.017C15.7965 256.849 16.4348 250.693 27.7636 187.411C32.7099 160.209 36.6989 136.872 36.6989 135.44C36.6989 133.436 34.3055 133.149 18.3495 133.149C6.86114 133.149 0 132.577 0 131.718C0 129.856 7.81846 85.0438 8.93536 80.4623C9.57368 77.4557 10.2118 77.3125 28.5613 77.3125H47.3895L51.0594 56.839C52.974 45.6716 55.2078 32.7862 56.1653 28.2047L57.7609 20.044H99.087C127.01 20.044 140.413 20.4735 140.413 21.6189Z"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M644.145 113.964C646.698 121.409 647.177 121.839 651.644 121.409L656.59 120.98L660.42 99.0745L664.09 77.3125H746.742L745.944 80.4623C745.475 82.2857 737.196 129.18 727.258 185.472L727.255 185.487L726.637 188.986C716.585 246.827 707.49 297.367 706.692 301.376C696.321 347.19 666.643 375.109 614.945 387.565C600.585 391.001 596.596 391.287 568.832 391.43C535.803 391.43 524.475 389.856 504.53 382.697C476.287 372.675 457.619 354.779 450.758 331.155C449.481 326.717 448.364 321.42 448.364 319.702V316.409H530.697L533.57 322.135C538.995 333.16 551.44 338.457 572.023 338.457C594.841 338.457 609.042 331.298 618.136 315.12C622.923 306.816 624.678 300.517 628.827 277.036C632.656 254.988 632.656 254.845 628.029 254.845C625.157 254.845 622.764 256.993 617.658 264.008C598.032 291.21 566.599 302.521 529.421 295.649C488.414 288.061 463.363 258.711 459.693 213.612C456.023 167.654 470.862 127.136 501.657 99.3609C512.029 90.0547 517.294 86.6186 528.145 81.894C552.078 71.5856 578.246 69.5813 600.585 76.1671C621.009 82.1803 638.241 97.2133 644.145 113.964ZM546.813 171.09C552.078 155.627 566.598 141.596 582.235 137.015C586.224 135.726 593.564 134.724 598.51 134.724C624.519 134.438 641.911 149.041 644.145 173.094C646.538 198.865 632.656 223.204 610.318 232.081C599.308 236.519 579.842 236.662 569.63 232.367C560.535 228.644 553.355 222.202 548.568 213.611C545.377 207.885 544.898 204.592 544.898 191.849C544.898 183.545 545.855 174.239 546.813 171.09Z"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M936.619 113.535C939.172 120.121 940.129 120.98 944.437 121.409C947.15 121.696 949.384 121.409 949.384 120.693C949.384 118.975 955.606 84.3279 956.564 80.4623L957.361 77.3125H998.049C1022.14 77.3125 1038.74 77.8852 1038.74 78.6011C1038.74 83.612 999.805 300.803 997.252 309.966C981.934 364.944 930.077 394.294 852.849 391.86C824.448 390.858 808.013 387.565 788.866 379.261C762.06 367.521 746.423 348.622 741.317 321.706L740.2 316.409H823.331L825.086 320.417C827.16 325.142 833.862 331.728 839.447 334.448C846.946 337.884 863.859 339.459 875.347 337.884C902.154 334.019 913.004 321.276 919.865 285.913L920.913 280.423C924.752 260.328 925.594 255.922 923.993 255.023C923.544 254.771 922.904 254.794 922.084 254.823C921.792 254.834 921.478 254.845 921.141 254.845C917.471 254.845 915.876 256.277 911.887 262.29C909.334 266.299 903.111 273.171 898.165 277.609C861.785 310.539 794.61 301.805 767.485 260.715C749.454 233.369 746.582 189.416 760.464 150.044C770.198 122.555 788.547 99.7904 812.64 85.7596C833.383 73.5901 864.816 69.1518 889.548 74.7354C910.451 79.46 929.439 95.0658 936.619 113.535ZM853.807 149.614C830.99 171.805 830.83 211.607 853.169 227.213C862.423 233.655 869.125 235.517 882.368 235.517C902.632 235.373 918.908 226.64 928.321 210.891C934.863 199.724 936.778 192.565 936.778 178.821C936.778 163.358 933.427 154.482 924.013 146.035C912.206 135.44 893.697 131.717 876.784 136.585C866.412 139.592 860.987 142.598 853.807 149.614Z"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M1352.75 76.883C1402.69 89.7684 1431.42 126.563 1431.26 177.246C1431.1 184.977 1430.3 194.999 1429.18 199.724L1427.11 208.314L1341.26 208.744L1255.26 209.03L1256.38 218.05C1257.65 228.931 1263.72 240.814 1270.74 245.539C1288.61 257.708 1324.99 254.272 1336.64 239.239L1341.1 233.512L1381.47 233.369C1406.52 233.369 1421.68 233.942 1421.68 234.801C1421.68 235.517 1419.93 240.385 1417.85 245.396C1401.1 285.197 1356.26 309.107 1298.34 309.25C1233.4 309.25 1190.32 279.327 1179.15 226.211C1176.92 215.759 1176.92 188.7 1179.31 176.53C1187.13 133.579 1212.82 101.508 1253.03 84.3279C1278.56 73.4469 1301.53 70.5835 1336 73.8764C1340.47 74.3059 1348.12 75.5944 1352.75 76.883ZM1263.08 161.354C1269.14 143.601 1284.14 129.999 1301.53 125.991C1311.59 123.843 1325.79 125.561 1333.92 129.999C1342.38 134.581 1349.08 145.319 1350.68 157.059L1351.79 164.647H1261.96L1263.08 161.354Z"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M345.927 75.3081C409.751 87.0481 448.364 137.301 440.706 199.008C439.588 207.598 437.195 219.052 435.44 224.349C420.441 267.873 379.594 299.944 328.854 307.818C314.653 310.109 285.134 309.823 271.731 307.246C222.746 298.083 187.962 267.587 177.91 224.922C174.878 211.894 174.878 185.407 177.75 171.519C188.281 121.982 231.043 83.7552 286.411 74.5923C299.814 72.4447 332.364 72.731 345.927 75.3081ZM297.42 137.158C281.624 142.169 269.976 153.766 262.955 171.376C258.328 182.973 257.211 207.026 260.721 217.907C266.944 237.092 281.305 247.686 301.409 247.686C315.929 247.686 325.503 244.393 335.555 236.232C350.873 223.777 358.053 207.026 357.894 184.691C357.894 161.64 350.714 147.323 335.715 139.449C325.982 134.295 309.387 133.292 297.42 137.158Z"/></symbol></svg>
+</body>
+</html>
