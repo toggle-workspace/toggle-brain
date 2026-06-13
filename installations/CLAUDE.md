@@ -18,3 +18,4 @@ One sub-directory per integration. One recipe per integration.
 ## What's in here
 
 - `toggle-mcp/install.md` — installs and connects the toggle-brain MCP server to Claude Code, Cursor, or Windsurf
+- `google-drive/install.md` — connects Google Drive as an MCP resource in Claude Code via OAuth

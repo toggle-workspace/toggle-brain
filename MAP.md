@@ -131,6 +131,7 @@ When you don't know where something lives, look here. One question per line. Kee
 ## Installations (tooling setup)
 - How do I install the toggle-brain MCP server? → `installations/toggle-mcp/install.md`
 - Set up toggle-mcp auto-sync from toggle-brain? → `TOGGLE_BRAIN_SETUP.md`
+- How do I connect Google Drive to Claude Code? → `installations/google-drive/install.md`
 
 ## Governance
 - Branching / PR rules? → `CONTRIBUTING.md`
