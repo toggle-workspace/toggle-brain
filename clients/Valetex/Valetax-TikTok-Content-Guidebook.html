@@ -1,0 +1,603 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Valetax — TikTok Content Guidebook · Toggle Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#4A7BF7; --ink:#0F0F0F; --navy:#0A1224; --card:#F2F3F6; --callout:#DDE5FE;
+  --body:#4A4A4A; --caption:#9AA0A8; --struck:#6B7280; --teal:#2ECC9B; --pink:#F59EC9;
+  --purple:#8E6BE6; --orange:#F28B4C; --slate:#2C2C36; --paper:#FAFAFA; --border:#E4E6EE;
+  --blue-deep:#3056C9; --error:#C03028; --success:#0B6B4D; --warning:#A4541C;
+  --error-wash:#FBEAE9; --success-wash:#E7F1ED; --warning-wash:#FBF0E6;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:#E9EBF1;margin:0;padding:0 0 80px;font-family:"Inter Tight",Inter,-apple-system,"Segoe UI",sans-serif;color:var(--ink);line-height:1.5}
+.num{font-variant-numeric:tabular-nums}
+.wrap{max-width:1040px;margin:0 auto;background:#fff;box-shadow:0 2px 22px rgba(10,18,36,.14)}
+.pad{padding:0 64px}
+a{color:var(--blue-deep);text-decoration:none}
+a:hover{text-decoration:underline}
+
+/* ---------- Cover ---------- */
+.cover{position:relative;background:#fff;padding:56px 64px 48px;overflow:hidden;border-bottom:2px solid var(--border)}
+.wmk{height:30px;color:var(--ink);display:inline-block}
+.wmk svg{height:100%;width:auto;display:block}
+.cover h1{font-size:52px;font-weight:800;line-height:1.05;margin:64px 0 0;letter-spacing:-0.5px}
+.cover h1 .b{color:var(--blue)}
+.cover .sub{font-size:19px;color:var(--body);font-weight:500;margin:14px 0 0;max-width:60ch}
+.cover .iso{position:absolute;right:56px;top:64px;width:172px;opacity:1;pointer-events:none}
+.iso polygon,.iso path{fill:none;stroke:var(--blue);stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter}
+.iso polygon.fill{fill:var(--blue)}
+.coverfoot{display:flex;justify-content:space-between;align-items:center;margin-top:64px;flex-wrap:wrap;gap:12px}
+.seal{font-weight:700;letter-spacing:.01em;color:var(--blue-deep);font-size:14px}
+.seal .br{font-weight:400;color:var(--blue)}
+.metaline{font-size:13px;color:var(--caption);font-weight:500}
+
+/* ---------- Section structure ---------- */
+section.s{padding:48px 64px;border-bottom:1px solid var(--border)}
+.kick{font-size:13px;font-weight:700;letter-spacing:.78px;text-transform:uppercase;color:var(--blue-deep);margin:0 0 8px}
+h2{font-size:30px;font-weight:800;color:var(--blue);margin:0 0 6px;line-height:1.12;letter-spacing:-0.2px}
+h2 .n{color:var(--ink);font-variant-numeric:tabular-nums}
+.lede{font-size:16px;color:var(--body);margin:0 0 24px;max-width:74ch;line-height:1.55}
+h3{font-size:20px;font-weight:700;color:var(--ink);margin:28px 0 8px}
+h4{font-size:16px;font-weight:700;color:var(--ink);margin:0 0 6px}
+p{font-size:15px;color:var(--body);margin:0 0 12px;line-height:1.55}
+strong{color:var(--ink)}
+.small{font-size:13px;color:var(--body);line-height:1.5}
+
+/* ---------- Components ---------- */
+.grid{display:grid;gap:18px}
+.cols2{grid-template-columns:1fr 1fr}.cols3{grid-template-columns:1fr 1fr 1fr}
+@media(max-width:820px){.cols2,.cols3{grid-template-columns:1fr}}
+.card{background:var(--card);border-radius:12px;padding:22px}
+.callout{background:var(--callout);border-radius:12px;padding:22px}
+.cardtitle{font-size:16px;font-weight:700;margin:0 0 6px;color:var(--ink)}
+.topbar{position:relative;padding-top:28px}
+.topbar::before{content:"";position:absolute;top:0;left:0;right:0;height:7px;border-radius:12px 12px 0 0;background:var(--blue)}
+.t-teal::before{background:var(--teal)}.t-pink::before{background:var(--pink)}.t-purple::before{background:var(--purple)}
+.t-orange::before{background:var(--orange)}.t-error::before{background:var(--error)}.t-success::before{background:var(--success)}
+.stripe{position:relative;padding-left:26px}
+.stripe::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;border-radius:12px 0 0 12px;background:var(--blue)}
+.s-error::before{background:var(--error)}.s-success::before{background:var(--success)}.s-warning::before{background:var(--warning)}.s-teal::before{background:var(--teal)}
+
+ul.b{margin:10px 0 0;padding:0;list-style:none}
+ul.b li{font-size:14.5px;color:var(--body);line-height:1.5;padding:5px 0 5px 18px;position:relative}
+ul.b li::before{content:"";position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:50%;background:var(--blue)}
+ul.b strong{color:var(--ink)}
+
+/* do / dont rows */
+.dd{display:flex;gap:12px;align-items:flex-start;padding:11px 0;border-bottom:1px solid var(--border)}
+.dd:last-child{border-bottom:none}
+.mark{flex:none;width:24px;height:24px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:800;font-size:14px;color:#fff;margin-top:1px}
+.mark.no{background:var(--error)}.mark.yes{background:var(--success)}
+.dd .txt{font-size:14.5px;line-height:1.5;color:var(--body)}
+.dd .txt b{color:var(--ink)}
+
+/* badges / chips */
+.chip{display:inline-block;border-radius:6px;font-weight:700;font-size:12px;padding:3px 9px;line-height:1.4;border:1.5px solid var(--blue);color:var(--blue-deep);background:#fff}
+.chip.no{border-color:var(--error);color:var(--error)}
+.chip.cond{border-color:var(--warning);color:var(--warning)}
+.chip.ok{border-color:var(--success);color:var(--success)}
+
+/* strikethrough signature device */
+.rewrite{margin:6px 0 0;font-size:26px;font-weight:800;line-height:1.25}
+.struck{color:var(--struck);text-decoration:line-through;text-decoration-thickness:.12em}
+.truth{color:var(--ink)}
+.arrow{color:var(--struck);font-weight:700;margin:0 10px}
+
+/* tables */
+table.dt{width:100%;border-collapse:collapse;font-size:13.5px;margin-top:6px;border:2px solid #9AA0A8}
+table.dt th{background:var(--blue-deep);color:#fff;font-weight:700;text-align:left;padding:10px 13px;vertical-align:top}
+table.dt td{padding:10px 13px;color:var(--body);vertical-align:top;line-height:1.45}
+table.dt tr:nth-child(even) td{background:var(--card)}
+table.dt td.k{color:var(--blue-deep);font-weight:700}
+
+/* callout banners */
+.banner{border-radius:12px;padding:18px 20px;margin:0 0 20px;font-size:14.5px;line-height:1.55}
+.banner.warn{background:var(--warning-wash);border-left:6px solid var(--warning)}
+.banner.err{background:var(--error-wash);border-left:6px solid var(--error)}
+.banner.info{background:var(--callout);border-left:6px solid var(--blue-deep)}
+.banner b{color:var(--ink)}
+.banner .lbl{display:block;font-weight:800;text-transform:uppercase;letter-spacing:.5px;font-size:12px;margin-bottom:5px}
+.banner.warn .lbl{color:var(--warning)}.banner.err .lbl{color:var(--error)}.banner.info .lbl{color:var(--blue-deep)}
+
+/* disclaimer monospace block */
+.discbox{background:var(--navy);color:#E8ECF6;border-radius:12px;padding:22px 24px;margin:14px 0;font-size:14px;line-height:1.6}
+.discbox .q{color:#fff;font-weight:500}
+.discbox .cap{display:block;color:#8FA0C8;font-size:12px;font-weight:700;text-transform:uppercase;letter-spacing:.6px;margin-bottom:10px}
+
+/* TOC */
+.toc{background:var(--card);border-radius:12px;padding:24px 28px}
+.toc ol{margin:0;padding-left:22px;columns:2;column-gap:40px}
+@media(max-width:820px){.toc ol{columns:1}}
+.toc li{font-size:14.5px;padding:5px 0;color:var(--ink);font-weight:500}
+.toc li a{color:var(--ink)}
+.toc li a:hover{color:var(--blue-deep)}
+
+/* checklist */
+.check{display:flex;gap:12px;align-items:flex-start;padding:10px 0;border-bottom:1px solid var(--border)}
+.check:last-child{border-bottom:none}
+.box{flex:none;width:20px;height:20px;border:2px solid var(--blue-deep);border-radius:5px;margin-top:1px}
+.check .txt{font-size:14.5px;line-height:1.5;color:var(--body)}
+.check .txt b{color:var(--ink)}
+
+/* stat row */
+.stats{display:flex;gap:36px;flex-wrap:wrap;margin:6px 0 0}
+.stat .n{font-size:40px;font-weight:800;color:var(--blue);line-height:1;font-variant-numeric:tabular-nums}
+.stat .n.ink{color:var(--ink)}
+.stat .l{font-size:13px;font-weight:600;color:var(--body);margin-top:8px;max-width:22ch}
+
+/* footer */
+.foot{padding:40px 64px;background:#fff}
+.foot .seal{font-size:15px}
+.foot .fine{font-size:12px;color:var(--caption);margin-top:14px;max-width:80ch;line-height:1.55}
+
+@media(max-width:680px){.pad,.cover,section.s,.foot{padding-left:28px;padding-right:28px}.cover .iso{display:none}.cover h1{font-size:38px}}
+@media print{
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff}.wrap{box-shadow:none;max-width:none}
+  section.s{page-break-inside:auto}.card,.callout,.banner,.discbox,table.dt{page-break-inside:avoid}
+}
+</style>
+</head>
+<body>
+
+<!-- wordmark vector -->
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg"><symbol id="wm" viewBox="0 0 1432 392"><path fill="currentColor" d="M1166.39 1.57487C1166.39 2.43389 1157.45 54.1188 1146.44 116.398C1135.43 178.678 1126.5 232.081 1126.5 234.944C1126.5 238.667 1127.77 241.244 1130.64 243.964C1134.47 247.4 1136.07 247.686 1147.4 247.686C1154.42 247.686 1160 247.973 1160 248.545C1160 249.261 1152.82 290.351 1151.23 298.799C1150.43 302.807 1149.63 303.523 1142.77 304.812C1120.27 309.107 1090.59 307.818 1072.88 301.948C1061.55 298.083 1049.75 288.347 1044.96 278.898C1041.61 272.169 1041.13 269.162 1041.29 254.129C1041.29 239.239 1044.16 221.486 1062.35 119.119C1074 54.4051 1083.41 1.00218 1083.41 0.715838C1083.41 0.286342 1102.08 0 1124.9 0C1154.26 0 1166.39 0.429496 1166.39 1.57487Z"/><path fill="currentColor" d="M140.413 21.6189C140.413 22.9074 133.871 60.8478 131.637 72.5879L130.68 77.3125H155.571C171.527 77.3125 180.303 77.8852 180.303 78.7442C180.303 80.6054 172.485 125.418 171.527 129.856C170.73 133.006 170.091 133.149 145.678 133.436L120.787 133.865L111.533 186.123C101.321 243.821 101.002 246.971 104.672 248.259C106.108 248.689 116.798 249.118 128.606 249.118C148.391 249.118 150.146 249.261 149.349 251.552C148.87 252.984 146.636 265.583 144.243 279.614L139.775 305.241L100.523 304.669C66.058 304.096 60.1543 303.666 50.8998 300.946C30.7951 295.076 20.7428 285.054 17.7113 268.017C15.7965 256.849 16.4348 250.693 27.7636 187.411C32.7099 160.209 36.6989 136.872 36.6989 135.44C36.6989 133.436 34.3055 133.149 18.3495 133.149C6.86114 133.149 0 132.577 0 131.718C0 129.856 7.81846 85.0438 8.93536 80.4623C9.57368 77.4557 10.2118 77.3125 28.5613 77.3125H47.3895L51.0594 56.839C52.974 45.6716 55.2078 32.7862 56.1653 28.2047L57.7609 20.044H99.087C127.01 20.044 140.413 20.4735 140.413 21.6189Z"/><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M644.145 113.964C646.698 121.409 647.177 121.839 651.644 121.409L656.59 120.98L660.42 99.0745L664.09 77.3125H746.742L745.944 80.4623C745.475 82.2857 737.196 129.18 727.258 185.472L727.255 185.487L726.637 188.986C716.585 246.827 707.49 297.367 706.692 301.376C696.321 347.19 666.643 375.109 614.945 387.565C600.585 391.001 596.596 391.287 568.832 391.43C535.803 391.43 524.475 389.856 504.53 382.697C476.287 372.675 457.619 354.779 450.758 331.155C449.481 326.717 448.364 321.42 448.364 319.702V316.409H530.697L533.57 322.135C538.995 333.16 551.44 338.457 572.023 338.457C594.841 338.457 609.042 331.298 618.136 315.12C622.923 306.816 624.678 300.517 628.827 277.036C632.656 254.988 632.656 254.845 628.029 254.845C625.157 254.845 622.764 256.993 617.658 264.008C598.032 291.21 566.599 302.521 529.421 295.649C488.414 288.061 463.363 258.711 459.693 213.612C456.023 167.654 470.862 127.136 501.657 99.3609C512.029 90.0547 517.294 86.6186 528.145 81.894C552.078 71.5856 578.246 69.5813 600.585 76.1671C621.009 82.1803 638.241 97.2133 644.145 113.964ZM546.813 171.09C552.078 155.627 566.598 141.596 582.235 137.015C586.224 135.726 593.564 134.724 598.51 134.724C624.519 134.438 641.911 149.041 644.145 173.094C646.538 198.865 632.656 223.204 610.318 232.081C599.308 236.519 579.842 236.662 569.63 232.367C560.535 228.644 553.355 222.202 548.568 213.611C545.377 207.885 544.898 204.592 544.898 191.849C544.898 183.545 545.855 174.239 546.813 171.09Z"/><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M936.619 113.535C939.172 120.121 940.129 120.98 944.437 121.409C947.15 121.696 949.384 121.409 949.384 120.693C949.384 118.975 955.606 84.3279 956.564 80.4623L957.361 77.3125H998.049C1022.14 77.3125 1038.74 77.8852 1038.74 78.6011C1038.74 83.612 999.805 300.803 997.252 309.966C981.934 364.944 930.077 394.294 852.849 391.86C824.448 390.858 808.013 387.565 788.866 379.261C762.06 367.521 746.423 348.622 741.317 321.706L740.2 316.409H823.331L825.086 320.417C827.16 325.142 833.862 331.728 839.447 334.448C846.946 337.884 863.859 339.459 875.347 337.884C902.154 334.019 913.004 321.276 919.865 285.913L920.913 280.423C924.752 260.328 925.594 255.922 923.993 255.023C923.544 254.771 922.904 254.794 922.084 254.823C921.792 254.834 921.478 254.845 921.141 254.845C917.471 254.845 915.876 256.277 911.887 262.29C909.334 266.299 903.111 273.171 898.165 277.609C861.785 310.539 794.61 301.805 767.485 260.715C749.454 233.369 746.582 189.416 760.464 150.044C770.198 122.555 788.547 99.7904 812.64 85.7596C833.383 73.5901 864.816 69.1518 889.548 74.7354C910.451 79.46 929.439 95.0658 936.619 113.535ZM853.807 149.614C830.99 171.805 830.83 211.607 853.169 227.213C862.423 233.655 869.125 235.517 882.368 235.517C902.632 235.373 918.908 226.64 928.321 210.891C934.863 199.724 936.778 192.565 936.778 178.821C936.778 163.358 933.427 154.482 924.013 146.035C912.206 135.44 893.697 131.717 876.784 136.585C866.412 139.592 860.987 142.598 853.807 149.614Z"/><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M1352.75 76.883C1402.69 89.7684 1431.42 126.563 1431.26 177.246C1431.1 184.977 1430.3 194.999 1429.18 199.724L1427.11 208.314L1341.26 208.744L1255.26 209.03L1256.38 218.05C1257.65 228.931 1263.72 240.814 1270.74 245.539C1288.61 257.708 1324.99 254.272 1336.64 239.239L1341.1 233.512L1381.47 233.369C1406.52 233.369 1421.68 233.942 1421.68 234.801C1421.68 235.517 1419.93 240.385 1417.85 245.396C1401.1 285.197 1356.26 309.107 1298.34 309.25C1233.4 309.25 1190.32 279.327 1179.15 226.211C1176.92 215.759 1176.92 188.7 1179.31 176.53C1187.13 133.579 1212.82 101.508 1253.03 84.3279C1278.56 73.4469 1301.53 70.5835 1336 73.8764C1340.47 74.3059 1348.12 75.5944 1352.75 76.883ZM1263.08 161.354C1269.14 143.601 1284.14 129.999 1301.53 125.991C1311.59 123.843 1325.79 125.561 1333.92 129.999C1342.38 134.581 1349.08 145.319 1350.68 157.059L1351.79 164.647H1261.96L1263.08 161.354Z"/><path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M345.927 75.3081C409.751 87.0481 448.364 137.301 440.706 199.008C439.588 207.598 437.195 219.052 435.44 224.349C420.441 267.873 379.594 299.944 328.854 307.818C314.653 310.109 285.134 309.823 271.731 307.246C222.746 298.083 187.962 267.587 177.91 224.922C174.878 211.894 174.878 185.407 177.75 171.519C188.281 121.982 231.043 83.7552 286.411 74.5923C299.814 72.4447 332.364 72.731 345.927 75.3081ZM297.42 137.158C281.624 142.169 269.976 153.766 262.955 171.376C258.328 182.973 257.211 207.026 260.721 217.907C266.944 237.092 281.305 247.686 301.409 247.686C315.929 247.686 325.503 244.393 335.555 236.232C350.873 223.777 358.053 207.026 357.894 184.691C357.894 161.64 350.714 147.323 335.715 139.449C325.982 134.295 309.387 133.292 297.42 137.158Z"/></symbol></svg>
+
+<div class="wrap">
+
+  <!-- ════════ COVER ════════ -->
+  <header class="cover">
+    <div class="wmk"><svg viewBox="0 0 1432 392"><use href="#wm"/></svg></div>
+    <svg class="iso" viewBox="-6 -6 192 272" aria-hidden="true">
+      <polygon points="90.1,0.0 135.1,26.0 45.0,78.0 0.0,52.0"/>
+      <polygon points="135.1,130.0 180.1,156.0 90.1,208.0 45.0,182.0"/>
+      <polygon points="135.1,130.0 45.0,182.0 45.0,78.0 135.1,26.0"/>
+      <polygon class="fill" points="180.1,208.0 90.1,260.0 90.1,208.0 180.1,156.0"/>
+      <polygon points="0.0,208.0 45.0,234.0 45.0,78.0 0.0,52.0"/>
+      <polygon points="45.0,234.0 90.1,260.0 90.1,208.0 45.0,182.0"/>
+    </svg>
+    <div class="kick" style="margin-top:0">Content Compliance Playbook · TikTok</div>
+    <h1>The Valetax<br><span class="b">Content Guidebook</span></h1>
+    <p class="sub">What to produce, how to produce it, and what must never appear in a Valetax video — so creative ships, survives review, and protects the brand reputation.</p>
+    <div class="coverfoot">
+      <span class="seal">[&thinsp;<span class="br"></span>Your Digital Growth Partner<span class="br"></span>&thinsp;]</span>
+      <span class="metaline">Prepared by Toggle Solutions · v1.0 · 15 Jun 2026 · toggle.solutions</span>
+    </div>
+  </header>
+
+  <!-- ════════ HOW TO USE + CAVEAT ════════ -->
+  <section class="s" id="start">
+    <div class="banner err">
+      <span class="lbl">Read this first — this is guidance, not legal sign-off</span>
+      Valetax is an <b>offshore broker advertising a high-risk, heavily-policed product (leveraged forex / CFDs)</b>. The rules below dramatically reduce the chance of rejection, account flagging, and brand damage — but they <b>do not make an unlicensed offer legal</b> in a given market, and they are <b>not legal advice</b>. Every market section, disclaimer, and "go" decision must be confirmed with <b>licensed local counsel and your TikTok account representative</b> before spend. Where this document marks something <b>[VERIFY]</b>, treat it as unconfirmed until counsel signs off.
+    </div>
+    <p class="small"><strong>Who this is for:</strong> everyone who scripts, shoots, edits, captions, or approves Valetax TikTok content — and the people who brief external creators. <strong>How to use it:</strong> Sections 2–5 cover the day-to-day rules: the governing principle, what to produce, what to exclude, and the disclaimer. Sections 6–7 address the platform requirements and per-market reality. Section 9 is the gate: nothing ships until it passes the checklist. <strong><a href="#s9">Jump straight to the pre-publish checklist →</a></strong></p>
+    <div class="toc" style="margin-top:22px">
+      <div class="kick">Contents</div>
+      <ol>
+        <li><a href="#s1">Why this category is different</a></li>
+        <li><a href="#s2">The core shift &amp; five rules</a></li>
+        <li><a href="#s3">What to produce (green-light)</a></li>
+        <li><a href="#s4">What never to include (red-light)</a></li>
+        <li><a href="#s5">The mandatory disclaimer</a></li>
+        <li><a href="#s6">TikTok platform rules</a></li>
+        <li><a href="#s7">Market-by-market reality</a></li>
+        <li><a href="#s8">Targeting &amp; language</a></li>
+        <li><a href="#s9">Pre-publish checklist</a></li>
+        <li><a href="#s10">Sources &amp; further reading</a></li>
+      </ol>
+    </div>
+  </section>
+
+  <!-- ════════ 1 — WHY DIFFERENT ════════ -->
+  <section class="s" id="s1">
+    <div class="kick">Section 01 · The stakes</div>
+    <h2><span class="n">01</span> &nbsp;Why this category is different</h2>
+    <p class="lede">Most brands can post first and refine later — Valetax cannot. Leveraged forex/CFDs sit in the single most-restricted bucket of paid social, and the advertiser account already carries history. A single careless video does not merely underperform: it adds a violation, degrades account health, and can trigger a suspension that takes an entire market offline.</p>
+
+    <div class="grid cols3" style="margin-bottom:22px">
+      <div class="stat"><div class="n ink">3+1</div><div class="l">priority markets (ID, MY, TH) can't currently run ads — plus VN, treated as prohibited (see §7)</div></div>
+      <div class="stat"><div class="n ink">2</div><div class="l">TikTok rulebooks apply to a broker: the paid Ads policy <em>and</em> the Branded-Content ban</div></div>
+      <div class="stat"><div class="n">0</div><div class="l">tolerance for guarantees — "no risk mentioned" is a documented violation on its own</div></div>
+    </div>
+
+    <div class="grid cols2">
+      <div class="card stripe s-error">
+        <h4>Three factors working against us</h4>
+        <ul class="b">
+          <li><strong>The product is restricted by default.</strong> TikTok treats CFDs / leveraged trading as "complex speculative products" — gated on local licensing, prohibited outright in several markets.</li>
+          <li><strong>The account has a record.</strong> Valetax is on <strong>Malaysia's SC Investor Alert List</strong>, and the advertiser account already carries rejections. Reviewers apply a higher standard, not a lower one.</li>
+          <li><strong>Reviewers see everything.</strong> The video, the caption, <em>and</em> the landing page are all scanned. A clean video pointing at a non-compliant page still fails.</li>
+        </ul>
+      </div>
+      <div class="card stripe s-success">
+        <h4>What actually moves us forward</h4>
+        <ul class="b">
+          <li><strong>Licensing first.</strong> The durable fix in every market is a licensed entity + business verification — content discipline buys time and protects the brand, it doesn't replace the licence.</li>
+          <li><strong>Durable compliance beats short-lived cleverness.</strong> A feature demonstration that runs for months outperforms a viral hook that is pulled within a day.</li>
+          <li><strong>One reviewable system.</strong> Same disclaimer, same checklist, same vetting on every asset — so approvals become predictable rather than arbitrary.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ 2 — CORE SHIFT + 5 RULES ════════ -->
+  <section class="s" id="s2">
+    <div class="kick">Section 02 · The principle</div>
+    <h2><span class="n">02</span> &nbsp;The core shift, and five rules under it</h2>
+    <p class="lede">Every problem in the audit traces back to one habit: selling the <em>outcome</em> of trading. The fix is a single change of subject — stop selling returns, start selling the platform and the experience of using it. Hold that line and the remainder of this guidebook is simply detail.</p>
+
+    <div class="callout" style="text-align:center;padding:30px 24px;margin-bottom:26px">
+      <div class="kick" style="margin-bottom:10px">The one move</div>
+      <div class="rewrite">
+        <span class="struck">"10% Profit &middot; 54% Growth"</span><span class="arrow">&rarr;</span><span class="truth">"Trade the markets on a platform built for it."</span>
+      </div>
+      <p class="small" style="margin:14px auto 0;max-width:62ch">Sell the <strong>product</strong> (tools, speed, access, education), never the <strong>payoff</strong> (profit, growth, winnings). The payoff is exactly what regulators and TikTok's AI are trained to catch.</p>
+    </div>
+
+    <p style="margin-bottom:6px"><strong>The five rules that follow from it.</strong> These are the common ground across the UK FCA, EU/ESMA, Singapore MAS and Australia's ASIC — i.e. the standard every serious reviewer applies. Treat them as non-negotiable on every asset.</p>
+    <div class="grid cols2">
+      <div class="card topbar t-purple"><div class="cardtitle">1 · Fair, clear, not misleading</div><p class="small">Judged on the <strong>first-impression</strong> of the whole video — not the fine print. If a casual viewer could walk away thinking "easy money," it fails, regardless of disclaimers.</p></div>
+      <div class="card topbar t-purple"><div class="cardtitle">2 · Risk gets equal prominence</div><p class="small">Any benefit/feature claim must be matched by a <strong>visible, legible risk warning at the same level</strong> — not a caption, not an end-card, not "see more…". On short video, keep it on-screen.</p></div>
+      <div class="card topbar t-purple"><div class="cardtitle">3 · No guarantees, ever</div><p class="small">No promised, implied, "risk-free," "fixed," or "fast" returns. No profit figures as outcomes. No "turn $X into $Y." This is the most heavily penalised claim type in finance advertising.</p></div>
+      <div class="card topbar t-purple"><div class="cardtitle">4 · No inducements</div><p class="small">Deposit bonuses, welcome credits, rebates, refer-a-friend cash, and <strong>trading contests / prize mechanics</strong> are banned or heavily restricted for CFDs across regulated markets. The same applies to "win" promotions.</p></div>
+      <div class="card topbar t-purple"><div class="cardtitle">5 · Own your creators</div><p class="small">Any paid post must be disclosed plainly — and <strong>Valetax stays liable for what they say</strong>. An unvetted creator's claim becomes Valetax's violation.</p></div>
+    </div>
+  </section>
+
+  <!-- ════════ 3 — WHAT TO PRODUCE ════════ -->
+  <section class="s" id="s3">
+    <div class="kick">Section 03 · Green-light</div>
+    <h2><span class="n">03</span> &nbsp;What to produce</h2>
+    <p class="lede">There is a genuine, brand-building lane here; it is simply not the returns lane. Make content about the <strong>platform, the experience, and the education</strong>, always carrying the risk disclaimer. These formats are the safest path to ads that approve and stay live.</p>
+
+    <div class="grid cols2">
+      <div class="card stripe s-success">
+        <div class="cardtitle">Platform &amp; feature demos</div>
+        <p class="small">Show the <em>app doing its job</em>: fast order execution, clean charts, the deposit and withdrawal flow, tight spreads, multi-device access. Screen-record the real product. <strong>Describe features factually</strong> — "place a trade in three taps," never "profit in three taps."</p>
+      </div>
+      <div class="card stripe s-success">
+        <div class="cardtitle">"Trading-on-the-go" lifestyle</div>
+        <p class="small">The accessibility angle from the audit: trading from your phone, between meetings, on the move. Keep the lifestyle about <strong>convenience and control</strong>, never about the wealth it purportedly buys (no cars, cash stacks, or luxury).</p>
+      </div>
+      <div class="card stripe s-success">
+        <div class="cardtitle">Education &amp; literacy</div>
+        <p class="small">Explain what a spread is, how leverage <em>amplifies losses as well as gains</em>, how to read a candlestick, risk-management basics. Educational, balanced content is the lowest-risk format and builds genuine authority.</p>
+      </div>
+      <div class="card stripe s-success">
+        <div class="cardtitle">Brand &amp; trust signals</div>
+        <p class="small">Who Valetax is, the support team, security of funds, the breadth of markets, years operating. Brand-led content that makes <strong>no performance claim</strong> is the easiest to clear and the most durable.</p>
+      </div>
+      <div class="card stripe s-success">
+        <div class="cardtitle">Product news, factually</div>
+        <p class="small">New instruments, platform updates, supported languages and regions, app improvements. State what's new and what it does — leave out any implication of what users will <em>earn</em>.</p>
+      </div>
+      <div class="card stripe s-warning">
+        <div class="cardtitle">Welcome offers — proceed with caution</div>
+        <p class="small">The audit's "Up to 300 in rewards" idea is an <strong>inducement</strong>, which regulated markets restrict for CFDs. If used at all: only where lawful, never tied to <em>trading volume</em>, framed as account onboarding (not a payoff), with full T&amp;Cs on the landing page — and expect heightened scrutiny. <strong>The default is to omit it.</strong> The dividing line from the banned reward-<em>for-trading</em> in §4 is simple: an onboarding gift not tied to depositing or trading sits here in amber; the moment it's linked to volume or deposits, it's red.</p>
+      </div>
+    </div>
+
+    <h3>The shape of a safe video</h3>
+    <div class="grid cols3">
+      <div class="card topbar t-teal"><div class="cardtitle">Hook on the brand</div><p class="small">Lead with the product or a genuine question ("What's a spread?"), not a promise of money. Favour substance over hook-bait.</p></div>
+      <div class="card topbar t-teal"><div class="cardtitle">Show the product</div><p class="small">Real app footage or a clear explainer. Features and access: the capabilities customers actually use.</p></div>
+      <div class="card topbar t-teal"><div class="cardtitle">Disclaimer throughout</div><p class="small">Risk disclaimer on-screen and legible for the duration (see Section 5), plus full T&amp;Cs on the landing page.</p></div>
+    </div>
+
+    <h3>Worked example — the same idea, reworked</h3>
+    <p>Consider the CopyTrade reel from the audit. The concept is sound; the execution is the problem. Below, the rejected version is rebuilt into one that can clear review.</p>
+    <div class="grid cols2">
+      <div class="card stripe s-error">
+        <div class="cardtitle" style="color:var(--error)">Before — rejected</div>
+        <ul class="b">
+          <li><strong>On-screen:</strong> "Copy top traders — +$348 today, 54% growth"</li>
+          <li><strong>Visual:</strong> profit counter ticking up, cash, a luxury backdrop</li>
+          <li><strong>VO:</strong> "Follow the winners and watch your money grow"</li>
+          <li><strong>Disclaimer:</strong> none, or buried in the caption</li>
+          <li><strong>Why it fails:</strong> performance figures, results-as-promise, lifestyle bait, no risk warning</li>
+        </ul>
+      </div>
+      <div class="card stripe s-success">
+        <div class="cardtitle" style="color:var(--success)">After — compliant</div>
+        <ul class="b">
+          <li><strong>On-screen:</strong> "Mirror a strategy in a few taps"</li>
+          <li><strong>Visual:</strong> real app footage of the copy-trade feature being set up</li>
+          <li><strong>VO:</strong> "Pick a strategy, set your own limits, stay in control — trading is high-risk and most accounts lose money"</li>
+          <li><strong>Disclaimer:</strong> risk line on-screen throughout; full T&amp;Cs on the landing page</li>
+          <li><strong>Why it passes:</strong> sells the feature, no returns, balanced risk, product-led</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Ten videos you can shoot this month</h3>
+    <p>A starting bank of compliant, product-led concepts, each carrying the risk disclaimer and making no performance claim.</p>
+    <div class="grid cols2">
+      <div class="card">
+        <ul class="b">
+          <li>"What's a spread?" explained in 20 seconds</li>
+          <li>"Place a trade in three taps" — real screen recording</li>
+          <li>"How leverage cuts both ways" — a balanced, educational take</li>
+          <li>"Reading a candlestick chart" for beginners</li>
+          <li>"Deposit and withdraw, start to finish"</li>
+        </ul>
+      </div>
+      <div class="card">
+        <ul class="b">
+          <li>"Meet the Valetax support desk" — people and trust</li>
+          <li>"Three risk-management basics every trader should know"</li>
+          <li>"Trading between meetings" — the on-the-go accessibility angle</li>
+          <li>"Markets you can access on Valetax" — factual product tour</li>
+          <li>"Setting a stop-loss, and why it matters"</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ 4 — WHAT TO NEVER PUT IN ════════ -->
+  <section class="s" id="s4">
+    <div class="kick">Section 04 · Red-light</div>
+    <h2><span class="n">04</span> &nbsp;What never to include</h2>
+    <p class="lede">These are the things that get videos rejected, ad groups marked "financial misrepresentation," and accounts suspended. Each one below is drawn from the audit and confirmed against TikTok and financial-regulator policy. Treat the list as absolute: if an asset contains any of these, it does not ship.</p>
+
+    <div class="banner err">
+      <span class="lbl">From your own audit — the five issues that prompted this guidance</span>
+      Performance figures ("10% Profit / 54% Growth"), gambling-style assets (the "JACKLOT" contest), reward-for-trading mechanics, missing risk disclosure, and ad/landing-page mismatch. Every one maps to a hard rule below.
+    </div>
+
+    <div class="card" style="padding:8px 22px">
+      <div class="dd"><span class="mark no">&times;</span><div class="txt"><b>Profit, growth, or return figures as outcomes.</b> "10% Profit," "54% Growth," "+$348 today," win-rate percentages, profit screenshots. These read as a guaranteed or exaggerated financial claim, the most heavily penalised claim type in finance advertising, on TikTok and with every regulator.</div></div>
+      <div class="dd"><span class="mark no">&times;</span><div class="txt"><b>Any guarantee or "risk-free / easy / fast money" framing.</b> "Earn while you sleep," "double your money," "turn $100 into $1,000," countdowns and FOMO urgency. Implied certainty is treated the same as a stated guarantee.</div></div>
+      <div class="dd"><span class="mark no">&times;</span><div class="txt"><b>Gambling-style or contest assets.</b> The "JACKLOT Global Trading Contest" lottery/jackpot aesthetic, "win," prize-draw, leaderboard, or any framing that presents trading as a game of chance. This is both a gambling-content problem <em>and</em> a banned inducement.</div></div>
+      <div class="dd"><span class="mark no">&times;</span><div class="txt"><b>Reward-for-trading inducements.</b> Gifts, cash, Xu/credits, or rebates tied to <em>opening, depositing, or trading volume</em>. Deposit-match bonuses and refer-a-friend cash are restricted/banned for CFDs across the FCA, ESMA, and ASIC regimes.</div></div>
+      <div class="dd"><span class="mark no">&times;</span><div class="txt"><b>Lifestyle-flex bait.</b> Luxury cars, cash fans, watches, mansions, "quit your 9-to-5." Showing or "flaunting money" is explicitly disallowed and signals get-rich-quick.</div></div>
+      <div class="dd"><span class="mark no">&times;</span><div class="txt"><b>Benefits with no balancing risk.</b> Any upside claim that isn't matched by a visible, legible risk warning. "Misleading because it does not mention risk" is a documented violation by itself.</div></div>
+      <div class="dd"><span class="mark no">&times;</span><div class="txt"><b>Past performance without context + warning.</b> Historical returns, "last month's trades," equity curves — only ever with a "past performance is not a reliable indicator of future performance" line, on the same screen, in the regulator-mandated format for that market <b>[VERIFY]</b>. Better still, avoid past-performance content on paid social entirely.</div></div>
+      <div class="dd"><span class="mark no">&times;</span><div class="txt"><b>Copy-trading / "follow top-performing traders" framing</b> (the CopyTrade reel). Presenting other people's results as the outcome <em>you</em> can expect is past-performance-as-promise — restricted the same way as a profit claim. Describe the copy <em>feature</em> factually ("mirror a strategy you choose") without implying their gains are yours, and never pair it with returns.</div></div>
+      <div class="dd"><span class="mark no">&times;</span><div class="txt"><b>"Regulated / safe / licensed" claims based on the offshore licence.</b> An offshore registration (e.g. Valetax's offshore licence <b>[VERIFY jurisdiction]</b>) confers no legality in ID/MY/TH/VN, and asserting "regulated/safe" there is itself misleading. Never imply endorsement by SC, MAS, OJK, BAPPEBTI, SEC, or BOT, and never use their names/logos.</div></div>
+      <div class="dd"><span class="mark no">&times;</span><div class="txt"><b>Paid-creator "Branded Content" for trading.</b> TikTok bans the Branded-Content / paid-partnership toggle for forex, CFDs, and crypto <em>globally</em>, even when licensed. Promote only through verified, whitelisted paid ads — never the creator branded-content path.</div></div>
+      <div class="dd"><span class="mark no">&times;</span><div class="txt"><b>Ad / landing-page mismatch — or swapping the page after approval.</b> The destination must carry the same offer, full T&amp;Cs, and risk disclosure as the ad. Changing the page post-approval is treated as deceptive and gets accounts suspended.</div></div>
+      <div class="dd"><span class="mark no">&times;</span><div class="txt"><b>New ad accounts to dodge a rejection or appeal.</b> Spinning up fresh accounts while flagged or appealing worsens the case and risks broader bans. Fix the content and work the existing account.</div></div>
+    </div>
+  </section>
+
+  <!-- ════════ 5 — DISCLAIMER ════════ -->
+  <section class="s" id="s5">
+    <div class="kick">Section 05 · The disclaimer</div>
+    <h2><span class="n">05</span> &nbsp;The mandatory risk disclaimer</h2>
+    <p class="lede">Every Valetax ad needs a risk disclaimer that is <strong>on-screen, legible, and present for long enough to read</strong> — and the same disclosures must live on the landing page. A disclaimer cannot rescue a misleading video, but its <em>absence</em> is a violation in itself. Below is a working base; each region needs its own counsel-approved version.</p>
+
+    <h3>Base on-screen warning (short-form video)</h3>
+    <div class="discbox">
+      <span class="cap">Generic base — keep on-screen, legible, full duration</span>
+      <span class="q">"Trading CFDs and forex carries a high risk of loss and may not be suitable for everyone. A high proportion of retail accounts lose money trading these products. You could lose your entire deposit. This is general information, not investment advice. See the full risk disclosure at valetax.com."</span>
+    </div>
+    <p class="small" style="margin:-4px 0 14px"><strong>Note on the wording:</strong> This generic line deliberately avoids a specific loss figure. In the <strong>UK/EU</strong> it must be replaced with the firm-specific standardised warning below; never carry a vague "most accounts lose money" claim into those markets. And only state that clients could lose <em>more</em> than their deposit where Valetax genuinely offers no negative-balance protection <strong>[VERIFY]</strong> — in markets where such protection is mandatory, that claim is itself inaccurate.</p>
+
+    <h3>The region template from your audit (Singapore example)</h3>
+    <div class="discbox">
+      <span class="cap">Per-region — adapt the regulator line for each market</span>
+      <span class="q">"This content serves as general information and does not constitute an investment recommendation. The risk of loss in leveraged trading can be substantial. Trading CFDs may not be suitable for all individuals. Losses can exceed your deposit. Refer to the risk fact sheet and risk disclosure statement at valetax.com. This advertisement has not been reviewed by the Monetary Authority of Singapore."</span>
+    </div>
+    <div class="banner warn">
+      <span class="lbl">Important on the "not reviewed by MAS" line</span>
+      That sentence is the format used by <b>MAS-licensed or exempt entities</b>. It does not, by itself, make soliciting Singapore residents lawful for an unlicensed broker — and <b>every market needs its own wording</b> (in-market language, the correct regulator, and the locally-mandated risk statement). <b>[VERIFY]</b> each region's exact required text with local counsel before use.</div>
+
+    <div class="grid cols2" style="margin-top:6px">
+      <div class="card stripe">
+        <h4>Placement rules</h4>
+        <ul class="b">
+          <li><strong>On-screen, not caption-only.</strong> Caption / "see more…" / end-card-only placement fails review in strict markets.</li>
+          <li><strong>Legible &amp; persistent.</strong> Readable size and contrast, held clearly long enough to read in full — on a short clip that usually means keeping it persistent rather than flashing it (treat roughly five seconds, or the whole video if shorter, as a practical floor <strong>[VERIFY]</strong>). Repeat it on any frame that shows a benefit.</li>
+          <li><strong>Equal prominence.</strong> The risk text shouldn't be visibly smaller or dimmer than the benefit message.</li>
+          <li><strong>Mirror it on the landing page</strong> — full risk disclosure + T&amp;Cs, matching the ad.</li>
+        </ul>
+      </div>
+      <div class="card stripe s-teal">
+        <h4>UK/EU note (if those markets are ever in scope) <span class="chip cond">conditional</span></h4>
+        <p class="small">UK/EU mandate a <strong>standardised CFD warning with a firm-specific loss percentage</strong> ("XX% of retail investor accounts lose money when trading CFDs with this provider…"), recalculated quarterly. Do not invent the number; it must come from Valetax's actual client data and counsel. The generic base above is <em>not</em> a substitute there. <strong>Australia (ASIC) and Singapore (MAS) do not use this firm-specific percentage warning</strong> — it is a UK/EU requirement only, so don't carry it into AU/SG creative.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ 6 — TIKTOK PLATFORM RULES ════════ -->
+  <section class="s" id="s6">
+    <div class="kick">Section 06 · The platform</div>
+    <h2><span class="n">06</span> &nbsp;TikTok's own rules</h2>
+    <p class="lede">Separate from any country's law, TikTok runs its own gate — and for a trading broker it's strict. Meet these requirements, or the content never reaches an audience.</p>
+
+    <div class="grid cols2">
+      <div class="card topbar t-orange">
+        <div class="cardtitle">Two rulebooks, both apply</div>
+        <ul class="b">
+          <li><strong>Paid Ads policy</strong> — treats forex/CFD as a licensed, market-by-market category: you must run from a <strong>verified, category-whitelisted advertiser account</strong>, hold local licensing, and age-gate to the required minimum (18+, but confirm the minimum and whether the category is eligible at all in that market <strong>[VERIFY]</strong>).</li>
+          <li><strong>Branded Content policy</strong> — <strong>bans</strong> paid-creator / partnership-toggle posts for forex, CFDs, and crypto everywhere. The paid-creator route that many brokers rely on is closed.</li>
+        </ul>
+      </div>
+      <div class="card topbar t-orange">
+        <div class="cardtitle">Authorisation before spend</div>
+        <ul class="b">
+          <li>This category isn't self-serve. Expect to <strong>apply through a TikTok sales rep / account manager</strong>, submit licensing + registration evidence, and get the account whitelisted first.</li>
+          <li><strong>[VERIFY]</strong> the exact document checklist and turnaround with the rep — it isn't published. This is the licensing-and-docs task already on the Toggle ⇄ Valetax tracker.</li>
+        </ul>
+      </div>
+      <div class="card topbar t-orange">
+        <div class="cardtitle">The destination is reviewed too</div>
+        <ul class="b">
+          <li>TikTok scans the <strong>landing page</strong>, not just the video: offer must match, T&amp;Cs and risk disclosure present, no unlicensed or prohibited offers.</li>
+          <li><strong>Never change the landing page after approval</strong> — it is read as evading review and results in account suspension.</li>
+        </ul>
+      </div>
+      <div class="card topbar t-orange">
+        <div class="cardtitle">Account health &amp; appeals</div>
+        <ul class="b">
+          <li>Violations escalate: rejection → restriction → suspension. Accumulated rejections degrade account standing, so <strong>treat account health as a finite, protected resource.</strong></li>
+          <li>Appeals run through Ads Manager; <strong>do not file repeat appeals</strong> for the same issue, and do not open new accounts while one is pending.</li>
+        </ul>
+      </div>
+    </div>
+
+    <h3>Paid vs organic — what changes</h3>
+    <p>Valetax will also post to its own organic feed. The mechanics differ, but the content rules in Sections 2–5 apply to <strong>both</strong>.</p>
+    <div class="grid cols2">
+      <div class="card stripe">
+        <h4>Paid ads</h4>
+        <ul class="b">
+          <li>Needs the verified, whitelisted advertiser account, licensing, age-gate, and landing-page review.</li>
+          <li>Goes through ad review before it can serve — rejection is visible and appealable.</li>
+        </ul>
+      </div>
+      <div class="card stripe s-teal">
+        <h4>Organic posts</h4>
+        <ul class="b">
+          <li>No whitelisting or landing-page mechanics — but Community Guidelines and the <strong>same finance-content scrutiny</strong> still apply, and the Branded-Content ban still blocks paid-creator trading posts.</li>
+          <li>Enforcement is quieter here (takedowns, reach limits, account strikes), so the disclaimer and red-flag rules matter just as much.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ 7 — PER MARKET ════════ -->
+  <section class="s" id="s7">
+    <div class="kick">Section 07 · Market reality</div>
+    <h2><span class="n">07</span> &nbsp;Market-by-market reality</h2>
+    <p class="lede">The honest picture for the four priority markets. For an <strong>unlicensed offshore broker</strong>, retail forex/CFD advertising ranges from "licence-gated" to "criminal exposure." This is why the durable fix is licensing — content alone cannot open a market that is legally closed.</p>
+
+    <div class="banner warn">
+      <span class="lbl">Read the table as direction, not as settled law</span>
+      Every legal characterisation, statute reference, effective date, regulator-list entry, and enforcement claim below is <b>[VERIFY]</b> — directionally accurate from current research, but subject to confirmation against the live regulator lists and with licensed local counsel before any go/no-go decision.
+    </div>
+
+    <table class="dt">
+      <thead><tr><th style="width:14%">Market</th><th style="width:20%">Paid forex/CFD ads to retail</th><th style="width:33%">The reality</th><th style="width:33%">What's realistically safest</th></tr></thead>
+      <tbody>
+        <tr>
+          <td class="k">Indonesia<br><span class="chip no">no compliant path</span></td>
+          <td>Lawful <strong>only via a BAPPEBTI-licensed local broker</strong>; promo content must be pre-approved by BAPPEBTI.</td>
+          <td>Offshore solicitation is unlawful; aggressive blocking (Satgas PASTI / BAPPEBTI). Local "afiliator" promoters have been criminally prosecuted. <strong>[VERIFY]</strong> Valetax's status on ceklegalitas.bappebti.go.id.</td>
+          <td>No paid retail ads and no sponsored creators absent a local licence. Brand/education content only, no funnel — and confirm even that with counsel.</td>
+        </tr>
+        <tr>
+          <td class="k">Malaysia<br><span class="chip no">flagged + no path</span></td>
+          <td>Lawful <strong>only via a CMSL-licensed entity</strong> under SC advertising guidelines (R1-2025, in force Nov 2025).</td>
+          <td><strong>Valetax is on the SC Investor Alert List.</strong> Advertising an unlicensed broker breaches SC rules; creators count as "advertisers" and share exposure (CMSA s.58). SC×MCMC actively take content down.</td>
+          <td>Nothing branded to MY retail without a CMSL entity. Do not use local creators as a workaround; they carry the same liability.</td>
+        </tr>
+        <tr>
+          <td class="k">Thailand<br><span class="chip no">criminal risk</span></td>
+          <td>No licensed retail forex/CFD regime; offering it is unlicensed solicitation.</td>
+          <td><strong>Thai-language ads geo-targeted to Thai residents with a signup funnel is the SEC's stated criminal-complaint trigger.</strong> Guaranteed-return claims escalate to fraud (the Forex-3D precedent). Platforms face joint liability under the 2025 anti-scam decree.</td>
+          <td>The highest-risk market. Lower-risk but not risk-free: pure brand and educational content, with no Thai-language CTA, no Thai geo-targeting, no account funnel, and no return claims.</td>
+        </tr>
+        <tr>
+          <td class="k">Vietnam<br><span class="chip no">prohibited</span></td>
+          <td>No licensed retail margin forex/CFD exists; advertising an illegal activity is itself banned.</td>
+          <td>SBV: no forex floor has ever been licensed. From <strong>1 Jan 2026, KOLs carry personal gatekeeper + joint liability</strong>. Severe fraud prosecutions (life sentences). Domains get blocked (as with Exness).</td>
+          <td>Treat as a <strong>prohibited market</strong> for forex/CFD promotion. No paid ads, no sponsored KOL/KOC. A disclaimer cannot remedy the underlying prohibition.</td>
+        </tr>
+      </tbody>
+    </table>
+    <p class="small" style="margin-top:14px"><strong>Reading this honestly:</strong> the content rules in this guidebook keep <em>any tolerated</em> content (brand, education) as low-risk as possible and protect the account while licensing is sorted. They are necessary, but in ID/MY/TH/VN they are <strong>not sufficient</strong> on their own; the licensing-and-documentation workstream is what actually opens these markets. Every cell above marked <span class="chip cond">[VERIFY]</span>/status must be confirmed on the live regulator lists and with local counsel.</p>
+  </section>
+
+  <!-- ════════ 8 — TARGETING ════════ -->
+  <section class="s" id="s8">
+    <div class="kick">Section 08 · Distribution</div>
+    <h2><span class="n">08</span> &nbsp;Targeting &amp; language</h2>
+    <p class="lede">From the campaign-setup half of the audit — once content is compliant and the account is cleared, these settings sharpen who sees it and reduce the chance of confused-viewer reports.</p>
+    <div class="grid cols3">
+      <div class="card topbar t-teal">
+        <div class="cardtitle">Refine to financial intent</div>
+        <p class="small">Layer interest and behaviour targeting toward <strong>Financial Services, Finance apps, Business &amp; Finance, Business &amp; Productivity</strong>. Narrowing toward finance and business audiences improves audience quality and lowers the chance of irrelevant viewers reporting the ad as inappropriate or confusing.</p>
+      </div>
+      <div class="card topbar t-teal">
+        <div class="cardtitle">Language by market</div>
+        <p class="small">Match language to market — <strong>Vietnamese for VN, Thai for TH</strong>, etc. For a wider reach you may add <strong>English + local</strong>. Caveat from Section 7: in TH, native-language targeting of residents is exactly the high-risk pattern — coordinate language choices with the market/legal view, not just performance.</p>
+      </div>
+      <div class="card topbar t-teal">
+        <div class="cardtitle">Keep the structure, fix the creative</div>
+        <p class="small">The campaign structure itself is broadly fine; the blockers are <strong>creative and compliance</strong>, not architecture. Do not over-engineer the setup; direct the effort toward content that clears review and toward 18+ age-gating.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════════ 9 — CHECKLIST ════════ -->
+  <section class="s" id="s9">
+    <div class="kick">Section 09 · The gate</div>
+    <h2><span class="n">09</span> &nbsp;Pre-publish checklist</h2>
+    <p class="lede">Nothing ships until every box is true. Two sets of eyes — the maker and one reviewer — run this on every asset, and the sign-off below makes it an auditable record, not just a poster.</p>
+    <div class="callout" style="margin-bottom:18px;display:flex;gap:28px;flex-wrap:wrap;font-size:14px">
+      <div><strong>Asset name</strong> &nbsp;__________________</div>
+      <div><strong>Market</strong> &nbsp;__________________</div>
+      <div><strong>Reviewed by / date</strong> &nbsp;__________________</div>
+    </div>
+    <div class="grid cols2">
+      <div class="card">
+        <h4 style="color:var(--error)">Content — no red-flags present</h4>
+        <div class="check"><span class="box"></span><div class="txt">No profit / growth / return figures, win rates, or P&amp;L screenshots.</div></div>
+        <div class="check"><span class="box"></span><div class="txt">No guarantee, "risk-free," "easy/fast money," or FOMO/countdown framing.</div></div>
+        <div class="check"><span class="box"></span><div class="txt">No gambling/contest/"win" aesthetic or prize mechanic.</div></div>
+        <div class="check"><span class="box"></span><div class="txt">No bonus / reward / rebate tied to depositing or trading.</div></div>
+        <div class="check"><span class="box"></span><div class="txt">No luxury / cash / lifestyle-flex imagery.</div></div>
+        <div class="check"><span class="box"></span><div class="txt">No "regulated/safe/licensed" claim or regulator name/logo.</div></div>
+      </div>
+      <div class="card">
+        <h4 style="color:var(--success)">Compliance &amp; platform — all present</h4>
+        <div class="check"><span class="box"></span><div class="txt">Risk disclaimer on-screen, legible, full duration (region-correct wording).</div></div>
+        <div class="check"><span class="box"></span><div class="txt">Any benefit claim is matched by an equally-prominent risk line.</div></div>
+        <div class="check"><span class="box"></span><div class="txt">Landing page matches the ad: same offer, full T&amp;Cs + risk disclosure.</div></div>
+        <div class="check"><span class="box"></span><div class="txt">Running as a paid ad from the verified account — not Branded Content.</div></div>
+        <div class="check"><span class="box"></span><div class="txt">18+ age-gate set; market is one we're cleared to advertise in.</div></div>
+        <div class="check"><span class="box"></span><div class="txt">Any creator is vetted, disclosed ("#Ad"), and on-script — Valetax owns the claim.</div></div>
+      </div>
+    </div>
+    <div class="banner info" style="margin:22px 0 0">
+      <span class="lbl">If any box can't be ticked</span>
+      Do not attempt to "fix it with a disclaimer," and do not ship to test. Rework the asset; or, if in doubt, send it to the Toggle team before publishing (<b>hello@toggle.solutions</b> / your account lead <b>[VERIFY contact]</b>; expect a same-day yes/no). A single avoided violation is worth more than any one video's reach.
+    </div>
+  </section>
+
+  <!-- ════════ 10 — SOURCES ════════ -->
+  <section class="s" id="s10">
+    <div class="kick">Section 10 · Provenance</div>
+    <h2><span class="n">10</span> &nbsp;Sources &amp; further reading</h2>
+    <p class="lede">This guidebook synthesises Toggle's own audit of Valetax's TikTok content with current platform and regulator policy. Headline sources below; full per-market detail and citations sit in the Toggle research file backing this document.</p>
+    <div class="grid cols2">
+      <div class="card stripe">
+        <h4>Platform &amp; audit</h4>
+        <ul class="b">
+          <li><strong>Toggle — Valetax TikTok Audit</strong> (Jun 2026): targeting, content roadblocks, disclaimer template, next steps.</li>
+          <li><strong>TikTok</strong> Financial Services, Deceptive Practices, Misleading &amp; False Content, and Branded Content policies (accessed Jun 2026).</li>
+        </ul>
+      </div>
+      <div class="card stripe">
+        <h4>Regulators</h4>
+        <ul class="b">
+          <li><strong>Universal</strong>: UK FCA (COBS / FG24/1), EU ESMA (CFD measures), Singapore MAS (Fair Dealing / digital advertising), Australia ASIC (RG 234).</li>
+          <li><strong>Markets</strong>: Indonesia BAPPEBTI/OJK; Malaysia SC (R1-2025) &amp; BNM; Thailand SEC &amp; BOT; Vietnam SBV/SSC + 2025–26 advertising law.</li>
+        </ul>
+      </div>
+    </div>
+    <div class="banner err" style="margin-top:22px">
+      <span class="lbl">Final word</span>
+      This document reduces creative and compliance risk; it does not constitute legal advice or confer any licence. Items marked <b>[VERIFY]</b>, the per-market legal status, and all disclaimer wording must be confirmed with <b>licensed local counsel</b> and your <b>TikTok representative</b> before publishing. Regulations and platform policy change frequently — re-check before each campaign.
+    </div>
+  </section>
+
+  <!-- ════════ FOOTER ════════ -->
+  <footer class="foot">
+    <div class="wmk" style="height:26px;margin-bottom:12px"><svg viewBox="0 0 1432 392"><use href="#wm"/></svg></div>
+    <div class="seal">[&thinsp;<span class="br"></span>&nbsp;toggle.solutions&nbsp;<span class="br"></span>&thinsp;]</div>
+    <p class="fine">Valetax — TikTok Content Guidebook · v1.0 · 15 June 2026 · Prepared by Toggle Solutions, Your Digital Growth Partner. Review owner: Toggle account lead <strong>[VERIFY]</strong> · next scheduled review: quarterly, or on any material policy/regulatory change. Confidential — for Valetax and Toggle internal use. Not legal advice.</p>
+  </footer>
+
+</div>
+</body>
+</html>
