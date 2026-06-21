@@ -1,5 +1,5 @@
 import React from "react";
-import { AbsoluteFill, Sequence, interpolate, useCurrentFrame } from "remotion";
+import { AbsoluteFill, Audio, Sequence, interpolate, staticFile, useCurrentFrame } from "remotion";
 import { loadFont } from "@remotion/google-fonts/InterTight";
 import { Intro } from "./scenes/Intro";
 import { Manifesto } from "./scenes/Manifesto";
@@ -14,14 +14,26 @@ loadFont("normal", { weights: ["400", "500", "700", "800"], subsets: ["latin"] }
 
 const WIPE_F = 9; // 300ms — MOTION.md §3 transition wipe
 
-const SCENES: { component: React.FC; duration: number; name: string }[] = [
+// Scene durations are sized to hold each scene's voiceover (public/vo/*.m4a)
+// plus a lead-in and tail. The VO is a SCRATCH track (macOS `say`, Daniel) —
+// swap in a pro/neural read as a drop-in replacement; timing won't change.
+// `voLead` = frames after the scene starts before the VO speaks (clears the wipe).
+type SceneDef = {
+  component: React.FC;
+  duration: number;
+  name: string;
+  vo?: string;
+  voLead?: number;
+};
+
+const SCENES: SceneDef[] = [
   { component: Intro, duration: 150, name: "intro-bumper" },
-  { component: Manifesto, duration: 165, name: "manifesto" },
-  { component: Diagnosis, duration: 165, name: "diagnosis" },
-  { component: Services, duration: 330, name: "services" },
-  { component: Proof, duration: 300, name: "proof" },
-  { component: WhyToggle, duration: 250, name: "why-toggle" },
-  { component: Outro, duration: 110, name: "outro-bumper" },
+  { component: Manifesto, duration: 195, name: "manifesto", vo: "vo/manifesto.m4a", voLead: 12 },
+  { component: Diagnosis, duration: 175, name: "diagnosis", vo: "vo/diagnosis.m4a", voLead: 12 },
+  { component: Services, duration: 240, name: "services", vo: "vo/services.m4a", voLead: 12 },
+  { component: Proof, duration: 240, name: "proof", vo: "vo/proof.m4a", voLead: 12 },
+  { component: WhyToggle, duration: 220, name: "why-toggle", vo: "vo/whytoggle.m4a", voLead: 12 },
+  { component: Outro, duration: 150, name: "outro-bumper", vo: "vo/outro.m4a", voLead: 42 },
 ];
 
 export const TOTAL_DURATION = SCENES.reduce((a, s) => a + s.duration, 0);
@@ -61,7 +73,7 @@ export const ExplainerVideo: React.FC = () => {
   let from = 0;
   return (
     <AbsoluteFill style={{ backgroundColor: COLOR.canvas }}>
-      {SCENES.map(({ component: Scene, duration, name }, i) => {
+      {SCENES.map(({ component: Scene, duration, name, vo, voLead }, i) => {
         const start = from;
         from += duration;
         const isLast = i === SCENES.length - 1;
@@ -80,6 +92,11 @@ export const ExplainerVideo: React.FC = () => {
                 <Scene />
               </WipeIn>
             )}
+            {vo ? (
+              <Sequence from={voLead ?? 12} name={`${name}-vo`}>
+                <Audio src={staticFile(vo)} />
+              </Sequence>
+            ) : null}
           </Sequence>
         );
       })}
