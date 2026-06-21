@@ -1,7 +1,8 @@
 {
   "permissions": {
     "allow": [
-      "PowerShell(git *)"
+      "PowerShell(git *)",
+      "WebFetch(domain:www.kmu.com.my)"
     ]
   }
 }

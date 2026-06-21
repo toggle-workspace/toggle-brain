@@ -99,6 +99,13 @@ When you don't know where something lives, look here. One question per line. Kee
 - Sunway TES? → `clients/sunway-tes/`
 - (Full client list — see `clients/` directory)
 
+## Pitching (pre-win prospect work)
+- What is the Pitching zone? → `Pitching/` (one folder per prospect; graduates to `clients/` on win) · rules: `Pitching/CLAUDE.md`
+- Where do I build a pitch plan / deck / proposal? → `Pitching/<slug>/01-strategy/`
+- How do I start a pitch? → `cp -r clients/_TEMPLATE Pitching/<slug>` + fill `CLIENT.md` (`status: prospect`)
+- KMU rebranding pitch (corporate rebrand, modernise image)? → `Pitching/kmu/`
+- KMU pitch plan / angle? → `Pitching/kmu/01-strategy/pitch-plan-2026-06-22.md`
+
 ## Playbooks
 - Onboard a new client? → `playbooks/onboard-new-client.md`
 - Launch a paid campaign? → `playbooks/launch-paid-campaign.md`

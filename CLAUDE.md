@@ -16,7 +16,9 @@ The Toggle Solutions internal knowledge repository. This file routes Claude (and
 | **`templates/`** | Empty shells — briefs, proposals, quotations, reports, decks. | **Copy out, don't edit here.** Templates seed `clients/`. |
 | **`clients/`** | Filled outputs per client — briefs, strategies, creative, media, reports, meetings, quotes. | **Never write back into `brain/`.** Outputs only. |
 
-Plus supporting zones: **`playbooks/`** (how-we-do-things runbooks), **`assets/`** (shared non-client binaries), **`archive/`** (closed engagements + quote ledger), **`cockpit/`** (daily operating state — focus, todos, journal, decisions; powers `/toggle-brief`, `/toggle-status`, `/toggle-decide`).
+Plus supporting zones: **`Pitching/`** (pre-win prospect work — pitch plans, decks, proposals; one folder per prospect, graduates to `clients/` on win), **`playbooks/`** (how-we-do-things runbooks), **`assets/`** (shared non-client binaries), **`archive/`** (closed engagements + quote ledger), **`cockpit/`** (daily operating state — focus, todos, journal, decisions; powers `/toggle-brief`, `/toggle-status`, `/toggle-decide`).
+
+> **`Pitching/` vs `clients/`.** Same skeleton, same rules (outputs only; never write back to `brain/`). The only difference is stage: `Pitching/` holds prospects we're still pitching; `clients/` holds won/active engagements. Win = `git mv Pitching/<slug> clients/<slug>`. See `Pitching/CLAUDE.md`.
 
 ---
 
@@ -25,7 +27,8 @@ Plus supporting zones: **`playbooks/`** (how-we-do-things runbooks), **`assets/`
 | Task | Folder | Entry file |
 |---|---|---|
 | Build a quote | `generators/quote.md` | reads `brain/pricing/` + `clients/<slug>/CLIENT.md` + `archive/quotes/` anchors |
-| Draft a proposal | `generators/proposal.md` | reads `brain/services/`, `brain/positioning/`, `brain/case-studies/` |
+| Pitch a prospect (plan / deck / proposal) | `Pitching/<slug>/` | prospect context in `Pitching/<slug>/CLIENT.md`; build under `Pitching/<slug>/01-strategy/` |
+| Draft a proposal | `generators/proposal.md` | reads `brain/services/`, `brain/positioning/`, `brain/case-studies/`; writes `Pitching/<slug>/01-strategy/` |
 | Write TikTok hooks | `generators/tiktok-hooks.md` | reads `brain/voice/`, `prompts/platforms/tiktok.md`, client `style-pack.md` |
 | Write a TikTok One creator brief | `/tiktok-brief-writer` global skill | enforces `brain/tiktok-one-rules.md`; writes `clients/<slug>/00-brief/` |
 | Validate a draft brief against TikTok rules | `brief-validator` subagent | reads `brain/tiktok-one-rules.md` |
@@ -33,7 +36,8 @@ Plus supporting zones: **`playbooks/`** (how-we-do-things runbooks), **`assets/`
 | Morning brief / day's focus | `/toggle-brief` global skill | reads `cockpit/`, `clients/*/CLIENT.md`; writes `cockpit/current.md` |
 | Status across all clients (green/yellow/red) | `/toggle-status` global skill | reads `clients/*/CLIENT.md` + git mtime |
 | Pick the next task | `/toggle-decide` global skill | reads `cockpit/`, optionally writes `cockpit/decisions/` |
-| Onboard a new client | `cp -r clients/_TEMPLATE clients/<slug>` + fill `CLIENT.md` |
+| Start a pitch for a prospect | `cp -r clients/_TEMPLATE Pitching/<slug>` + fill `CLIENT.md` (`status: prospect`) |
+| Onboard a won client | `cp -r clients/_TEMPLATE clients/<slug>` (or `git mv Pitching/<slug> clients/<slug>` if pitched) + fill `CLIENT.md` |
 | Add a new service | new file in `brain/services/<service>.md` (atomic — one service per file) |
 | Update pricing | edit the right file in `brain/pricing/` **and** add a `CHANGELOG.md` entry |
 | Record a case study | `brain/case-studies/<client>-<year>.md`, tag it in `_index.md` |

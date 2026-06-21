@@ -16,6 +16,9 @@
 .env.*
 !.env.example
 
+# Sensitive financial documents — keep out of git
+Toggle Monthly Bank Statement/
+
 # Heavy binaries — keep them in Drive, not git
 clients/*/assets/master/
 clients/*/assets/raw/

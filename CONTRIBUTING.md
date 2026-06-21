@@ -16,6 +16,7 @@ Before you commit, ask: **which zone is this edit in?**
 | `playbooks/` | Suggested reviewer. | Process changes affect the whole team. |
 | `generators/`, `prompts/` | Self-merge OK. | Tooling — iterate fast. |
 | `clients/<slug>/` | Self-merge OK after lead glance. | Client work — speed matters. |
+| `Pitching/<slug>/` | Self-merge OK after lead glance. | Pitch work — speed matters; graduates to `clients/` on win. |
 | `archive/` | Self-merge OK. | Append-only memory. |
 
 ---
@@ -26,6 +27,7 @@ Trunk-based. Short-lived branches; merge same-day where possible.
 
 ```
 client/<slug>/<topic>     # e.g. client/audaura-unitar/wk24-creative
+pitch/<slug>/<topic>      # e.g. pitch/kmu/rebrand-pitch
 brain/<topic>             # e.g. brain/pricing-q3-update
 generators/<name>         # e.g. generators/quote-v2
 playbooks/<name>          # e.g. playbooks/monthly-reporting-v2
@@ -55,6 +57,7 @@ Scope = the lowest meaningful folder. `feat(pricing)`, `feat(audaura-unitar)`, `
 | Thing | Convention |
 |---|---|
 | Client folders | `lowercase-kebab` — optional geo prefix (`my-`, `sg-`, `id-`) once geo is confirmed. |
+| Pitch folders | Same as client folders, under `Pitching/<slug>/`. On win, `git mv` to `clients/<slug>/`. |
 | Case studies | `<client>-<year>.md` (e.g. `unitar-2025.md`) — promotes a year-by-year story. |
 | Quotes | `clients/<slug>/quotes/YYYY-MM-DD-<scope>.md` and `archive/quotes/YYYY-MM-DD-<client>-<scope>.md` |
 | Reports | `clients/<slug>/04-reports/YYYY-MM.md` |
