@@ -16,7 +16,7 @@ The Toggle Solutions internal knowledge repository. This file routes Claude (and
 | **`templates/`** | Empty shells — briefs, proposals, quotations, reports, decks. | **Copy out, don't edit here.** Templates seed `clients/`. |
 | **`clients/`** | Filled outputs per client — briefs, strategies, creative, media, reports, meetings, quotes. | **Never write back into `brain/`.** Outputs only. |
 
-Plus supporting zones: **`playbooks/`** (how-we-do-things runbooks), **`assets/`** (shared non-client binaries), **`archive/`** (closed engagements + quote ledger), **`cockpit/`** (daily operating state — focus, todos, journal, decisions; powers `/toggle-brief`, `/toggle-status`, `/toggle-decide`), **`tools/`** (runnable code shared by the team — currently `tools/remotion/`, the programmatic-video workspace).
+Plus supporting zones: **`playbooks/`** (how-we-do-things runbooks), **`assets/`** (shared non-client binaries), **`archive/`** (closed engagements + quote ledger), **`Sales/`** (agency business state — cross-client rollups: MRR, quotation tracker, credit pending, sales pipeline, efficiency metrics; generated from `clients/*/CLIENT.md` by `/sales-trackers`, never hand-edited), **`cockpit/`** (daily operating state — focus, todos, journal, decisions; powers `/toggle-brief`, `/toggle-status`, `/toggle-decide`), **`installations/`** (AI-executable setup recipes — one per integration, e.g. `toggle-mcp/`, `google-drive/`; recipes write to system config like `~/.claude/`, never back into `brain/`), **`tools/`** (runnable code shared by the team — `tools/remotion/`, the programmatic-video workspace; `tools/meta-ads-cli/`, install + auth setup for Meta's official Ads CLI (`meta`); `tools/gdoc-sync/`, pull a Google Doc into the repo as Markdown via headless Claude + the Drive MCP, scheduled by launchd).
 
 ---
 
@@ -24,7 +24,8 @@ Plus supporting zones: **`playbooks/`** (how-we-do-things runbooks), **`assets/`
 
 | Task | Folder | Entry file |
 |---|---|---|
-| Build a quote | `generators/quote.md` | reads `brain/pricing/` + `clients/<slug>/CLIENT.md` + `archive/quotes/` anchors |
+| Build a quote (one client) | `generators/quote.md` | reads `brain/pricing/` + `clients/<slug>/CLIENT.md` + `archive/quotes/` anchors; renders print-faithful HTML |
+| Pre-generate this month's quotes for every active client | `generators/monthly-quotes.md` (`/monthly-quotes`) | batches `/quote` across the book; one ready-to-send HTML draft per client, anchored to past quotes |
 | Draft a proposal | `generators/proposal.md` | reads `brain/services/`, `brain/positioning/`, `brain/case-studies/` |
 | Write TikTok hooks | `generators/tiktok-hooks.md` | reads `brain/voice/`, `prompts/platforms/tiktok.md`, client `style-pack.md` |
 | Write a TikTok One creator brief | `/tiktok-brief-writer` global skill | enforces `brain/tiktok-one-rules.md`; writes `clients/<slug>/00-brief/` |
@@ -32,12 +33,16 @@ Plus supporting zones: **`playbooks/`** (how-we-do-things runbooks), **`assets/`
 | Generate UNITAR weekly leads breakdown | `/unitar-weekly-report` global skill | format spec in `clients/audaura-unitar/WEEKLY-REPORT-FORMAT.md` |
 | Morning brief / day's focus | `/toggle-brief` global skill | reads `cockpit/`, `clients/*/CLIENT.md`; writes `cockpit/current.md` |
 | Status across all clients (green/yellow/red) | `/toggle-status` global skill | reads `clients/*/CLIENT.md` + git mtime |
+| Refresh MRR / quotation / credit / pipeline trackers | `generators/sales-trackers.md` (`/sales-trackers`) | reads `clients/*/CLIENT.md` + `archive/quotes/`; writes `Sales/` |
+| Check recurring revenue / open quotes / receivables / pipeline | `Sales/` | `mrr-tracker.md`, `quotation-tracker.md`, `credit-pending.md`, `sales-pipeline.md`, `efficiency-metrics.md` |
 | Pick the next task | `/toggle-decide` global skill | reads `cockpit/`, optionally writes `cockpit/decisions/` |
 | Onboard a new client | `cp -r clients/_TEMPLATE clients/<slug>` + fill `CLIENT.md` |
 | Add a new service | new file in `brain/services/<service>.md` (atomic — one service per file) |
 | Update pricing | edit the right file in `brain/pricing/` **and** add a `CHANGELOG.md` entry |
 | Record a case study | `brain/case-studies/<client>-<year>.md`, tag it in `_index.md` |
 | Capture a new partner/tool | `brain/partners-stack.md` |
+| Install / connect an integration (MCP server, Google Drive) | `installations/<integration>/install.md` | AI-executable recipe; writes to `~/.claude/` etc., never back into `brain/` |
+| Pull a Google Doc into the repo as Markdown | `tools/gdoc-sync/pull-gdoc.sh` | headless Claude + Drive MCP; scheduled via launchd (see its `README.md`) |
 | Render / make a branded video (explainer, ad, reel, promo) | `/remotion-video` skill | drives `tools/remotion/` (quickstart in its `README.md`); canon in `clients/toggle/design-system/`; deliverables → `clients/<slug>/02-creative/` |
 | Look up team member | `brain/team/roster.md` + `brain/team/bios/<name>.md` |
 | Find anything | `MAP.md` (flat question → path index) |
@@ -107,4 +112,4 @@ Both locations hold the same skills. Use whichever your tool resolves first.
 - Anything client-specific → `clients/<slug>/`
 - Anything tactical (a hook, a prompt, an ad copy) → `prompts/` or `clients/<slug>/02-creative/`
 
-If you're tempted to add a `.md` at the repo root, **don't.** Add it under the right zone instead. Root holds only: `README.md`, `CLAUDE.md` (this file), `MAP.md`, `CONTRIBUTING.md`.
+If you're tempted to add a `.md` at the repo root, **don't.** Add it under the right zone instead. Root holds only these docs — `README.md`, `CLAUDE.md` (this file), `MAP.md`, `CONTRIBUTING.md`, `TOGGLE_BRAIN_SETUP.md` (one-time repo bootstrap) — plus machine config: `.mcp.json` (shared MCP servers) and `skills-lock.json` (skills lockfile).

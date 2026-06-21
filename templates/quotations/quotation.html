@@ -1,0 +1,231 @@
+<!doctype html>
+<!--
+  Toggle Solutions — Quotation (print-faithful template)
+  =====================================================
+  EDITABLE  : open in any editor; every fill-in is a {{TOKEN}} or a clearly
+              commented repeatable block.
+  PRINTABLE : open in Chrome → Print → A4, margins "Default", "Background
+              graphics" ON, "Headers and footers" OFF → Save as PDF. Result
+              matches the sent-quote look.
+  EXPORTABLE: headless export →
+              chrome --headless --print-to-pdf="out.pdf" --no-pdf-header-footer quotation.html
+
+  HOW TO FILL
+  -----------
+  1. Replace every {{TOKEN}} below.
+  2. In <tbody>, keep ONE category block per service group:
+       - .cat   row = dark category band (e.g. "Digital Package - Monthly Service Fee")
+       - .sub   row = grey sub-header band (optional; omit if not needed)
+       - .item  row = a service line (services cell | description cell | price cell)
+     Duplicate / delete .item and .sub rows freely.
+  3. PRICE HEADER: set the 3rd <th> to "Price (RM)" (fixed/monthly) or
+     "Price / Hour (RM)" (hourly rate card).
+  4. TOTAL: keep the .total row for fixed/monthly quotes; DELETE it for an
+     hourly rate card (the JOT-style quote has no total).
+  5. ACCEPTANCE block: keep for quotes that need a counter-signature; delete the
+     right-hand acceptance column for a simple rate card.
+  6. DRAFT / TBD: when pre-generating a quote whose prices aren't confirmed yet
+     (e.g. monthly batch drafts for the sales team), KEEP the .draftbar element
+     and wrap each unconfirmed price in <span class="tbd">[TBD]</span>. When the
+     quote is fully priced and send-ready, DELETE the .draftbar line and use
+     plain price strings. A send-ready quote never shows a draft bar or a [TBD].
+-->
+
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>{{CLIENT_NAME}} — Quotation {{QT_NO}}</title>
+<style>
+  :root{
+    --ink:#000;          /* dark bands: table header, category, total */
+    --sub:#595959;       /* grey sub-header bands */
+    --line:#bfbfbf;      /* table borders */
+    --muted:#444;
+  }
+  *{ box-sizing:border-box; }
+  html,body{ margin:0; padding:0; }
+  body{
+    font-family:"Helvetica Neue",Arial,"Liberation Sans",sans-serif;
+    color:#111; font-size:10.5px; line-height:1.35;
+    -webkit-print-color-adjust:exact; print-color-adjust:exact;
+  }
+  .page{ width:210mm; min-height:297mm; padding:16mm 14mm; margin:0 auto; background:#fff; }
+
+  /* ---- letterhead ---- */
+  .lh{ font-weight:700; font-size:11px; }
+  .lh .meta{ font-weight:400; font-size:9.5px; color:var(--muted); margin-top:1px; }
+  .rule{ border:0; border-top:1px solid #000; margin:6px 0 10px; }
+  .doctitle{ text-align:center; font-weight:700; font-size:12px; letter-spacing:.3px; margin:2px 0 12px; }
+
+  /* ---- draft bar + TBD price (use only for unconfirmed pre-generated drafts; delete when send-ready) ---- */
+  .draftbar{ background:#fde2e1; border:1px solid #e0a3a0; color:#7a1c18; font-weight:700; text-align:center; padding:4px 6px; margin:0 0 12px; font-size:9.5px; }
+  .tbd{ color:#b00; font-weight:700; }
+
+  /* ---- top: client (left) + meta (right) ---- */
+  .top{ display:flex; justify-content:space-between; gap:24px; margin-bottom:12px; }
+  .client{ max-width:62%; }
+  .client .name{ font-weight:700; }
+  .client .row{ }
+  .qmeta{ text-align:left; min-width:160px; }
+  .qmeta .qno{ font-weight:700; margin-bottom:3px; }
+  .qmeta div{ white-space:nowrap; }
+
+  .intro{ margin:10px 0 8px; font-weight:700; }
+
+  /* ---- table ---- */
+  table{ width:100%; border-collapse:collapse; table-layout:fixed; }
+  col.c-serv{ width:22%; } col.c-desc{ width:62%; } col.c-price{ width:16%; }
+  th,td{ border:1px solid var(--line); padding:5px 7px; vertical-align:top; }
+  thead th{
+    background:var(--ink); color:#fff; font-weight:700; text-align:left;
+    font-size:10px; text-transform:uppercase; letter-spacing:.2px;
+  }
+  thead th.price{ text-align:right; }
+  tr.cat td{ background:var(--ink); color:#fff; font-weight:700; }
+  tr.sub td{ background:var(--sub); color:#fff; font-weight:700; }
+  td.serv{ font-weight:700; }
+  td.price{ text-align:right; white-space:nowrap; vertical-align:bottom; }
+  td.desc ul{ margin:4px 0 0; padding-left:14px; }
+  td.desc li{ margin:1px 0; }
+  td.desc .remark{ margin-top:6px; }
+  td.desc .remark b{ font-weight:700; }
+  tr.total td{ background:var(--ink); color:#fff; font-weight:700; text-align:right; }
+  tr.total td.total-label{ text-align:right; }
+  /* keep a service row and its bands from splitting across pages */
+  tr.item{ break-inside:avoid; }
+  tr.cat,tr.sub{ break-after:avoid; }
+
+  /* ---- notes ---- */
+  .notes{ margin:12px 0 0; }
+  .notes h4{ margin:0 0 3px; font-size:10.5px; }
+  .notes ol{ margin:0; padding-left:16px; }
+  .notes li{ margin:1px 0; }
+
+  /* ---- footer ---- */
+  .closing{ margin:14px 0 6px; }
+  .closing .clar{ font-weight:700; font-style:italic; margin-top:6px; }
+  .sign{ display:flex; justify-content:space-between; gap:32px; margin-top:14px; break-inside:avoid; }
+  .sign .left{ min-width:48%; }
+  .sign .right{ min-width:42%; }
+  .sign .yf{ font-weight:700; }
+  .sign .sigline{ height:34px; }
+  .sign .name{ font-weight:700; }
+  .accept .ttl{ text-align:right; }
+  .accept .fld{ margin-top:14px; }
+
+  @media print{
+    .page{ width:auto; min-height:auto; padding:10mm 12mm; margin:0; }
+    @page{ size:A4; margin:0; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <!-- ===================== LETTERHEAD ===================== -->
+  <div class="lh">
+    Toggle Solutions
+    <div class="meta">Tel: {{TOGGLE_TEL}} &nbsp;·&nbsp; Email: {{TOGGLE_EMAIL}}</div>
+  </div>
+  <hr class="rule">
+  <div class="doctitle">Quotation</div>
+
+  <!-- DRAFT BAR — keep for unconfirmed pre-generated drafts; DELETE this line for a send-ready quote -->
+  <div class="draftbar">{{DRAFT_NOTE}}</div>   <!-- e.g. "DRAFT — prices [TBD] pending rate card; confirm before sending" -->
+
+  <!-- ===================== CLIENT + META ===================== -->
+  <div class="top">
+    <div class="client">
+      <div class="name">{{CLIENT_NAME}}</div>
+      <div class="row">{{CLIENT_CONTACT}}</div>           <!-- e.g. "Attention: Rooban Meraaki" or contact name -->
+      <div class="row">{{CLIENT_ADDRESS}}</div>
+      <div class="row">{{CLIENT_TEL}}</div>               <!-- delete row if none -->
+    </div>
+    <div class="qmeta">
+      <div class="qno">Qt: {{QT_NO}}</div>                <!-- e.g. QT-227 -->
+      <div>Date: {{DATE}}</div>                           <!-- DD/MM/YYYY -->
+      <div>Validity: {{VALIDITY}}</div>                   <!-- e.g. 1 month -->
+      <div>Payment Term: {{PAYMENT_TERM}}</div>           <!-- e.g. 7 days -->
+      <div>Page: {{PAGE}}</div>                           <!-- e.g. 1 of 1 -->
+    </div>
+  </div>
+
+  <div class="intro">Thank you for your inquiry. We are pleased to submit our quote as follows:</div>
+
+  <!-- ===================== SERVICES TABLE ===================== -->
+  <table>
+    <colgroup><col class="c-serv"><col class="c-desc"><col class="c-price"></colgroup>
+    <thead>
+      <tr>
+        <th>Services Offered</th>
+        <th>Description</th>
+        <th class="price">{{PRICE_HEADER}}</th>   <!-- "Price (RM)" or "Price / Hour (RM)" -->
+      </tr>
+    </thead>
+    <tbody>
+
+      <!-- ===== CATEGORY BLOCK (duplicate per group) ===== -->
+      <tr class="cat"><td colspan="3">{{CATEGORY_NAME}}</td></tr>
+
+      <!-- optional grey sub-header band -->
+      <tr class="sub"><td colspan="3">{{SUBHEADER}}</td></tr>
+
+      <!-- ----- SERVICE ITEM (duplicate per line) ----- -->
+      <tr class="item">
+        <td class="serv">{{SERVICE_NAME}}</td>
+        <td class="desc">
+          {{SERVICE_DESC}}
+          <ul>
+            <li>{{BULLET}}</li>
+          </ul>
+          <div class="remark"><b>Remark:</b><br>- {{REMARK}}</div>   <!-- delete if none -->
+        </td>
+        <td class="price">{{PRICE}}</td>                              <!-- e.g. 1,000.00  /  250/Per Page  /  FOC  /  Starting from 500.00 -->
+      </tr>
+      <!-- ----- /SERVICE ITEM ----- -->
+
+      <!-- ===== /CATEGORY BLOCK ===== -->
+
+      <!-- TOTAL — keep for fixed/monthly; DELETE for hourly rate card -->
+      <tr class="total">
+        <td></td>
+        <td class="total-label">Total</td>
+        <td>{{TOTAL}}</td>
+      </tr>
+
+    </tbody>
+  </table>
+
+  <!-- ===================== NOTES ===================== -->
+  <div class="notes">
+    <h4>Notes:</h4>
+    <ol>
+      <li>{{NOTE}}</li>                                    <!-- duplicate per note -->
+    </ol>
+  </div>
+
+  <!-- ===================== CLOSING + SIGN-OFF ===================== -->
+  <div class="closing">
+    We hope that our quotation is favourable to you and looking forward to receive your valued orders in due course.
+    <div class="clar">Should you need further clarification, kindly contact me at: {{SIGNOFF_TEL}} or {{TOGGLE_EMAIL}}</div>
+  </div>
+
+  <div class="sign">
+    <div class="left">
+      <div class="yf">Yours faithfully,</div>
+      <div class="sigline"></div>
+      <div class="name">{{SIGNATORY_NAME}}</div>
+      <div>{{DATE_LONG}}</div>                             <!-- e.g. 20 January 2025 -->
+    </div>
+    <!-- ACCEPTANCE — keep for quotes needing counter-signature; delete for a simple rate card -->
+    <div class="right accept">
+      <div class="ttl">We confirm the order by accepting<br>the terms &amp; conditions stated above</div>
+      <div class="fld">Signature: ______________________</div>
+      <div class="fld">Person in charge: ______________________</div>
+      <div class="fld">Date: ______________________</div>
+    </div>
+  </div>
+
+</div>
+</body>
+</html>

@@ -34,7 +34,7 @@ Generators are the entry points. They are *recipes Claude executes*, not content
 2. Confirm scope with the user (services + duration + geo).
 3. Look up the 2 nearest past quotes for this client (or for similar scope) as anchors.
 4. Apply discount rules.
-5. Render via templates/quotations/quotation.md.
+5. Render via templates/quotations/quotation.html (print-faithful, → PDF).
 6. Write to clients/<slug>/quotes/.
 7. Remind the user to copy the final into archive/quotes/ on send.
 ```
@@ -43,7 +43,9 @@ Generators are the entry points. They are *recipes Claude executes*, not content
 
 ## What's in here
 
-- `quote.md` — fully fleshed; first generator stood up.
+- `quote.md` — fully fleshed; first generator stood up. Renders print-faithful HTML (QT-195/QT-226 house format).
+- `monthly-quotes.md` — batch of `quote.md` across every active client; one ready-to-send HTML draft per client per month, anchored to past quotes.
+- `sales-trackers.md` — rolls `clients/*/CLIENT.md` + quotes into the `Sales/` trackers.
 - `proposal.md`, `tiktok-hooks.md`, `meta-ad-copy.md`, `caption.md`, `email.md`, `landing-page.md`, `image-prompt.md`, `video-prompt.md`, `monthly-report.md` — scaffolded; build out under demand.
 
 Don't pre-build generators no one is calling. **Build under demand.**
