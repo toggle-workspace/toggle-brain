@@ -209,10 +209,32 @@ function finalizeNewlead_(chatId, pending, notes) {
     return tgSendText_(chatId, 'That new lead expired — send /newlead to start over.');
   }
   const callerPic = getPicByChat_(chatId);
-  const botId = appendLead_(chatId, { client: pending.client, pic: pending.pic, notes: notes || '' }, callerPic);
+  appendLead_(chatId, { client: pending.client, pic: pending.pic, notes: notes || '' }, callerPic);
   clearPending_(chatId);
-  tgSendText_(chatId, '✅ Added <b>' + escHtml_(pending.client) + '</b> (PIC: <b>' + escHtml_(pending.pic) + '</b>) to the tracker.');
+
+  // Ping the assigned PIC (if they're on the bot and aren't the one who added it).
+  const notified = notifyPicOfNewLead_(pending.pic, pending.client, notes, callerPic, chatId);
+
+  let confirm = '✅ Added <b>' + escHtml_(pending.client) + '</b> (PIC: <b>' + escHtml_(pending.pic) + '</b>) to the tracker.';
+  if (notified) confirm += '\n📨 ' + escHtml_(pending.pic) + ' has been notified.';
+  tgSendText_(chatId, confirm);
+
   notifyAdmins_('🆕 ' + escHtml_(callerPic) + ' added a lead: <b>' + escHtml_(pending.client) + '</b> (PIC: ' + escHtml_(pending.pic) + ').');
+}
+
+/** DM the assigned PIC that a new lead landed on their plate. Returns true only if a
+ *  message was actually sent — i.e. the PIC is registered and isn't the person who
+ *  just added it (who already got the confirmation). */
+function notifyPicOfNewLead_(pic, client, note, addedBy, adderChatId) {
+  const chatId = getChatByPic_(pic);
+  if (!chatId) return false;                                 // PIC not on the bot yet
+  if (String(chatId) === String(adderChatId)) return false;  // they added it themselves
+  let msg = '🆕 <b>New lead assigned to you</b>\n' +
+            '<b>' + escHtml_(client) + '</b> — added by ' + escHtml_(addedBy) + '.';
+  if (note) msg += '\n📝 ' + escHtml_(note);
+  msg += '\n\nSend /stale to see all your leads.';
+  const res = tgSendText_(chatId, msg);
+  return !!(res && res.ok);   // only claim "notified" if Telegram accepted the send
 }
 
 /** Callback for the /newlead PIC keyboard (action 'np'): a tapped name index or
@@ -469,6 +491,19 @@ function getPicByChat_(chatId) {
   const rows = sh.getRange(2, 1, n, 2).getValues();
   for (let i = 0; i < rows.length; i++) {
     if (String(rows[i][1]).trim() === String(chatId).trim()) return String(rows[i][0]).trim();
+  }
+  return null;
+}
+
+/** Reverse of getPicByChat_: a registered PIC's chat_id by name (case-insensitive),
+ *  or null if that PIC hasn't registered. */
+function getChatByPic_(pic) {
+  if (!pic) return null;
+  const roster = getRoster_();
+  const want = String(pic).trim().toLowerCase();
+  const keys = Object.keys(roster);
+  for (let i = 0; i < keys.length; i++) {
+    if (keys[i].trim().toLowerCase() === want) return roster[keys[i]];
   }
   return null;
 }

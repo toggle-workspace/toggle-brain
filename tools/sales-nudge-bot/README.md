@@ -22,6 +22,8 @@ tracker, and lets them update it in a few taps — no spreadsheet hunting.
    who's unregistered) — the real lever for a small team.
 5. **Captures new leads** — any registered PIC sends `/newlead` and adds a row
    (client name, PIC, notes) in a few taps, straight from their phone after a meeting.
+   The assigned PIC gets an instant Telegram ping (if they're registered and weren't
+   the one who added it).
 
 ## The flow
 
