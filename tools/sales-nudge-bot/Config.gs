@@ -42,6 +42,11 @@ const CONFIG = {
   // Max nudge messages to send to one PIC per run (avoid a 20-message dump).
   MAX_NUDGES_PER_PIC: 6,
 
+  // --- /newlead defaults ---
+  // Stage written to a row created via the /newlead command (must match one of
+  // STAGE_OPTIONS' labels so later nudges treat it consistently).
+  NEWLEAD_STAGE: 'Not started',
+
   // --- Date handling ---
   // The sheet stores dates as text like "05/01/2026" (DD/MM/YYYY). The bot reads
   // both real Date cells and this string format, and writes back in this format.
