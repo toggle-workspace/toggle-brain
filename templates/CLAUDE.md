@@ -21,7 +21,7 @@ Templates are *unfilled skeletons*. Copy them into a client folder; never fill t
 | `briefs/meta.md` | Meta/Facebook campaign brief |
 | `briefs/creative.md` | Generic creative brief (channel-agnostic) |
 | `proposals/proposal.md` | Pitch-stage proposal |
-| `quotations/quotation.md` | Quote rendering shell (`/quote` uses this) |
+| `quotations/quotation.html` | Print-faithful quote shell — matches sent-quote PDFs; `/quote` fills it, export via Chrome → PDF |
 | `reports/monthly-performance.md` | Recurring monthly client report |
 | `reports/campaign-recap.md` | Post-campaign recap |
 | `decks/pitch-deck.md` | Pitch deck markdown outline |

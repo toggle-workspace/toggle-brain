@@ -1,34 +1,38 @@
 import React from "react";
-import { AbsoluteFill, Img, interpolate, staticFile, useCurrentFrame } from "remotion";
+import { AbsoluteFill, interpolate, useCurrentFrame } from "remotion";
 import { TracedWordmark } from "../components/TracedWordmark";
+import { TracedLoopForm } from "../components/TracedLoopForm";
 import { Seal } from "../components/Seal";
 import { useLayout } from "../layout";
 import { COLOR, EASE, FONT_FALLBACK, TYPE } from "../tokens";
 
 /**
- * The 3s-class outro bumper (MOTION.md §3): loop-form already on screen
- * (static) → wordmark + contact line fade up together (400ms) → the
- * [ toggle.solutions ] seal draws its brackets (600ms) → hold ~1.5s.
- * The loop-form is the canonical closing composite (the feedback loop);
- * the filed asset is the DISCLOSED placeholder — swap in loop-form.svg
- * once a designer traces the Sunway Thank-You artwork (SIGNATURE-DEVICES A2).
+ * The outro bumper (MOTION.md §3, retimed to 150f / 5s so the close is a real
+ * beat, not a hard cut):
+ *   0–30    loop-form draws in (constant-speed trace), block face fades 30–38
+ *   34–46   wordmark + contact line rise (400ms)
+ *   48–66   the tagline seal draws its brackets (600ms)
+ *   66–150  hold (the closing VO, wired in ExplainerVideo, lands here)
+ * The loop-form is the canonical closing composite (the feedback loop), drawn
+ * from the DISCLOSED placeholder geometry (TracedLoopForm) until a designer
+ * files the real loop-form.svg (SIGNATURE-DEVICES A2).
+ * The seal carries the TAGLINE (not the URL): the wordmark is the brand, the
+ * contact line the action, the seal the positioning — three distinct jobs, no
+ * repeated "toggle.solutions" string — and it bookends the intro tagline seal.
  * 16:9: the seal anchors the canvas base (§C3). 9:16: it joins the centered
- * closing lockup — a bottom-anchored URL seal lands under the caption/CTA in a
+ * closing lockup — a bottom-anchored seal lands under the caption/CTA in a
  * vertical feed, so the centered lockup is the medium-correct read.
  */
 export const Outro: React.FC = () => {
   const frame = useCurrentFrame();
   const { portrait, edge } = useLayout();
-  const eased = {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-    easing: EASE,
-  } as const;
-  const riseP = interpolate(frame, [10, 22], [0, 1], eased);
-  const sealP = interpolate(frame, [24, 42], [0, 1], {
-    extrapolateLeft: "clamp",
-    extrapolateRight: "clamp",
-  });
+  const lin = { extrapolateLeft: "clamp", extrapolateRight: "clamp" } as const;
+  const eased = { ...lin, easing: EASE };
+
+  const loopTrace = interpolate(frame, [0, 30], [0, 1], lin); // constant speed — linear pen
+  const loopFill = interpolate(frame, [30, 38], [0, 1], eased);
+  const riseP = interpolate(frame, [34, 46], [0, 1], eased);
+  const sealP = interpolate(frame, [48, 66], [0, 1], lin);
 
   return (
     <AbsoluteFill
@@ -36,13 +40,15 @@ export const Outro: React.FC = () => {
         backgroundColor: COLOR.canvas,
         fontFamily: FONT_FALLBACK,
         alignItems: "center",
-        // portrait: center the closing group in the tall canvas, seal at base
+        // portrait: center the closing group in the tall canvas
         justifyContent: portrait ? "center" : "flex-start",
       }}
     >
-      <Img
-        src={staticFile("loop-form-PLACEHOLDER.svg")}
-        style={{ width: portrait ? 340 : 400, marginTop: portrait ? 0 : 112 }}
+      <TracedLoopForm
+        width={portrait ? 340 : 400}
+        traceProgress={loopTrace}
+        fillOpacity={loopFill}
+        style={{ marginTop: portrait ? 0 : 112 }}
       />
       <div
         style={{
@@ -72,8 +78,8 @@ export const Outro: React.FC = () => {
         </div>
       </div>
       <Seal
-        text="toggle.solutions"
-        fontSize={30}
+        text="Your Digital Growth Partner"
+        fontSize={28}
         color={COLOR.blue}
         progress={sealP}
         mode="draw"

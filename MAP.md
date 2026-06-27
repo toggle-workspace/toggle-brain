@@ -13,9 +13,10 @@ When you don't know where something lives, look here. One question per line. Kee
 - Where do atomic line items live (1 reel, 1 static, 1 ad set)? → `brain/pricing/line-items.md`
 - Where are discount rules (retainer %, multi-month, NGO)? → `brain/pricing/discount-rules.md`
 - Where do I see what changed in pricing? → `brain/pricing/CHANGELOG.md`
-- How do I generate a quote? → `generators/quote.md`
+- How do I generate a quote (one client)? → `generators/quote.md` (renders print-faithful HTML)
+- How do I pre-generate this month's quotes for every active client? → `generators/monthly-quotes.md` (`/monthly-quotes`)
 - Where do past quotes live (price anchors)? → `archive/quotes/`
-- Where do new quotes get written before sending? → `clients/<slug>/quotes/YYYY-MM-DD-<scope>.md`
+- Where do new quotes get written before sending? → `clients/<slug>/quotes/YYYY-MM-DD-<scope>.html` (+ a `.md` tracker stub)
 
 ## Services
 - What services do we offer? → `brain/services/` (one file per service)
@@ -60,6 +61,7 @@ When you don't know where something lives, look here. One question per line. Kee
 ## Generators (slash commands)
 - All generators? → `generators/`
 - `/quote` → `generators/quote.md`
+- `/monthly-quotes` → `generators/monthly-quotes.md`
 - `/proposal` → `generators/proposal.md`
 - `/tiktok-hooks` → `generators/tiktok-hooks.md`
 - `/meta-ad-copy` → `generators/meta-ad-copy.md`
@@ -86,7 +88,7 @@ When you don't know where something lives, look here. One question per line. Kee
 - Meta brief shell? → `templates/briefs/meta.md`
 - Creative brief shell? → `templates/briefs/creative.md`
 - Proposal shell? → `templates/proposals/proposal.md`
-- Quotation shell? → `templates/quotations/quotation.md`
+- Quotation shell? → `templates/quotations/quotation.html` (print-faithful; fill + export to PDF)
 - Monthly report shell? → `templates/reports/monthly-performance.md`
 - Pitch deck shell? → `templates/decks/pitch-deck.md`
 - Meeting notes shell? → `templates/meeting-notes.md`

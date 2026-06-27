@@ -3,7 +3,11 @@ client: <Client Display Name>
 slug: <lowercase-kebab-slug>
 geo: <my | sg | id | …>
 status: <prospect | active | paused | closed>
+stage: <lead | qualified | proposal-sent | negotiation | won | lost | n/a>
 practice: <acquisition | conversion | retention | mixed>
+currency: <MYR | SGD | …>
+mrr: TBD            # monthly recurring revenue in `currency`; TBD until set, 0 if none
+credit_pending: TBD # outstanding receivables in `currency`; 0 if none
 account_lead: TBD
 last_reviewed: 2026-06-08
 ---
@@ -23,7 +27,10 @@ last_reviewed: 2026-06-08
 
 ## Billing
 - **Payment terms:** Net 30 / Net 60 / prepay
-- **Currency:** MYR / SGD / …
+- **Currency:** set `currency:` in frontmatter (MYR / SGD / …)
+- **MRR / credit pending:** set `mrr:` and `credit_pending:` in frontmatter — the
+  `Sales/` trackers (`/sales-trackers`) roll these up across all clients. Don't track
+  them anywhere else.
 - **Quote on file:** clients/<slug>/quotes/<latest>.md  (or archive/quotes/<file>.md)
 
 ## Access
