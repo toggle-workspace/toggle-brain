@@ -1,6 +1,7 @@
 .env
 allowlist.json
 .state.json
+.quota.json
 .settings.gen.json
 logs/
 node_modules/

@@ -11,29 +11,28 @@ and `tools/gdoc-sync/` (reuses its headless `claude -p` pattern).
 
 ---
 
-## Status: MVP (phase 1 of the rollout)
+## Status
 
-Working now:
-- Telegram long-poll listener with a static `user_id` allowlist.
-- `/whoami` · `/start` · `/help` bootstrap (returns your `user_id` so you can be added).
-- A question → headless read-only Claude over the repo → a path-cited answer.
+Working: Telegram long-poll + `user_id` allowlist + `/whoami`·`/start`·`/help`
+bootstrap, a question → headless read-only Claude over the asker's view → a
+path-cited answer, plus the jail, per-user client ACL, and cost controls below.
 
 ### The jail (hard boundaries — built and verified)
 
-The agent runs against a **clean, committed-only checkout**, not Zaid's live
-working tree, and is **fenced to that checkout** by a tool hook:
+The agent runs against a **clean, committed-only view**, not Zaid's live working
+tree, and is **fenced to that view** by a tool hook:
 
-1. **Clean checkout.** `refresh-checkout.sh` builds the read view from
+1. **Clean view.** `build-view.sh` builds the read view from
    `git archive origin/main` — committed files only, **no `.git` history**, **no
    uncommitted WIP**. So the bot can't leak half-edited pricing, never-meant-to-
    ship drafts, or secrets deleted from git history. (Consequence: the bot
    answers from what's merged to **`main`**, not from local edits. The listener
-   refreshes it on start and every `refreshIntervalMin`.)
+   refreshes views on start and every `refreshIntervalMin`.)
 2. **Path-guard hook.** A Claude Code `PreToolUse` hook (`hooks/path-guard.py`)
    inspects every `Read`/`Grep`/`Glob` and **denies any path resolving outside
-   the checkout** (`realpath`, so `..` and symlink escapes are caught too). This
-   is what stops a crafted or prompt-injected question from reading `~/.ssh`,
-   `~/.claude/MEMORY.md`, or `/etc/*`.
+   the view** (`realpath`, so `..` and symlink escapes are caught too). This is
+   what stops a crafted or prompt-injected question from reading `~/.ssh`,
+   `~/.claude/MEMORY.md`, `/etc/*`, or hopping to another user's view.
 3. **Read-only tools.** `ask.sh` permits only `Read`/`Grep`/`Glob` and denies
    `Bash`/`Write`/`Edit`/etc., so the bot can't mutate anything or shell out.
 
@@ -44,24 +43,53 @@ working tree, and is **fenced to that checkout** by a tool hook:
 > path makes the hook fail *open*). Claude does **not** pass parent env vars to
 > hooks, so don't rely on env for hook behavior.
 
-**Still soft (next phase):** the *which-zones* scope. The system prompt tells the
-agent to answer from shared zones and refuse individual `clients/` data, but that
-is not yet hard-enforced. The per-user **client ACL** (mount only a user's
-allowed `clients/<slug>/`) is the next phase — see Roadmap.
+### Per-user client ACL (hard — built)
+
+Scope is enforced **physically**, not by prompt. Each user's `allowlist.json`
+entry declares which clients they may see, and the bot answers them from a
+**view** containing all shared zones + only their allowed `clients/<slug>/`
+folders (built by `build-view.sh` via `git archive` pathspecs). Non-allowed
+clients **don't exist** in that view, so the ACL holds even against a broad
+`Glob`/enumeration — you can't read or list a file that isn't there. Combined
+with the path-guard hook (which blocks reaching the full repo or another view by
+absolute path), a teammate scoped to client A cannot reach client B's data.
+
+`allowlist.json` entry forms:
+
+```json
+{
+  "111111111": { "name": "Zaid", "clients": "all" },
+  "222222222": { "name": "Account Lead", "clients": ["audaura-unitar", "oddle-partnership"] },
+  "333333333": "Shared-only teammate (string entry = no client access)"
+}
+```
+
+Views are cached per distinct client-set and rebuilt when stale
+(`refreshIntervalMin`) or on restart.
+
+### Cost controls
+
+- **`/deep <question>`** routes that one question to `deepModel` (Opus); the
+  default is the cheaper `model` (Sonnet).
+- **Daily per-user quota** (`dailyQuotaPerUser`, admins exempt) caps spend from a
+  chatty team; resets each day.
+- **Update dedupe** — each Telegram `update_id` is processed once, so a
+  crash-redelivery never double-bills.
 
 ---
 
 ## Architecture
 
 ```
-Telegram ──long poll──> listener.js ──spawns──> ask.sh ──> headless `claude -p`
-(getUpdates)            (allowlist,             (cwd =     (Read/Grep/Glob only,
-                         offset, reply,          clean      PreToolUse path-guard
-                         periodic refresh)       checkout)  hook fences to checkout)
-                                                                  │
-                              refresh-checkout.sh           reads brain/*.md,
-                              (git archive origin/main,      cites the path
-                               no .git, no WIP) ────────────> the clean checkout
+Telegram ─long poll─> listener.js ──────spawns─────> ask.sh ──> headless `claude -p`
+(getUpdates)          (allowlist, ACL, /deep,        (cwd =     (Read/Grep/Glob only,
+                       quota, dedupe, reply)          user's     PreToolUse path-guard
+                            │                         view)      hook fences to view)
+                            │ per ACL                   │
+                       build-view.sh             reads brain/*.md + allowed
+                       (git archive origin/main:  clients/*, cites the path
+                        shared zones + only the
+                        user's allowed clients) ──────> the ACL-scoped view
 ```
 
 - **No webhook / no Cloudflare Worker.** Those exist in `sales-nudge-bot` only
@@ -78,15 +106,15 @@ Telegram ──long poll──> listener.js ──spawns──> ask.sh ──> h
 |---|---|
 | `listener.js` | Long-poll loop: allowlist gate, offset, spawn `ask.sh`, reply (chunked); refreshes the checkout on start + on a timer. |
 | `telegram.js` | Thin Bot API client (`getUpdates` / `sendMessage` / `sendChatAction`). |
-| `ask.sh` | The one seam that runs the brain: headless `claude -p` over the clean checkout, read-only tools, registers the path-guard hook. A future container/VPS runtime swaps only this file. |
-| `refresh-checkout.sh` | Rebuilds the clean committed-only checkout from `git archive origin/main` (atomic symlink swap). |
-| `hooks/path-guard.py` | `PreToolUse` hook: denies any `Read`/`Grep`/`Glob` resolving outside the checkout. The filesystem fence. |
+| `ask.sh` | The one seam that runs the brain: headless `claude -p` over the asker's view, read-only tools, registers the path-guard hook. A future container/VPS runtime swaps only this file. |
+| `build-view.sh` | Builds an ACL-scoped view from `git archive origin/main` = shared zones + only the allowed clients (atomic symlink swap). |
+| `hooks/path-guard.py` | `PreToolUse` hook: denies any `Read`/`Grep`/`Glob` resolving outside the view. The filesystem fence. |
 | `prompt/system.md` | The agent's system prompt: navigation doctrine, citation + verbatim-value rules, conflict-flagging, scope, refusal. |
-| `config.json` | Non-secret tunables: `repoRoot`, `checkoutDir`, `ref`, `refreshIntervalMin`, `model`, poll/answer/ask limits. |
+| `config.json` | Non-secret tunables: `repoRoot`, `viewsDir`, `ref`, `refreshIntervalMin`, `model`, `deepModel`, `dailyQuotaPerUser`, poll/answer/ask limits, `adminUserIds`. |
 | `run-bot.sh` | Entrypoint: loads `.env`, runs `listener.js`. launchd-friendly. |
-| `allowlist.json` | **gitignored.** `{ "<telegram_user_id>": "Display Name" }`. Copy from `allowlist.example.json`. |
+| `allowlist.json` | **gitignored.** Maps `user_id` → ACL (see forms above). Copy from `allowlist.example.json`. |
 | `.env` | **gitignored.** Holds `TELEGRAM_TOKEN`. |
-| `.settings.gen.json` / `.state.json` / `logs/` | **gitignored.** Generated hook settings, polling offset, run logs. |
+| `.settings.gen.json` / `.state.json` / `.quota.json` / `logs/` | **gitignored.** Generated hook settings, polling offset+dedupe, daily quota, run logs. |
 
 ## Setup
 
@@ -96,10 +124,11 @@ Telegram ──long poll──> listener.js ──spawns──> ask.sh ──> h
    echo 'TELEGRAM_TOKEN=123456:your-botfather-token' > tools/brain-bot/.env
    ```
 3. **Seed the allowlist:** copy the example, then run the bot and DM it `/whoami`
-   to get your `user_id`, and paste it in:
+   to get your `user_id`, and paste it in with your client scope:
    ```
    cp tools/brain-bot/allowlist.example.json tools/brain-bot/allowlist.json
-   # edit allowlist.json: { "<your_user_id>": "Your Name" }
+   # edit allowlist.json, e.g. { "<your_user_id>": { "name": "You", "clients": "all" } }
+   # ("all" = every client; ["slug",...] = only those; a plain string = shared zones only)
    ```
 4. **Run it:**
    ```
@@ -115,12 +144,13 @@ restarting the bot.
 
 ```
 cd "/Users/zaidsaad/Desktop/Code/Toggle Brain"
-# build the clean checkout once
+# build a view once (clients="all" | "" for shared-only | "slug1,slug2")
 BRAIN_BOT_REPO_ROOT="$PWD" \
-  BRAIN_BOT_CHECKOUT_DIR="$HOME/.brain-bot/checkout" \
-  bash tools/brain-bot/refresh-checkout.sh
-# then ask
-BRAIN_BOT_CHECKOUT_DIR="$HOME/.brain-bot/checkout" \
+  BRAIN_BOT_VIEW_DIR="$HOME/.brain-bot/views/all" \
+  BRAIN_BOT_VIEW_CLIENTS="all" \
+  bash tools/brain-bot/build-view.sh
+# then ask against it
+BRAIN_BOT_CHECKOUT_DIR="$HOME/.brain-bot/views/all" \
   bash tools/brain-bot/ask.sh "What is our Malaysia retainer pricing?"
 ```
 
@@ -128,16 +158,22 @@ BRAIN_BOT_CHECKOUT_DIR="$HOME/.brain-bot/checkout" \
 
 - [x] **MVP** — Telegram long-poll + allowlist + cited answers.
 - [x] **Jail** — clean committed-only checkout (no `.git`, no WIP) + `PreToolUse`
-  path-guard hook fencing reads to the checkout + read-only tools. *(Done via a
-  native hook rather than Docker — no container needed.)*
+  path-guard hook fencing reads to the view + read-only tools. *(Native hook, no
+  Docker.)*
+- [x] **Per-user client ACL** — physical views (shared zones + only the user's
+  allowed `clients/<slug>/`); non-allowed clients don't exist in the view, so the
+  ACL survives enumeration and prompt injection.
+- [x] **Cost controls** — `/deep` escalation, daily per-user quota, `update_id`
+  dedupe. *(Cheap default model is the spend floor; a true dollar cap needs the
+  metered-API runtime — see note.)*
 
 Next:
 
-1. **Per-user client ACL** — `telegram_user_id → [client slugs | "all"]`; assemble
-   a per-request view = shared zones + only that user's allowed `clients/<slug>/`.
-   Enforced by what's mounted, never by the prompt (survives prompt injection).
-3. **Cost controls** — cheap default model, `/deep` to escalate to Opus, per-user
-   daily quota, hard monthly spend cap, `update_id` dedupe.
-4. **Hardening** — verify cited paths exist on disk before replying, append-only
-   audit log (question + cited paths, not full answers), `MAP.md` broken-path
-   lint, `caffeinate`/launchd keep-alive for always-on.
+- **Hardening** — verify cited paths exist on disk before replying, append-only
+  audit log (question + cited paths, not full answers), `MAP.md` broken-path
+  lint, `caffeinate`/launchd keep-alive for always-on.
+
+> **Cost note:** the bot runs on the local `claude` CLI (subscription auth), so
+> there's no per-token dollar meter to cap. `dailyQuotaPerUser` + the cheap
+> default model are the practical ceiling. A hard dollar cap would require the
+> metered Anthropic API runtime (the future "runtime B").

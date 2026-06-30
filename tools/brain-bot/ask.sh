@@ -32,7 +32,7 @@ SYSTEM="$(cat "$SCRIPT_DIR/prompt/system.md")"
 HOOK="$SCRIPT_DIR/hooks/path-guard.py"
 
 if [[ ! -d "$CHECKOUT_DIR" ]]; then
-  echo "ask.sh: checkout $CHECKOUT_DIR missing — run refresh-checkout.sh first." >&2
+  echo "ask.sh: view $CHECKOUT_DIR missing — build it with build-view.sh first." >&2
   exit 1
 fi
 
