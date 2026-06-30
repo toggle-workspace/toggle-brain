@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>UNITAR — Programmatic Advertising: A Phased Test · Toggle Solutions</title>
+<meta name="description" content="A neutral, phased RM30k test of programmatic advertising for UNITAR — impressions, then clicks, then CPL — with kill criteria at every gate. By Toggle Solutions.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#4A7BF7; --ink:#0F0F0F; --navy:#0A1224; --card:#F2F3F6; --callout:#DDE5FE;
+  --body:#4A4A4A; --caption:#9AA0A8; --struck:#6B7280; --teal:#2ECC9B; --pink:#F59EC9;
+  --purple:#8E6BE6; --orange:#F28B4C; --slate:#2C2C36; --paper:#FAFAFA; --border:#E4E6EE; --blue-deep:#3056C9;
+  --warn:#A4541C;
+}
+*{box-sizing:border-box}
+body{background:#E9EBF1;margin:0;padding:40px 0 80px;font-family:"Inter Tight",Inter,-apple-system,"Segoe UI",sans-serif;color:var(--ink)}
+.dochead{max-width:1280px;margin:0 auto 12px;font-size:14px;color:#555}
+.dochead strong{color:var(--ink)}
+.note{max-width:1280px;margin:36px auto 10px;font-size:13px;font-weight:500;color:#667}
+.note b{color:var(--blue)}
+.slide{width:1280px;height:720px;background:#fff;margin:0 auto;position:relative;padding:56px 64px;box-shadow:0 2px 18px rgba(10,18,36,.14);overflow:hidden}
+.num{font-variant-numeric:tabular-nums}
+.watermark{position:absolute;top:30px;right:64px}
+.h1{font-size:38px;font-weight:800;color:var(--blue);margin:0 0 8px;line-height:1.08}
+.kicker{font-size:15px;color:var(--body);margin:0 0 28px;max-width:84ch;line-height:1.5}
+.pill{display:inline-block;background:var(--blue-deep);color:#fff;font-weight:700;font-size:17px;border-radius:999px;padding:9px 26px;vertical-align:middle;margin-left:16px}
+.pill.t{background:var(--teal);color:var(--ink)}.pill.o{background:var(--orange);color:#fff}.pill.draft{background:#fff;color:var(--warn);border:1.5px solid var(--warn);font-size:13px;padding:7px 18px}
+.band{position:absolute;left:64px;right:64px;bottom:44px;background:var(--blue-deep);color:#fff;font-weight:700;font-size:14.5px;text-align:center;border-radius:8px;padding:13px 18px}
+.band.ink{background:var(--slate)}
+.grid{display:grid;gap:20px}
+.cols2{grid-template-columns:1fr 1fr}.cols3{grid-template-columns:1fr 1fr 1fr}.cols4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--card);border-radius:10px;padding:24px}
+.callout{background:var(--callout);border-radius:10px;padding:24px}
+.topbar{position:relative;padding-top:30px}
+.topbar::before{content:"";position:absolute;top:0;left:0;right:0;height:7px;border-radius:10px 10px 0 0;background:var(--blue)}
+.topbar.t-teal::before{background:var(--teal)}.topbar.t-pink::before{background:var(--pink)}
+.topbar.t-purple::before{background:var(--purple)}.topbar.t-slate::before{background:var(--slate)}.topbar.t-orange::before{background:var(--orange)}
+.stripe{position:relative;padding-left:30px}
+.stripe::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;border-radius:10px 0 0 10px;background:var(--blue)}
+.stripe.s-teal::before{background:var(--teal)}.stripe.s-pink::before{background:var(--pink)}
+.stripe.s-orange::before{background:var(--orange)}.stripe.s-purple::before{background:var(--purple)}.stripe.s-slate::before{background:var(--slate)}
+.stat{font-size:44px;font-weight:800;color:var(--blue);line-height:1}
+.stat.inkstat{color:var(--ink)}
+.statlabel{font-size:15px;font-weight:700;color:var(--ink);margin-top:12px}
+.statcap{font-size:13.5px;color:var(--body);margin-top:6px;line-height:1.45}
+.cardtitle{font-size:17px;font-weight:700;margin:0 0 6px}
+.bodytext{font-size:14px;color:var(--body);line-height:1.5}
+ul.b{margin:12px 0 0;padding:0;list-style:none}
+ul.b li{font-size:13.5px;color:var(--body);line-height:1.45;padding:5px 0 5px 16px;position:relative}
+ul.b li::before{content:"";position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:50%;background:var(--blue)}
+.acc-teal ul.b li::before{background:var(--teal)}.acc-pink ul.b li::before{background:var(--pink)}
+.acc-slate ul.b li::before{background:var(--slate)}.acc-orange ul.b li::before{background:var(--orange)}.acc-purple ul.b li::before{background:var(--purple)}
+.chip{float:right;background:#fff;border:1.5px solid var(--blue);color:var(--ink);font-weight:700;font-size:13px;border-radius:8px;padding:6px 10px;text-align:center;line-height:1.2}
+.acc-teal .chip{border-color:var(--teal)}.acc-pink .chip{border-color:var(--pink)}.acc-orange .chip{border-color:var(--orange)}.acc-purple .chip{border-color:var(--purple)}
+.seal{font-weight:700;letter-spacing:.01em}
+.seal .br{font-weight:400}
+table.dt{width:100%;border-collapse:collapse;font-size:13.5px}
+table.dt th{background:var(--blue-deep);color:#fff;font-weight:700;text-align:left;padding:11px 14px}
+table.dt td{padding:11px 14px;color:var(--body);vertical-align:top}
+table.dt tr:nth-child(even) td{background:var(--card)}
+table.dt td.k{color:var(--blue-deep);font-weight:700}
+table.dt td.head{color:var(--ink);font-weight:700}
+.ncircle{display:inline-flex;width:34px;height:34px;border-radius:50%;background:var(--blue-deep);color:#fff;font-weight:700;font-size:13px;align-items:center;justify-content:center;flex:none}
+.ncircle.t{background:var(--teal);color:var(--ink)}.ncircle.p{background:var(--purple)}
+.wmk{height:34px;color:var(--ink)}
+.wmk svg{height:100%;width:auto;display:block}
+.iso polygon{fill:none;stroke:var(--blue);stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter}
+.iso polygon.fill{fill:var(--blue)}
+.iso rect{fill:none;stroke:var(--blue);stroke-width:1.5}
+.struck{color:var(--struck);text-decoration:line-through;text-decoration-thickness:.12em}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@page{size:1280px 720px;margin:0}
+@media print{*{-webkit-print-color-adjust:exact;print-color-adjust:exact}body{background:#fff;padding:0}.note,.dochead{display:none}.slide{box-shadow:none;page-break-after:always}.slide:last-of-type{page-break-after:auto}}
+</style>
+</head>
+<body>
+
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg"><symbol id="wm" viewBox="0 0 1432 392"><path fill="currentColor" d="M1166.39 1.57487C1166.39 2.43389 1157.45 54.1188 1146.44 116.398C1135.43 178.678 1126.5 232.081 1126.5 234.944C1126.5 238.667 1127.77 241.244 1130.64 243.964C1134.47 247.4 1136.07 247.686 1147.4 247.686C1154.42 247.686 1160 247.973 1160 248.545C1160 249.261 1152.82 290.351 1151.23 298.799C1150.43 302.807 1149.63 303.523 1142.77 304.812C1120.27 309.107 1090.59 307.818 1072.88 301.948C1061.55 298.083 1049.75 288.347 1044.96 278.898C1041.61 272.169 1041.13 269.162 1041.29 254.129C1041.29 239.239 1044.16 221.486 1062.35 119.119C1074 54.4051 1083.41 1.00218 1083.41 0.715838C1083.41 0.286342 1102.08 0 1124.9 0C1154.26 0 1166.39 0.429496 1166.39 1.57487Z"/>
+<path fill="currentColor" d="M140.413 21.6189C140.413 22.9074 133.871 60.8478 131.637 72.5879L130.68 77.3125H155.571C171.527 77.3125 180.303 77.8852 180.303 78.7442C180.303 80.6054 172.485 125.418 171.527 129.856C170.73 133.006 170.091 133.149 145.678 133.436L120.787 133.865L111.533 186.123C101.321 243.821 101.002 246.971 104.672 248.259C106.108 248.689 116.798 249.118 128.606 249.118C148.391 249.118 150.146 249.261 149.349 251.552C148.87 252.984 146.636 265.583 144.243 279.614L139.775 305.241L100.523 304.669C66.058 304.096 60.1543 303.666 50.8998 300.946C30.7951 295.076 20.7428 285.054 17.7113 268.017C15.7965 256.849 16.4348 250.693 27.7636 187.411C32.7099 160.209 36.6989 136.872 36.6989 135.44C36.6989 133.436 34.3055 133.149 18.3495 133.149C6.86114 133.149 0 132.577 0 131.718C0 129.856 7.81846 85.0438 8.93536 80.4623C9.57368 77.4557 10.2118 77.3125 28.5613 77.3125H47.3895L51.0594 56.839C52.974 45.6716 55.2078 32.7862 56.1653 28.2047L57.7609 20.044H99.087C127.01 20.044 140.413 20.4735 140.413 21.6189Z"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M644.145 113.964C646.698 121.409 647.177 121.839 651.644 121.409L656.59 120.98L660.42 99.0745L664.09 77.3125H746.742L745.944 80.4623C745.475 82.2857 737.196 129.18 727.258 185.472L727.255 185.487L726.637 188.986C716.585 246.827 707.49 297.367 706.692 301.376C696.321 347.19 666.643 375.109 614.945 387.565C600.585 391.001 596.596 391.287 568.832 391.43C535.803 391.43 524.475 389.856 504.53 382.697C476.287 372.675 457.619 354.779 450.758 331.155C449.481 326.717 448.364 321.42 448.364 319.702V316.409H530.697L533.57 322.135C538.995 333.16 551.44 338.457 572.023 338.457C594.841 338.457 609.042 331.298 618.136 315.12C622.923 306.816 624.678 300.517 628.827 277.036C632.656 254.988 632.656 254.845 628.029 254.845C625.157 254.845 622.764 256.993 617.658 264.008C598.032 291.21 566.599 302.521 529.421 295.649C488.414 288.061 463.363 258.711 459.693 213.612C456.023 167.654 470.862 127.136 501.657 99.3609C512.029 90.0547 517.294 86.6186 528.145 81.894C552.078 71.5856 578.246 69.5813 600.585 76.1671C621.009 82.1803 638.241 97.2133 644.145 113.964ZM546.813 171.09C552.078 155.627 566.598 141.596 582.235 137.015C586.224 135.726 593.564 134.724 598.51 134.724C624.519 134.438 641.911 149.041 644.145 173.094C646.538 198.865 632.656 223.204 610.318 232.081C599.308 236.519 579.842 236.662 569.63 232.367C560.535 228.644 553.355 222.202 548.568 213.611C545.377 207.885 544.898 204.592 544.898 191.849C544.898 183.545 545.855 174.239 546.813 171.09Z"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M936.619 113.535C939.172 120.121 940.129 120.98 944.437 121.409C947.15 121.696 949.384 121.409 949.384 120.693C949.384 118.975 955.606 84.3279 956.564 80.4623L957.361 77.3125H998.049C1022.14 77.3125 1038.74 77.8852 1038.74 78.6011C1038.74 83.612 999.805 300.803 997.252 309.966C981.934 364.944 930.077 394.294 852.849 391.86C824.448 390.858 808.013 387.565 788.866 379.261C762.06 367.521 746.423 348.622 741.317 321.706L740.2 316.409H823.331L825.086 320.417C827.16 325.142 833.862 331.728 839.447 334.448C846.946 337.884 863.859 339.459 875.347 337.884C902.154 334.019 913.004 321.276 919.865 285.913L920.913 280.423C924.752 260.328 925.594 255.922 923.993 255.023C923.544 254.771 922.904 254.794 922.084 254.823C921.792 254.834 921.478 254.845 921.141 254.845C917.471 254.845 915.876 256.277 911.887 262.29C909.334 266.299 903.111 273.171 898.165 277.609C861.785 310.539 794.61 301.805 767.485 260.715C749.454 233.369 746.582 189.416 760.464 150.044C770.198 122.555 788.547 99.7904 812.64 85.7596C833.383 73.5901 864.816 69.1518 889.548 74.7354C910.451 79.46 929.439 95.0658 936.619 113.535ZM853.807 149.614C830.99 171.805 830.83 211.607 853.169 227.213C862.423 233.655 869.125 235.517 882.368 235.517C902.632 235.373 918.908 226.64 928.321 210.891C934.863 199.724 936.778 192.565 936.778 178.821C936.778 163.358 933.427 154.482 924.013 146.035C912.206 135.44 893.697 131.717 876.784 136.585C866.412 139.592 860.987 142.598 853.807 149.614Z"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M1352.75 76.883C1402.69 89.7684 1431.42 126.563 1431.26 177.246C1431.1 184.977 1430.3 194.999 1429.18 199.724L1427.11 208.314L1341.26 208.744L1255.26 209.03L1256.38 218.05C1257.65 228.931 1263.72 240.814 1270.74 245.539C1288.61 257.708 1324.99 254.272 1336.64 239.239L1341.1 233.512L1381.47 233.369C1406.52 233.369 1421.68 233.942 1421.68 234.801C1421.68 235.517 1419.93 240.385 1417.85 245.396C1401.1 285.197 1356.26 309.107 1298.34 309.25C1233.4 309.25 1190.32 279.327 1179.15 226.211C1176.92 215.759 1176.92 188.7 1179.31 176.53C1187.13 133.579 1212.82 101.508 1253.03 84.3279C1278.56 73.4469 1301.53 70.5835 1336 73.8764C1340.47 74.3059 1348.12 75.5944 1352.75 76.883ZM1263.08 161.354C1269.14 143.601 1284.14 129.999 1301.53 125.991C1311.59 123.843 1325.79 125.561 1333.92 129.999C1342.38 134.581 1349.08 145.319 1350.68 157.059L1351.79 164.647H1261.96L1263.08 161.354Z"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M345.927 75.3081C409.751 87.0481 448.364 137.301 440.706 199.008C439.588 207.598 437.195 219.052 435.44 224.349C420.441 267.873 379.594 299.944 328.854 307.818C314.653 310.109 285.134 309.823 271.731 307.246C222.746 298.083 187.962 267.587 177.91 224.922C174.878 211.894 174.878 185.407 177.75 171.519C188.281 121.982 231.043 83.7552 286.411 74.5923C299.814 72.4447 332.364 72.731 345.927 75.3081ZM297.42 137.158C281.624 142.169 269.976 153.766 262.955 171.376C258.328 182.973 257.211 207.026 260.721 217.907C266.944 237.092 281.305 247.686 301.409 247.686C315.929 247.686 325.503 244.393 335.555 236.232C350.873 223.777 358.053 207.026 357.894 184.691C357.894 161.64 350.714 147.323 335.715 139.449C325.982 134.295 309.387 133.292 297.42 137.158Z"/></symbol></svg>
+
+<div class="dochead"><strong>Toggle Solutions — Programmatic Advertising: A Phased Test.</strong> Prepared for UNITAR / Audaura · 30 June 2026 · <span style="color:var(--warn);font-weight:700">PRELIM — internal draft for discussion.</span> Print to PDF (1280×720 landscape, no margins) to share.</div>
+
+<!-- ════════ SLIDE 1 — TITLE ════════ -->
+<section class="slide">
+  <div class="wmk"><svg viewBox="0 0 1432 392"><use href="#wm"/></svg></div>
+  <div style="margin-top:104px;max-width:760px">
+    <div style="font-size:58px;font-weight:800;color:var(--blue);line-height:1.05">Programmatic<br>Advertising</div>
+    <div style="font-size:40px;font-weight:800;color:var(--ink);line-height:1.12;margin-top:12px">A phased test — not a bet.</div>
+    <div style="font-size:16px;color:var(--body);margin-top:18px;max-width:60ch">Three RM&nbsp;10k phases, each one answering a single question before we spend the next ringgit. We stop the moment the numbers say stop.</div>
+  </div>
+  <svg class="iso" viewBox="-12 -12 336 344" style="position:absolute;right:96px;top:160px;width:360px">
+    <polygon points="14.6,112 70,144 70,214 14.6,182"/>
+    <polygon points="125.4,112 70,144 70,214 125.4,182"/>
+    <polygon points="70,80 125.4,112 70,144 14.6,112"/>
+    <polygon points="100.6,108 156,140 156,260 100.6,228"/>
+    <polygon points="211.4,108 156,140 156,260 211.4,228"/>
+    <polygon points="156,76 211.4,108 156,140 100.6,108"/>
+    <polygon points="186.6,99 242,131 242,306 186.6,274"/>
+    <polygon class="fill" points="297.4,99 242,131 242,306 297.4,274"/>
+    <polygon points="242,67 297.4,99 242,131 186.6,99"/>
+  </svg>
+  <div class="seal" style="position:absolute;left:64px;bottom:48px;color:var(--blue);font-size:18px"><span class="br">[&nbsp;</span>Your Digital Growth Partner<span class="br">&nbsp;]</span></div>
+  <div style="position:absolute;right:64px;bottom:44px"><svg viewBox="0 0 1432 392" style="height:26px;width:auto;display:block;color:var(--blue)"><use href="#wm"/></svg></div>
+</section>
+
+<!-- ════════ SLIDE 2 — THE QUESTION ════════ -->
+<div class="note">Slide 2 · The Question — <b>Belief:</b> "They're not selling me a channel — they're framing a decision."</div>
+<section class="slide">
+  <div class="watermark"><svg viewBox="0 0 1432 392" style="height:20px;width:auto;display:block;color:var(--caption)"><use href="#wm"/></svg></div>
+  <h2 class="h1">The Question on the Table</h2>
+  <p class="kicker">A programmatic vendor has approached us, and the channel keeps coming up. Before committing real budget, the honest question is simple: <b>can programmatic deliver UNITAR leads at a cost that competes with Meta and Google — or not?</b> This deck lays out both sides and a cheap way to find the real answer.</p>
+  <div class="grid cols3">
+    <div class="card stripe">
+      <div class="cardtitle">Where we are today</div>
+      <ul class="b"><li>Meta, Google and TikTok carry the lead engine — RM9.1M deployed this year.</li><li>Spend is up 16% week on week; we're actively scaling, but watching efficiency closely.</li><li>Every new channel must earn its place against a proven cost per lead.</li></ul>
+    </div>
+    <div class="card stripe s-orange acc-orange">
+      <div class="cardtitle">What programmatic claims</div>
+      <ul class="b"><li>Reach beyond the walled gardens — the open web, apps, and streaming.</li><li>One vendor (ex-WPP) has pitched a pay-per-lead deal — but we haven't seen their price yet.</li><li>Useful for awareness Meta/Google can't always buy efficiently.</li></ul>
+    </div>
+    <div class="card stripe s-slate acc-slate">
+      <div class="cardtitle">Why we're cautious</div>
+      <ul class="b"><li>Targeting runs on <b>inference</b>, not logged-in behaviour.</li><li>DSP and data fees stack on top of media — margin pressure is real.</li><li>So we won't recommend it on faith. We'll prove it, phase by phase.</li></ul>
+    </div>
+  </div>
+  <div class="band">A method, not a verdict — and the first step costs nothing: get the vendor's price, then decide whether the capped RM&nbsp;30k test is worth running.</div>
+</section>
+
+<!-- ════════ SLIDE 3 — WHAT IT IS ════════ -->
+<div class="note">Slide 3 · Plain Language — <b>Belief:</b> "I understand exactly what we'd be buying."</div>
+<section class="slide">
+  <div class="watermark"><svg viewBox="0 0 1432 392" style="height:20px;width:auto;display:block;color:var(--caption)"><use href="#wm"/></svg></div>
+  <h2 class="h1">Programmatic, In Plain Language</h2>
+  <p class="kicker">Programmatic is automated ad-buying across the open internet — news sites, apps, streaming, banners and video — through an auction, in milliseconds. Meta and Google are <i>closed</i> gardens; programmatic is the <i>open</i> web outside them.</p>
+  <div class="grid cols2" style="gap:28px">
+    <div class="callout stripe">
+      <div class="cardtitle" style="font-size:18px">What it's genuinely good at</div>
+      <ul class="b">
+        <li><b>Reach.</b> Puts UNITAR in front of students across thousands of sites and apps Meta/Google ads never appear on.</li>
+        <li><b>Awareness at scale.</b> Cheap impressions to warm up a market before they ever search — useful for new programs and new campuses.</li>
+        <li><b>Retargeting across the web.</b> Follow a known visitor onto other sites (we treat this separately — see the retargeting deck).</li>
+      </ul>
+    </div>
+    <div class="callout stripe s-slate acc-slate">
+      <div class="cardtitle" style="font-size:18px">The honest limitation</div>
+      <ul class="b">
+        <li><b>It targets by guesswork.</b> Without logged-in data, it <i>infers</i> who you are from browsing signals — less precise than Meta/Google.</li>
+        <li><b>Fees stack.</b> The ad-buying platform, the data, and the vendor each take a cut before a single student sees the ad.</li>
+        <li><b>Lower intent.</b> A banner impression is a long way from a student filling a lead form. The funnel is longer.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="band ink">Bottom line: strong for <b>reach</b>, unproven for <b>cost-per-lead</b>. The test below is built to find out which one wins for UNITAR.</div>
+</section>
+
+<!-- ════════ SLIDE 4 — THE TRADE-OFF (neutral, side by side) ════════ -->
+<div class="note">Slide 4 · The Trade-Off — <b>Belief:</b> "They gave me both sides, not a sales pitch."</div>
+<section class="slide">
+  <div class="watermark"><svg viewBox="0 0 1432 392" style="height:20px;width:auto;display:block;color:var(--caption)"><use href="#wm"/></svg></div>
+  <h2 class="h1">Walled Garden vs. Open Web — Side by Side</h2>
+  <p class="kicker">No spin. Here is the same decision from both angles, so the call is yours on the evidence.</p>
+  <table class="dt">
+    <tr><th style="width:24%"></th><th>Meta &amp; Google (today)</th><th>Programmatic (proposed test)</th></tr>
+    <tr><td class="k">Targeting</td><td>Based on real logged-in behaviour — very precise</td><td class="head">Based on guesswork from browsing — broader but fuzzier</td></tr>
+    <tr><td class="k">Best job</td><td>Capturing intent &amp; harvesting leads</td><td class="head">Building awareness &amp; reach before intent exists</td></tr>
+    <tr><td class="k">Cost structure</td><td>Media + platform fee (lean)</td><td class="head">Media + ad-buying platform + data + vendor fee (stacked — margin risk)</td></tr>
+    <tr><td class="k">Measurement</td><td>Built-in, mature, already tracking conversions</td><td class="head">Needs tagging into Salesforce before we can judge lead quality fairly</td></tr>
+    <tr><td class="k">Proven for UNITAR?</td><td>Yes — RM9.1M this year</td><td class="head">Unknown — that is precisely what the test answers</td></tr>
+  </table>
+  <div class="grid cols2" style="margin-top:20px;gap:20px">
+    <div class="callout stripe"><div class="bodytext"><b>The point in programmatic's favour:</b> it reaches students across the open web that Meta and Google can't — and the ex-WPP vendor <i>claims</i> preferential inventory rates that could offset the stacked fees. We'd confirm that price in writing before committing.</div></div>
+    <div class="callout stripe s-orange acc-orange"><div class="bodytext"><b>The point against:</b> Meta/Google's logged-in data is a structural advantage programmatic guesswork can't fully match. Reach is cheap; <i>qualified</i> reach is not.</div></div>
+  </div>
+</section>
+
+<!-- ════════ SLIDE 5 — THE PHASED TEST ════════ -->
+<div class="note">Slide 5 · The Phased Test (the WhatsApp note) — <b>Belief:</b> "Each ringgit is earned by the phase before it."</div>
+<section class="slide">
+  <div class="watermark"><svg viewBox="0 0 1432 392" style="height:20px;width:auto;display:block;color:var(--caption)"><use href="#wm"/></svg></div>
+  <h2 class="h1" style="display:inline-block">The Test — Three Gates, RM&nbsp;30k</h2><span class="pill num">RM 30k total</span>
+  <p class="kicker"><b>Step 0 (free):</b> get the vendor's pay-per-lead price first. If it's plainly competitive, that alone may answer the question. If we still want our own read, we walk <i>down</i> the funnel one phase at a time — each must clear its gate before we release the next RM&nbsp;10k. If a gate fails, we stop.</p>
+  <div class="grid cols3" style="gap:18px">
+    <div class="card topbar" style="display:flex;flex-direction:column">
+      <div style="display:flex;justify-content:space-between;align-items:center"><span class="ncircle num">01</span><span class="num" style="font-weight:800;color:var(--blue-deep)">RM 10k</span></div>
+      <div class="cardtitle" style="margin:14px 0 2px">Goal: Impressions</div>
+      <div class="bodytext" style="font-size:13px;margin-bottom:8px">Can we buy quality, brand-safe space in front of the right Malaysian students at a sane cost per thousand views?</div>
+      <div style="font-size:12.5px;font-weight:700;color:var(--blue-deep);margin-top:auto">Gate → ads actually seen by real students, at a sane cost, on safe sites</div>
+    </div>
+    <div class="card topbar t-teal" style="display:flex;flex-direction:column">
+      <div style="display:flex;justify-content:space-between;align-items:center"><span class="ncircle t num">02</span><span class="num" style="font-weight:800;color:#0E7A57">RM 10k</span></div>
+      <div class="cardtitle" style="margin:14px 0 2px">Goal: Clicks</div>
+      <div class="bodytext" style="font-size:13px;margin-bottom:8px">Does that audience actually engage — click through and behave like real prospects on the landing page?</div>
+      <div style="font-size:12.5px;font-weight:700;color:#0E7A57;margin-top:auto">Gate → click rate &amp; cost per click beat our usual display benchmark</div>
+    </div>
+    <div class="card topbar t-purple" style="display:flex;flex-direction:column">
+      <div style="display:flex;justify-content:space-between;align-items:center"><span class="ncircle p num">03</span><span class="num" style="font-weight:800;color:#6D46C2">RM 10k</span></div>
+      <div class="cardtitle" style="margin:14px 0 2px">Goal: Cost per lead</div>
+      <div class="bodytext" style="font-size:13px;margin-bottom:8px">The real question: leads at a cost that competes with Meta/Google — and that go on to <i>validate</i> in Salesforce.</div>
+      <div style="font-size:12.5px;font-weight:700;color:#6D46C2;margin-top:auto">Gate → cost per lead within ~20% of our ~RM99 benchmark, early validation holding</div>
+    </div>
+  </div>
+  <div class="band">Spend is sequential, never all-in. The most we can ever lose is the phase we're in — and we only enter a phase the last one earned.</div>
+</section>
+
+<!-- ════════ SLIDE 6 — RISKS & GUARDRAILS ════════ -->
+<div class="note">Slide 6 · Risks &amp; Guardrails — <b>Belief:</b> "They named the risks before I had to."</div>
+<section class="slide">
+  <div class="watermark"><svg viewBox="0 0 1432 392" style="height:20px;width:auto;display:block;color:var(--caption)"><use href="#wm"/></svg></div>
+  <h2 class="h1">What Could Go Wrong — and How We Cap It</h2>
+  <p class="kicker">Every concern our team raised, on the table, each with a guardrail. None of these are reasons not to test; they're reasons to test the cheap way.</p>
+  <div class="grid cols2" style="gap:16px">
+    <div class="card stripe s-orange acc-orange"><div class="cardtitle">Margin / stacked fees</div><div class="bodytext" style="font-size:13px">DSP + data + vendor fees eat into media. <b>Guardrail:</b> fixed RM30k cap, full fee transparency up front, and the ex-WPP inventory rates working in our favour.</div></div>
+    <div class="card stripe s-slate acc-slate"><div class="cardtitle">Inference vs. real data</div><div class="bodytext" style="font-size:13px">Targeting is modelled, not logged-in. <b>Guardrail:</b> Phases 1–2 test whether the inference is good enough <i>before</i> a single CPL ringgit is spent.</div></div>
+    <div class="card stripe"><div class="cardtitle">Measurement &amp; attribution</div><div class="bodytext" style="font-size:13px">We can't judge lead quality unless it traces into Salesforce. <b>Guardrail:</b> lead-source tagging confirmed with Advertica before launch — the same mapping already underway for Pakistan/Singapore. And since some leads only validate weeks later, Phase 3 gives an early read, not a final verdict.</div></div>
+    <div class="card stripe s-teal acc-teal"><div class="cardtitle">Brand safety</div><div class="bodytext" style="font-size:13px">Open-web inventory can sit beside the wrong content. <b>Guardrail:</b> publisher allow-list + category exclusions signed off by UNITAR before any impression runs.</div></div>
+  </div>
+  <div class="callout" style="margin-top:18px;padding:18px 24px"><span style="font-weight:700;color:var(--blue-deep)">The honest downside:</span> <span class="bodytext">programmatic may simply lose to Meta/Google on CPL. If it does, we'll have proof for RM30k — and we walk away knowing, not guessing.</span></div>
+</section>
+
+<!-- ════════ SLIDE 7 — THE DECISION ════════ -->
+<div class="note">Slide 7 · The Decision — <b>Belief:</b> "I know exactly what I'm approving and what it needs."</div>
+<section class="slide">
+  <div class="watermark"><svg viewBox="0 0 1432 392" style="height:20px;width:auto;display:block;color:var(--caption)"><use href="#wm"/></svg></div>
+  <h2 class="h1">The Decision</h2>
+  <p class="kicker">A RM&nbsp;30k question we can answer in roughly 6–8 weeks without touching the core media plan. Our recommendation: get the vendor's free quote first, then decide whether the capped test is worth running. The call is yours.</p>
+  <div class="grid cols2" style="gap:28px">
+    <div class="callout" style="padding:28px 32px">
+      <div style="font-size:15px;font-weight:700;color:var(--body)">The ask</div>
+      <div class="stat num" style="font-size:50px;margin-top:6px">RM 30k<span style="font-size:20px;color:var(--body);font-weight:700"> · phased 3×10k</span></div>
+      <div class="statcap" style="font-size:14px;margin-top:10px">Separate from the core lead-gen budget. Released one phase at a time, stoppable at every gate. Timeline: ~6–8 weeks end to end.</div>
+    </div>
+    <div class="card" style="padding:28px 32px">
+      <div class="cardtitle" style="font-size:18px;margin-bottom:12px">What we need to start</div>
+      <ul class="b" style="margin-top:0">
+        <li><b>First, free:</b> vendor brief issued &amp; pay-per-lead price received — before any spend</li>
+        <li>Go / no-go owner on the UNITAR side (Tim to review brief first)</li>
+        <li>Salesforce lead-source tagging confirmed with Advertica</li>
+        <li>Validation tracking confirmed (Data Warehouse link) so the Phase 3 read is real</li>
+        <li>Brand-safety allow-list signed off; creative sizes we adapt from existing assets</li>
+      </ul>
+    </div>
+  </div>
+  <div class="grid cols3" style="gap:16px;margin-top:20px">
+    <div class="card topbar" style="text-align:center"><div class="stat num inkstat" style="font-size:30px">3 gates</div><div class="statcap">Each must pass to unlock the next</div></div>
+    <div class="card topbar t-teal" style="text-align:center"><div class="stat num inkstat" style="font-size:30px">6–8 wks</div><div class="statcap">To a clear yes or no</div></div>
+    <div class="card topbar t-purple" style="text-align:center"><div class="stat num inkstat" style="font-size:30px">RM 0</div><div class="statcap">Taken from the core media plan</div></div>
+  </div>
+</section>
+
+<!-- ════════ SLIDE 8 — CLOSE ════════ -->
+<section class="slide">
+  <div class="wmk"><svg viewBox="0 0 1432 392"><use href="#wm"/></svg></div>
+  <div style="margin-top:84px;font-size:52px;font-weight:800;color:var(--blue);line-height:1.1">Your call — here's<br>the cheap way<br>to find out.</div>
+  <div style="font-size:16px;color:var(--body);margin-top:18px;max-width:56ch">Start with the vendor's free quote. If you want your own read after that, Phase 1 gives a first signal in ~2 weeks — and we stop the moment the numbers say stop.</div>
+  <div style="position:absolute;left:64px;bottom:64px">
+    <div style="font-weight:700;font-size:19px">Viknesh <span style="font-weight:400;color:var(--body)">— Sales &amp; Partnership Director</span></div>
+    <div class="num" style="font-weight:700;font-size:18px;color:var(--blue);margin-top:6px">(+60) 125 688 681</div>
+    <div style="font-weight:700;font-size:18px;color:var(--blue);margin-top:2px">toggle.solutions</div>
+  </div>
+  <svg class="iso" viewBox="-12 -12 336 344" style="position:absolute;right:96px;top:150px;width:340px">
+    <polygon points="14.6,112 70,144 70,214 14.6,182"/>
+    <polygon points="125.4,112 70,144 70,214 125.4,182"/>
+    <polygon points="70,80 125.4,112 70,144 14.6,112"/>
+    <polygon points="100.6,108 156,140 156,260 100.6,228"/>
+    <polygon points="211.4,108 156,140 156,260 211.4,228"/>
+    <polygon points="156,76 211.4,108 156,140 100.6,108"/>
+    <polygon points="186.6,99 242,131 242,306 186.6,274"/>
+    <polygon class="fill" points="297.4,99 242,131 242,306 297.4,274"/>
+    <polygon points="242,67 297.4,99 242,131 186.6,99"/>
+  </svg>
+</section>
+
+</body>
+</html>
