@@ -24,6 +24,12 @@ REPO_ROOT="${BRAIN_BOT_REPO_ROOT:?BRAIN_BOT_REPO_ROOT not set}"
 LINK="${BRAIN_BOT_VIEW_DIR:?BRAIN_BOT_VIEW_DIR not set}"
 REF="${BRAIN_BOT_REF:-origin/main}"
 CLIENTS="${BRAIN_BOT_VIEW_CLIENTS-}"
+# Top-level zones that carry cross-client confidential data (MRR, named quotes,
+# pipeline, daily decisions). They are NOT "shared" — they're dropped from every
+# non-"all" view, so a client-scoped or shared-only user can't read another
+# client's numbers out of Sales/ or archive/quotes/. Only the "all" view has them.
+EXCLUDE="${BRAIN_BOT_EXCLUDE_ZONES-}"
+is_excluded() { case ",$EXCLUDE," in *",$1,"*) return 0 ;; esac; return 1; }
 
 # Latest shared brain (non-fatal if offline).
 git -C "$REPO_ROOT" fetch --quiet origin main || echo "build-view: fetch failed (offline?), using local $REF"
@@ -38,10 +44,16 @@ if [ "$CLIENTS" = "all" ]; then
   # Whole tree — admins / unrestricted users.
   git -C "$REPO_ROOT" archive --format=tar "$REF" | tar -x -C "$NEW"
 else
-  # Shared zones = every top-level entry EXCEPT clients/.
+  # Shared zones = every top-level entry EXCEPT clients/ and the admin-only zones.
   PATHSPECS=()
   while IFS= read -r name; do
-    [ -n "$name" ] && [ "$name" != "clients" ] && PATHSPECS+=("$name")
+    [ -z "$name" ] && continue
+    [ "$name" = "clients" ] && continue
+    if is_excluded "$name"; then
+      echo "build-view: zone '$name' is admin-only — excluded from this scoped view"
+      continue
+    fi
+    PATHSPECS+=("$name")
   done < <(git -C "$REPO_ROOT" ls-tree --name-only "$REF")
 
   # Add only the allowed client folders that actually exist (a typo in the

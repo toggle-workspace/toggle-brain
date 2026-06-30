@@ -57,9 +57,17 @@ function loadAllowlist() {
 function aclFor(entry) {
   if (typeof entry === 'string') return { name: entry, clients: [] };
   if (entry && typeof entry === 'object') {
-    const clients = entry.clients === 'all'
-      ? 'all'
-      : (Array.isArray(entry.clients) ? entry.clients : []);
+    let clients;
+    if (entry.clients === 'all') {
+      clients = 'all';
+    } else if (Array.isArray(entry.clients)) {
+      // 'all' is a RESERVED sentinel: full access requires the string "all".
+      // An "all" sitting inside the array (typo/fat-finger) must NOT escalate —
+      // strip it so we fail closed to that user's other (or zero) clients.
+      clients = entry.clients.filter((c) => typeof c === 'string' && c && c !== 'all');
+    } else {
+      clients = [];
+    }
     return { name: entry.name || 'user', clients };
   }
   return null;
@@ -82,6 +90,7 @@ function buildView(key, clients) {
       BRAIN_BOT_REF: CONFIG.ref || 'origin/main',
       BRAIN_BOT_VIEW_DIR: viewDirFor(key),
       BRAIN_BOT_VIEW_CLIENTS: clients === 'all' ? 'all' : (clients.length ? clients.join(',') : ''),
+      BRAIN_BOT_EXCLUDE_ZONES: (CONFIG.adminOnlyZones || []).join(','),
     });
     execFile('bash', [path.join(DIR, 'build-view.sh')], {
       env, timeout: 120000, maxBuffer: 4 * 1024 * 1024,
@@ -112,10 +121,13 @@ function loadQuota() {
 }
 function saveQuota(q) { try { fs.writeFileSync(QUOTA_FILE, JSON.stringify(q)); } catch (e) { log('saveQuota: ' + e.message); } }
 function quotaExceeded(uid) {
-  const lim = CONFIG.dailyQuotaPerUser || 0;
-  if (!lim) return false;
   if ((CONFIG.adminUserIds || []).includes(uid)) return false;
-  return (loadQuota().perUser[String(uid)] || 0) >= lim;
+  const q = loadQuota();
+  const perLim = CONFIG.dailyQuotaPerUser || 0;
+  const globLim = CONFIG.dailyQuotaGlobal || 0;
+  if (perLim && (q.perUser[String(uid)] || 0) >= perLim) return true;
+  if (globLim && (q.global || 0) >= globLim) return true;
+  return false;
 }
 function bumpQuota(uid) {
   const q = loadQuota();
@@ -201,10 +213,12 @@ async function handleMessage(msg) {
 
   const scope = acl.clients === 'all' ? 'all-clients' : (acl.clients.length ? acl.clients.join(',') : 'shared-only');
   log(`Q user=${userId}(${acl.name}) model=${model} scope=[${scope}]: ${text.slice(0, 200)}`);
+  // Count at admission, BEFORE the (possibly expensive, possibly failing) call,
+  // so timeouts/errors aren't free retries that dodge the quota.
+  bumpQuota(userId);
   await tg.sendChatAction(TOKEN, chatId, 'typing');
   const answer = await askBrain(text, viewDir, model);
   if (!answer) { await tg.sendMessage(TOKEN, chatId, 'Sorry — something went wrong answering that. Please try again.'); return; }
-  bumpQuota(userId);
   await reply(chatId, answer);
   log(`A user=${userId} chars=${answer.length}`);
 }

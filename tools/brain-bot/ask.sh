@@ -56,10 +56,15 @@ JSON
 # router as project context.
 cd "$CHECKOUT_DIR"
 
+# --strict-mcp-config: ignore the VIEW's committed .mcp.json (the archive of main
+# ships one). Without it, every query would spin up the repo's MCP servers inside
+# the jail. We pass no --mcp-config, so strict mode means zero MCP servers — the
+# jail rests on our hook + tool allowlist, not on whatever config the repo ships.
 exec "$CLAUDE_BIN" -p "$QUESTION" \
   --append-system-prompt "$SYSTEM" \
   --model "$MODEL" \
   --allowedTools "Read" "Grep" "Glob" \
   --disallowedTools "Bash" "Write" "Edit" "NotebookEdit" "WebFetch" "WebSearch" "Task" \
+  --strict-mcp-config \
   --settings "$SETTINGS" \
   < /dev/null

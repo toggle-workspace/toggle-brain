@@ -47,12 +47,22 @@ tree, and is **fenced to that view** by a tool hook:
 
 Scope is enforced **physically**, not by prompt. Each user's `allowlist.json`
 entry declares which clients they may see, and the bot answers them from a
-**view** containing all shared zones + only their allowed `clients/<slug>/`
+**view** containing the shared zones + only their allowed `clients/<slug>/`
 folders (built by `build-view.sh` via `git archive` pathspecs). Non-allowed
 clients **don't exist** in that view, so the ACL holds even against a broad
 `Glob`/enumeration — you can't read or list a file that isn't there. Combined
 with the path-guard hook (which blocks reaching the full repo or another view by
 absolute path), a teammate scoped to client A cannot reach client B's data.
+
+**Cross-client zones are admin-only, not "shared".** Client B's confidential
+numbers don't live only in `clients/B/` — they're also in `Sales/` (MRR,
+quotation tracker, pipeline, margins) and `archive/quotes/` (named-client
+quotes), and `cockpit/` holds daily operating decisions. So `config.json`
+`adminOnlyZones` (`["Sales","archive","cockpit"]` by default) lists zones that
+are **dropped from every non-`all` view** — only an `clients: "all"` (admin) user
+sees them. Without this, a shared-only user could read the whole agency's
+financials out of the "shared" zones. Adjust the list to taste, but don't put
+per-client financials back into scoped views.
 
 `allowlist.json` entry forms:
 
@@ -71,10 +81,15 @@ Views are cached per distinct client-set and rebuilt when stale
 
 - **`/deep <question>`** routes that one question to `deepModel` (Opus); the
   default is the cheaper `model` (Sonnet).
-- **Daily per-user quota** (`dailyQuotaPerUser`, admins exempt) caps spend from a
-  chatty team; resets each day.
+- **Daily quota** — per-user (`dailyQuotaPerUser`, admins exempt) **and** global
+  (`dailyQuotaGlobal`) ceilings; reset each day. Counted **at admission** (before
+  the model call), so a failed/timeout question isn't a free retry.
 - **Update dedupe** — each Telegram `update_id` is processed once, so a
   crash-redelivery never double-bills.
+
+> **Known limits (accepted for now):** the listener handles one question at a
+> time, so a single slow `/deep` blocks others for up to the timeout — fine for a
+> small internal team, revisit with a concurrency cap if traffic grows.
 
 ---
 
