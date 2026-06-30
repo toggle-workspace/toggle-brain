@@ -1,0 +1,8 @@
+{
+  "repoRoot": "/Users/zaidsaad/Desktop/Code/Toggle Brain",
+  "model": "claude-sonnet-4-6",
+  "pollTimeoutSec": 25,
+  "maxAnswerChars": 3800,
+  "askTimeoutMs": 180000,
+  "adminUserIds": []
+}

@@ -1,0 +1,6 @@
+.env
+allowlist.json
+.state.json
+logs/
+node_modules/
+.DS_Store
