@@ -44,6 +44,42 @@ function chunk(text, size) {
   return out;
 }
 
+// --- citation verification (catch fabricated source paths) ----------------
+const ZONES = ['brain', 'clients', 'generators', 'prompts', 'templates', 'playbooks', 'Sales', 'cockpit', 'installations', 'archive', 'tools', 'assets'];
+const ZONE_RE = new RegExp('`((?:' + ZONES.join('|') + ')\\/[\\w./-]+)`', 'g');
+
+function extractCitedPaths(answer) {
+  const set = new Set();
+  const add = (raw) => {
+    const p = String(raw).replace(/^[`(<\s]+/, '').replace(/[`)>.,;\s]+$/, '').trim();
+    if (p && p.includes('/') && !p.includes('..') && !p.startsWith('/')) set.add(p);
+  };
+  // `source: <path>` lines (the enforced citation format; may list several)
+  let m;
+  const re1 = /source:\s*([^\n]+)/gi;
+  while ((m = re1.exec(answer))) m[1].split(/[,\s]+/).forEach(add);
+  // any backticked zone-rooted path elsewhere in the answer
+  while ((m = ZONE_RE.exec(answer))) add(m[1]);
+  return Array.from(set);
+}
+
+function verifyCitations(answer, viewDir) {
+  const cited = extractCitedPaths(answer);
+  const missing = cited.filter((p) => {
+    try { return !fs.existsSync(path.join(viewDir, p.replace(/\/+$/, ''))); }
+    catch (_) { return true; }
+  });
+  return { cited, missing };
+}
+
+// --- append-only audit log (question + citations, NOT full answers) -------
+function auditLog(rec) {
+  try {
+    const line = JSON.stringify(Object.assign({ ts: stamp() }, rec)) + '\n';
+    fs.appendFileSync(path.join(LOG_DIR, 'audit.jsonl'), line);
+  } catch (e) { log('auditLog: ' + e.message); }
+}
+
 // --- allowlist + ACL ------------------------------------------------------
 function loadAllowlist() {
   const f = path.join(DIR, 'allowlist.json');
@@ -218,9 +254,20 @@ async function handleMessage(msg) {
   bumpQuota(userId);
   await tg.sendChatAction(TOKEN, chatId, 'typing');
   const answer = await askBrain(text, viewDir, model);
-  if (!answer) { await tg.sendMessage(TOKEN, chatId, 'Sorry — something went wrong answering that. Please try again.'); return; }
-  await reply(chatId, answer);
-  log(`A user=${userId} chars=${answer.length}`);
+  if (!answer) {
+    await tg.sendMessage(TOKEN, chatId, 'Sorry — something went wrong answering that. Please try again.');
+    auditLog({ user: userId, name: acl.name, scope, model, q: text.slice(0, 300), ok: false });
+    return;
+  }
+  // Verify every cited path actually exists in this view; flag fabrications.
+  const { cited, missing } = verifyCitations(answer, viewDir);
+  let out = answer;
+  if (missing.length) {
+    out += `\n\n⚠️ I couldn't verify these cited path(s) in your view: ${missing.join(', ')}. Double-check before relying on them.`;
+  }
+  await reply(chatId, out);
+  auditLog({ user: userId, name: acl.name, scope, model, q: text.slice(0, 300), ok: true, cited, missing, chars: answer.length });
+  log(`A user=${userId} chars=${answer.length} cited=${cited.length} missing=${missing.length}`);
 }
 
 // --- main loop ------------------------------------------------------------

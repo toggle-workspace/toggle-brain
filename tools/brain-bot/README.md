@@ -124,12 +124,14 @@ Telegram ─long poll─> listener.js ──────spawns─────> a
 | `ask.sh` | The one seam that runs the brain: headless `claude -p` over the asker's view, read-only tools, registers the path-guard hook. A future container/VPS runtime swaps only this file. |
 | `build-view.sh` | Builds an ACL-scoped view from `git archive origin/main` = shared zones + only the allowed clients (atomic symlink swap). |
 | `hooks/path-guard.py` | `PreToolUse` hook: denies any `Read`/`Grep`/`Glob` resolving outside the view. The filesystem fence. |
+| `lint-map.sh` | Flags paths referenced in `MAP.md`/`CLAUDE.md`/`README.md` that no longer exist (run manually or in CI). |
+| `com.toggle.brain-bot.plist` | `launchd` LaunchAgent: keeps the listener running + the Mac awake (`caffeinate`), respawns on crash. |
 | `prompt/system.md` | The agent's system prompt: navigation doctrine, citation + verbatim-value rules, conflict-flagging, scope, refusal. |
 | `config.json` | Non-secret tunables: `repoRoot`, `viewsDir`, `ref`, `refreshIntervalMin`, `model`, `deepModel`, `dailyQuotaPerUser`, poll/answer/ask limits, `adminUserIds`. |
 | `run-bot.sh` | Entrypoint: loads `.env`, runs `listener.js`. launchd-friendly. |
 | `allowlist.json` | **gitignored.** Maps `user_id` → ACL (see forms above). Copy from `allowlist.example.json`. |
 | `.env` | **gitignored.** Holds `TELEGRAM_TOKEN`. |
-| `.settings.gen.json` / `.state.json` / `.quota.json` / `logs/` | **gitignored.** Generated hook settings, polling offset+dedupe, daily quota, run logs. |
+| `.settings.gen.json` / `.state.json` / `.quota.json` / `logs/` | **gitignored.** Generated hook settings, polling offset+dedupe, daily quota, run logs (incl. `logs/audit.jsonl`). |
 
 ## Setup
 
@@ -169,26 +171,44 @@ BRAIN_BOT_CHECKOUT_DIR="$HOME/.brain-bot/views/all" \
   bash tools/brain-bot/ask.sh "What is our Malaysia retainer pricing?"
 ```
 
+## Always-on (launchd)
+
+```
+cp tools/brain-bot/com.toggle.brain-bot.plist ~/Library/LaunchAgents/
+launchctl load -w ~/Library/LaunchAgents/com.toggle.brain-bot.plist   # start + keep alive
+launchctl unload -w ~/Library/LaunchAgents/com.toggle.brain-bot.plist # stop
+```
+`caffeinate -dis` keeps the Mac awake while the bot runs; `KeepAlive` respawns it
+on crash. (Migrate to an always-on box / runtime B if it must answer with the
+laptop shut.)
+
+## Observability & maintenance
+
+- **Citation check** — after each answer, every cited path is verified to exist
+  in the asker's view; fabricated paths get a `⚠️ couldn't verify` note appended.
+- **Audit log** — `logs/audit.jsonl` records `{ts, user, scope, model, question,
+  cited, missing}` per query (**not** full answers). `logs/bot.log` has the
+  running narrative.
+- **Index lint** — `./tools/brain-bot/lint-map.sh` flags `MAP.md`/`CLAUDE.md`
+  paths that no longer exist (placeholders like `YYYY-MM-DD` skipped). Good as a
+  pre-commit / CI check as the repo grows.
+
 ## Roadmap
 
 - [x] **MVP** — Telegram long-poll + allowlist + cited answers.
-- [x] **Jail** — clean committed-only checkout (no `.git`, no WIP) + `PreToolUse`
-  path-guard hook fencing reads to the view + read-only tools. *(Native hook, no
-  Docker.)*
-- [x] **Per-user client ACL** — physical views (shared zones + only the user's
-  allowed `clients/<slug>/`); non-allowed clients don't exist in the view, so the
-  ACL survives enumeration and prompt injection.
-- [x] **Cost controls** — `/deep` escalation, daily per-user quota, `update_id`
-  dedupe. *(Cheap default model is the spend floor; a true dollar cap needs the
-  metered-API runtime — see note.)*
+- [x] **Jail** — clean committed-only view (no `.git`, no WIP) + `PreToolUse`
+  path-guard hook + read-only tools. *(Native hook, no Docker.)*
+- [x] **Per-user client ACL** — physical views; non-allowed clients/zones don't
+  exist in the view, so the ACL survives enumeration and prompt injection.
+- [x] **Cost controls** — `/deep` escalation, per-user + global daily quota
+  (counted at admission), `update_id` dedupe.
+- [x] **Hardening** — cited-path verification, audit log, `lint-map.sh`,
+  `caffeinate`/launchd keep-alive.
 
-Next:
-
-- **Hardening** — verify cited paths exist on disk before replying, append-only
-  audit log (question + cited paths, not full answers), `MAP.md` broken-path
-  lint, `caffeinate`/launchd keep-alive for always-on.
+Future (needs the metered-API runtime "B"): a hard dollar spend cap, and lifting
+the single-question serialization for real concurrency.
 
 > **Cost note:** the bot runs on the local `claude` CLI (subscription auth), so
-> there's no per-token dollar meter to cap. `dailyQuotaPerUser` + the cheap
-> default model are the practical ceiling. A hard dollar cap would require the
-> metered Anthropic API runtime (the future "runtime B").
+> there's no per-token dollar meter to cap. `dailyQuotaPerUser`/`dailyQuotaGlobal`
+> + the cheap default model are the practical ceiling. A hard dollar cap would
+> require the metered Anthropic API runtime (the future "runtime B").
