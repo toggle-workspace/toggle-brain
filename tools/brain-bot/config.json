@@ -1,5 +1,8 @@
 {
   "repoRoot": "/Users/zaidsaad/Desktop/Code/Toggle Brain",
+  "checkoutDir": "/Users/zaidsaad/.brain-bot/checkout",
+  "ref": "origin/main",
+  "refreshIntervalMin": 10,
   "model": "claude-sonnet-4-6",
   "pollTimeoutSec": 25,
   "maxAnswerChars": 3800,

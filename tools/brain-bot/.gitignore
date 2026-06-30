@@ -1,6 +1,7 @@
 .env
 allowlist.json
 .state.json
+.settings.gen.json
 logs/
 node_modules/
 .DS_Store

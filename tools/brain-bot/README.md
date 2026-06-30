@@ -18,28 +18,50 @@ Working now:
 - `/whoami` · `/start` · `/help` bootstrap (returns your `user_id` so you can be added).
 - A question → headless read-only Claude over the repo → a path-cited answer.
 
-**MVP scope guard is the system prompt, not a hard boundary.** The agent is told
-to answer only from the shared zones (`brain/`, `generators/`, `Sales/`, …) and
-to refuse individual `clients/` data. The *hard* enforcement — a containerized
-clean `git archive main` checkout with no `$HOME`, no `.git`, and a per-user
-client ACL — is a later phase (see Roadmap).
+### The jail (hard boundaries — built and verified)
 
-The read-only guarantee IS hard already: `ask.sh` permits only `Read`, `Grep`,
-`Glob` and explicitly denies `Bash`/`Write`/`Edit`/etc., so the bot cannot
-mutate the repo or shell out.
+The agent runs against a **clean, committed-only checkout**, not Zaid's live
+working tree, and is **fenced to that checkout** by a tool hook:
+
+1. **Clean checkout.** `refresh-checkout.sh` builds the read view from
+   `git archive origin/main` — committed files only, **no `.git` history**, **no
+   uncommitted WIP**. So the bot can't leak half-edited pricing, never-meant-to-
+   ship drafts, or secrets deleted from git history. (Consequence: the bot
+   answers from what's merged to **`main`**, not from local edits. The listener
+   refreshes it on start and every `refreshIntervalMin`.)
+2. **Path-guard hook.** A Claude Code `PreToolUse` hook (`hooks/path-guard.py`)
+   inspects every `Read`/`Grep`/`Glob` and **denies any path resolving outside
+   the checkout** (`realpath`, so `..` and symlink escapes are caught too). This
+   is what stops a crafted or prompt-injected question from reading `~/.ssh`,
+   `~/.claude/MEMORY.md`, or `/etc/*`.
+3. **Read-only tools.** `ask.sh` permits only `Read`/`Grep`/`Glob` and denies
+   `Bash`/`Write`/`Edit`/etc., so the bot can't mutate anything or shell out.
+
+> **Hook contract gotchas (verified empirically, don't regress):** the deny must
+> be the JSON `permissionDecision: "deny"` on stdout — **exit code 2 is ignored**.
+> The hook command must be invoked as `/usr/bin/python3 "<path>"` with the path
+> **quoted** (the repo path contains a space — `Toggle Brain` — and an unquoted
+> path makes the hook fail *open*). Claude does **not** pass parent env vars to
+> hooks, so don't rely on env for hook behavior.
+
+**Still soft (next phase):** the *which-zones* scope. The system prompt tells the
+agent to answer from shared zones and refuse individual `clients/` data, but that
+is not yet hard-enforced. The per-user **client ACL** (mount only a user's
+allowed `clients/<slug>/`) is the next phase — see Roadmap.
 
 ---
 
 ## Architecture
 
 ```
-Telegram  ──long poll──>  listener.js  ──spawns──>  ask.sh
-(getUpdates)              (allowlist,              (headless `claude -p`,
-                          offset, reply)            cwd = repo root,
-                                                    Read/Grep/Glob only)
-                                                          │
-                                                    reads brain/*.md,
-                                                    cites the path
+Telegram ──long poll──> listener.js ──spawns──> ask.sh ──> headless `claude -p`
+(getUpdates)            (allowlist,             (cwd =     (Read/Grep/Glob only,
+                         offset, reply,          clean      PreToolUse path-guard
+                         periodic refresh)       checkout)  hook fences to checkout)
+                                                                  │
+                              refresh-checkout.sh           reads brain/*.md,
+                              (git archive origin/main,      cites the path
+                               no .git, no WIP) ────────────> the clean checkout
 ```
 
 - **No webhook / no Cloudflare Worker.** Those exist in `sales-nudge-bot` only
@@ -54,15 +76,17 @@ Telegram  ──long poll──>  listener.js  ──spawns──>  ask.sh
 
 | File | Role |
 |---|---|
-| `listener.js` | Long-poll loop: allowlist gate, offset, spawn `ask.sh`, reply (chunked). |
+| `listener.js` | Long-poll loop: allowlist gate, offset, spawn `ask.sh`, reply (chunked); refreshes the checkout on start + on a timer. |
 | `telegram.js` | Thin Bot API client (`getUpdates` / `sendMessage` / `sendChatAction`). |
-| `ask.sh` | The one seam that runs the brain: headless `claude -p`, read-only tools, repo as cwd. A future container/VPS runtime swaps only this file. |
+| `ask.sh` | The one seam that runs the brain: headless `claude -p` over the clean checkout, read-only tools, registers the path-guard hook. A future container/VPS runtime swaps only this file. |
+| `refresh-checkout.sh` | Rebuilds the clean committed-only checkout from `git archive origin/main` (atomic symlink swap). |
+| `hooks/path-guard.py` | `PreToolUse` hook: denies any `Read`/`Grep`/`Glob` resolving outside the checkout. The filesystem fence. |
 | `prompt/system.md` | The agent's system prompt: navigation doctrine, citation + verbatim-value rules, conflict-flagging, scope, refusal. |
-| `config.json` | Non-secret tunables: `repoRoot`, `model`, poll timeout, answer length, ask timeout. |
+| `config.json` | Non-secret tunables: `repoRoot`, `checkoutDir`, `ref`, `refreshIntervalMin`, `model`, poll/answer/ask limits. |
 | `run-bot.sh` | Entrypoint: loads `.env`, runs `listener.js`. launchd-friendly. |
 | `allowlist.json` | **gitignored.** `{ "<telegram_user_id>": "Display Name" }`. Copy from `allowlist.example.json`. |
 | `.env` | **gitignored.** Holds `TELEGRAM_TOKEN`. |
-| `.state.json` / `logs/` | **gitignored.** Polling offset + run logs. |
+| `.settings.gen.json` / `.state.json` / `logs/` | **gitignored.** Generated hook settings, polling offset, run logs. |
 
 ## Setup
 
@@ -91,15 +115,25 @@ restarting the bot.
 
 ```
 cd "/Users/zaidsaad/Desktop/Code/Toggle Brain"
-BRAIN_BOT_REPO_ROOT="$PWD" bash tools/brain-bot/ask.sh "What is our Malaysia retainer pricing?"
+# build the clean checkout once
+BRAIN_BOT_REPO_ROOT="$PWD" \
+  BRAIN_BOT_CHECKOUT_DIR="$HOME/.brain-bot/checkout" \
+  bash tools/brain-bot/refresh-checkout.sh
+# then ask
+BRAIN_BOT_CHECKOUT_DIR="$HOME/.brain-bot/checkout" \
+  bash tools/brain-bot/ask.sh "What is our Malaysia retainer pricing?"
 ```
 
-## Roadmap (post-MVP)
+## Roadmap
 
-1. **Jail** — run the agent in a container over a clean `git archive main`
-   checkout: no `$HOME`, no `.git`, no uncommitted/WIP files. This is the real
-   security boundary; the MVP's prompt-scope is interim.
-2. **Per-user client ACL** — `telegram_user_id → [client slugs | "all"]`; assemble
+- [x] **MVP** — Telegram long-poll + allowlist + cited answers.
+- [x] **Jail** — clean committed-only checkout (no `.git`, no WIP) + `PreToolUse`
+  path-guard hook fencing reads to the checkout + read-only tools. *(Done via a
+  native hook rather than Docker — no container needed.)*
+
+Next:
+
+1. **Per-user client ACL** — `telegram_user_id → [client slugs | "all"]`; assemble
    a per-request view = shared zones + only that user's allowed `clients/<slug>/`.
    Enforced by what's mounted, never by the prompt (survives prompt injection).
 3. **Cost controls** — cheap default model, `/deep` to escalate to Opus, per-user

@@ -60,16 +60,33 @@ function chunk(text, size) {
   return out;
 }
 
+// --- clean checkout (the jail's committed-only view) ----------------------
+function refreshCheckout() {
+  return new Promise((resolve) => {
+    const env = Object.assign({}, process.env, {
+      BRAIN_BOT_REPO_ROOT: CONFIG.repoRoot,
+      BRAIN_BOT_CHECKOUT_DIR: CONFIG.checkoutDir,
+      BRAIN_BOT_REF: CONFIG.ref || 'origin/main',
+    });
+    execFile('bash', [path.join(DIR, 'refresh-checkout.sh')], {
+      env, timeout: 120000, maxBuffer: 4 * 1024 * 1024,
+    }, (err, stdout, stderr) => {
+      if (err) log('refresh-checkout error: ' + err.message + ' :: ' + String(stderr || '').slice(0, 300));
+      else log(String(stdout || '').trim());
+      resolve(!err);
+    });
+  });
+}
+
 // --- the brain ------------------------------------------------------------
 function askBrain(question) {
   return new Promise((resolve) => {
     const env = Object.assign({}, process.env, {
-      BRAIN_BOT_REPO_ROOT: CONFIG.repoRoot,
+      BRAIN_BOT_CHECKOUT_DIR: CONFIG.checkoutDir,
       BRAIN_BOT_MODEL: CONFIG.model,
     });
     execFile('bash', [path.join(DIR, 'ask.sh'), question], {
       env,
-      cwd: CONFIG.repoRoot,
       timeout: CONFIG.askTimeoutMs || 180000,
       maxBuffer: 16 * 1024 * 1024,
     }, (err, stdout, stderr) => {
@@ -128,6 +145,13 @@ async function handleMessage(msg) {
 // --- main loop ------------------------------------------------------------
 async function main() {
   log(`brain-bot listener starting. repo=${CONFIG.repoRoot} model=${CONFIG.model}`);
+
+  // Build the clean checkout before serving, then keep it fresh on a timer so
+  // answers track what the team merges to main (without per-query cost).
+  await refreshCheckout();
+  const everyMin = CONFIG.refreshIntervalMin || 10;
+  setInterval(() => { refreshCheckout().catch(() => {}); }, everyMin * 60 * 1000);
+
   let offset = loadOffset();
   for (;;) {
     let res;
