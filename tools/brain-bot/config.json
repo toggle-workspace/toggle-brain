@@ -1,0 +1,15 @@
+{
+  "repoRoot": "/Users/zaidsaad/Desktop/Code/Toggle Brain",
+  "viewsDir": "/Users/zaidsaad/.brain-bot/views",
+  "ref": "origin/main",
+  "refreshIntervalMin": 10,
+  "adminOnlyZones": ["Sales", "archive", "cockpit"],
+  "model": "claude-sonnet-4-6",
+  "deepModel": "claude-opus-4-8",
+  "dailyQuotaPerUser": 40,
+  "dailyQuotaGlobal": 300,
+  "pollTimeoutSec": 25,
+  "maxAnswerChars": 3800,
+  "askTimeoutMs": 180000,
+  "adminUserIds": []
+}

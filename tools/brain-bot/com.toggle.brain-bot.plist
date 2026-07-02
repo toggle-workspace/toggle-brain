@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  com.toggle.brain-bot — keep the brain-bot listener running, and keep the Mac
+  awake while it does (so it can answer when the lid is closed / overnight).
+
+  Install:
+    cp tools/brain-bot/com.toggle.brain-bot.plist ~/Library/LaunchAgents/
+    launchctl load -w ~/Library/LaunchAgents/com.toggle.brain-bot.plist
+  Stop:
+    launchctl unload -w ~/Library/LaunchAgents/com.toggle.brain-bot.plist
+
+  caffeinate -dis keeps display(-d)/idle(-i)/system(-s) awake for the lifetime
+  of run-bot.sh; KeepAlive respawns the bot if it ever crashes.
+-->
+<plist version="1.0">
+<dict>
+  <key>Label</key>
+  <string>com.toggle.brain-bot</string>
+
+  <key>ProgramArguments</key>
+  <array>
+    <string>/usr/bin/caffeinate</string>
+    <string>-dis</string>
+    <string>/Users/zaidsaad/Desktop/Code/Toggle Brain/tools/brain-bot/run-bot.sh</string>
+  </array>
+
+  <key>RunAtLoad</key>
+  <true/>
+  <key>KeepAlive</key>
+  <true/>
+
+  <key>StandardOutPath</key>
+  <string>/Users/zaidsaad/Desktop/Code/Toggle Brain/tools/brain-bot/logs/launchd.out.log</string>
+  <key>StandardErrorPath</key>
+  <string>/Users/zaidsaad/Desktop/Code/Toggle Brain/tools/brain-bot/logs/launchd.err.log</string>
+</dict>
+</plist>

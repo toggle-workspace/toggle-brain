@@ -1,0 +1,5 @@
+{
+  "111111111": { "name": "Zaid", "clients": "all" },
+  "222222222": { "name": "Account Lead", "clients": ["audaura-unitar", "oddle-partnership"] },
+  "333333333": "Shared-only teammate (string entry = brain/Sales/etc. only, no client data)"
+}
