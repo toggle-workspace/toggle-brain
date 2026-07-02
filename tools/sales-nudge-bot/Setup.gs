@@ -47,7 +47,33 @@ function getWebhookInfo() {
   Logger.log(JSON.stringify(info, null, 2));
 }
 
-/** Remove the webhook (e.g. to switch bots). */
+/**
+ * STEP 2 (LIVE PATH) — point Telegram at the Cloudflare Worker proxy.
+ * Apps Script /exec returns a 302 that Telegram won't follow, so we never set the
+ * webhook to /exec directly (that's what the legacy setWebhook above does, and why
+ * it failed). Instead Telegram talks to the Worker, which forwards to /exec.
+ *
+ * Requires Script Properties:
+ *   WORKER_URL      the deployed Worker URL (from `wrangler deploy`)
+ *   WEBHOOK_SECRET  the same secret_token configured as a Worker secret
+ * See worker/README.md. After this succeeds, run removePollingTriggers().
+ */
+function setWorkerWebhook() {
+  const props = PropertiesService.getScriptProperties();
+  const workerUrl = props.getProperty('WORKER_URL');
+  if (!workerUrl) throw new Error('Set Script Property WORKER_URL to your Cloudflare Worker URL first.');
+  const secret = props.getProperty('WEBHOOK_SECRET');
+  if (!secret) throw new Error('Set Script Property WEBHOOK_SECRET (must equal the Worker\'s WEBHOOK_SECRET).');
+  const res = tgApi_('setWebhook', {
+    url: workerUrl,
+    secret_token: secret,
+    allowed_updates: ['message', 'callback_query'],
+    drop_pending_updates: true,
+  });
+  Logger.log(JSON.stringify(res)); // response echoes neither the secret_token nor the worker secret
+}
+
+/** Remove the webhook (e.g. to switch bots, or to fall back to polling). */
 function deleteWebhook() {
   Logger.log(JSON.stringify(tgApi_('deleteWebhook', {})));
 }

@@ -14,8 +14,9 @@ sales tracker, a Telegram account, and 5 minutes from each PIC to register.
    ```
    start - Register yourself
    stale - Show my stale leads now
+   newlead - Add a new lead (client, PIC, notes)
    whoami - Show my chat id + name
-   skip - Skip the note step
+   skip - Skip the current step
    stats - Stale-lead counts (all PICs)
    ```
 
@@ -25,14 +26,14 @@ sales tracker, a Telegram account, and 5 minutes from each PIC to register.
 
 1. Open the sales tracker → **Extensions ▸ Apps Script**.
 2. Delete the empty `Code.gs`. Create these files and paste each from this folder:
-   `Config.gs`, `Main.gs`, `Telegram.gs`, `Setup.gs`.
+   `Config.gs`, `Main.gs`, `Telegram.gs`, `Setup.gs`, `Polling.gs`.
 3. **Project Settings** (gear icon):
    - Set **Time zone** = `Asia/Kuala_Lumpur`.
    - Under **Script Properties**, add:
      | Property | Value |
      |---|---|
      | `TELEGRAM_TOKEN` | the BotFather token |
-     | `TELEGRAM_SECRET` | any long random string you make up (e.g. a UUID) |
+     | `TELEGRAM_SECRET` | a long random string (e.g. a UUID) — guards the webhook; the Worker passes it through as `?secret=` (see §4) |
    - (If you did NOT bind to the sheet, also confirm `SHEET_ID` in `Config.gs`.)
 4. Confirm `Config.gs` → `SHEET_GID` matches the tab's `#gid=` in the sheet URL.
 
@@ -44,19 +45,29 @@ sales tracker, a Telegram account, and 5 minutes from each PIC to register.
 2. **Run ▸ `previewNudge`** → View ▸ Logs. You should see each PIC and their
    stale-lead counts. No messages are sent. This proves detection works.
 
-## 4. Deploy as a web app + connect the webhook (5 min)
+## 4. Make it fast — deploy the Cloudflare Worker webhook (10 min)
 
-1. **Deploy ▸ New deployment ▸ Web app.**
-   - Execute as: **Me**
-   - Who has access: **Anyone**
-   - Deploy → copy the **/exec URL**.
-2. Back in **Script Properties**, add `WEBAPP_URL` = that /exec URL.
-3. **Run ▸ `setWebhook`** → Logs should show `{"ok":true,...}`.
-4. **Run ▸ `getWebhookInfo`** to confirm (url set, no errors).
+Apps Script can't be Telegram's webhook directly (it returns a `302` Telegram won't
+follow), and 1-minute polling makes every tap wait up to ~60s. A tiny **free
+Cloudflare Worker** fixes this — replies drop to ~1–3s. Full runbook: **`worker/README.md`**.
 
-> Re-deploying creates a new URL only if you choose "New deployment". Use
-> **Manage deployments ▸ edit (pencil) ▸ New version** to keep the same URL after
-> code changes — otherwise update `WEBAPP_URL` and re-run `setWebhook`.
+1. **Deploy the web app** so the Worker has something to forward to:
+   **Deploy ▸ New deployment ▸ Web app** (Execute as **Me**, Who has access **Anyone**)
+   → copy the **/exec URL**.
+2. **Deploy the Worker** (`worker/README.md`): `wrangler login`, set its two secrets —
+   `EXEC_URL` = the /exec URL **plus** `?secret=<TELEGRAM_SECRET>`, and `WEBHOOK_SECRET`
+   = a fresh long random string — then `wrangler deploy`. It prints your Worker URL.
+3. **Point Telegram at the Worker.** Add Script Properties `WORKER_URL` (the Worker URL)
+   and `WEBHOOK_SECRET` (same value as step 2), then **Run ▸ `setWorkerWebhook`**, then
+   **Run ▸ `removePollingTriggers`** — the 1-min poller must be stopped, or its next
+   `getUpdates` hits a 409 conflict and deletes your webhook.
+4. **Run ▸ `getWebhookInfo`** → confirm `url` = your Worker, empty `last_error_message`,
+   `pending_update_count` 0. Send the bot a message; the reply should land in ~1–3s.
+
+> **Prefer zero extra infra?** Skip steps 2–3 and **Run ▸ `createPollingTrigger`**
+> instead (replies within ~1 min, no Cloudflare account). The two transports are
+> mutually exclusive — to switch back from the Worker later, `deleteWebhook` then
+> `createPollingTrigger`.
 
 ## 5. Register the team (5 min)
 
@@ -69,21 +80,28 @@ sales tracker, a Telegram account, and 5 minutes from each PIC to register.
 
 ## 6. Schedule it
 
-**Run ▸ `createDailyTrigger`** — sends the daily nudge ~09:00 KL time. Change the
-hour in `Setup.gs` if you like. To stop: `removeTriggers`.
+**Run ▸ `createWeeklyTrigger`** — sends the nudge **~07:00 KL on Sundays** (the
+handler is still named `runDailyNudge`). Change the day/hour in `Setup.gs` if you
+like. To stop: `removeTriggers`.
 
 ---
 
-## Daily life
+## Day-to-day
 - A PIC gets *"📋 Butterfly — stage? [Not started][In progress][Blocked][Completed]"*,
   taps through stage → warm/cold → optional note. The sheet updates and
   **Last Contact Date is stamped to today** automatically.
 - `/stale` any time pulls their current list on demand.
-- You get a digest each run: who was nudged, who isn't registered yet.
+- `/newlead` adds a brand-new lead — client name → PIC (tap or type) → note (or
+  `/skip`). Any registered PIC can use it; the row lands with a fresh `BotID` and
+  today's date, so the bot will nudge on it from then on.
+- You get a digest each weekly run: who was nudged, who isn't registered yet.
 
 ## Troubleshooting
-- **Buttons do nothing** → webhook not set or wrong secret. Re-run `setWebhook`,
-  check `getWebhookInfo` for `last_error_message`.
+- **Buttons do nothing** → **Run ▸ `getWebhookInfo`**: `url` should be your Worker and
+  `last_error_message` empty. A `302` error means the webhook is pointed at `/exec`
+  directly — repoint it at the Worker (`setWorkerWebhook`). If you're on the polling
+  fallback instead, confirm a `pollUpdates` time-trigger exists. Either way, check the
+  hidden `BotLog` tab for errors.
 - **Error: "No BotID column — run initBot()"** → you skipped step 3.1. Run `initBot`.
 - **A PIC sees "already linked to another account"** → that name is taken by a
   different Telegram chat (anti-impersonation). Fix the `BotRoster` tab by hand:

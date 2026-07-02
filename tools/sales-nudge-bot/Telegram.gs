@@ -79,16 +79,36 @@ function handleMessage_(msg) {
     return tgSendText_(chatId, 'chat_id: <code>' + chatId + '</code>\nregistered as: <b>' + escHtml_(pic || '— not registered —') + '</b>');
   }
   if (text === '/stale' || text === '/mine') return sendMyStale_(chatId);
-  if (text === '/skip') { clearPending_(chatId); return tgSendText_(chatId, 'Skipped 👍'); }
+  if (text === '/skip') return handleSkip_(chatId);
   if (text === '/stats') return handleStats_(chatId);
+  if (text === '/newlead') return startNewlead_(chatId);
 
-  // Otherwise: a free-text note for the lead we just asked about?
+  // Otherwise: a free-text reply continuing a flow we started (a note, or /newlead).
   const pending = getPending_(chatId);
-  if (pending && text && text[0] !== '/') {
-    appendNote_(chatId, pending.botId, text);
+  if (!pending) return;
+  if (pending.flow === 'newlead') {
+    if (text && text[0] !== '/') return advanceNewlead_(chatId, pending, text);
+    // Empty or a stray slash mid-flow — guide instead of silently dropping it.
+    return tgSendText_(chatId, 'Type the ' + newleadStepLabel_(pending.step) + ', or send /skip to stop.');
+  }
+  if (text && text[0] !== '/') {
+    appendNote_(chatId, pending.botId, text);   // default / legacy 'note' flow
     clearPending_(chatId);
     return tgSendText_(chatId, 'Note saved on <b>' + escHtml_(pending.client) + '</b> ✅');
   }
+}
+
+/** /skip finalises a /newlead (no note) mid-flow, or cancels it before the notes
+ *  step, or — outside /newlead — just clears a pending note prompt. */
+function handleSkip_(chatId) {
+  const p = getPending_(chatId);
+  if (p && p.flow === 'newlead') {
+    if (p.step === 'notes') return finalizeNewlead_(chatId, p, '');
+    clearPending_(chatId);
+    return tgSendText_(chatId, 'New lead cancelled 🚫');
+  }
+  clearPending_(chatId);
+  return tgSendText_(chatId, 'Skipped 👍');
 }
 
 // ---------------------------------------------------------------------------
@@ -129,6 +149,111 @@ function getDistinctPics_() {
     if (p && !seen[p.toLowerCase()]) { seen[p.toLowerCase()] = true; out.push(p); }
   });
   return out.sort(); // stable order so indices in callback_data stay meaningful within a session
+}
+
+// ---------------------------------------------------------------------------
+// /newlead — any registered PIC adds a row in a few taps:
+//   client name (typed) -> PIC (tap a name, or type a new one) -> note (typed,
+//   or /skip). State machine lives in the same PEND_<chatId> pending store as the
+//   note flow, discriminated by `flow: 'newlead'` and advanced by `step`.
+// ---------------------------------------------------------------------------
+
+function startNewlead_(chatId) {
+  if (!getPicByChat_(chatId)) {
+    return tgSendText_(chatId, 'Send /start to register first, then /newlead.');
+  }
+  setPending_(chatId, { flow: 'newlead', step: 'client' });
+  tgSendText_(chatId, '🆕 <b>New lead</b>\n\nWhat\'s the client / company name?');
+}
+
+/** Human label for the field a /newlead step is waiting on (used in re-prompts). */
+function newleadStepLabel_(step) {
+  return step === 'client' ? 'client / company name'
+       : (step === 'pic' || step === 'pic_typed') ? 'PIC name'
+       : 'note';
+}
+
+/** Inline keyboard of the GIVEN PIC names for /newlead, plus a "type a new name"
+ *  escape hatch. callback_data carries the index into that list (or 'new'). The
+ *  list is snapshotted into pending state (picOptions) so the index still resolves
+ *  to the same name at tap time, even if the sheet's PIC set changes meanwhile. */
+function newleadPicKeyboard_(pics) {
+  const rows = [];
+  for (let i = 0; i < pics.length; i += 2) {
+    rows.push(pics.slice(i, i + 2).map((p, j) => ({ text: p, callback_data: 'a|np|' + (i + j) })));
+  }
+  rows.push([{ text: '➕ Someone else (type a name)', callback_data: 'a|np|new' }]);
+  return rows;
+}
+
+/** Advance the /newlead flow on a free-text reply (the PIC step is normally a tap,
+ *  but a typed name here is accepted as the PIC too). */
+function advanceNewlead_(chatId, pending, text) {
+  if (pending.step === 'client') {
+    const pics = getDistinctPics_();
+    setPending_(chatId, { flow: 'newlead', step: 'pic', client: text, picOptions: pics });
+    return tgSendText_(chatId, '🆕 <b>' + escHtml_(text) + '</b>\n\nWho\'s the PIC? Tap a name or type one:', newleadPicKeyboard_(pics));
+  }
+  if (pending.step === 'pic' || pending.step === 'pic_typed') {
+    setPending_(chatId, { flow: 'newlead', step: 'notes', client: pending.client, pic: text });
+    return tgSendText_(chatId, '🆕 <b>' + escHtml_(pending.client) + '</b>\nPIC → <b>' + escHtml_(text) + '</b> ✅\n\nAdd a note (or send /skip):');
+  }
+  if (pending.step === 'notes') {
+    return finalizeNewlead_(chatId, pending, text);
+  }
+}
+
+function finalizeNewlead_(chatId, pending, notes) {
+  if (!pending.client || !pending.pic) {           // defensive: incomplete state
+    clearPending_(chatId);
+    return tgSendText_(chatId, 'That new lead expired — send /newlead to start over.');
+  }
+  const callerPic = getPicByChat_(chatId);
+  appendLead_(chatId, { client: pending.client, pic: pending.pic, notes: notes || '' }, callerPic);
+  clearPending_(chatId);
+
+  // Ping the assigned PIC (if they're on the bot and aren't the one who added it).
+  const notified = notifyPicOfNewLead_(pending.pic, pending.client, notes, callerPic, chatId);
+
+  let confirm = '✅ Added <b>' + escHtml_(pending.client) + '</b> (PIC: <b>' + escHtml_(pending.pic) + '</b>) to the tracker.';
+  if (notified) confirm += '\n📨 ' + escHtml_(pending.pic) + ' has been notified.';
+  tgSendText_(chatId, confirm);
+
+  notifyAdmins_('🆕 ' + escHtml_(callerPic) + ' added a lead: <b>' + escHtml_(pending.client) + '</b> (PIC: ' + escHtml_(pending.pic) + ').');
+}
+
+/** DM the assigned PIC that a new lead landed on their plate. Returns true only if a
+ *  message was actually sent — i.e. the PIC is registered and isn't the person who
+ *  just added it (who already got the confirmation). */
+function notifyPicOfNewLead_(pic, client, note, addedBy, adderChatId) {
+  const chatId = getChatByPic_(pic);
+  if (!chatId) return false;                                 // PIC not on the bot yet
+  if (String(chatId) === String(adderChatId)) return false;  // they added it themselves
+  let msg = '🆕 <b>New lead assigned to you</b>\n' +
+            '<b>' + escHtml_(client) + '</b> — added by ' + escHtml_(addedBy) + '.';
+  if (note) msg += '\n📝 ' + escHtml_(note);
+  msg += '\n\nSend /stale to see all your leads.';
+  const res = tgSendText_(chatId, msg);
+  return !!(res && res.ok);   // only claim "notified" if Telegram accepted the send
+}
+
+/** Callback for the /newlead PIC keyboard (action 'np'): a tapped name index or
+ *  'new' (→ ask them to type a name). Advances pending state to the notes step. */
+function handleNewleadPic_(cb, chatId, messageId, idxOrNew) {
+  const pending = getPending_(chatId);
+  if (!pending || pending.flow !== 'newlead') { tgAnswerCallback_(cb.id, 'Start with /newlead'); return; }
+  if (idxOrNew === 'new') {
+    setPending_(chatId, { flow: 'newlead', step: 'pic_typed', client: pending.client });
+    tgAnswerCallback_(cb.id, 'Type the name');
+    tgEditText_(chatId, messageId, '🆕 <b>' + escHtml_(pending.client) + '</b>\nType the PIC\'s name:');
+    return;
+  }
+  const pics = pending.picOptions || getDistinctPics_();   // resolve against the snapshot shown
+  const pic = pics[parseInt(idxOrNew, 10)];
+  if (pic == null) { tgAnswerCallback_(cb.id, 'Unknown name — type it instead'); return; }
+  setPending_(chatId, { flow: 'newlead', step: 'notes', client: pending.client, pic: pic });
+  tgAnswerCallback_(cb.id, 'PIC: ' + pic);
+  tgEditText_(chatId, messageId, '🆕 <b>' + escHtml_(pending.client) + '</b>\nPIC → <b>' + escHtml_(pic) + '</b> ✅\n\nAdd a note (or send /skip):');
 }
 
 // ---------------------------------------------------------------------------
@@ -195,6 +320,10 @@ function handleCallbackInner_(cb) {
 
   const callerPic = getPicByChat_(chatId);
   if (!callerPic) { tgAnswerCallback_(cb.id, 'Send /start first'); return; }
+
+  // /newlead PIC picker — parts[2] is a name index or 'new', not a botId, so this
+  // must be handled before the botId-based row lookup below.
+  if (action === 'np') return handleNewleadPic_(cb, chatId, messageId, parts[2]);
 
   const botId = parts[2];
   const sheet = getPipelineSheet_();
@@ -278,6 +407,34 @@ function appendNote_(chatId, botId, note) {
   logBot_('NOTE', chatId, botId, 'len=' + note.length); // redacted — body is already in the sheet
 }
 
+/** Append a brand-new lead row (from /newlead). Generates a fresh BotID, stamps
+ *  Last Contact Date = today, sets the default stage, and runs every
+ *  user-supplied value through safeCell_ (formula-injection guard). */
+function appendLead_(chatId, fields, callerPic) {
+  const botId = withLock_(function () {
+    const sheet = getPipelineSheet_();
+    const cols = getColumnMap_(sheet);
+    const width = Math.max(sheet.getLastColumn(), cols.botId);
+    const row = new Array(width).fill('');
+    const id = Utilities.getUuid();
+    const today = todayStr_();
+    row[cols.client - 1]      = safeCell_(fields.client);
+    row[cols.pic - 1]         = safeCell_(fields.pic);
+    row[cols.stage - 1]       = CONFIG.NEWLEAD_STAGE;
+    row[cols.lastContact - 1] = today;
+    // safeCell_ guards the cell's FIRST character — the only thing Sheets evaluates
+    // as a formula. The date prefix keeps that char a digit today; keep the wrap so a
+    // future reformat that puts user text first stays guarded.
+    if (fields.notes) row[cols.updates - 1] = safeCell_(today + ': ' + fields.notes);
+    row[cols.botId - 1]       = id;
+    sheet.appendRow(row);
+    return id;
+  });
+  logBot_('NEWLEAD', chatId, botId,   // logged outside the lock — matches appendNote_
+    callerPic + ' added "' + fields.client + '" pic=' + fields.pic + ' note_len=' + (fields.notes ? fields.notes.length : 0));
+  return botId;
+}
+
 function codeToLabel_(options, code) {
   const found = options.filter(o => o.code === code)[0];
   return found ? found.label : code;
@@ -338,6 +495,19 @@ function getPicByChat_(chatId) {
   return null;
 }
 
+/** Reverse of getPicByChat_: a registered PIC's chat_id by name (case-insensitive),
+ *  or null if that PIC hasn't registered. */
+function getChatByPic_(pic) {
+  if (!pic) return null;
+  const roster = getRoster_();
+  const want = String(pic).trim().toLowerCase();
+  const keys = Object.keys(roster);
+  for (let i = 0; i < keys.length; i++) {
+    if (keys[i].trim().toLowerCase() === want) return roster[keys[i]];
+  }
+  return null;
+}
+
 /**
  * Upsert a PIC↔chat mapping. One identity per chat. Returns {ok:false,
  * reason:'claimed'} if the name is already bound to a DIFFERENT chat (prevents
@@ -375,11 +545,15 @@ function getPending_(chatId) {
     clearPending_(chatId);
     return null;
   }
-  return o; // { botId, client, ts }
+  return o; // { flow, ts, ... } — 'note': {botId, client}; 'newlead': {step, client?, pic?}
+}
+/** Store an arbitrary pending-flow object (TTL via the ts we stamp here). */
+function setPending_(chatId, obj) {
+  const o = Object.assign({}, obj, { ts: Date.now() });
+  PropertiesService.getScriptProperties().setProperty('PEND_' + chatId, JSON.stringify(o));
 }
 function setPendingNote_(chatId, botId, client) {
-  PropertiesService.getScriptProperties().setProperty('PEND_' + chatId,
-    JSON.stringify({ botId: botId, client: client, ts: Date.now() }));
+  setPending_(chatId, { flow: 'note', botId: botId, client: client });
 }
 function clearPending_(chatId) {
   PropertiesService.getScriptProperties().deleteProperty('PEND_' + chatId);
