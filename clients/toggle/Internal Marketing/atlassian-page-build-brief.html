@@ -1,0 +1,550 @@
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toggle · Atlassian Marketplace Page — Build Brief & Model</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;0,800;1,700;1,800&display=swap" rel="stylesheet">
+<style>
+  /* ============================================================
+     TOGGLE DESIGN TOKENS — sourced from
+     clients/toggle/design-system/tokens.json (Stage 3)
+     Web developer: these are the canonical values. Copy them.
+     ============================================================ */
+  :root{
+    --blue:#4A7BF7;          /* blueprint blue — DISPLAY / large text / illustration ONLY */
+    --blue-deep:#3056C9;     /* text-safe blue — small text, links, pills, table headers */
+    --ink:#0F0F0F;           /* headings, stat numerals (light) */
+    --body:#4A4A4A;          /* body copy (light) */
+    --secondary:#6B7280;     /* secondary / captions (light) */
+    --canvas:#FFFFFF;        /* page ground (light) */
+    --card:#F2F3F6;          /* card fill (light) */
+    --callout:#DDE5FE;       /* periwinkle data panel (light) */
+    --navy:#0A1224;          /* dark canvas */
+    --card-d:#121C33;        /* card (dark) */
+    --raised-d:#1A2540;      /* raised card (dark) */
+    --ink-d:#FFFFFF;         /* headings (dark) */
+    --body-d:#B0B8C9;        /* body (dark) */
+    --secondary-d:#9CA3B5;   /* secondary (dark) */
+    --font:"Inter Tight",Inter,-apple-system,"Segoe UI",sans-serif;
+    --maxw:1080px;
+    --radius:14px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;font-family:var(--font);color:var(--body);background:#e9ebf0;
+    -webkit-font-smoothing:antialiased;line-height:1.55;font-size:16px}
+  h1,h2,h3,h4{color:var(--ink);line-height:1.15;margin:0 0 .4em;font-weight:800;letter-spacing:-.01em}
+  p{margin:0 0 1em}
+  a{color:var(--blue-deep);text-decoration:none}
+  a:hover{text-decoration:underline}
+  .num{font-variant-numeric:tabular-nums}
+
+  /* ---- Sticky control bar (handoff tool, not part of the page) ---- */
+  .bar{position:sticky;top:0;z-index:50;background:var(--navy);color:#fff;
+    display:flex;align-items:center;gap:16px;padding:10px 20px;flex-wrap:wrap;
+    border-bottom:2px solid var(--blue)}
+  .bar .wm{font-style:italic;font-weight:800;font-size:20px;letter-spacing:-.02em}
+  .bar .wm b{color:var(--blue)}
+  .bar small{color:#9CA3B5;font-weight:500}
+  .bar .spacer{flex:1}
+  .bar button{font-family:var(--font);font-weight:600;font-size:13px;cursor:pointer;
+    border:1px solid rgba(255,255,255,.25);background:transparent;color:#fff;
+    padding:7px 14px;border-radius:8px}
+  .bar button:hover{background:rgba(255,255,255,.1)}
+  .bar button.on{background:var(--blue);border-color:var(--blue)}
+
+  /* ---- Document shell ---- */
+  .doc{max-width:var(--maxw);margin:0 auto;padding:0 20px 80px}
+  .sheet{background:#fff;border-radius:16px;margin:22px 0;overflow:hidden;
+    box-shadow:0 1px 3px rgba(10,18,36,.08),0 8px 30px rgba(10,18,36,.06)}
+  .pad{padding:34px clamp(20px,4vw,52px)}
+
+  /* ---- Brief / meta styling ---- */
+  .kicker{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;
+    color:var(--blue-deep);margin-bottom:10px}
+  .brief h1{font-size:clamp(28px,4.5vw,42px)}
+  .lede{font-size:19px;color:var(--body)}
+  .meta{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:1px;
+    background:#e3e6ec;border:1px solid #e3e6ec;border-radius:12px;overflow:hidden;margin:26px 0}
+  .meta div{background:#fff;padding:16px 18px}
+  .meta dt{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--secondary);margin-bottom:5px}
+  .meta dd{margin:0;font-weight:600;color:var(--ink)}
+  .insight{background:var(--callout);border-left:4px solid var(--blue-deep);
+    border-radius:0 12px 12px 0;padding:20px 24px;margin:24px 0}
+  .insight strong{color:var(--blue-deep)}
+
+  /* ---- Dev-note annotation ---- */
+  .note{border:1px dashed var(--blue-deep);background:#f5f8ff;border-radius:10px;
+    padding:14px 18px;margin:0;font-size:14px;color:#2a3550}
+  .note b{color:var(--blue-deep);display:block;font-size:11px;letter-spacing:.1em;
+    text-transform:uppercase;margin-bottom:5px}
+  .note ul{margin:.4em 0 0;padding-left:18px}
+  .note li{margin:.2em 0}
+  body.clean .note,body.clean .sectlabel{display:none}
+  body.clean .proto{margin-top:22px}
+
+  .sectlabel{font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+    color:var(--secondary);margin:40px 0 10px;display:flex;align-items:center;gap:10px}
+  .sectlabel::before{content:"";flex:0 0 26px;height:2px;background:var(--blue)}
+
+  /* ============================================================
+     THE MODEL — on-brand prototype of the actual sub-page
+     ============================================================ */
+  .proto{border:1px solid #dfe3ea;border-radius:16px;overflow:hidden;margin:10px 0 6px;
+    box-shadow:0 6px 24px rgba(10,18,36,.07)}
+  .proto section{padding:clamp(34px,5vw,64px) clamp(22px,5vw,60px)}
+  .proto .inner{max-width:900px;margin:0 auto}
+
+  /* hero (dark) */
+  .p-hero{background:linear-gradient(180deg,#0d1730,var(--navy));color:var(--body-d);position:relative}
+  .p-hero::after{content:"";position:absolute;inset:0;pointer-events:none;
+    background:radial-gradient(60% 60% at 85% 0%,rgba(74,123,247,.22),transparent 70%)}
+  .p-hero .inner{position:relative}
+  .p-eyebrow{display:inline-block;font-size:12px;font-weight:700;letter-spacing:.14em;
+    text-transform:uppercase;color:#fff;background:rgba(74,123,247,.18);
+    border:1px solid rgba(74,123,247,.5);padding:6px 12px;border-radius:20px;margin-bottom:20px}
+  .p-hero h2{color:#fff;font-size:clamp(30px,5vw,52px);max-width:16ch}
+  .p-hero h2 em{font-style:normal;color:var(--blue)}
+  .p-hero p{font-size:clamp(17px,2.4vw,21px);color:var(--body-d);max-width:52ch;margin-top:6px}
+  .cta{display:inline-flex;align-items:center;gap:8px;font-weight:700;font-size:16px;
+    background:var(--blue);color:#fff;padding:14px 26px;border-radius:10px;margin-top:26px}
+  .cta.ghost{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.35)}
+  .cta-row{display:flex;gap:14px;flex-wrap:wrap}
+  .logowall{display:flex;flex-wrap:wrap;gap:12px 26px;align-items:center;margin-top:38px;
+    padding-top:26px;border-top:1px solid rgba(255,255,255,.12)}
+  .logowall span{font-weight:700;color:#8a94ab;font-size:15px;letter-spacing:.01em;
+    filter:grayscale(1);opacity:.85}
+  .logowall .lbl{color:#6b7690;font-weight:500;font-size:12px;letter-spacing:.08em;text-transform:uppercase;width:100%;margin-bottom:2px}
+
+  /* authority band (light) */
+  .p-auth{background:#fff}
+  .p-auth h3{font-size:clamp(23px,3.4vw,32px);max-width:22ch}
+  .creds{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:14px;margin-top:26px}
+  .cred{background:var(--card);border-radius:12px;padding:18px 20px;border-top:3px solid var(--blue)}
+  .cred b{display:block;font-size:14px;color:var(--ink);margin-bottom:3px}
+  .cred span{font-size:13.5px;color:var(--secondary)}
+
+  /* stats (periwinkle) */
+  .p-stats{background:var(--callout)}
+  .statgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:18px}
+  .stat{background:#fff;border-radius:14px;padding:26px 24px;text-align:left}
+  .stat .n{font-size:clamp(34px,5vw,46px);font-weight:800;color:var(--blue-deep);
+    letter-spacing:-.02em;line-height:1}
+  .stat .l{font-size:14px;color:var(--body);margin-top:8px;font-weight:500}
+  .stat.ph{background:repeating-linear-gradient(135deg,#fff,#fff 10px,#f4f6fb 10px,#f4f6fb 20px);
+    border:2px dashed var(--blue-deep)}
+  .stat.ph .n{color:var(--blue-deep);opacity:.55;font-size:28px}
+  .stat.ph .l{color:var(--blue-deep);font-weight:600}
+
+  /* problem (dark) */
+  .p-prob{background:var(--card-d);color:var(--body-d)}
+  .p-prob h3{color:#fff;font-size:clamp(23px,3.4vw,32px);max-width:24ch}
+  .p-prob .two{display:grid;grid-template-columns:1fr 1fr;gap:26px;margin-top:22px}
+  .p-prob .two h4{color:var(--blue);font-size:14px;letter-spacing:.06em;text-transform:uppercase}
+  .p-prob .two p{color:var(--body-d);font-size:15.5px;margin:0}
+
+  /* process / offer (light) */
+  .p-offer{background:#fff}
+  .steps{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:0;margin-top:28px;
+    border:1px solid #e3e6ec;border-radius:14px;overflow:hidden}
+  .step{padding:22px 20px;border-right:1px solid #e3e6ec;position:relative}
+  .step:last-child{border-right:0}
+  .step .k{font-size:12px;font-weight:800;color:var(--blue-deep);letter-spacing:.08em}
+  .step b{display:block;margin:8px 0 4px;color:var(--ink);font-size:16px}
+  .step span{font-size:13.5px;color:var(--secondary)}
+  .model-line{margin-top:28px;background:var(--navy);color:#fff;border-radius:14px;padding:24px 28px}
+  .model-line b{color:var(--blue);font-size:20px;font-weight:800}
+  .model-line p{margin:6px 0 0;color:var(--body-d);font-size:15.5px}
+
+  /* case studies (light gray) */
+  .p-cases{background:var(--card)}
+  .cardgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:18px;margin-top:26px}
+  .casecard{background:#fff;border-radius:14px;padding:24px;border-top:3px solid var(--blue)}
+  .casecard .co{font-weight:800;color:var(--ink);font-size:18px}
+  .casecard .tag{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;
+    color:var(--blue-deep);margin:2px 0 12px}
+  .casecard .r{font-size:14.5px;color:var(--body);margin:0}
+  .casecard .metric{font-size:26px;font-weight:800;color:var(--blue-deep);margin-top:14px}
+  .casecard.ph{border-top-color:var(--secondary);opacity:.9;
+    background:repeating-linear-gradient(135deg,#fff,#fff 12px,#f6f7fa 12px,#f6f7fa 24px)}
+
+  /* testimonial (dark) */
+  .p-quote{background:var(--navy);color:#fff;text-align:center}
+  .p-quote blockquote{font-size:clamp(21px,3.2vw,30px);font-weight:700;color:#fff;
+    max-width:20ch;margin:0 auto;line-height:1.28;letter-spacing:-.01em}
+  .p-quote blockquote::before{content:"“";color:var(--blue);font-size:1.2em;line-height:0;vertical-align:-.35em;margin-right:.05em}
+  .p-quote cite{display:block;margin-top:22px;font-style:normal;color:var(--body-d);font-size:15px}
+  .p-quote cite b{color:#fff;display:block}
+
+  /* lead magnet (periwinkle) */
+  .p-lead{background:var(--callout)}
+  .leadbox{display:flex;gap:26px;align-items:center;flex-wrap:wrap;background:#fff;
+    border-radius:16px;padding:30px 34px}
+  .leadbox .txt{flex:1;min-width:240px}
+  .leadbox h3{font-size:24px}
+  .leadbox .cover{flex:0 0 120px;height:150px;border-radius:10px;
+    background:linear-gradient(160deg,var(--blue),var(--navy));display:flex;align-items:flex-end;
+    padding:14px;color:#fff;font-weight:800;font-size:14px;line-height:1.2}
+
+  /* final CTA (dark) */
+  .p-final{background:linear-gradient(180deg,var(--navy),#0d1a38);color:#fff;text-align:center}
+  .p-final h3{color:#fff;font-size:clamp(26px,4vw,38px);max-width:20ch;margin:0 auto .5em}
+  .p-final p{color:var(--body-d);max-width:46ch;margin:0 auto 8px}
+
+  /* appendix */
+  .tokentable{width:100%;border-collapse:collapse;font-size:14px;margin:14px 0}
+  .tokentable th,.tokentable td{text-align:left;padding:9px 12px;border-bottom:1px solid #e6e9ef;vertical-align:top}
+  .tokentable th{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--secondary)}
+  .sw{display:inline-block;width:18px;height:18px;border-radius:4px;border:1px solid rgba(0,0,0,.12);vertical-align:-4px;margin-right:8px}
+  code{background:#eef1f6;padding:2px 6px;border-radius:5px;font-size:13px;
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace;color:#2a3550}
+  .checklist{list-style:none;padding:0;margin:0}
+  .checklist li{padding:10px 0 10px 30px;border-bottom:1px solid #eef1f6;position:relative}
+  .checklist li::before{content:"☐";position:absolute;left:0;color:var(--blue-deep);font-size:18px;top:8px}
+  .pill{display:inline-block;font-size:11px;font-weight:700;padding:2px 9px;border-radius:20px;
+    background:var(--callout);color:var(--blue-deep);letter-spacing:.03em}
+  .pill.warn{background:#fdeee0;color:#9a5b16}
+
+  @media(max-width:640px){
+    .p-prob .two{grid-template-columns:1fr}
+    .step{border-right:0;border-bottom:1px solid #e3e6ec}
+    .step:last-child{border-bottom:0}
+  }
+  @media print{
+    .bar{display:none}
+    body{background:#fff}
+    .sheet,.proto{box-shadow:none;break-inside:avoid}
+  }
+</style>
+
+<div class="bar">
+  <span class="wm"><b>[</b> toggle <b>]</b></span>
+  <small>Atlassian Marketplace Page — Build Brief &amp; Model</small>
+  <span class="spacer"></span>
+  <button id="toggleNotes" class="on">Dev notes: ON</button>
+  <button onclick="window.print()">Print / PDF</button>
+</div>
+
+<div class="doc">
+
+  <!-- ===================== THE BRIEF ===================== -->
+  <div class="sheet brief">
+    <div class="pad">
+      <div class="kicker">Internal build brief · for the team &amp; web developer</div>
+      <h1>New sub-page: the Atlassian Marketplace practice</h1>
+      <p class="lede">A dedicated landing page on <code>toggle.solutions</code> that speaks to Atlassian
+      Marketplace app vendors — the specialist book of clients Toggle just took on. Its job: make a
+      Marketplace founder think <em>“these are the people who understand my business,”</em> and book a call.</p>
+
+      <div class="insight">
+        <strong>Why this page exists.</strong> Toggle inherited a cluster of Atlassian Marketplace vendors
+        (Ricksoft, Yasoon, codefortynine, Communardo, SoldEvelo, Sourceflow…). This is a tight, high-trust
+        niche where buyers all know each other. We have the clients and the track record — we just don’t yet
+        have a <em>page</em> that says so. This is that page. It is <strong>additive</strong>: it does not
+        change Toggle’s main positioning, it adds a specialist practice underneath it.
+      </div>
+
+      <dl class="meta">
+        <div><dt>Page type</dt><dd>Practice / solution landing page</dd></div>
+        <div><dt>Suggested URL</dt><dd>/atlassian-marketplace</dd></div>
+        <div><dt>Primary audience</dt><dd>Atlassian Marketplace app vendors (founders, marketing leads)</dd></div>
+        <div><dt>Primary CTA</dt><dd>Book a Marketplace growth call</dd></div>
+        <div><dt>Secondary CTA</dt><dd>Download the GTM playbook (lead capture)</dd></div>
+        <div><dt>Nav placement</dt><dd>Under “Solutions” / “What we do” — new item “Atlassian Marketplace”</dd></div>
+        <div><dt>Brand system</dt><dd>Existing Toggle tokens — see appendix</dd></div>
+        <div><dt>Theme</dt><dd>Light + dark sections (as modelled); dark-navy is on-brand</dd></div>
+      </dl>
+
+      <div class="note">
+        <b>How to use this document</b>
+        Below is a <strong>working model of the page</strong>, rendered in Toggle’s real brand colours and type.
+        Each section is followed by a dashed <span style="color:var(--blue-deep);font-weight:700">DEV NOTE</span>
+        explaining intent, copy source, and what to fill in. Toggle blue <code>#4A7BF7</code> is a display/illustration
+        colour only — small text and links use the text-safe <code>#3056C9</code>. Hit <b>“Dev notes: ON”</b> in the top
+        bar to hide the annotations and preview the clean page. Full copy-paste tokens and a build checklist are in the
+        appendix at the bottom.
+      </div>
+    </div>
+  </div>
+
+  <!-- ===================== THE MODEL ===================== -->
+  <div class="sectlabel">The model — section by section</div>
+  <div class="proto">
+
+    <!-- 1. HERO -->
+    <section class="p-hero"><div class="inner">
+      <span class="p-eyebrow">Atlassian Marketplace Growth</span>
+      <h2>The growth team that already knows <em>the Marketplace</em>.</h2>
+      <p>App vendors don’t need another generalist agency. They need operators who’ve shipped
+        listings, run Marketplace-aware demand gen, and read the Atlassian buyer. That’s the team you get.</p>
+      <div class="cta-row">
+        <a class="cta">Book a Marketplace growth call →</a>
+        <a class="cta ghost">See the work</a>
+      </div>
+      <div class="logowall">
+        <span class="lbl">Trusted by Marketplace partners</span>
+        <span>Ricksoft</span><span>Yasoon</span><span>codefortynine</span>
+        <span>Communardo</span><span>SoldEvelo</span><span>Sourceflow</span>
+      </div>
+    </div></section>
+  </div>
+  <div class="note"><b>Dev note — Hero</b>
+    <ul>
+      <li><b>Headline</b> is the single sentence the visitor must believe. Keep the blue emphasis word on “the Marketplace”.</li>
+      <li><b>Logo wall</b>: replace text with real monochrome client logos (this matches the brand rule to kill the SaaS-median star-rating strip). <span class="pill warn">Consent required</span> — only list vendors who’ve agreed to be named.</li>
+      <li>Dark-navy hero <code>#0A1224</code> with a soft blueprint-blue glow; no stock photography (brand rule: “engineering document, not an ad”).</li>
+      <li>Two CTAs: primary = book a call; ghost = jump to case studies.</li>
+    </ul>
+  </div>
+
+  <div class="proto">
+    <!-- 2. AUTHORITY BAND -->
+    <section class="p-auth"><div class="inner">
+      <div class="kicker">Why us</div>
+      <h3>We don’t “also do” Atlassian. It’s a practice with its own playbook.</h3>
+      <p style="max-width:56ch">Marketplace growth has its own rules — listing SEO, version launches, evaluator
+        behaviour, partner-tier dynamics, co-marketing with Atlassian. We run a dedicated pod of senior operators
+        against them, the same way we run every Toggle engagement: diagnosis before spend, receipts on every claim.</p>
+      <div class="creds">
+        <div class="cred"><b>Marketplace-native</b><span>Listings, launches &amp; demand gen built for the Atlassian buyer</span></div>
+        <div class="cred"><b>Senior operators</b><span>No junior account layer between strategy and execution</span></div>
+        <div class="cred"><b>Fractional pod</b><span>A full marketing team for less than one senior hire</span></div>
+        <div class="cred"><b>One growth engine</b><span>Acquisition, conversion &amp; retention on one team, one dataset</span></div>
+      </div>
+    </div></section>
+  </div>
+  <div class="note"><b>Dev note — Authority band</b>
+    <ul>
+      <li>This is the “we get your world” section. Copy is drawn from Toggle’s real differentiators (senior operators, one unified engine) fused with the Marketplace niche.</li>
+      <li>4 credential cards; blue top-border is a <em>fill</em>, not text colour (brand accent-discipline rule).</li>
+      <li>“A full marketing team for less than one hire” is the inherited fractional-model hook — keep it.</li>
+    </ul>
+  </div>
+
+  <div class="proto">
+    <!-- 3. STATS -->
+    <section class="p-stats"><div class="inner">
+      <div class="kicker">The receipts</div>
+      <h3 style="margin-bottom:24px">Numbers, next to their claim.</h3>
+      <div class="statgrid">
+        <div class="stat ph"><div class="n num">YOUR&nbsp;#</div><div class="l">Organic traffic growth — replace with a Toggle-verified figure</div></div>
+        <div class="stat ph"><div class="n num">YOUR&nbsp;#</div><div class="l">Marketplace sales growth — replace with a Toggle-verified figure</div></div>
+        <div class="stat"><div class="n num">6</div><div class="l">Atlassian Marketplace vendors on the Toggle book <span style="color:var(--secondary)">(confirm final count)</span></div></div>
+        <div class="stat"><div class="n num">50+</div><div class="l">Companies Toggle scales across all practices</div></div>
+      </div>
+    </div></section>
+  </div>
+  <div class="note"><b>Dev note — Proof stats</b>
+    <ul>
+      <li><span class="pill warn">Must fill</span> The two hatched cards are <strong>placeholders</strong>. Do <em>not</em> reuse Brighttail’s old numbers (e.g. “2,191%”). Insert only figures Toggle can defend from its own client data.</li>
+      <li>Numerals use <code>font-variant-numeric: tabular-nums</code> (brand rule) — already applied via <code>.num</code>.</li>
+      <li>Focal stat colour = deep blue <code>#3056C9</code>. Periwinkle <code>#DDE5FE</code> is the data-panel surface.</li>
+    </ul>
+  </div>
+
+  <div class="proto">
+    <!-- 4. PROBLEM -->
+    <section class="p-prob"><div class="inner">
+      <div class="kicker" style="color:var(--blue)">The problem</div>
+      <h3>Generalist marketing quietly leaks money on the Marketplace.</h3>
+      <div class="two">
+        <div><h4>What usually happens</h4><p>An agency runs generic B2B ads and blog posts, ignores listing
+          SEO and evaluator journeys, and can’t tell you which spend actually moved paid conversions. You pay for
+          motion, not growth.</p></div>
+        <div><h4>What we do instead</h4><p>We diagnose the whole funnel — listing, trial, evaluation, renewal —
+          before recommending a channel. Sometimes the fix isn’t ads at all; it’s the listing or the trial flow.
+          We tell you first.</p></div>
+      </div>
+    </div></section>
+  </div>
+  <div class="note"><b>Dev note — Problem / contrast</b>
+    <ul>
+      <li>Two-column contrast (“them vs us”) echoing Toggle’s core “diagnosis before prescription” pillar.</li>
+      <li>Dark card surface <code>#121C33</code>. Keep copy specific to Marketplace mechanics (listing SEO, evaluator journey, renewals) — that specificity is the credibility.</li>
+    </ul>
+  </div>
+
+  <div class="proto">
+    <!-- 5. OFFER / PROCESS -->
+    <section class="p-offer"><div class="inner">
+      <div class="kicker">How we work</div>
+      <h3>A fractional Marketplace pod — audit to renewal.</h3>
+      <p style="max-width:56ch">Plug in a full-stack marketing team, or hand us one project. Either way you get
+        senior operators and a Marketplace-specific plan.</p>
+      <div class="steps">
+        <div class="step"><span class="k">01</span><b>Audit</b><span>Listing, funnel, analytics &amp; competitor teardown</span></div>
+        <div class="step"><span class="k">02</span><b>Strategy</b><span>GTM plan built for the Atlassian buyer</span></div>
+        <div class="step"><span class="k">03</span><b>Design</b><span>Listing, creative &amp; web that convert evaluators</span></div>
+        <div class="step"><span class="k">04</span><b>Launch</b><span>Demand gen, version launches, co-marketing</span></div>
+        <div class="step"><span class="k">05</span><b>Track</b><span>Attribution &amp; ROI reporting you can act on</span></div>
+      </div>
+      <div class="model-line">
+        <b>A complete marketing team for less than the cost of a single hire.</b>
+        <p>Startups use it to stand up a marketing department overnight. Scaleups use it to augment the team they have.</p>
+      </div>
+    </div></section>
+  </div>
+  <div class="note"><b>Dev note — Offer / process</b>
+    <ul>
+      <li>5-step horizontal process (audit → strategy → design → launch → track). Collapses to stacked rows on mobile.</li>
+      <li>The dark “model line” card carries the fractional value prop — this is the sentence that closes deals; give it room.</li>
+      <li>Map these steps to Toggle’s real services in <code>brain/services/</code> when writing final copy.</li>
+    </ul>
+  </div>
+
+  <div class="proto">
+    <!-- 6. CASE STUDIES -->
+    <section class="p-cases"><div class="inner">
+      <div class="kicker">The work</div>
+      <h3>Marketplace partners we’ve grown.</h3>
+      <div class="cardgrid">
+        <div class="casecard">
+          <div class="co">Ricksoft</div><div class="tag">Atlassian Marketplace</div>
+          <p class="r">Long-running Marketplace growth engagement — demand gen, listing &amp; campaign work.</p>
+          <div class="metric num">YOUR&nbsp;#</div>
+          <span style="font-size:12px;color:var(--secondary)">Replace with a verified result + link to full case study</span>
+        </div>
+        <div class="casecard ph">
+          <div class="co">Client 2</div><div class="tag">Atlassian Marketplace</div>
+          <p class="r">One-line situation → what we did → measurable result.</p>
+          <div class="metric num" style="opacity:.5">YOUR&nbsp;#</div>
+        </div>
+        <div class="casecard ph">
+          <div class="co">Client 3</div><div class="tag">Atlassian Marketplace</div>
+          <p class="r">One-line situation → what we did → measurable result.</p>
+          <div class="metric num" style="opacity:.5">YOUR&nbsp;#</div>
+        </div>
+      </div>
+    </div></section>
+  </div>
+  <div class="note"><b>Dev note — Case studies</b>
+    <ul>
+      <li>3-card grid, each linking to a full <code>/work/&lt;client&gt;</code> page. Start with <strong>Ricksoft</strong> — it’s the proven, recognizable Marketplace story.</li>
+      <li><span class="pill warn">Consent + real numbers required</span> Only publish clients who’ve agreed, with Toggle-attributable results. Hatched cards = to be filled.</li>
+      <li>Situation → action → result structure. Blue top-border is a fill.</li>
+    </ul>
+  </div>
+
+  <div class="proto">
+    <!-- 7. TESTIMONIAL -->
+    <section class="p-quote"><div class="inner">
+      <blockquote>The single best step to growing our international app sales, ever.</blockquote>
+      <cite><b>[ Name, Title ]</b>[ Company ] · Atlassian Marketplace partner</cite>
+    </div></section>
+  </div>
+  <div class="note"><b>Dev note — Testimonial</b>
+    <ul>
+      <li>One big, centred quote from a Marketplace client. The line shown is illustrative of the tone — <span class="pill warn">replace</span> with a real, attributed quote given <em>to Toggle</em>.</li>
+      <li>Add headshot + logo when available. Rotate 2–3 quotes if you have them.</li>
+    </ul>
+  </div>
+
+  <div class="proto">
+    <!-- 8. LEAD MAGNET -->
+    <section class="p-lead"><div class="inner">
+      <div class="leadbox">
+        <div class="cover">Marketplace GTM Playbook</div>
+        <div class="txt">
+          <div class="kicker">Free resource</div>
+          <h3>The Atlassian Marketplace GTM playbook.</h3>
+          <p style="margin-bottom:16px">The plays we use to launch and grow apps — listing, demand gen, launches,
+            attribution. Trade an email, get the playbook.</p>
+          <a class="cta" style="background:var(--blue-deep)">Get the playbook →</a>
+        </div>
+      </div>
+    </div></section>
+  </div>
+  <div class="note"><b>Dev note — Lead magnet</b>
+    <ul>
+      <li>Email-gated download = the secondary conversion for visitors not ready to book a call. Feeds the CRM.</li>
+      <li>Create a <strong>Toggle-branded</strong> playbook (don’t reuse Brighttail’s asset). Wire the form to Toggle’s email/CRM tool.</li>
+    </ul>
+  </div>
+
+  <div class="proto">
+    <!-- 9. FINAL CTA -->
+    <section class="p-final"><div class="inner">
+      <h3>Ready to grow your Marketplace app?</h3>
+      <p>Book a 30-minute call. We’ll audit your listing and funnel live and tell you the biggest lever — no pitch deck.</p>
+      <div class="cta-row" style="justify-content:center;margin-top:22px">
+        <a class="cta">Book a Marketplace growth call →</a>
+      </div>
+      <p style="margin-top:22px;font-size:13px;color:var(--secondary-d)">Toggle Solutions · Your Digital Growth Partner · hello@toggle.solutions</p>
+    </div></section>
+  </div>
+  <div class="note"><b>Dev note — Final CTA + footer</b>
+    <ul>
+      <li>Reinforce the primary action. Wire the button to the same booking link as the hero.</li>
+      <li>Reuse the site’s standard global footer below this band (nav, legal, socials) — not modelled here.</li>
+    </ul>
+  </div>
+
+  <!-- ===================== APPENDIX ===================== -->
+  <div class="sectlabel">Appendix — for the developer</div>
+
+  <div class="sheet"><div class="pad">
+    <h3>A · Design tokens (copy-paste)</h3>
+    <p style="font-size:14px">Canonical source: <code>clients/toggle/design-system/tokens.json</code>. Drop these into
+      your stylesheet as CSS variables. <b>Accent rule (binding):</b> blue <code>#4A7BF7</code> is for display text,
+      numerals and illustration only; any blue text ≤17px or links use <code>#3056C9</code>.</p>
+    <table class="tokentable">
+      <tr><th>Role</th><th>Light</th><th>Dark</th><th>Use</th></tr>
+      <tr><td>Brand blue (display)</td><td><span class="sw" style="background:#4A7BF7"></span><code>#4A7BF7</code></td><td><code>#4A7BF7</code></td><td>Big numerals, illustration, emphasis word, accent fills</td></tr>
+      <tr><td>Blue (text-safe)</td><td><span class="sw" style="background:#3056C9"></span><code>#3056C9</code></td><td><code>#6E95F9</code></td><td>Links, small labels, pills, table headers, buttons</td></tr>
+      <tr><td>Text / heading</td><td><span class="sw" style="background:#0F0F0F"></span><code>#0F0F0F</code></td><td><code>#FFFFFF</code></td><td>Headings, stat numerals</td></tr>
+      <tr><td>Body</td><td><span class="sw" style="background:#4A4A4A"></span><code>#4A4A4A</code></td><td><code>#B0B8C9</code></td><td>Paragraph copy</td></tr>
+      <tr><td>Secondary</td><td><span class="sw" style="background:#6B7280"></span><code>#6B7280</code></td><td><code>#9CA3B5</code></td><td>Captions, supporting text</td></tr>
+      <tr><td>Canvas</td><td><span class="sw" style="background:#FFFFFF"></span><code>#FFFFFF</code></td><td><code>#0A1224</code></td><td>Page ground</td></tr>
+      <tr><td>Card</td><td><span class="sw" style="background:#F2F3F6"></span><code>#F2F3F6</code></td><td><code>#121C33</code></td><td>Stat / feature cards</td></tr>
+      <tr><td>Callout / data panel</td><td><span class="sw" style="background:#DDE5FE"></span><code>#DDE5FE</code></td><td><code>#18254A</code></td><td>Stats &amp; resource bands (periwinkle)</td></tr>
+    </table>
+    <p style="font-size:14px;margin-top:18px"><b>Type:</b> Inter Tight for everything (400 body · 500 UI · 700 headings · 800 display).
+      Stat numerals always <code>font-variant-numeric:tabular-nums</code>. <br>
+      <b>Wordmark:</b> italic lowercase <code>toggle</code> — reproduce from
+      <code>assets/logos/toggle-wordmark.svg</code>, never re-typeset. (This doc approximates it in the top bar.)</p>
+  </div></div>
+
+  <div class="sheet"><div class="pad">
+    <h3>B · Build checklist</h3>
+    <ul class="checklist">
+      <li>Scaffold page at <code>/atlassian-marketplace</code>; add “Atlassian Marketplace” to the Solutions nav.</li>
+      <li>Implement the 9 sections above in order; light/dark alternation as modelled.</li>
+      <li>Wire both primary CTAs to the booking link; wire the lead-magnet form to the CRM/email tool.</li>
+      <li>Fully responsive (single-column stack ≤640px); the process row and stat grid must reflow.</li>
+      <li>Apply <code>tabular-nums</code> to every numeral; accents as fills only (no blue body text).</li>
+      <li>Accessibility: AA contrast (tokens already pass), semantic headings, alt text on client logos, visible focus rings (<code>#3056C9</code>).</li>
+      <li>SEO: title/meta for “Atlassian Marketplace marketing”; schema for case studies &amp; reviews; internal links to <code>/work</code> pages.</li>
+      <li>Performance: monochrome SVG logos, no stock photography, lazy-load below-fold images.</li>
+    </ul>
+  </div></div>
+
+  <div class="sheet"><div class="pad">
+    <h3>C · Content the team must supply <span class="pill warn">blocks launch</span></h3>
+    <ul class="checklist">
+      <li><b>Client consent</b> — written OK to name each Marketplace client &amp; publish their results (start: Ricksoft).</li>
+      <li><b>Real, Toggle-attributable numbers</b> for the two hero stat cards and each case-study metric. <em>Never reuse Brighttail’s figures.</em></li>
+      <li><b>Monochrome client logos</b> (SVG) for the hero logo wall.</li>
+      <li><b>2–3 real testimonials</b> addressed to Toggle, with name, title, company, headshot.</li>
+      <li><b>Case-study write-ups</b> (situation → action → result) for the <code>/work</code> detail pages.</li>
+      <li><b>The GTM playbook PDF</b> — Toggle-branded lead magnet.</li>
+      <li><b>Booking link</b> (Calendly/HubSpot) and CRM form endpoint.</li>
+      <li><b>Final confirmed count</b> of Atlassian clients on the book (placeholder shows “6”).</li>
+    </ul>
+    <div class="note" style="margin-top:18px"><b>Integrity guardrail</b>
+      This page trades on a real inheritance — keep it real. Replicate Brighttail’s <em>structure and positioning</em>,
+      not its copy or its historical numbers. Every stat and logo here must be something Toggle can stand behind and a
+      client has agreed to. That honesty is the credibility. Full rationale: <code>brighttail-credibility-analysis.md</code> (same folder).
+    </div>
+  </div></div>
+
+</div>
+
+<script>
+  var b=document.body,btn=document.getElementById('toggleNotes');
+  btn.addEventListener('click',function(){
+    b.classList.toggle('clean');
+    var on=!b.classList.contains('clean');
+    btn.textContent='Dev notes: '+(on?'ON':'OFF');
+    btn.classList.toggle('on',on);
+  });
+</script>
