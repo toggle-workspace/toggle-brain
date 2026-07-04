@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>HWC × Media Prima — Access &amp; Onboarding Roadmap</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,700;1,400;1,700&family=Archivo+Black&family=Lexend:wght@300;400;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  /* ==== BRU. × HWC design tokens (inlined from design-systems/bru-hwc/tokens.css) ==== */
+  :root{
+    --cream:#FCE5CD; --card:#FDF2DF; --purple:#351C75; --purple-2:#3B2478;
+    --purple-muted:#746096; --brick:#B5330F; --orange:#F6B26B; --orange-rule:#F2A25C;
+    --highlight:#EEFF41; --gold:#FFD966; --maroon:#660000; --ink:#1C120B; --white:#FFFFFF;
+    --font-narrative:'Lexend',sans-serif; --font-emphasis:'Montserrat',sans-serif;
+    --font-display:'Archivo Black',sans-serif; --font-body:'Archivo',sans-serif;
+    --fs-headline:2.5rem; --fs-stat:2.1rem; --fs-cardtitle:1.1rem; --fs-body:0.85rem;
+    --fs-label:0.7rem; --gap:20px; --page-pad:56px;
+  }
+  *,*::before,*::after{box-sizing:border-box}
+  body{margin:0;background:var(--cream);color:var(--purple-2);font-family:var(--font-body);-webkit-font-smoothing:antialiased}
+
+  /* mode C structured */
+  .page--structured{background:var(--cream);padding:clamp(48px,7vw,86px) clamp(24px,5vw,64px);position:relative}
+  .dash{width:24px;height:8px;background:var(--brick);margin-bottom:1.4rem}
+  .headline{font:400 clamp(1.9rem,3.6vw,2.5rem)/1.15 var(--font-display);color:var(--purple-2);margin:0 0 .55em}
+  .headline .accent{color:var(--brick)}
+  .standfirst{font:700 .98rem/1.5 var(--font-body);color:var(--purple-2);max-width:70ch;margin-bottom:1.6rem}
+  .seckicker{font:700 .68rem/1 var(--font-body);letter-spacing:.16em;text-transform:uppercase;color:var(--purple-muted);margin-bottom:16px}
+
+  /* cards */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:var(--gap);align-items:start}
+  .cards--2{grid-template-columns:1fr 1fr}
+  .card{background:var(--card);border-top:6px solid var(--brick);padding:20px 22px 24px}
+  .cards--positional .card:nth-child(2){border-top-color:var(--purple-2)}
+  .cards--positional .card:nth-child(3){border-top-color:var(--orange-rule)}
+  .cards--positional .card:nth-child(2) .no{color:var(--purple-2)}
+  .cards--positional .card:nth-child(3) .no{color:var(--orange-rule)}
+  .card .no{font:700 1.1rem/1 var(--font-body);color:var(--brick);margin-bottom:.7em}
+  .card h3{font:700 var(--fs-cardtitle)/1.25 var(--font-body);color:var(--purple-2);margin:0 0 .7em}
+  .card .label{font:700 var(--fs-label)/1.4 var(--font-body);letter-spacing:.08em;text-transform:uppercase;color:var(--purple-muted);margin:0 0 .6em}
+  .card p{font:400 var(--fs-body)/1.55 var(--font-body);color:var(--purple-2);margin:0}
+  .card p+p{margin-top:.7em}
+
+  /* numbered steps inside a card */
+  .steps{list-style:none;counter-reset:s;margin:.2em 0 0;padding:0;display:flex;flex-direction:column;gap:10px}
+  .steps li{position:relative;padding-left:30px;font:400 var(--fs-body)/1.45 var(--font-body);color:var(--purple-2);counter-increment:s}
+  .steps li::before{content:counter(s);position:absolute;left:0;top:0;width:20px;height:20px;border-radius:50%;
+    background:var(--brick);color:#fff;font:700 .62rem/20px var(--font-body);text-align:center}
+  .cards--positional .card:nth-child(2) .steps li::before{background:var(--purple-2)}
+  .cards--positional .card:nth-child(3) .steps li::before{background:var(--orange-rule);color:var(--maroon)}
+
+  /* id box under a platform card */
+  .idbox{margin-top:16px;border-top:1px solid rgba(53,28,117,.16);padding-top:11px;font:400 .82rem/1.4 var(--font-body);color:var(--purple-2)}
+  .idbox .k{display:block;font:700 .6rem/1 var(--font-body);letter-spacing:.1em;text-transform:uppercase;color:var(--purple-muted);margin-bottom:6px}
+  .idbox b{font-weight:700;color:var(--purple-2)}
+
+  /* simple brick-bullet list inside a card */
+  .list{list-style:none;margin:.2em 0 0;padding:0;display:flex;flex-direction:column;gap:9px}
+  .list li{position:relative;padding-left:18px;font:400 var(--fs-body)/1.45 var(--font-body);color:var(--purple-2)}
+  .list li::before{content:"";position:absolute;left:0;top:7px;width:8px;height:8px;background:var(--brick)}
+  .list li b{font-weight:700;color:var(--purple-2)}
+
+  /* checklist table */
+  .ctable{width:100%;border-collapse:collapse;background:var(--card);margin-top:6px}
+  .ctable th{background:var(--ink);color:#fff;font:700 .6rem/1.3 var(--font-body);letter-spacing:.08em;text-transform:uppercase;text-align:left;padding:12px 15px}
+  .ctable td{padding:11px 15px;border-bottom:1px solid rgba(53,28,117,.12);font:400 var(--fs-body)/1.4 var(--font-body);color:var(--purple-2);vertical-align:top}
+  .ctable tr:last-child td{border-bottom:none}
+  .ctable td b{color:var(--purple-2);font-weight:700}
+  .who{font:700 .6rem/1 var(--font-body);letter-spacing:.05em;text-transform:uppercase}
+  .who.mp{color:var(--purple-2)}.who.tg{color:var(--brick)}.who.coo{color:var(--ink)}
+
+  /* footer bar (flowing variant) */
+  .footer-bar{background:var(--ink);color:#fff;font:700 var(--fs-body)/1.5 var(--font-body);padding:15px 22px;margin-top:24px}
+  .footer-bar .lead{color:var(--highlight)}
+  .footer-bar--strip{background:var(--card);color:var(--purple-2)}
+  .footer-bar--strip .lead{color:var(--brick)}
+
+  /* layout wrapper */
+  .doc{max-width:1120px;margin:0 auto}
+
+  /* ==== cover — mode A photo divider ==== */
+  .cover{background:radial-gradient(125% 125% at 72% 36%,#3a2a1a 0%,#14100b 58%,#0a0805 100%);
+    color:var(--white);font-family:var(--font-narrative);padding:clamp(40px,6vw,72px) clamp(24px,6vw,84px) clamp(56px,8vw,96px)}
+  .cover .lockup{display:flex;align-items:center;gap:14px;margin-bottom:clamp(40px,7vw,80px)}
+  .cover .lockup img.tg{height:40px}.cover .lockup img.coo{height:14px}
+  .cover .lockup .x{color:rgba(255,255,255,.5);font:700 20px/1 var(--font-body)}
+  .cover .kicker-a{font:700 .78rem/1 var(--font-body);letter-spacing:.16em;text-transform:uppercase;color:var(--gold);margin-bottom:22px}
+  .cover h1{font:700 clamp(2.8rem,7vw,5rem)/1.1 var(--font-narrative);margin:0;padding-bottom:.08em}
+  .cover h1 .gold{color:var(--gold)}
+  .cover .sub{font:300 clamp(1.05rem,2vw,1.55rem)/1.3 var(--font-narrative);color:var(--gold);margin-top:.45em}
+  .cover .meta{display:flex;gap:clamp(20px,4vw,54px);flex-wrap:wrap;margin-top:clamp(34px,5vw,52px);border-top:1px solid rgba(255,255,255,.24);padding-top:24px}
+  .cover .meta .k{font:700 .62rem/1 var(--font-body);letter-spacing:.13em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+  .cover .meta .v{font:700 1rem/1.2 var(--font-body);color:var(--white);margin-top:8px}
+  .cover .meta .v.hot{color:var(--gold)}
+  .cover .intro{font:300 clamp(.95rem,1.4vw,1.1rem)/1.55 var(--font-narrative);color:rgba(255,255,255,.85);max-width:70ch;margin-top:26px;border-left:3px solid var(--gold);padding-left:16px}
+  .cover .intro b{font-weight:700;color:var(--white)}
+
+  /* ==== doc footer ==== */
+  .docfoot{background:var(--ink);color:#fff;padding:clamp(38px,6vw,62px) clamp(24px,6vw,84px);
+    display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:18px}
+  .docfoot .lockup{display:flex;align-items:center;gap:14px}
+  .docfoot .lockup img.tg{height:34px}.docfoot .lockup img.coo{height:12px}
+  .docfoot .lockup .x{color:rgba(255,255,255,.45);font:700 18px/1 var(--font-body)}
+  .docfoot p{font:400 .82rem/1.5 var(--font-body);color:rgba(255,255,255,.7);margin:14px 0 0}
+  .docfoot .r{font:400 .72rem/1.4 var(--font-body);color:rgba(255,255,255,.5)}
+
+  @media (max-width:820px){
+    .cards,.cards--2{grid-template-columns:1fr}
+  }
+  @media print{
+    body{background:none}
+    *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .page--structured{break-inside:avoid}
+  }
+</style>
+</head>
+<body>
+
+<!-- ============ COVER — mode A ============ -->
+<header class="cover">
+  <div class="lockup">
+    <img class="tg" src="toggle-white.png" alt="Toggle Solutions">
+    <span class="x">×</span>
+    <img class="coo" src="coo-logo.png" alt="Code of Origin">
+  </div>
+  <div class="kicker-a">Access &amp; Onboarding Roadmap</div>
+  <h1>Items <span class="gold">needed:</span></h1>
+  <div class="sub">BRU × HWC Coffee — Season 2 · Media Prima / Tonton</div>
+  <div class="meta">
+    <div><div class="k">Prepared by</div><div class="v">Toggle × COO</div></div>
+    <div><div class="k">For</div><div class="v">Media Prima</div></div>
+    <div><div class="k">Campaign kickoff</div><div class="v">6 July 2026</div></div>
+    <div><div class="k">Access needed by</div><div class="v hot">5 July 2026</div></div>
+  </div>
+  <p class="intro">A checklist of exactly what we need from your side to build and run the campaign.
+  Nothing here needs passwords or personal logins — every platform below is connected through
+  <b>partner / agency access</b> that you approve and can revoke anytime.</p>
+</header>
+
+<div class="doc">
+
+  <!-- ============ 01 · HOW THIS WORKS ============ -->
+  <section class="page--structured">
+    <div class="seckicker">01 — How this works</div>
+    <div class="dash"></div>
+    <h2 class="headline">Partner access, <span class="accent">not shared logins.</span></h2>
+    <p class="standfirst">We connect to your accounts as an approved partner agency. You keep full ownership and
+    admin control; you simply grant our business IDs access to the specific assets we run.</p>
+    <div class="cards cards--positional">
+      <div class="card">
+        <div class="no">01</div>
+        <h3>We send IDs, you approve</h3>
+        <p>We give you our Meta / Google / TikTok business IDs. You add them as a partner and assign the
+        assets — ad accounts, pages, pixels. No credentials change hands.</p>
+      </div>
+      <div class="card">
+        <div class="no">02</div>
+        <h3>You stay the owner</h3>
+        <p>All accounts, pages and data remain owned by Media Prima. Our access can be adjusted or removed
+        at any time from your Business Settings.</p>
+      </div>
+      <div class="card">
+        <div class="no">03</div>
+        <h3>Three platforms first</h3>
+        <p>The priority is the three ad platforms — Meta, Google, TikTok. Tonton data, deep links and the
+        daily sync come alongside. Creative / CI runs through COO.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- ============ 02 · THE THREE AD PLATFORMS ============ -->
+  <section class="page--structured">
+    <div class="seckicker">02 — The three ad platforms · priority</div>
+    <div class="dash"></div>
+    <h2 class="headline">Meta · Google · <span class="accent">TikTok.</span></h2>
+    <p class="standfirst">For each platform we need partner access to the ad account, and where noted, the
+    social pages and tracking pixel. Steps are written for whoever holds admin on your side.</p>
+    <div class="cards cards--positional">
+
+      <div class="card">
+        <div class="label">Meta · Business Suite</div>
+        <h3>Ad account · Pages · Pixel</h3>
+        <ol class="steps">
+          <li>In <b>Business Settings → Partners</b>, choose “Add partner to share assets,” and enter our Business ID.</li>
+          <li>Assign the <b>Ad Account</b> (advertise + analyse permission).</li>
+          <li>Assign <b>Pages</b> access — not just the ad account — including the new BRU page (see §03).</li>
+          <li>Share the <b>Meta Pixel</b> (or create one and grant us access) — required for retargeting &amp; lookalikes.</li>
+        </ol>
+        <div class="idbox"><span class="k">Our Meta Business ID</span><b>Toggle Solutions</b> · ID <b>596170808875972</b></div>
+      </div>
+
+      <div class="card">
+        <div class="label">Google · Ads</div>
+        <h3>Manager (MCC) link</h3>
+        <ol class="steps">
+          <li>We send a <b>manager-account (MCC) link request</b> to your Google Ads Customer ID.</li>
+          <li>Approve it under <b>Admin → Access &amp; security → Managers</b>.</li>
+          <li>If a YouTube channel runs the in-stream buys, link it / grant channel access for measurement.</li>
+          <li>(Optional) GA4 viewer access if landing-page / site events are in play.</li>
+        </ol>
+        <div class="idbox"><span class="k">Our Google Ads Manager (MCC) ID</span><b>Toggle Solutions</b> · MCC <b>673-838-5427</b></div>
+      </div>
+
+      <div class="card">
+        <div class="label">TikTok · Business Center</div>
+        <h3>Ad account · Pixel</h3>
+        <ol class="steps">
+          <li>Add our <b>Business Center</b> as a partner using our BC ID (or approve our partner request).</li>
+          <li>Grant the <b>Advertiser (ad) account</b> and the new BRU TikTok account (see §03).</li>
+          <li>Share the <b>TikTok Pixel / events</b> access for retargeting.</li>
+          <li>Confirm Spark Ads authorisation on the BRU posts so we can boost organic content.</li>
+        </ol>
+        <div class="idbox"><span class="k">Our TikTok Business Center ID</span><b>Toggle Solutions</b> · ID <b>7308999566857338882</b></div>
+      </div>
+    </div>
+    <div class="footer-bar"><span class="lead">Pixels:</span> power the retargeting and lookalike audiences in the media plan — without them we can only run cold reach, not the ≥50%-viewer retarget layer that closes subscriptions.</div>
+  </section>
+
+  <!-- ============ 03 · NEW BRAND PAGES ============ -->
+  <section class="page--structured">
+    <div class="seckicker">03 — New brand pages · your side to create</div>
+    <div class="dash"></div>
+    <h2 class="headline">The dedicated <span class="accent">BRU accounts.</span></h2>
+    <p class="standfirst">Part of the strategy is giving BRU its own social presence — separate from the main
+    Tonton feeds — so the IP builds its own fanbase and lives on after the finale. These accounts are
+    created by Media Prima, then shared with us to run.</p>
+    <div class="cards cards--positional cards--2">
+      <div class="card">
+        <div class="label">What to create</div>
+        <ul class="list">
+          <li>New <b>Facebook Page</b> for BRU</li>
+          <li>New <b>Instagram</b> account for BRU</li>
+          <li>New <b>TikTok</b> account for BRU</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="label">Then</div>
+        <ul class="list">
+          <li>Add these pages to your <b>Business Manager / Business Center</b></li>
+          <li>Grant our partner access to them (as in §02)</li>
+          <li>We handle setup, bios, linking and content from there</li>
+        </ul>
+      </div>
+    </div>
+    <div class="footer-bar footer-bar--strip"><span class="lead">Ownership:</span> Media Prima owns these accounts and the IP throughout — we operate them as your partner. Once created, a quick chat on handles / naming and we take it from there.</div>
+  </section>
+
+  <!-- ============ 04 · TONTON ============ -->
+  <section class="page--structured">
+    <div class="seckicker">04 — Tonton</div>
+    <div class="dash"></div>
+    <h2 class="headline">Deep links, audience data &amp; <span class="accent">the daily sync.</span></h2>
+    <p class="standfirst">Three things from Tonton turn the campaign from “reach” into a measurable,
+    optimisable engine.</p>
+    <div class="cards cards--positional">
+      <div class="card">
+        <div class="no">01</div>
+        <h3>Tonton deep links</h3>
+        <p>A deep link is a URL that opens the Tonton app <b>directly on the BRU episode</b> — instead of a
+        generic web page or the app home screen. We need them so every “Watch on Tonton” click lands viewers
+        straight on the drama, with no extra taps to lose them. Please confirm the links and flag any
+        geo-lock or paywall friction.</p>
+      </div>
+      <div class="card">
+        <div class="no">02</div>
+        <h3>Customer data &amp; audience lists</h3>
+        <p>Tonton customer / audience lists to build the retargeting and lookalike audiences promised in the
+        deck — for example:</p>
+        <ul class="list" style="margin-top:.7em">
+          <li>Tonton subscribers</li>
+          <li>BRU Season 1 viewers</li>
+          <li>Tonton Instagram page followers</li>
+          <li>Tonton website visitors</li>
+        </ul>
+        <p style="margin-top:.7em">Shared securely and used only for this campaign’s targeting.</p>
+      </div>
+      <div class="card">
+        <div class="no">03</div>
+        <h3>Daily performance sync</h3>
+        <p>A <b>daily</b> feed on how we’re progressing toward our goals — <b>BRU viewers, subscriptions and
+        drink sales</b> — not just raw platform stats. It tells us what’s working so we can shift budget day
+        by day. Without it, we’re optimising blind.</p>
+      </div>
+    </div>
+    <div class="footer-bar"><span class="lead">Format:</span> a shared sheet, dashboard export, or API — we just need it daily during the flight so budget reallocation is driven by actual performance.</div>
+  </section>
+
+  <!-- ============ 05 · CHECKLIST ============ -->
+  <section class="page--structured">
+    <div class="seckicker">05 — The checklist</div>
+    <div class="dash"></div>
+    <h2 class="headline">Everything, <span class="accent">in one list.</span></h2>
+    <table class="ctable">
+      <thead><tr><th>What we need</th><th>Platform</th><th>Action on your side</th><th>Owner</th></tr></thead>
+      <tbody>
+        <tr><td><b>Ad account</b> (partner access)</td><td>Meta Business Suite</td><td>Add our Business ID as partner → assign ad account</td><td><span class="who mp">Media Prima</span></td></tr>
+        <tr><td><b>Social Pages</b> access</td><td>Meta</td><td>Assign Page roles to our partner (incl. new BRU page)</td><td><span class="who mp">Media Prima</span></td></tr>
+        <tr><td><b>Pixel</b></td><td>Meta</td><td>Share / grant pixel access</td><td><span class="who mp">Media Prima</span></td></tr>
+        <tr><td><b>Ad account</b> (manager link)</td><td>Google Ads</td><td>Approve our MCC link request</td><td><span class="who mp">Media Prima</span></td></tr>
+        <tr><td><b>Ad account + pixel</b></td><td>TikTok</td><td>Add our Business Center as partner → grant assets</td><td><span class="who mp">Media Prima</span></td></tr>
+        <tr><td><b>New BRU pages</b> (FB, IG, TikTok)</td><td>Meta + TikTok</td><td>Create, add to BM/BC, grant us access</td><td><span class="who mp">Media Prima</span></td></tr>
+        <tr><td><b>Tonton deep links</b></td><td>Tonton</td><td>Provide deep links; flag geo / paywall friction</td><td><span class="who mp">Media Prima</span></td></tr>
+        <tr><td><b>Customer data &amp; audience lists</b></td><td>Tonton</td><td>Share securely for retargeting / lookalike</td><td><span class="who mp">Media Prima</span></td></tr>
+        <tr><td><b>Daily performance sync</b></td><td>Tonton</td><td>Sheet / dashboard / export — daily during flight</td><td><span class="who mp">Media Prima</span></td></tr>
+        <tr><td><b>Episode footage + BTS</b></td><td>Creative</td><td>Provide rushes + press-con assets, rights cleared</td><td><span class="who mp">Media Prima</span></td></tr>
+        <tr><td><b>Corporate identity / logos</b></td><td>Creative</td><td>Brand assets &amp; CI</td><td><span class="who coo">COO</span></td></tr>
+        <tr><td><b>Partner IDs</b></td><td>All</td><td>Included in this doc (§02) — Meta, Google &amp; TikTok</td><td><span class="who tg">Toggle</span></td></tr>
+      </tbody>
+    </table>
+    <div class="footer-bar footer-bar--strip"><span class="lead">Support:</span> Media Prima’s team will know how to grant each of these — if any step needs a walkthrough, we’re on standby to screen-share and do it together.</div>
+  </section>
+
+</div>
+
+<!-- ============ FOOTER ============ -->
+<footer class="docfoot">
+  <div>
+    <div class="lockup">
+      <img class="tg" src="toggle-white.png" alt="Toggle Solutions">
+      <span class="x">×</span>
+      <img class="coo" src="coo-logo.png" alt="Code of Origin">
+    </div>
+    <p>Your digital growth partner · toggle.solutions &nbsp;·&nbsp; codeoforigin.com</p>
+  </div>
+  <div class="r">BRU × HWC · Access &amp; Onboarding Roadmap · Jul 2026</div>
+</footer>
+
+</body>
+</html>

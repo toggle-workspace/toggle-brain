@@ -1,0 +1,658 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>HWC × Media Prima — "Bru" Campaign · Scope Review & Alignment</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wght@400;500;600;700;800;900&family=Archivo+Black&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --orange:#E8502A;
+    --orange-2:#c8401d;
+    --purple:#7C2FBE;
+    --purple-2:#671f9f;
+    --ink:#17130f;
+    --body:#413b35;
+    --muted:#8c837b;
+    --paper:#ffffff;
+    --cream:#F5EFE5;      /* warm off-white for alternating sections */
+    --line:#e7dfd2;
+    --green:#2f9d63;
+    --green-soft:#eaf5ee;
+    --f:'Archivo',system-ui,-apple-system,Segoe UI,Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  body{
+    font-family:var(--f);
+    color:var(--body);
+    background:var(--paper);
+    -webkit-font-smoothing:antialiased;
+    line-height:1.5;
+  }
+
+  /* ---------- progress + nav ---------- */
+  .rail{position:fixed;top:0;left:0;height:4px;background:var(--orange);width:0;z-index:100;transition:width .1s linear}
+  .topbar{position:fixed;top:0;left:0;right:0;height:54px;display:flex;align-items:center;justify-content:space-between;
+    padding:0 clamp(18px,4vw,54px);z-index:90;background:rgba(255,255,255,.86);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  .topbar .brand{font-weight:900;font-size:14px;letter-spacing:.01em;color:var(--ink)}
+  .topbar .brand .o{color:var(--orange)}.topbar .brand .p{color:var(--purple)}
+  .topbar .meta{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .topbar .meta b{color:var(--orange)}
+  .lockup{display:flex;align-items:center;gap:12px}
+  .lockup .x{color:var(--muted);font-weight:800;line-height:1}
+  .logo-toggle{height:27px;width:auto;display:block}
+  .logo-coo{height:10px;width:auto;display:block}
+
+  /* ---------- section shell ---------- */
+  section{padding:clamp(64px,9vh,120px) clamp(22px,7vw,120px);position:relative;scroll-margin-top:54px}
+  section.cream{background:var(--cream)}
+  section.full-o{background:var(--orange);color:#fff}
+  section.full-p{background:var(--purple);color:#fff}
+  .wrap{max-width:1180px;margin:0 auto}
+  .snum{font-size:12px;font-weight:800;letter-spacing:.22em;text-transform:uppercase;color:var(--muted);margin-bottom:20px;display:flex;align-items:center;gap:12px}
+  .snum::before{content:"";width:34px;height:3px;background:var(--orange);display:inline-block}
+  .full-o .snum,.full-p .snum{color:rgba(255,255,255,.7)}
+  .full-o .snum::before{background:#fff}.full-p .snum::before{background:#fff}
+
+  /* ---------- typography ---------- */
+  h1{font-family:'Archivo Black',var(--f);font-weight:900;font-size:clamp(38px,6.2vw,86px);line-height:.96;letter-spacing:-.02em;color:var(--ink)}
+  h2{font-family:'Archivo Black',var(--f);font-weight:900;font-size:clamp(26px,3.7vw,50px);line-height:1.02;letter-spacing:-.015em;color:var(--ink);margin-bottom:.4em}
+  h3{font-weight:800;font-size:clamp(15px,1.4vw,19px);color:var(--ink);letter-spacing:-.005em}
+  p{font-size:clamp(14px,1.15vw,17px);line-height:1.6;color:var(--body);max-width:62ch}
+  .lead{font-size:clamp(17px,1.7vw,23px);line-height:1.4;color:var(--ink);font-weight:600;max-width:30ch}
+  .full-o h1,.full-o h2,.full-p h1,.full-p h2{color:#fff}
+  .full-o p,.full-p p,.full-o .lead,.full-p .lead{color:rgba(255,255,255,.92)}
+  strong{font-weight:800;color:var(--ink)}
+  .full-o strong,.full-p strong{color:#fff}
+  .o{color:var(--orange)}.p{color:var(--purple)}.gr{color:var(--green)}
+
+  /* signature COO block-heading */
+  .block{display:inline-block;background:var(--ink);color:#fff!important;font-family:'Archivo Black',var(--f);font-weight:900;
+    padding:.06em .34em;line-height:1.08;letter-spacing:-.01em;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+  .block.o-bg{background:var(--orange)}
+  .block.p-bg{background:var(--purple)}
+  h2 .block{font-size:inherit}
+
+  /* ---------- layout helpers ---------- */
+  .grid{display:grid;gap:22px;margin-top:34px}
+  .g2{grid-template-columns:1fr 1fr}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g4{grid-template-columns:repeat(4,1fr)}
+  .split{display:grid;grid-template-columns:1fr 1.1fr;gap:clamp(28px,5vw,72px);align-items:center;margin-top:34px}
+
+  .card{background:var(--paper);border:1px solid var(--line);border-radius:4px;padding:26px}
+  .cream .card{background:#fff}
+  .card.tab-o{border-top:5px solid var(--orange)}
+  .card.tab-p{border-top:5px solid var(--purple)}
+  .card.tab-g{border-top:5px solid var(--green)}
+  .card h3{margin-bottom:10px}
+  .card p{font-size:14.5px}
+
+  .tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;padding:5px 11px;border-radius:2px}
+  .tag.o-bg{background:var(--orange);color:#fff}
+  .tag.p-bg{background:var(--purple);color:#fff}
+  .tag.g-bg{background:var(--green);color:#fff}
+  .tag.ghost{background:transparent;border:1px solid var(--line);color:var(--muted)}
+  .tnew{display:inline-block;font-size:9.5px;font-weight:900;letter-spacing:.08em;padding:2px 6px;border-radius:2px;background:var(--green);color:#fff;vertical-align:middle;margin-left:6px}
+
+  ul.clean{list-style:none;display:flex;flex-direction:column;gap:11px;margin-top:6px}
+  ul.clean li{position:relative;padding-left:24px;font-size:15px;line-height:1.45;color:var(--body)}
+  ul.clean li::before{content:"";position:absolute;left:0;top:8px;width:10px;height:10px;background:var(--orange)}
+  ul.clean li.p::before{background:var(--purple)}
+  ul.clean li.g::before{background:var(--green)}
+  .full-o ul.clean li,.full-p ul.clean li{color:rgba(255,255,255,.92)}
+  .full-p ul.clean li::before{background:#fff}
+  .full-o ul.clean li::before{background:#fff}
+
+  /* stats */
+  .statrow{display:flex;gap:clamp(22px,4vw,54px);flex-wrap:wrap;margin-top:34px;border-top:2px solid var(--ink);padding-top:26px}
+  .stat .n{font-family:'Archivo Black',var(--f);font-size:clamp(30px,4vw,54px);line-height:.9;color:var(--orange)}
+  .stat .l{font-size:12px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--muted);margin-top:10px}
+
+  /* tables */
+  table{width:100%;border-collapse:collapse;font-size:14px;margin-top:30px;background:#fff;border:1px solid var(--line)}
+  th,td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+  th{font-size:11px;letter-spacing:.09em;text-transform:uppercase;color:#fff;background:var(--ink);font-weight:800}
+  th.o-h{background:var(--orange)}th.p-h{background:var(--purple)}
+  td{color:var(--body)}td strong{color:var(--ink)}
+  tr:last-child td{border-bottom:none}
+  tr:nth-child(even) td{background:var(--cream)}
+  .c-o{color:var(--orange);font-weight:700}.c-p{color:var(--purple);font-weight:700}
+
+  /* two-KPI versus */
+  .versus{display:grid;grid-template-columns:1fr auto 1fr;gap:0;align-items:stretch;margin-top:34px}
+  .vs{padding:32px;border-radius:4px}
+  .vs-o{background:var(--orange);color:#fff}
+  .vs-p{background:var(--purple);color:#fff}
+  .vs h3{color:#fff;font-family:'Archivo Black',var(--f);font-size:22px}
+  .vs .who{font-size:13px;color:rgba(255,255,255,.82);margin:6px 0 18px;font-weight:600}
+  .vs ul{list-style:none;display:flex;flex-direction:column;gap:10px}
+  .vs li{font-size:15px;padding-left:22px;position:relative;color:#fff}
+  .vs li::before{content:"";position:absolute;left:0;top:7px;width:9px;height:9px;background:#fff}
+  .vs li strong{color:#fff}
+  .vs-mid{display:flex;align-items:center;justify-content:center;padding:0 22px}
+  .vs-mid span{font-family:'Archivo Black',var(--f);font-size:26px;color:var(--muted)}
+
+  /* venn */
+  .venn{position:relative;height:330px}
+  .circle{position:absolute;top:35px;width:265px;height:265px;border-radius:50%;display:flex;align-items:center;justify-content:center;text-align:center;font-size:13.5px;line-height:1.35;padding:34px}
+  .c-brew{left:2%;background:rgba(124,47,190,.14);border:2.5px solid var(--purple);color:var(--purple-2)}
+  .c-hwc{right:2%;background:rgba(232,80,42,.13);border:2.5px solid var(--orange);color:var(--orange-2)}
+  .venn-mid{position:absolute;left:50%;top:167px;transform:translate(-50%,-50%);z-index:3;text-align:center;width:150px}
+  .venn-mid .z{font-family:'Archivo Black',var(--f);color:var(--green);font-size:18px;line-height:1}
+  .venn-mid .z2{font-size:11.5px;color:var(--green);margin-top:5px;line-height:1.3;font-weight:600}
+
+  /* timeline */
+  .track{display:grid;grid-template-columns:repeat(5,1fr);gap:16px;margin-top:38px;position:relative}
+  .track::before{content:"";position:absolute;top:16px;left:5%;right:5%;height:3px;background:var(--line)}
+  .node{position:relative;padding-top:42px}
+  .node::before{content:"";position:absolute;top:8px;left:0;width:18px;height:18px;border-radius:50%;background:#fff;border:4px solid var(--orange);z-index:2}
+  .node.hot::before{background:var(--orange);border-color:var(--orange)}
+  .node .d{font-size:12px;font-weight:800;letter-spacing:.03em;text-transform:uppercase;color:var(--orange)}
+  .node .t{font-size:13.5px;color:var(--body);margin-top:7px;line-height:1.4}
+
+  /* decisions */
+  .dec{display:flex;gap:20px;align-items:flex-start;padding:20px 0;border-bottom:1px solid rgba(255,255,255,.22);counter-increment:d}
+  .dec:last-child{border-bottom:none}
+  .decisions{counter-reset:d;margin-top:20px}
+  .dec::before{content:counter(d,decimal-leading-zero);font-family:'Archivo Black',var(--f);font-size:30px;color:rgba(255,255,255,.55);min-width:52px;line-height:1}
+  .dec .b{font-size:17px;font-weight:800;color:#fff}
+  .dec .s{font-size:13.5px;color:rgba(255,255,255,.8);margin-top:3px;font-weight:500}
+
+  /* question groups */
+  .qgroup{background:#fff;border:1px solid var(--line);border-top:4px solid var(--orange);border-radius:4px;padding:20px 22px}
+  .qgroup:nth-child(even){border-top-color:var(--purple)}
+  .qgroup h3{font-family:'Archivo Black',var(--f);font-size:14px;text-transform:uppercase;letter-spacing:.02em;margin-bottom:14px;color:var(--ink)}
+  .qgroup ul{list-style:none;display:flex;flex-direction:column;gap:9px}
+  .qgroup li{font-size:13.5px;line-height:1.4;color:var(--body);padding-left:26px;position:relative}
+  .qgroup li::before{content:"Q.";position:absolute;left:0;color:var(--orange);font-weight:900}
+
+  .legend{display:flex;gap:22px;flex-wrap:wrap;font-size:12.5px;color:var(--muted);margin-top:8px;font-weight:600}
+  .legend span{display:inline-flex;align-items:center;gap:7px}
+  .sw{width:12px;height:12px;display:inline-block}
+
+  .note{font-size:13px;color:var(--muted);border-left:3px solid var(--orange);padding-left:14px;margin-top:28px;max-width:74ch;font-weight:500}
+  .full-o .note,.full-p .note{color:rgba(255,255,255,.85);border-left-color:#fff}
+
+  /* cover */
+  .cover{min-height:100vh;display:flex;flex-direction:column;justify-content:center;padding-top:100px}
+  .cover .eyebrow{display:inline-block;margin-bottom:22px}
+  .cover h1{margin-bottom:18px}
+  .cover .sub{font-size:clamp(17px,2.1vw,28px);font-weight:800;color:var(--purple);max-width:none;line-height:1.15}
+  .cover-meta{display:flex;gap:clamp(22px,4vw,48px);flex-wrap:wrap;margin-top:44px;border-top:2px solid var(--ink);padding-top:26px}
+  .cover-meta .k{font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+  .cover-meta .v{font-size:16px;font-weight:800;color:var(--ink);margin-top:6px}
+  .cover-meta .v.hot{color:var(--orange)}
+
+  .footer{background:var(--ink);color:#fff;padding:clamp(48px,7vh,80px) clamp(22px,7vw,120px)}
+  .footer .lg{font-family:'Archivo Black',var(--f);font-size:clamp(22px,3vw,34px)}
+  .footer .lg .o{color:var(--orange)}.footer .lg .p{color:var(--purple)}
+  .footer p{color:rgba(255,255,255,.75)}
+
+  .toc{position:fixed;bottom:22px;right:22px;z-index:90}
+  .toc a{display:block;background:var(--ink);color:#fff;text-decoration:none;font-size:12px;font-weight:800;letter-spacing:.06em;padding:11px 15px;border-radius:3px}
+
+  /* audience band */
+  .audience-band{display:grid;grid-template-columns:1fr 1.15fr 1fr;gap:0;margin-top:32px;align-items:stretch}
+  .aud{padding:26px 24px;border:1px solid var(--line);background:#fff}
+  .aud h3{font-family:'Archivo Black',var(--f);font-size:20px;margin:12px 0 6px;color:var(--ink)}
+  .aud p{font-size:14px;color:var(--body)}
+  .aud-note{margin-top:14px;font-size:13.5px;font-weight:700;color:var(--ink);border-top:1px solid var(--line);padding-top:12px}
+  .aud-p{border-top:5px solid var(--purple);border-radius:6px 0 0 6px}
+  .aud-o{border-top:5px solid var(--orange);border-radius:0 6px 6px 0}
+  .aud-g{border-top:5px solid var(--green);background:var(--green-soft);transform:scale(1.05);z-index:2;box-shadow:0 22px 46px rgba(0,0,0,.12);border-radius:6px}
+
+  /* budget packages */
+  .pkg{background:#fff;border:1px solid var(--line);border-radius:6px;padding:26px 24px}
+  .pkg-hero{border:2px solid var(--orange);box-shadow:0 22px 48px rgba(232,80,42,.15);transform:translateY(-8px)}
+  .pkg-tag{display:inline-block;font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;padding:5px 11px;border-radius:2px;background:var(--ink);color:#fff;margin-bottom:16px}
+  .pkg-tag.o-bg{background:var(--orange)}
+  .pkg-price{font-family:'Archivo Black',var(--f);font-size:38px;color:var(--ink);line-height:1}
+  .pkg-price span{font-family:var(--f);font-size:15px;font-weight:600;color:var(--muted);margin-left:4px}
+  .pkg-for{font-size:14px;font-weight:700;color:var(--orange);margin:10px 0 18px}
+  .pkg ul.clean li{font-size:13.5px}
+
+  @media (max-width:860px){
+    .g2,.g3,.g4,.split,.versus{grid-template-columns:1fr}
+    .track{grid-template-columns:1fr;gap:12px}.track::before{display:none}.node{padding-top:8px;padding-left:30px}
+    .node::before{top:2px}
+    .venn{height:auto}.circle{position:relative;width:auto;height:auto;left:0;right:0;margin:8px 0}
+    .vs-mid{padding:14px 0}
+    .audience-band{grid-template-columns:1fr}.aud-g{transform:none}.aud-p,.aud-o,.aud-g{border-radius:6px;margin-bottom:10px}
+    .pkg-hero{transform:none}
+  }
+
+  @media print{
+    .rail,.topbar,.toc{display:none}
+    section{padding:34px 30px;page-break-inside:avoid}
+    body{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+    .cover{min-height:auto}
+  }
+</style>
+</head>
+<body>
+
+<div class="rail" id="rail"></div>
+<div class="topbar">
+  <div class="lockup">
+    <img class="logo-toggle" src="toggle-black.png" alt="Toggle Solutions">
+    <span class="x">×</span>
+    <img class="logo-coo" src="coo-logo.png" alt="Code of Origin">
+  </div>
+  <div class="meta">HWC × Media Prima · Launch <b>10 Jul</b></div>
+</div>
+
+<!-- 1 · COVER -->
+<section class="cover">
+  <div class="wrap">
+    <div class="lockup" style="margin-bottom:36px;gap:16px">
+      <img src="toggle-black.png" alt="Toggle Solutions" style="height:44px">
+      <span class="x" style="font-size:22px">×</span>
+      <img src="coo-logo.png" alt="Code of Origin" style="height:15px">
+    </div>
+    <span class="tag o-bg eyebrow">Campaign Scope Review &amp; Alignment</span>
+    <h1>HWC <span class="o">×</span> Media&nbsp;Prima</h1>
+    <div class="sub">The “Bru” micro-drama — sponsored by HWC Coffee</div>
+    <div class="cover-meta">
+      <div><div class="k">Meeting</div><div class="v">Kickoff Deep-Dive Brief</div></div>
+      <div><div class="k">Date</div><div class="v">2 July 2026</div></div>
+      <div><div class="k">Series Launch</div><div class="v">10 July 2026</div></div>
+      <div><div class="k">Campaign</div><div class="v">4 months · 45 eps</div></div>
+      <div><div class="k">Runway</div><div class="v hot">~8 days</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 2 · MEETING OUTCOMES -->
+<section>
+  <div class="wrap">
+    <div class="snum">01 — Why we're here</div>
+    <h2>Meeting Outcomes</h2>
+    <p style="margin-top:18px;font-size:18px">With launch on 10 July, we can’t afford a plan built on assumptions.<br>We want to leave today having settled two things:</p>
+    <div class="grid g2">
+      <div class="card tab-o">
+        <span class="tag o-bg">Outcome 1</span>
+        <h3 style="font-size:22px;margin:14px 0 8px">Align on objectives &amp; targets</h3>
+        <p>We’re driving <strong>both</strong> coffee sales <strong>and</strong> Tonton views/subscriptions from one campaign. Today we confirm the target for each so we can size and weight the plan.</p>
+      </div>
+      <div class="card tab-p">
+        <span class="tag p-bg">Outcome 2</span>
+        <h3 style="font-size:22px;margin:14px 0 8px">Lock the unknowns that block build</h3>
+        <p>Attribution, ad-account access, creative source &amp; rights, deep-link readiness, budget. Each open item is a day we can’t get back before the 10th.</p>
+      </div>
+    </div>
+    <p class="note">Once these are answered, we produce the platform strategy and media plan within 48 hours.</p>
+  </div>
+</section>
+
+<!-- 4 · TWO OBJECTIVES -->
+<section class="full-p">
+  <div class="wrap">
+    <div class="snum">02 — Our two objectives</div>
+    <h2>The 2 KPIs</h2>
+    <p class="lead" style="max-width:54ch;font-size:clamp(17px,1.9vw,24px);margin-bottom:8px">Two targets, one campaign built to move <strong>both</strong> at once.<br>We just need the number for each.</p>
+    <div class="versus">
+      <div class="vs vs-o">
+        <h3>What is our total drink sales target?</h3>
+        <ul style="margin-top:16px">
+          <li>Measured in <strong>cups sold</strong> + promo redemptions</li>
+          <li>Drives the HWC revenue-share</li>
+        </ul>
+      </div>
+      <div class="vs-mid"><span style="color:rgba(255,255,255,.7)">+</span></div>
+      <div class="vs vs-p" style="background:#5a1a8c">
+        <h3>What is our app subscription and views target?</h3>
+        <ul style="margin-top:16px">
+          <li>Measured in <strong>views, completion + new subs</strong></li>
+          <li>Grows the Tonton platform</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note">Both matter — and the plan is engineered to hit both together (next). Naming a target for each just tells us how to weight it.</p>
+  </div>
+</section>
+
+<!-- 5 · UNIFIED PLAN -->
+<section>
+  <div class="wrap">
+    <div class="snum">03 — The unified plan</div>
+    <h2>One campaign,<br>both outcomes</h2>
+    <p style="margin-top:16px">One integrated plan drives coffee sales <strong>and</strong> Tonton views/subs at the same time — every layer does double duty:</p>
+    <table>
+      <thead><tr><th>Layer</th><th>What we run</th><th class="o-h">→ Drives coffee sales</th><th class="p-h">→ Drives Tonton views &amp; subs</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Meta + YouTube</strong></td><td>Performance + reach ads</td><td class="c-o">KV geo-targeted, promo / QR to buy</td><td class="c-p">Trailer &amp; teaser reach → watch</td></tr>
+        <tr><td><strong>TikTok + Shorts</strong></td><td>15-sec cliffhanger teasers</td><td class="c-o">Product moments → deep-link to order</td><td class="c-p">Drive to TON, subscribe prompts</td></tr>
+        <tr><td><strong>KOL + livestream</strong></td><td>Creators seed each drop</td><td class="c-o">Product demo + promo codes</td><td class="c-p">Episode hype, watch-next</td></tr>
+        <tr><td><strong>Smart-TV QR + deep-links</strong></td><td>On-screen + in-app</td><td class="c-o">Scan → order coffee</td><td class="c-p">Jump into the next episode</td></tr>
+        <tr><td><strong>Promo codes + tracking</strong></td><td>Across every channel</td><td class="c-o">Attribute every cup, online + in-store</td><td class="c-p">Tie viewership to sales lift</td></tr>
+        <tr><td><strong>Offline / premiere</strong></td><td>Launch activation</td><td class="c-o">In-store footfall + sampling</td><td class="c-p">PR &amp; buzz for the series</td></tr>
+      </tbody>
+    </table>
+    <p class="note">Not a trade-off — one integrated campaign hits both targets. The <strong>weighting</strong> between sales and reach flexes to your priority and budget (see the packages below).</p>
+  </div>
+</section>
+
+<!-- 6 · AUDIENCE OPPORTUNITY -->
+<section class="cream">
+  <div class="wrap">
+    <div class="snum">04 — The audience opportunity</div>
+    <h2>Three audiences to win —<br>one campaign reaches all</h2>
+    <p style="margin-top:14px;max-width:66ch">Bru’s national reach grows Tonton; HWC’s Klang Valley base drives cups; and the <span class="gr">green zone</span> where they overlap — drama fans who also drink coffee — is where every ringgit works twice.</p>
+    <div class="audience-band">
+      <div class="aud aud-p">
+        <span class="tag p-bg">Reach → subs</span>
+        <h3>Bru viewers</h3>
+        <p>Malay · national · drama audience</p>
+        <div class="aud-note">Huge reach → grows Tonton views &amp; subscriptions</div>
+      </div>
+      <div class="aud aud-g">
+        <span class="tag g-bg">Highest value</span>
+        <h3>Green zone <span style="font-weight:500;opacity:.75;font-family:var(--f)">· overlap</span></h3>
+        <p>Drama fans who buy coffee · in Klang Valley</p>
+        <div class="aud-note">Views <em>and</em> cups from the same person — every ringgit works twice</div>
+      </div>
+      <div class="aud aud-o">
+        <span class="tag o-bg">Intent → sales</span>
+        <h3>HWC customers</h3>
+        <p>Klang Valley · 125 outlets · ready to buy</p>
+        <div class="aud-note">Purchase-ready → drives coffee sales</div>
+      </div>
+    </div>
+    <p class="note">To size the green zone precisely: what does HWC’s actual customer base look like by ethnicity, age and geo?</p>
+  </div>
+</section>
+
+<!-- 7 · ATTRIBUTION -->
+<section class="cream">
+  <div class="wrap">
+    <div class="snum">05 — Attribution</div>
+    <h2>How we track<br>coffee sales</h2>
+    <div class="split" style="align-items:start">
+      <div>
+        <h3 style="margin-bottom:6px">Where can a sale actually be tracked?</h3>
+        <table style="margin-top:14px">
+          <thead><tr><th>Purchase path</th><th>Trackable?</th></tr></thead>
+          <tbody>
+            <tr><td>Promo code (online + POS)</td><td class="gr">Yes — if POS accepts codes</td></tr>
+            <tr><td>HWC app checkout</td><td class="gr">Yes — with pixel / SDK access</td></tr>
+            <tr><td>TON in-app order</td><td class="c-o">Maybe — needs in-app tracking</td></tr>
+            <tr><td>In-store cash / card</td><td class="c-o">Only via code redemption</td></tr>
+            <tr><td>Grab / delivery</td><td class="c-p">No — not directly attributable</td></tr>
+          </tbody>
+        </table>
+      </div>
+      <div>
+        <h3 style="margin-bottom:6px">What we’re proposing</h3>
+        <ul class="clean" style="margin-top:14px">
+          <li><strong>Promo codes as the connective tissue</strong> — one trackable identifier across online and in-outlet.</li>
+          <li><strong>Deep-links + Smart-TV QR</strong> to create a digital → order path we can instrument.</li>
+          <li><strong>A baseline first:</strong> original Bru viewership + any prior sales lift, so targets are real, not guessed.</li>
+          <li><strong>Ideally a holdout region</strong> to measure true incremental lift, not just last-click.</li>
+        </ul>
+        <p class="note">Without a trackable path confirmed before launch, coffee-sales performance can’t be measured.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 9 · TIMELINE -->
+<section>
+  <div class="wrap">
+    <div class="snum">06 — Timeline to launch</div>
+    <h2>What has to happen<br>before 10 July</h2>
+    <div class="track">
+      <div class="node hot"><div class="d">2 Jul · Today</div><div class="t">Confirm <strong>targets + budget</strong>, funding source, decision-maker.</div></div>
+      <div class="node hot"><div class="d">3–4 Jul</div><div class="t"><strong>Access model</strong> resolved (ad accounts / Business Manager) + attribution method chosen.</div></div>
+      <div class="node"><div class="d">4–6 Jul</div><div class="t"><strong>Creative + teasers</strong> sourced &amp; rights cleared; promo codes generated; deep-links built.</div></div>
+      <div class="node"><div class="d">7–9 Jul</div><div class="t"><strong>Tracking QA</strong>, campaigns built &amp; in review; HWC app material synced.</div></div>
+      <div class="node hot"><div class="d">10 Jul · Launch</div><div class="t">Series live + paid live day one, with a working measurement loop.</div></div>
+    </div>
+    <p class="note">Solid nodes are hard dependencies. First to confirm: <strong>is 10 July fixed</strong>, or movable?</p>
+  </div>
+</section>
+
+<!-- 10 · RISKS -->
+<section class="cream">
+  <div class="wrap">
+    <div class="snum">07 — Risks &amp; dependencies</div>
+    <h2>Risks &amp; dependencies</h2>
+    <div class="grid g3">
+      <div class="card tab-p"><h3 class="p">Account access</h3><p>Media Prima controls social posting and won’t make external teams admins. We need a defined <strong>partner-access model</strong> (Business Manager, ad-account level) + a named MP admin, or we can’t run paid or pull data.</p></div>
+      <div class="card tab-p"><h3 class="p">Creative rights</h3><p>Can we <strong>cut episode footage into paid ads?</strong> Talent, music and usage rights routinely block this. Confirm clearance before we build around teasers.</p></div>
+      <div class="card tab-o"><h3 class="o">Product availability</h3><p>Are all 125 outlets stocking the 3 flavours from <strong>day one</strong>, or staggered? Don’t drive demand to outlets that can’t serve it.</p></div>
+      <div class="card tab-o"><h3 class="o">Platform policy</h3><p>Beverage/health claims and the paid path can trigger ad rejections. We build to policy from the start (a live lesson from a current client account ban).</p></div>
+      <div class="card tab-o"><h3 class="o">Approvals &amp; sign-off</h3><p>Who is the <strong>single point of approval</strong> on creative, budget and go-live? One named approver keeps a tight timeline moving.</p></div>
+      <div class="card tab-o"><h3 class="o">Deep-link friction</h3><p>Is TON geo-locked? Any sign-up or paywall between ad-click and watch? Every step of friction leaks the audience we paid for.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- 11 · SCOPE / RACI -->
+<section>
+  <div class="wrap">
+    <div class="snum">08 — Scope &amp; roles</div>
+    <h2>Who owns what</h2>
+    <table>
+      <thead><tr><th>Workstream</th><th>Media Prima</th><th>HWC</th><th class="p-h">Code of Origin</th><th class="o-h">Toggle</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Series / content</strong></td><td>Own</td><td>Product integration</td><td>—</td><td>Advise on cut-downs</td></tr>
+        <tr><td><strong>Tonton platform &amp; deep-links</strong></td><td>Own</td><td>—</td><td>—</td><td>Spec &amp; QA</td></tr>
+        <tr><td><strong>Paid media &amp; strategy</strong></td><td>Approve</td><td>Fund (TBC)</td><td>Support</td><td><strong>Own</strong></td></tr>
+        <tr><td><strong>Attribution &amp; tracking</strong></td><td>Enable access</td><td>POS / app data</td><td>—</td><td><strong>Own</strong></td></tr>
+        <tr><td><strong>Creative &amp; brand / CI</strong></td><td>Series assets</td><td>Product assets</td><td><strong>Own CI &amp; playbook</strong></td><td>Ad adaptation</td></tr>
+        <tr><td><strong>Social posting / admin</strong></td><td><strong>Own</strong></td><td>HWC channels</td><td>—</td><td>Needs access</td></tr>
+        <tr><td><strong>Reporting</strong></td><td>Receive</td><td>Receive</td><td>Receive</td><td><strong>Own</strong></td></tr>
+      </tbody>
+    </table>
+    <p class="note">Two commercial gaps to close: <strong>who funds the working media</strong> (Media Prima, HWC, or shared), and <strong>how the agency fee is structured</strong> (retainer / % of media / performance) — and who the reporting audience is.</p>
+  </div>
+</section>
+
+<!-- 9 · BUDGET PACKAGES -->
+<section>
+  <div class="wrap">
+    <div class="snum">09 — Budget packages</div>
+    <h2>Pick the budget —<br>we scale the same plan</h2>
+    <p style="margin-top:14px;max-width:64ch">The unified plan at three investment levels. Every tier drives <strong>both</strong> sales and subscriptions — higher budgets add channels, reach and always-on optimisation.</p>
+    <div class="grid g3" style="align-items:start">
+      <div class="pkg">
+        <div class="pkg-tag">Essentials</div>
+        <div class="pkg-price">RM10k<span>/month</span></div>
+        <div class="pkg-for">Prove the funnel, one market</div>
+        <ul class="clean">
+          <li>Meta + TikTok core</li>
+          <li>15-sec teasers → TON deep-link</li>
+          <li>1–2 KOLs to seed drops</li>
+          <li>Promo-code sales tracking</li>
+          <li>Klang Valley sales focus</li>
+          <li>Monthly reporting</li>
+        </ul>
+      </div>
+      <div class="pkg pkg-hero">
+        <div class="pkg-tag o-bg">Growth · balanced</div>
+        <div class="pkg-price">RM50k<span>/month</span></div>
+        <div class="pkg-for">Hit both targets at scale</div>
+        <ul class="clean">
+          <li><strong>Everything in Essentials, plus:</strong></li>
+          <li>YouTube + Shorts, wider KOL roster</li>
+          <li>Livestream + Smart-TV QR</li>
+          <li>Deep-link retargeting + A/B creative</li>
+          <li>National reach (subs) + KV push (sales)</li>
+          <li>Bi-weekly reporting + live dashboard</li>
+        </ul>
+      </div>
+      <div class="pkg">
+        <div class="pkg-tag">Full scale</div>
+        <div class="pkg-price">RM100k<span>/month</span></div>
+        <div class="pkg-for">Launch dominance, max growth</div>
+        <ul class="clean">
+          <li><strong>Everything in Growth, plus:</strong></li>
+          <li>YouTube masthead + always-on</li>
+          <li>Full KOL programme</li>
+          <li>Premiere / offline activation</li>
+          <li>HWC-app ads on TON + holdout test</li>
+          <li>Weekly optimisation + dedicated dashboard</li>
+        </ul>
+      </div>
+    </div>
+    <p class="note">Indicative scopes to frame the conversation — the final channel mix is set once we confirm the targets and budget.</p>
+  </div>
+</section>
+
+<!-- 10 · QUESTIONS 1 -->
+<section class="cream">
+  <div class="wrap">
+    <div class="snum">10 — Questions · 1 of 2</div>
+    <h2>Discovery — strategy, money<br>&amp; measurement</h2>
+    <div class="legend"><span><i class="sw" style="background:var(--orange)"></i> On our list</span><span><i class="sw" style="background:var(--green)"></i> <span class="tnew" style="margin:0">NEW</span> added in prep</span></div>
+    <div class="grid g3">
+      <div class="qgroup">
+        <h3>KPI &amp; Success</h3>
+        <ul>
+          <li>Primary goal — Tonton subscribers or app downloads? (Or both — do we re-strategise if it’s ONE goal?)</li>
+          <li>If we had to name <strong>one</strong> lead metric for month 1, what is it?<span class="tnew">NEW</span></li>
+          <li>Actual 4-month target numbers (cups / subs)?<span class="tnew">NEW</span></li>
+          <li>Final decision-maker when Sales &amp; Program disagree?<span class="tnew">NEW</span></li>
+          <li>Revenue-share mechanics — per cup, thresholds, minimum guarantee?<span class="tnew">NEW</span></li>
+        </ul>
+      </div>
+      <div class="qgroup">
+        <h3>Budget &amp; Channels</h3>
+        <ul>
+          <li>Total budget / month — RM10k, RM50k, RM100k?</li>
+          <li>Channel scope — YT masthead, Shorts, TikTok, KOL, livestream, Smart-TV, TVC?</li>
+          <li>Who funds working media — Media Prima, HWC, or shared?<span class="tnew">NEW</span></li>
+          <li>Split expectation between “drive Tonton” and “drive sales”?<span class="tnew">NEW</span></li>
+          <li>Reporting cadence &amp; audience?<span class="tnew">NEW</span></li>
+        </ul>
+      </div>
+      <div class="qgroup">
+        <h3>Attribution &amp; Tracking</h3>
+        <ul>
+          <li>How are we tracking coffee sales?</li>
+          <li>Dedicated promo code for online / app sales?</li>
+          <li>Real purchase journey — POS, HWC app, TON in-app, Grab? What’s instrumentable?<span class="tnew">NEW</span></li>
+          <li>Can outlet POS accept &amp; report the code?<span class="tnew">NEW</span></li>
+          <li>HWC app pixel / SDK &amp; analytics access?<span class="tnew">NEW</span></li>
+          <li>Original Bru baseline — views, completion, prior lift?<span class="tnew">NEW</span></li>
+          <li>Can we run a holdout region for incrementality?<span class="tnew">NEW</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 13 · QUESTIONS 2 -->
+<section>
+  <div class="wrap">
+    <div class="snum">11 — Questions · 2 of 2</div>
+    <h2>Discovery — audience, content<br>&amp; ops</h2>
+    <div class="grid g4">
+      <div class="qgroup">
+        <h3>Audience &amp; Product</h3>
+        <ul>
+          <li>Mostly targeting HWC sales in Klang Valley?</li>
+          <li>Language split — BM only, or English too?</li>
+          <li>Tonton viewers by device &amp; by state?</li>
+          <li>HWC customer mix — ethnicity, age, geo?<span class="tnew">NEW</span></li>
+          <li>Which 3 flavours, hero flavour, price per cup?<span class="tnew">NEW</span></li>
+          <li>All 125 outlets stocked day one, or staggered?<span class="tnew">NEW</span></li>
+        </ul>
+      </div>
+      <div class="qgroup">
+        <h3>Content &amp; Platform</h3>
+        <ul>
+          <li>How far into Bru is the coffee launch revealed?</li>
+          <li>Is the product reveal a hard sell or woven-in?</li>
+          <li>Are users expected to pay for the 2-min episodes?</li>
+          <li>Is the program on the free Tonton subscription tier?</li>
+          <li>Episode run time — does each run for a set period then pause before the next, or run continuously across the 4 months?</li>
+          <li>Release cadence — all at once, weekly, daily?<span class="tnew">NEW</span></li>
+          <li>Rights to repurpose footage into ads (talent / music)?<span class="tnew">NEW</span></li>
+        </ul>
+      </div>
+      <div class="qgroup">
+        <h3>Access &amp; Ops</h3>
+        <ul>
+          <li>Can we send users to an in-app deep-link?</li>
+          <li>Ad-account / Business Manager access + named admin?<span class="tnew">NEW</span></li>
+          <li>Is TON geo-locked? Sign-up / paywall friction?<span class="tnew">NEW</span></li>
+          <li>Is 10 July hard, or movable?<span class="tnew">NEW</span></li>
+          <li>Contingency if tracking isn’t ready by launch?<span class="tnew">NEW</span></li>
+        </ul>
+      </div>
+      <div class="qgroup">
+        <h3>Offline &amp; HWC App</h3>
+        <ul>
+          <li>Smart-TV QR on TON → in-store / online order?</li>
+          <li>Offline activation — premiere / launch event?</li>
+          <li>Will the HWC app refresh material to match the series? (currently Firdhaus ambassador — store banner, launch pop-up, main banner, launch sequence)</li>
+          <li>Run HWC-app ads inside TON to drive sales?</li>
+          <li>Concurrent HWC ATL / in-store campaign to sync with?<span class="tnew">NEW</span></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 14 · DECISIONS -->
+<section class="full-o">
+  <div class="wrap">
+    <div class="snum">12 — Decisions needed today</div>
+    <h2>Five decisions we need today</h2>
+    <p class="lead" style="max-width:44ch;font-size:clamp(17px,1.9vw,24px)">These five unblock the build. Everything else can follow.</p>
+    <div class="decisions">
+      <div class="dec"><div><div class="b">Objectives &amp; targets</div><div class="s">Confirm the coffee-sales target and the subs/views target — sets how we weight the plan.</div></div></div>
+      <div class="dec"><div><div class="b">Budget &amp; funding</div><div class="s">Which package (RM10k / 50k / 100k), and who pays. Unblocks the channel plan &amp; flighting.</div></div></div>
+      <div class="dec"><div><div class="b">Attribution method</div><div class="s">Promo code / in-app / app pixel confirmed. Unblocks sales measurement.</div></div></div>
+      <div class="dec"><div><div class="b">Access model</div><div class="s">How we get into ad accounts + a named MP admin. Unblocks paid execution.</div></div></div>
+      <div class="dec"><div><div class="b">Launch date</div><div class="s">10 July confirmed hard, or flexible. Sets the whole critical path.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- 15 · NEXT STEPS -->
+<section>
+  <div class="wrap">
+    <div class="snum">13 — Next steps</div>
+    <h2>Next steps</h2>
+    <div class="grid g3">
+      <div class="card tab-o"><span class="tag o-bg">Us · within 48h</span><ul class="clean" style="margin-top:14px"><li>Platform strategy &amp; media plan</li><li>Tracking / attribution spec</li><li>Flighting to the 10 July path</li></ul></div>
+      <div class="card tab-p"><span class="tag p-bg">Media Prima · this week</span><ul class="clean" style="margin-top:14px"><li class="p">Access + named admin</li><li class="p">Deep-link + baseline data</li><li class="p">Creative rights confirmation</li></ul></div>
+      <div class="card tab-g"><span class="tag g-bg">HWC · this week</span><ul class="clean" style="margin-top:14px"><li class="g">Promo-code + POS setup</li><li class="g">App / outlet readiness</li><li class="g">Product &amp; pricing detail</li></ul></div>
+    </div>
+  </div>
+</section>
+
+<div class="footer">
+  <div class="wrap" style="display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:20px">
+    <div>
+      <div class="lockup" style="gap:16px">
+        <img src="toggle-white.png" alt="Toggle Solutions" style="height:38px">
+        <span class="x" style="color:rgba(255,255,255,.45);font-size:20px">×</span>
+        <img src="coo-logo.png" alt="Code of Origin" style="height:13px">
+
+      </div>
+      <p style="margin-top:18px">Your digital growth partner · toggle.solutions &nbsp;·&nbsp; codeoforigin.com</p>
+    </div>
+  </div>
+</div>
+
+<div class="toc"><a href="#top" onclick="window.scrollTo({top:0,behavior:'smooth'});return false;">↑ Top</a></div>
+
+<script>
+  const rail=document.getElementById('rail');
+  function upd(){
+    const h=document.documentElement;
+    const sc=h.scrollTop||document.body.scrollTop;
+    const max=(h.scrollHeight-h.clientHeight)||1;
+    rail.style.width=(sc/max*100)+'%';
+  }
+  document.addEventListener('scroll',upd,{passive:true});upd();
+</script>
+</body>
+</html>
