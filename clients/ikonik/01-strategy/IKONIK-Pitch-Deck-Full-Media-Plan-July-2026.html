@@ -1,0 +1,454 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>IKONIK Eye Specialist Centre — Patient Growth Proposal · Toggle Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#4A7BF7; --ink:#0F0F0F; --navy:#0A1224; --card:#F2F3F6; --callout:#DDE5FE;
+  --body:#4A4A4A; --caption:#9AA0A8; --struck:#6B7280; --teal:#2ECC9B; --pink:#F59EC9;
+  --purple:#8E6BE6; --orange:#F28B4C; --slate:#2C2C36; --paper:#FAFAFA; --border:#E4E6EE; --blue-deep:#3056C9;
+}
+*{box-sizing:border-box}
+body{background:#E9EBF1;margin:0;padding:40px 0 80px;font-family:"Inter Tight",Inter,-apple-system,"Segoe UI",sans-serif;color:var(--ink)}
+.dochead{max-width:1280px;margin:0 auto 12px;font-size:14px;color:#555}
+.dochead strong{color:var(--ink)}
+.note{max-width:1280px;margin:36px auto 10px;font-size:13px;font-weight:500;color:#667}
+.note b{color:var(--blue)}
+.slide{width:1280px;height:720px;background:#fff;margin:0 auto;position:relative;padding:56px 64px;box-shadow:0 2px 18px rgba(10,18,36,.14);overflow:hidden}
+.num{font-variant-numeric:tabular-nums}
+.watermark{position:absolute;top:30px;right:64px;font-size:13px;font-weight:500;color:var(--caption);letter-spacing:.02em}
+.h1{font-size:38px;font-weight:800;color:var(--blue);margin:0 0 8px;line-height:1.08}
+.kicker{font-size:15px;color:var(--body);margin:0 0 30px;max-width:78ch}
+.pill{display:inline-block;background:var(--blue-deep);color:#fff;font-weight:700;font-size:17px;border-radius:999px;padding:9px 26px;vertical-align:middle;margin-left:16px}
+.band{position:absolute;left:64px;right:64px;bottom:44px;background:var(--blue-deep);color:#fff;font-weight:700;font-size:14.5px;text-align:center;border-radius:8px;padding:13px 18px}
+.grid{display:grid;gap:20px}
+.cols2{grid-template-columns:1fr 1fr}.cols3{grid-template-columns:1fr 1fr 1fr}.cols4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--card);border-radius:10px;padding:24px}
+.callout{background:var(--callout);border-radius:10px;padding:24px}
+.topbar{position:relative;padding-top:30px}
+.topbar::before{content:"";position:absolute;top:0;left:0;right:0;height:7px;border-radius:10px 10px 0 0;background:var(--blue)}
+.topbar.t-teal::before{background:var(--teal)}.topbar.t-pink::before{background:var(--pink)}
+.topbar.t-purple::before{background:var(--purple)}.topbar.t-slate::before{background:var(--slate)}
+.topbar.t-orange::before{background:var(--orange)}
+.stripe{position:relative;padding-left:30px}
+.stripe::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;border-radius:10px 0 0 10px;background:var(--blue)}
+.stripe.s-teal::before{background:var(--teal)}.stripe.s-pink::before{background:var(--pink)}
+.stripe.s-orange::before{background:var(--orange)}.stripe.s-purple::before{background:var(--purple)}
+.stat{font-size:44px;font-weight:800;color:var(--blue);line-height:1}
+.stat.inkstat{color:var(--ink)}
+.statlabel{font-size:15px;font-weight:700;color:var(--ink);margin-top:12px}
+.statcap{font-size:13.5px;color:var(--body);margin-top:6px;line-height:1.45}
+.cardtitle{font-size:17px;font-weight:700;margin:0 0 6px}
+.bodytext{font-size:14px;color:var(--body);line-height:1.5}
+ul.b{margin:12px 0 0;padding:0;list-style:none}
+ul.b li{font-size:13.5px;color:var(--body);line-height:1.45;padding:5px 0 5px 16px;position:relative}
+ul.b li::before{content:"";position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:50%;background:var(--blue)}
+.acc-teal ul.b li::before{background:var(--teal)}.acc-pink ul.b li::before{background:var(--pink)}
+.acc-slate ul.b li::before{background:var(--slate)}.acc-orange ul.b li::before{background:var(--orange)}
+.chip{float:right;background:#fff;border:1.5px solid var(--blue);color:var(--ink);font-weight:700;font-size:13px;border-radius:8px;padding:6px 10px;text-align:center;line-height:1.2}
+.acc-teal .chip{border-color:var(--teal)}.acc-pink .chip{border-color:var(--pink)}
+.seal{font-weight:700;letter-spacing:.01em}
+.seal .br{font-weight:400}
+table.dt{width:100%;border-collapse:collapse;font-size:13.5px}
+table.dt th{background:var(--blue-deep);color:#fff;font-weight:700;text-align:left;padding:11px 14px}
+table.dt td{padding:11px 14px;color:var(--body);vertical-align:top}
+table.dt tr:nth-child(even) td{background:var(--card)}
+table.dt td.k{color:var(--blue-deep);font-weight:700}
+table.dt td.head{color:var(--ink);font-weight:700}
+.ncircle{display:inline-flex;width:34px;height:34px;border-radius:50%;background:var(--blue-deep);color:#fff;font-weight:700;font-size:13px;align-items:center;justify-content:center;flex:none}
+.wmk{height:34px;color:var(--ink)}
+.wmk svg{height:100%;width:auto;display:block}
+.iso polygon{fill:none;stroke:var(--blue);stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter}
+.iso polygon.fill{fill:var(--blue)}
+.iso rect{fill:none;stroke:var(--blue);stroke-width:1.5}
+.struck{color:var(--struck);text-decoration:line-through;text-decoration-thickness:.12em}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+@page{size:1280px 720px;margin:0}
+@media print{*{-webkit-print-color-adjust:exact;print-color-adjust:exact}body{background:#fff;padding:0}.note,.dochead{display:none}.slide{box-shadow:none;page-break-after:always}.slide:last-of-type{page-break-after:auto}}
+</style>
+</head>
+<body>
+
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg"><symbol id="wm" viewBox="0 0 1432 392"><path fill="currentColor" d="M1166.39 1.57487C1166.39 2.43389 1157.45 54.1188 1146.44 116.398C1135.43 178.678 1126.5 232.081 1126.5 234.944C1126.5 238.667 1127.77 241.244 1130.64 243.964C1134.47 247.4 1136.07 247.686 1147.4 247.686C1154.42 247.686 1160 247.973 1160 248.545C1160 249.261 1152.82 290.351 1151.23 298.799C1150.43 302.807 1149.63 303.523 1142.77 304.812C1120.27 309.107 1090.59 307.818 1072.88 301.948C1061.55 298.083 1049.75 288.347 1044.96 278.898C1041.61 272.169 1041.13 269.162 1041.29 254.129C1041.29 239.239 1044.16 221.486 1062.35 119.119C1074 54.4051 1083.41 1.00218 1083.41 0.715838C1083.41 0.286342 1102.08 0 1124.9 0C1154.26 0 1166.39 0.429496 1166.39 1.57487Z"/>
+<path fill="currentColor" d="M140.413 21.6189C140.413 22.9074 133.871 60.8478 131.637 72.5879L130.68 77.3125H155.571C171.527 77.3125 180.303 77.8852 180.303 78.7442C180.303 80.6054 172.485 125.418 171.527 129.856C170.73 133.006 170.091 133.149 145.678 133.436L120.787 133.865L111.533 186.123C101.321 243.821 101.002 246.971 104.672 248.259C106.108 248.689 116.798 249.118 128.606 249.118C148.391 249.118 150.146 249.261 149.349 251.552C148.87 252.984 146.636 265.583 144.243 279.614L139.775 305.241L100.523 304.669C66.058 304.096 60.1543 303.666 50.8998 300.946C30.7951 295.076 20.7428 285.054 17.7113 268.017C15.7965 256.849 16.4348 250.693 27.7636 187.411C32.7099 160.209 36.6989 136.872 36.6989 135.44C36.6989 133.436 34.3055 133.149 18.3495 133.149C6.86114 133.149 0 132.577 0 131.718C0 129.856 7.81846 85.0438 8.93536 80.4623C9.57368 77.4557 10.2118 77.3125 28.5613 77.3125H47.3895L51.0594 56.839C52.974 45.6716 55.2078 32.7862 56.1653 28.2047L57.7609 20.044H99.087C127.01 20.044 140.413 20.4735 140.413 21.6189Z"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M644.145 113.964C646.698 121.409 647.177 121.839 651.644 121.409L656.59 120.98L660.42 99.0745L664.09 77.3125H746.742L745.944 80.4623C745.475 82.2857 737.196 129.18 727.258 185.472L727.255 185.487L726.637 188.986C716.585 246.827 707.49 297.367 706.692 301.376C696.321 347.19 666.643 375.109 614.945 387.565C600.585 391.001 596.596 391.287 568.832 391.43C535.803 391.43 524.475 389.856 504.53 382.697C476.287 372.675 457.619 354.779 450.758 331.155C449.481 326.717 448.364 321.42 448.364 319.702V316.409H530.697L533.57 322.135C538.995 333.16 551.44 338.457 572.023 338.457C594.841 338.457 609.042 331.298 618.136 315.12C622.923 306.816 624.678 300.517 628.827 277.036C632.656 254.988 632.656 254.845 628.029 254.845C625.157 254.845 622.764 256.993 617.658 264.008C598.032 291.21 566.599 302.521 529.421 295.649C488.414 288.061 463.363 258.711 459.693 213.612C456.023 167.654 470.862 127.136 501.657 99.3609C512.029 90.0547 517.294 86.6186 528.145 81.894C552.078 71.5856 578.246 69.5813 600.585 76.1671C621.009 82.1803 638.241 97.2133 644.145 113.964ZM546.813 171.09C552.078 155.627 566.598 141.596 582.235 137.015C586.224 135.726 593.564 134.724 598.51 134.724C624.519 134.438 641.911 149.041 644.145 173.094C646.538 198.865 632.656 223.204 610.318 232.081C599.308 236.519 579.842 236.662 569.63 232.367C560.535 228.644 553.355 222.202 548.568 213.611C545.377 207.885 544.898 204.592 544.898 191.849C544.898 183.545 545.855 174.239 546.813 171.09Z"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M936.619 113.535C939.172 120.121 940.129 120.98 944.437 121.409C947.15 121.696 949.384 121.409 949.384 120.693C949.384 118.975 955.606 84.3279 956.564 80.4623L957.361 77.3125H998.049C1022.14 77.3125 1038.74 77.8852 1038.74 78.6011C1038.74 83.612 999.805 300.803 997.252 309.966C981.934 364.944 930.077 394.294 852.849 391.86C824.448 390.858 808.013 387.565 788.866 379.261C762.06 367.521 746.423 348.622 741.317 321.706L740.2 316.409H823.331L825.086 320.417C827.16 325.142 833.862 331.728 839.447 334.448C846.946 337.884 863.859 339.459 875.347 337.884C902.154 334.019 913.004 321.276 919.865 285.913L920.913 280.423C924.752 260.328 925.594 255.922 923.993 255.023C923.544 254.771 922.904 254.794 922.084 254.823C921.792 254.834 921.478 254.845 921.141 254.845C917.471 254.845 915.876 256.277 911.887 262.29C909.334 266.299 903.111 273.171 898.165 277.609C861.785 310.539 794.61 301.805 767.485 260.715C749.454 233.369 746.582 189.416 760.464 150.044C770.198 122.555 788.547 99.7904 812.64 85.7596C833.383 73.5901 864.816 69.1518 889.548 74.7354C910.451 79.46 929.439 95.0658 936.619 113.535ZM853.807 149.614C830.99 171.805 830.83 211.607 853.169 227.213C862.423 233.655 869.125 235.517 882.368 235.517C902.632 235.373 918.908 226.64 928.321 210.891C934.863 199.724 936.778 192.565 936.778 178.821C936.778 163.358 933.427 154.482 924.013 146.035C912.206 135.44 893.697 131.717 876.784 136.585C866.412 139.592 860.987 142.598 853.807 149.614Z"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M1352.75 76.883C1402.69 89.7684 1431.42 126.563 1431.26 177.246C1431.1 184.977 1430.3 194.999 1429.18 199.724L1427.11 208.314L1341.26 208.744L1255.26 209.03L1256.38 218.05C1257.65 228.931 1263.72 240.814 1270.74 245.539C1288.61 257.708 1324.99 254.272 1336.64 239.239L1341.1 233.512L1381.47 233.369C1406.52 233.369 1421.68 233.942 1421.68 234.801C1421.68 235.517 1419.93 240.385 1417.85 245.396C1401.1 285.197 1356.26 309.107 1298.34 309.25C1233.4 309.25 1190.32 279.327 1179.15 226.211C1176.92 215.759 1176.92 188.7 1179.31 176.53C1187.13 133.579 1212.82 101.508 1253.03 84.3279C1278.56 73.4469 1301.53 70.5835 1336 73.8764C1340.47 74.3059 1348.12 75.5944 1352.75 76.883ZM1263.08 161.354C1269.14 143.601 1284.14 129.999 1301.53 125.991C1311.59 123.843 1325.79 125.561 1333.92 129.999C1342.38 134.581 1349.08 145.319 1350.68 157.059L1351.79 164.647H1261.96L1263.08 161.354Z"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M345.927 75.3081C409.751 87.0481 448.364 137.301 440.706 199.008C439.588 207.598 437.195 219.052 435.44 224.349C420.441 267.873 379.594 299.944 328.854 307.818C314.653 310.109 285.134 309.823 271.731 307.246C222.746 298.083 187.962 267.587 177.91 224.922C174.878 211.894 174.878 185.407 177.75 171.519C188.281 121.982 231.043 83.7552 286.411 74.5923C299.814 72.4447 332.364 72.731 345.927 75.3081ZM297.42 137.158C281.624 142.169 269.976 153.766 262.955 171.376C258.328 182.973 257.211 207.026 260.721 217.907C266.944 237.092 281.305 247.686 301.409 247.686C315.929 247.686 325.503 244.393 335.555 236.232C350.873 223.777 358.053 207.026 357.894 184.691C357.894 161.64 350.714 147.323 335.715 139.449C325.982 134.295 309.387 133.292 297.42 137.158Z"/></symbol></svg>
+
+<div class="dochead"><strong>IKONIK Eye Specialist Centre — Patient Growth Proposal.</strong> 16 slides · pitch Thursday 16 July 2026 · pre-read to client by Tuesday evening. Gray labels above each slide name the belief it must build.</div>
+
+<!-- ════════ SLIDE 1 — TITLE ════════ -->
+<div class="note">Slide 1 · Title — <b>Belief:</b> "This was built for us by a firm with a settled identity."</div>
+<section class="slide">
+  <div class="wmk"><svg viewBox="0 0 1432 392"><use href="#wm"/></svg></div>
+  <div style="margin-top:118px;max-width:640px">
+    <div style="font-size:64px;font-weight:800;color:var(--blue);line-height:1.05">IKONIK</div>
+    <div style="font-size:54px;font-weight:800;color:var(--ink);line-height:1.1;margin-top:6px">Patient Growth<br>Proposal</div>
+    <div style="font-size:17px;font-weight:500;color:var(--body);margin-top:22px">Full media plan — TikTok · Google · Meta · July 2026</div>
+  </div>
+  <svg class="iso" viewBox="-4 -4 449 326" style="position:absolute;right:84px;top:120px;width:470px">
+    <g><polygon points="90.1,0.0 135.1,26.0 45.0,78.0 0.0,52.0"/><polygon points="135.1,130.0 180.1,156.0 90.1,208.0 45.0,182.0"/><polygon points="135.1,130.0 45.0,182.0 45.0,78.0 135.1,26.0"/><polygon class="fill" points="180.1,208.0 90.1,260.0 90.1,208.0 180.1,156.0"/><polygon points="0.0,208.0 45.0,234.0 45.0,78.0 0.0,52.0"/><polygon points="45.0,234.0 90.1,260.0 90.1,208.0 45.0,182.0"/></g>
+    <g transform="translate(216,110)"><polygon points="90.1,0.0 180.1,52.0 90.1,104.0 0.0,52.0"/><polygon points="180.1,104.0 225.2,130.0 135.1,182.0 90.1,156.0"/><polygon points="180.1,104.0 90.1,156.0 90.1,104.0 180.1,52.0"/><polygon points="225.2,182.0 135.1,234.0 135.1,182.0 225.2,130.0"/><polygon points="0.0,156.0 90.1,208.0 90.1,104.0 0.0,52.0"/><polygon points="90.1,208.0 135.1,234.0 135.1,182.0 90.1,156.0"/></g>
+  </svg>
+  <div class="seal" style="position:absolute;left:64px;bottom:48px;color:var(--blue);font-size:18px"><span class="br">[&nbsp;</span>Your Digital Growth Partner<span class="br">&nbsp;]</span></div>
+  <div class="seal" style="position:absolute;right:64px;bottom:48px;color:var(--blue);font-size:18px"><span class="br">[&nbsp;</span>toggle.solutions<span class="br">&nbsp;]</span></div>
+</section>
+
+<!-- ════════ SLIDE 2 — WHAT WE HEARD ════════ -->
+<div class="note">Slide 2 · What We Heard — <b>Belief:</b> "They listened in the first meeting — this proposal is about us, not a template."</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">What We Heard</h2>
+  <p class="kicker">Four facts from our first conversation shaped every slide that follows.</p>
+  <div class="grid cols2">
+    <div class="card stripe">
+      <div class="cardtitle">Online is the growth engine</div>
+      <div class="bodytext"><b class="num">70%</b> of patient acquisition targets sit on online channels — and TikTok alone already carries <b class="num">50–60%</b> of that online traffic. The channel mix in this plan follows the money, not fashion.</div>
+    </div>
+    <div class="card stripe s-teal">
+      <div class="cardtitle">Organic works — scale is the gap</div>
+      <div class="bodytext">Patients find IKONIK through TikTok search ("I saw you on top"). Conversion works once they arrive. The missing piece is <b>top-of-funnel volume you control</b> — not another content playbook.</div>
+    </div>
+    <div class="card stripe s-orange">
+      <div class="cardtitle">Burned by big promises</div>
+      <div class="bodytext">The previous agency promised <span class="num">100K</span> monthly traffic and didn't deliver. So this proposal commits to <b>appointments, not traffic</b> — and every target is re-anchored to your real data after Month 1.</div>
+    </div>
+    <div class="card stripe s-purple">
+      <div class="cardtitle">ROI-driven, ready to scale</div>
+      <div class="bodytext">No fixed media budget — spend scales when results are proven. We start focused on the <b>eye surgery segment (LASIK first)</b>; wellness ("iSpa") and aesthetics join once the engine is proven.</div>
+    </div>
+  </div>
+  <div class="band">Agreed framing from our first meeting: the target is to DOUBLE current online patient volume — not to hit a raw traffic number</div>
+</section>
+
+<!-- ════════ SLIDE 3 — STRIKETHROUGH ════════ -->
+<div class="note">Slide 3 · The Reframe — <b>Belief:</b> "They've already rejected the mistake the last agency made."</div>
+<section class="slide" style="display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <div style="font-size:15px;font-weight:700;letter-spacing:.05em;color:var(--body);margin-bottom:28px">THE LAST AGENCY PROMISED</div>
+  <div class="num" style="font-size:52px;font-weight:800"><s class="struck">100,000 monthly traffic</s><span class="sr"> — not traffic, but —</span></div>
+  <div style="font-size:56px;font-weight:800;color:var(--ink);margin-top:14px">2× your online <span style="color:var(--blue)">patient volume</span></div>
+  <div class="bodytext" style="font-size:17px;max-width:780px;margin-top:34px">Traffic is a vanity number — nobody pays an invoice with page views. Every campaign in this plan is optimised to a lower-funnel event: a lead form, an instant message, or a website booking. The doubling target is locked as a hard number after Month 1, once we baseline your current volume with your own data (GSC + conversion records, post-NDA).</div>
+</section>
+
+<!-- ════════ SLIDE 4 — WHY IKONIK WINS ════════ -->
+<div class="note">Slide 4 · Why IKONIK Can Win — <b>Belief:</b> "We hold assets Vista can't copy — the gap is machinery, not brand."</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">Why IKONIK Can Win This Market</h2>
+  <p class="kicker">Vista Eye outspends you and out-branches you. But you hold three assets a multi-branch chain cannot copy — the gap is machinery, not brand.</p>
+  <div class="grid cols3">
+    <div class="card topbar">
+      <div class="cardtitle">Live surgery, shown live</div>
+      <div class="bodytext">The livestreamed procedures are the single strongest trust asset in the category. Chains won't replicate it — corporate and medico-legal caution stops them. In healthcare, the biggest conversion barrier is fear; your content dissolves it before the patient ever messages.</div>
+    </div>
+    <div class="card topbar t-teal">
+      <div class="cardtitle">The Prof Muhaya lineage</div>
+      <div class="bodytext">Rebranded from Prof Muhaya's centre in 2021, IKONIK carries a household-name surgical heritage and a decade-deep patient base — credibility that new-money competitors buy with ad spend, and you already own.</div>
+    </div>
+    <div class="card topbar t-pink">
+      <div class="cardtitle">Search-level brand recall</div>
+      <div class="bodytext">Patients report finding you at the top of TikTok search. That organic pull means paid campaigns start warm — Spark Ads amplify posts that already convert, instead of cold creatives guessing at what works.</div>
+    </div>
+  </div>
+  <div class="callout" style="margin-top:20px;padding:22px 28px">
+    <span style="font-weight:700">The gap, stated plainly:</span>
+    <span class="bodytext"> no paid engine guaranteeing lead flow independent of the algorithm · no systematic capture of the attention already earned · no end-to-end tracking from view → lead → appointment → surgery. This proposal builds exactly those three things — and nothing you already do well.</span>
+  </div>
+</section>
+
+<!-- ════════ SLIDE 5 — STRATEGY AT A GLANCE ════════ -->
+<div class="note">Slide 5 · Strategy at a Glance — <b>Belief:</b> "The whole plan fits on one slide, and every ringgit has a job."</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">Our Strategy at a Glance</h2>
+  <p class="kicker">A lower-funnel lead engine across 3 platforms — weighted to where your patients already are.</p>
+  <div class="grid cols4">
+    <div class="card topbar" style="text-align:center"><div class="stat num inkstat" style="font-size:38px;white-space:nowrap">RM&nbsp;9,000</div><div class="statcap">Recommended starting media budget / month</div></div>
+    <div class="card topbar" style="text-align:center"><div class="stat num" style="white-space:nowrap">200–275</div><div class="statcap">Est. leads / month at steady state</div></div>
+    <div class="card topbar" style="text-align:center"><div class="stat num inkstat" style="white-space:nowrap">55–90</div><div class="statcap">Est. appointments booked / month</div></div>
+    <div class="card topbar" style="text-align:center"><div class="stat num inkstat">3</div><div class="statcap">Ad platforms, one funnel</div></div>
+  </div>
+  <div style="display:flex;margin-top:34px;border-radius:8px;overflow:hidden;height:58px;font-weight:800;font-size:19px;color:#fff;text-align:center">
+    <div class="num" style="flex:50;background:var(--blue);line-height:58px">50%</div>
+    <div class="num" style="flex:30;background:var(--teal);line-height:58px;color:var(--ink)">30%</div>
+    <div class="num" style="flex:20;background:var(--slate);line-height:58px">20%</div>
+  </div>
+  <div style="display:flex;text-align:center;margin-top:14px">
+    <div style="flex:50"><div style="font-weight:700;font-size:15px">TikTok Ads</div><div class="statcap num">RM 4,500&nbsp; | &nbsp;~130–180 leads&nbsp; | &nbsp;where 50–60% of your traffic already lives</div></div>
+    <div style="flex:30"><div style="font-weight:700;font-size:15px">Google Search</div><div class="statcap num">RM 2,700&nbsp; | &nbsp;~30–45 leads&nbsp; | &nbsp;highest intent, finite pool</div></div>
+    <div style="flex:20"><div style="font-weight:700;font-size:15px">Meta Ads</div><div class="statcap num">RM 1,800&nbsp; | &nbsp;~35–50 leads&nbsp; | &nbsp;retargeting + 30–55 reach</div></div>
+  </div>
+  <div class="band num">Campaign objectives: Lead Forms · Instant Messages · Website Conversions — ZERO budget on traffic or awareness objectives</div>
+</section>
+
+<!-- ════════ SLIDE 6 — TIKTOK STRATEGY ════════ -->
+<div class="note">Slide 6 · TikTok Strategy — <b>Belief:</b> "They know the LIVE-whitelisting unlock — this is insider-level TikTok, not boosted posts."</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1" style="display:inline-block">TikTok Strategy</h2><span class="pill num">RM 4,500 · 50%</span>
+  <p class="kicker">Your primary channel gets the primary budget. Three campaign layers, all optimised to leads and messages — never views.</p>
+  <div class="grid cols3" style="gap:16px">
+    <div class="card topbar acc-orange" style="padding:20px">
+      <div class="cardtitle">1 · LIVE Stream Ads — the unlock</div>
+      <ul class="b">
+        <li><b>Whitelist the Business Manager to run LIVE ads</b> — requested via your account manager (we coordinate with Marcus); not all accounts are eligible, so this starts week 1</li>
+        <li>Push live surgery streams to cold Klang Valley audiences <b>while they're live</b> — optimised to messages &amp; bookings, not view count</li>
+        <li>Every livestream builds a retargetable viewer pool that gets cheaper to convert over time</li>
+      </ul>
+    </div>
+    <div class="card topbar" style="padding:20px">
+      <div class="cardtitle">2 · Spark Ads on proven organic</div>
+      <ul class="b">
+        <li>Amplify the posts already converting in TikTok search — paid reach with organic trust intact</li>
+        <li>Existing content works for the current audience; <b>new audiences get a new playbook</b> — new hooks tested on your existing footage</li>
+        <li>No KOL spend: your patient demographic skews finance/banking, not lifestyle — influencer budgets would leak</li>
+      </ul>
+    </div>
+    <div class="card topbar t-teal acc-teal" style="padding:20px">
+      <div class="cardtitle">3 · Lead Gen &amp; Instant Message ads</div>
+      <ul class="b">
+        <li>Instant Forms with qualifying questions — leads arrive pre-scored (procedure interest, timeline, location)</li>
+        <li>Instant Messaging ads route enquiries straight into a managed conversation → WhatsApp handoff to your front desk</li>
+        <li>Audiences: livestream viewers · engagers · follower lookalikes · LASIK-interest segments, geo-fenced Klang Valley</li>
+      </ul>
+    </div>
+  </div>
+  <div class="band num">Target CPL RM 25–35&nbsp;&nbsp;|&nbsp;&nbsp;Optimisation events: lead form submit · message sent · booking click&nbsp;&nbsp;|&nbsp;&nbsp;Account transition to Marcus supported end-to-end</div>
+</section>
+
+<!-- ════════ SLIDE 7 — GOOGLE STRATEGY ════════ -->
+<div class="note">Slide 7 · Google Search Strategy — <b>Belief:</b> "Every ringgit on Google has a named job and a CPL ceiling."</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1" style="display:inline-block">Google Search Strategy</h2><span class="pill num">RM 2,700 · 30%</span>
+  <p class="kicker">The LASIK core keyword pool is ~590 searches/month in Malaysia — small, but every one of them is a hand raised. We take the whole pool, not a share of it.</p>
+  <div class="grid cols3" style="height:420px">
+    <div class="card topbar t-slate acc-slate">
+      <div class="cardtitle">Brand Defence</div>
+      <div class="stat num inkstat" style="font-size:34px;margin:8px 0 4px">RM 540</div>
+      <div class="statcap num">20% · CPL &lt; RM 40</div>
+      <ul class="b"><li>ikonik eye centre</li><li>ikonik lasik price</li><li>prof muhaya eye centre</li><li>Blocks competitors bidding on your name — cheap insurance on the trust you've built</li></ul>
+    </div>
+    <div class="card topbar">
+      <div class="cardtitle">Generic LASIK · Klang Valley</div>
+      <div class="stat num" style="font-size:34px;margin:8px 0 4px">RM 1,620</div>
+      <div class="statcap num">60% · CPL &lt; RM 90</div>
+      <ul class="b"><li>lasik price malaysia / lasik kl</li><li>pembedahan lasik / bebas rabun</li><li>relex smile malaysia · icl</li><li>Landing page purpose-built for these queries — price transparency + livestream proof + booking CTA</li></ul>
+    </div>
+    <div class="card topbar t-teal acc-teal">
+      <div class="cardtitle">Competitor &amp; High-Intent</div>
+      <div class="stat num inkstat" style="font-size:34px;margin:8px 0 4px">RM 540</div>
+      <div class="statcap num">20% · CPL &lt; RM 100</div>
+      <ul class="b"><li>vista eye price · optimax price</li><li>lasik murah kl · lasik installment</li><li>Comparison-shopper capture: the moment they price-check Vista, IKONIK's RM2,500/eye anchor appears</li></ul>
+    </div>
+  </div>
+  <div class="band">GSC access (post-NDA) powers the traffic forecast &amp; keyword expansion — we size this channel from your real search data, not a third-party guess</div>
+</section>
+
+<!-- ════════ SLIDE 8 — META STRATEGY ════════ -->
+<div class="note">Slide 8 · Meta Ads Strategy — <b>Belief:</b> "Meta isn't a copy of TikTok — it has its own two jobs."</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1" style="display:inline-block">Meta Ads Strategy</h2><span class="pill num">RM 1,800 · 20%</span>
+  <p class="kicker">Two jobs TikTok can't do: catch the decision-stage patient who left, and reach the 30–55 segment that isn't on TikTok.</p>
+  <div class="card stripe" style="display:flex;gap:28px;align-items:center;margin-bottom:16px">
+    <div style="width:250px;flex:none"><div class="cardtitle">Retargeting Engine</div><div class="stat num" style="font-size:30px">RM 900</div><div class="statcap num">50% of Meta budget</div></div>
+    <div class="bodytext">Website visitors, landing-page drop-offs, Instagram engagers and unconverted WhatsApp enquiries brought back with follow-up creative. LASIK is a 2–8 week decision — the patient who didn't book today is the cheapest patient you'll ever acquire next month.</div>
+  </div>
+  <div class="card stripe s-teal" style="display:flex;gap:28px;align-items:center;margin-bottom:16px">
+    <div style="width:250px;flex:none"><div class="cardtitle">Lead Ads · FB + IG</div><div class="stat num inkstat" style="font-size:30px">RM 630</div><div class="statcap num">35% of Meta budget</div></div>
+    <div class="bodytext">Conditional Instant Forms prospecting the 30–55 Klang Valley segment — the age band researching LASIK for themselves, Ortho-K for their kids, and (later) cataract for their parents. Pre-qualified in the ad before sales ever touches it.</div>
+  </div>
+  <div class="card stripe s-pink" style="display:flex;gap:28px;align-items:center">
+    <div style="width:250px;flex:none"><div class="cardtitle">Click-to-WhatsApp</div><div class="stat num inkstat" style="font-size:30px">RM 270</div><div class="statcap num">15% of Meta budget</div></div>
+    <div class="bodytext">For the patient who wants to ask one question before committing — the conversation starts in WhatsApp, lands in the same sales tracker, and gets the same response-time SLA as every other lead.</div>
+  </div>
+  <div class="band num">Target CPL &lt; RM 50&nbsp;&nbsp;|&nbsp;&nbsp;Lookalikes built from converted-patient list once volume allows&nbsp;&nbsp;|&nbsp;&nbsp;All creatives KKLIU-vetted before launch</div>
+</section>
+
+<!-- ════════ SLIDE 9 — LOWER FUNNEL ════════ -->
+<div class="note">Slide 9 · Lower-Funnel Objectives — <b>Belief:</b> "Every campaign ends in a countable patient action — nothing is spent on 'brand lift'."</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">Where Every Ringgit Lands</h2>
+  <p class="kicker">Three conversion surfaces. Every campaign on every platform is optimised to one of them — if it can't be counted, it doesn't get budget.</p>
+  <div class="grid cols3">
+    <div class="callout topbar" style="padding:28px">
+      <div class="cardtitle" style="font-size:19px">Lead Forms</div>
+      <div class="bodytext" style="margin-top:8px">TikTok Instant Forms + Meta Conditional Forms with qualifying questions — procedure interest, timeline, area. The lead arrives <b>pre-scored</b>, so your team calls the hottest first.</div>
+      <div class="num" style="font-weight:700;font-size:14px;color:var(--blue-deep);margin-top:14px">Auto-synced to sales tracker in &lt; 5 min</div>
+    </div>
+    <div class="callout topbar t-teal" style="padding:28px">
+      <div class="cardtitle" style="font-size:19px">Instant Messages</div>
+      <div class="bodytext" style="margin-top:8px">TikTok IM ads + Click-to-WhatsApp. The patient starts a conversation at the exact moment of intent — mid-livestream, mid-scroll — and lands with your front desk, not in a comments section.</div>
+      <div class="num" style="font-weight:700;font-size:14px;color:var(--blue-deep);margin-top:14px">Response-time SLA agreed with sales team</div>
+    </div>
+    <div class="callout topbar t-purple" style="padding:28px">
+      <div class="cardtitle" style="font-size:19px">Website Conversions</div>
+      <div class="bodytext" style="margin-top:8px">A conversion-built LASIK landing page — price anchor, livestream proof, booking CTA — tracked with TikTok Events API, Meta CAPI and GA4 so every booking is attributed to its source.</div>
+      <div class="num" style="font-weight:700;font-size:14px;color:var(--blue-deep);margin-top:14px">Google's high-intent searchers land here</div>
+    </div>
+  </div>
+  <div class="band">Awareness &amp; traffic objectives earn budget only after the lower funnel is saturated — not before, and never by default</div>
+</section>
+
+<!-- ════════ SLIDE 10 — ROI MODEL ════════ -->
+<div class="note">Slide 10 · The ROI Model — <b>Belief:</b> "The economics work even in the conservative case — and the assumptions are on the table."</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">The ROI Model</h2>
+  <p class="kicker">Steady-state month (from Month 3), at RM 9,000 media + RM 3,000 management. Assumptions shown, not hidden — re-anchored to your conversion data after Month 1.</p>
+  <table class="dt num">
+    <tr><th style="width:34%">Funnel stage</th><th>Conservative</th><th>Base</th><th>Strong</th></tr>
+    <tr><td class="head">Leads / month (all 3 platforms)</td><td>200</td><td>240</td><td>275</td></tr>
+    <tr><td class="head">Blended cost per lead</td><td>RM 45</td><td>RM 38</td><td>RM 33</td></tr>
+    <tr><td class="head">Lead → appointment rate</td><td>25%</td><td>30%</td><td>35%</td></tr>
+    <tr><td class="head">Appointments booked / month</td><td class="k">50</td><td class="k">72</td><td class="k">96</td></tr>
+    <tr><td class="head">Cost per appointment</td><td>RM 180</td><td>RM 125</td><td>RM 94</td></tr>
+    <tr><td class="head">Procedures (at 30% consult close — your rate applied post-NDA)</td><td>15</td><td>21</td><td>29</td></tr>
+    <tr><td class="head">Est. procedure revenue (RM 5,000 avg — both-eyes refractive)</td><td>RM 75,000</td><td>RM 105,000</td><td>RM 145,000</td></tr>
+    <tr><td class="head">Return on total monthly cost (RM 12,000)</td><td class="k">6.3×</td><td class="k">8.8×</td><td class="k">12.1×</td></tr>
+  </table>
+  <div class="band num">Even the conservative case pays for the programme 6× over — and excludes iSpa, aesthetics, and lifetime patient value entirely</div>
+</section>
+
+<!-- ════════ SLIDE 11 — SALES FEEDBACK LOOP ════════ -->
+<div class="note">Slide 11 · The Sales Feedback Loop — <b>Belief:</b> "Toggle optimises to appointments — most agencies stop at form submit."</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">The Sales Feedback Loop</h2>
+  <p class="kicker">Most agencies stop at form submit. We close the loop with your sales team — so the ad platforms learn who actually books, and lead quality compounds monthly.</p>
+  <div style="display:flex;gap:10px;align-items:stretch">
+    <div class="card topbar" style="flex:1"><span class="ncircle num">01</span><div style="font-weight:700;font-size:15px;margin:12px 0 8px">Lead captured &amp; tagged</div><div class="bodytext" style="font-size:13px">Every form, IM and website booking auto-logs into a <b>shared sales tracker</b> — stamped with source, campaign, creative and qualifying answers.</div></div>
+    <div style="align-self:center;color:var(--blue);font-weight:800;font-size:20px">→</div>
+    <div class="card topbar t-teal" style="flex:1"><span class="ncircle num">02</span><div style="font-weight:700;font-size:15px;margin:12px 0 8px">Sales team works the lead</div><div class="bodytext" style="font-size:13px">Front desk updates one field: contacted → booked → showed → converted, or lost + reason. Thirty seconds per lead, no new software to learn.</div></div>
+    <div style="align-self:center;color:var(--blue);font-weight:800;font-size:20px">→</div>
+    <div class="card topbar t-purple" style="flex:1"><span class="ncircle num">03</span><div style="font-weight:700;font-size:15px;margin:12px 0 8px">Weekly feedback sync</div><div class="bodytext" style="font-size:13px">15-minute Toggle × sales review: which sources send patients, which send tyre-kickers, what objections repeat. Sales intel becomes targeting decisions the same week.</div></div>
+    <div style="align-self:center;color:var(--blue);font-weight:800;font-size:20px">→</div>
+    <div class="card topbar t-pink" style="flex:1"><span class="ncircle num">04</span><div style="font-weight:700;font-size:15px;margin:12px 0 8px">Platforms retrain on bookings</div><div class="bodytext" style="font-size:13px">Appointment &amp; conversion events fire back via TikTok Events API, Meta CAPI and Google enhanced conversions — the algorithms hunt patients, not form-fillers.</div></div>
+  </div>
+  <div class="band num" style="font-size:16px">Result: from week 6 we optimise to cost-per-appointment, not cost-per-lead — CPL stops being a vanity number</div>
+</section>
+
+<!-- ════════ SLIDE 12 — TESTING FRAMEWORK ════════ -->
+<div class="note">Slide 12 · Testing Framework — <b>Belief:</b> "Optimisation is a standing cadence fed by sales data, not a promise."</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">What We Test — and How Sales Data Steers It</h2>
+  <p class="kicker">Six live test tracks, refreshed on a fixed cadence. The weekly sales sync decides what enters the queue — we don't guess, and we don't set-and-forget.</p>
+  <div class="grid cols3" style="gap:14px">
+    <div class="callout" style="display:flex;gap:14px;padding:18px"><span class="ncircle num">01</span><div><div style="font-weight:700;font-size:14.5px">Creative Hook</div><div class="bodytext" style="font-size:13px">Live-surgery clip vs patient reaction vs doctor explainer vs price-reveal</div></div></div>
+    <div class="callout" style="display:flex;gap:14px;padding:18px"><span class="ncircle num">02</span><div><div style="font-weight:700;font-size:14.5px">Offer</div><div class="bodytext" style="font-size:13px">Free eye assessment vs RM2,500/eye price anchor vs livestream-viewer exclusive</div></div></div>
+    <div class="callout" style="display:flex;gap:14px;padding:18px"><span class="ncircle num">03</span><div><div style="font-weight:700;font-size:14.5px">Form Depth</div><div class="bodytext" style="font-size:13px">3-field speed vs 5-field qualified vs conditional-logic scoring</div></div></div>
+    <div class="callout" style="display:flex;gap:14px;padding:18px"><span class="ncircle num">04</span><div><div style="font-weight:700;font-size:14.5px">Destination</div><div class="bodytext" style="font-size:13px">Instant form vs WhatsApp conversation vs landing page — per audience temperature</div></div></div>
+    <div class="callout" style="display:flex;gap:14px;padding:18px"><span class="ncircle num">05</span><div><div style="font-weight:700;font-size:14.5px">Audience</div><div class="bodytext" style="font-size:13px">Livestream viewers vs interest segments vs lookalikes vs competitor-engaged</div></div></div>
+    <div class="callout" style="display:flex;gap:14px;padding:18px"><span class="ncircle num">06</span><div><div style="font-weight:700;font-size:14.5px">Language &amp; Angle</div><div class="bodytext" style="font-size:13px">BM vs EN vs CN creative — including the Chinese-market segment your smaller competitors chase</div></div></div>
+  </div>
+  <div class="card" style="margin-top:18px;padding:18px 22px">
+    <div style="font-weight:700;font-size:15px;color:var(--blue-deep);margin-bottom:10px">Optimisation Cadence</div>
+    <div class="grid cols4" style="gap:12px">
+      <div style="background:#fff;border-radius:8px;padding:12px 14px"><div style="font-weight:700;font-size:13px;color:var(--blue-deep)">Daily</div><div class="bodytext num" style="font-size:13px">Budget rebalancing; pause underperformers (CTR &lt; 1%, CPL &gt; 50% over target)</div></div>
+      <div style="background:#fff;border-radius:8px;padding:12px 14px"><div style="font-weight:700;font-size:13px;color:var(--blue-deep)">Weekly</div><div class="bodytext" style="font-size:13px">Sales sync feeds lead-quality verdicts; creative refresh on bottom 30%</div></div>
+      <div style="background:#fff;border-radius:8px;padding:12px 14px"><div style="font-weight:700;font-size:13px;color:var(--blue-deep)">Bi-Weekly</div><div class="bodytext" style="font-size:13px">New hooks into rotation; livestream schedule aligned to ad calendar</div></div>
+      <div style="background:#fff;border-radius:8px;padding:12px 14px"><div style="font-weight:700;font-size:13px;color:var(--blue-deep)">Monthly</div><div class="bodytext" style="font-size:13px">CPL → cost-per-appointment recalibration; channel mix rebalance; report + review call</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ SLIDE 13 — KPIs ════════ -->
+<div class="note">Slide 13 · KPIs &amp; Measurement — <b>Belief:</b> "We will know if this is working — by numbers we can hold them to."</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">KPIs &amp; Measurement</h2>
+  <p class="kicker">Tracked against appointments — not traffic. Targets below are steady-state (Month 3+); Month-1 baseline locks the final numbers.</p>
+  <div class="grid cols4" style="gap:20px">
+    <div class="callout"><div style="font-weight:700;font-size:14px">Lead Volume</div><div class="stat num inkstat" style="font-size:29px;margin:10px 0 8px">200–275 / mo</div><div class="bodytext" style="font-size:13px">Across TikTok, Google &amp; Meta combined</div></div>
+    <div class="callout"><div style="font-weight:700;font-size:14px">Blended CPL</div><div class="stat num inkstat" style="font-size:29px;margin:10px 0 8px">RM 33–45</div><div class="bodytext num" style="font-size:13px">TikTok RM 25–35 · Meta &lt; RM 50 · Google &lt; RM 90</div></div>
+    <div class="callout"><div style="font-weight:700;font-size:14px">Lead → Appointment</div><div class="stat num" style="font-size:29px;margin:10px 0 8px">≥ 25%</div><div class="bodytext" style="font-size:13px">The conversion rate this whole engine is built around</div></div>
+    <div class="callout"><div style="font-weight:700;font-size:14px">Appointments</div><div class="stat num inkstat" style="font-size:29px;margin:10px 0 8px">55–90 / mo</div><div class="bodytext" style="font-size:13px">The number that doubles your online patient volume</div></div>
+    <div class="callout"><div style="font-weight:700;font-size:14px">Cost / Appointment</div><div class="stat num inkstat" style="font-size:29px;margin:10px 0 8px">&lt; RM 150</div><div class="bodytext" style="font-size:13px">North-star efficiency metric from week 6</div></div>
+    <div class="callout"><div style="font-weight:700;font-size:14px">First Response Time</div><div class="stat num inkstat" style="font-size:29px;margin:10px 0 8px">&lt; 15 min</div><div class="bodytext" style="font-size:13px">Sales-side SLA — benchmarked before we spend; leads decay by the hour</div></div>
+    <div class="callout"><div style="font-weight:700;font-size:14px">Show-Up Rate</div><div class="stat num inkstat" style="font-size:29px;margin:10px 0 8px">Tracked</div><div class="bodytext" style="font-size:13px">Booked vs showed — reminder sequences close the gap</div></div>
+    <div class="callout"><div style="font-weight:700;font-size:14px">Appointment → Surgery</div><div class="stat num" style="font-size:29px;margin:10px 0 8px">Your data</div><div class="bodytext" style="font-size:13px">Clinic close rate joined to ad source — the true ROI line, post-NDA</div></div>
+  </div>
+  <div class="band">Reporting: shared live tracker (daily) + written read-out (weekly) + strategic review call (monthly)</div>
+</section>
+
+<!-- ════════ SLIDE 14 — ROADMAP ════════ -->
+<div class="note">Slide 14 · The 6-Month Roadmap — <b>Belief:</b> "Every month has a named job — this is a build sequence, not a retainer drift."</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">The 6-Month Roadmap</h2>
+  <p class="kicker">Build → launch → calibrate → scale. Months 1–2 create the machine; months 3–6 are where the compounding happens — the reason this is a 6-month partnership, not 3.</p>
+  <div class="grid cols3" style="gap:14px">
+    <div class="card topbar" style="padding:18px"><div class="cardtitle num">Month 1 · Foundation</div><ul class="b"><li>NDA → GSC + analytics access → traffic forecast &amp; baseline locked</li><li>LIVE-ads whitelisting request via Marcus (week 1 — lead time matters)</li><li>Tracking install, sales tracker live, landing page built, campaigns staged</li></ul></div>
+    <div class="card topbar t-teal" style="padding:18px"><div class="cardtitle num">Month 2 · Launch</div><ul class="b"><li>TikTok lead + IM campaigns and Google Search go live</li><li>Meta retargeting starts as pixels populate</li><li>First leads flow; weekly sales sync begins; SLA measured</li></ul></div>
+    <div class="card topbar t-purple" style="padding:18px"><div class="cardtitle num">Month 3 · Calibrate</div><ul class="b"><li>LIVE stream ads live (post-whitelisting)</li><li>First CPL → cost-per-appointment calibration with real close data</li><li>Doubling target confirmed as a hard monthly number</li></ul></div>
+    <div class="card topbar t-orange" style="padding:18px"><div class="cardtitle num">Month 4 · Optimise</div><ul class="b"><li>Budget shifts hard to winning creative × audience × offer combos</li><li>Retargeting pools mature; lookalikes from converted patients</li><li>Landing page CRO from real session data</li></ul></div>
+    <div class="card topbar t-pink" style="padding:18px"><div class="cardtitle num">Month 5 · Scale</div><ul class="b"><li>Media budget scales (RM 9K → up to RM 15K) only where cost-per-appointment holds</li><li>Keyword + audience expansion; CN-market creative test</li><li>Livestream calendar aligned with ad pushes</li></ul></div>
+    <div class="card topbar t-slate" style="padding:18px"><div class="cardtitle num">Month 6 · Prove &amp; Plan</div><ul class="b"><li>Full-funnel report: spend → leads → appointments → surgeries, in ringgit</li><li>Playbook documented — the system is yours, not a black box</li><li>Renewal decision with data on the table; iSpa + aesthetics expansion scoped</li></ul></div>
+  </div>
+</section>
+
+<!-- ════════ SLIDE 15 — INVESTMENT ════════ -->
+<div class="note">Slide 15 · Investment — <b>Belief:</b> "RM3K/month buys a senior team and a system — and we only scale spend when we've proven it."</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">Investment</h2>
+  <p class="kicker">One fixed fee. Media paid by you, into your own ad accounts — you own the data, the audiences, and the accounts, always.</p>
+  <div class="grid cols3">
+    <div class="card topbar" style="text-align:center;padding:28px"><div class="stat num" style="font-size:40px">RM 3,000</div><div class="statlabel">per month, ex-SST</div><div class="statcap">End-to-end campaign management · fixed for the full term · no setup fee</div></div>
+    <div class="card topbar t-teal" style="text-align:center;padding:28px"><div class="stat num inkstat" style="font-size:40px">6 months</div><div class="statlabel">partnership term</div><div class="statcap">Months 1–2 build and learn; 3–6 compound — a 3-month window would stop at the expensive part</div></div>
+    <div class="card topbar t-slate" style="text-align:center;padding:28px"><div class="stat num inkstat" style="font-size:40px">RM 9–15K</div><div class="statlabel">media / month, your accounts</div><div class="statcap">Start at RM 9K; scales only when cost-per-appointment proves it — exactly the ROI-first rule you asked for</div></div>
+  </div>
+  <table class="dt" style="margin-top:20px">
+    <tr><th style="width:55%">Included in the retainer, every month</th><th>Not included</th></tr>
+    <tr>
+      <td>Campaign management across TikTok, Google &amp; Meta · LIVE-ads whitelisting &amp; account-transition support (with Marcus) · ad versioning of your existing content (cutdowns, captions, CTAs, KKLIU vetting) · landing page &amp; tracking stack · shared sales tracker + weekly sales sync · weekly read-out + monthly review</td>
+      <td>Net-new content production — your content engine already works and stays yours · media spend (billed by platforms directly to your accounts, 100% transparent)</td>
+    </tr>
+  </table>
+  <div class="band num">Total 6-month management fee: RM 18,000 — recovered by ~4 procedures. The conservative model books 15 per month.</div>
+</section>
+
+<!-- ════════ SLIDE 16 — NEXT STEPS / THANK YOU ════════ -->
+<div class="note">Slide 16 · Next Steps — <b>Belief:</b> "Saying yes is operationally easy, and a named senior operator picks up when I call."</div>
+<section class="slide">
+  <div class="wmk"><svg viewBox="0 0 1432 392"><use href="#wm"/></svg></div>
+  <div style="display:flex;gap:56px;margin-top:64px">
+    <div style="flex:1.2">
+      <div style="font-size:46px;font-weight:800;color:var(--blue);line-height:1.1;margin-bottom:28px">Thank You</div>
+      <div style="display:flex;gap:14px;margin-bottom:16px"><span class="ncircle num">01</span><div><div style="font-weight:700;font-size:15px">Align today</div><div class="bodytext" style="font-size:13.5px">Confirm scope, media budget comfort zone, and the doubling-target framing.</div></div></div>
+      <div style="display:flex;gap:14px;margin-bottom:16px"><span class="ncircle num">02</span><div><div style="font-weight:700;font-size:15px">Sign NDA → share data</div><div class="bodytext" style="font-size:13.5px">GSC + analytics + conversion records unlock the forecast and lock the baseline.</div></div></div>
+      <div style="display:flex;gap:14px;margin-bottom:16px"><span class="ncircle num">03</span><div><div style="font-weight:700;font-size:15px">Connect Marcus on whitelisting</div><div class="bodytext" style="font-size:13.5px">LIVE-ads eligibility request goes to the TikTok account manager in week 1 — longest lead-time item, so it starts first.</div></div></div>
+      <div style="display:flex;gap:14px"><span class="ncircle num">04</span><div><div style="font-weight:700;font-size:15px">Kickoff within 2 weeks</div><div class="bodytext" style="font-size:13.5px">Campaigns live in Month 2. First appointment report 6 weeks after kickoff.</div></div></div>
+    </div>
+    <div style="flex:1;position:relative">
+      <svg class="iso" viewBox="-150 -20 480 320" style="position:absolute;right:0;top:-10px;width:400px">
+        <g transform="translate(0,40)">
+          <g transform="matrix(0.866,0.5,-0.866,0.5,0,0)"><rect x="0" y="0" width="260" height="150" rx="60"/><rect x="34" y="34" width="192" height="82" rx="41"/></g>
+        </g>
+        <g transform="translate(168,52)">
+          <polygon points="0,-46 39.8,-23 0,0 -39.8,-23"/>
+          <polygon points="39.8,23 0,46 0,0 39.8,-23"/>
+          <polygon class="fill" points="-39.8,23 0,46 0,0 -39.8,-23"/>
+        </g>
+      </svg>
+      <div style="position:absolute;left:0;bottom:0">
+        <div style="font-weight:700;font-size:18px">Yi Yang Tee <span style="font-weight:400;color:var(--body)">— Strategy Lead</span></div>
+        <div style="font-weight:700;font-size:16px;color:var(--blue);margin-top:2px">yiyang@toggle.solutions</div>
+        <div style="font-weight:700;font-size:18px;margin-top:14px">Viknesh <span style="font-weight:400;color:var(--body)">— Business Development Director</span></div>
+        <div class="num" style="font-weight:700;font-size:16px;color:var(--blue);margin-top:2px">(+60) 125 688 681</div>
+        <div style="font-weight:700;font-size:16px;color:var(--blue);margin-top:14px">toggle.solutions</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+</body>
+</html>
