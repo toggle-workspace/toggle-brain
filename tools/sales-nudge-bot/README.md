@@ -12,7 +12,9 @@ tracker, and lets them update it in a few taps — no spreadsheet hunting.
 ## What it does
 
 1. **Detects staleness** — weekly (Sunday ~7am KL), finds leads untouched ≥ N days
-   (or with a blank contact date), grouped by PIC, skipping parked stages.
+   (or with a blank contact date), grouped by PIC. Only leads in a stage on the
+   **nudge allowlist** (`NUDGE_STAGES` — `Blocked`, `Not Pitched`, `Pitch In Progress`)
+   are chased; `Active`, `Dead`, and `Closed` are left alone.
 2. **Nudges, tappably** — DMs each PIC their stale leads. One tap sets the stage,
    one tap warm/cold, an optional typed note. Every interaction **stamps
    `Last Contact Date` = today** — which alone fixes most of the staleness.
@@ -24,13 +26,19 @@ tracker, and lets them update it in a few taps — no spreadsheet hunting.
    (client name, PIC, notes) in a few taps, straight from their phone after a meeting.
    The assigned PIC gets an instant Telegram ping (if they're registered and weren't
    the one who added it).
+6. **Updates on demand** — a PIC sends `/update` any time (not just when nudged) to
+   pick *any* of their leads and change stage/status or add a note. The list pages
+   with **◀ Back / More ▶**, and typing a name (or `/update <name>`) filters it — so
+   even a PIC with dozens of leads can reach every one.
 
 ## The flow
 
 ```
-📋 Butterfly — stage: In progress · last touch 21d ago
+📋 Butterfly — stage: Pitch In Progress · last touch 21d ago
    What's the stage now?
-   [ Not started ][ In progress ][ Blocked ][ Completed ]
+   [ Not Pitched ][ Pitch In Progress ]
+   [ Blocked ][ Active ]
+   [ Dead ][ Closed ]
    [ 💤 Snooze 7d ][ 🔕 Not mine ]
 → tap Blocked
 📋 Butterfly — Stage → Blocked ✅   Warm or cold?
@@ -50,6 +58,26 @@ tracker, and lets them update it in a few taps — no spreadsheet hunting.
 → tap Jordan
 🆕 Acme Sdn Bhd — PIC → Jordan ✅   Add a note (or /skip):
 → "met at expo, wants Q3 proposal"   → Added ✅
+```
+
+**Updating a lead any time** (`/update`):
+
+```
+🛠 Update a lead — tap one of yours:   (1–12 of 40 · ◀ Back / More ▶ to page)
+   [ Butterfly · Pitch In Progress ]
+   [ Acme Sdn Bhd · Not Pitched ]
+   …
+   [ ◀ Back ][ More ▶ ]               (or just type a name to filter)
+→ tap Butterfly
+📋 Butterfly — stage: Pitch In Progress · status: Warm · last touch 6d ago
+   [ Not Pitched ][ Pitch In Progress ]
+   [ Blocked ][ Active ]
+   [ Dead ][ Closed ]
+   [ Warm ][ Cold ]
+   [ 📝 Add note ][ 💤 Snooze 7d ]
+→ tap 📝 Add note
+📋 Butterfly — 📝 Type a note — just reply, or /skip.
+→ "sent revised quote, awaiting sign-off"   → Note saved ✅
 ```
 
 ## Transport — webhook via a Cloudflare Worker (polling = fallback)
@@ -83,8 +111,10 @@ during any gap, so nothing is lost.
 
 ## Design choices worth knowing
 
-- **Source of truth stays the sheet.** The bot is a write *path*, not a second
-  database. It only touches `Stage`, `Lead Status`, `Last Contact Date`, `Updates`.
+- **Source of truth stays the sheet.** The bot reads/writes the **`Client - Master
+  Sheet`** tab (set by `SHEET_GID` in `Config.gs`). It is a write *path*, not a second
+  database — it only touches `Stage`, `Lead Status`, `Last Contact Date`, and
+  `Latest Correspondance/Updates`, plus its own `BotID` column.
 - **Secrets live in Script Properties**, never in these files — safe to commit.
 - **Webhook fails closed at both hops.** Telegram → Worker is guarded by a
   `secret_token` header — the Worker rejects anything without it (and won't forward an

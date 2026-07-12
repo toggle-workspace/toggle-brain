@@ -82,6 +82,8 @@ function handleMessage_(msg) {
   if (text === '/skip') return handleSkip_(chatId);
   if (text === '/stats') return handleStats_(chatId);
   if (text === '/newlead') return startNewlead_(chatId);
+  // /update [optional client filter] — pick any of your leads to update / note.
+  if (text === '/update' || text.indexOf('/update ') === 0) return startUpdate_(chatId, text.slice(7).trim());
 
   // Otherwise: a free-text reply continuing a flow we started (a note, or /newlead).
   const pending = getPending_(chatId);
@@ -91,8 +93,14 @@ function handleMessage_(msg) {
     // Empty or a stray slash mid-flow — guide instead of silently dropping it.
     return tgSendText_(chatId, 'Type the ' + newleadStepLabel_(pending.step) + ', or send /skip to stop.');
   }
-  if (text && text[0] !== '/') {
-    appendNote_(chatId, pending.botId, text);   // default / legacy 'note' flow
+  // Typing while the /update list is open re-filters it by client name — a second
+  // way to find a lead that's on a later page, without knowing the exact name.
+  if (pending.flow === 'updatelist') {
+    if (text && text[0] !== '/') return startUpdate_(chatId, text);
+    return;
+  }
+  if (pending.flow === 'note' && text && text[0] !== '/') {
+    appendNote_(chatId, pending.botId, text);
     clearPending_(chatId);
     return tgSendText_(chatId, 'Note saved on <b>' + escHtml_(pending.client) + '</b> ✅');
   }
@@ -257,6 +265,104 @@ function handleNewleadPic_(cb, chatId, messageId, idxOrNew) {
 }
 
 // ---------------------------------------------------------------------------
+// /update — pick ANY of your leads (not just stale ones) and update it:
+//   /update           -> paged list of your leads as buttons (stalest first)
+//   /update <name>     -> same, filtered to clients matching <name>
+//   ◀ Back / More ▶   -> page through the list (action 'um') — so a PIC with a
+//                         long book can reach every lead, not just the first page
+//   tap a lead (action 'up') -> the update card (stage / status / note / snooze)
+// The page position (query + offset) lives in the PEND_<chatId> store as
+// flow:'updatelist'. Per-lead PIC authorization, the stage/status/snooze writes,
+// and the note flow are the same handlers the daily nudge card uses.
+// ---------------------------------------------------------------------------
+
+function startUpdate_(chatId, query) {
+  const pic = getPicByChat_(chatId);
+  if (!pic) return tgSendText_(chatId, 'Send /start to register first, then /update.');
+  setPending_(chatId, { flow: 'updatelist', query: query || '', offset: 0 });
+  renderUpdatePage_(chatId, null); // null messageId → send a fresh message
+}
+
+/**
+ * Render (or, with a messageId, re-render in place) one page of the caller's
+ * leads. Reads the current query + offset from pending state; re-fetches the
+ * list each time so freshly-changed leads re-sort correctly. Adds ◀ Back / More ▶
+ * buttons only when there's actually another page in that direction.
+ */
+function renderUpdatePage_(chatId, messageId) {
+  const pic = getPicByChat_(chatId);
+  if (!pic) return tgSendText_(chatId, 'Send /start to register first, then /update.');
+
+  const pending = getPending_(chatId);
+  const isList = pending && pending.flow === 'updatelist';
+  const query = isList ? (pending.query || '') : '';
+  let offset = isList ? (pending.offset || 0) : 0;
+
+  const leads = getLeadsForPic_(pic, query);
+  const total = leads.length;
+  if (!total) {
+    clearPending_(chatId);
+    const msg = query
+      ? 'None of your leads match "<b>' + escHtml_(query) + '</b>". Send /update on its own to see them all.'
+      : 'You have no leads in the tracker yet. Add one with /newlead.';
+    return messageId ? tgEditText_(chatId, messageId, msg) : tgSendText_(chatId, msg);
+  }
+
+  const page = CONFIG.MAX_UPDATE_LIST;
+  if (offset >= total) offset = Math.max(0, total - page); // clamp if the list shrank
+  if (offset < 0) offset = 0;
+  const slice = leads.slice(offset, offset + page);
+
+  // One lead per row; button text is the client (+ current stage for context).
+  const rows = slice.map(l => [{ text: l.client + ' · ' + l.stage, callback_data: 'a|up|' + l.botId }]);
+  const nav = [];
+  if (offset > 0) nav.push({ text: '◀ Back', callback_data: 'a|um|prev' });
+  if (offset + page < total) nav.push({ text: 'More ▶', callback_data: 'a|um|next' });
+  if (nav.length) rows.push(nav);
+
+  const from = offset + 1, to = offset + slice.length;
+  let header = '🛠 <b>Update a lead</b> — tap one of yours:';
+  header += '\n<i>(' + from + '–' + to + ' of ' + total +
+    (query ? ' matching "' + escHtml_(query) + '"' : '') +
+    (total > page ? ' · ◀ Back / More ▶ to page' : '') + ')</i>';
+
+  setPending_(chatId, { flow: 'updatelist', query: query, offset: offset }); // persist clamped offset (+ refresh TTL)
+  if (messageId) tgEditText_(chatId, messageId, header, rows);
+  else tgSendText_(chatId, header, rows);
+}
+
+/** Header for a lead's update card: client + where it stands right now. */
+function updateCardHtml_(lead) {
+  const age = lead.days === null ? 'never contacted' : ('last touch ' + lead.days + 'd ago');
+  return '📋 <b>' + escHtml_(lead.client) + '</b>\n' +
+    'stage: <i>' + escHtml_(lead.stage) + '</i> · status: <i>' + escHtml_(lead.status) + '</i> · ' + escHtml_(age) +
+    '\n\nChange the stage or status, add a note, or snooze:';
+}
+
+/** Stage buttons chunked 2-per-row — the stage labels ("Pitch In Progress")
+ *  are too long to sit in a single row without Telegram truncating them. */
+function stageButtonRows_(botId) {
+  const rows = [];
+  const opts = CONFIG.STAGE_OPTIONS;
+  for (let i = 0; i < opts.length; i += 2) {
+    rows.push(opts.slice(i, i + 2).map(o => ({ text: o.label, callback_data: 'a|st|' + botId + '|' + o.code })));
+  }
+  return rows;
+}
+
+/** Buttons on a lead's update card. Stage/status/snooze reuse the existing
+ *  callback actions; '📝 Add note' (action 'nt') is the note-only shortcut. */
+function updateCardKeyboard_(botId) {
+  const rows = stageButtonRows_(botId);
+  rows.push(CONFIG.STATUS_OPTIONS.map(o => ({ text: o.label, callback_data: 'a|ls|' + botId + '|' + o.code })));
+  rows.push([
+    { text: '📝 Add note', callback_data: 'a|nt|' + botId },
+    { text: '💤 Snooze ' + CONFIG.SNOOZE_DAYS + 'd', callback_data: 'a|sz|' + botId },
+  ]);
+  return rows;
+}
+
+// ---------------------------------------------------------------------------
 // The tappable update flow
 // ---------------------------------------------------------------------------
 
@@ -268,7 +374,7 @@ function sendLeadNudge_(chatId, lead) {
 }
 
 function stageKeyboard_(botId) {
-  const rows = [CONFIG.STAGE_OPTIONS.map(o => ({ text: o.label, callback_data: 'a|st|' + botId + '|' + o.code }))];
+  const rows = stageButtonRows_(botId);
   rows.push([
     { text: '💤 Snooze ' + CONFIG.SNOOZE_DAYS + 'd', callback_data: 'a|sz|' + botId },
     { text: '🔕 Not mine', callback_data: 'a|nm|' + botId },
@@ -325,6 +431,17 @@ function handleCallbackInner_(cb) {
   // must be handled before the botId-based row lookup below.
   if (action === 'np') return handleNewleadPic_(cb, chatId, messageId, parts[2]);
 
+  // /update paging — parts[2] is 'prev'/'next', not a botId. Shift the offset and
+  // re-render the same message. Also handled before the botId lookup.
+  if (action === 'um') {
+    const pending = getPending_(chatId);
+    if (!pending || pending.flow !== 'updatelist') { tgAnswerCallback_(cb.id, 'Send /update again'); return; }
+    const delta = parts[2] === 'prev' ? -CONFIG.MAX_UPDATE_LIST : CONFIG.MAX_UPDATE_LIST;
+    setPending_(chatId, { flow: 'updatelist', query: pending.query || '', offset: (pending.offset || 0) + delta });
+    tgAnswerCallback_(cb.id, '');
+    return renderUpdatePage_(chatId, messageId); // re-render in place; renderUpdatePage_ clamps the offset
+  }
+
   const botId = parts[2];
   const sheet = getPipelineSheet_();
   const cols = getColumnMap_(sheet);
@@ -340,12 +457,47 @@ function handleCallbackInner_(cb) {
   const clientRaw = String(sheet.getRange(row, cols.client).getValue()).trim();
   const client = escHtml_(clientRaw);
 
+  // /update picker → open the update card for this lead (read its current state).
+  if (action === 'up') {
+    const last = parseDate_(sheet.getRange(row, cols.lastContact).getValue());
+    const lead = {
+      client: clientRaw,
+      stage: String(sheet.getRange(row, cols.stage).getValue()).trim() || '(blank)',
+      status: String(sheet.getRange(row, cols.status).getValue()).trim() || '(blank)',
+      days: last === null ? null : daysSince_(last),
+    };
+    clearPending_(chatId); // leaving the list → end the paging/filter flow
+    tgAnswerCallback_(cb.id, '');
+    tgEditText_(chatId, messageId, updateCardHtml_(lead), updateCardKeyboard_(botId));
+    return;
+  }
+
+  // Note-only shortcut (from the update card): straight to the "type a note" prompt,
+  // no stage/status change required. The reply is saved by the 'note' flow in
+  // handleMessage_ via appendNote_ (which also stamps Last Contact Date).
+  if (action === 'nt') {
+    setPendingNote_(chatId, botId, clientRaw);
+    logBot_('NOTE_PROMPT', chatId, botId, callerPic);
+    tgAnswerCallback_(cb.id, 'Type your note');
+    tgEditText_(chatId, messageId, '📋 <b>' + client + '</b>\n\n📝 Type a note — just reply, or send /skip.');
+    return;
+  }
+
   if (action === 'st') {
     const label = codeToLabel_(CONFIG.STAGE_OPTIONS, parts[3]);
     withLock_(function () { writeCell_(sheet, row, cols.stage, label); stamp_(sheet, row, cols); });
     logBot_('STAGE', chatId, botId, callerPic + ' -> ' + label);
     tgAnswerCallback_(cb.id, 'Stage: ' + label);
-    tgEditText_(chatId, messageId, '📋 <b>' + client + '</b>\nStage → <b>' + escHtml_(label) + '</b> ✅\n\nWarm or cold?', statusKeyboard_(botId));
+    // Warm/cold only means something while we're still chasing the lead. For a
+    // resolved stage (Active / Dead / Closed — anything off the nudge allowlist)
+    // skip the temperature question and go straight to an optional note, which is
+    // the natural place to capture *why* (e.g. reason lost / won).
+    if (isNudgeStage_(label)) {
+      tgEditText_(chatId, messageId, '📋 <b>' + client + '</b>\nStage → <b>' + escHtml_(label) + '</b> ✅\n\nWarm or cold?', statusKeyboard_(botId));
+    } else {
+      setPendingNote_(chatId, botId, clientRaw);
+      tgEditText_(chatId, messageId, '📋 <b>' + client + '</b>\nStage → <b>' + escHtml_(label) + '</b> ✅\n\nAdd a note (or send /skip):');
+    }
     return;
   }
   if (action === 'ls') {

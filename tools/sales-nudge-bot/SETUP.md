@@ -14,6 +14,7 @@ sales tracker, a Telegram account, and 5 minutes from each PIC to register.
    ```
    start - Register yourself
    stale - Show my stale leads now
+   update - Update any of my leads / add a note
    newlead - Add a new lead (client, PIC, notes)
    whoami - Show my chat id + name
    skip - Skip the current step
@@ -35,12 +36,15 @@ sales tracker, a Telegram account, and 5 minutes from each PIC to register.
      | `TELEGRAM_TOKEN` | the BotFather token |
      | `TELEGRAM_SECRET` | a long random string (e.g. a UUID) — guards the webhook; the Worker passes it through as `?secret=` (see §4) |
    - (If you did NOT bind to the sheet, also confirm `SHEET_ID` in `Config.gs`.)
-4. Confirm `Config.gs` → `SHEET_GID` matches the tab's `#gid=` in the sheet URL.
+4. Confirm `Config.gs` → `SHEET_GID` matches the **`Client - Master Sheet`** tab's
+   `#gid=` in the sheet URL (open that tab, copy the number after `#gid=`). The bot
+   reads/writes that tab; its `COLS` must match its header row (`Client Name`, `PIC`,
+   `Stage`, `Lead Status`, `Last Contact Date`, `Latest Correspondance/Updates`).
 
 ## 3. Initialise (2 min)
 
 1. In the editor, **Run ▸ `initBot`**. Approve the OAuth prompt (it's your own
-   script). This adds a `BotID` column to the pipeline tab and creates the hidden
+   script). This adds a `BotID` column to the `Client - Master Sheet` tab and creates the hidden
    `BotRoster` / `BotLog` tabs.
 2. **Run ▸ `previewNudge`** → View ▸ Logs. You should see each PIC and their
    stale-lead counts. No messages are sent. This proves detection works.
@@ -87,10 +91,12 @@ like. To stop: `removeTriggers`.
 ---
 
 ## Day-to-day
-- A PIC gets *"📋 Butterfly — stage? [Not started][In progress][Blocked][Completed]"*,
+- A PIC gets *"📋 Butterfly — stage? [Not Pitched][Pitch In Progress][Blocked][Active][Dead][Closed]"*,
   taps through stage → warm/cold → optional note. The sheet updates and
   **Last Contact Date is stamped to today** automatically.
 - `/stale` any time pulls their current list on demand.
+- `/update` (or `/update <name>`) lists a PIC's own leads to pick one and change
+  stage/status or add a note — the on-demand version of the Sunday nudge.
 - `/newlead` adds a brand-new lead — client name → PIC (tap or type) → note (or
   `/skip`). Any registered PIC can use it; the row lands with a fresh `BotID` and
   today's date, so the bot will nudge on it from then on.

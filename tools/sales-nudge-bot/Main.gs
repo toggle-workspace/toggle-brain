@@ -165,6 +165,17 @@ function daysSince_(date) {
 // ---------------------------------------------------------------------------
 
 /**
+ * True if `stage` is on the nudge allowlist (a lead we're still actively chasing).
+ * The single source of truth for "chase this?" — used both to filter the daily
+ * nudge and to decide whether the warm/cold question is worth asking (resolved
+ * stages like Active/Dead/Closed skip it). Case/whitespace-insensitive.
+ */
+function isNudgeStage_(stage) {
+  const want = String(stage == null ? '' : stage).trim().toLowerCase();
+  return CONFIG.NUDGE_STAGES.some(s => String(s).trim().toLowerCase() === want);
+}
+
+/**
  * Returns leads grouped by PIC name. Leads with a blank PIC are bucketed under
  * UNASSIGNED so they're surfaced, not silently dropped.
  *   { "Vik": [ {botId, client, stage, status, days, row}, ... ], "(unassigned)": [...] }
@@ -182,7 +193,6 @@ function findStaleLeadsByPic_() {
   const data = sheet.getRange(firstRow, 1, n, sheet.getLastColumn()).getValues();
   const snoozed = getSnoozeMap_();
   const now = Date.now();
-  const exclude = CONFIG.EXCLUDE_STAGES.map(s => s.toLowerCase());
 
   for (let i = 0; i < data.length; i++) {
     const get = key => data[i][cols[key] - 1];
@@ -190,7 +200,7 @@ function findStaleLeadsByPic_() {
     if (!client) continue; // blank / separator row
 
     const stage = String(get('stage')).trim();
-    if (exclude.indexOf(stage.toLowerCase()) !== -1) continue;
+    if (!isNudgeStage_(stage)) continue; // only chase allowlisted stages
 
     const botId = String(get('botId')).trim();
     if (snoozed[botId] && snoozed[botId] > now) continue;
@@ -214,6 +224,48 @@ function findStaleLeadsByPic_() {
     byPic[pic].sort((a, b) => (b.days === null ? 1e9 : b.days) - (a.days === null ? 1e9 : a.days));
   });
   return byPic;
+}
+
+/**
+ * Every lead owned by `pic` (case-insensitive PIC match) — NOT just the stale
+ * ones — for the /update picker. Optional `query` filters by client-name
+ * substring (case-insensitive). Sorted stalest-first so the leads most worth
+ * touching surface at the top of the list.
+ *   [ {botId, client, stage, status, days, row}, ... ]
+ */
+function getLeadsForPic_(pic, query) {
+  const sheet = getPipelineSheet_();
+  const cols = getColumnMap_(sheet);
+  backfillBotIds_(sheet, cols);
+
+  const firstRow = CONFIG.HEADER_ROW + 1;
+  const n = sheet.getLastRow() - CONFIG.HEADER_ROW;
+  if (n <= 0) return [];
+
+  const data = sheet.getRange(firstRow, 1, n, sheet.getLastColumn()).getValues();
+  const want = String(pic == null ? '' : pic).trim().toLowerCase();
+  const q = String(query == null ? '' : query).trim().toLowerCase();
+  const out = [];
+
+  for (let i = 0; i < data.length; i++) {
+    const get = key => data[i][cols[key] - 1];
+    const client = String(get('client')).trim();
+    if (!client) continue; // blank / separator row
+    if (String(get('pic')).trim().toLowerCase() !== want) continue;
+    if (q && client.toLowerCase().indexOf(q) === -1) continue;
+
+    const last = parseDate_(get('lastContact'));
+    out.push({
+      botId: String(get('botId')).trim(),
+      client: client,
+      stage: String(get('stage')).trim() || '(blank)',
+      status: String(get('status')).trim() || '(blank)',
+      days: last === null ? null : daysSince_(last),
+      row: firstRow + i,
+    });
+  }
+  out.sort((a, b) => (b.days === null ? 1e9 : b.days) - (a.days === null ? 1e9 : a.days));
+  return out;
 }
 
 // ---------------------------------------------------------------------------
