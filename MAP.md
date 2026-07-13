@@ -34,6 +34,7 @@ When you don't know where something lives, look here. One question per line. Kee
 - Elevator pitches? → `brain/positioning/elevator-pitches.md`
 - What makes us different? → `brain/positioning/differentiators.md`
 - Who are our competitors? → `brain/positioning/competitors.md`
+- Who is our ideal client (ICP / who to chase, who to avoid)? → `brain/positioning/icp.md`
 
 ## Case studies
 - All case studies (tagged index)? → `brain/case-studies/_index.md`
