@@ -21,6 +21,8 @@ seconds. **You can't register them for them** — each must tap `/start` once.
 > • **Sunday morning** you'll get your stale leads — tap to update stage + warm/cold,
 >   optionally add a note. That's it.
 > • Type `/stale` anytime to pull your list on demand.
+> • Type **`/update`** anytime to pick any of your leads and change its stage/status
+>   or add a note (`/update <name>` to jump to one client).
 > • Just left a meeting? Send **`/newlead`** to add a new lead (client name → PIC →
 >   note) on the spot.
 >

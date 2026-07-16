@@ -11,22 +11,26 @@ const CONFIG = {
   // The live sales tracker. Leave SHEET_ID blank to use the spreadsheet this
   // script is bound to (recommended: bind the script to the sheet).
   SHEET_ID: '1ZZpTXjnH-rq5pnKIojjwA_9Jf8EoLHXNvPWJQ7exUdI',
-  SHEET_GID: 967882421,          // the active-pipeline tab (from the sheet URL #gid=)
+  // The "Client - Master Sheet" tab (gid confirmed 2026-07-13). If the tab is ever
+  // moved/recreated its gid changes — copy the new number from after #gid= in the
+  // URL. A wrong gid fails loudly ("No tab with gid …") rather than reading blindly.
+  SHEET_GID: 54720587,           // Client - Master Sheet
   HEADER_ROW: 1,                 // row that holds the column titles
 
   // --- Column titles, matched by HEADER TEXT (not position) so reordering
   //     columns in the sheet won't break the bot. Must match the header cells
-  //     verbatim (case-insensitive, trimmed). ---
+  //     verbatim (case-insensitive, trimmed). Only the columns the bot actually
+  //     reads or writes are listed — every one here MUST exist or getColumnMap_
+  //     throws, so we deliberately keep this set minimal (columns the bot never
+  //     touches, e.g. Lead Source / Client Contact, are intentionally omitted so
+  //     renaming them can't break the bot). ---
   COLS: {
     client:      'Client Name',
     pic:         'PIC',
-    source:      'Lead Source',
     stage:       'Stage',
     status:      'Lead Status',
-    contact:     'Contact Details',
-    clientInfo:  'Client Info/Requests',
     lastContact: 'Last Contact Date',
-    updates:     'Updates',
+    updates:     'Latest Correspondance/Updates', // note the sheet's spelling
   },
 
   // A stable per-row key the bot writes into its own column so button taps keep
@@ -35,17 +39,26 @@ const CONFIG = {
 
   // --- Staleness rules ---
   STALE_DAYS: 14,                // a lead is "stale" if untouched this many days
-  // Stages we never nudge about (deal is parked/done). Compared case-insensitively.
-  EXCLUDE_STAGES: ['Completed'],
+  // Only leads in one of these stages get nudged (an ALLOWLIST). Anything else —
+  // Active (won/live client), Dead, Closed, or any new stage added later — is
+  // treated as "don't chase". Compared case-insensitively; must match the labels
+  // in STAGE_OPTIONS / the sheet's Stage column verbatim (trimmed).
+  NUDGE_STAGES: ['Blocked', 'Not Pitched', 'Pitch In Progress'],
   // Treat a blank Last Contact Date as stale (true) or skip it (false).
   BLANK_DATE_IS_STALE: true,
   // Max nudge messages to send to one PIC per run (avoid a 20-message dump).
   MAX_NUDGES_PER_PIC: 6,
 
+  // --- /update ---
+  // Max leads shown as tappable buttons by /update (Telegram caps message size,
+  // and a 40-button wall is unusable). If a PIC has more, they narrow with
+  // `/update <name>`.
+  MAX_UPDATE_LIST: 12,
+
   // --- /newlead defaults ---
   // Stage written to a row created via the /newlead command (must match one of
-  // STAGE_OPTIONS' labels so later nudges treat it consistently).
-  NEWLEAD_STAGE: 'Not started',
+  // STAGE_OPTIONS' labels, and be in NUDGE_STAGES, so the new lead gets chased).
+  NEWLEAD_STAGE: 'Not Pitched',
 
   // --- Date handling ---
   // The sheet stores dates as text like "05/01/2026" (DD/MM/YYYY). The bot reads
@@ -55,11 +68,16 @@ const CONFIG = {
 
   // --- Button options (label = what's written to the sheet; code = short token
   //     used in Telegram callback_data, which has a 64-byte limit). ---
+  // Labels are written verbatim into the sheet's Stage column and MUST match the
+  // stage vocabulary the team uses there. codes are short, stable tokens used in
+  // Telegram callback_data (64-byte cap) — never reuse a code for a different stage.
   STAGE_OPTIONS: [
-    { code: 'ns', label: 'Not started' },
-    { code: 'ip', label: 'In progress' },
+    { code: 'np', label: 'Not Pitched' },
+    { code: 'pi', label: 'Pitch In Progress' },
     { code: 'bl', label: 'Blocked' },
-    { code: 'cp', label: 'Completed' },
+    { code: 'ac', label: 'Active' },
+    { code: 'dd', label: 'Dead' },
+    { code: 'cl', label: 'Closed' },
   ],
   STATUS_OPTIONS: [
     { code: 'w', label: 'Warm' },

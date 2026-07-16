@@ -147,7 +147,7 @@
     <p>Each Sunday morning the bot sends you the leads that have gone quiet. For each one:</p>
     <ol>
       <li>It asks <b>"What's the stage now?"</b> → tap one:
-        <div class="pills"><span class="pill">Not started</span><span class="pill">In progress</span><span class="pill">Blocked</span><span class="pill">Completed</span></div>
+        <div class="pills"><span class="pill">Not Pitched</span><span class="pill">Pitch In Progress</span><span class="pill">Blocked</span><span class="pill">Active</span><span class="pill">Dead</span><span class="pill">Closed</span></div>
       </li>
       <li>Then <b>"Warm or cold?"</b> → tap <b>Warm</b> or <b>Cold</b> (or <b>Skip</b>).</li>
       <li>Then <b>"Add a note?"</b> → type a quick note (e.g. <i>"client wants to revisit after Raya"</i>), or send <span class="cmd">/skip</span>.</li>
@@ -174,12 +174,26 @@
   </section>
 
   <section class="card">
+    <h2><span class="num">4</span> Update a lead anytime <span style="font-weight:400;color:var(--muted);font-size:15px;">(don't wait to be nudged)</span></h2>
+    <p>Want to update a lead or jot a note right now? In the chat with the bot:</p>
+    <ol class="lead-list">
+      <li>Type <span class="cmd">/update</span> → the bot lists <b>your</b> leads as buttons.</li>
+      <li><b>Tap the lead</b> you want. Long list? Use <b>◀ Back / More ▶</b> to page through all of them, or just type a name (e.g. <i>acme</i>) to filter.</li>
+      <li>On the lead's card, tap to set the <b>stage</b>, mark it <b>Warm / Cold</b>, or hit <b>📝 Add note</b> to just type a note.</li>
+      <li>Done — the change is saved and the lead is dated today.</li>
+    </ol>
+    <div class="note tip">You only ever see and edit <b>your own</b> leads. Same buttons as the
+      Sunday nudge — this is just the way to reach them on your own schedule.</div>
+  </section>
+
+  <section class="card">
     <h2>Handy commands</h2>
     <p>Type these in the chat anytime:</p>
     <table>
       <tr><th>Type this</th><th>What it does</th></tr>
       <tr><td><span class="cmd">/start</span></td><td>Register, or re-pick your name</td></tr>
       <tr><td><span class="cmd">/stale</span></td><td>Show my quiet leads right now (don't wait for Sunday)</td></tr>
+      <tr><td><span class="cmd">/update</span></td><td>Pick any of my leads to update or add a note (<span class="cmd">/update &lt;name&gt;</span> to filter)</td></tr>
       <tr><td><span class="cmd">/newlead</span></td><td>Add a new lead (company → PIC → note)</td></tr>
       <tr><td><span class="cmd">/skip</span></td><td>Skip the current step / stop</td></tr>
       <tr><td><span class="cmd">/whoami</span></td><td>Show who the bot thinks you are</td></tr>

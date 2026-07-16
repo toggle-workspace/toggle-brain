@@ -6,6 +6,10 @@ The Toggle Solutions internal knowledge repository. This file routes Claude (and
 
 ---
 
+## Writing standards (binding, read first)
+
+**Before writing ANY artifact a human will read** (documents, ad copy, reports, proposals, emails, HTML files, social posts, video scripts, client deliverables, anything), read and obey **`brain/voice/writing-standards.md`**. It is binding for every generator, skill, and ad-hoc request in this repo. Three rules from it that are never waived: write proper full sentences; use American/Southeast Asian vocabulary; NEVER write "--" or an em dash. Its pre-flight checklist runs before any written output is delivered.
+
 ## The five zones (hard separation, never mix)
 
 | Zone | What it holds | Rule |
