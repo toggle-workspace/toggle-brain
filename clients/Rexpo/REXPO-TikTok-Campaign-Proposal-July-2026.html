@@ -1,0 +1,349 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>REXPO · TikTok Performance Campaign Proposal · Toggle Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#4A7BF7; --ink:#0F0F0F; --navy:#0A1224; --card:#F2F3F6; --callout:#DDE5FE;
+  --body:#4A4A4A; --caption:#9AA0A8; --struck:#6B7280; --teal:#2ECC9B; --pink:#F59EC9;
+  --purple:#8E6BE6; --orange:#F28B4C; --slate:#2C2C36; --paper:#FAFAFA; --border:#E4E6EE; --blue-deep:#3056C9;
+  --red:#E05252;
+}
+*{box-sizing:border-box}
+body{background:#E9EBF1;margin:0;padding:40px 0 80px;font-family:"Inter Tight",Inter,-apple-system,"Segoe UI",sans-serif;color:var(--ink)}
+.dochead{max-width:1280px;margin:0 auto 12px;font-size:14px;color:#555}
+.dochead strong{color:var(--ink)}
+.note{max-width:1280px;margin:36px auto 10px;font-size:13px;font-weight:500;color:#667}
+.note b{color:var(--blue)}
+.slide{width:1280px;height:720px;background:#fff;margin:0 auto;position:relative;padding:56px 64px;box-shadow:0 2px 18px rgba(10,18,36,.14);overflow:hidden}
+.vwrap{display:flex;flex-direction:column;justify-content:center;height:100%;padding-bottom:64px}
+.vwrap.noband{padding-bottom:0}
+.num{font-variant-numeric:tabular-nums}
+.watermark{position:absolute;top:30px;right:64px;font-size:13px;font-weight:500;color:var(--caption);letter-spacing:.02em}
+.eyebrow{font-size:13px;font-weight:800;letter-spacing:.08em;margin:0 0 10px}
+.eyebrow.crit{color:var(--orange)}
+.eyebrow.win{color:var(--teal)}
+.eyebrow.pil{color:var(--purple)}
+.h1{font-size:36px;font-weight:800;color:var(--blue);margin:0 0 8px;line-height:1.08}
+.kicker{font-size:15px;color:var(--body);margin:0 0 26px;max-width:none;line-height:1.5}
+.band{position:absolute;left:64px;right:64px;bottom:44px;background:var(--blue-deep);color:#fff;font-weight:700;font-size:14.5px;text-align:center;border-radius:8px;padding:13px 18px}
+.grid{display:grid;gap:20px}
+.cols2{grid-template-columns:1fr 1fr}.cols3{grid-template-columns:1fr 1fr 1fr}.cols4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--card);border-radius:10px;padding:24px}
+.callout{background:var(--callout);border-radius:10px;padding:24px}
+.topbar{position:relative;padding-top:30px}
+.topbar::before{content:"";position:absolute;top:0;left:0;right:0;height:7px;border-radius:10px 10px 0 0;background:var(--blue)}
+.topbar.t-teal::before{background:var(--teal)}.topbar.t-pink::before{background:var(--pink)}
+.topbar.t-purple::before{background:var(--purple)}.topbar.t-slate::before{background:var(--slate)}
+.topbar.t-orange::before{background:var(--orange)}.topbar.t-red::before{background:var(--red)}
+.stat{font-size:44px;font-weight:800;color:var(--blue);line-height:1}
+.stat.inkstat{color:var(--ink)}
+.statlabel{font-size:15px;font-weight:700;color:var(--ink);margin-top:12px}
+.statcap{font-size:13.5px;color:var(--body);margin-top:6px;line-height:1.45}
+.cardtitle{font-size:17px;font-weight:700;margin:0 0 6px}
+.bodytext{font-size:14px;color:var(--body);line-height:1.5}
+ul.b{margin:12px 0 0;padding:0;list-style:none}
+ul.b li{font-size:13.5px;color:var(--body);line-height:1.45;padding:5px 0 5px 16px;position:relative}
+ul.b li::before{content:"";position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:50%;background:var(--blue)}
+.acc-teal ul.b li::before{background:var(--teal)}.acc-pink ul.b li::before{background:var(--pink)}
+.acc-slate ul.b li::before{background:var(--slate)}.acc-orange ul.b li::before{background:var(--orange)}
+.acc-red ul.b li::before{background:var(--red)}.acc-purple ul.b li::before{background:var(--purple)}
+.seal{font-weight:700;letter-spacing:.01em}
+.seal .br{font-weight:400}
+table.dt{width:100%;border-collapse:collapse;font-size:13.5px}
+table.dt th{background:var(--blue-deep);color:#fff;font-weight:700;text-align:left;padding:11px 14px}
+table.dt td{padding:11px 14px;color:var(--body);vertical-align:top}
+table.dt tr:nth-child(even) td{background:var(--card)}
+table.dt td.k{color:var(--blue-deep);font-weight:700}
+table.dt td.head{color:var(--ink);font-weight:700}
+.struck{color:var(--struck);text-decoration:line-through;text-decoration-thickness:.12em}
+.wmk{height:34px;color:var(--ink)}
+.wmk svg{height:100%;width:auto;display:block}
+.iso polygon{fill:none;stroke:var(--blue);stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter}
+.iso polygon.fill{fill:var(--blue)}
+@page{size:1280px 720px;margin:0}
+@media print{*{-webkit-print-color-adjust:exact;print-color-adjust:exact}body{background:#fff;padding:0}.note,.dochead{display:none}.slide{box-shadow:none;page-break-after:always}.slide:last-of-type{page-break-after:auto}}
+</style>
+</head>
+<body>
+
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg"><symbol id="wm" viewBox="0 0 1432 392"><path fill="currentColor" d="M1166.39 1.57487C1166.39 2.43389 1157.45 54.1188 1146.44 116.398C1135.43 178.678 1126.5 232.081 1126.5 234.944C1126.5 238.667 1127.77 241.244 1130.64 243.964C1134.47 247.4 1136.07 247.686 1147.4 247.686C1154.42 247.686 1160 247.973 1160 248.545C1160 249.261 1152.82 290.351 1151.23 298.799C1150.43 302.807 1149.63 303.523 1142.77 304.812C1120.27 309.107 1090.59 307.818 1072.88 301.948C1061.55 298.083 1049.75 288.347 1044.96 278.898C1041.61 272.169 1041.13 269.162 1041.29 254.129C1041.29 239.239 1044.16 221.486 1062.35 119.119C1074 54.4051 1083.41 1.00218 1083.41 0.715838C1083.41 0.286342 1102.08 0 1124.9 0C1154.26 0 1166.39 0.429496 1166.39 1.57487Z"/>
+<path fill="currentColor" d="M140.413 21.6189C140.413 22.9074 133.871 60.8478 131.637 72.5879L130.68 77.3125H155.571C171.527 77.3125 180.303 77.8852 180.303 78.7442C180.303 80.6054 172.485 125.418 171.527 129.856C170.73 133.006 170.091 133.149 145.678 133.436L120.787 133.865L111.533 186.123C101.321 243.821 101.002 246.971 104.672 248.259C106.108 248.689 116.798 249.118 128.606 249.118C148.391 249.118 150.146 249.261 149.349 251.552C148.87 252.984 146.636 265.583 144.243 279.614L139.775 305.241L100.523 304.669C66.058 304.096 60.1543 303.666 50.8998 300.946C30.7951 295.076 20.7428 285.054 17.7113 268.017C15.7965 256.849 16.4348 250.693 27.7636 187.411C32.7099 160.209 36.6989 136.872 36.6989 135.44C36.6989 133.436 34.3055 133.149 18.3495 133.149C6.86114 133.149 0 132.577 0 131.718C0 129.856 7.81846 85.0438 8.93536 80.4623C9.57368 77.4557 10.2118 77.3125 28.5613 77.3125H47.3895L51.0594 56.839C52.974 45.6716 55.2078 32.7862 56.1653 28.2047L57.7609 20.044H99.087C127.01 20.044 140.413 20.4735 140.413 21.6189Z"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M644.145 113.964C646.698 121.409 647.177 121.839 651.644 121.409L656.59 120.98L660.42 99.0745L664.09 77.3125H746.742L745.944 80.4623C745.475 82.2857 737.196 129.18 727.258 185.472L727.255 185.487L726.637 188.986C716.585 246.827 707.49 297.367 706.692 301.376C696.321 347.19 666.643 375.109 614.945 387.565C600.585 391.001 596.596 391.287 568.832 391.43C535.803 391.43 524.475 389.856 504.53 382.697C476.287 372.675 457.619 354.779 450.758 331.155C449.481 326.717 448.364 321.42 448.364 319.702V316.409H530.697L533.57 322.135C538.995 333.16 551.44 338.457 572.023 338.457C594.841 338.457 609.042 331.298 618.136 315.12C622.923 306.816 624.678 300.517 628.827 277.036C632.656 254.988 632.656 254.845 628.029 254.845C625.157 254.845 622.764 256.993 617.658 264.008C598.032 291.21 566.599 302.521 529.421 295.649C488.414 288.061 463.363 258.711 459.693 213.612C456.023 167.654 470.862 127.136 501.657 99.3609C512.029 90.0547 517.294 86.6186 528.145 81.894C552.078 71.5856 578.246 69.5813 600.585 76.1671C621.009 82.1803 638.241 97.2133 644.145 113.964ZM546.813 171.09C552.078 155.627 566.598 141.596 582.235 137.015C586.224 135.726 593.564 134.724 598.51 134.724C624.519 134.438 641.911 149.041 644.145 173.094C646.538 198.865 632.656 223.204 610.318 232.081C599.308 236.519 579.842 236.662 569.63 232.367C560.535 228.644 553.355 222.202 548.568 213.611C545.377 207.885 544.898 204.592 544.898 191.849C544.898 183.545 545.855 174.239 546.813 171.09Z"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M936.619 113.535C939.172 120.121 940.129 120.98 944.437 121.409C947.15 121.696 949.384 121.409 949.384 120.693C949.384 118.975 955.606 84.3279 956.564 80.4623L957.361 77.3125H998.049C1022.14 77.3125 1038.74 77.8852 1038.74 78.6011C1038.74 83.612 999.805 300.803 997.252 309.966C981.934 364.944 930.077 394.294 852.849 391.86C824.448 390.858 808.013 387.565 788.866 379.261C762.06 367.521 746.423 348.622 741.317 321.706L740.2 316.409H823.331L825.086 320.417C827.16 325.142 833.862 331.728 839.447 334.448C846.946 337.884 863.859 339.459 875.347 337.884C902.154 334.019 913.004 321.276 919.865 285.913L920.913 280.423C924.752 260.328 925.594 255.922 923.993 255.023C923.544 254.771 922.904 254.794 922.084 254.823C921.792 254.834 921.478 254.845 921.141 254.845C917.471 254.845 915.876 256.277 911.887 262.29C909.334 266.299 903.111 273.171 898.165 277.609C861.785 310.539 794.61 301.805 767.485 260.715C749.454 233.369 746.582 189.416 760.464 150.044C770.198 122.555 788.547 99.7904 812.64 85.7596C833.383 73.5901 864.816 69.1518 889.548 74.7354C910.451 79.46 929.439 95.0658 936.619 113.535ZM853.807 149.614C830.99 171.805 830.83 211.607 853.169 227.213C862.423 233.655 869.125 235.517 882.368 235.517C902.632 235.373 918.908 226.64 928.321 210.891C934.863 199.724 936.778 192.565 936.778 178.821C936.778 163.358 933.427 154.482 924.013 146.035C912.206 135.44 893.697 131.717 876.784 136.585C866.412 139.592 860.987 142.598 853.807 149.614Z"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M1352.75 76.883C1402.69 89.7684 1431.42 126.563 1431.26 177.246C1431.1 184.977 1430.3 194.999 1429.18 199.724L1427.11 208.314L1341.26 208.744L1255.26 209.03L1256.38 218.05C1257.65 228.931 1263.72 240.814 1270.74 245.539C1288.61 257.708 1324.99 254.272 1336.64 239.239L1341.1 233.512L1381.47 233.369C1406.52 233.369 1421.68 233.942 1421.68 234.801C1421.68 235.517 1419.93 240.385 1417.85 245.396C1401.1 285.197 1356.26 309.107 1298.34 309.25C1233.4 309.25 1190.32 279.327 1179.15 226.211C1176.92 215.759 1176.92 188.7 1179.31 176.53C1187.13 133.579 1212.82 101.508 1253.03 84.3279C1278.56 73.4469 1301.53 70.5835 1336 73.8764C1340.47 74.3059 1348.12 75.5944 1352.75 76.883ZM1263.08 161.354C1269.14 143.601 1284.14 129.999 1301.53 125.991C1311.59 123.843 1325.79 125.561 1333.92 129.999C1342.38 134.581 1349.08 145.319 1350.68 157.059L1351.79 164.647H1261.96L1263.08 161.354Z"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M345.927 75.3081C409.751 87.0481 448.364 137.301 440.706 199.008C439.588 207.598 437.195 219.052 435.44 224.349C420.441 267.873 379.594 299.944 328.854 307.818C314.653 310.109 285.134 309.823 271.731 307.246C222.746 298.083 187.962 267.587 177.91 224.922C174.878 211.894 174.878 185.407 177.75 171.519C188.281 121.982 231.043 83.7552 286.411 74.5923C299.814 72.4447 332.364 72.731 345.927 75.3081ZM297.42 137.158C281.624 142.169 269.976 153.766 262.955 171.376C258.328 182.973 257.211 207.026 260.721 217.907C266.944 237.092 281.305 247.686 301.409 247.686C315.929 247.686 325.503 244.393 335.555 236.232C350.873 223.777 358.053 207.026 357.894 184.691C357.894 161.64 350.714 147.323 335.715 139.449C325.982 134.295 309.387 133.292 297.42 137.158Z"/></symbol></svg>
+
+<div class="dochead"><strong>REXPO · TikTok Performance Campaign Proposal.</strong> 10 slides · creator strategy, funnel structure &amp; targeting for the September Middle East event · July 2026</div>
+
+<!-- ════════ SLIDE 1 — TITLE ════════ -->
+<div class="note">Slide 1 · Title</div>
+<section class="slide">
+  <div class="wmk"><svg viewBox="0 0 1432 392"><use href="#wm"/></svg></div>
+  <div style="margin-top:118px;max-width:660px">
+    <div style="font-size:64px;font-weight:800;color:var(--blue);line-height:1.05">REXPO</div>
+    <div style="font-size:54px;font-weight:800;color:var(--ink);line-height:1.1;margin-top:6px">TikTok Performance<br>Campaign Proposal</div>
+    <div style="font-size:17px;font-weight:500;color:var(--body);margin-top:22px">Creator strategy, funnel structure and targeting for the September Middle East event · July 2026</div>
+  </div>
+  <svg class="iso" viewBox="-4 -4 449 326" style="position:absolute;right:84px;top:120px;width:470px">
+    <g><polygon points="90.1,0.0 135.1,26.0 45.0,78.0 0.0,52.0"/><polygon points="135.1,130.0 180.1,156.0 90.1,208.0 45.0,182.0"/><polygon points="135.1,130.0 45.0,182.0 45.0,78.0 135.1,26.0"/><polygon class="fill" points="180.1,208.0 90.1,260.0 90.1,208.0 180.1,156.0"/><polygon points="0.0,208.0 45.0,234.0 45.0,78.0 0.0,52.0"/><polygon points="45.0,234.0 90.1,260.0 90.1,208.0 45.0,182.0"/></g>
+    <g transform="translate(216,110)"><polygon points="90.1,0.0 180.1,52.0 90.1,104.0 0.0,52.0"/><polygon points="180.1,104.0 225.2,130.0 135.1,182.0 90.1,156.0"/><polygon points="180.1,104.0 90.1,156.0 90.1,104.0 180.1,52.0"/><polygon points="225.2,182.0 135.1,234.0 135.1,182.0 225.2,130.0"/><polygon points="0.0,156.0 90.1,208.0 90.1,104.0 0.0,52.0"/><polygon points="90.1,208.0 135.1,234.0 135.1,182.0 90.1,156.0"/></g>
+  </svg>
+  <div class="seal" style="position:absolute;left:64px;bottom:48px;color:var(--blue);font-size:18px"><span class="br">[&nbsp;</span>Your Digital Growth Partner<span class="br">&nbsp;]</span></div>
+  <div style="position:absolute;right:64px;bottom:44px;height:26px;color:var(--ink)"><svg viewBox="0 0 1432 392" style="height:100%;width:auto;display:block"><use href="#wm"/></svg></div>
+</section>
+
+<!-- ════════ SLIDE 2 — WHERE THINGS STAND ════════ -->
+<div class="note">Slide 2 · Where things stand: the Meta engine works; TikTok is the untapped channel.</div>
+<section class="slide">
+  <div class="watermark" style="height:18px;color:var(--ink)"><svg viewBox="0 0 1432 392" style="height:100%;width:auto;display:block"><use href="#wm"/></svg></div>
+  <div class="vwrap">
+    <h2 class="h1">The Recruitment Engine Works. One Channel Is Doing All the Lifting.</h2>
+    <p class="kicker">REXPO runs two proven motions: education fairs where universities exhibit and students apply, and the LG agency side recruiting students for public, private, government and branch-campus clients. Lead generation today runs on Meta alone, through instant forms and landing-page campaigns that both perform. TikTok got one exploratory test last year, never a full campaign. This proposal closes that gap.</p>
+    <div class="grid cols4" style="margin-bottom:22px">
+      <div class="card topbar" style="text-align:center"><div class="stat num inkstat" style="font-size:38px">10–12</div><div class="statlabel">events per year</div><div class="statcap">One day per city across Asia &amp; the Middle East; two-day formats early in the year</div></div>
+      <div class="card topbar t-teal" style="text-align:center"><div class="stat num inkstat" style="font-size:38px">45 days</div><div class="statlabel">campaign runway</div><div class="statcap">Ads start 45 days before each event, a fixed and repeatable flight window</div></div>
+      <div class="card topbar t-purple" style="text-align:center"><div class="stat num inkstat" style="font-size:38px">30–45k</div><div class="statlabel">budget per event</div><div class="statcap">~30k for one-day events, ~45k for two-day formats, all currently on Meta</div></div>
+      <div class="card topbar t-orange" style="text-align:center"><div class="stat num inkstat" style="font-size:38px">1</div><div class="statlabel">TikTok test to date</div><div class="statcap">Last year, exploratory only, with no creator strategy and no full-funnel structure</div></div>
+    </div>
+    <div class="callout" style="padding:18px 26px">
+      <span style="font-weight:700">The short version:</span>
+      <span class="bodytext"> your Meta playbook of instant forms and landing pages translates almost one-to-one onto TikTok. The one real gap is content production, which the creator strategy in this deck is built to solve.</span>
+    </div>
+  </div>
+  <div class="band">This deck: why TikTok in the Gulf → creator strategy → funnel structure → targeting → 45-day flight plan → next steps</div>
+</section>
+
+<!-- ════════ SLIDE 3 — WHY TIKTOK, WHY THE GULF ════════ -->
+<div class="note">Slide 3 · The opportunity: TikTok is saturated in the exact three markets of the September event.</div>
+<section class="slide">
+  <div class="watermark" style="height:18px;color:var(--ink)"><svg viewBox="0 0 1432 392" style="height:100%;width:auto;display:block"><use href="#wm"/></svg></div>
+  <div class="vwrap">
+    <div class="eyebrow pil">THE OPPORTUNITY</div>
+    <h2 class="h1">In Your September Markets, TikTok Reaches Nearly Everyone</h2>
+    <p class="kicker">These figures come straight from TikTok's own ad-planning tools for the three Gulf markets on your event calendar (end of 2025, adults 18+). Reach above 100% means TikTok's ad audience estimate exceeds the official adult population. In expat-heavy Gulf markets, the platform is saturated. Your prospective students <b>and their parents</b> already scroll it daily. The audience exists. The open question is who reaches them first with education content.</p>
+    <div class="grid cols3" style="margin-bottom:22px">
+      <div class="card topbar" style="text-align:center"><div class="stat num">134.6%</div><div class="statlabel">UAE · ad reach vs adults 18+</div><div class="statcap">12.5 million adult users. Your two-city UAE leg has the deepest TikTok audience in the region</div></div>
+      <div class="card topbar t-teal" style="text-align:center"><div class="stat num">114.1%</div><div class="statlabel">Qatar · ad reach vs adults 18+</div><div class="statcap">Compact market with dense reach; a single Doha event day can be saturated affordably</div></div>
+      <div class="card topbar t-purple" style="text-align:center"><div class="stat num">112.1%</div><div class="statlabel">Kuwait · ad reach vs adults 18+</div><div class="statcap">Strong reach with historically lower ad competition than UAE, so CPMs stay efficient</div></div>
+    </div>
+    <div class="callout" style="padding:18px 26px">
+      <span style="font-weight:700">Why now:</span>
+      <span class="bodytext"> Meta CPMs in the Gulf keep climbing as every recruiter fights over the same inventory. TikTok offers the same audience at lower auction pressure. Education content like campus tours, student testimonials and "study in Malaysia" explainers is native to how the platform is consumed. Source: TikTok ad planning tools via DataReportal, Digital 2026 reports.</span>
+    </div>
+  </div>
+  <div class="band">Note on the calendar: Brunei &amp; Myanmar (next confirmed events) are not TikTok-viable, since the platform is restricted in both. September is the launch window</div>
+</section>
+
+<!-- ════════ SLIDE 4 — CREATOR STRATEGY ════════ -->
+<div class="note">Slide 4 · Creator strategy: TikTok Creator Marketplace solves the content-production blocker.</div>
+<section class="slide">
+  <div class="watermark" style="height:18px;color:var(--ink)"><svg viewBox="0 0 1432 392" style="height:100%;width:auto;display:block"><use href="#wm"/></svg></div>
+  <div class="vwrap">
+    <div class="eyebrow pil">PILLAR 1 · CREATOR STRATEGY</div>
+    <h2 class="h1">Local Creators Make the Ads. TikTok Guarantees the Quality.</h2>
+    <p class="kicker">The main blocker you raised on our call was content production: TikTok demands native, fast-turnaround video that a fair organiser can't produce in-house for every market. The <b>TikTok Creator Marketplace (TTCM)</b> handles this. It's TikTok's official platform for commissioning vetted local creators, with deliverable quality backed by TikTok itself.</p>
+    <div class="grid cols3" style="gap:18px">
+      <div class="card topbar" style="padding:18px 22px">
+        <div class="cardtitle" style="font-size:15.5px">How it works</div>
+        <ul class="b" style="margin-top:6px">
+          <li>Brief local creators in each market (e.g. UAE-based creators for the UAE leg) through TTCM</li>
+          <li>Creators produce event-specific videos in their own style, in Arabic, English, or both</li>
+          <li>Videos publish on the <b>creator's page and REXPO's page</b>, then run as Spark Ads with paid spend behind them</li>
+        </ul>
+      </div>
+      <div class="callout topbar t-teal" style="padding:18px 22px">
+        <div class="cardtitle" style="font-size:15.5px">Why this beats studio ads</div>
+        <div class="bodytext" style="font-size:13px">TikTok's auction rewards content that looks native to the feed, and creator videos outperform repurposed brand ads there. Creators bring their local audience as bonus organic reach, and TTCM's vetting locks guaranteed deliverables on a deadline that fits your 45-day runway. Our team supports production in-country where needed.</div>
+      </div>
+      <div class="card topbar t-purple" style="padding:18px 22px">
+        <div class="cardtitle" style="font-size:15.5px">Content angles that convert</div>
+        <ul class="b acc-purple" style="margin-top:6px">
+          <li>"I studied in Malaysia" testimonials, the strongest trust signal for Gulf parents</li>
+          <li>Campus &amp; city lifestyle tours: cost of living, halal food, community</li>
+          <li>Event countdowns: which universities are exhibiting, scholarships on offer, walk-in details</li>
+        </ul>
+      </div>
+    </div>
+    <div class="bodytext" style="margin-top:18px;font-size:13.5px"><b>Scale by market:</b> the same TTCM brief re-runs for every market on the calendar. Commission UAE creators for the UAE, Qatari creators for Doha, Kuwaiti creators for Kuwait City. One playbook, localised ads at scale.</div>
+  </div>
+  <div class="band">The blocker on the call was content. TTCM turns content from a production problem into a procurement step inside the campaign timeline</div>
+</section>
+
+<!-- ════════ SLIDE 5 — FUNNEL STRUCTURE ════════ -->
+<div class="note">Slide 5 · Funnel structure: mirror the proven Meta setup of instant forms + landing pages.</div>
+<section class="slide">
+  <div class="watermark" style="height:18px;color:var(--ink)"><svg viewBox="0 0 1432 392" style="height:100%;width:auto;display:block"><use href="#wm"/></svg></div>
+  <div class="vwrap">
+    <div class="eyebrow pil">PILLAR 2 · FUNNEL STRUCTURE</div>
+    <h2 class="h1">The Funnel You Already Trust on Meta, Rebuilt on TikTok</h2>
+    <p class="kicker">Nothing here is experimental. TikTok has a direct equivalent for both of your working Meta lead routes, so the switch reuses your existing landing pages, lead handling and follow-up process. Two lanes run in parallel, and you split budget between them on what the results show.</p>
+    <div class="grid cols2" style="gap:24px">
+      <div class="card topbar t-teal" style="padding:20px 24px">
+        <div class="cardtitle">Lane 1 · Instant Forms (TikTok Lead Generation)</div>
+        <ul class="b acc-teal" style="margin-top:6px">
+          <li>Native in-app forms, pre-filled from the user's profile: lowest friction, and a mirror of your Meta instant forms</li>
+          <li>Best for volume: event registration, brochure requests, "which universities interest you?" qualifiers</li>
+          <li>Leads sync to your existing CRM and follow-up flow, the same counsellor process you run for Meta leads today</li>
+        </ul>
+      </div>
+      <div class="card topbar t-purple" style="padding:20px 24px">
+        <div class="cardtitle">Lane 2 · Landing Page Campaigns</div>
+        <ul class="b acc-purple" style="margin-top:6px">
+          <li>Your existing event landing pages, reused, with the <b>TikTok Pixel</b> installed for conversion tracking</li>
+          <li>Best for quality: fuller forms produce higher-intent registrations and richer lead data for LG's agency clients</li>
+          <li>Pixel builds retargeting pools: video viewers and page visitors get event-reminder ads as the date closes in</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:20px;padding:16px 24px">
+      <span style="font-weight:700">Full-funnel logic:</span>
+      <span class="bodytext"> creator videos build reach and warm audiences (top) → lead-gen forms and landing pages capture registrations (middle) → retargeting converts the undecided in the final two weeks (bottom). Every layer feeds the next, and every lead lands in the same pipeline your team already runs.</span>
+    </div>
+  </div>
+  <div class="band">Setup cost is one-time: pixel install, form templates and CRM sync are built once, then reused for every event on the calendar</div>
+</section>
+
+<!-- ════════ SLIDE 6 — TARGETING ════════ -->
+<div class="note">Slide 6 · Targeting: market-by-market plan for the September Middle East event.</div>
+<section class="slide">
+  <div class="watermark" style="height:18px;color:var(--ink)"><svg viewBox="0 0 1432 392" style="height:100%;width:auto;display:block"><use href="#wm"/></svg></div>
+  <div class="vwrap">
+    <div class="eyebrow pil">PILLAR 3 · TARGETING</div>
+    <h2 class="h1">Two Audiences per City: the Student, and the Parent Who Decides</h2>
+    <p class="kicker">In the Gulf, education decisions are family decisions. The campaign targets both sides in every market: students on aspiration and lifestyle, parents on credibility, safety and cost. All targeting is geo-fenced to the event city and its catchment, in Arabic and English.</p>
+    <table class="dt">
+      <tr><th style="width:18%">Market</th><th style="width:28%">Audience segments</th><th style="width:29%">Creative emphasis</th><th>Geo &amp; language</th></tr>
+      <tr><td class="head">UAE · 2 cities</td><td>Students 16–24 · Parents 35–54 · education &amp; study-abroad interest</td><td class="k">Scholarships, branch-campus pathways, cost vs UK/US study</td><td>Dubai + second city, emirate-level geo · Arabic &amp; English</td></tr>
+      <tr><td class="head">Qatar · Doha</td><td>Students 16–24 · Parents 35–54 · expat communities</td><td class="k">Student testimonials, halal &amp; community life in Malaysia</td><td>Doha metro · Arabic &amp; English</td></tr>
+      <tr><td class="head">Kuwait · Kuwait City</td><td>Students 16–24 · Parents 35–54 · lower ad competition, efficient reach</td><td class="k">Event countdown, exhibiting universities, walk-in details</td><td>Kuwait City + governorates · Arabic &amp; English</td></tr>
+    </table>
+    <div class="callout" style="margin-top:18px;padding:16px 24px">
+      <span style="font-weight:700">Sequencing the spend:</span>
+      <span class="bodytext"> broad interest and lookalike-style audiences early (weeks 1–3) to feed the pixel, then tighter retargeting on video viewers, form-openers and page visitors as event day approaches. Final week: reminder ads only, geo-tightened to the event city.</span>
+    </div>
+  </div>
+  <div class="band">Exact city list locks when the September date is confirmed after next week's Middle East tour. The structure above holds for any Gulf lineup</div>
+</section>
+
+<!-- ════════ SLIDE 7 — 45-DAY FLIGHT PLAN ════════ -->
+<div class="note">Slide 7 · The 45-day flight plan: mapped to their existing campaign runway.</div>
+<section class="slide">
+  <div class="watermark" style="height:18px;color:var(--ink)"><svg viewBox="0 0 1432 392" style="height:100%;width:auto;display:block"><use href="#wm"/></svg></div>
+  <div class="vwrap">
+    <h2 class="h1">The 45-Day Flight Plan: Produce, Ramp, Convert</h2>
+    <p class="kicker">Your campaigns already start 45 days out, and this plan slots TikTok into that same window. Creator production happens inside the runway, not before it, so the timeline holds even with the September date still unconfirmed.</p>
+    <div class="grid cols3" style="gap:18px">
+      <div class="card topbar t-teal" style="padding:20px 24px">
+        <div class="cardtitle">Days 45–31 · Produce &amp; set up</div>
+        <ul class="b acc-teal" style="margin-top:6px">
+          <li>Commission creators per market via TTCM; briefs from proven Meta angles</li>
+          <li>Pixel installed, lead forms built, CRM sync tested</li>
+          <li>First creator videos delivered &amp; approved; Spark Ad permissions set</li>
+        </ul>
+      </div>
+      <div class="card topbar" style="padding:20px 24px">
+        <div class="cardtitle">Days 30–14 · Ramp &amp; learn</div>
+        <ul class="b" style="margin-top:6px">
+          <li>Awareness + lead-gen live in all markets; Meta runs in parallel as control</li>
+          <li>Weekly creative rotation: winners get budget, losers get cut</li>
+          <li>Retargeting pools building: viewers, form-openers, page visitors</li>
+        </ul>
+      </div>
+      <div class="card topbar t-purple" style="padding:20px 24px">
+        <div class="cardtitle">Days 13–0 · Convert</div>
+        <ul class="b acc-purple" style="margin-top:6px">
+          <li>Budget shifts to retargeting + event-countdown creative</li>
+          <li>Final-week reminders geo-tightened to each event city</li>
+          <li>Event day: "doors open" content; post-event follow-up to no-shows</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:20px;padding:16px 24px">
+      <span style="font-weight:700">Budget framing:</span>
+      <span class="bodytext"> we recommend a <b>70/30 Meta–TikTok split</b> for this first full run, roughly 9k of a standard 30k one-day event budget, with creator commissioning included. That's big enough to produce a real read on CPL and registration quality, and small enough that the proven Meta engine keeps carrying the event.</span>
+    </div>
+  </div>
+  <div class="band">Meta stays the workhorse. TikTok gets a full, honest test, with a clean side-by-side comparison at the end of it</div>
+</section>
+
+<!-- ════════ SLIDE 8 — MEASUREMENT ════════ -->
+<div class="note">Slide 8 · Measurement: side-by-side vs Meta, and the scale-up criteria.</div>
+<section class="slide">
+  <div class="watermark" style="height:18px;color:var(--ink)"><svg viewBox="0 0 1432 392" style="height:100%;width:auto;display:block"><use href="#wm"/></svg></div>
+  <div class="vwrap">
+    <div class="eyebrow win">HOW WE'LL KNOW IT WORKED</div>
+    <h2 class="h1">One Scoreboard: TikTok vs Meta, Same Event, Same Window</h2>
+    <p class="kicker">Because both channels run at the same time on the same event, the September campaign gives you something last year's exploratory test never could: a controlled comparison. We report every metric side-by-side, market-by-market, in plain English.</p>
+    <div class="grid cols4" style="margin-bottom:22px">
+      <div class="card topbar" style="text-align:center"><div class="stat inkstat" style="font-size:34px">CPL</div><div class="statlabel">Cost per lead</div><div class="statcap">Instant forms and landing-page leads tracked separately, benchmarked against your Meta baseline per market</div></div>
+      <div class="card topbar t-teal" style="text-align:center"><div class="stat inkstat" style="font-size:34px">CPR</div><div class="statlabel">Cost per registration</div><div class="statcap">Qualified event registrations, the number that matters most for exhibitor ROI</div></div>
+      <div class="card topbar t-purple" style="text-align:center"><div class="stat inkstat" style="font-size:34px">Show-up</div><div class="statlabel">Attendance rate by source</div><div class="statcap">Door-count vs registrations, split by channel: does a TikTok lead walk in at the same rate as a Meta lead?</div></div>
+      <div class="card topbar t-orange" style="text-align:center"><div class="stat inkstat" style="font-size:34px">Quality</div><div class="statlabel">Lead quality for LG</div><div class="statcap">Counsellor-scored lead quality feeding the agency side's university-client recruitment</div></div>
+    </div>
+    <div class="callout" style="padding:18px 26px">
+      <span style="font-weight:700">The scale decision, agreed in advance:</span>
+      <span class="bodytext"> if TikTok CPL lands within ~20% of Meta with comparable show-up rates, the split moves toward 50/50 for the year-end events, when last-minute enrolment campaigns reward the urgency creative TikTok does best. If it doesn't, you've spent a bounded test budget and you keep the creator videos as owned content either way.</span>
+    </div>
+  </div>
+  <div class="band">Reporting: weekly during flight, full side-by-side review within 7 days of the event, before the next event's 45-day window opens</div>
+</section>
+
+<!-- ════════ SLIDE 9 — NEXT STEPS ════════ -->
+<div class="note">Slide 9 · Next steps: lock the September date, start the clock.</div>
+<section class="slide">
+  <div class="watermark" style="height:18px;color:var(--ink)"><svg viewBox="0 0 1432 392" style="height:100%;width:auto;display:block"><use href="#wm"/></svg></div>
+  <div class="vwrap">
+    <h2 class="h1">Three Steps Between This Deck and Ads Live</h2>
+    <p class="kicker">Everything in this proposal is buildable now except one input: the September event date, which locks after next week's Middle East tour (Qatar, UAE ×2, Kuwait). The moment it's confirmed, the 45-day clock starts.</p>
+    <div class="grid cols3" style="gap:18px">
+      <div class="card topbar t-teal" style="padding:20px 24px">
+        <div class="cardtitle">1 · This week</div>
+        <ul class="b acc-teal" style="margin-top:6px">
+          <li>Align on this proposal on our next call</li>
+          <li>Agree the 70/30 budget split and target CPL benchmarks from your Meta history</li>
+          <li>Access checklist: TikTok Business Center, landing pages, CRM</li>
+        </ul>
+      </div>
+      <div class="card topbar" style="padding:20px 24px">
+        <div class="cardtitle">2 · After the tour</div>
+        <ul class="b" style="margin-top:6px">
+          <li>You confirm the September date &amp; city lineup post-tour</li>
+          <li>We finalise the market-by-market media plan against the real calendar</li>
+          <li>TTCM creator shortlists prepared per confirmed market</li>
+        </ul>
+      </div>
+      <div class="card topbar t-purple" style="padding:20px 24px">
+        <div class="cardtitle">3 · Day 45</div>
+        <ul class="b acc-purple" style="margin-top:6px">
+          <li>Creator briefs go out; pixel &amp; forms built in week one</li>
+          <li>Ads live by day 30; weekly reporting from first spend</li>
+          <li>Side-by-side review 7 days post-event → scale decision for year-end</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:20px;padding:16px 24px">
+      <span style="font-weight:700">Worth noting:</span>
+      <span class="bodytext"> the setup work of pixel, forms, CRM sync and creator playbook is one-time. Every event after September inherits it, so the second TikTok campaign costs less to launch and starts smarter than the first.</span>
+    </div>
+  </div>
+  <div class="band">Next step: a 30-minute call to walk through this deck, and then we're ready the day your September date lands</div>
+</section>
+
+<!-- ════════ SLIDE 10 — CLOSE ════════ -->
+<div class="note">Slide 10 · Close.</div>
+<section class="slide">
+  <div class="wmk"><svg viewBox="0 0 1432 392"><use href="#wm"/></svg></div>
+  <div style="margin-top:140px;max-width:none">
+    <div style="font-size:52px;font-weight:800;color:var(--ink);line-height:1.12">The students are already on TikTok.<br><span style="color:var(--blue)">Let's make sure they meet you there.</span></div>
+    <div style="font-size:17px;font-weight:500;color:var(--body);margin-top:24px">REXPO TikTok Performance Campaign Proposal · July 2026 · marketing@toggle.solutions</div>
+  </div>
+  <div class="seal" style="position:absolute;left:64px;bottom:48px;color:var(--blue);font-size:18px"><span class="br">[&nbsp;</span>Your Digital Growth Partner<span class="br">&nbsp;]</span></div>
+  <div style="position:absolute;right:64px;bottom:44px;height:26px;color:var(--ink)"><svg viewBox="0 0 1432 392" style="height:100%;width:auto;display:block"><use href="#wm"/></svg></div>
+</section>
+
+</body>
+</html>
