@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>IKONIK Eye Specialist Centre — Patient Lead Generation Programme · Toggle Solutions</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap');
+
+  /* Toggle design tokens — proposal-legal hexes only */
+  :root{
+    --blue:#4A7BF7;        /* display / headings / focal stat */
+    --blue-deep:#3056C9;   /* bands, pills, table headers, small text-safe */
+    --ink:#0F0F0F;
+    --body:#4A4A4A;
+    --caption:#9AA0A8;
+    --card:#F2F3F6;
+    --callout:#DDE5FE;
+    --border:#E4E6EE;
+    --teal:#2ECC9B;
+    --orange:#F28B4C;
+    --purple:#8E6BE6;
+    --pink:#F59EC9;
+    --slate:#2C2C36;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter Tight',-apple-system,'Segoe UI',sans-serif;color:var(--body);background:#9AA0A8;font-size:10pt;line-height:1.5;font-variant-numeric:tabular-nums}
+
+  .page{width:210mm;min-height:297mm;background:#fff;margin:8mm auto;padding:16mm 18mm 14mm;position:relative;display:flex;flex-direction:column}
+  @media print{
+    body{background:#fff}
+    .page{margin:0;box-shadow:none;page-break-after:always}
+    .page:last-child{page-break-after:auto}
+  }
+  @page{size:A4;margin:0}
+
+  .watermark{position:absolute;top:10mm;right:18mm;font-size:7pt;color:var(--caption);letter-spacing:.06em}
+  .pagenum{position:absolute;bottom:8mm;right:18mm;font-size:7pt;color:var(--caption)}
+  .footer-line{position:absolute;bottom:8mm;left:18mm;font-size:7pt;color:var(--caption)}
+
+  .wordmark{font-weight:800;font-size:12pt;color:var(--ink);letter-spacing:-.01em}
+  .wordmark .bkt{color:var(--blue)}
+
+  .kicker{font-size:8pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-deep);margin-bottom:2mm}
+  h1{font-size:20pt;font-weight:800;color:var(--ink);line-height:1.15;letter-spacing:-.02em}
+  h1 .b{color:var(--blue)}
+  h2{font-size:14.5pt;font-weight:800;color:var(--blue);letter-spacing:-.01em;margin-bottom:3mm}
+  h3{font-size:10.5pt;font-weight:700;color:var(--ink);margin-bottom:1.5mm}
+  p{margin-bottom:2.5mm}
+  strong{color:var(--ink)}
+
+  .band{background:var(--blue-deep);color:#fff;font-weight:700;font-size:9pt;padding:2.2mm 4mm;border-radius:2mm;margin:3mm 0}
+  .callout{background:var(--callout);border-radius:2.5mm;padding:4mm 5mm;margin:3mm 0}
+  .cardbox{background:var(--card);border-radius:2.5mm;padding:4mm 5mm}
+
+  table{width:100%;border-collapse:collapse;margin:2.5mm 0;font-size:8.5pt}
+  th{background:var(--blue-deep);color:#fff;font-weight:700;text-align:left;padding:2mm 2.5mm;font-size:8pt}
+  td{padding:1.8mm 2.5mm;border-bottom:.35mm solid var(--border);vertical-align:top}
+  tr:nth-child(even) td{background:var(--card)}
+  td.num{font-weight:700;color:var(--blue-deep);white-space:nowrap}
+
+  .statrow{display:flex;gap:4mm;margin:4mm 0}
+  .stat{flex:1;background:var(--card);border-radius:2.5mm;padding:3.5mm 4mm;border-top:1.4mm solid var(--blue)}
+  .stat .v{font-size:17pt;font-weight:800;color:var(--ink);letter-spacing:-.02em}
+  .stat .v.focal{color:var(--blue)}
+  .stat .l{font-size:7.5pt;font-weight:600;color:var(--body);margin-top:.5mm}
+
+  .phasecard{background:var(--card);border-radius:2.5mm;padding:3.5mm 4.5mm;margin-bottom:3mm;border-left:1.6mm solid var(--blue);page-break-inside:avoid}
+  .phasecard.p2{border-left-color:var(--teal)}
+  .phasecard.p3{border-left-color:var(--orange)}
+  .phasecard.p4{border-left-color:var(--purple)}
+  .phasecard.p5{border-left-color:var(--slate)}
+  .phead{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:1.5mm}
+  .ptitle{font-size:10.5pt;font-weight:800;color:var(--ink)}
+  .pmeta{font-size:8pt;font-weight:700;color:var(--blue-deep);white-space:nowrap}
+  .pill{display:inline-block;background:var(--blue-deep);color:#fff;font-weight:700;font-size:7.5pt;padding:.8mm 3mm;border-radius:5mm}
+  ul{margin:1mm 0 2mm 4.5mm}
+  li{margin-bottom:1mm}
+  .small{font-size:8pt;color:var(--body)}
+  .cap{font-size:7.5pt;color:var(--caption)}
+
+  /* Funnel */
+  .funnel{display:flex;gap:3mm;margin:3mm 0;align-items:stretch}
+  .fstep{flex:1;background:var(--card);border-radius:2.5mm;padding:3mm 3.5mm;border-top:1.4mm solid var(--blue);position:relative}
+  .fstep.f2{border-top-color:var(--teal)}
+  .fstep.f3{border-top-color:var(--orange)}
+  .fstep.f4{border-top-color:var(--purple)}
+  .fstep .fh{font-size:8.5pt;font-weight:800;color:var(--ink);margin-bottom:1mm}
+  .fstep .fb{font-size:7.5pt;color:var(--body);line-height:1.4}
+
+  /* Gantt */
+  .gantt{margin:3mm 0}
+  .grow{display:grid;grid-template-columns:40mm repeat(12,1fr);align-items:center;margin-bottom:1.6mm}
+  .glabel{font-size:8pt;font-weight:700;color:var(--ink);padding-right:2mm}
+  .gbar{height:4.5mm;border-radius:1mm}
+  .gaxis{display:grid;grid-template-columns:40mm repeat(12,1fr);font-size:6.5pt;color:var(--caption);margin-bottom:1mm}
+  .gaxis span{text-align:center}
+</style>
+</head>
+<body>
+
+<!-- ============ PAGE 1 — COVER / CONTEXT ============ -->
+<div class="page">
+  <div class="watermark">[ toggle.solutions ]</div>
+  <div class="wordmark"><span class="bkt">[</span> toggle <span class="bkt">]</span></div>
+
+  <div style="margin-top:14mm">
+    <div class="kicker">Proposal · July 2026 · Prepared for Ikonik Eye Specialist Centre</div>
+    <h1><span class="b">IKONIK</span><br>Patient Lead Generation Programme</h1>
+    <p style="margin-top:3mm;font-size:10.5pt">Turning Malaysia's most-watched eye surgery livestreams into booked consultations — a Klang Valley lead engine at RM3,000/month over a 6-month partnership.</p>
+  </div>
+
+  <div class="statrow">
+    <div class="stat"><div class="v focal">RM3K</div><div class="l">Fixed monthly retainer — one senior team, full lead-gen scope</div></div>
+    <div class="stat"><div class="v">6 mths</div><div class="l">Structured roadmap: build → launch → optimise → scale</div></div>
+    <div class="stat"><div class="v">Klang Valley</div><div class="l">Geo-fenced targeting around the Bukit Jalil centre</div></div>
+  </div>
+
+  <h2 style="margin-top:5mm">Where IKONIK stands, and why now</h2>
+  <p>Ten years, 152,000+ patients, 32,000+ laser eye surgeries — and a TikTok channel doing something almost no eye centre in Malaysia does: <strong>livestreaming real procedures</strong>. The attention engine already works. What's missing is the machine that converts that attention into consultation bookings, predictably, every month:</p>
+
+  <div class="phasecard"><h3>1 · Attention without capture</h3>
+  <p class="small" style="margin:0">Livestreams pull thousands of viewers, but there is no system catching them at the moment of intent. Enquiries live and die inside TikTok comments and DMs — unqualified, untracked, and dependent on whoever checks the inbox.</p></div>
+
+  <div class="phasecard p2"><h3>2 · Organic dependency</h3>
+  <p class="small" style="margin:0">All patient flow from TikTok rides on the algorithm. A quiet fortnight of reach means a quiet clinic. There is no paid layer guaranteeing a floor of qualified enquiries regardless of what the For You page decides.</p></div>
+
+  <div class="phasecard p3"><h3>3 · An untracked funnel</h3>
+  <p class="small" style="margin:0">From view → enquiry → consultation → surgery, nothing is measured end to end. Without that, no one can say which content actually books patients — so budget and effort can't be pointed at what works.</p></div>
+
+  <div class="callout">
+    <h3>What this is (and isn't)</h3>
+    <p class="small" style="margin:0">This is <strong>not</strong> a content retainer that replaces what IKONIK's team already does well. It is a <strong>lead generation layer built on top of the organic machine that's already working</strong>: your livestreams and surgery content become the ad creative; we build the capture, paid amplification, and tracking around them. Every creative stays compliant with Malaysia's Medicine Advertisements Board (KKLIU) requirements — non-negotiable in healthcare, and something we handle as standard.</p>
+  </div>
+
+  <div class="footer-line">Toggle Solutions · Confidential — prepared for Ikonik Eye Specialist Centre</div>
+  <div class="pagenum">1 / 5</div>
+</div>
+
+<!-- ============ PAGE 2 — STRATEGY AT A GLANCE ============ -->
+<div class="page">
+  <div class="watermark">[ toggle.solutions ]</div>
+  <div class="kicker">The Programme at a Glance</div>
+  <h2>One funnel: from livestream viewer to booked consultation</h2>
+
+  <div class="funnel">
+    <div class="fstep"><div class="fh">1 · ATTRACT</div><div class="fb">Livestream &amp; surgery content repurposed into TikTok + Meta ads, geo-fenced to Klang Valley — the trust asset competitors can't copy</div></div>
+    <div class="fstep f2"><div class="fh">2 · CAPTURE</div><div class="fb">Lead forms + WhatsApp-first booking flow — enquiries land in one place, qualified by a short screening script</div></div>
+    <div class="fstep f3"><div class="fh">3 · CONVERT</div><div class="fb">Fast-response playbook + follow-up sequences that turn enquiries into consultation bookings at the centre</div></div>
+    <div class="fstep f4"><div class="fh">4 · MEASURE</div><div class="fb">End-to-end tracking: which video, which ad, which ringgit produced which patient</div></div>
+  </div>
+
+  <table>
+    <tr><th style="width:6mm">#</th><th style="width:46mm">Objective</th><th>How the programme delivers it</th></tr>
+    <tr><td class="num">1</td><td><strong>A predictable floor of enquiries</strong></td><td>Always-on TikTok + Meta lead campaigns targeting Klang Valley, independent of organic reach (from Month 2)</td></tr>
+    <tr><td class="num">2</td><td><strong>Convert attention you already earn</strong></td><td>Livestream moments, patient reactions and doctor explainers cut into ad creatives — tested weekly (from Month 1)</td></tr>
+    <tr><td class="num">3</td><td><strong>No enquiry left behind</strong></td><td>WhatsApp-first capture flow with qualification script and response-time targets for the front desk (Month 1)</td></tr>
+    <tr><td class="num">4</td><td><strong>Know the cost of a patient</strong></td><td>Tracking from click → lead → consult → procedure; monthly report in ringgit, not vanity metrics (from Month 2)</td></tr>
+    <tr><td class="num">5</td><td><strong>Stay compliant, stay safe</strong></td><td>All creatives and claims vetted against KKLIU advertising requirements before anything goes live (always)</td></tr>
+  </table>
+
+  <div class="band">FOUR STAGES OVER SIX MONTHS — REVIEWED MONTHLY · FULL VISIBILITY ON EVERY RINGGIT OF AD SPEND</div>
+
+  <table>
+    <tr><th style="width:14mm">Stage</th><th>Title</th><th style="width:26mm">Months</th></tr>
+    <tr><td class="num">1</td><td>Foundation — funnel, tracking &amp; creative system</td><td>Month 1</td></tr>
+    <tr><td class="num">2</td><td>Launch &amp; Learn — campaigns live, creative testing</td><td>Months 2–3</td></tr>
+    <tr><td class="num">3</td><td>Optimise &amp; Scale — double down on what books patients</td><td>Months 4–5</td></tr>
+    <tr><td class="num">4</td><td>Systematise &amp; Review — playbook, results, next chapter</td><td>Month 6</td></tr>
+  </table>
+
+  <div class="callout">
+    <h3>The maths that makes this easy</h3>
+    <p class="small" style="margin:0">IKONIK's refractive packages start from <strong>RM2,500 per eye</strong>. At a typical two-eye procedure, <strong>one to two additional patients a month covers the entire retainer and media budget</strong>. Everything above that is growth the clinic wasn't getting before. The 6-month term exists because months 1–2 build and learn; months 3–6 are where the compounding happens.</p>
+  </div>
+
+  <div class="footer-line">Toggle Solutions · Confidential — prepared for Ikonik Eye Specialist Centre</div>
+  <div class="pagenum">2 / 5</div>
+</div>
+
+<!-- ============ PAGE 3 — ROADMAP STAGES 1–2 ============ -->
+<div class="page">
+  <div class="watermark">[ toggle.solutions ]</div>
+  <div class="kicker">Roadmap · 1 of 2</div>
+  <h2>Stage 1–2 — build the machine, switch it on</h2>
+
+  <div class="phasecard">
+    <div class="phead"><span class="ptitle">Stage 1 · Foundation — funnel, tracking &amp; creative system</span><span class="pmeta">Month 1</span></div>
+    <p class="small">No ads run in Month 1. We build the plumbing first, so from the first ringgit of media spend, every lead is captured and every result is measurable.</p>
+    <ul class="small">
+      <li>Kickoff + funnel audit: TikTok account, website, current enquiry handling, front-desk process</li>
+      <li><strong>WhatsApp-first capture flow</strong> — click-to-WhatsApp setup, qualification script, response-time SLA agreed with the front desk</li>
+      <li><strong>Conversion-focused landing page</strong> for LASIK/refractive enquiries (offer, trust markers, booking CTA) — hosted, tracked, mobile-first</li>
+      <li>Tracking install: TikTok Pixel, Meta Pixel/CAPI, WhatsApp lead logging — one lead sheet, one source of truth</li>
+      <li><strong>Creative mining session</strong>: audit livestream archive, identify the 10–15 strongest moments; cut first batch of 6–8 ad creatives</li>
+      <li>KKLIU compliance review of all claims, offers and footage before launch</li>
+    </ul>
+    <p class="small" style="margin:0"><strong>You receive:</strong> a working funnel (page + WhatsApp flow + tracking), first ad creative batch, campaign plan. <span class="pill">GATE: launch sign-off before media spend</span></p>
+  </div>
+
+  <div class="phasecard p2">
+    <div class="phead"><span class="ptitle">Stage 2 · Launch &amp; Learn — campaigns live</span><span class="pmeta">Months 2–3</span></div>
+    <p class="small">Paid campaigns go live on TikTok and Meta, geo-fenced to Klang Valley. These two months are about finding the winning combination of audience, offer and creative — fast, with small controlled budgets.</p>
+    <ul class="small">
+      <li><strong>TikTok Ads</strong>: Spark Ads on top-performing organic posts + lead campaigns using livestream-cut creatives</li>
+      <li><strong>Meta Ads</strong>: Facebook/Instagram lead forms + click-to-WhatsApp campaigns for the 30–55 segment TikTok reaches less</li>
+      <li>Creative testing cycle: 4–6 new creative variants per month, weekly review, kill losers early</li>
+      <li>Offer testing: free eye assessment vs. price-anchor ("bebas rabun dari RM2,500/mata") vs. livestream-viewer exclusive</li>
+      <li>Weekly optimisation + lead quality feedback loop with the front desk (are leads showing up? qualified?)</li>
+      <li>First monthly performance reports: spend, leads, cost per lead, consults booked</li>
+    </ul>
+    <p class="small" style="margin:0"><strong>You receive:</strong> live campaigns, first flow of tracked leads, and by end of Month 3 a clear read on what a qualified enquiry costs. <span class="pill">GATE: Month 3 review sets the scaling plan</span></p>
+  </div>
+
+  <div class="callout">
+    <p class="small" style="margin:0"><strong>Why the livestreams matter so much:</strong> in healthcare, the biggest conversion barrier is fear and distrust. IKONIK is the only centre showing the actual procedure, live, unedited. Used as ad creative, that footage does the persuasion work before the patient ever messages — which is why we expect it to outperform any polished brand ad, and why this programme is built around it.</p>
+  </div>
+
+  <div class="footer-line">Toggle Solutions · Confidential — prepared for Ikonik Eye Specialist Centre</div>
+  <div class="pagenum">3 / 5</div>
+</div>
+
+<!-- ============ PAGE 4 — ROADMAP STAGES 3–4 + TIMELINE ============ -->
+<div class="page">
+  <div class="watermark">[ toggle.solutions ]</div>
+  <div class="kicker">Roadmap · 2 of 2 + Timeline</div>
+  <h2>Stage 3–4 — scale what books patients, then lock it in</h2>
+
+  <div class="phasecard p3">
+    <div class="phead"><span class="ptitle">Stage 3 · Optimise &amp; Scale</span><span class="pmeta">Months 4–5</span></div>
+    <p class="small">By Month 4 we know which creatives, offers and audiences produce consultations — not just leads. Budget shifts hard toward the winners.</p>
+    <ul class="small">
+      <li>Scale winning campaigns; recommend media budget increases only where cost-per-consult supports it</li>
+      <li><strong>Retargeting layer</strong>: livestream viewers, video engagers, page visitors and unconverted WhatsApp enquiries brought back with follow-up creatives</li>
+      <li>Lookalike/custom audiences built from the qualified-lead list (highest-intent targeting available)</li>
+      <li>Follow-up sequences for "not yet" leads — the patients who need 2–4 weeks to decide on surgery</li>
+      <li>Landing page CRO: iterate on the page using real session data</li>
+    </ul>
+  </div>
+
+  <div class="phasecard p4">
+    <div class="phead"><span class="ptitle">Stage 4 · Systematise &amp; Review</span><span class="pmeta">Month 6</span></div>
+    <p class="small">The engine keeps running while we document it — so the results are a system IKONIK owns, not a black box.</p>
+    <ul class="small">
+      <li><strong>Lead-gen playbook</strong>: what runs, what it costs, what converts, the creative formats that win, the front-desk scripts</li>
+      <li>Full 6-month performance review: total spend → leads → consults → procedures, in ringgit</li>
+      <li>Livestream content advisory: which stream formats feed the ads best, baked into the content calendar</li>
+      <li>Renewal decision with data on the table — scale up, hold steady, or hand over the playbook</li>
+    </ul>
+  </div>
+
+  <div class="band">6-MONTH TIMELINE — INDICATIVE, KICKOFF FIRST WEEK OF AUGUST 2026</div>
+
+  <div class="gantt">
+    <div class="gaxis"><span></span><span>M1</span><span></span><span>M2</span><span></span><span>M3</span><span></span><span>M4</span><span></span><span>M5</span><span></span><span>M6</span><span></span></div>
+    <div class="grow"><span class="glabel">S1 · Foundation &amp; tracking</span><div class="gbar" style="grid-column:2/4;background:var(--blue)"></div></div>
+    <div class="grow"><span class="glabel">S2 · Launch &amp; creative testing</span><div class="gbar" style="grid-column:4/8;background:var(--teal)"></div></div>
+    <div class="grow"><span class="glabel">S3 · Optimise &amp; scale</span><div class="gbar" style="grid-column:8/12;background:var(--orange)"></div></div>
+    <div class="grow"><span class="glabel">S4 · Playbook &amp; review</span><div class="gbar" style="grid-column:12/14;background:var(--purple)"></div></div>
+    <div class="grow"><span class="glabel">Weekly optimisation &amp; reporting</span><div class="gbar" style="grid-column:4/14;background:var(--slate)"></div></div>
+  </div>
+  <p class="cap">Each column = half a month. First leads flow in Month 2; Months 4–6 are where cost-per-consult typically drops as winning creatives compound.</p>
+
+  <div class="callout">
+    <h3>What success looks like by Month 6</h3>
+    <p class="small" style="margin:0">A steady, tracked flow of qualified Klang Valley enquiries every month · a known, defensible <strong>cost per consultation booked</strong> · a retargeting pool of warm audiences that gets cheaper to convert over time · and a documented playbook connecting IKONIK's livestream content directly to patient bookings. Exact lead targets are set at the end of Month 1, once baseline costs are measured — we commit to numbers we can stand behind, not brochure numbers.</p>
+  </div>
+
+  <div class="footer-line">Toggle Solutions · Confidential — prepared for Ikonik Eye Specialist Centre</div>
+  <div class="pagenum">4 / 5</div>
+</div>
+
+<!-- ============ PAGE 5 — INVESTMENT & NEXT STEPS ============ -->
+<div class="page">
+  <div class="watermark">[ toggle.solutions ]</div>
+  <div class="kicker">Investment &amp; Next Steps</div>
+  <h2>Investment</h2>
+
+  <div class="statrow">
+    <div class="stat"><div class="v focal">RM 3,000</div><div class="l">Per month, ex-SST — fixed for the full term, no setup fee</div></div>
+    <div class="stat"><div class="v">6 months</div><div class="l">Contract term · RM18,000 total programme value</div></div>
+    <div class="stat"><div class="v">RM 3–5K</div><div class="l">Recommended monthly media budget — paid directly by IKONIK to the ad platforms, 100% transparent</div></div>
+  </div>
+  <p class="cap">Retainer covers strategy, campaign management, creative cutting (from IKONIK's existing footage and livestreams), landing page, tracking, WhatsApp flow setup, KKLIU compliance vetting, and monthly reporting. Ad spend is billed by TikTok/Meta directly to IKONIK's own ad accounts — you own the accounts, the data, and the audiences. Media budget starts at the lower end in Month 2 and scales only when the numbers justify it.</p>
+
+  <h3>What the retainer includes, month to month</h3>
+  <table>
+    <tr><th>Included every month</th><th>Cadence</th></tr>
+    <tr><td>Campaign management &amp; optimisation across TikTok + Meta</td><td>Weekly</td></tr>
+    <tr><td>New ad creatives cut from livestream/surgery footage</td><td>4–6 variants / month</td></tr>
+    <tr><td>Lead quality check-in with front desk</td><td>Weekly (15 min)</td></tr>
+    <tr><td>Performance report — spend, leads, cost per lead, consults booked</td><td>Monthly</td></tr>
+    <tr><td>Strategy review call</td><td>Monthly</td></tr>
+  </table>
+
+  <h3 style="margin-top:3mm">Optional extensions — quoted separately, on request</h3>
+  <ul class="small">
+    <li><strong>On-site content day</strong> — a shoot day at the centre for testimonial and doctor-led creatives beyond the livestream archive</li>
+    <li><strong>Google Search campaigns</strong> — capture high-intent "LASIK KL / cataract surgery price" searches once the funnel is proven</li>
+    <li><strong>CRM / booking automation</strong> — move from lead sheet to a proper pipeline once volume justifies it</li>
+  </ul>
+
+  <div class="band">NEXT STEPS</div>
+  <table>
+    <tr><td class="num" style="width:8mm">1</td><td>IKONIK reviews this proposal internally</td></tr>
+    <tr><td class="num">2</td><td>30-minute call to align on offer, media budget and front-desk handover</td></tr>
+    <tr><td class="num">3</td><td>Sign 6-month agreement — kickoff within 2 weeks, first campaigns live in Month 2</td></tr>
+  </table>
+
+  <div class="callout" style="margin-top:4mm">
+    <h3>Your contacts</h3>
+    <p class="small" style="margin:0"><strong>Yi Yang Tee</strong> — Strategy Lead · yiyang@toggle.solutions &nbsp;·&nbsp; <strong>Viknesh</strong> — Business Development Director · (+60) 12 568 8681 &nbsp;·&nbsp; toggle.solutions</p>
+  </div>
+
+  <div class="footer-line">Toggle Solutions · Confidential — prepared for Ikonik Eye Specialist Centre</div>
+  <div class="pagenum">5 / 5</div>
+</div>
+
+</body>
+</html>
