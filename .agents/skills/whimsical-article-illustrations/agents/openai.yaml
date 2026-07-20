@@ -1,0 +1,6 @@
+interface:
+  display_name: "Whimsical Article Illustrations"
+  short_description: "Generate clean, whimsical hand-drawn body illustrations (with the Inky IP) for English articles"
+  default_prompt: "Use $whimsical-article-illustrations to design and generate a few whimsical hand-drawn body illustrations for this English article."
+policy:
+  allow_implicit_invocation: true
