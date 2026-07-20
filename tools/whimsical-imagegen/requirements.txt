@@ -1,0 +1,3 @@
+# Local FLUX generation on Apple Silicon via Apple's MLX.
+# Pin is intentionally loose; setup.sh installs the current release.
+mflux>=0.4.0

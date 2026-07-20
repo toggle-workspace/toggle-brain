@@ -7,7 +7,19 @@ description: Generate whimsical, hand-drawn body illustrations for English artic
 
 ## Runtime note (Claude Code)
 
-Claude Code has **no built-in `image_gen` tool**. When invoked here, do NOT try to call `image_gen` or any rendering tool — it doesn't exist and the call will fail. Instead, deliver the shot list plus a ready-to-paste generation prompt (in the `references/prompt-template.md` format) for each image, and let the user render it in their own image tool (Codex, an image-gen MCP, etc.). Everything else in this skill — digesting the source, planning the shots, enforcing the house style, and QA/iteration guidance — works fully here. If a future host DOES expose an image tool, use it per step 3.
+Claude Code has no built-in `image_gen` tool, but this repo ships a local one: **`tools/whimsical-imagegen/gen.py`**, which renders FLUX.1 on Apple Silicon (via mflux) with no API key and no per-image cost. So in Claude Code you can run the full loop — generate, look, fix — not just hand over prompts.
+
+The loop that makes this worth doing in the editor:
+
+1. Plan the shot and write the generation prompt (the `references/prompt-template.md` format is the input to `gen.py`).
+2. **Generate:** run `gen.py` to write a PNG (see step 3 for the exact command).
+3. **Read the PNG back** with the Read tool — you can actually see it — and QA it against `references/qa-checklist.md`.
+4. **Fix:** if it fails a check, refine the prompt and regenerate, or pass the PNG back with `--ref` for an img2img nudge. Repeat until it passes.
+5. Deliver the approved image into `clients/<slug>/02-creative/`.
+
+First-time setup (once per machine): run `tools/whimsical-imagegen/setup.sh` — see that folder's `README.md`. If the tool is genuinely unavailable (setup refuses, non-Apple-Silicon host, user opts out), fall back to the old behavior: deliver the shot list plus a ready-to-paste prompt per image and let the user render it elsewhere. Everything else in this skill works regardless.
+
+Local FLUX is weak at rendering text, so the sparse handwritten labels may come out garbled — that is expected. Treat labels as best-effort: keep them very short, lean on the QA loop, and if legibility matters, composite the labels afterward rather than fighting the model. The pure-white line-art mascot is FLUX's strong suit.
 
 ## Core positioning
 
@@ -55,7 +67,17 @@ Default 4–8 images. Very short article: 1–3. Long article: don't casually ex
 
 ### 3. Generate one at a time
 
-If the user clearly asks to "generate / output / make the images / do it," don't stop to reconfirm; generate each image separately with the built-in `image_gen`. Never tile multiple images into one.
+If the user clearly asks to "generate / output / make the images / do it," don't stop to reconfirm; generate each image separately. Never tile multiple images into one.
+
+In Claude Code, generate with the local tool (one call per image), then Read the result and QA it per the runtime-note loop:
+
+```bash
+tools/whimsical-imagegen/.venv/bin/python tools/whimsical-imagegen/gen.py \
+  --prompt "<the prompt built below>" \
+  --out "<scratchpad>/<slug>-shot-01.png"
+```
+
+Hold a look steady while you tweak the prompt by reusing `--seed`; refine an existing image with `--ref <prev.png> --strength 0.55`. On a host that exposes a native `image_gen` tool instead, use that. Either way:
 
 Each image explains only one core structure. The prompt must include:
 

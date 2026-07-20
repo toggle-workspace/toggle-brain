@@ -1,0 +1,6 @@
+# Machine-local, never committed
+.venv/
+__pycache__/
+*.pyc
+# Generated images iterate in the scratchpad; approved finals go to clients/<slug>/02-creative/
+*.png
