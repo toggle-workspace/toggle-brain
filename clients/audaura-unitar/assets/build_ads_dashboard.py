@@ -174,7 +174,7 @@ def row(a, max_spend):
     cpl_txt = money(cpl) if cpl is not None else "n/a"
     cpl_sort = cpl if cpl is not None else 10 ** 9
     leads = a.get("lead")
-    leads_txt = "{:,}".format(leads) if leads is not None else "—"
+    leads_txt = "{:,}".format(leads) if leads is not None else "n/a"
     ctr = a.get("ctr", 0.0)
     bar = a["spend"] / max_spend * 100 if max_spend else 0
 
@@ -331,12 +331,15 @@ td{padding:9px 14px;text-align:right;vertical-align:middle}
 .c-th{width:56px}
 .th{display:block;width:46px;height:46px;border-radius:var(--md-radius-sm);background-size:cover;background-position:center;background-color:var(--md-surface-container-high);cursor:zoom-in;transition:transform .12s ease,box-shadow .12s ease}
 .th:hover{transform:scale(1.08);box-shadow:var(--md-elev-2)}
-.pop{position:fixed;z-index:50;display:none;width:330px;max-width:86vw;background:var(--md-surface-container-lowest);border:1px solid var(--line);border-radius:var(--md-radius-lg);box-shadow:var(--md-elev-2);overflow:hidden;pointer-events:none}
+.pop{position:fixed;z-index:50;display:none;width:330px;max-width:86vw;background:var(--md-surface-container-lowest);border:1px solid var(--line);border-radius:var(--md-radius-lg);box-shadow:var(--md-elev-2);overflow:hidden;pointer-events:auto}
 .pop-img{display:block;width:100%;max-height:380px;object-fit:contain;background:var(--md-surface-container-high)}
 .pop-txt{padding:12px 15px 15px}
 .pop-title{font-weight:600;font-size:13.5px;color:var(--ink);margin-bottom:5px}
 .pop-body{font-size:12.5px;color:var(--muted);line-height:1.45;white-space:pre-wrap;max-height:150px;overflow:hidden}
-.pop-empty{padding:26px 15px;text-align:center;color:var(--muted);font-size:12.5px}
+.pop-dl{display:inline-flex;align-items:center;gap:7px;margin-top:12px;text-decoration:none;font-size:12.5px;font-weight:600;color:var(--md-on-primary-container);background:var(--md-primary-container);border-radius:999px;padding:7px 14px;cursor:pointer}
+.pop-dl:hover{filter:brightness(.97)}
+.pop-dl:focus-visible{outline:2px solid var(--brand-deep);outline-offset:2px}
+.pop-dl svg{width:15px;height:15px;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 .th-none{display:flex;align-items:center;justify-content:center;font-size:13px;font-weight:700;color:var(--brand);background:var(--md-primary-container)}
 .c-cr{text-align:left;min-width:230px}
 .cr-name{font-weight:500;font-size:13.5px;color:var(--ink)}
@@ -431,9 +434,9 @@ td{padding:9px 14px;text-align:right;vertical-align:middle}
     </div>
   </div>
 
-  <p class="foot-note">Source: Meta Ads account 1034316391892752 (UNITAR MYR), pulled live and rebuilt daily. Hover a thumbnail to preview the full creative and its copy. Figures reflect Meta's reported attribution at pull time and may revise slightly as conversions settle.</p>
+  <p class="foot-note">Source: Meta Ads account 1034316391892752 (UNITAR MYR), pulled live and rebuilt daily. Hover a thumbnail to preview the creative and its copy, and download the image. Figures reflect Meta's reported attribution at pull time and may revise slightly as conversions settle.</p>
 </div>
-<div id="pop" class="pop"><img class="pop-img" alt=""><div class="pop-txt"><div class="pop-title"></div><div class="pop-body"></div></div></div>
+<div id="pop" class="pop"><img class="pop-img" alt=""><div class="pop-txt"><div class="pop-title"></div><div class="pop-body"></div><a class="pop-dl" download><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3v12m0 0l-4-4m4 4l4-4M4 17v2a2 2 0 002 2h12a2 2 0 002-2v-2"/></svg>Download image</a></div></div>
 
 <script>
 (function(){
@@ -491,33 +494,45 @@ td{padding:9px 14px;text-align:right;vertical-align:middle}
   });
   syncTheme();
 
-  // hover preview: one shared popover reads each thumb's image + the row's copy
+  // hover preview: one shared popover shows each thumb's image + the row's copy
+  // and offers a download of the shown image. It anchors to the thumbnail and
+  // stays open when you move onto it, so the Download button is clickable.
   var pop=document.getElementById("pop");
-  var pImg=pop.querySelector(".pop-img"), pTitle=pop.querySelector(".pop-title"), pBody=pop.querySelector(".pop-body");
+  var pImg=pop.querySelector(".pop-img"), pTitle=pop.querySelector(".pop-title"),
+      pBody=pop.querySelector(".pop-body"), pDl=pop.querySelector(".pop-dl");
+  var hideT=null, curTh=null;
+  function slug(s){return (s||"creative").toLowerCase().replace(/[^a-z0-9]+/g,"-").replace(/^-+|-+$/g,"").slice(0,60)||"creative";}
+  function anchor(){
+    if(!curTh)return;
+    var rc=curTh.getBoundingClientRect(), pad=12, w=pop.offsetWidth, h=pop.offsetHeight;
+    var x=rc.right+10, y=rc.top-8;
+    if(x+w+pad>window.innerWidth) x=rc.left-w-10;
+    if(x<pad) x=pad;
+    if(y+h+pad>window.innerHeight) y=window.innerHeight-h-pad;
+    if(y<pad) y=pad;
+    pop.style.left=x+"px"; pop.style.top=y+"px";
+  }
   function showPop(th){
+    clearTimeout(hideT); curTh=th;
     var r=th.closest("tr");
     var bg=getComputedStyle(th).backgroundImage||"";
     var m=bg.match(/url\(["']?(.*?)["']?\)/);
-    if(m&&m[1]&&m[1]!=="none"){pImg.src=m[1];pImg.style.display="";}else{pImg.style.display="none";}
-    var t=r.getAttribute("data-title")||"", b=r.getAttribute("data-body")||"";
+    var src=(m&&m[1]&&m[1]!=="none")?m[1]:"";
     var nm=(r.querySelector(".cr-name")||{}).textContent||"";
-    pTitle.textContent=t||nm;
-    pBody.textContent=b; pBody.style.display=b?"":"none";
-    pop.style.display="block";
+    if(src){pImg.src=src;pImg.style.display="";pDl.href=src;pDl.setAttribute("download",slug(nm)+".jpg");pDl.style.display="";}
+    else{pImg.removeAttribute("src");pImg.style.display="none";pDl.style.display="none";}
+    var t=r.getAttribute("data-title")||"", b=r.getAttribute("data-body")||"";
+    pTitle.textContent=t||nm; pBody.textContent=b; pBody.style.display=b?"":"none";
+    pop.style.display="block"; anchor();
   }
-  function place(e){
-    var pad=14,w=pop.offsetWidth,h=pop.offsetHeight;
-    var x=e.clientX+18,y=e.clientY+18;
-    if(x+w+pad>window.innerWidth)x=e.clientX-w-18;
-    if(y+h+pad>window.innerHeight)y=window.innerHeight-h-pad;
-    if(y<pad)y=pad; if(x<pad)x=pad;
-    pop.style.left=x+"px"; pop.style.top=y+"px";
-  }
+  function scheduleHide(){hideT=setTimeout(function(){pop.style.display="none";curTh=null;},170);}
+  pImg.addEventListener("load",anchor);
   [].forEach.call(document.querySelectorAll("td.c-th .th"),function(th){
-    th.addEventListener("mouseenter",function(e){showPop(th);place(e);});
-    th.addEventListener("mousemove",place);
-    th.addEventListener("mouseleave",function(){pop.style.display="none";});
+    th.addEventListener("mouseenter",function(){showPop(th);});
+    th.addEventListener("mouseleave",scheduleHide);
   });
+  pop.addEventListener("mouseenter",function(){clearTimeout(hideT);});
+  pop.addEventListener("mouseleave",scheduleHide);
 
   apply();
 })();
