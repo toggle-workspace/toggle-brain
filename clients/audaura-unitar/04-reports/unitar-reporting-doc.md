@@ -11121,3 +11121,1346 @@ A1\_tt\_ONE\_ABO scaled to RM9,011.76 spend / 86 leads / RM104.79 CPL — leads 
 
   
   
+  
+  
+
+# Message Conversation Data Requested by Tim  
+
+# **Message Conversation Data Requested by Tim - 20260619**
+
+  
+
+**Lead Form campaigns to message conversations:**
+
+  
+
+Funnel:  
+  
+*User sees the ad \> User clicks on the ad CTA button ‘Learn More’ \> This opens the lead form \> User fills the lead form \> At the end of the lead form, the user can click ‘Chat on WhatsApp’ and start a conversation*  
+  
+  
+
+|  |  |  |  |
+| :-: | :-: | :-: | :-: |
+| \*\*Spend\*\* | \*\*Lead forms\*\* | \*\*New Message\*\*\*\*Conversations Started\*\* | \*\*LG to Message %\*\* |
+| RM82,605 | 1,365 | 1,243 | 91% |
+
+\*May 21st to June 19th
+
+  
+
+  
+
+  
+  
+**Message conversation campaign:**
+
+  
+
+Funnel:  
+  
+*User sees the ad \> User clicks on the ad CTA button ‘Send Message’ \> This opens the messaging platform with a auto send message*  
+  
+  
+
+|  |  |
+| :-: | :-: |
+| \*\*Spend\*\* | \*\*New Message Conversations Started\*\* |
+| RM57,082 | 2,951 |
+
+\*May 21st to June 19th
+
+  
+  
+
+Auto-send message:   
+  
+*Hi \[USER\]\! Thank you for your interest in UNITAR’s programmes. Please share your details below so we can assist you further:*
+
+  
+
+*Full Name:*
+
+*Mobile:*
+
+*Email:*
+
+*Highest Qualification (SPM/STPM/Diploma/Degree/Master):*
+
+*Preferred Programme:*
+
+  
+
+*Thanks\!*
+
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+
+# 14th June - 21st June  
+
+**15th June - 21st June**
+
+|  |  |
+| :-: | :-: |
+| \*\*Top-Line Performance:\*\* |   |
+| \*\*Total Spend:\*\* | RM185,150 |
+| \*\*Total Leads:\*\* | 1,945 |
+| \*\*Blended CPL:\*\* | RM95.19 |
+
+### **  
+****Meta**
+
+|  |  |
+| :-: | :-: |
+| \*\*Total Spend:\*\* | RM59,521.08 |
+| \*\*Total Leads:\*\* | 879 |
+| \*\*Blended CPL:\*\* | RM67.71 |
+
+  
+
+### **Google**
+
+|  |  |
+| :-: | :-: |
+| \*\*Total Spend:\*\* | RM95,071.61 |
+| \*\*Total Leads:\*\* | 889 |
+| \*\*Blended CPL:\*\* | RM106.94 |
+
+  
+
+### **TikTok**
+
+|  |  |
+| :-: | :-: |
+| \*\*Total Spend:\*\* | RM30,557.79 |
+| \*\*Total Leads:\*\* | 177 |
+| \*\*Blended CPL:\*\* | RM172.64 |
+
+  
+**Insights:** **  
+**Our total investment for the week was **RM185,150**, generating **1,945** leads at a blended Cost Per Lead (CPL) of **RM95.19**.
+
+Week on week, spend is up **\~16%** and lead volume up **\~5%**, but blended CPL rose **\~10%** — we bought more volume at a higher price as efficiency lowered slightly.
+
+Meta remained the efficient at RM67.71 CPL (flat WoW) while growing leads **+14% to 879****.**
+
+Google was the week's inefficient channel: spend **+8%** but leads fell **-8%** and CPL jumped **+17%** to RM106.94.
+
+TikTok scaled hard (+55% spend and leads) while holding blended CPL flat at RM172.64; Tiktok ONE creative pulled back under RM100 as it scaled.
+
+We have been trying to get Tiktok to increase our Tiktok ONE project allowance so we can scale further. For now we have created 3 projects.
+
+  
+  
+  
+  
+  
+
+**Meta**
+
+### **  
+****Performance Analysis**
+
+#### **Website Conversion vs. Instant Form Campaigns**
+
+|  |  |  |  |  |  |
+| :-: | :-: | :-: | :-: | :-: | :-: |
+| \*\*Campaign Type\*\* | \*\*Spend (RM)\*\* | \*\*Leads\*\* | \*\*CPL (RM)\*\* | \*\*Message Conversation\*\* | \*\*Cost per message\*\* |
+| \*\*Instant Form\*\* | RM44,891.83 | 839 | RM53.51 | 869 | RM51.66 |
+| \*\*Message Generation\*\* | RM13,898.22 | 39 | RM356.36 | 449 | RM30.95 |
+| \*\*Awareness/\*\*\*\*  &#10;\*\*\*\*LPV\*\* | RM731.03 | / | / | / | / |
+| \*\*Website Conversion\*\* | / | / | / | / | / |
+
+**  
+****Insight:****  
+**Meta delivered RM59,521.08 spend / 879 leads / RM67.71 blended CPL — essentially flat vs RM67.91 last week while scaling leads +14%, keeping it the most efficient channel.
+
+Message Generation continued generating message conversations as a conversation engine: 449 conversations at RM30.95 each.
+
+**  
+  
+**
+
+  
+  
+  
+  
+
+**Campaign Level Performance Insight**
+
+#### **Top 3 Campaigns by Leads:**
+
+|  |  |  |
+| :-: | :-: | :-: |
+| \*\*Campaign Name\*\* | \*\*Leads\*\* | \*\*CPL (RM)\*\* |
+| \*\*Audaura/ FB/ C1 2026/ Scale Up/ Lead Generation/ Instant Form/ Retargeting/ ABO/ CAPI\*\* | 269 | RM53.45 |
+| \*\*Audaura/ FB/ C2 2026/ Lead Generation/ LG/ MC/ Prospecting/ ABO/ CAPI\*\* | 208 | RM46.94 |
+| \*\*Audaura/ FB/ C2 2026/ Lead Generation/ LG/ UC/ Prospecting/ ABO/ CAPI\*\* | 107 | RM74.75 |
+
+**Insight:****  
+**C1 Scale Up Retargeting Instant Form led with 269 leads / RM53.45, followed by C2 Main Campus Prospecting (208 / RM46.94) and C2 UC Prospecting (107 / RM74.75).
+
+CPLs rose across the top campaigns vs last week (Retargeting RM43→RM53, Prospecting RM40→RM47), but volume held — the channel is buying more leads at a slightly higher, still-efficient price.  
+  
+
+**Action steps:**
+
+  - Hold Retargeting/Prospecting budgets while they scale, but watch the upward CPL creep — cap further increases if CPL passes \~RM60.
+  - Keep scaling MED campaign running now that it is at RM58 CPL, and launch more creatives in EN and BM.
+
+  
+
+## **Google****  
+  
+**
+
+### **Overall Google Summary**
+
+|  |  |  |  |
+| :-: | :-: | :-: | :-: |
+| \*\*Campaign Type\*\* | \*\*Cost\*\* | \*\*Conversions\*\* | \*\*CPL\*\* |
+| PMax | \\- | \\- | \\- |
+| Search | RM95,071.61 | 889 | RM106.94 |
+
+### **  
+****Insight:**  
+Google Search delivered **RM95,071.61** spend / 889 leads / RM106.94 CPL — leads down -8% and CPL up +17% despite +8% more spend. Efficiency deteriorated and CPL is now above the target band. PMax remains off.
+
+  
+  
+
+### **Top 3 Campaigns by Conversions:**
+
+|  |  |  |  |
+| :-: | :-: | :-: | :-: |
+| \*\*Campaign\*\* | \*\*Cost (RM)\*\* | \*\*Conv.\*\* | \*\*CPL (RM)\*\* |
+| Aud\\\_Unitar\\\_MY\\\_SEM\\\_Brand\\\_T2\\\_Max\\\_Conversion\\\_TCPA\\\_Test | RM6,208.28 | 90 | RM68.89 |
+| Aud\\\_Unitar\\\_MY\\\_SEM\\\_Level of study\\\_Low intent\\\_T1a+T2\\\_EN+BM\\\_Max\\\_Conversion\\\_TCPA | RM6,909.56 | 82 | RM84.02 |
+| Aud\\\_Unitar\\\_MY\\\_SEM\\\_Brand\\\_T1b\\\_Max\\\_Conversion\\\_TCPA | RM5,757.22 | 68 | RM84.30 |
+
+**Insight:****  
+**Brand T2 Test was the top converter (90 conv / RM68.89), ahead of Low-Intent T1a+T2 (82 / RM84.02) and Brand T1b (68 / RM84.30). The Low-Intent campaign slipped from last week's RM73 to RM84, and overall CPL climbed.
+
+**Action steps:**
+
+  - Diagnose the CPL spike — check auction competition/CPCs and search-term quality before adding more budget.
+  - Protect Brand T2 Test (cheapest converter at RM69) and shift marginal budget there from the higher-CPL generic lines.
+  - Hold net-new spend until blended CPL returns toward the RM90s.
+
+  
+  
+
+**TikTok**
+
+### **Overall TikTok Summary**
+
+|  |  |  |  |
+| :-: | :-: | :-: | :-: |
+| \*\*Campaign Type\*\* | \*\*Cost\*\* | \*\*Conversions\*\* | \*\*CPL\*\* |
+| TOF - Awareness | RM9,572.71 | / | / |
+| MOF - Instant Forms | RM20,985.08 | 174 | RM120.60 |
+| BOF - Retargeting Instant Forms | RM0 | 0 | RM0 |
+
+  
+
+### **Performance Analysis**
+
+**Top 5 Campaigns by Conversions:**
+
+|  |  |  |  |
+| :-: | :-: | :-: | :-: |
+| \*\*Campaign\*\* | \*\*Cost (RM)\*\* | \*\*Conv.\*\* | \*\*CPL (RM)\*\* |
+| audaura\\\_tiktok\\\_MOF\\\_InstantForms\\\_ConversionLeads\\\_A1\\\_tt\\\_ONE\\\_ABO | RM13,419.68 | 135 | RM99.41 |
+| audaura\\\_tiktok\\\_MOF\\\_InstantForms\\\_ConversionLeads\\\_A1\\\_Masters\\\_CBO | RM5,816.94 | 33 | RM176.27 |
+| audaura\\\_tiktok\\\_MOF\\\_InstantForms\\\_ConversionLeads\\\_A1\\\_T1a\\\_CBO | RM1,748.46 | 6 | RM291.41 |
+
+  
+
+**Insight:** TikTok delivered RM30,557.79 spend / 177 leads / RM172.64 blended CPL — spend and leads both up \~55% while blended CPL held flat.
+
+MOF Instant Forms drove the channel at RM20,985.08 / 174 leads / RM120.60 CPL (CPL down from RM134.78). TOF Awareness spend doubled to RM9,572.71 with no direct leads, dragging the blended figure up.
+
+A1\_tt\_ONE\_ABO scaled to RM13,419.68 / 135 leads / RM99.41 CPL — leads +57% and CPL back under RM100 (from RM104.79), so this time scaling held efficiency. A1\_T1a\_CBO improved to RM291.41 (from RM975) but remains the weakest line.
+
+  
+
+**Action Steps**
+
+1.  **Keep scaling A1\_tt\_ONE\_ABO while it stays below -RM100 CPA** — it is the channel's proven engine.
+2.  Continue rebuilding A1\_T1a\_CBO (RM291) and A1\_Masters (RM176) toward sub-RM100 using the ONE hook.
+
+  
+  
+  
+  
+  
+
+# 22nd June - 28th June  
+
+**22nd June - 28th June**
+
+|  |  |
+| :-: | :-: |
+| \*\*Top-Line Performance:\*\* |   |
+| \*\*Total Spend:\*\* | RM182,493.74 |
+| \*\*Total Leads:\*\* | 1,873 |
+| \*\*Blended CPL:\*\* | RM97.43 |
+
+### **  
+****Meta**
+
+|  |  |
+| :-: | :-: |
+| \*\*Total Spend:\*\* | RM65,778.89 |
+| \*\*Total Leads:\*\* | 904 |
+| \*\*Blended CPL:\*\* | RM72.76 |
+
+  
+
+### **Google**
+
+|  |  |
+| :-: | :-: |
+| \*\*Total Spend:\*\* | RM85,230.55 |
+| \*\*Total Leads:\*\* | 831 |
+| \*\*Blended CPL:\*\* | RM102.53 |
+
+  
+
+### **TikTok**
+
+|  |  |
+| :-: | :-: |
+| \*\*Total Spend:\*\* | RM31,484.30 |
+| \*\*Total Leads:\*\* | 138 |
+| \*\*Blended CPL:\*\* | RM228.15 |
+
+  
+**Insights:** **  
+**Our total investment for the week was **RM182,494**, generating **1,873** leads at a blended Cost Per Lead (CPL) of **RM97.43.**
+
+Week on week, spend reduced  **-1%** and lead volume **-4%**, with blended CPL up slightly (+2%) — a broadly flat week overall, but the channel mix shifted underneath.
+
+Meta stayed as the efficiency anchor at **RM72.76 CPL** and grew leads to **904**, though CPL crept up **+8%** as we scaled spend **+11%.**
+
+Google pulled back **(spend -10%, leads -7%)** and CPL improved to **RM102.53** — still above the target band.
+
+TikTok deteriorated with blended CPL increasing to RM228.15 **(+32%)** as leads fell **-22%**; the Tiktok ONE creatives from the 1st batch lost efficiency.
+
+TikTok ONE project allowance is increased so we’ve prepared 3 new project drafts to be submitted.  
+So far we have only received 1 new video for the MED and MBA projects submitted over 2 weeks ago.  
+Some of the video submission deadlines expired before the creator could send videos.  
+This MIGHT be due to us giving instructions that are too narrow/strict.
+
+  
+  
+
+**Meta**
+
+### **  
+****Performance Analysis**
+
+#### **Website Conversion vs. Instant Form Campaigns**
+
+|  |  |  |  |  |  |
+| :-: | :-: | :-: | :-: | :-: | :-: |
+| \*\*Campaign Type\*\* | \*\*Spend (RM)\*\* | \*\*Leads\*\* | \*\*CPL (RM)\*\* | \*\*Message Conversation\*\* | \*\*Cost per message\*\* |
+| \*\*Instant Form\*\* | RM50,585 | 854 | RM59.23 | 795 | RM63.6 |
+| \*\*Message Generation\*\* | RM13,683.31 | 49 | RM279.25 | 386 | RM35.45 |
+| \*\*Awareness/\*\*\*\*  &#10;\*\*\*\*LPV\*\* | RM1,509.94 | / | / | / | / |
+| \*\*Website Conversion\*\* | / | / | / | / | / |
+
+**  
+****Insight:****  
+**Meta delivered **RM65,778.89** spend / **904** leads / **RM72.76** blended CPL — **CPL up +8%** vs RM67.71 last week as we scaled spend **+11%**, but it remains comfortably the most efficient channel.  
+  
+
+**Campaign Level Performance Insight**
+
+#### **Top 3 Campaigns by Leads:**
+
+|  |  |  |
+| :-: | :-: | :-: |
+| \*\*Campaign Name\*\* | \*\*Leads\*\* | \*\*CPL (RM)\*\* |
+| \*\*Audaura/ FB/ C1 2026/ Scale Up/ Lead Generation/ Instant Form/ Retargeting/ ABO/ CAPI\*\* | 241 | RM65.68 |
+| \*\*Audaura/ FB/ C2 2026/ Lead Generation/ LG/ Pakistan/ Prospecting/ ABO/ CAPI\*\* | 186 | RM8.04 |
+| \*\*Audaura/ FB/ C2 2026/ Lead Generation/ LG/ MC/ Prospecting/ ABO/ CAPI\*\* | 167 | RM58.34 |
+
+**Insight:****  
+**C1 Scale Up Retargeting Instant Form led on volume (241 leads / RM65.68), but the standout was the new C2 Pakistan Prospecting campaign — 186 leads at just RM8.04 CPL. C2 Main Campus Prospecting added 167 leads / RM58.34.
+
+The core Retargeting/Prospecting CPLs rose vs last week (Retargeting RM53→RM66, MC RM47→RM58), so the very cheap Pakistan campaign is partly masking softening efficiency elsewhere — worth confirming Pakistan lead quality justifies the volume before leaning on it.
+
+**Action steps:**
+
+  - Verify Pakistan lead quality before scaling — RM8 CPL is exceptional, but confirm these leads convert downstream (enrolment intent, geography fit) before shifting budget in.
+  - Watch the CPL creep on Retargeting/Prospecting (now RM58–66) and cap further increases if they keep climbing.
+  - Keep Website Conversion on at RM55 CPL and continue expanding creatives in EN and BM.
+
+  
+  
+  
+  
+  
+
+## **Google****  
+  
+**
+
+### **Overall Google Summary**
+
+|  |  |  |  |
+| :-: | :-: | :-: | :-: |
+| \*\*Campaign Type\*\* | \*\*Cost\*\* | \*\*Conversions\*\* | \*\*CPL\*\* |
+| PMax | \\- | \\- | \\- |
+| Search | RM85,230.55 | 831 | RM102.53 |
+
+### **  
+****Insight:** Google Search delivered RM85,230.55 spend / 831 leads / RM102.53 CPL — spend pulled back -10% and leads -7%, with CPL easing slightly from RM106.94 but still above the target band.
+
+  
+  
+  
+  
+
+### **Top 3 Campaigns by Conversions:**
+
+|  |  |  |  |
+| :-: | :-: | :-: | :-: |
+| \*\*Campaign\*\* | \*\*Cost (RM)\*\* | \*\*Conv.\*\* | \*\*CPL (RM)\*\* |
+| Aud\\\_Unitar\\\_MY\\\_SEM\\\_Level of study\\\_Low intent\\\_T1a+T2\\\_EN+BM\\\_Max\\\_Conversion\\\_TCPA | RM6,553.14 | 75 | RM87.62 |
+| Aud\\\_Unitar\\\_MY\\\_SEM\\\_Brand\\\_T2\\\_Max\\\_Conversion\\\_TCPA\\\_Test | RM6,353.51 | 63 | RM101.13 |
+| Aud\\\_Unitar\\\_MY\\\_SEM\\\_Brand\\\_T1a\\\_Max\\\_Conversion\\\_TCPA | RM5,790.36 | 58 | RM100.60 |
+
+**Insight:** Low-Intent T1a+T2 was the cheapest top converter (75 conv / RM87.62), while Brand T2 Test degraded sharply to RM101.13 (from RM68.89) and Brand T1a sat at RM100.60. The Brand lines lost the efficiency edge they held last week.
+
+**Action steps:**
+
+  - Investigate the Brand CPL jump (T2 Test RM69→RM101) — check auction competition, CPCs and landing-page/quality-score before restoring budget.
+  - Lean on Low-Intent T1a+T2 as the current cheapest converter.
+  - Keep spend disciplined until blended CPL returns toward the RM90s.
+
+  
+  
+  
+
+**TikTok**
+
+### **Overall TikTok Summary**
+
+|  |  |  |  |
+| :-: | :-: | :-: | :-: |
+| \*\*Campaign Type\*\* | \*\*Cost\*\* | \*\*Conversions\*\* | \*\*CPL\*\* |
+| TOF - Awareness | RM9,590.08 | / | / |
+| MOF - Instant Forms | RM21,894.22 | 138 | RM158.65 |
+| BOF - Retargeting Instant Forms | RM0 | 0 | RM0 |
+
+  
+
+### **Performance Analysis**
+
+**Top 5 Campaigns by Conversions:**
+
+|  |  |  |  |
+| :-: | :-: | :-: | :-: |
+| \*\*Campaign\*\* | \*\*Cost (RM)\*\* | \*\*Conv.\*\* | \*\*CPL (RM)\*\* |
+| audaura\\\_tiktok\\\_MOF\\\_InstantForms\\\_ConversionLeads\\\_A1\\\_tt\\\_ONE\\\_ABO | RM14,263.29  | 112 | RM127.35  |
+| audaura\\\_tiktok\\\_MOF\\\_InstantForms\\\_ConversionLeads\\\_A1\\\_Masters\\\_CBO | RM5,879.83 | 22 | RM267.27 |
+| audaura\\\_tiktok\\\_MOF\\\_InstantForms\\\_ConversionLeads\\\_A1\\\_T1a\\\_CBO | RM1,751.10 | 2 | RM437.78 |
+
+  
+
+**Insight:**TikTok delivered RM31,484.30 spend / 138 leads / RM228.15 blended CPL — spend held roughly flat (+3%) but leads fell -22% and blended CPL blew out +32%, the channel's worst week in the recent run.
+
+MOF Instant Forms weakened to RM21,894.22 / 138 leads / RM158.65 CPL (from RM120.60). TOF Awareness held at RM9,590.08 with no direct leads, dragging the blended figure up.
+
+The ONE creative lost its edge again: A1\_tt\_ONE\_ABO rose to RM127.35 CPL (from RM99.41) with leads down to 112. A1\_Masters (RM267.27) and A1\_T1a (RM437.78) both deteriorated further.
+
+  
+
+**Action Steps**
+
+1.  Pull A1\_tt\_ONE\_ABO spend back toward the level where it converted sub-RM100 rather than pushing volume — it has now overshot when scaled in two of the last three weeks.
+2.  Reassess the RM9,590 TOF Awareness line: with no direct leads and the blend at RM228, justify it as upper-funnel or reallocate to MOF.
+3.  TikTok ONE project allowance is increased so we’ve prepared 3 new project drafts to be submitted.
+
+  
+
+**Priorities:**
+
+  - Perkeso
+  - Tiktok ONE programs list
+  - Pakistan feedback
+  - Traffic comparison description YoY 2024, 2025, 2026
+  - Deck for GEO from Julian
+  - Similar web comparison for competitors YoY  
+
+# (June) 1 June - 30 June  
+
+**June Monthly Reporting**
+
+|  |  |
+| :-: | :-: |
+| \*\*Top-Line Performance:\*\* |   |
+| \*\*Total Spend:\*\* | RM715,080.91 |
+| \*\*Total Leads:\*\* | 7,642 |
+| \*\*Blended CPL:\*\* | RM93.57 |
+
+### **  
+****Meta**
+
+|  |  |
+| :-: | :-: |
+| \*\*Total Spend:\*\* | RM246,319.22 |
+| \*\*Total Leads:\*\* | 3,343 |
+| \*\*Blended CPL:\*\* | RM73.68 |
+
+  
+
+### **Google**
+
+|  |  |
+| :-: | :-: |
+| \*\*Total Spend:\*\* | RM356,676.61 |
+| \*\*Total Leads:\*\* | 3,708 |
+| \*\*Blended CPL:\*\* | RM96.19 |
+
+  
+
+### **TikTok**
+
+|  |  |
+| :-: | :-: |
+| \*\*Total Spend:\*\* | RM112,085.08 |
+| \*\*Total Leads:\*\* | 591 |
+| \*\*Blended CPL:\*\* | RM189.65 |
+
+  
+**Insights:** **  
+**Our total investment for the month of June was **RM715,080.91**, generating **7,642** leads at a blended Cost Per Lead (CPL) of **RM93.57.**
+
+Month on month, spend increased by **15%** and lead volume **14%**, with blended CPL up slightly **(+2%)**.  
+  
+
+**Meta spend month on month:** +40%
+
+**Meta leads month on month:** +35%
+
+**Meta CPL:** +9%
+
+  
+
+**Google spend month on month:** +2.5%
+
+**Google leads month on month:** +5.5%
+
+**Google CPL:** -7%
+
+  
+
+**Tiktok spend month on month:** -1%
+
+**Tiktok leads month on month:** -9%
+
+**Tiktok CPL:** +8%
+
+  
+  
+
+**Meta**
+
+### **  
+****Performance Analysis**
+
+#### **Website Conversion vs. Instant Form Campaigns**
+
+|  |  |  |  |  |  |
+| :-: | :-: | :-: | :-: | :-: | :-: |
+| \*\*Campaign Type\*\* | \*\*Spend (RM)\*\* | \*\*Leads\*\* | \*\*CPL (RM)\*\* | \*\*Message Conversation\*\* | \*\*Cost per message\*\* |
+| \*\*Instant Form\*\* | RM164,740.05 | 2,931 | RM56.21 | 2,779 | RM59.28 |
+| \*\*Message Generation\*\* | RM59,644.07 | 150 | RM397.63 | 2815 | RM21.19 |
+| \*\*Awareness/\*\*\*\*  &#10;\*\*\*\*LPV\*\* | RM3,336.10 | / | / | / | / |
+
+**  
+****Insight:****  
+**Meta delivered **RM246,319** spend / **3,343** leads / **RM73.7**.  
+  
+
+**Campaign Level Performance Insight**
+
+#### **Top 3 Campaigns by Leads:**
+
+|  |  |  |
+| :-: | :-: | :-: |
+| \*\*Campaign Name\*\* | \*\*Leads\*\* | \*\*CPL (RM)\*\* |
+| \*\*Audaura/ FB/ C1 2026/ Scale Up/ Lead Generation/ Instant Form/\*\* \*\*Retargeting\*\*\*\*/ ABO/ CAPI\*\* | 993 | RM53.57 |
+| \*\*Audaura/ FB/ C2 2026/ Lead Generation/ LG/ MC/ Prospecting/ ABO/ CAPI\*\* | 784 | RM46.23 |
+| \*\*Audaura/ FB/ C2 2026/ Lead Generation/ LG/\*\* \*\*UC\*\*\*\*/ Prospecting/ ABO/ CAPI\*\* | 397 | RM96.97 |
+|   |   |   |
+| \*\*Audaura/ FB/ C2 2026/ Lead Generation/ LG/ Pakistan/ Prospecting/ ABO/ CAPI\*\* | 322 | RM13.26 |
+
+**Insight:****  
+**C1 Scale Up Retargeting Instant Form led on volume (993 leads / RM53.57). C2 Main Campus Prospecting added 784 leads / RM46.23.
+
+**Action steps:**
+
+  - Verify Pakistan lead quality before scaling — RM13 CPL is exceptional, but confirm these leads convert downstream (enrolment intent, geography fit) before shifting budget in.
+
+  
+  
+  
+  
+  
+  
+  
+
+## **Google****  
+  
+**
+
+### **Overall Google Summary**
+
+|  |  |  |  |
+| :-: | :-: | :-: | :-: |
+| \*\*Campaign Type\*\* | \*\*Cost\*\* | \*\*Conversions\*\* | \*\*CPL\*\* |
+| Search | RM356,676.61 | 3,708 | RM96.19 |
+
+### **  
+****Insight:** Google Search spent RM356,676.61 spend / 3,708 leads / RM96 CPL — spend increased by +2.5% and leads +5.5%, with CPL improving slightly by 7%.
+
+  
+
+**Google spend month on month:** +2.5%
+
+**Google leads month on month:** +5.5%
+
+**Google CPL:** -7%
+
+  
+  
+
+### **Top 3 Campaigns by Conversions:**
+
+|  |  |  |  |
+| :-: | :-: | :-: | :-: |
+| \*\*Campaign\*\* | \*\*Cost (RM)\*\* | \*\*Conv.\*\* | \*\*CPL (RM)\*\* |
+| Aud\\\_Unitar\\\_MY\\\_SEM\\\_Level of study\\\_Low intent\\\_T1a+T2\\\_EN+BM\\\_Max\\\_Conversion\\\_TCPA | RM27,364 | 338 | RM81 |
+| Aud\\\_Unitar\\\_MY\\\_SEM\\\_Brand\\\_T2\\\_Max\\\_Conversion\\\_TCPA\\\_Test | RM24,064 | 315 | RM76 |
+| Aud\\\_Unitar\\\_MY\\\_SEM\\\_Brand\\\_T1a\\\_Max\\\_Conversion\\\_TCPA | RM24,112 | 265 | RM91 |
+
+**Insight:** Low-Intent T1a+T2 was the cheapest top converter (338 conv / RM81). Overall the Brand campaigns are still the best volume drivers.
+
+**Action steps:**
+
+  - Lean on Low-Intent T1a+T2 as the current cheapest converter.
+  - Keep spend disciplined until blended CPL returns toward the RM90s.
+  - **\*\*We need a dashboard so we can be more effective in our campaign optimisation. We need to see lead quality by campaign level for all channels.\*\***
+
+  
+  
+  
+
+**TikTok**
+
+### **Overall TikTok Summary**
+
+|  |  |  |  |
+| :-: | :-: | :-: | :-: |
+| \*\*Campaign Type\*\* | \*\*Cost\*\* | \*\*Conversions\*\* | \*\*CPL\*\* |
+| TOF - Awareness | RM32,287.07 | / | / |
+| MOF - Instant Forms | RM79,798.01 | 584 | RM136.64 |
+| BOF - Retargeting Instant Forms | RM0 | 0 | RM0 |
+
+  
+
+### **Performance Analysis**
+
+**Top 5 Campaigns by Conversions:**
+
+|  |  |  |  |
+| :-: | :-: | :-: | :-: |
+| \*\*Campaign\*\* | \*\*Cost (RM)\*\* | \*\*Conv.\*\* | \*\*CPL (RM)\*\* |
+| audaura\\\_tiktok\\\_MOF\\\_InstantForms\\\_ConversionLeads\\\_A1\\\_tt\\\_ONE\\\_ABO | RM46,651.26  | 448 | RM104.13  |
+| audaura\\\_tiktok\\\_MOF\\\_InstantForms\\\_ConversionLeads\\\_A1\\\_Masters\\\_CBO | RM22,344.74 | 117 | RM190.98 |
+| audaura\\\_tiktok\\\_MOF\\\_InstantForms\\\_ConversionLeads\\\_A1\\\_T1a\\\_CBO | RM10,802.01 | 19 | RM568.53  |
+
+  
+
+**Insight:**TikTok delivered RM112,085.08 spend / 584 leads / RM189.65 blended CPL which was 8% better month on month due to leveraging more on Tiktok ONE videos.
+
+**Action Steps**
+
+1.  Pull A1\_tt\_ONE\_ABO spend back toward the level where it converted sub-RM100 rather than pushing volume — it has now overshot when scaled in two of the last three weeks.
+2.  Reassess the RM9,590 TOF Awareness line: with no direct leads and the blend at RM228, justify it as upper-funnel or reallocate to MOF.
+3.  TikTok ONE project allowance is increased so we’ve prepared 3 new project drafts to be submitted.
+
+**  
+  
+**
+
+  
+  
+  
+  
+
+**PERSISTING QUESTIONS:**  
+  
+
+WEBSITE TRAFFIC:
+
+  - Yes the website traffic was higher in Apr - June 2025 vs Apr - June 2026
+  - This was due to:
+      
+      - Gold Giveaway campaign ran May - June 2025
+      - Majority of lead gen adspend was spent on CTW
+      - A higher% of spend was spent on Google in 2025, compared to Meta, and there was virtually no spend on Tiktok in 2025
+  - Our current marketing efforts are mainly to drive lead volume and quality.
+  - Even our TOF campaigns are running to increase brand awareness, thus NO campaign is running to increase website traffic.  
+      
+
+RETARGETING:
+
+  - What is prospecting vs retargeting in Unitar’s context?
+  - **Prospecting**: To acquire new users and get them INTO the UNITAR ecosystem i.e become a lead
+  - **Retargeting**: To target leads that already exist IN the UNITAR ecosystem.  
+      
+  - Audaura's target is to ACQUIRE NEW LEADS, i.e run prospecting campaigns.  
+      
+  - We do run campaigns labeled as ‘retargeting’. This is for users who have either **opened** a lead form/visited website/followed social media. THESE USERS ARE STILL NOT LEADS, so we target them to **SUBMIT** a lead form
+  - Retargeting: Total of 11%of total adspend (1% of TikTok)
+
+  
+  
+  
+
+PERKESO Ads:
+
+  - <https://docs.google.com/presentation/d/1OgUwaUrxq6jP0PcWIbLDHBVQPwCgZJm6YE8JhbzQgC4/edit?slide=id.g3f0f9efd04c_0_83#slide=id.g3f0f9efd04c_0_83>
+  - UPDATE ADS TO LOOK MORE FEAR BASED
+  - USE TESTIMONIALS IN ADS
+  - PUT PROGRAM VALUE IN THE ADS
+  - Create scarcity - LIMITED SEATS
+  - ALL ADS SHOULD SCREAM: **“ARE YOU UNEMPLOPYED”**
+
+  
+
+TIKTOK ONE:
+
+  - Tiktok ONE video generation is very slow. We’ve only received 2 new videos.
+
+  
+Tiktok ONE programs list:
+
+  - Waiting for list of focus programs.
+
+  
+
+PAKISTAN LEAD FORM:
+
+  - PAKISTAN lead form is now updated and mapped. 4 fields + 3 pre-filled fields.
+  - Edvertiva has mapped the 2 new fields to SF as well.  
+
+  
+
+PAKISTAN AD CREATIVE REVIEW:
+
+  - We need to have a SOLID creative review process.
+  - Our current creative package includes 2 free creative revisions.
+  - The Pakistan creatives have already been revised 3 times and we have received a greenlight on these from Lisna.
+  - Further revisions can be made but that would be outside the current package scope.
+  - I have asked PIC’s (Lisna in this case) to give a written go-ahead before finalising and then running ads. NOT SURE HOW WE CAN IMPROVE THIS PROCESS.
+
+  
+
+WEBSITE DROPDOWN UI:
+
+  - Any updates?
+
+  
+
+  - PUT PRE-APP as a site link extension on all EN Bachelors/Degree campaigns
+      
+      - <https://www.unitar.my/pre-apply/>   
+
+# 6th July - 12th July  
+
+**6th July - 12th July**
+
+|  |  |
+| :-: | :-: |
+| \*\*Top-Line Performance:\*\* |   |
+| \*\*Total Spend:\*\* | RM172,149.29 |
+| \*\*Total Leads:\*\* | 2,415 |
+| \*\*Blended CPL:\*\* | RM71.28 |
+
+### **  
+****Meta**
+
+|  |  |
+| :-: | :-: |
+| \*\*Total Spend:\*\* | RM72,762.42 |
+| \*\*Total Leads:\*\* | 1,673 |
+| \*\*Blended CPL:\*\* | RM43.5 |
+
+  
+
+### **Google**
+
+|  |  |
+| :-: | :-: |
+| \*\*Total Spend:\*\* | RM67,051.87 |
+| \*\*Total Leads:\*\* | 593 |
+| \*\*Blended CPL:\*\* | RM112.9 |
+
+  
+
+### **TikTok**
+
+|  |  |
+| :-: | :-: |
+| \*\*Total Spend:\*\* | RM32,335 |
+| \*\*Total Leads:\*\* | 149 |
+| \*\*Blended CPL:\*\* | RM217 |
+
+  
+**Insights:** **  
+**Our total investment for the week was **RM172,149**, generating **2,415** leads at a blended Cost Per Lead (CPL) of **RM71.28.**
+
+Week on week, spend decreased by **5.7%**, while lead volume increased **+28.9%**, resulting in a **26.7% improvement in blended CPL** - a strong week overall driven primarily by Meta's performance.
+
+Meta remained the efficiency leader, delivering 1,673 leads at a blended RM43.50 CPL. Compared to last week, spend decreased -14%, leads increased +85%, and CPL improved by 40%, making it the primary driver of this week's gains.
+
+Google increased investment (+6% spend) and maintained similar lead volume (593 leads; -2% WoW), with CPL increasing to RM112.90 (+10%). Efficiency softened and remains above the target range.
+
+TikTok saw spend increase +16%, but lead volume declined to 149 (-37%), pushing blended CPL down to RM217 (-5%). While efficiency improved slightly from last week's RM228.15 CPL, overall volume continued to weaken, indicating creative fatigue and limited scaling potential.
+
+  
+
+The new batch of TikTok ONE creator projects is still pending because we have not received the list of programs for this yet from Unitar’s side.  
+In the mean time we have gotten our tiktok account manager to raise a ticket so we can get more videos from our current launched programs.
+
+  
+  
+
+**Meta**
+
+### **  
+****Performance Analysis**
+
+#### **Website Conversion vs. Instant Form Campaigns**
+
+|  |  |  |  |  |  |
+| :-: | :-: | :-: | :-: | :-: | :-: |
+| \*\*Campaign Type\*\* | \*\*Spend (RM)\*\* | \*\*Leads\*\* | \*\*CPL (RM)\*\* | \*\*Message Conversation\*\* | \*\*Cost per message\*\* |
+| \*\*Instant Form\*\* | RM50,075 | 572 | RM87.55 | 595 | RM84.16 |
+| \*\*Instant Form (Pakistan)\*\* | RM6,810 | 1,065 | RM6.39 | 582 | RM11.7 |
+| \*\*Message Generation\*\* | RM13,774 | 35 | R393.54 | 280 | RM49.19 |
+| \*\*Awareness/\*\*\*\*  &#10;\*\*\*\*LPV\*\* | RM2,102 | / | / | / | / |
+| \*\*Website Conversion\*\* | / | / | / | / | / |
+
+**  
+****Insight:****  
+**Meta delivered **RM72,762.42** in spend, generating **1,673** leads at a blended **RM43.50 CPL**. Compared with last week, spend decreased 14%, while lead volume increased 85%, resulting in a 40% improvement in CPL (from RM72.76 to RM43.50).  
+The Pakistan Instant Form campaign generated 1,065 leads at just RM6.39 CPL, while Malaysia Instant Form campaigns continued to deliver 572 leads at RM87.55 CPL.  
+  
+
+**Campaign Level Performance Insight**
+
+#### **Top 3 Campaigns by Leads:**
+
+|  |  |  |
+| :-: | :-: | :-: |
+| \*\*Campaign Name\*\* | \*\*Leads\*\* | \*\*CPL (RM)\*\* |
+| \*\*Audaura/ FB/ C2 2026/ Lead Generation/ LG/ MC/ Prospecting/ ABO/ CAPI\*\* | 145 | RM67 |
+| \*\*Audaura/ FB/ C1 2026/ Scale Up/ Lead Generation/ Instant Form/ Retargeting/ ABO/ CAPI\*\* | 187 | RM90 |
+| \*\*Audaura/ FB/ C2 2026/ Lead Generation/ LG/ Pakistan/ Prospecting/ ABO/ CAPI\*\* | 1,064 | RM6.3 |
+
+**Insight:****  
+**C1 Scale Up Retargeting Instant Form remained the strongest volume driver, delivering 187 leads at RM90.36 CPL. C2 Main Campus Prospecting contributed another 145 leads at RM67.25 CPL, making it the most efficient core prospecting campaign outside of Pakistan.
+
+The Pakistan campaign is significantly outperforming week on week, which makes it important to validate Pakistan lead quality and downstream conversion rates before shifting additional budget, while continuing to optimise the Malaysian prospecting and retargeting campaigns to improve cost efficiency.
+
+**Action steps:**
+
+  - Verify Pakistan lead quality before optimizing.
+  - Watch the CPL creep on Retargeting/Prospecting (now RM58–66) and cap further increases if they keep climbing.
+
+  
+
+## **Google****  
+  
+**
+
+### **Overall Google Summary**
+
+|  |  |  |  |
+| :-: | :-: | :-: | :-: |
+| \*\*Campaign Type\*\* | \*\*Cost\*\* | \*\*Conversions\*\* | \*\*CPL\*\* |
+| PMax | \\- | \\- | \\- |
+| Search | RM67,051.87 | 593 | RM112.9 |
+
+### **  
+****Insight:** Google Search delivered RM85,230.55 spend / 831 leads / RM102.53 CPL — spend pulled back -10% and leads -7%, with CPL easing slightly from RM106.94 but still above the target band.
+
+  
+
+### **Top 3 Campaigns by Conversions:**
+
+|  |  |  |  |
+| :-: | :-: | :-: | :-: |
+| \*\*Campaign\*\* | \*\*Cost (RM)\*\* | \*\*Conv.\*\* | \*\*CPL (RM)\*\* |
+| Aud\\\_Unitar\\\_MY\\\_SEM\\\_Level of study\\\_Low intent\\\_T1a+T2\\\_EN+BM\\\_Max\\\_Conversion\\\_TCPA | RM6,496.61 | 71 | RM91.53 |
+| Aud\\\_Unitar\\\_MY\\\_SEM\\\_Brand\\\_T2\\\_Max\\\_Conversion\\\_TCPA\\\_Test | RM6,049.21 | 58 | RM104.61 |
+| Aud\\\_Unitar\\\_MY\\\_SEM\\\_Brand\\\_T1a\\\_Max\\\_Conversion\\\_TCPA | RM4,208.59 | 38 | RM112.33 |
+
+**  
+****Insight:** The Level of Study – Low Intent campaign generated the highest lead volume with 70.98 conversions at RM91.53 CPL, making it the strongest volume driver while maintaining one of the lower CPLs among the top campaigns.
+
+Brand T1a remained the second-largest contributor with 57.83 conversions, although at a higher RM104.61 CPL, while the Brand T2 Test delivered 37.46 conversions at RM112.33 CPL, indicating that the test variant is generating meaningful volume but with weaker cost efficiency than the established Brand campaign.
+
+Outside the top three, SPM T1b BM stood out as the most efficient high-volume campaign, producing 32.63 conversions at just RM88.67 CPL—the lowest CPL among campaigns delivering over 30 conversions. On the other hand, Brand T2 (non-test) was the weakest performer among the larger campaigns, with 27.08 conversions at RM170.47 CPL, suggesting it may require optimisation or budget reallocation if performance does not improve.  
+  
+Overall, Brand and High-Intent programmes continue to drive the bulk of conversions, while SPM campaigns are demonstrating stronger cost efficiency. Shifting incremental budget towards the more efficient SPM and Level of Study campaigns while reviewing the higher-CPL Brand variants could improve overall account efficiency.
+
+Pre-app site link extension was added to EN bachelors program ads.
+
+**Action steps:**
+
+  - Investigate the Brand CPL jump (T2 Test RM69→RM101) — check auction competition, CPCs and landing-page/quality-score before restoring budget.
+  - Lean on Low-Intent T1a+T2 as the current cheapest converter.
+  - Keep spend disciplined until blended CPL returns toward the RM90s.
+
+  
+
+**TikTok**
+
+### **Overall TikTok Summary**
+
+|  |  |  |  |
+| :-: | :-: | :-: | :-: |
+| \*\*Campaign Type\*\* | \*\*Cost\*\* | \*\*Conversions\*\* | \*\*CPL\*\* |
+| TOF - Awareness | RM11,097.72 | / | / |
+| MOF - Instant Forms | RM21,237.03 | 147 | RM144.47 |
+| BOF - Retargeting Instant Forms | RM0 | 0 | RM0 |
+
+  
+
+### **Performance Analysis**
+
+**Top 5 Campaigns by Conversions:**
+
+|  |  |  |  |
+| :-: | :-: | :-: | :-: |
+| \*\*Campaign\*\* | \*\*Cost (RM)\*\* | \*\*Conv.\*\* | \*\*CPL (RM)\*\* |
+| audaura\\\_tiktok\\\_MOF\\\_InstantForms\\\_ConversionLeads\\\_A1\\\_tt\\\_ONE\\\_ABO | RM14,000.07  | 118 | RM118.64  |
+| audaura\\\_tiktok\\\_MOF\\\_InstantForms\\\_ConversionLeads\\\_A1\\\_Masters\\\_CBO | RM5,490.10 | 26 | RM211.16 |
+| audaura\\\_tiktok\\\_MOF\\\_InstantForms\\\_ConversionLeads\\\_A1\\\_T1a\\\_CBO | RM1,746.86 | 3 | RM582.29 |
+
+  
+
+**Insight:**TikTok generated RM31,484.30 in spend, delivering 138 leads at a blended CPL of RM228.15. While spend remained relatively stable (+3% WoW), lead volume declined by 22%, driving a 32% increase in blended CPL and marking the weakest performance in recent weeks.
+
+MOF Instant Forms remained the primary lead driver, contributing 138 leads from RM21,894.22 spend at RM158.65 CPL (up from RM120.60). Meanwhile, TOF Awareness spent RM9,590.08 without generating direct leads, which increased the overall blended CPL.
+
+At the campaign level, A1\_tt\_ONE\_ABO continued to lead volume with 118 conversions at RM118.64 CPL, although efficiency softened compared to the previous week. A1\_Masters\_CBO delivered 26 conversions at RM211.16 CPL, while A1\_T1a\_CBO generated just 3 conversions at RM582.29 CPL, making it the weakest-performing campaign. The results suggest the account is becoming increasingly reliant on the ONE creative, while the supporting creatives continue to lose efficiency and require refreshing or replacement.
+
+**Action Steps**
+
+1.  Pull A1\_tt\_ONE\_ABO spend back until we have more creator videos.
+
+  
+
+**Priorities:**
+
+  - Perkeso
+  - Tiktok ONE programs list
+  - Pakistan leads quality feedback
+  - Meta ads tracker
+
+  
+
+**ARE YOU UNEMPLOYED?****  
+****RM200/day****  
+**
+
+# 13th July - 19th July**  
+**
+
+**13th July - 19th July**
+
+|  |  |
+| :-: | :-: |
+| \*\*Top-Line Performance:\*\* |   |
+| \*\*Total Spend:\*\* | RM178,754.65 |
+| \*\*Total Leads:\*\* | 2,246 |
+| \*\*Blended CPL:\*\* | RM79.59 |
+
+### **  
+****Meta**
+
+|  |  |
+| :-: | :-: |
+| \*\*Total Spend:\*\* | RM71,418.12 |
+| \*\*Total Leads:\*\* | 1,383 |
+| \*\*Blended CPL:\*\* | RM51.64 |
+
+  
+
+### **Google**
+
+|  |  |
+| :-: | :-: |
+| \*\*Total Spend:\*\* | RM74,246.90 |
+| \*\*Total Leads:\*\* | 714 |
+| \*\*Blended CPL:\*\* | RM103.94 |
+
+  
+
+### **TikTok**
+
+|  |  |
+| :-: | :-: |
+| \*\*Total Spend:\*\* | RM33,089.63 |
+| \*\*Total Leads:\*\* | 149 |
+| \*\*Blended CPL:\*\* | RM222.08 |
+
+  
+**Insights:** **  
+**Total investment for the week was **RM178,754.65**, generating **2,246 leads** at a blended Cost Per Lead (CPL) of **RM79.59**.
+
+Compared to last week (6–12 July), spending rose +4% while leads fell -7%, lifting blended CPL +12% (RM71.28 → RM79.59). This is a modest regression from an exceptional prior week, but still a strong result historically — blended CPL sits well below the June range of RM86–97.
+
+Meta remained the efficiency leader at RM51.64 CPL. This is a regression from last week's RM43.50 (+19%), driven mainly by the Pakistan Instant Form campaign pulling back from 1,065 to 754 leads (-29%). Even so, Meta is far more efficient than its June range of RM68–73.
+
+Google improved for the first time in weeks: spend +11% and leads +20% while CPL fell to RM103.94 (from RM112.90, -8%), reversing several weeks of rising cost. It is recovering toward — though still above — the RM90s target.
+
+TikTok remained stuck: spend +2%, leads flat at 149, CPL RM222.08 (from RM217). A third consecutive week in the RM215–228 band with no volume growth confirms creative fatigue rather than a one-off.
+
+The new batch of TikTok ONE creator projects is still pending Unitar's program list. In the meantime, our TikTok account manager has raised a ticket to source more videos from the currently launched programs.
+
+  
+
+**Meta**
+
+### **  
+****Performance Analysis**
+
+#### **Website Conversion vs. Instant Form Campaigns**
+
+|  |  |  |  |  |  |
+| :-: | :-: | :-: | :-: | :-: | :-: |
+| \*\*Campaign Type\*\* | \*\*Spend (RM)\*\* | \*\*Leads\*\* | \*\*CPL (RM)\*\* | \*\*Message Conversation\*\* | \*\*Cost per message\*\* |
+| \*\*Instant Form\*\* | RM47,911.43 | 538 | RM89.05 | 551 | RM86.95 |
+| \*\*Instant Form (Pakistan)\*\* | RM4,466.60 | 754 | RM5.92 | 1,043 | RM4.28 |
+| \*\*Message Generation\*\* | RM14,138.77 | 27 | RM523.66 | 198 | RM71.41 |
+| \*\*Awareness/\*\*\*\*  &#10;\*\*\*\*LPV\*\* | RM2,098.54 | / | / | / | / |
+| \*\*Website Conversion\*\* | / | / | / | / | / |
+
+**  
+****Insight:****  
+**Meta delivered RM71,418.12 spend / 1,383 leads / RM51.64 blended CPL — still the most efficient channel by a wide margin, but a step back from last week's RM43.50 as the ultra-cheap Pakistan volume normalized.
+
+Message Generation weakened further as a lead line (27 leads / RM523.66) and is best read only as a conversation source.
+
+  
+  
+
+  
+
+**Campaign Level Performance Insight**
+
+#### **Top 3 Campaigns by Leads:**
+
+|  |  |  |
+| :-: | :-: | :-: |
+| \*\*Campaign Name\*\* | \*\*Leads\*\* | \*\*CPL (RM)\*\* |
+| \*\*Audaura/ FB/ C1 2026/ Scale Up/ Lead Generation/ Instant Form/ Retargeting/ ABO/ CAPI\*\* | 191 | RM90.05 |
+| \*\*Audaura/ FB/ C2 2026/ Lead Generation/ LG/ MC/ Prospecting/ ABO/ CAPI\*\* | 190 | RM49.71 |
+| \*\*Audaura/ FB/ C2 2026/ Lead Generation/ LG/ Pakistan/ Prospecting/ ABO/ CAPI\*\* | 754 | RM5.92 |
+
+**Insight:****  
+**Retargeting campaign performance has regressed — from \~240–269 leads at RM53–66 CPL in June to 191 leads at RM90.05 now. Main Campus Prospecting (RM49.71) remains the strongest efficient MY campaign.
+
+**Action steps:**
+
+  - Address the Retargeting CPL climb (now \~RM90, up from RM53–66 in June): refresh creative and audiences before it drags Malaysia efficiency further.
+  - Keep scaling Main Campus Prospecting (RM49.71) as the best efficient Malaysia campaign.
+
+  
+
+## **Google****  
+  
+**
+
+### **Overall Google Summary**
+
+|  |  |  |  |
+| :-: | :-: | :-: | :-: |
+| \*\*Campaign Type\*\* | \*\*Cost\*\* | \*\*Conversions\*\* | \*\*CPL\*\* |
+| PMax | \\- | \\- | \\- |
+| Search | RM74,246.90 | 714 | RM103.94 |
+
+### **  
+****Insight:** Google Search delivered RM74,246.90 spend / 714 leads / RM103.94 CPL — a clear improvement: leads +20% and CPL -8% WoW, reversing several weeks of climbing cost. Still above the RM90s target, but trending the right way for the first time in weeks.
+
+  
+
+### **Top 3 Campaigns by Conversions:**
+
+|  |  |  |  |
+| :-: | :-: | :-: | :-: |
+| \*\*Campaign\*\* | \*\*Cost (RM)\*\* | \*\*Conv.\*\* | \*\*CPL (RM)\*\* |
+| Aud\\\_Unitar\\\_MY\\\_SEM\\\_Level of study\\\_Low intent\\\_T1a+T2\\\_EN+BM\\\_Max\\\_Conversion\\\_TCPA | RM6,280.02 | 75 | RM83.85 |
+| Aud\\\_Unitar\\\_MY\\\_SEM\\\_Brand\\\_T2\\\_Max\\\_Conversion\\\_TCPA\\\_Test | RM5,725.66 | 70 | RM82.24 |
+| Aud\\\_Unitar\\\_MY\\\_SEM\\\_Brand\\\_T1b\\\_Max\\\_Conversion\\\_TCPA | RM4,208.59 | 47 | RM87.18 |
+
+**  
+****Insight:** All top converters improved WoW: Low-Intent T1a+T2 (75 conv / RM83.85, from RM91.53), Brand T2 Test (70 / RM82.24, from RM104.61) and Brand T1b (47 / RM87.18). The Brand T2 Test recovery is the biggest swing.
+
+Outside the top three, SPM T1b BM was the most efficient high-volume campaign (\~33 conv / RM88.67), while Brand T2 (non-test) was the weakest of the larger campaigns (\~27 conv / RM170.47). Brand and High-Intent programmes still drive most conversions, but SPM is now demonstrating stronger cost efficiency.
+
+**Action steps:**
+
+  - Shift incremental budget toward the improving SPM and Level-of-Study / Low-Intent campaigns.
+  - Review or optimize the higher-CPL Brand variants (Brand T2 non-test at RM170) before restoring budget.
+  - Keep spend disciplined until blended CPL clears the RM90s consistently. (Pre-app sitelink extension already added to EN bachelor's ads.)
+
+  
+  
+  
+  
+  
+  
+  
+  
+
+**TikTok**
+
+### **Overall TikTok Summary**
+
+|  |  |  |  |
+| :-: | :-: | :-: | :-: |
+| \*\*Campaign Type\*\* | \*\*Cost\*\* | \*\*Conversions\*\* | \*\*CPL\*\* |
+| TOF - Awareness | RM10,499.65 | / | / |
+| MOF - Instant Forms | RM22,589.98 | 145 | RM155.79 |
+| BOF - Retargeting Instant Forms | RM0 | 0 | RM0 |
+
+  
+
+### **Performance Analysis**
+
+**Top 5 Campaigns by Conversions:**
+
+|  |  |  |  |
+| :-: | :-: | :-: | :-: |
+| \*\*Campaign\*\* | \*\*Cost (RM)\*\* | \*\*Conv.\*\* | \*\*CPL (RM)\*\* |
+| audaura\\\_tiktok\\\_MOF\\\_InstantForms\\\_ConversionLeads\\\_A1\\\_tt\\\_ONE\\\_ABO | RM14,440.95   | 110 | RM131.28 |
+| audaura\\\_tiktok\\\_MOF\\\_InstantForms\\\_ConversionLeads\\\_A1\\\_Masters\\\_CBO | RM6,407.42  | 30 | RM213.58 |
+| audaura\\\_tiktok\\\_MOF\\\_InstantForms\\\_ConversionLeads\\\_A1\\\_T1a\\\_CBO | RM1,741.61 | 5 | RM348.32 |
+
+  
+
+**Insight:**TikTok delivered RM33,089.63 spend / 149 leads / RM222.08 CPL — spend +2%, leads flat, CPL up \~2%. This is the third consecutive week in the RM215–228 range with no volume growth, pointing to sustained creative fatigue rather than a blip.
+
+MOF Instant Forms carried the channel (145 leads / RM155.79, up from RM144.47), while TOF Awareness spent RM10,499.65 with no direct leads, inflating the blend.
+
+A1\_tt\_ONE\_ABO continues to soften (110 leads / RM131.28, from RM118.64); Masters (RM213.58) and T1a (RM348.32) remain weak. The account is over-reliant on the single ONE creative while supporting creative decay.
+
+**Action Steps**
+
+1.  Pull A1\_tt\_ONE\_ABO spend back until fresh creator videos are available — scaling it further is only raising CPL.
+2.  Unblock the creative pipeline: secure Unitar's TikTok ONE program list and progress the account-manager ticket for more videos from launched programs.
+3.  Reassess the RM10.5k TOF Awareness line — with no direct leads and the blend at RM222, justify it as upper-funnel or reallocate to MOF.**  
+    **
+
+# 20th July - 26th July**  
+**
+
+**20th July - 26th July**
+
+|  |  |
+| :-: | :-: |
+| \*\*Top-Line Performance:\*\* |   |
+| \*\*Total Spend:\*\* | RM166,147.56 |
+| \*\*Total Leads:\*\* | 1,474 |
+| \*\*Blended CPL:\*\* | RM112.74 |
+
+### **  
+****Meta**
+
+|  |  |
+| :-: | :-: |
+| \*\*Total Spend:\*\* | RM69,456.40 |
+| \*\*Total Leads:\*\* | 688 |
+| \*\*Blended CPL:\*\* | RM102 |
+
+  
+
+### **Google**
+
+|  |  |
+| :-: | :-: |
+| \*\*Total Spend:\*\* | RM63,834.76 |
+| \*\*Total Leads:\*\* | 628 |
+| \*\*Blended CPL:\*\* | RM102 |
+
+  
+
+### **TikTok**
+
+|  |  |
+| :-: | :-: |
+| \*\*Total Spend:\*\* | RM32,856.40 |
+| \*\*Total Leads:\*\* | 158 |
+| \*\*Blended CPL:\*\* | RM208 |
+
+  
+Total investment for the week was **RM166,147.56**, generating **1,473.70 leads** at a blended Cost Per Lead (CPL) of **RM112.74**.
+
+Compared to last week (13–19 July), spend fell -7% while leads dropped -34%, pushing blended CPL up +42% (RM79.59 → RM112.74). This is a sharp regression, and it's driven almost entirely by one change on Meta.
+
+Meta's CPL nearly doubled to **RM100.95** (from RM51.64, +95%) as leads fell -50% (1,383 → 688) even though spend only dropped -3%. The cause is structural, not creative fatigue: the Pakistan Instant Form campaign — which drove 754 leads at just RM5.92 CPL last week — was paused this week and is now effectively at zero spend (one residual lead only). Strip Pakistan out of last week's base and the Malaysia-only comparison tells a different story: RM106.44 CPL on 629 leads last week vs. RM100.95 CPL on 688 leads this week (almost entirely Malaysia) — a modest improvement. In short, Meta's blended CPL looks much worse only because a very cheap, high-volume lever got switched off; the core Malaysia campaigns are actually healthy.
+
+Google continued to improve: spend -14%, leads -12%, and CPL edged down to **RM101.70** (from RM103.94, -2%). Still above the RM90s target, but the efficiency trend is now positive for a second straight week.
+
+TikTok held roughly flat on spend (-1%) while leads rose +6% (149 → 158), pulling CPL down to **RM207.95** (from RM222.08, -6%). This breaks the three-week stall in the RM215–228 band, though CPL remains well above target.
+
+The new batch of TikTok ONE creator projects is still pending Unitar's program list. In the meantime, our TikTok account manager has raised a ticket to source more videos from the currently launched programs.
+
+One flag: since Pakistan is now paused, next week's Meta comparison will finally be apples-to-apples (Malaysia vs. Malaysia) — worth watching whether that RM100.95 holds or drifts.
+
+  
+
+**Meta**
+
+### **  
+****Performance Analysis**
+
+#### **Website Conversion vs. Instant Form Campaigns**
+
+|  |  |  |  |  |  |
+| :-: | :-: | :-: | :-: | :-: | :-: |
+| \*\*Campaign Type\*\* | \*\*Spend (RM)\*\* | \*\*Leads\*\* | \*\*CPL (RM)\*\* | \*\*Message Conversation\*\* | \*\*Cost per message\*\* |
+| \*\*Instant Form\*\* | RMRM53,886 | 670 | RM80.43 | 694 | RM77.65 |
+| \*\*Message Generation\*\* | RM13,473 | 16 | RM842.06 | 154 | RM87.49 |
+| \*\*Awareness/\*\*\*\*  &#10;\*\*\*\*LPV\*\* | RM2,097.44 | / | / | / | / |
+| \*\*Website Conversion\*\* | / | / | / | / | / |
+
+**  
+****Insight:****  
+**Meta delivered RM69,456.40 spend / 688 leads / RM100.95 blended CPL — CPL nearly doubled from last week's RM51.64 (+95%) as the ultra-cheap Pakistan volume (754 leads at RM5.92) was paused entirely (down to RM0 spend, 1 residual lead). Spend held nearly flat (-3%), so this is a volume/mix shift, not a Malaysia performance problem.
+
+Message Generation weakened further as a lead line (16 leads / RM842.06, down from 27 / RM523.66, CPL +61%) and remains best read only as a conversation source.
+
+  
+  
+
+**Campaign Level Performance Insight**
+
+#### **Top 3 Campaigns by Leads:**
+
+|  |  |  |
+| :-: | :-: | :-: |
+| \*\*Campaign Name\*\* | \*\*Leads\*\* | \*\*CPL (RM)\*\* |
+| \*\*Audaura/ FB/ C1 2026/ Scale Up/ Lead Generation/ Instant Form/ Retargeting/ ABO/ CAPI\*\* | 161 | RM106.57 |
+| \*\*Audaura/ FB/ C2 2026/ Lead Generation/ LG/ MC/ Prospecting/ ABO/ CAPI\*\* | 165 | RM59.51 |
+| \*\*Audaura/FB/C3 2026/Lead Generation/LG/MY/Perkeso/Prospecting/ABO/CAPI\*\* | 123 | RM25.25 |
+
+**Insight:****  
+**Retargeting kept regressing — 161 leads at RM106.57, down from 191 leads at RM90.05 last week (leads -16%, CPL +18%), now well outside the June RM53–66 range. Main Campus Prospecting also softened (165 leads at RM59.51, from 190 at RM49.71, CPL +20%) but is still the volume anchor. Perkeso enters the top 3 for the first time — cheapest of the three at RM25.25 — filling some of the gap Pakistan's pause left behind.
+
+**Action steps:**
+
+  - Retargeting CPL has now risen two weeks straight (RM90.05 → RM106.57): pause and refresh the weakest ad sets rather than let spend keep flowing to fatigued creative.
+  - Lean further into Perkeso (RM25.25 CPL) — it's now the most efficient Malaysia campaign and has room to scale.
+
+  
+
+## **Google****  
+  
+**
+
+### **Overall Google Summary**
+
+|  |  |  |  |
+| :-: | :-: | :-: | :-: |
+| \*\*Campaign Type\*\* | \*\*Cost\*\* | \*\*Conversions\*\* | \*\*CPL\*\* |
+| \*\*PMax\*\* | \\- | \\- | \\- |
+| \*\*Search\*\* | RM63,834.76 | 628 | RM102 |
+
+### **  
+****Insight:** Google Search delivered RM63,834.76 spend / 627.70 leads / RM101.70 CPL — a second straight improving week: spend -14%, leads -12%, CPL -2% (from RM103.94). Still above the RM90s target, but the efficiency trend is holding.
+
+  
+
+### **Top 3 Campaigns by Conversions:**
+
+|  |  |  |  |
+| :-: | :-: | :-: | :-: |
+| \*\*Campaign\*\* | \*\*Cost (RM)\*\* | \*\*Conv.\*\* | \*\*CPL (RM)\*\* |
+| Aud\\\_Unitar\\\_MY\\\_SEM\\\_Level of study\\\_Low intent\\\_T1a+T2\\\_EN+BM\\\_Max\\\_Conversion\\\_TCPA | RM6,427.67 | 91 | RM71.02 |
+| Aud\\\_Unitar\\\_MY\\\_SEM\\\_Brand\\\_T2\\\_Max\\\_Conversion\\\_TCPA\\\_Test | RM5,744.11 | 55 | RM104.5 |
+| Aud\\\_Unitar\\\_MY\\\_SEM\\\_Brand\\\_T1b\\\_Max\\\_Conversion\\\_TCPA | RM5,885.28 | 38 | RM154.13 |
+
+**  
+****Insight:** Mixed results among the top converters. Low-Intent T1a+T2 kept improving and scaling (90.51 conv / RM71.02, from 75 / RM83.85 — conv +21%, CPL -15%), now the clear efficiency leader. Brand T2 Test reversed hard (54.97 conv / RM104.49, from 70 / RM82.24 — conv -21%, CPL +27%), giving back last week's recovery. Brand T1a takes the \#3 spot this week, pushing Brand T1b out of the top 3; T1b itself held steady-to-softer (33.52 conv / RM91.00, from 47 / RM87.18).
+
+Outside the top three, SPM (T1a EN) stayed the most efficient high-volume campaign (31.90 conv / RM82.49, improved from \~RM88.67), while Brand T2 non-test remained the weakest of the larger campaigns, though its CPL ticked down slightly (27.86 conv / RM160.45, from \~RM170.47).
+
+**Action steps:**
+
+  - Keep shifting budget toward Low-Intent T1a+T2 and SPM — both are compounding efficiency gains week over week.
+  - Investigate Brand T2 Test's reversal (CPL +27%) before restoring any budget increases there.
+  - Continue monitoring Brand T1b/T1a — one is softening while the other is emerging; worth confirming this isn't just budget reallocation between near-identical audiences.
+
+  
+  
+
+**TikTok**
+
+### **Overall TikTok Summary**
+
+|  |  |  |  |
+| :-: | :-: | :-: | :-: |
+| \*\*Campaign Type\*\* | \*\*Cost\*\* | \*\*Conversions\*\* | \*\*CPL\*\* |
+| TOF - Awareness | RM10,552.56 | / | / |
+| MOF - Instant Forms | RM22,303.84 | 150 | RM148.69 |
+| BOF - Retargeting Instant Forms | RM0 | 0 | RM0 |
+
+  
+
+### **Performance Analysis**
+
+**Top 5 Campaigns by Conversions:**
+
+|  |  |  |  |
+| :-: | :-: | :-: | :-: |
+| \*\*Campaign\*\* | \*\*Cost (RM)\*\* | \*\*Conv.\*\* | \*\*CPL (RM)\*\* |
+| audaura\\\_tiktok\\\_MOF\\\_InstantForms\\\_ConversionLeads\\\_A1\\\_tt\\\_ONE\\\_ABO | RM15,047.73   | 125 | RM120.38 |
+| audaura\\\_tiktok\\\_MOF\\\_InstantForms\\\_ConversionLeads\\\_A1\\\_Masters\\\_CBO | RM5,508.29 | 22 | RM250.38 |
+| audaura\\\_tiktok\\\_MOF\\\_InstantForms\\\_ConversionLeads\\\_A1\\\_T1a\\\_CBO | RM1,747.82 | 3 | RM582.61 |
+
+**Insight:** TikTok delivered RM32,856.40 spend / 158 leads / RM207.95 CPL — spend roughly flat (-1%), leads +6%, CPL down -6% (from RM222.08). This breaks the three-week stall in the RM215–228 band.
+
+MOF Instant Forms carried the improvement (150 conv / RM148.69, from 145 / RM155.79 — conv +3%, CPL -5%), while TOF Awareness spend held flat (RM10,552.56, from RM10,499.65) with no direct leads, still inflating the blend.
+
+A1\_tt\_ONE\_ABO actually recovered this week (125 leads / RM120.38, from 110 / RM131.28 — leads +14%, CPL -8%), reversing its prior softening trend. Masters and T1a moved the other way: Masters weakened (22 leads / RM250.38, from 30 / RM213.58, CPL +17%) and T1a dropped further (3 leads / RM582.61, from 5 / RM348.32, CPL +67%). The account is still concentrated in the ONE creative, but this week that concentration paid off rather than dragged the account down.
+
+**Discussion items:**
+
+1.  Perkeso ads
+2.  Tiktok ONE videos
+3.  Retargeting lists
+4.    
+
+**  
+  
