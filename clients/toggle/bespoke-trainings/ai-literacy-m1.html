@@ -1,0 +1,253 @@
+<title>AI Literacy · AI-1 · What AI Actually Is (and Isn't)</title>
+<style>
+  /* ---- Material 3 tokens (locked template). Primary seeded on Toggle blue; teach=tertiary, do=secondary ---- */
+  :root{
+    --canvas:#FBF8FE; --card:#F3F0F9; --card-2:#E9E7EF; --callout:#DCE1FF;
+    --ink:#1A1B21; --body:#1A1B21; --muted:#45464F; --faint:#767680;
+    --line:#C7C5D0; --line-strong:#767680;
+    --brand:#3A5CC8; --brand-deep:#274BB5; --on-brand:#FFFFFF;
+    --teach:#146C43; --teach-bg:#A4F5C4; --teach-line:#84D9AB;
+    --do:#7A5900; --do-bg:#FFDEA0; --do-line:#EAC981;
+    --shadow:0 1px 2px rgba(0,0,0,.28),0 1px 3px 1px rgba(0,0,0,.12);
+    --maxw:820px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --canvas:#121318; --card:#1B1B21; --card-2:#2A2B31; --callout:#123E77;
+      --ink:#E4E1E9; --body:#E4E1E9; --muted:#C7C5D0; --faint:#90909A;
+      --line:#45464F; --line-strong:#90909A;
+      --brand:#B4C5FF; --brand-deep:#DAE2FF; --on-brand:#002E69;
+      --teach:#7ED6A5; --teach-bg:#005231; --teach-line:#1C4A3D;
+      --do:#F0C060; --do-bg:#5D4200; --do-line:#4A3D18;
+      --shadow:0 1px 3px rgba(0,0,0,.5),0 4px 8px 2px rgba(0,0,0,.3);
+    }
+  }
+  :root[data-theme="light"]{
+    --canvas:#FBF8FE; --card:#F3F0F9; --card-2:#E9E7EF; --callout:#DCE1FF; --ink:#1A1B21; --body:#1A1B21; --muted:#45464F; --faint:#767680; --line:#C7C5D0; --line-strong:#767680;
+    --brand:#3A5CC8; --brand-deep:#274BB5; --on-brand:#FFFFFF; --teach:#146C43; --teach-bg:#A4F5C4; --teach-line:#84D9AB; --do:#7A5900; --do-bg:#FFDEA0; --do-line:#EAC981;
+    --shadow:0 1px 2px rgba(0,0,0,.28),0 1px 3px 1px rgba(0,0,0,.12);
+  }
+  :root[data-theme="dark"]{
+    --canvas:#121318; --card:#1B1B21; --card-2:#2A2B31; --callout:#123E77; --ink:#E4E1E9; --body:#E4E1E9; --muted:#C7C5D0; --faint:#90909A; --line:#45464F; --line-strong:#90909A;
+    --brand:#B4C5FF; --brand-deep:#DAE2FF; --on-brand:#002E69; --teach:#7ED6A5; --teach-bg:#005231; --teach-line:#1C4A3D; --do:#F0C060; --do-bg:#5D4200; --do-line:#4A3D18;
+    --shadow:0 1px 3px rgba(0,0,0,.5),0 4px 8px 2px rgba(0,0,0,.3);
+  }
+  *{box-sizing:border-box}
+  html{scroll-padding-top:96px}
+  body{margin:0;background:var(--canvas);color:var(--body);font-family:"Roboto","Roboto Flex",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:16.5px;line-height:1.6;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  h1,h2,h3{color:var(--ink);text-wrap:balance;line-height:1.2;margin:0}
+  p{margin:0}
+  strong{color:var(--ink);font-weight:600}
+  .star{color:#F5B301;line-height:1}
+
+  /* header - flat M3 surface, light display weight */
+  header{border-bottom:1px solid var(--line);background:var(--card);padding:40px 0 30px}
+  .eyebrow{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--brand-deep);margin-bottom:14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--brand)}
+  .corebadge{display:inline-flex;align-items:center;gap:6px;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);background:var(--card-2);border-radius:999px;padding:5px 12px;margin-bottom:14px}
+  header h1{font-size:clamp(28px,5vw,40px);font-weight:400;letter-spacing:0;margin-bottom:14px}
+  header .lede{font-size:clamp(15px,2vw,17px);color:var(--muted);line-height:1.5}
+
+  /* ELI bar - M3 segmented buttons */
+  .eli-bar{position:sticky;top:0;z-index:30;background:var(--card);background:color-mix(in srgb,var(--card) 92%,transparent);-webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+  .eli-inner{display:flex;align-items:center;gap:14px;padding:11px 24px;flex-wrap:wrap}
+  .eli-label{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--muted)}
+  .seg{display:inline-flex;background:var(--card-2);border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px}
+  .seg button{appearance:none;border:0;background:transparent;color:var(--muted);font:inherit;font-size:13px;font-weight:600;padding:6px 14px;border-radius:999px;cursor:pointer;transition:.15s ease}
+  .seg button:hover{color:var(--ink)}
+  .seg button[aria-pressed="true"]{background:var(--brand);color:var(--on-brand)}
+  .seg button:focus-visible{outline:2px solid var(--brand-deep);outline-offset:2px}
+  .eli-hint{font-size:13px;color:var(--muted);margin-left:auto}
+  .eli-hint b{color:var(--ink)}
+  @media (prefers-reduced-motion:reduce){.seg button{transition:none}}
+
+  /* level variants */
+  .lvl{display:none}
+  :root:not([data-level]) .explain .lvl-20{display:block}
+  :root[data-level="15"] .lvl-15,
+  :root[data-level="20"] .lvl-20,
+  :root[data-level="25"] .lvl-25,
+  :root[data-level="30"] .lvl-30{display:block}
+
+  /* cards - M3 tonal, no borders */
+  .howto{background:var(--card-2);border-radius:12px;padding:16px 20px;margin:28px 0 8px}
+  .howto .t{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--brand-deep);margin-bottom:6px}
+  .howto p{font-size:14px;color:var(--body)}
+  .obj{background:var(--callout);border-radius:16px;padding:18px 22px;margin:16px 0 4px;font-size:16px;color:var(--body)}
+  .obj b{color:var(--brand-deep)}
+  .stakes{background:var(--callout);border-left:4px solid var(--brand);border-radius:16px;padding:24px 26px;margin:28px 0 4px;box-shadow:var(--shadow)}
+  .stakes .t{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--brand-deep);margin-bottom:12px}
+  .stakes p{font-size:16.5px;color:var(--body);margin-bottom:12px}
+  .stakes p:last-child{margin-bottom:0}
+  .stakes strong{color:var(--ink)}
+  .stakes .kick{font-size:19px;font-weight:600;color:var(--ink)}
+  .stakes-close{border-top:1px solid var(--line);margin-top:18px;padding-top:16px;font-size:15px;color:var(--muted)}
+  .stakes-close b{color:var(--ink)}
+
+  /* concept */
+  .concept{padding:34px 0;border-bottom:1px solid var(--line)}
+  .concept:last-of-type{border-bottom:none}
+  .cnum{font-size:12px;font-weight:700;letter-spacing:.12em;color:var(--faint);font-variant-numeric:tabular-nums;margin-bottom:8px}
+  .concept h2{font-size:clamp(20px,3vw,25px);font-weight:500;letter-spacing:0;margin-bottom:16px}
+  .explain .lvl{font-size:17px;color:var(--body)}
+  .explain .lvl strong{color:var(--ink)}
+
+  .aside{border-radius:12px;padding:14px 16px;margin-top:16px;font-size:14.5px;color:var(--body)}
+  .aside .k{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;margin-right:9px;vertical-align:1px}
+  .analogy{background:var(--teach-bg)} .analogy .k{color:var(--teach)}
+  .example{background:var(--callout)} .example .k{color:var(--brand-deep)}
+  .tryit{background:var(--do-bg)} .tryit .k{color:var(--do)}
+
+  .recap{padding:34px 0 8px}
+  .recap .box{background:var(--card);border-radius:16px;padding:24px;box-shadow:var(--shadow)}
+  .recap h2{font-size:22px;font-weight:500;margin-bottom:12px}
+  .recap .line{font-size:17px;color:var(--body);margin-bottom:16px}
+  .recap .monday{display:flex;gap:12px;align-items:flex-start;background:var(--do-bg);border-radius:12px;padding:14px 16px}
+  .recap .monday .k{font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--do);white-space:nowrap;margin-top:2px}
+  .recap .monday p{font-size:14.5px;color:var(--body)}
+
+  footer{padding:30px 0 60px;color:var(--muted);font-size:13px}
+  footer .wm{font-weight:600;color:var(--ink)}
+  .nav-note{font-size:13px;color:var(--faint);margin-top:6px}
+</style>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow"><span class="dot"></span> Toggle Bespoke · AI Literacy · Lesson AI-1</div>
+    <div class="corebadge"><span class="star">★</span> Core lesson</div>
+    <h1>What AI Actually Is (and Isn't)</h1>
+    <p class="lede">The foundation. By the end you will know what today's AI really is, what it does well, where it fails, and why you always check its work, so nothing later in the course feels like magic.</p>
+  </div>
+</header>
+
+<div class="eli-bar">
+  <div class="wrap eli-inner">
+    <span class="eli-label">Reading level</span>
+    <div class="seg" role="group" aria-label="Explanation level">
+      <button type="button" data-set="15" aria-pressed="false">ELI15</button>
+      <button type="button" data-set="20" aria-pressed="true">ELI20</button>
+      <button type="button" data-set="25" aria-pressed="false">ELI25</button>
+      <button type="button" data-set="30" aria-pressed="false">ELI30</button>
+    </div>
+    <span class="eli-hint">Pitched for: <b id="eliHint">early-career</b></span>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="stakes">
+    <div class="t">Why this matters, read this first</div>
+    <p class="kick">Nobody in this room is going to be replaced by AI. You are going to be out-run by the people who learned to use it while you waited.</p>
+    <p>That is the real risk, and it is a quiet one. Not a dramatic layoff, just slowly doing more work by hand, for longer, than the competitor down the street who let the machine carry the effort. The gap does not stay the same. It compounds every month they practice and you don't.</p>
+    <p><strong>Your time is expensive. The computing is cheap.</strong> The machine handles the effort, you handle the meaning: the judgment, the taste, the customer you have actually met and it never will. That part of you gets more valuable, not less, once you know how to point the tool.</p>
+    <p>So this is not a nice-to-have. Learning this, and then learning more of it every week, is how you stay in front. The cost of starting has never been lower. The cost of sitting it out goes up the longer you wait.</p>
+  </div>
+  <div class="howto">
+    <div class="t">How to use this</div>
+    <p>Set the reading level to match your room, then teach. The same lesson re-pitches its explanations from a bright teenager (ELI15) up to an experienced marketer (ELI30). Analogies, examples, and the "try it" prompts stay the same, only the depth of the explanation changes.</p>
+  </div>
+  <div class="obj"><b>Walk away able to:</b> explain in one sentence what generative AI is, name two things it is good at and two it is bad at, and state the one rule that keeps you safe (check the facts, guard your data).</div>
+</div>
+
+<div class="wrap">
+
+  <section class="concept">
+    <div class="cnum">01</div>
+    <h2>What people mean by "AI" today</h2>
+    <div class="explain">
+      <p class="lvl lvl-15">AI is a computer that is really good at guessing. You give it some words, and it guesses what should come next, like autocomplete that has read almost the whole internet. "Machine learning" just means it learned from millions of examples instead of being handed rules. "Generative AI" is the kind that makes brand new things: text, pictures, and video.</p>
+      <p class="lvl lvl-20">AI is software that learned patterns from huge amounts of data instead of following rules someone wrote by hand. Machine learning is the training method. Generative AI is the branch that creates new content. The chat tools you already know, ChatGPT, Claude, and Gemini, are large language models: generative AI trained specifically on text.</p>
+      <p class="lvl lvl-25">"AI" today usually means generative AI, systems that produce new content by modeling the patterns in their training data. Machine learning is how they are built: instead of coding the rules, you show a model examples until it learns the statistical patterns. Large language models are the text version behind ChatGPT, Claude, and Gemini. Knowing this hierarchy tells you what to trust the tool with.</p>
+      <p class="lvl lvl-30">In a marketing context, "AI" almost always means generative models: large language models for text, diffusion models for image and video. These are pattern models. They approximate the distribution of their training data and sample from it. Hold onto that framing, because every strength and every failure mode below falls straight out of "it predicts likely output," not "it knows."</p>
+    </div>
+    <div class="aside analogy"><span class="k">Analogy</span> Autocomplete that has read the whole internet.</div>
+    <div class="aside example"><span class="k">In marketing</span> Ask for ten TikTok hooks and it predicts hooks that look like the winning ones it has seen. Fast, but not automatically right for your brand.</div>
+  </section>
+
+  <section class="concept">
+    <div class="cnum">02</div>
+    <h2>How it comes up with an answer</h2>
+    <div class="explain">
+      <p class="lvl lvl-15">It does not look things up, and it does not think the way you do. It predicts one word at a time, each time picking what usually comes next. String enough of those together and you get a full answer that sounds human.</p>
+      <p class="lvl lvl-20">The model predicts the next chunk of text over and over, each choice based on everything before it. It is not searching a database, and it is not reasoning like a person. The fluent answer is a side effect of very good pattern prediction.</p>
+      <p class="lvl lvl-25">Generation is next-word prediction: given the text so far, the model picks a likely continuation, then repeats. There is no lookup step and no understanding, which is why the same prompt can give different answers, and why confidence in the wording tells you nothing about whether it is accurate.</p>
+      <p class="lvl lvl-30">Output is sampled token by token from a learned distribution, conditioned on the prompt. There is no retrieval and no world model unless you add one. Treat fluency and confidence as independent of correctness, because in the base model they genuinely are.</p>
+    </div>
+    <div class="aside analogy"><span class="k">Analogy</span> A musician improvising the next note that fits, not reading from a score.</div>
+    <div class="aside tryit"><span class="k">Try it</span> Ask the same tool the same question twice. The answers will differ. That difference is the guessing at work, not a fact that changed.</div>
+  </section>
+
+  <section class="concept">
+    <div class="cnum">03</div>
+    <h2>What it is great at, and what it is not</h2>
+    <div class="explain">
+      <p class="lvl lvl-15">It is brilliant at first drafts, rewording, summarizing, and giving you lots of options fast. It is bad at anything it was never shown, exact maths, and today's news. Use it to start the work, not to be the final word.</p>
+      <p class="lvl lvl-20">Strong at drafting, summarizing, reformatting, brainstorming, and producing variations quickly. Weak at facts it was not given, precise numbers, very recent events, and anything needing real judgment. Think of it as an accelerator, not an authority.</p>
+      <p class="lvl lvl-25">Play to its strengths, volume and speed on language tasks such as drafts, rewrites, summaries, and variants. Design around its weaknesses: no reliable facts, no exact arithmetic, no knowledge past its training cut-off, no genuine judgment. The wins come from using it where "good and fast" beats "slow and perfect."</p>
+      <p class="lvl lvl-30">It drives the cost of first drafts, variation, and reformatting close to zero, which is where the leverage sits. It is unreliable on ground truth, arithmetic, freshness, and anything that needs accountability. Your job is to route the first category to the model and keep the second behind a human or a tool.</p>
+    </div>
+    <div class="aside analogy"><span class="k">Analogy</span> A tireless junior who writes fast, never gets bored, and must always be checked.</div>
+    <div class="aside example"><span class="k">In marketing</span> Great for 20 caption variants in a minute. Not for "what is our exact refund policy", unless you gave it the policy first.</div>
+  </section>
+
+  <section class="concept">
+    <div class="cnum">04</div>
+    <h2>Hallucinations, and why you always check</h2>
+    <div class="explain">
+      <p class="lvl lvl-15">Sometimes it makes things up and says them with total confidence: a fake statistic, a made-up quote, a feature your product does not have. It is not lying, it is guessing, and the guess sounds right. So you check anything that matters before you use it.</p>
+      <p class="lvl lvl-20">A "hallucination" is when the model states something false as if it were true. It happens because the model predicts plausible text, and plausible is not the same as correct. Anything you would be embarrassed to get wrong, a price, a claim, a name, gets checked by a human.</p>
+      <p class="lvl lvl-25">Hallucination is a direct consequence of next-word prediction: the model optimizes for plausible, not true, so it will invent facts, sources, and figures fluently. Build a verification step into any workflow where being wrong has a cost, and never publish an unchecked factual claim.</p>
+      <p class="lvl lvl-30">Fabrication is not a bug you can prompt away, it is intrinsic to sampling plausible text without grounding. Mitigate it structurally: give the model the source material, use retrieval or tools for facts, and keep a named human accountable for anything published. Confidence in the output is not evidence of accuracy.</p>
+    </div>
+    <div class="aside analogy"><span class="k">Analogy</span> A confident storyteller who fills any gap rather than say "I do not know."</div>
+    <div class="aside example"><span class="k">In marketing</span> Ask for "three stats about TikTok in Malaysia" and it may hand you clean, specific, wrong numbers. Verify before that goes on a slide.</div>
+  </section>
+
+  <section class="concept">
+    <div class="cnum">05</div>
+    <h2>Your data, and your clients' data</h2>
+    <div class="explain">
+      <p class="lvl lvl-15">Whatever you type into a free public AI tool can be seen or kept by the company that runs it. So do not paste secrets, customer details, or anything private. Treat it like writing on a public wall.</p>
+      <p class="lvl lvl-20">Inputs to public tools may be stored, and on some plans used to improve the model. Do not put in customer data, passwords, unpublished plans, or anything covered by a privacy promise. Use business or private modes when the data is sensitive.</p>
+      <p class="lvl lvl-25">Assume anything entered into a consumer tier could be kept or used for training unless the provider says otherwise. Malaysia's PDPA and your own client contracts apply to what you paste, so use enterprise or no-training settings for sensitive data, and strip identifiers where you can.</p>
+      <p class="lvl lvl-30">Data handling is a compliance surface, not a preference. Consumer tiers often train on inputs by default, enterprise tiers contractually do not, and PDPA plus client NDAs govern the rest. Set the policy before the team adopts the tools: approved tiers, what never gets pasted, and redaction defaults.</p>
+    </div>
+    <div class="aside analogy"><span class="k">Analogy</span> Typing into a public tool is like talking in a crowded café. Assume someone can hear.</div>
+    <div class="aside example"><span class="k">In marketing</span> Do not paste a client's customer list to "segment it." Describe the segments instead, or use an approved private tool.</div>
+  </section>
+
+  <section class="recap">
+    <div class="box">
+      <h2>The one-line recap</h2>
+      <p class="line">AI is a very good guesser, not a knower. Use it to draft and multiply, check the facts before anything ships, and never paste anything private into a public tool.</p>
+      <div class="monday"><span class="k">Monday action</span><p>Pick one task you repeat every week, captions, replies, or summaries. Do it once with an AI tool, and check the output before it goes out. Notice what it saved you and what you had to fix.</p></div>
+      <p class="stakes-close">What separates the people who get somewhere with this from the people who don't is not talent, and it is not seniority. <b>It is simply whether you pick it up and keep going.</b> Sitting it out is a choice too, just a slower and quieter one, and the gap only widens from here.</p>
+    </div>
+  </section>
+
+</div>
+
+<footer>
+  <div class="wrap">
+    <span class="wm">Toggle Solutions</span> · AI Literacy curriculum · Module 1 · Bespoke training material<br>
+    <span class="nav-note">Next in the AI Fundamentals pathway: AI-2 · Talking to AI</span>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var HINTS={"15":"a bright teenager","20":"early-career","25":"a sharp non-expert","30":"an experienced marketer"};
+  var root=document.documentElement, hint=document.getElementById("eliHint");
+  var btns=Array.prototype.slice.call(document.querySelectorAll(".seg button"));
+  function apply(level){
+    if(!HINTS[level]) level="20";
+    root.setAttribute("data-level",level);
+    btns.forEach(function(b){ b.setAttribute("aria-pressed", b.getAttribute("data-set")===level ? "true":"false"); });
+    if(hint) hint.textContent=HINTS[level];
+    try{ localStorage.setItem("eli-level",level); }catch(e){}
+  }
+  var saved; try{ saved=localStorage.getItem("eli-level"); }catch(e){}
+  apply(saved||"20");
+  btns.forEach(function(b){ b.addEventListener("click", function(){ apply(b.getAttribute("data-set")); }); });
+})();
+</script>

@@ -1,0 +1,520 @@
+<title>Toggle × TikTok × CM · SME Onboarding Event Plan</title>
+<style>
+  :root{
+    --brand:#4A7BF7; --brand-deep:#3056C9;
+    --canvas:#FFFFFF; --card:#F7F8FB; --card-2:#F0F2F7; --callout:#E5ECFE;
+    --ink:#0F0F0F; --body:#3F434B; --muted:#5E6472; --faint:#767C88;
+    --line:#E4E6EE; --line-strong:#D2D6E2;
+    --good:#0B6B4D; --good-bg:#E2F3EC; --warn:#835400; --warn-bg:#FBF0D9; --crit:#B4231B; --crit-bg:#FBE6E4;
+    --tik:#111; --tik-bg:#F0F0F2;
+    --shadow:0 1px 2px rgba(15,20,45,.05),0 6px 22px rgba(15,20,45,.06);
+    --maxw:1080px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --brand:#6E95F9; --brand-deep:#8BAAFB;
+      --canvas:#0A1224; --card:#111B31; --card-2:#0E1730; --callout:#17244A;
+      --ink:#FFFFFF; --body:#C3CAD9; --muted:#A6AEC0; --faint:#8B93A6;
+      --line:#1F2A44; --line-strong:#2A3756;
+      --good:#3DD6A3; --good-bg:#0E2B24; --warn:#F0C060; --warn-bg:#2C2410; --crit:#FF7A70; --crit-bg:#2E1512;
+      --tik:#F4F4F6; --tik-bg:#1A2238;
+      --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="light"]{
+    --brand:#4A7BF7; --brand-deep:#3056C9;
+    --canvas:#FFFFFF; --card:#F7F8FB; --card-2:#F0F2F7; --callout:#E5ECFE;
+    --ink:#0F0F0F; --body:#3F434B; --muted:#5E6472; --faint:#767C88;
+    --line:#E4E6EE; --line-strong:#D2D6E2;
+    --good:#0B6B4D; --good-bg:#E2F3EC; --warn:#835400; --warn-bg:#FBF0D9; --crit:#B4231B; --crit-bg:#FBE6E4;
+    --tik:#111; --tik-bg:#F0F0F2;
+  }
+  :root[data-theme="dark"]{
+    --brand:#6E95F9; --brand-deep:#8BAAFB;
+    --canvas:#0A1224; --card:#111B31; --card-2:#0E1730; --callout:#17244A;
+    --ink:#FFFFFF; --body:#C3CAD9; --muted:#A6AEC0; --faint:#8B93A6;
+    --line:#1F2A44; --line-strong:#2A3756;
+    --good:#3DD6A3; --good-bg:#0E2B24; --warn:#F0C060; --warn-bg:#2C2410; --crit:#FF7A70; --crit-bg:#2E1512;
+    --tik:#F4F4F6; --tik-bg:#1A2238;
+  }
+  *{box-sizing:border-box}
+  html{scroll-padding-top:70px}
+  body{
+    margin:0;background:var(--canvas);color:var(--body);
+    font-family:"Inter Tight","Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  h1,h2,h3,h4{color:var(--ink);text-wrap:balance;line-height:1.15;margin:0}
+  p{margin:0}
+  a{color:var(--brand-deep);text-decoration:none}
+  strong{color:var(--ink);font-weight:650}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  /* ---- header ---- */
+  header{border-bottom:1px solid var(--line);background:var(--canvas);background:
+    radial-gradient(120% 140% at 88% -20%, color-mix(in srgb,var(--brand) 16%, transparent), transparent 60%),var(--canvas);}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brand-deep);margin-bottom:14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--brand)}
+  header h1{font-size:clamp(30px,5.2vw,50px);font-weight:800;letter-spacing:-.02em;margin-bottom:14px}
+  header .lede{font-size:clamp(16px,2.2vw,19px);color:var(--body);max-width:none}
+  .hstrip{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+  .chip{display:inline-flex;align-items:center;gap:8px;padding:7px 13px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-size:13px;font-weight:600;color:var(--body)}
+  .chip b{color:var(--ink)}
+  .chip.tik{background:var(--tik-bg);color:var(--tik)}
+  .headpad{padding:40px 0 34px}
+
+  /* ---- nav ---- */
+  nav.toc{position:sticky;top:0;z-index:20;background:var(--canvas);background:color-mix(in srgb,var(--canvas) 90%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav.toc .wrap{display:flex;gap:6px;overflow-x:auto;padding:11px 24px;scrollbar-width:none}
+  nav.toc .wrap::-webkit-scrollbar{display:none}
+  nav.toc a{white-space:nowrap;font-size:13px;font-weight:600;color:var(--muted);padding:6px 12px;border-radius:8px}
+  nav.toc a:hover{color:var(--ink);background:var(--card)}
+  nav.toc a:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+
+  section{padding:44px 0;border-bottom:1px solid var(--line);scroll-margin-top:70px}
+  .kicker{font-size:12px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--brand-deep);margin-bottom:9px;display:flex;align-items:center;gap:9px}
+  .kicker .num{font-variant-numeric:tabular-nums;color:var(--faint)}
+  section > .wrap > h2{font-size:clamp(22px,3.2vw,30px);font-weight:800;letter-spacing:-.015em;margin-bottom:8px}
+  section > .wrap > .sub{color:var(--muted);max-width:none;margin-bottom:26px}
+
+  .grid{display:grid;gap:16px}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:820px){.g3,.g2{grid-template-columns:1fr}}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:var(--shadow)}
+  .card h3{font-size:16px;font-weight:750;margin-bottom:7px;display:flex;align-items:center;gap:9px}
+  .card h3 .ic{font-size:19px;filter:grayscale(.15)}
+  .card p{font-size:14px;color:var(--body)}
+  .card .lbl{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--brand-deep);margin-bottom:10px}
+
+  .callout{background:var(--callout);border:1px solid color-mix(in srgb,var(--brand) 30%,var(--line));border-radius:14px;padding:20px 22px}
+  .callout .lbl{color:var(--brand-deep)}
+
+  /* stat row */
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  @media(max-width:820px){.stats{grid-template-columns:repeat(2,1fr)}}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+  .stat .n{font-size:30px;font-weight:800;color:var(--ink);letter-spacing:-.02em;line-height:1.05}
+  .stat .n small{font-size:15px;font-weight:700;color:var(--muted)}
+  .stat .k{font-size:12.5px;color:var(--muted);margin-top:6px;font-weight:550}
+
+  /* agenda table */
+  .tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+  table{border-collapse:collapse;width:100%;min-width:560px;font-size:14px}
+  th,td{text-align:left;padding:12px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+  thead th{font-size:11.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--body);font-weight:700;background:var(--card-2)}
+  tbody tr:last-child td{border-bottom:none}
+  td.time{white-space:nowrap;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;width:1%}
+  .tphase{font-size:11px;font-weight:700;color:var(--brand-deep);text-transform:uppercase;letter-spacing:.06em}
+  .fill{color:var(--muted);font-size:13px;display:block;margin-top:2px}
+
+  /* decisions */
+  .dec{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px 22px;display:grid;grid-template-columns:34px 1fr;gap:16px;box-shadow:var(--shadow)}
+  .dec .no{width:34px;height:34px;border-radius:9px;background:var(--brand);color:#fff;font-weight:800;display:flex;align-items:center;justify-content:center;font-size:15px}
+  .dec h3{font-size:16.5px;font-weight:750;margin-bottom:4px}
+  .dec .ask{font-size:13.5px;color:var(--muted);margin-bottom:12px}
+  .dec .pos{font-size:14px;color:var(--body);background:var(--card-2);border-left:3px solid var(--brand);border-radius:0 8px 8px 0;padding:11px 14px}
+  .dec .pos b{color:var(--ink)}
+  .dec .meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+  .tag{font-size:11.5px;font-weight:650;padding:4px 10px;border-radius:999px;border:1px solid var(--line);color:var(--muted);background:var(--canvas)}
+  .tag b{color:var(--ink);font-weight:700}
+
+  /* pills */
+  .pill{display:inline-flex;align-items:center;gap:6px;font-size:11.5px;font-weight:700;padding:4px 10px;border-radius:999px;letter-spacing:.02em}
+  .p-good{background:var(--good-bg);color:var(--good)}
+  .p-warn{background:var(--warn-bg);color:var(--warn)}
+  .p-crit{background:var(--crit-bg);color:var(--crit)}
+  .p-tbd{background:var(--card-2);color:var(--muted);border:1px dashed var(--line-strong)}
+
+  ul.clean{margin:0;padding:0;list-style:none;display:flex;flex-direction:column;gap:9px}
+  ul.clean li{position:relative;padding-left:22px;font-size:14px;color:var(--body)}
+  ul.clean li::before{content:"";position:absolute;left:2px;top:9px;width:6px;height:6px;border-radius:50%;background:var(--brand)}
+  ul.clean li b{color:var(--ink)}
+
+  .who{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  @media(max-width:820px){.who{grid-template-columns:1fr}}
+  .person{display:flex;gap:13px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:15px 17px}
+  .person .av{width:38px;height:38px;border-radius:50%;flex:0 0 38px;display:flex;align-items:center;justify-content:center;font-weight:800;color:#fff;font-size:14px;background:var(--brand-deep)}
+  .person .nm{font-weight:750;color:var(--ink);font-size:14.5px}
+  .person .rl{font-size:13px;color:var(--muted)}
+
+  /* timeline */
+  .tl{display:flex;flex-direction:column;gap:0;position:relative;margin-left:4px}
+  .tl .row{display:grid;grid-template-columns:118px 1fr;gap:18px;padding:0 0 22px 0;position:relative}
+  .tl .row::before{content:"";position:absolute;left:118px;top:6px;bottom:-6px;width:2px;background:var(--line);transform:translateX(-1px)}
+  .tl .row:last-child::before{display:none}
+  .tl .wk{font-size:12.5px;font-weight:750;color:var(--brand-deep);text-transform:uppercase;letter-spacing:.05em;padding-top:2px;position:relative}
+  .tl .body2{padding-left:20px;position:relative}
+  .tl .body2::before{content:"";position:absolute;left:-6px;top:5px;width:11px;height:11px;border-radius:50%;background:var(--canvas);border:2.5px solid var(--brand)}
+  .tl h4{font-size:15px;font-weight:700;margin-bottom:3px}
+  .tl p{font-size:13.5px;color:var(--muted)}
+
+  .risk{display:grid;grid-template-columns:1fr;gap:11px}
+  .risk .r{display:grid;grid-template-columns:100px 1fr;gap:14px;align-items:start;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  @media(max-width:640px){.risk .r{grid-template-columns:1fr}}
+  .risk .q{font-size:13.5px;color:var(--body)}
+  .risk .q b{color:var(--ink)}
+
+  .note{font-size:12.5px;color:var(--muted);margin-top:20px;font-style:italic}
+  footer{padding:34px 0 60px;color:var(--muted);font-size:13px}
+  footer .wm{font-weight:800;color:var(--ink);letter-spacing:-.01em}
+  .src{background:var(--card);border:1px dashed var(--line-strong);border-radius:12px;padding:14px 18px;font-size:13px;color:var(--muted);margin-top:8px}
+  @media(prefers-reduced-motion:no-preference){a,.chip{transition:.15s ease}}
+</style>
+
+<header>
+  <div class="wrap headpad">
+    <div class="eyebrow"><span class="dot"></span> Internal Planning · CM × Toggle Onboarding · Draft v1</div>
+    <h1>The SME Onboarding Event</h1>
+    <p class="lede">A full-day event and workshop, co-hosted by Toggle and our partner agency, powered by TikTok. We fill a room with SME and D2C brand owners, teach them what works, and onboard them onto TikTok Shop and Toggle. TikTok pays us cash for each client signed, and we keep the pipeline.</p>
+    <div class="hstrip">
+      <span class="chip tik">💵 <b>USD $400</b> per client signed</span>
+      <span class="chip">🗓️ <b>2-month</b> runway to deliver</span>
+      <span class="chip">🎯 Target: <b>SME / D2C</b> brands</span>
+      <span class="chip">🤝 Partners: <b>Toggle · CM · TikTok</b></span>
+      <span class="chip">✅ Confirmed: <b>Dynamo (FMCG)</b></span>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap">
+    <a href="#concept">Concept</a>
+    <a href="#deal">The deal</a>
+    <a href="#audience">Audience</a>
+    <a href="#agenda">Agenda</a>
+    <a href="#content">Content</a>
+    <a href="#decisions">7 decisions</a>
+    <a href="#who">Who's who</a>
+    <a href="#risks">Open questions</a>
+    <a href="#timeline">Timeline</a>
+    <a href="#next">Next steps</a>
+  </div>
+</nav>
+
+<!-- CONCEPT -->
+<section id="concept">
+  <div class="wrap">
+    <div class="kicker"><span class="num">01</span> The concept</div>
+    <h2>What we are building</h2>
+    <p class="sub">One full day, a room of the right people, and three parties that each win something different from it.</p>
+    <div class="grid g3">
+      <div class="card">
+        <div class="lbl">What</div>
+        <h3><span class="ic">🎤</span> A full-day event and workshop</h3>
+        <p>Registration through networking dinner. Talks and breakout sessions on the latest studies, AI for brands, and TikTok Shop onboarding, with lunch and networking built in. People can leave at 4pm to beat the jam, or stay and lepak until 8&ndash;9pm.</p>
+      </div>
+      <div class="card">
+        <div class="lbl">Why us</div>
+        <h3><span class="ic">📈</span> Branding and a warm pipeline</h3>
+        <p>Toggle gets front-of-room positioning as the growth partner these brands should hire: one senior team running acquisition, conversion, and retention, judged on profit rather than vanity metrics. Plus a room of qualified SME owners we can convert into retainers, the real prize on our side.</p>
+      </div>
+      <div class="card">
+        <div class="lbl">Who</div>
+        <h3><span class="ic">🏪</span> SME and D2C brand owners</h3>
+        <p>Growing D2C brands and SMEs where the owner makes the call. They move fast, the pool to fill the room is large, and TikTok Shop is a natural next step for them.</p>
+      </div>
+    </div>
+    <p class="note">Status: the concept is agreed on WhatsApp, and the weekend meeting locks the details. Yi Yang has asked TikTok for a 2-month window and wants this locked in fast.</p>
+  </div>
+</section>
+
+<!-- THE DEAL -->
+<section id="deal">
+  <div class="wrap">
+    <div class="kicker"><span class="num">02</span> The deal and the economics</div>
+    <h2>What each party gets</h2>
+    <p class="sub">The incentives differ across the three parties, and that is fine. Aligning on what TikTok wants back is decision #7, and the most important one to settle.</p>
+
+    <div class="grid g3" style="margin-bottom:18px">
+      <div class="card">
+        <h3><span class="ic">🎵</span> TikTok gives</h3>
+        <p><strong>USD $400 in cash, direct, for every client we sign and onboard.</strong> They have committed a 2-month window. In return they want signed sellers on TikTok Shop, so we must confirm exactly what counts as a qualifying signed client.</p>
+      </div>
+      <div class="card">
+        <h3><span class="ic">🧩</span> Toggle gives and gets</h3>
+        <p>We bring the content, speakers, AI expertise, and real e-commerce proof, Al Hidayah at 11.5x ROI on TikTok Shop and EduKids at 6x ROAS on TikTok. We get brand positioning, a thought-leadership stage, and first right to convert every attendee into a Toggle retainer.</p>
+      </div>
+      <div class="card">
+        <h3><span class="ic">💳</span> Airwallex (proposed)</h3>
+        <p>Yi Yang wants to bring Airwallex in as a collaborator. The likely angle is cross-border payments and USD payouts for sellers going global. <span class="pill p-tbd">Scope TBD</span> Confirm what they sponsor or co-present.</p>
+      </div>
+    </div>
+
+    <div class="callout">
+      <div class="lbl">Napkin math, the TikTok bounty alone</div>
+      <div class="stats" style="margin-top:6px">
+        <div class="stat"><div class="n tnum">40&ndash;60</div><div class="k">target attendees (assumption)</div></div>
+        <div class="stat"><div class="n tnum">25<small>%</small></div><div class="k">sign rate (assumption)</div></div>
+        <div class="stat"><div class="n tnum">~12</div><div class="k">clients signed</div></div>
+        <div class="stat"><div class="n"><small>USD</small> ~4.8k</div><div class="k">TikTok cash @ $400/client</div></div>
+      </div>
+      <p style="font-size:13px;color:var(--body);margin-top:14px">These are illustrative placeholders, not agreed numbers. Treat the TikTok bounty as a bonus. The business case is the retainer value of every SME we convert to Toggle, plus the brand lift. Set our own target ROI (decision #6) on that basis, then count the $400 as extra.</p>
+    </div>
+  </div>
+</section>
+
+<!-- AUDIENCE -->
+<section id="audience">
+  <div class="wrap">
+    <div class="kicker"><span class="num">03</span> Target audience and sourcing</div>
+    <h2>Who we put in the room, and where we find them</h2>
+    <p class="sub">Pick the SME lane and let the rest follow it. Enterprise brands are hard to convert here because they already have an agency, so SME-focused invites and SME positioning should match.</p>
+    <div class="grid g2">
+      <div class="card">
+        <div class="lbl">Address the invite to</div>
+        <ul class="clean">
+          <li><b>Founder or business owner</b>, especially SMEs, where they make the call</li>
+          <li><b>Head of Marketing, Marketing Manager, or Brand Manager</b></li>
+          <li><b>E-commerce or Online Sales Manager</b></li>
+          <li><b>Social Media or Digital Marketing Lead</b></li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="lbl">Where to source them</div>
+        <ul class="clean">
+          <li><b>Existing Shopee or Lazada sellers</b>, already selling online, so TikTok Shop is the natural next step</li>
+          <li><b>Brands active on Instagram but not yet on TikTok</b></li>
+          <li><b>Our current clients and referral network</b>, for warm intros</li>
+          <li><b>CM's client base</b>, which CM is already pulling prospects from</li>
+        </ul>
+      </div>
+    </div>
+    <div class="callout" style="margin-top:16px">
+      <div class="lbl">Demographic to design the content around (2026)</div>
+      <p style="font-size:14px;color:var(--body)">Core buyers on the platform are <strong>18&ndash;34</strong>, and the <strong>25&ndash;34</strong> band is now the largest group. That is who the attendees are trying to reach, so our talks and case studies should speak to selling to that buyer.</p>
+    </div>
+    <p class="note">Why this lane fits Toggle: our e-commerce book, Al Hidayah, Kualesa, and EduKids, is exactly these Shopee, Lazada, and TikTok Shop sellers, so the case studies land with this room. CM's own note ties the SME lane to a pricing-floor question, so keep the SME invite list and SME pricing aligned.</p>
+  </div>
+</section>
+
+<!-- AGENDA -->
+<section id="agenda">
+  <div class="wrap">
+    <div class="kicker"><span class="num">04</span> The run of day</div>
+    <h2>Draft agenda</h2>
+    <p class="sub">CM's skeleton, with Toggle's proposed topic fills in grey and four content slots to program. The 4pm split lets people beat the traffic or stay to network.</p>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>Time</th><th>Agenda</th><th>Phase</th></tr></thead>
+        <tbody>
+          <tr><td class="time">9:00 AM</td><td>Registration</td><td><span class="tphase">Arrival</span></td></tr>
+          <tr><td class="time">9:30 AM</td><td>Opening Remarks<span class="fill">Toggle, TikTok, and CM welcome, framing the day</span></td><td><span class="tphase">Open</span></td></tr>
+          <tr><td class="time">9:45 AM</td><td>Topic 1<span class="fill">Proposed: the latest study, where SME buyers are in 2026</span></td><td><span class="tphase">Keynote</span></td></tr>
+          <tr><td class="time">10:30 AM</td><td>Break</td><td><span class="tphase">Break</span></td></tr>
+          <tr><td class="time">10:45 AM</td><td>Topic 2<span class="fill">Proposed: AI for brand owners, practical and do-it-Monday</span></td><td><span class="tphase">Keynote</span></td></tr>
+          <tr><td class="time">11:30 AM</td><td>Lunch and Network</td><td><span class="tphase">Lunch</span></td></tr>
+          <tr><td class="time">1:00 PM</td><td>Breakout / Topic 3<span class="fill">Proposed: TikTok Shop onboarding, step by step</span></td><td><span class="tphase">Breakout</span></td></tr>
+          <tr><td class="time">2:00 PM</td><td>Break</td><td><span class="tphase">Break</span></td></tr>
+          <tr><td class="time">2:15 PM</td><td>Breakout / Topic 4<span class="fill">Proposed: eShop and the seller playbook, covering Lynn's ask</span></td><td><span class="tphase">Breakout</span></td></tr>
+          <tr><td class="time">3:15 PM</td><td>Testimonial Sharing<span class="fill">Client wins: Dynamo and a Toggle case</span></td><td><span class="tphase">Proof</span></td></tr>
+          <tr><td class="time">4:00 PM</td><td>Networking Dinner / Drinking<span class="fill">Leave to beat the jam, or stay and lepak until 8&ndash;9pm</span></td><td><span class="tphase">Network</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- CONTENT -->
+<section id="content">
+  <div class="wrap">
+    <div class="kicker"><span class="num">05</span> Content and speakers</div>
+    <h2>What we teach, who says it</h2>
+    <p class="sub">CM's client base tells us attendees care most about the topics and the speakers. Program for value first, sell second.</p>
+    <div class="grid g2">
+      <div class="card">
+        <div class="lbl">Session themes to build</div>
+        <ul class="clean">
+          <li><b>Latest study</b>, a credible and current data story on where SME buyers are</li>
+          <li><b>AI sharing</b>, Toggle's edge, kept hands-on and practical</li>
+          <li><b>TikTok Shop onboarding</b>, the practical how-to that drives the $400 signings</li>
+          <li><b>eShop and eCommerce</b>, which Lynn asked about and Yi Yang confirmed</li>
+          <li><b>Testimonials</b>, real proof: Dynamo through CM, plus a Toggle TikTok Shop case (Al Hidayah, 11.5x ROI)</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="lbl">Speaker bench</div>
+        <ul class="clean">
+          <li><b>Toggle</b>, for AI and growth content, with Zaid piling on the agenda</li>
+          <li><b>TikTok</b>, for the platform and the TikTok Shop session</li>
+          <li><b>Faris</b>, wanted as a speaker, with Viknesh to tarik him in <span class="pill p-tbd">confirm</span></li>
+          <li><b>CM</b>, bringing client base and topic input</li>
+          <li><b>Dynamo (FMCG)</b>, confirmed to join and a candidate for a testimonial slot</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- DECISIONS -->
+<section id="decisions">
+  <div class="wrap">
+    <div class="kicker"><span class="num">06</span> The seven decisions to lock</div>
+    <h2>CM's checklist, with Toggle's opening position</h2>
+    <p class="sub">These are the seven items CM says we must decide. Each carries a draft Toggle position, so the weekend meeting opens on a working proposal. Confirm, adjust, or drop each one.</p>
+
+    <div class="grid" style="gap:14px">
+      <div class="dec">
+        <div class="no">1</div>
+        <div>
+          <h3>Budget</h3>
+          <p class="ask">Decides what kind of event we can run: location, door gifts, merchandise, lucky draw, station games, food.</p>
+          <div class="pos"><b>Toggle position:</b> Agree a total budget, and who funds what across Toggle, CM and TikTok, before designing anything. Propose a lean but credible tier so venue and F&amp;B do not eat the whole number. <span class="pill p-crit" style="margin-left:4px">blocker</span></div>
+          <div class="meta"><span class="tag">Owner: <b>All three parties</b></span><span class="tag">Need: <b>total + split</b></span></div>
+        </div>
+      </div>
+
+      <div class="dec">
+        <div class="no">2</div>
+        <div>
+          <h3>Agenda and topics</h3>
+          <p class="ask">What topics educate people the most, and how they benefit from us.</p>
+          <div class="pos"><b>Toggle position:</b> Anchor on the four themes above, latest study, AI, TikTok Shop, and eShop, each ending in a clear "how Toggle helps." Zaid to draft the full session outline.</div>
+          <div class="meta"><span class="tag">Owner: <b>Toggle (Zaid)</b></span><span class="tag">Status: <b>drafting</b></span></div>
+        </div>
+      </div>
+
+      <div class="dec">
+        <div class="no">3</div>
+        <div>
+          <h3>Location</h3>
+          <p class="ask">Where is most convenient for people to attend.</p>
+          <div class="pos"><b>Toggle position:</b> Central Klang Valley, easy parking or transit, room for 40&ndash;60 plus breakout space and a dinner spot nearby for the lepak crowd. <span class="pill p-tbd">venue TBD</span></div>
+          <div class="meta"><span class="tag">Owner: <b>CM + Toggle</b></span><span class="tag">Need: <b>shortlist</b></span></div>
+        </div>
+      </div>
+
+      <div class="dec">
+        <div class="no">4</div>
+        <div>
+          <h3>Incentives and eDM</h3>
+          <p class="ask">Curate an eDM for the incentives and programs, Toggle and TikTok.</p>
+          <div class="pos"><b>Toggle position:</b> Package the attendee offer into one eDM, the TikTok onboarding support, Toggle's TikTok Starter retainer (8 reels a month plus TikTok Shop and performance management), and any Airwallex perk. Toggle drives design and copy off the design system.</div>
+          <div class="meta"><span class="tag">Owner: <b>Toggle</b></span><span class="tag">Deliverable: <b>eDM</b></span></div>
+        </div>
+      </div>
+
+      <div class="dec">
+        <div class="no">5</div>
+        <div>
+          <h3>Target audience</h3>
+          <p class="ask">Specify which industry we are comfortable and confident with, then fly from there.</p>
+          <div class="pos"><b>Toggle position:</b> Lead with SME and D2C retail and consumer brands where we have proof, FMCG through Dynamo plus our book. Keep it tight so speakers and case studies land.</div>
+          <div class="meta"><span class="tag">Owner: <b>CM + Toggle</b></span><span class="tag">Lean: <b>SME / D2C</b></span></div>
+        </div>
+      </div>
+
+      <div class="dec">
+        <div class="no">6</div>
+        <div>
+          <h3>Target ROI (Toggle side)</h3>
+          <p class="ask">What do we expect in returns for Toggle.</p>
+          <div class="pos"><b>Toggle position:</b> Set a number of signed retainers and pipeline value as the primary goal, and treat the TikTok $400 per client and brand lift as secondary. Retainer pricing sits with Viknesh and Zaid, and the SME pricing floor CM flagged should match the SME invite list. Define the target before the budget is approved, so we know the event pays back.</div>
+          <div class="meta"><span class="tag">Owner: <b>Toggle</b></span><span class="tag">Need: <b>retainer target</b></span></div>
+        </div>
+      </div>
+
+      <div class="dec">
+        <div class="no">7</div>
+        <div>
+          <h3>Expectation alignment with TikTok</h3>
+          <p class="ask">Align with TikTok on their MAIN agenda, what they want in return.</p>
+          <div class="pos"><b>Toggle position:</b> Get in writing what counts as a signed client, how and when the $400 is paid, the exact dates of the 2-month window, and any signup targets they expect. Settling this first prevents downstream rework. <span class="pill p-crit" style="margin-left:4px">do first</span></div>
+          <div class="meta"><span class="tag">Owner: <b>Yi Yang → TikTok</b></span><span class="tag">Need: <b>terms in writing</b></span></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- WHO -->
+<section id="who">
+  <div class="wrap">
+    <div class="kicker"><span class="num">07</span> Who's who</div>
+    <h2>The working group</h2>
+    <p class="sub">The "CM x Toggle Onboarding" WhatsApp group runs this. Four of the five are Toggle (Yi Yang, Zaid, Viknesh, Jordan), CM is the external partner agency, and TikTok funds the bounty. The roles below stand as of today, so firm them up at the weekend meeting.</p>
+    <div class="who">
+      <div class="person"><div class="av">YY</div><div><div class="nm">Yi Yang</div><div class="rl">Toggle, Acquisition and Retention. Driving the event, and owns the TikTok and Airwallex relationships. Wants it locked in fast.</div></div></div>
+      <div class="person"><div class="av" style="background:#3056C9">ZS</div><div><div class="nm">Zaid Saad</div><div class="rl">Toggle, Retention. Piling on the agenda and content, especially the AI and growth sessions.</div></div></div>
+      <div class="person"><div class="av" style="background:#6E4AF7">VT</div><div><div class="nm">Viknesh</div><div class="rl">Toggle, Retention. Pulling Faris in as a guest speaker, and senior coordination.</div></div></div>
+      <div class="person"><div class="av" style="background:#B4231B">JP</div><div><div class="nm">Jordan</div><div class="rl">Toggle, Acquisition (Paid Media and SEO). In the working group.</div></div></div>
+      <div class="person"><div class="av" style="background:#0B6B4D">CM</div><div><div class="nm">CM</div><div class="rl">Partner agency (external). Brings its client base, the 7-point checklist, target-audience and agenda input, and brought Dynamo in.</div></div></div>
+      <div class="person"><div class="av" style="background:#835400">TT</div><div><div class="nm">TikTok</div><div class="rl">Funds the onboarding bounty, co-presents the TikTok Shop session, and sets their own agenda.</div></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- RISKS -->
+<section id="risks">
+  <div class="wrap">
+    <div class="kicker"><span class="num">08</span> Open questions and risks</div>
+    <h2>What we do not know yet</h2>
+    <p class="sub">Everything here is unresolved from the chat. Bring answers, or owners, to the weekend meeting.</p>
+    <div class="risk">
+      <div class="r"><span class="pill p-crit">Blocker</span><div class="q"><b>TikTok terms.</b> What counts as a signed client, the payout mechanics for the $400, and the exact 2-month window dates. We cannot scale anything until TikTok puts this in writing.</div></div>
+      <div class="r"><span class="pill p-crit">Blocker</span><div class="q"><b>Budget and who pays.</b> Total spend and the split across Toggle, CM and TikTok. This drives venue, F&amp;B, gifts, and games.</div></div>
+      <div class="r"><span class="pill p-warn">Key</span><div class="q"><b>Date and venue.</b> No date is set yet. It must fit inside the 2-month window with enough lead time to fill the room.</div></div>
+      <div class="r"><span class="pill p-warn">Key</span><div class="q"><b>Headcount target.</b> How many attendees we are aiming for, and how many signings that needs to be worth it.</div></div>
+      <div class="r"><span class="pill p-warn">Key</span><div class="q"><b>Airwallex scope.</b> Are they in, and as what: sponsor, speaker, or perk provider? Yi Yang to confirm.</div></div>
+      <div class="r"><span class="pill p-tbd">Confirm</span><div class="q"><b>Speaker lock.</b> Is Faris confirmed? Is a TikTok speaker named? Is Dynamo willing to do a testimonial on stage?</div></div>
+      <div class="r"><span class="pill p-tbd">Confirm</span><div class="q"><b>Lead sourcing plan.</b> Who owns filling the room, and from which lists (CM base, Toggle clients, Shopee and Lazada sellers).</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- TIMELINE -->
+<section id="timeline">
+  <div class="wrap">
+    <div class="kicker"><span class="num">09</span> The 2-month sprint</div>
+    <h2>Working backwards from event day</h2>
+    <p class="sub">A skeleton to pressure-test at the weekend meeting. We pin the dates once the event date and TikTok window are set.</p>
+    <div class="tl">
+      <div class="row"><div class="wk">This weekend</div><div class="body2"><h4>Lock the concept</h4><p>Meet, walk the 7 decisions, get TikTok terms in writing, agree the budget and split, and set the event date.</p></div></div>
+      <div class="row"><div class="wk">Week 1&ndash;2</div><div class="body2"><h4>Foundations</h4><p>Book the venue, confirm the budget, lock speakers (Faris, TikTok, Dynamo), and finalize the agenda and the four session topics.</p></div></div>
+      <div class="row"><div class="wk">Week 3&ndash;4</div><div class="body2"><h4>Build and open invites</h4><p>Design the eDM and event branding off the Toggle design system, open registration, and start sourcing from the CM base, Toggle clients, and Shopee and Lazada seller lists.</p></div></div>
+      <div class="row"><div class="wk">Week 5&ndash;6</div><div class="body2"><h4>Fill the room and produce</h4><p>Drive signups to target, build the slide decks and session content, and confirm F&amp;B, door gifts, games, and run-of-show.</p></div></div>
+      <div class="row"><div class="wk">Week 7</div><div class="body2"><h4>Final week</h4><p>Reminders and reconfirmations, print and logistics, dry-run the sessions, brief the speakers, and prep the onboarding and signing flow so the $400 conversions are captured cleanly on the day.</p></div></div>
+      <div class="row"><div class="wk">Event day</div><div class="body2"><h4>Run it and sign clients</h4><p>Deliver the day, sign SMEs onto TikTok Shop and Toggle, capture testimonials, then follow up the whole room within 48 hours while it is warm.</p></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- NEXT -->
+<section id="next" style="border-bottom:none">
+  <div class="wrap">
+    <div class="kicker"><span class="num">10</span> Next steps</div>
+    <h2>Before and at the weekend meeting</h2>
+    <div class="grid g2">
+      <div class="card">
+        <div class="lbl">Bring to the meeting</div>
+        <ul class="clean">
+          <li><b>TikTok terms</b>, so Yi Yang can say what counts as a signed client and how the payout works</li>
+          <li><b>Budget proposal</b>, a number and a funding split to react to</li>
+          <li><b>Draft agenda</b>, with Zaid bringing the filled session outline</li>
+          <li><b>Venue shortlist</b>, 2&ndash;3 options with dates</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="lbl">Decide on the day</div>
+        <ul class="clean">
+          <li>Event <b>date</b> inside the 2-month window</li>
+          <li><b>Budget owner</b> and the Toggle, CM, and TikTok split</li>
+          <li>Toggle's <b>target ROI</b> in signed retainers</li>
+          <li>Who <b>owns filling the room</b>, and by when</li>
+        </ul>
+      </div>
+    </div>
+    <div class="src">
+      <b style="color:var(--ink)">Source:</b> Reconstructed from the CM × Toggle Onboarding WhatsApp threads (Yi Yang, CM, Toggle). Placeholders and assumptions are labeled throughout, so treat any number here as a starting point rather than an agreed figure.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="wm">Toggle Solutions</span> · Internal planning doc · Draft v1 · Not for external distribution<br>
+    Your Digital Growth Partner
+  </div>
+</footer>

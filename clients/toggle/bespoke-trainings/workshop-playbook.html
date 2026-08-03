@@ -1,0 +1,642 @@
+<title>The Workshop Playbook · Toggle × TikTok × CM SME Onboarding</title>
+<style>
+  :root{
+    --brand:#4A7BF7; --brand-deep:#3056C9;
+    --canvas:#FFFFFF; --card:#F7F8FB; --card-2:#EFF1F7; --callout:#E5ECFE;
+    --ink:#0F0F0F; --body:#3F434B; --muted:#5E6472; --faint:#767C88;
+    --line:#E4E6EE; --line-strong:#D2D6E2;
+    --teach:#0B6B4D; --teach-bg:#E4F3EC; --teach-line:#BFE4D4;
+    --do:#835400; --do-bg:#FBF1DA; --do-line:#EBD8A8;
+    --sign:#B4231B; --sign-bg:#FBE7E5; --sign-line:#F1C7C3;
+    --shadow:0 1px 2px rgba(15,20,45,.05),0 6px 22px rgba(15,20,45,.06);
+    --maxw:1080px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --brand:#6E95F9; --brand-deep:#8BAAFB;
+      --canvas:#0A1224; --card:#111B31; --card-2:#0E1730; --callout:#17244A;
+      --ink:#FFFFFF; --body:#C3CAD9; --muted:#A6AEC0; --faint:#8B93A6;
+      --line:#1F2A44; --line-strong:#2A3756;
+      --teach:#3DD6A3; --teach-bg:#0E2B24; --teach-line:#1C4A3D;
+      --do:#F0C060; --do-bg:#2C2410; --do-line:#4A3D18;
+      --sign:#FF7A70; --sign-bg:#2E1512; --sign-line:#4A2420;
+      --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.35);
+    }
+  }
+  :root[data-theme="light"]{
+    --brand:#4A7BF7; --brand-deep:#3056C9;
+    --canvas:#FFFFFF; --card:#F7F8FB; --card-2:#EFF1F7; --callout:#E5ECFE;
+    --ink:#0F0F0F; --body:#3F434B; --muted:#5E6472; --faint:#767C88;
+    --line:#E4E6EE; --line-strong:#D2D6E2;
+    --teach:#0B6B4D; --teach-bg:#E4F3EC; --teach-line:#BFE4D4;
+    --do:#835400; --do-bg:#FBF1DA; --do-line:#EBD8A8;
+    --sign:#B4231B; --sign-bg:#FBE7E5; --sign-line:#F1C7C3;
+  }
+  :root[data-theme="dark"]{
+    --brand:#6E95F9; --brand-deep:#8BAAFB;
+    --canvas:#0A1224; --card:#111B31; --card-2:#0E1730; --callout:#17244A;
+    --ink:#FFFFFF; --body:#C3CAD9; --muted:#A6AEC0; --faint:#8B93A6;
+    --line:#1F2A44; --line-strong:#2A3756;
+    --teach:#3DD6A3; --teach-bg:#0E2B24; --teach-line:#1C4A3D;
+    --do:#F0C060; --do-bg:#2C2410; --do-line:#4A3D18;
+    --sign:#FF7A70; --sign-bg:#2E1512; --sign-line:#4A2420;
+  }
+  *{box-sizing:border-box}
+  html{scroll-padding-top:70px}
+  body{
+    margin:0;background:var(--canvas);color:var(--body);
+    font-family:"Inter Tight","Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  h1,h2,h3,h4{color:var(--ink);text-wrap:balance;line-height:1.15;margin:0}
+  p{margin:0}
+  a{color:var(--brand-deep);text-decoration:none}
+  strong{color:var(--ink);font-weight:650}
+  .tnum{font-variant-numeric:tabular-nums}
+
+  header{border-bottom:1px solid var(--line);background:var(--canvas);background:
+    radial-gradient(120% 140% at 85% -25%, color-mix(in srgb,var(--brand) 18%, transparent), transparent 60%),var(--canvas);}
+  .eyebrow{font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--brand-deep);margin-bottom:14px;display:flex;align-items:center;gap:10px;flex-wrap:wrap}
+  .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--brand)}
+  header h1{font-size:clamp(30px,5.4vw,52px);font-weight:800;letter-spacing:-.022em;margin-bottom:14px}
+  header .lede{font-size:clamp(16px,2.2vw,19px);color:var(--body);max-width:none}
+  .hstrip{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
+  .chip{display:inline-flex;align-items:center;gap:8px;padding:7px 13px;border-radius:999px;background:var(--card);border:1px solid var(--line);font-size:13px;font-weight:600;color:var(--body)}
+  .chip b{color:var(--ink)}
+  .headpad{padding:40px 0 34px}
+
+  nav.toc{position:sticky;top:0;z-index:20;background:var(--canvas);background:color-mix(in srgb,var(--canvas) 90%,transparent);-webkit-backdrop-filter:blur(10px);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+  nav.toc .wrap{display:flex;gap:6px;overflow-x:auto;padding:11px 24px;scrollbar-width:none}
+  nav.toc .wrap::-webkit-scrollbar{display:none}
+  nav.toc a{white-space:nowrap;font-size:13px;font-weight:600;color:var(--muted);padding:6px 12px;border-radius:8px}
+  nav.toc a:hover{color:var(--ink);background:var(--card)}
+  nav.toc a:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+
+  section{padding:44px 0;border-bottom:1px solid var(--line);scroll-margin-top:70px}
+  .kicker{font-size:12px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--brand-deep);margin-bottom:9px;display:flex;align-items:center;gap:9px}
+  .kicker .num{font-variant-numeric:tabular-nums;color:var(--faint)}
+  section > .wrap > h2{font-size:clamp(22px,3.2vw,30px);font-weight:800;letter-spacing:-.015em;margin-bottom:8px}
+  section > .wrap > .sub{color:var(--muted);max-width:none;margin-bottom:26px}
+
+  .grid{display:grid;gap:16px}
+  .g3{grid-template-columns:repeat(3,1fr)}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:820px){.g3,.g2{grid-template-columns:1fr}}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;box-shadow:var(--shadow)}
+  .card h3{font-size:16px;font-weight:750;margin-bottom:7px;display:flex;align-items:center;gap:9px}
+  .card p{font-size:14px;color:var(--body)}
+  .card .lbl{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--brand-deep);margin-bottom:10px}
+
+  .assume{background:var(--card-2);border:1px solid var(--line);border-radius:14px;padding:18px 22px;margin-top:22px;display:flex;gap:16px;align-items:flex-start}
+  .assume .ic{font-size:22px;line-height:1;margin-top:1px}
+  .assume .lbl{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--brand-deep);margin-bottom:6px}
+  .assume p{font-size:13.5px;color:var(--body)}
+
+  /* journey strip */
+  .journey{display:flex;gap:0;overflow-x:auto;padding:4px 0 10px;scrollbar-width:thin}
+  .jstep{flex:0 0 auto;display:flex;align-items:center;gap:0}
+  .jbox{min-width:150px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+  .jbox .jn{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--brand-deep);font-variant-numeric:tabular-nums}
+  .jbox .jt{font-size:14.5px;font-weight:750;color:var(--ink);margin-top:4px}
+  .jbox .jm{font-size:12px;color:var(--muted);margin-top:3px}
+  .jarrow{color:var(--faint);padding:0 10px;font-size:18px;flex:0 0 auto}
+  .jbox.mode-teach{border-color:var(--teach-line)} .jbox.mode-teach .jn{color:var(--teach)}
+  .jbox.mode-do{border-color:var(--do-line)} .jbox.mode-do .jn{color:var(--do)}
+  .jbox.mode-sign{border-color:var(--sign-line)} .jbox.mode-sign .jn{color:var(--sign)}
+
+  .legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:18px}
+  .legend span{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;color:var(--muted)}
+  .swatch{width:11px;height:11px;border-radius:3px}
+  .sw-teach{background:var(--teach)} .sw-do{background:var(--do)} .sw-sign{background:var(--sign)}
+
+  /* session block */
+  .session{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);overflow:hidden;margin-bottom:20px}
+  .session .head{display:grid;grid-template-columns:64px 1fr;gap:18px;padding:22px 24px;border-bottom:1px solid var(--line);align-items:start}
+  .session .snum{width:64px;height:64px;border-radius:14px;background:var(--brand);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;font-weight:800;line-height:1}
+  .session .snum small{font-size:9px;font-weight:700;letter-spacing:.1em;opacity:.9;margin-bottom:3px}
+  .session .snum span{font-size:24px}
+  .session.t-do .snum{background:var(--do)} .session.t-sign .snum{background:var(--sign)}
+  .session .meta-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:8px}
+  .mtag{font-size:11px;font-weight:700;letter-spacing:.03em;padding:3px 9px;border-radius:999px;text-transform:uppercase}
+  .mtag.time{background:var(--card-2);color:var(--body)}
+  .mtag.fmt-teach{background:var(--teach-bg);color:var(--teach)}
+  .mtag.fmt-do{background:var(--do-bg);color:var(--do)}
+  .mtag.who{background:var(--card-2);color:var(--brand-deep)}
+  .session h2.stitle{font-size:20px;font-weight:800;letter-spacing:-.01em;margin-bottom:5px}
+  .session .promise{font-size:14.5px;color:var(--body)}
+  .session .body-grid{display:grid;grid-template-columns:1.35fr 1fr;gap:0}
+  @media(max-width:820px){.session .body-grid{grid-template-columns:1fr}}
+  .session .col{padding:22px 24px}
+  .session .col.left{border-right:1px solid var(--line)}
+  @media(max-width:820px){.session .col.left{border-right:none;border-bottom:1px solid var(--line)}}
+  .blocklbl{font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--muted);margin:0 0 10px}
+  .blocklbl.first{margin-top:0}
+  .obj{background:var(--callout);border-radius:10px;padding:12px 14px;font-size:13.5px;color:var(--body);margin-bottom:18px}
+  .obj b{color:var(--brand-deep)}
+  ol.arc{margin:0 0 18px;padding:0;list-style:none;counter-reset:a;display:flex;flex-direction:column;gap:9px}
+  ol.arc li{position:relative;padding-left:30px;font-size:14px;color:var(--body);counter-increment:a}
+  ol.arc li::before{content:counter(a);position:absolute;left:0;top:0;width:20px;height:20px;border-radius:6px;background:var(--card-2);color:var(--ink);font-size:11px;font-weight:800;display:flex;align-items:center;justify-content:center}
+  ol.arc li b{color:var(--ink)}
+  ul.clean{margin:0 0 18px;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+  ul.clean li{position:relative;padding-left:20px;font-size:13.5px;color:var(--body)}
+  ul.clean li::before{content:"";position:absolute;left:2px;top:8px;width:6px;height:6px;border-radius:50%;background:var(--brand)}
+  ul.clean li b{color:var(--ink)}
+  ul.clean.last{margin-bottom:0}
+
+  .exbox{background:var(--do-bg);border:1px solid var(--do-line);border-radius:10px;padding:13px 15px;margin-bottom:16px}
+  .exbox .xl{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--do);margin-bottom:6px;display:flex;align-items:center;gap:6px}
+  .exbox p{font-size:13.5px;color:var(--body)}
+  .exbox p + p{margin-top:7px}
+  .bridge{background:var(--callout);border-left:3px solid var(--brand);border-radius:0 10px 10px 0;padding:12px 15px;margin-bottom:16px}
+  .bridge .xl{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--brand-deep);margin-bottom:5px}
+  .bridge p{font-size:13.5px;color:var(--body)}
+  .bridge.sign{background:var(--sign-bg);border-left-color:var(--sign)}
+  .bridge.sign .xl{color:var(--sign)}
+  .facil{background:var(--teach-bg);border:1px solid var(--teach-line);border-radius:10px;padding:13px 15px}
+  .facil .xl{font-size:11px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;color:var(--teach);margin-bottom:6px;display:flex;align-items:center;gap:6px}
+  .facil p{font-size:13.5px;color:var(--body)}
+  .matline{font-size:12.5px;color:var(--muted);margin-top:14px}
+  .matline b{color:var(--ink)}
+  .stub{font-size:12px;color:var(--body);background:var(--card-2);border:1px solid var(--line);border-radius:6px;padding:1px 7px;font-weight:600;font-variant-numeric:tabular-nums;display:inline-block}
+
+  /* conversion */
+  .flow{display:flex;gap:0;flex-wrap:wrap;align-items:stretch}
+  .fnode{flex:1 1 150px;min-width:140px;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:15px;position:relative}
+  .fnode.sign{border-color:var(--sign-line);background:var(--sign-bg)}
+  .fnode .fk{font-size:11px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;color:var(--brand-deep);margin-bottom:6px}
+  .fnode.sign .fk{color:var(--sign)}
+  .fnode h4{font-size:14.5px;font-weight:750;margin-bottom:4px}
+  .fnode p{font-size:12.5px;color:var(--muted)}
+  .farrow{display:flex;align-items:center;color:var(--faint);font-size:20px;padding:0 8px}
+  @media(max-width:640px){.farrow{transform:rotate(90deg);padding:6px 0;justify-content:center;width:100%}}
+
+  /* run of show */
+  .tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:14px;background:var(--card)}
+  table{border-collapse:collapse;width:100%;min-width:640px;font-size:13.5px}
+  th,td{text-align:left;padding:11px 15px;border-bottom:1px solid var(--line);vertical-align:top}
+  thead th{font-size:11px;letter-spacing:.07em;text-transform:uppercase;color:var(--body);font-weight:700;background:var(--card-2)}
+  tbody tr:last-child td{border-bottom:none}
+  td.time{white-space:nowrap;font-weight:700;color:var(--ink);font-variant-numeric:tabular-nums;width:1%}
+  td.mode .mtag{font-size:10px}
+
+  .stats{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  @media(max-width:820px){.stats{grid-template-columns:repeat(2,1fr)}}
+  .stat{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:18px 20px}
+  .stat .n{font-size:26px;font-weight:800;color:var(--ink);letter-spacing:-.02em;line-height:1.05}
+  .stat .k{font-size:12.5px;color:var(--muted);margin-top:8px;font-weight:550}
+
+  .prep{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}
+  @media(max-width:820px){.prep{grid-template-columns:1fr}}
+  .prep .p{display:flex;gap:11px;align-items:flex-start;background:var(--card);border:1px solid var(--line);border-radius:11px;padding:13px 15px}
+  .prep .box{width:17px;height:17px;border-radius:5px;border:2px solid var(--line-strong);flex:0 0 17px;margin-top:2px}
+  .prep .txt{font-size:13.5px;color:var(--body)}
+  .prep .txt b{color:var(--ink)}
+  .prep .txt .own{font-size:12px;color:var(--muted);display:block;margin-top:2px}
+
+  .note{font-size:12.5px;color:var(--muted);margin-top:20px;font-style:italic}
+  .src{background:var(--card);border:1px dashed var(--line-strong);border-radius:12px;padding:14px 18px;font-size:13px;color:var(--muted);margin-top:22px}
+  .src b{color:var(--ink)}
+  footer{padding:34px 0 60px;color:var(--muted);font-size:13px}
+  footer .wm{font-weight:800;color:var(--ink);letter-spacing:-.01em}
+  @media(prefers-reduced-motion:no-preference){a,.chip{transition:.15s ease}}
+</style>
+
+<header>
+  <div class="wrap headpad">
+    <div class="eyebrow"><span class="dot"></span> Workshop Playbook · CM × Toggle Onboarding · Draft v2</div>
+    <h1>The Workshop, Built</h1>
+    <p class="lede">The full-day event, designed session by session. Every talk teaches something an SME owner can use on Monday, and the day converts on two fronts at once: sellers go live on TikTok Shop, and the best of them book a Toggle growth call. This is the run-book the team builds and runs from.</p>
+    <div class="hstrip">
+      <span class="chip">🎓 <b>4 sessions</b> plus testimonials</span>
+      <span class="chip">⏱️ <b>Full day</b>, 9am to late</span>
+      <span class="chip">🎯 Two wins: <b>Shop live + Toggle call</b></span>
+      <span class="chip">💵 Each signing pays <b>USD $400</b>, each retainer is the real prize</span>
+      <span class="chip">📊 Toggle proof: <b>11.5x ROI on TikTok Shop</b> (Al Hidayah)</span>
+    </div>
+  </div>
+</header>
+
+<nav class="toc">
+  <div class="wrap">
+    <a href="#principles">Design principles</a>
+    <a href="#journey">The journey</a>
+    <a href="#s1">1 · Why now</a>
+    <a href="#s2">2 · AI edge</a>
+    <a href="#s3">3 · TikTok Shop</a>
+    <a href="#s4">4 · Sell more</a>
+    <a href="#proof">Proof</a>
+    <a href="#convert">Conversion</a>
+    <a href="#ros">Run of show</a>
+    <a href="#prep">Build checklist</a>
+    <a href="#metrics">Success</a>
+  </div>
+</nav>
+
+<!-- PRINCIPLES -->
+<section id="principles">
+  <div class="wrap">
+    <div class="kicker"><span class="num">01</span> How this workshop is designed</div>
+    <h2>Three rules the whole day obeys</h2>
+    <p class="sub">CM's client base told us plainly that attendees care about the topics and the speakers, not the pitch. So the day earns the right to sell by being useful first.</p>
+    <div class="grid g3">
+      <div class="card">
+        <div class="lbl">Rule 1</div>
+        <h3>🎁 Teach first, sell second</h3>
+        <p>Every session delivers a real, do-it-Monday takeaway before it mentions Toggle or TikTok. Value builds the trust that makes the ask land.</p>
+      </div>
+      <div class="card">
+        <div class="lbl">Rule 2</div>
+        <h3>🌉 Every session has a bridge</h3>
+        <p>Each talk ends by naming the heavy part of doing it alone, then points to the help in the room, whether that is TikTok's onboarding or a Toggle retainer. It offers a natural next step instead of a hard pitch.</p>
+      </div>
+      <div class="card">
+        <div class="lbl">Rule 3</div>
+        <h3>🎯 Two clear wins, one for each partner</h3>
+        <p>The day drives two actions side by side: get set up on TikTok Shop, which pays us USD $400, and book a Toggle growth call, which opens the retainer that is our real prize. We optimize for both, not just the signing.</p>
+      </div>
+    </div>
+    <div class="assume">
+      <span class="ic">📐</span>
+      <div>
+        <div class="lbl">Working assumptions, confirm at the weekend meeting</div>
+        <p>This run-book assumes roughly <span class="stub">headcount TBD</span> attendees and a planned onboarding-staff ratio of about <span class="stub">1 staff : X attendees</span>. Nearly every sizing decision below (worksheet counts, desk staffing, wifi load, room layout, the "staff at your elbow" promise in Session 3) depends on these two numbers, so lock them first.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- JOURNEY -->
+<section id="journey">
+  <div class="wrap">
+    <div class="kicker"><span class="num">02</span> The learning journey</div>
+    <h2>What an attendee feels, hour by hour</h2>
+    <p class="sub">The order is deliberate. We open the opportunity, hand them an edge, get them set up with help in the room, prove it works, then make signing the obvious next step.</p>
+    <div class="journey">
+      <div class="jstep"><div class="jbox mode-teach"><div class="jn">Session 1</div><div class="jt">Why now</div><div class="jm">Opportunity plus urgency</div></div><div class="jarrow">→</div></div>
+      <div class="jstep"><div class="jbox mode-teach"><div class="jn">Session 2</div><div class="jt">Your AI edge</div><div class="jm">Punch above your size</div></div><div class="jarrow">→</div></div>
+      <div class="jstep"><div class="jbox mode-do"><div class="jn">Session 3</div><div class="jt">Get on the shelf</div><div class="jm">Hands-on setup</div></div><div class="jarrow">→</div></div>
+      <div class="jstep"><div class="jbox mode-do"><div class="jn">Session 4</div><div class="jt">Sell more</div><div class="jm">30-day plan</div></div><div class="jarrow">→</div></div>
+      <div class="jstep"><div class="jbox mode-teach"><div class="jn">Proof</div><div class="jt">It works</div><div class="jm">Dynamo plus client wins</div></div><div class="jarrow">→</div></div>
+      <div class="jstep"><div class="jbox mode-sign"><div class="jn">Desk</div><div class="jt">Sign and book</div><div class="jm">The conversion</div></div></div>
+    </div>
+    <div class="legend">
+      <span><span class="swatch sw-teach"></span> Teach, a keynote that builds belief</span>
+      <span><span class="swatch sw-do"></span> Do, a hands-on breakout</span>
+      <span><span class="swatch sw-sign"></span> Sign, the conversion moment</span>
+    </div>
+  </div>
+</section>
+
+<!-- SESSION 1 -->
+<section id="s1" style="border-bottom:none">
+  <div class="kicker wrap" style="margin-bottom:16px"><span class="num">03</span> The sessions, built</div>
+  <div class="wrap">
+    <div class="session t-teach">
+      <div class="head">
+        <div class="snum"><small>Session</small><span>1</span></div>
+        <div>
+          <div class="meta-row">
+            <span class="mtag time">9:45 to 10:30 AM · 45 min</span>
+            <span class="mtag fmt-teach">Keynote</span>
+            <span class="mtag who">TikTok + Toggle</span>
+          </div>
+          <h2 class="stitle">Session 1: Where Your Buyers Went</h2>
+          <p class="promise">The opening keynote. Show an SME owner that the market has moved, the window is open, and they are early enough to win.</p>
+        </div>
+      </div>
+      <div class="body-grid">
+        <div class="col left">
+          <p class="blocklbl first">They walk away able to</p>
+          <div class="obj"><b>Explain, in one sentence, why TikTok and social commerce is a priority for their brand this year, not next.</b></div>
+          <p class="blocklbl">Narrative arc</p>
+          <ol class="arc">
+            <li><b>The shift.</b> Attention moved to short-form video, and a growing share of product discovery now starts in-feed. <span class="stub">insert verified stat</span></li>
+            <li><b>Who is buying.</b> Frame the core buyer age band and the biggest-spending cohort, then what they expect: authenticity, creators, entertainment-led selling. <span class="stub">insert verified figures</span></li>
+            <li><b>Commerce follows attention.</b> TikTok Shop, live selling and shoppable content are where that attention converts. <span class="stub">insert MY or SEA GMV figure</span></li>
+            <li><b>The window.</b> There is still room for new SME sellers to gain ground, and Shopee and Lazada sellers already have a head start to extend. <span class="stub">frame with a dated source</span></li>
+            <li><b>What it means for you.</b> Three concrete implications an owner can act on.</li>
+          </ol>
+        </div>
+        <div class="col right">
+          <p class="blocklbl first">Content to build</p>
+          <ul class="clean">
+            <li>One <b>headline-stat</b> opener slide</li>
+            <li><b>Buyer persona</b> slide for the biggest-spending cohort</li>
+            <li><b>Channel-shift</b> chart, attention then commerce</li>
+            <li>"The window is open" slide</li>
+            <li>"3 implications for you" recap</li>
+          </ul>
+          <div class="exbox"><div class="xl">✎ Interaction</div><p>Close with a 60-second beat: each attendee writes their own one-sentence "why now", then says it to the person next to them. The outcome gets produced in the room, not just claimed from the stage.</p></div>
+          <div class="bridge"><div class="xl">Bridge →</div><p>"The opportunity is real. Doing it well is the heavy part, and that is exactly what today, and Toggle, are here for."</p></div>
+          <div class="facil"><div class="xl">◆ Facilitator note</div><p>This sets the energy for the whole day. Land both feelings at once: the fear of missing out, and the relief that it is doable. Hold every number to a verified, dated source, since this deck sets the credibility for everything after it. No product pitch yet.</p></div>
+          <p class="matline"><b>Materials:</b> deck, verified stat sources, clicker, one strong local example.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SESSION 2 -->
+<section id="s2" style="padding-top:0;border-bottom:none">
+  <div class="wrap">
+    <div class="session t-teach">
+      <div class="head">
+        <div class="snum"><small>Session</small><span>2</span></div>
+        <div>
+          <div class="meta-row">
+            <span class="mtag time">10:45 to 11:30 AM · 45 min</span>
+            <span class="mtag fmt-teach">Keynote + live demo</span>
+            <span class="mtag who">Toggle · Zaid</span>
+          </div>
+          <h2 class="stitle">Session 2: Do the Work of a 10-Person Team</h2>
+          <p class="promise">Toggle's differentiation moment. Show a small team how AI lets them produce more and better content, ads and ops without hiring.</p>
+        </div>
+      </div>
+      <div class="body-grid">
+        <div class="col left">
+          <p class="blocklbl first">They walk away able to</p>
+          <div class="obj"><b>Run at least three concrete AI plays next week, with the exact prompts and tools to start.</b></div>
+          <p class="blocklbl">Narrative arc</p>
+          <ol class="arc">
+            <li><b>The SME squeeze.</b> Small team, endless content demand. AI closes the gap.</li>
+            <li><b>Play 1, content at scale.</b> Hooks, scripts, variations, and repurposing one idea into a week of posts.</li>
+            <li><b>Play 2, creative and visuals.</b> Product shots, ad variations, and localization across Malay and English.</li>
+            <li><b>Play 3, insight and ops.</b> Mining comments and reviews, customer replies, faster reporting.</li>
+            <li><b>Guardrails.</b> Brand voice, fact-checking, keeping a human in the loop.</li>
+          </ol>
+        </div>
+        <div class="col right">
+          <p class="blocklbl first">Content to build</p>
+          <ul class="clean">
+            <li>Three <b>"play" slides</b>, each with a real before and after</li>
+            <li>One <b>live demo</b> that builds a TikTok script or product image on stage</li>
+            <li><b>Guardrails</b> slide</li>
+            <li>"Your Monday list" takeaway slide</li>
+          </ul>
+          <div class="exbox"><div class="xl">✎ Interaction</div><p>Have the room try one prompt on their phone during the demo. A small win on their own screen lands better than another slide.</p></div>
+          <div class="bridge"><div class="xl">Bridge →</div><p>"Keep the easy part you just learned. Hand the heavy, weekly grind to Toggle, where acquisition, conversion, and retention run on one senior team. It is the same stack that took EduKids to 6x ROAS on TikTok."</p></div>
+          <div class="facil"><div class="xl">◆ Facilitator note</div><p>Keep it practical and show the work rather than talk about it. This is where Toggle earns credibility as the growth partner, so the demo has to succeed live. Rehearse it, and keep a recorded version ready as a fallback.</p></div>
+          <p class="matline"><b>Materials:</b> live tool logged in and tested, backup recorded demo, prompt handout.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SESSION 3 -->
+<section id="s3" style="padding-top:0;border-bottom:none">
+  <div class="wrap">
+    <div class="session t-do">
+      <div class="head">
+        <div class="snum"><small>Breakout</small><span>3</span></div>
+        <div>
+          <div class="meta-row">
+            <span class="mtag time">1:00 to 2:00 PM · ~60 min</span>
+            <span class="mtag fmt-do">Hands-on breakout</span>
+            <span class="mtag who">TikTok + Toggle</span>
+          </div>
+          <h2 class="stitle">Session 3: Get On the Shelf</h2>
+          <p class="promise">The engine room of the day. Attendees submit their TikTok Shop setup with staff at their elbow, rather than sitting through a talk about it. This is where signings happen.</p>
+        </div>
+      </div>
+      <div class="body-grid">
+        <div class="col left">
+          <p class="blocklbl first">They walk away with</p>
+          <div class="obj"><b>A submitted TikTok Shop seller account and a first product drafted. Verification is reviewed by TikTok off-site and usually completes within <span class="stub">timeframe TBD</span>, so the realistic on-the-day win is "submitted", not "live and selling".</b></div>
+          <p class="blocklbl">Two tracks, run in parallel</p>
+          <ol class="arc">
+            <li><b>New seller, set up.</b> Create the seller account and start verification. Bring business registration, bank details, and product info.</li>
+            <li><b>New seller, list.</b> Draft the first product with images, price, and shipping.</li>
+            <li><b>Pay and get paid.</b> Payment and payout setup. <span class="stub">Airwallex station if confirmed</span> for cross-border payouts.</li>
+            <li><b>Already selling?</b> A separate optimization station for existing TikTok Shop, Shopee, or Lazada sellers: sharpen listings, set up the affiliate program, and plan a first live. These sellers are often the warmest retainer prospects, so this track matters.</li>
+            <li><b>First content, optional.</b> Anyone ready records one simple product video. Live-selling mechanics are taught in depth in Session 4, so keep this light here.</li>
+          </ol>
+        </div>
+        <div class="col right">
+          <div class="exbox"><div class="xl">✎ The exercise is the session</div><p>Each attendee works a printed checklist while TikTok and Toggle staff circulate to unblock them. Two outcomes count, and they are different things.</p><p><b>The learning win:</b> an attendee who completes their own setup succeeds, full stop. <b>The commercial signing:</b> the assisted onboarding logged at the desk is what qualifies for the USD $400. Leave anyone who is happy self-serving to finish on their own, since pushing them toward the desk would break Rule 1.</p></div>
+          <p class="blocklbl">Content to build</p>
+          <ul class="clean last">
+            <li><b>Onboarding checklist</b> worksheet, one per track</li>
+            <li>"What to bring" pre-event reminder so people arrive ready</li>
+            <li>Station signage and a staff run-sheet</li>
+          </ul>
+          <div class="bridge sign"><div class="xl">$ Conversion moment →</div><p>"Finish your setup with us at the onboarding desk, where TikTok's onboarding support and Toggle's done-for-you kick in." Log every assisted signing to the right source for the USD $400. The exact qualifying definition comes from TikTok first, see plan decision #7.</p></div>
+          <div class="facil"><div class="xl">◆ Facilitator note</div><p>Staff-heavy by design, so confirm the staff-to-attendee ratio up front. Set expectations early that verification finishes off-site, so nobody feels short-changed leaving without a live shop. Have a wifi fallback ready, mobile hotspots, since a full room uploading documents and video at once will strain a single connection.</p></div>
+          <p class="matline"><b>Materials:</b> checklists, charged laptops and phones, strong wifi plus hotspot backup, onboarding staff at the planned ratio, signing capture sheet or QR.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SESSION 4 -->
+<section id="s4" style="padding-top:0;border-bottom:none">
+  <div class="wrap">
+    <div class="session t-do">
+      <div class="head">
+        <div class="snum"><small>Breakout</small><span>4</span></div>
+        <div>
+          <div class="meta-row">
+            <span class="mtag time">2:15 to 3:15 PM · ~60 min</span>
+            <span class="mtag fmt-do">Hands-on breakout</span>
+            <span class="mtag who">Toggle + CM · guest: Faris</span>
+          </div>
+          <h2 class="stitle">Session 4: Sell More, the Seller Playbook</h2>
+          <p class="promise">A shop with no traffic sells nothing. This breakout hands over the content and promo engine that turns the shop into sales, and covers the eShop question Lynn raised.</p>
+        </div>
+      </div>
+      <div class="body-grid">
+        <div class="col left">
+          <p class="blocklbl first">They walk away with</p>
+          <div class="obj"><b>A 30-day content and promo plan skeleton for their own brand.</b></div>
+          <p class="blocklbl">Narrative arc</p>
+          <ol class="arc">
+            <li><b>Content that converts.</b> The hook, retain, and call-to-action structure. UGC versus polished, and how often to post.</li>
+            <li><b>The creator and affiliate engine.</b> How TikTok's affiliate program and a tiered GMV Max strategy multiply reach, and how to find creators.</li>
+            <li><b>Promotions and live selling.</b> Vouchers, a live-selling rhythm, and the mega-sale dates worth planning around.</li>
+            <li><b>eShop integration.</b> Connecting Shopee, Lazada, or an own-store, and omnichannel basics. <span class="stub">covers Lynn's ask</span></li>
+            <li><b>Measure and iterate.</b> The few numbers that matter.</li>
+          </ol>
+        </div>
+        <div class="col right">
+          <div class="exbox"><div class="xl">✎ Decompress, then build</div><p>Open with a 5-minute share: each table swaps one win or snag from the Session 3 setup grind. It resets energy after the post-lunch push before the worksheet starts.</p><p>Then attendees fill a 30-day plan skeleton and share one idea with their table, so they leave with a plan, not just notes.</p></div>
+          <p class="blocklbl">Content to build</p>
+          <ul class="clean last">
+            <li><b>30-day plan</b> worksheet</li>
+            <li>Content-structure one-pager</li>
+            <li>Mega-sale calendar for the coming months <span class="stub">verify against current-year dates</span></li>
+          </ul>
+          <div class="bridge"><div class="xl">Bridge →</div><p>"Keep running the simple parts you just planned. Hand the weekly content, ads, and live-selling engine to Toggle. The tiered GMV Max and affiliate-creator playbook we just walked through is what drove Al Hidayah to 11.5x ROI on TikTok Shop."</p></div>
+          <div class="facil"><div class="xl">◆ Facilitator note</div><p>CM co-runs this given their client-base fit, and Faris joins as a guest voice once his topic is confirmed. Keep it tactical and specific to SME retail. The worksheet is the takeaway, so protect time for people to fill it.</p></div>
+          <p class="matline"><b>Materials:</b> worksheets, pens, table facilitators, one worked example plan.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROOF -->
+<section id="proof" style="padding-top:0;border-bottom:none">
+  <div class="wrap">
+    <div class="session t-teach">
+      <div class="head">
+        <div class="snum"><small>Session</small><span>5</span></div>
+        <div>
+          <div class="meta-row">
+            <span class="mtag time">3:15 to 4:00 PM · 45 min</span>
+            <span class="mtag fmt-teach">Testimonial · fireside</span>
+            <span class="mtag who">Dynamo + Toggle client</span>
+          </div>
+          <h2 class="stitle">Session 5: Proof It Works</h2>
+          <p class="promise">Social proof placed where it counts, right before the networking and onboarding push. Real brands share the real numbers behind their results. This session has to show that brands win specifically with Toggle, over and above the channel itself.</p>
+        </div>
+      </div>
+      <div class="body-grid">
+        <div class="col left">
+          <p class="blocklbl first">They walk away believing</p>
+          <div class="obj"><b>"A brand like mine did this with Toggle and it worked, so I can too."</b></div>
+          <p class="blocklbl">Format</p>
+          <ul class="clean">
+            <li>Short fireside or two tight talks, kept human and honest</li>
+            <li><b>Dynamo (FMCG)</b>, brought in by CM, shares their journey and what changed</li>
+            <li>A <b>Toggle case</b> carries the numbers: Al Hidayah reached 11.5x ROI and +300% revenue on TikTok Shop in 4 months, and EduKids hit 6x ROAS on TikTok. Confirm which we can name on stage, otherwise present the result anonymized</li>
+            <li>Host closes by pointing the room to the onboarding desk and the Toggle booking link</li>
+          </ul>
+        </div>
+        <div class="col right">
+          <div class="bridge sign"><div class="xl">$ Conversion moment →</div><p>This is the warmest point of the day. Close with two low-friction next steps: "Set up before you leave, the desk is open through dinner, and book your free Toggle growth call at the same time."</p></div>
+          <div class="facil"><div class="xl">◆ Facilitator note</div><p>Coach speakers to tell the messy middle, not a highlight reel. Lock which case we feature, Al Hidayah or EduKids, and confirm naming permission before the day, since a vague result on stage means the section quietly sells TikTok for us instead of Toggle.</p></div>
+          <p class="matline"><b>Materials:</b> confirmed speakers, agreed talking points, cleared metrics, two stools and mics.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONVERSION -->
+<section id="convert">
+  <div class="wrap">
+    <div class="kicker"><span class="num">04</span> The conversion engine</div>
+    <h2>How teaching turns into signed clients and retainers</h2>
+    <p class="sub">The sessions build belief. This is the machine that turns belief into a TikTok Shop signing and a Toggle retainer conversation, both captured while intent is at its peak.</p>
+    <div class="flow">
+      <div class="fnode"><div class="fk">Step 1</div><h4>Inspire</h4><p>Sessions 1 and 2 open the opportunity and hand over an edge.</p></div>
+      <div class="farrow">→</div>
+      <div class="fnode"><div class="fk">Step 2</div><h4>Set up</h4><p>Session 3 gets them submitted on TikTok Shop with help in the room.</p></div>
+      <div class="farrow">→</div>
+      <div class="fnode"><div class="fk">Step 3</div><h4>Prove</h4><p>Session 5 shows brands like theirs winning with Toggle.</p></div>
+      <div class="farrow">→</div>
+      <div class="fnode sign"><div class="fk">Step 4</div><h4>Sign and book</h4><p>The desk logs the signing (USD $400) and books the Toggle growth call on the spot.</p></div>
+      <div class="farrow">→</div>
+      <div class="fnode"><div class="fk">Step 5</div><h4>Activate</h4><p>Nudges across the 2-month window drive first listing, first live, first sale.</p></div>
+    </div>
+    <div class="grid g3" style="margin-top:18px">
+      <div class="card">
+        <div class="lbl">The desk</div>
+        <h3>🪑 Sign and book together</h3>
+        <p>Staffed all day, busiest right after Session 3 and through the networking dinner. Every visit does two things: complete or log a TikTok Shop signing, and book a Toggle growth call using a live calendar link while intent is highest.</p>
+      </div>
+      <div class="card">
+        <div class="lbl">The offer stack</div>
+        <h3>🎁 One clear, AI-backed offer</h3>
+        <p>TikTok onboarding support, Toggle's TikTok Starter retainer (8 reels a month, plus TikTok Shop and performance management), and any Airwallex perk, in one sheet so the choice is easy. Pricing sits with Viknesh and Zaid, <span class="stub">finalize with plan decision #4</span></p>
+      </div>
+      <div class="card">
+        <div class="lbl">The capture</div>
+        <h3>📋 Capture everyone, not just signers</h3>
+        <p>A QR or sheet logs <b>every</b> attendee into the CRM, tagged by source and readiness. Signers feed the USD $400 count. The not-ready segment enters a nurture track so warm leads never leak.</p>
+      </div>
+    </div>
+    <div class="grid g2" style="margin-top:16px">
+      <div class="card">
+        <div class="lbl">For the not-ready</div>
+        <h3>🌱 Nurture track</h3>
+        <p>Many SMEs will not have their registration, bank, or product info ready on the day, so they cannot sign yet. A defined email sequence keeps them warm and gives them a reason to come back to Toggle, rather than losing them at the door.</p>
+      </div>
+      <div class="card">
+        <div class="lbl">Protect the payout</div>
+        <h3>⏱️ Activation sequence</h3>
+        <p>The USD $400 depends on a qualifying signing inside TikTok's 2-month window. A timed post-event sequence nudges first listing, first live, and first sale, so signups activate before the deadline instead of stalling.</p>
+      </div>
+    </div>
+    <p class="note">The exact definition of a qualifying "signed client" and how the USD $400 is paid must come from TikTok first, see plan decision #7. Gate the desk and activation mechanics on that landing, since the whole engine assumes it is settled.</p>
+  </div>
+</section>
+
+<!-- RUN OF SHOW -->
+<section id="ros">
+  <div class="wrap">
+    <div class="kicker"><span class="num">05</span> Run of show</div>
+    <h2>The day, with facilitation notes</h2>
+    <p class="sub">The full timeline including the parts around the sessions. Ops owns the transitions, and they are where energy is won or lost.</p>
+    <div class="tblwrap">
+      <table>
+        <thead><tr><th>Time</th><th>Segment</th><th>Mode</th><th>Facilitation note</th></tr></thead>
+        <tbody>
+          <tr><td class="time">9:00</td><td>Registration</td><td class="mode"><span class="mtag time">Ops</span></td><td>Name tags by industry. Coffee. Seat people to mix, rather than cluster with who they came with.</td></tr>
+          <tr><td class="time">9:30</td><td>Opening remarks</td><td class="mode"><span class="mtag fmt-teach">Open</span></td><td>Toggle, TikTok, and CM welcome. Frame the day and the two actions: get set up, and book a Toggle call.</td></tr>
+          <tr><td class="time">9:45</td><td>Session 1, Where Your Buyers Went</td><td class="mode"><span class="mtag fmt-teach">Teach</span></td><td>Highest-energy open. Set the fear of missing out alongside "it is doable".</td></tr>
+          <tr><td class="time">10:30</td><td>Break</td><td class="mode"><span class="mtag time">Break</span></td><td>Keep it to 15. Onboarding desk open for early birds.</td></tr>
+          <tr><td class="time">10:45</td><td>Session 2, Your AI Edge</td><td class="mode"><span class="mtag fmt-teach">Teach</span></td><td>The live demo has to land. Toggle's credibility moment.</td></tr>
+          <tr><td class="time">11:30</td><td>Lunch and network</td><td class="mode"><span class="mtag time">Network</span></td><td>Seed a few table topics. Staff work the room and spot warm prospects for the desk.</td></tr>
+          <tr><td class="time">1:00</td><td>Session 3, TikTok Shop setup</td><td class="mode"><span class="mtag fmt-do">Do</span></td><td>All hands. Submitted setups are the KPI. Desk at full capacity. Existing sellers go to the optimization track.</td></tr>
+          <tr><td class="time">2:00</td><td>Break</td><td class="mode"><span class="mtag time">Break</span></td><td>Give this one 15 to 20 minutes. Session 3 is intense, so people need a real reset before the worksheet.</td></tr>
+          <tr><td class="time">2:15</td><td>Session 4, Seller Playbook</td><td class="mode"><span class="mtag fmt-do">Do</span></td><td>Open with the table share to decompress, then protect worksheet time. CM co-runs, Faris guests.</td></tr>
+          <tr><td class="time">3:15</td><td>Session 5, Proof It Works</td><td class="mode"><span class="mtag fmt-teach">Proof</span></td><td>Warmest moment. Close pointing at the desk and the booking link.</td></tr>
+          <tr><td class="time">4:00</td><td>Networking dinner and lepak</td><td class="mode"><span class="mtag time">Network</span></td><td>Leave to beat the jam, or stay until 8 to 9pm. Desk stays open, the softest and best selling window, so keep booking Toggle calls here.</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</section>
+
+<!-- PREP -->
+<section id="prep">
+  <div class="wrap">
+    <div class="kicker"><span class="num">06</span> Build checklist</div>
+    <h2>What we owe before the day</h2>
+    <p class="sub">The content and materials each session needs. Assign an owner to every line at the weekend meeting, and settle the headcount and staff ratio first, since several lines depend on them.</p>
+    <div class="prep">
+      <div class="p"><div class="box"></div><div class="txt"><b>Confirm headcount and staff ratio</b>, the numbers everything else is sized against<span class="own">Owner: Toggle + CM</span></div></div>
+      <div class="p"><div class="box"></div><div class="txt"><b>Get TikTok's terms in writing</b>, the qualifying-signing definition and payout, before building desk mechanics<span class="own">Owner: Yi Yang to TikTok</span></div></div>
+      <div class="p"><div class="box"></div><div class="txt"><b>Session 1 deck</b> with verified, dated stats<span class="own">Owner: TikTok + Toggle</span></div></div>
+      <div class="p"><div class="box"></div><div class="txt"><b>Session 2 deck and rehearsed live demo</b>, with a backup recording and prompt handout<span class="own">Owner: Toggle (Zaid)</span></div></div>
+      <div class="p"><div class="box"></div><div class="txt"><b>TikTok Shop onboarding checklists</b>, one for new sellers and one for existing sellers<span class="own">Owner: TikTok + Toggle</span></div></div>
+      <div class="p"><div class="box"></div><div class="txt"><b>"What to bring" reminder</b> so attendees arrive setup-ready<span class="own">Owner: Toggle (eDM)</span></div></div>
+      <div class="p"><div class="box"></div><div class="txt"><b>30-day plan worksheet and content one-pager</b><span class="own">Owner: Toggle + CM</span></div></div>
+      <div class="p"><div class="box"></div><div class="txt"><b>Mega-sale calendar</b>, checked against current-year campaign dates<span class="own">Owner: Toggle</span></div></div>
+      <div class="p"><div class="box"></div><div class="txt"><b>Toggle case locked</b> for the proof slot (Al Hidayah or EduKids) with naming permission, plus confirmed Dynamo speaker<span class="own">Owner: Toggle + CM</span></div></div>
+      <div class="p"><div class="box"></div><div class="txt"><b>Onboarding offer sheet and dual capture</b>, signing log plus a Toggle booking link<span class="own">Owner: Toggle + TikTok</span></div></div>
+      <div class="p"><div class="box"></div><div class="txt"><b>Nurture and activation email sequences</b> for not-ready leads and the 2-month window<span class="own">Owner: Toggle</span></div></div>
+      <div class="p"><div class="box"></div><div class="txt"><b>Station signage, staff run-sheet, and wifi hotspot backup</b> for the breakouts<span class="own">Owner: Ops</span></div></div>
+      <div class="p"><div class="box"></div><div class="txt"><b>Faris confirmed</b> and briefed on his Session 4 guest slot and topic<span class="own">Owner: Viknesh</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- METRICS -->
+<section id="metrics" style="border-bottom:none">
+  <div class="wrap">
+    <div class="kicker"><span class="num">07</span> Did it work</div>
+    <h2>How we measure the day</h2>
+    <p class="sub">Set the targets at the weekend meeting so the numbers below turn from labels into goals. These tie directly to Toggle's ROI, plan decision #6, and the retainer metric is the one that matters most to us.</p>
+    <div class="stats">
+      <div class="stat"><div class="n"><span class="stub">target</span></div><div class="k">Setups submitted on the day</div></div>
+      <div class="stat"><div class="n"><span class="stub">target</span></div><div class="k">Clients signed, USD $400 each</div></div>
+      <div class="stat"><div class="n"><span class="stub">target</span></div><div class="k">Toggle growth calls booked, our real ROI</div></div>
+      <div class="stat"><div class="n"><span class="stub">target</span></div><div class="k">Attendees plus satisfaction score</div></div>
+    </div>
+    <div class="src">
+      <b>Source:</b> Built from the CM × Toggle Onboarding WhatsApp threads and the event plan. Session topics map to the agreed agenda, Topics 1 to 4 plus testimonials. Every statistic is marked <span class="stub">insert</span> or <span class="stub">target</span> and must be filled with a verified figure before use. Treat this as a working draft for the weekend meeting, not a locked script.
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="wm">Toggle Solutions</span> · Workshop Playbook · Draft v2 · Internal, not for external distribution<br>
+    Your Digital Growth Partner
+  </div>
+</footer>
