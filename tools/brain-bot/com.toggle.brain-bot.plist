@@ -10,14 +10,17 @@
   Stop:
     launchctl unload -w ~/Library/LaunchAgents/com.toggle.brain-bot.plist
 
-  caffeinate -dis keeps display(-d)/idle(-i)/system(-s) awake for the lifetime
-  of the listener; KeepAlive respawns the bot if it ever crashes.
+  KeepAlive respawns the bot if it ever crashes. The Mac is allowed to sleep:
+  caffeinate was removed 2026-08-04 because -dis kept display/idle/system sleep
+  blocked for the lifetime of the listener, which meant permanently. The bot now
+  suspends with the machine and resumes on wake; Telegram holds undelivered
+  updates ~24h so nothing is lost, but it cannot answer while asleep.
 
-  caffeinate is invoked INSIDE run-bot.sh, not here. When this plist ran
-  /usr/bin/caffeinate as the program and let it exec run-bot.sh, every launch
-  died with "Operation not permitted" and KeepAlive spun on it: macOS decides
-  TCC by the responsible process, and caffeinate has no grant for ~/Desktop,
-  whereas /bin/bash exec'd directly by launchd does. Keep bash as the program.
+  Keep /bin/bash as the program. When this plist ran /usr/bin/caffeinate as the
+  program and let it exec run-bot.sh, every launch died with "Operation not
+  permitted" and KeepAlive spun on it: macOS decides TCC by the responsible
+  process, and caffeinate has no grant for ~/Desktop, whereas /bin/bash exec'd
+  directly by launchd does.
 
   Log paths must live OUTSIDE ~/Desktop. launchd opens StandardOutPath and
   StandardErrorPath itself, before exec, and has no TCC grant for the protected
