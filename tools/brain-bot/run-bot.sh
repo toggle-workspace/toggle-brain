@@ -25,4 +25,10 @@ if [[ -z "${TELEGRAM_TOKEN:-}" ]]; then
   exit 1
 fi
 
-exec /opt/homebrew/bin/node "$SCRIPT_DIR/listener.js"
+# caffeinate lives HERE, not in the plist. When the plist made launchd exec
+# /usr/bin/caffeinate, which then exec'd this script, macOS denied the read with
+# "Operation not permitted" and KeepAlive crash-looped it: TCC is decided by the
+# responsible process, and caffeinate carries no grant for ~/Desktop while
+# launchd-exec'd /bin/bash does. Keeping bash as the program fixes it, and -dis
+# still holds the Mac awake for the lifetime of the listener.
+exec /usr/bin/caffeinate -dis /opt/homebrew/bin/node "$SCRIPT_DIR/listener.js"
