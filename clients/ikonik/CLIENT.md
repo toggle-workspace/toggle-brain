@@ -39,6 +39,18 @@
 - **CONFIRMED in pre-proposal meeting:** rebranded from Prof Muhaya's centre, est. 2021. Three segments: eye surgery (LASIK focus) · eye wellness "iSpa" · aesthetics. Eye segment first; others deferred.
 - Scope agreed direction: 6-month, RM3K/month ex ad spend, content creation NOT included; target = double online patient volume (client promise-averse after prior agency's failed 100K-traffic pledge). TikTok contact: Marcus (LIVE-ads whitelisting = key unlock). No KOL strategy.
 
+## Report history
+
+> Reporting cadence is **weekly**. Deck master: `[Ikonik] Toggle Weekly Report (...).pptx` on Jordan's Desktop, hand-edited each week (nine slides, speaker notes carry the per-slide update checklist). Full write-ups live in `04-reports/`.
+
+### 2026-W31 — reporting period 27 July to 2 August 2026 (first week)
+- **Platforms reported:** TikTok, Meta, Google. Full detail: `04-reports/2026-W31-weekly.md`
+- **Headline results:** RM3,312.21 spend, 379 messages at RM5.78, 50 form leads at RM11.36, blended RM7.72 per enquiry. TikTok RM3,106.32 / 391 enquiries / RM7.94 each. Meta RM105.34 / 38 enquiries / RM2.77 each. Google RM100.55 / 0 form submissions / 5 calls and directions.
+- **What drove performance:** TikTok DMs alone produced 354 of 379 messages. Malay language ad sets led on messages, testimonial ads led on form leads. Meta launched 1 Aug and undercut TikTok's cost per enquiry on two days of data.
+- **Growth observation raised:** Google's zero conversions trace to tracking, not performance. No lead event fires on any pixel (blocker 1 above). This gates Google scaling and degrades Meta and TikTok optimization signals too.
+- **Client actions requested:** monthly TikTok and Meta LIVE calendar; the qualifying question for the lead form and message template; a decision on adding Messenger and Instagram as Meta LIVE messaging destinations alongside WhatsApp.
+- **To watch next week:** whether Meta's RM2.77 holds past the learning phase (decides a budget shift off TikTok); whether the Google conversion event goes live; first Meta LIVE boosting numbers from 3 Aug.
+
 ## Competitor landscape (researched July 2026)
 - **Tier 1 — refractive chains (direct):** OptiMax (market leader, 24 centres, public-listed, RM1500-entry promos on TikTok, rack rate RM10.6K LASIK/RM13.8K SMILE) · VISTA Eye Specialist ("Top #1 LASIK" positioning, iLASIK, multiple KV centres) · TOP Vision (value chain, Malay-market, Ikonik already tags #topkleyespecialist)
 - **Tier 2 — premium/tertiary:** ISEC Mid Valley (insurance-panel strength), OasisEye, hospital ophthalmology (KPJ/Sunway/Pantai)
