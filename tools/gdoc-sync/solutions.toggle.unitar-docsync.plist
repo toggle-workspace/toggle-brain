@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<!--
+  Weekly pull of the UNITAR reporting doc from Google Drive. Saturdays 08:00.
+
+  Install:
+    cp tools/gdoc-sync/solutions.toggle.unitar-docsync.plist ~/Library/LaunchAgents/
+    launchctl unload ~/Library/LaunchAgents/solutions.toggle.unitar-docsync.plist 2>/dev/null
+    launchctl load ~/Library/LaunchAgents/solutions.toggle.unitar-docsync.plist
+
+  Log paths must live OUTSIDE ~/Desktop. launchd opens StandardOutPath and
+  StandardErrorPath before exec and has no TCC grant for the protected Desktop /
+  Documents / Downloads folders, so pointing them into the repo kills the job
+  with EX_CONFIG (78) before bash starts. The script's own log
+  (tools/gdoc-sync/logs/sync.log) is fine — by then bash is running.
+
+  This plist previously existed ONLY as an installed copy with nothing in the
+  repo, which is how it drifted for weeks unnoticed. Keep them in sync.
+-->
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>solutions.toggle.unitar-docsync</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/bin/bash</string>
+        <string>/Users/zaidsaad/Desktop/Code/Toggle Brain/tools/gdoc-sync/pull-gdoc.sh</string>
+        <string>1cxhZN7p1gxipQKU0e50Wsk0qvz8XPKJn_l0srWJTPvA</string>
+        <string>/Users/zaidsaad/Desktop/Code/Toggle Brain/clients/audaura-unitar/04-reports/unitar-reporting-doc.md</string>
+    </array>
+
+    <!-- Every Saturday at 08:00 local (Asia/Kuala_Lumpur). launchd Weekday 6 = Saturday. -->
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Weekday</key>
+        <integer>6</integer>
+        <key>Hour</key>
+        <integer>8</integer>
+        <key>Minute</key>
+        <integer>0</integer>
+    </dict>
+
+    <key>RunAtLoad</key>
+    <false/>
+
+    <key>EnvironmentVariables</key>
+    <dict>
+        <key>HOME</key>
+        <string>/Users/zaidsaad</string>
+        <key>PATH</key>
+        <string>/Users/zaidsaad/.local/bin:/opt/homebrew/bin:/usr/bin:/bin:/usr/sbin:/sbin</string>
+    </dict>
+
+    <key>StandardOutPath</key>
+    <string>/Users/zaidsaad/Library/Logs/unitar-docsync/launchd.out.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/zaidsaad/Library/Logs/unitar-docsync/launchd.err.log</string>
+</dict>
+</plist>
