@@ -1,0 +1,504 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Toggle x Milkyway: Dental Practice Growth System (initial meeting deck)</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#4A7BF7; --deep:#3056C9; --deepd:#6E95F9;
+  --canvas:#0A1224; --card:#121C33; --raised:#1A2540; --callout:#18254A;
+  --ink:#FFFFFF; --body:#B0B8C9; --sec:#9CA3B5;
+  --bs:#1F2A44; --teal:#2ECC9B; --pink:#F59EC9; --purple:#8E6BE6; --orange:#F28B4C; --slate:#6B7489;
+}
+*{box-sizing:border-box}
+body{background:#E9EBF1;margin:0;padding:40px 0 80px;font-family:"Inter Tight",Inter,-apple-system,"Segoe UI",sans-serif}
+.note{max-width:1280px;margin:36px auto 10px;font-size:13px;font-weight:500;color:#667}
+.note b{color:#3056C9}
+.slide{width:1280px;height:720px;background:var(--canvas);color:var(--ink);margin:0 auto;position:relative;padding:56px 64px;box-shadow:0 2px 18px rgba(10,18,36,.2);overflow:hidden}
+.num{font-variant-numeric:tabular-nums}
+.watermark{position:absolute;top:30px;right:64px;font-size:13px;font-weight:500;color:var(--slate);letter-spacing:.02em}
+.h1{font-size:40px;font-weight:800;color:var(--blue);margin:0 0 8px;line-height:1.08}
+.kicker{font-size:16px;color:var(--body);margin:0 0 36px;max-width:none;line-height:1.55}
+.wm{height:30px;color:var(--ink);display:inline-block}
+.wm svg{height:100%;width:auto;display:block;fill:currentColor}
+.grid{display:grid;gap:24px}
+.cols3{grid-template-columns:repeat(3,minmax(0,1fr))}
+.cols4{grid-template-columns:repeat(4,minmax(0,1fr))}
+.cols2{grid-template-columns:1fr 1fr}
+.card{background:var(--card);border-radius:12px;padding:28px}
+.cardtitle{font-size:18px;font-weight:700;margin:0 0 9px}
+.bodytext{font-size:15px;color:var(--body);line-height:1.62}
+.stat{font-size:40px;font-weight:800;line-height:1;color:var(--ink)}
+.stat.focal{color:var(--blue)}
+.statlabel{font-size:14px;font-weight:700;margin-top:9px}
+.statcap{font-size:13.5px;color:var(--body);margin-top:5px}
+.topbar{position:relative;padding-top:28px}
+.topbar::before{content:"";position:absolute;top:0;left:0;right:0;height:6px;border-radius:12px 12px 0 0;background:var(--blue)}
+.seal{font-weight:700}
+.seal .br{font-weight:400}
+.iso polygon{fill:none;stroke:var(--blue);stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter}
+.iso .fill{fill:var(--blue)}
+.csk{font-size:13px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;color:var(--deepd)}
+
+/* funnel step rows */
+.steps{display:flex;flex-direction:column;gap:7px}
+.step{display:grid;grid-template-columns:30px 1fr 190px;align-items:center;gap:16px;background:var(--card);border-radius:8px;border-left:4px solid var(--bs);padding:9px 18px 9px 14px}
+.step.hard{border-left-color:var(--blue)}
+.step.soft{border-left-color:var(--orange)}
+.step-n{font-size:13px;font-weight:800;color:var(--slate)}
+.step.hard .step-n{color:var(--blue)}
+.step-t{font-size:14.5px;font-weight:500;line-height:1.3}
+.step-t i{display:block;font-style:normal;font-size:12.5px;color:var(--body);margin-top:2px;font-weight:400}
+.tag{font-size:11px;font-weight:700;letter-spacing:.06em;text-transform:uppercase;padding:5px 10px;border-radius:20px;border:1px solid var(--bs);color:var(--sec);text-align:center;white-space:nowrap}
+.step.hard .tag{border-color:var(--blue);color:var(--ink);background:var(--callout)}
+.step.soft .tag{border-color:var(--orange);color:var(--body)}
+
+/* pain grid */
+.pain{background:var(--card);border-radius:10px;padding:22px 24px;border-left:3px solid var(--bs)}
+.pain.live{border-left-color:var(--blue);background:var(--raised)}
+.pain b{display:block;font-size:16px;font-weight:700;margin-bottom:6px}
+.pain span{font-size:14px;color:var(--body);line-height:1.55}
+.pain em{font-style:normal;font-size:11px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--deepd);display:block;margin-top:6px}
+
+/* flow chain */
+.chain{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;align-items:stretch}
+.chain .lnk{background:var(--card);border-radius:10px;padding:24px 24px;position:relative}
+.chain .lnk.on{background:var(--callout);border:1px solid var(--blue)}
+.chain .lnk b{display:block;font-size:16.5px;font-weight:700;margin-bottom:7px}
+.chain .lnk span{font-size:14px;color:var(--body);line-height:1.55}
+.chain .lnk .no{font-size:11px;font-weight:800;color:var(--slate);letter-spacing:.08em;display:block;margin-bottom:7px}
+
+/* phase table */
+.ph{width:100%;border-collapse:collapse;font-size:14.5px}
+.ph th{text-align:left;font-size:11px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:var(--deepd);padding:0 14px 10px;border-bottom:1px solid var(--bs)}
+.ph td{padding:18px 14px;border-bottom:1px solid var(--bs);color:var(--body);vertical-align:top;line-height:1.45}
+.ph td b{color:var(--ink);font-weight:700;display:block;margin-bottom:2px}
+.ph td.w{color:var(--ink);font-weight:700;white-space:nowrap}
+
+/* two-act export: intro build hides Act 2 */
+html.intro-only .act2{display:none}
+
+.asklist{display:flex;flex-direction:column;gap:11px}
+.asklist div{display:grid;grid-template-columns:26px 1fr;gap:12px;font-size:15px;color:var(--ink);line-height:1.5}
+.asklist div i{font-style:normal;font-weight:800;color:var(--blue);font-size:13px;padding-top:3px}
+.asklist div em{font-style:normal;color:var(--body)}
+
+.logorow{display:grid;grid-template-columns:repeat(5,1fr);gap:12px}
+.logorow span{display:flex;align-items:center;justify-content:center;height:58px;background:var(--card);border-radius:10px;font-size:13px;font-weight:800;letter-spacing:.03em;color:var(--sec);text-align:center;padding:0 8px}
+
+@media print{
+  body{background:#fff;padding:0;margin:0}
+  .note{display:none}
+  .slide{box-shadow:none;page-break-after:always;break-after:page}
+  @page{size:1280px 720px;margin:0}
+}
+</style>
+</head>
+<body>
+
+<div class="note"><b>Toggle x Milkyway · dental practice · hybrid deck, two acts.</b> 17 slides · 1280×720 · <b>Toggle is the face brand</b> and the lead partner throughout; Milkyway is credited as delivery partner on media and messaging.
+<br><b>Act 1 (slides 1 to 6)</b> is the meeting-1 qualification call: intro, credentials, the one finding, and what we still need. It gives the finding and withholds the method.
+<br><b>Act 2 (slides 7 to 17)</b> is the meeting-2 solution pitch, presented only once budget and fit are confirmed.
+<br>Render the full deck normally. For the Act 1 leave-behind, add <code>class="intro-only"</code> to the &lt;html&gt; tag before printing, which hides every <code>.act2</code> block.</div>
+
+<!-- 1 COVER -->
+<div class="note">1 · Cover — <b>Belief:</b> "These people understood my actual problem before pitching me."</div>
+<section class="slide">
+  <div class="wm"><svg viewBox="0 0 1432 392" aria-hidden="true"><use href="#wmk"/></svg></div>
+  <div style="margin-top:118px;max-width:660px">
+    <div style="font-size:54px;font-weight:800;line-height:1.07">Your patient data<br>is not trapped.</div>
+    <div style="font-size:17px;color:var(--body);margin-top:20px;line-height:1.5">An introduction to the two firms in the room, and the one thing we checked before we met you.</div>
+  </div>
+  <div style="position:absolute;left:64px;bottom:112px;font-size:13px;color:var(--sec)">
+    Prepared by <b style="color:var(--ink);font-weight:700">Toggle Solutions</b> with Milkyway Marketing · 2 August 2026
+  </div>
+  <svg class="iso" viewBox="-4 -4 449 326" style="position:absolute;right:84px;top:150px;width:400px">
+    <g><polygon points="90.1,0.0 135.1,26.0 45.0,78.0 0.0,52.0"/><polygon points="135.1,130.0 180.1,156.0 90.1,208.0 45.0,182.0"/><polygon points="135.1,130.0 45.0,182.0 45.0,78.0 135.1,26.0"/><polygon class="fill" points="180.1,208.0 90.1,260.0 90.1,208.0 180.1,156.0"/><polygon points="0.0,208.0 45.0,234.0 45.0,78.0 0.0,52.0"/><polygon points="45.0,234.0 90.1,260.0 90.1,208.0 45.0,182.0"/></g>
+    <g transform="translate(216,110)"><polygon points="86.6,-100.0 173.2,-50.0 86.6,0.0 0.0,-50.0"/><polygon points="0.0,-50.0 86.6,0.0 86.6,104.0 0.0,54.0"/><polygon points="173.2,-50.0 86.6,0.0 86.6,104.0 173.2,54.0"/><polygon points="216.5,-25.0 259.8,0.0 216.5,25.0 173.2,0.0" transform="translate(0,29)"/></g>
+  </svg>
+  <div class="seal" style="position:absolute;left:64px;bottom:48px;color:var(--blue);font-size:17px"><span class="br">[&nbsp;</span>Your Digital Growth Partner<span class="br">&nbsp;]</span></div>
+  <div class="seal" style="position:absolute;right:64px;bottom:48px;color:var(--blue);font-size:17px"><span class="br">[&nbsp;</span>toggle.solutions<span class="br">&nbsp;]</span></div>
+</section>
+
+<!-- 2 WHO YOU ARE WORKING WITH -->
+<div class="note">2 · Who You Are Working With — <b>Belief:</b> "Two firms, both with receipts."</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">Who you are working with</h2>
+  <p class="kicker">Two firms, one job. Toggle leads the engagement and owns everything technical. Milkyway is our delivery partner on paid media and messaging, and they are the ones who brought us your case.</p>
+  <div class="grid cols2" style="gap:24px">
+    <div class="card topbar">
+      <span class="csk">Lead partner</span>
+      <div class="cardtitle" style="margin-top:8px">Toggle Solutions</div>
+      <p class="bodytext">A Malaysian growth firm that diagnoses the whole revenue system before spending on any channel. Senior operators only, with no junior layer between you and the work. On your account we own the data, the tracking, and the connection between your clinic software and your marketing.</p>
+      <div class="grid cols3" style="margin-top:22px;gap:10px">
+        <div style="text-align:center"><div class="stat focal num" style="font-size:30px">32,000+</div><div class="statcap" style="font-size:12px">leads · UNITAR</div></div>
+        <div style="text-align:center"><div class="stat num" style="font-size:30px">&minus;47%</div><div class="statcap" style="font-size:12px">cost per lead</div></div>
+        <div style="text-align:center"><div class="stat num" style="font-size:30px">11.5x</div><div class="statcap" style="font-size:12px">ROI · Al Hidayah</div></div>
+      </div>
+    </div>
+    <div class="card topbar">
+      <span class="csk" style="color:var(--teal)">Delivery partner</span>
+      <div class="cardtitle" style="margin-top:8px">Milkyway Marketing</div>
+      <p class="bodytext">An AI-led growth agency running paid media and automated messaging for businesses across Malaysia and the region. On your account they run the ad campaigns, the chatbot, and the creative production.</p>
+      <div class="logorow" style="margin-top:18px;grid-template-columns:repeat(3,1fr)">
+        <span>SLEEK</span><span>iMOTORBIKE</span><span>SPEEDHOME</span>
+        <span>PARCELDAILY</span><span>ANGLO HEALTH</span><span>PINNACLE</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- 3 HOW WE WORK -->
+<div class="note">3 · How We Work — <b>Belief:</b> "They will tell me the truth even when it costs them."</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">How we work</h2>
+  <p class="kicker">Diagnosis before prescription, every time. We would rather spend two weeks proving what is actually wrong than sell you twelve months of the wrong fix.</p>
+  <div class="chain">
+    <div class="lnk"><span class="no num">01</span><b>Diagnose</b><span>Find what is really limiting growth before recommending anything.</span></div>
+    <div class="lnk"><span class="no num">02</span><b>Prove it</b><span>Test the assumption cheaply and show you the result in writing.</span></div>
+    <div class="lnk"><span class="no num">03</span><b>Build</b><span>Ads, messaging and the data connection between them.</span></div>
+    <div class="lnk on"><span class="no num">04</span><b>Feed it back</b><span>Send real outcomes to the ad platforms so they learn what a good patient looks like.</span></div>
+  </div>
+  <div class="card" style="margin-top:24px;background:var(--callout)">
+    <p class="bodytext" style="color:var(--ink)"><b>And the honest part:</b> if the diagnosis says your problem is not marketing, we say so. We have walked away from a retainer for exactly that reason and said so publicly. You will hear the same directness from us on your software question today.</p>
+  </div>
+</section>
+
+<!-- 4 WHAT WE FOUND -->
+<div class="note">4 · What We Found Before This Call — <b>Belief:</b> "They did homework before asking me for anything." <b>Gives the finding, withholds the method.</b></div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <span class="csk">What we checked before today</span>
+  <h2 class="h1" style="margin-top:8px">Your data is not trapped</h2>
+  <p class="kicker">We were told getting data out of Kreloses is the thing blocking you. So we went and read what Kreloses says about it themselves.</p>
+  <div class="card" style="background:var(--callout);border-left:4px solid var(--blue);border-radius:12px">
+    <p style="font-size:24px;line-height:1.5;color:var(--ink);margin:0;font-weight:500">"Your data always belongs to you. You can export your complete database whenever you want, no restrictions and no fees."</p>
+    <p class="bodytext" style="margin:12px 0 0;color:var(--sec)">Kreloses pricing page, checked 29 July 2026</p>
+  </div>
+  <div class="card" style="margin-top:24px">
+    <p class="bodytext" style="font-size:16px;color:var(--ink)">That is on their public pricing page and you can check it in five minutes. Our read is that the export does work, and that whoever tried it received raw files with internal codes and no labels, which is unusable to anybody running a clinic. <b>That is a formatting problem, not a lock-in problem</b>, and it changes what your options actually are.</p>
+  </div>
+</section>
+
+<!-- 5 WHAT WE STILL NEED TO CHECK -->
+<div class="note">5 · What We Still Need To Check — <b>Belief:</b> "They are not guessing, and they are not overselling."</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">What we still need to check</h2>
+  <p class="kicker">Everything we know so far came to us second hand, so we are not going to present it back to you as fact. Three questions decide the whole shape of this, and only you can answer them.</p>
+  <div class="grid cols3" style="gap:20px">
+    <div class="card topbar">
+      <div class="cardtitle">What exactly fails on uploads?</div>
+      <p class="bodytext">Is it file size, the number of files per patient, total storage, or file types it refuses? For a veneers practice your photos and scans are the case record, so this is the question that decides whether you should change systems at all.</p>
+    </div>
+    <div class="card topbar">
+      <div class="cardtitle">What does your Kreloses agreement allow?</div>
+      <p class="bodytext">Before we automate anything against your account we want to read your subscription terms and confirm what automated access they permit. We are not going to put your live clinic system at risk to save you a manual step.</p>
+    </div>
+    <div class="card topbar">
+      <div class="cardtitle">Where do enquiries land today?</div>
+      <p class="bodytext">Who answers them, how fast, and what happens to the ones that do not book. This tells us whether your problem is reach, response, or follow-up, and those need three different fixes.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 6 WHAT WE NEED FROM YOU TODAY -->
+<div class="note">6 · What We Need From You Today — <b>Belief:</b> "There is a clear, small next step." <b>End of Act 1. Stop here in meeting 1.</b></div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">What we need from you today</h2>
+  <p class="kicker">Give us these and we can come back with a costed recommendation rather than a brochure. If the answer turns out to be simple, we will tell you that and skip the second meeting.</p>
+  <div class="grid cols2" style="gap:26px">
+    <div class="card">
+      <div class="cardtitle">To understand the practice</div>
+      <div class="asklist" style="margin-top:14px">
+        <div><i>01</i><span>Roughly how many enquiries come in a month, and how many turn into consultations</span></div>
+        <div><i>02</i><span>What an average veneers case is worth to you</span></div>
+        <div><i>03</i><span>Who handles enquiries now, and on which channels</span></div>
+        <div><i>04</i><span>What you mean by a chatbot: WhatsApp, Instagram, or your website</span></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="cardtitle">To scope the work</div>
+      <div class="asklist" style="margin-top:14px">
+        <div><i>05</i><span>A budget range, so we recommend something you would actually buy</span></div>
+        <div><i>06</i><span>Your Kreloses subscription agreement, and which plan you are on</span></div>
+        <div><i>07</i><span>Fifteen minutes screen sharing Kreloses with whoever uses it daily</span></div>
+        <div><i>08</i><span>Who signs off marketing, since your dentist has to approve creative</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="card" style="margin-top:22px;background:var(--callout)">
+    <p class="bodytext" style="color:var(--ink)"><b>What you get back:</b> a written answer on whether to keep or change your software, and a costed plan for the marketing. Nothing in this deck commits you to either.</p>
+  </div>
+</section>
+
+<!-- 7 WHAT YOU TOLD US -->
+<div class="note act2">7 · What You Told Us — <b>Belief:</b> "They listened before they pitched."</div>
+<section class="slide act2">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">What you told us</h2>
+  <p class="kicker">Six gaps in Kreloses, and you named three of them as the ones that hurt today. We went and checked all six before writing anything.</p>
+  <div class="grid cols3" style="gap:14px">
+    <div class="pain live"><b>1. Getting data out is hard</b><span>Makes switching to anything else feel risky.</span><em>Live pain</em></div>
+    <div class="pain live"><b>2. No API</b><span>Nothing can be automated with other tools.</span><em>Live pain</em></div>
+    <div class="pain live"><b>3. Limited uploads per patient</b><span>Including your photos and scans.</span><em>Live pain</em></div>
+    <div class="pain"><b>4. No patient app</b><span>Nothing patients can carry with them.</span></div>
+    <div class="pain"><b>5. No broadcast campaigns</b><span>No way to message the base at once.</span></div>
+    <div class="pain"><b>6. No loyalty program</b><span>No structured way to reward returning patients.</span></div>
+  </div>
+  <div class="card" style="margin-top:20px;background:var(--callout)">
+    <p class="bodytext" style="font-size:15px;color:var(--ink)"><b>What you want to build:</b> ads that bring in the right patients, and a chatbot that answers them and books consultations. Your worry was that no chatbot can connect to Kreloses. That worry is the reason this meeting exists, and it turns out to be smaller than it looks.</p>
+  </div>
+</section>
+
+<!-- 8 THE UNLOCK -->
+<div class="note act2">8 · Your Data Is Not Trapped — <b>Belief:</b> "The thing I was most afraid of is not true."</div>
+<section class="slide act2">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <span class="csk">The method</span>
+  <h2 class="h1" style="margin-top:8px">How we get your data out</h2>
+  <p class="kicker">Two routes, and neither one needs Kreloses to build us anything or to give us permission. Both run on access you already own.</p>
+  <div class="grid cols2" style="gap:24px">
+    <div class="card topbar">
+      <span class="csk">Route 1</span>
+      <div class="cardtitle" style="margin-top:8px">The export they already offer</div>
+      <p class="bodytext">You request your complete database, which their pricing page says costs nothing and carries no restrictions. It arrives as raw files with internal codes and no labels, and we turn that into something usable. Slower to refresh, and it is the sanctioned route, in writing.</p>
+    </div>
+    <div class="card topbar">
+      <span class="csk" style="color:var(--teal)">Route 2</span>
+      <div class="cardtitle" style="margin-top:8px">Your own login, on a schedule</div>
+      <p class="bodytext">Every time your staff open a screen, Kreloses loads that information as structured data behind the page. Using your own account we can collect the same information on a schedule, which gives us appointments and recall dates without waiting on an export.</p>
+    </div>
+  </div>
+  <div class="card" style="margin-top:24px;background:var(--callout)">
+    <p class="bodytext" style="color:var(--ink)"><b>We confirm which route works on your live account in week one, before anything is built.</b> We also read your subscription agreement first, because we are not going to automate against your clinic system in a way its own terms do not allow. If Route 2 is off limits, Route 1 still carries most of what the funnel needs.</p>
+  </div>
+</section>
+
+<!-- 9 WHAT THAT UNLOCKS -->
+<div class="note act2">9 · What That Unlocks — <b>Belief:</b> "I get to choose, instead of being stuck."</div>
+<section class="slide act2">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">What that unlocks</h2>
+  <p class="kicker">Once the data moves freely, the software question stops being a trap and becomes a choice. All three of these open up at once.</p>
+  <div class="grid cols3" style="margin-top:6px">
+    <div class="card topbar"><div class="cardtitle">Move, without the risk</div><p class="bodytext">If another system suits a veneers practice better, you can go, and your patient history goes with you.</p></div>
+    <div class="card topbar"><div class="cardtitle">Stay, without the trap</div><p class="bodytext">Kreloses covers your clinical records well. Staying becomes a decision you made rather than one made for you.</p></div>
+    <div class="card topbar"><div class="cardtitle">Or build the missing pieces</div><p class="bodytext">Keep Kreloses for records and add only what it lacks, sitting alongside it rather than replacing it.</p></div>
+  </div>
+  <div class="card" style="margin-top:24px;background:var(--callout)">
+    <p class="bodytext" style="font-size:15px;color:var(--ink)">Our honest recommendation: <b>do not change systems yet.</b> Changing the record system of a practice running year-long treatment plans is real clinical risk, and right now you would be taking it for reasons that turn out not to hold. One reason might still justify it, and we come to that on slide 8.</p>
+  </div>
+</section>
+
+<!-- 10 THE FUNNEL SPLIT -->
+<div class="note act2">10 · Where The Funnel Touches Kreloses — <b>Belief:</b> "The blocker was never as big as I thought."</div>
+<section class="slide act2">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <span class="csk">Finding 2 of 2</span>
+  <h2 class="h1" style="margin-top:6px;font-size:34px">The chatbot was never blocked by Kreloses</h2>
+  <p class="kicker" style="margin-bottom:18px">Here is every step of the funnel you described, and what each one needs from your patient system. Somebody who clicks an ad is not a patient yet, so there is nothing to look up.</p>
+  <div class="steps">
+    <div class="step"><span class="step-n num">1</span><span class="step-t">Ads on Google and Meta</span><span class="tag">Needs nothing</span></div>
+    <div class="step"><span class="step-n num">2</span><span class="step-t">Landing page and enquiry capture</span><span class="tag">Needs nothing</span></div>
+    <div class="step"><span class="step-n num">3</span><span class="step-t">Chatbot answers and qualifies<i>Veneer options, price ranges, how long treatment takes</i></span><span class="tag">Needs nothing</span></div>
+    <div class="step"><span class="step-n num">4</span><span class="step-t">Follow up with people who did not book</span><span class="tag">Needs nothing</span></div>
+    <div class="step hard"><span class="step-n num">5</span><span class="step-t">Booking the consultation<i>Solved by the bot booking into our calendar, front desk copies it across</i></span><span class="tag">Writes in</span></div>
+    <div class="step soft"><span class="step-n num">6</span><span class="step-t">Appointment reminders<i>Only needed for walk-ins and phone bookings the funnel did not make</i></span><span class="tag">Partly</span></div>
+    <div class="step hard"><span class="step-n num">7</span><span class="step-t">Recall and bringing past patients back<i>Solved by a scheduled export feeding the campaign list</i></span><span class="tag">Reads out</span></div>
+  </div>
+  <div class="grid cols3" style="margin-top:18px;gap:14px">
+    <div class="card" style="padding:14px 20px;text-align:center"><span class="stat num" style="font-size:32px">4 of 7</span><span class="statcap">steps never touch Kreloses at all</span></div>
+    <div class="card" style="padding:14px 20px;text-align:center"><span class="stat focal num" style="font-size:32px">2 of 7</span><span class="statcap">need it, and both have a workaround</span></div>
+    <div class="card" style="padding:14px 20px;text-align:center"><span class="stat num" style="font-size:32px">0</span><span class="statcap">of it requires you to change software</span></div>
+  </div>
+</section>
+
+<!-- 11 THE GROWTH SYSTEM -->
+<div class="note act2">11 · The Growth System — <b>Belief:</b> "There is a real machine here, not just a bot."</div>
+<section class="slide act2">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">The system we would run</h2>
+  <p class="kicker">Toggle designs and owns this system end to end, and Milkyway runs the media and messaging inside it. Ads without fast replies means you pay for enquiries that go cold. Fast replies without good targeting means you answer the wrong people quickly.</p>
+  <div class="grid cols2" style="gap:20px">
+    <div class="card topbar">
+      <span class="csk">Part 1 · Media · Milkyway</span>
+      <div class="cardtitle" style="margin-top:8px">Reaching people already looking</div>
+      <p class="bodytext">Campaigns across Google Search, Display, YouTube, Facebook and Instagram, aimed at people actively researching veneers in your area. Continuous creative and audience testing, with budget shifted toward whatever is producing consultations.</p>
+    </div>
+    <div class="card topbar">
+      <span class="csk" style="color:var(--teal)">Part 2 · Messaging · Milkyway</span>
+      <div class="cardtitle" style="margin-top:8px">Replying in under a minute, around the clock</div>
+      <p class="bodytext">An assistant on WhatsApp, Instagram DM and your website that answers the common veneer questions, qualifies the enquiry, books the consultation, and chases anyone who goes quiet. Built on an official Meta WhatsApp business platform.</p>
+    </div>
+  </div>
+  <div class="card" style="margin-top:20px;background:var(--callout);border-left:4px solid var(--blue)">
+    <span class="csk">Part 3 · The data layer · Toggle</span>
+    <div class="cardtitle" style="margin-top:6px">The connection to your clinic</div>
+    <p class="bodytext">Getting real appointment and recall information out of Kreloses so the first two parts run on what is actually happening in your practice, instead of guessing. This is the piece that has been missing, and it is the next slide.</p>
+  </div>
+</section>
+
+<!-- 12 THE LOOP -->
+<div class="note act2">12 · The Broken Loop — <b>Belief:</b> "This is the insight I am paying for."</div>
+<section class="slide act2">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1" style="font-size:34px">Nobody buys veneers in a chat window</h2>
+  <p class="kicker" style="margin-bottom:22px">This is why ad money leaks on a practice like yours. Google and Meta only learn from what they can see, and right now they cannot see the part that matters.</p>
+
+  <div class="chain">
+    <div class="lnk"><span class="no num">01</span><b>Someone enquires</b><span>Meta sees this and records a win.</span></div>
+    <div class="lnk"><span class="no num">02</span><b>They book a consult</b><span>Meta sees nothing.</span></div>
+    <div class="lnk"><span class="no num">03</span><b>They attend</b><span>Meta sees nothing.</span></div>
+    <div class="lnk"><span class="no num">04</span><b>They accept a case</b><span>Meta sees nothing. This is the only step worth money.</span></div>
+  </div>
+
+  <div class="grid cols2" style="margin-top:24px;gap:20px">
+    <div class="card">
+      <div class="cardtitle">What that costs you</div>
+      <p class="bodytext">Because the only signal Meta gets is the enquiry, it goes and finds you more enquiries. Cheap ones. It learns nothing about which ad produced a patient who sat in your chair and said yes to a full set of veneers, so it cannot go find more of those.</p>
+    </div>
+    <div class="card" style="background:var(--callout);border-left:4px solid var(--blue)">
+      <div class="cardtitle">What we do about it</div>
+      <p class="bodytext">We read attendance and case value out of Kreloses and feed them back to Google and Meta as the real result. The platforms stop chasing cheap enquiries and start chasing accepted cases. On a practice where one case is worth many times a routine visit, that changes what the same budget buys.</p>
+    </div>
+  </div>
+</section>
+
+<!-- 13 THE HONEST GAP -->
+<div class="note act2">13 · The One Thing This Does Not Fix — <b>Belief:</b> "They told me something against their own interest."</div>
+<section class="slide act2">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">The one thing this does not fix</h2>
+  <p class="kicker">Of the six gaps you listed, this plan handles five without you changing any software. We are not going to pretend it handles the sixth.</p>
+  <div class="grid cols3" style="gap:12px">
+    <div class="card" style="padding:22px 24px"><div class="cardtitle" style="font-size:15.5px">Gap 2 · No API</div><p class="bodytext">Handled. We pull what the funnel needs with your own access.</p></div>
+    <div class="card" style="padding:22px 24px"><div class="cardtitle" style="font-size:15.5px">Gap 1 · Data export</div><p class="bodytext">Handled. The export exists and we make it usable.</p></div>
+    <div class="card" style="padding:22px 24px"><div class="cardtitle" style="font-size:15.5px">Gap 5 · Broadcasts</div><p class="bodytext">Handled outside Kreloses, on the messaging platform.</p></div>
+    <div class="card" style="padding:22px 24px"><div class="cardtitle" style="font-size:15.5px">Gap 4 · No patient app</div><p class="bodytext">Handled better. Patients already have WhatsApp installed.</p></div>
+    <div class="card" style="padding:22px 24px"><div class="cardtitle" style="font-size:15.5px">Gap 6 · Loyalty</div><p class="bodytext">Handled outside Kreloses, once the funnel is live.</p></div>
+    <div class="card" style="padding:22px 24px;background:var(--callout);border:1px solid var(--blue)"><div class="cardtitle" style="font-size:15.5px;color:var(--blue)">Gap 3 · Photos and scans</div><p class="bodytext" style="color:var(--ink)">Not handled. Nothing we build outside Kreloses can raise a storage limit.</p></div>
+  </div>
+  <div class="card" style="margin-top:22px;background:var(--raised)">
+    <p class="bodytext" style="font-size:15px;color:var(--ink)">Your before and after photos, your scans and your smile mockups are the clinical record and the evidence of a case that runs over a year. If Kreloses caps what you can attach per patient, that is the one reason worth changing systems over, and it has nothing to do with the API. <b>Tell us exactly what fails there</b>, whether it is file size, the number of files, total storage or file types, and we will tell you honestly whether to move.</p>
+  </div>
+</section>
+
+<!-- 14 THE TWO RULES -->
+<div class="note act2">14 · Two Rules We Design Around — <b>Belief:</b> "They know my industry, not just marketing."</div>
+<section class="slide act2">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">Two rules we design around from day one</h2>
+  <p class="kicker">Neither one blocks the work. Both cost far less to build in now than to unpick after a complaint.</p>
+  <div class="grid cols2" style="gap:20px">
+    <div class="card topbar">
+      <div class="cardtitle">Malaysian Dental Council advertising rules</div>
+      <p class="bodytext">Dental advertising is restricted, and elective aesthetic work like veneers is the category watched hardest. Patient testimonials that read as endorsement, superlative claims, guaranteed outcomes and patient solicitation are all limited.</p>
+      <p class="bodytext" style="margin-top:10px">Published research on Malaysian dental clinic social accounts found around <b style="color:var(--ink)">15 percent of posts non-compliant</b>, and more than half of the accounts studied carried at least one. Every piece of creative goes to your dentist for sign-off before it runs.</p>
+    </div>
+    <div class="card topbar">
+      <div class="cardtitle">PDPA and your patients' data</div>
+      <p class="bodytext">Malaysian law treats health information as sensitive personal data, which needs explicit consent to process, and patient data cannot be used to market services without it. The 2024 amendments added mandatory breach reporting and higher penalties.</p>
+      <p class="bodytext" style="margin-top:10px">In practice: the chatbot asks for consent before it collects anything, and we only message your existing patients if they agreed to marketing contact. <b style="color:var(--ink)">Consenting to treatment does not cover promotions.</b></p>
+    </div>
+  </div>
+  <div class="card" style="margin-top:18px;background:var(--callout)">
+    <p class="bodytext" style="font-size:14.5px;color:var(--ink)">We also design the ad measurement so that attendance is reported back against an advertising click reference rather than against a named patient, which keeps identifiable health information out of the ad platforms entirely.</p>
+  </div>
+</section>
+
+<!-- 15 HOW WE START -->
+<div class="note act2">15 · How We Start — <b>Belief:</b> "There is a first step that is small and checkable."</div>
+<section class="slide act2">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">How we would start</h2>
+  <p class="kicker">Phase 1 is deliberately small and cheap, because it answers the questions that decide everything after it. Timings are indicative and firm up once Phase 1 is done.</p>
+  <table class="ph">
+    <thead><tr><th style="width:110px">Phase</th><th style="width:150px">Roughly</th><th>What happens</th><th style="width:130px">Who leads</th></tr></thead>
+    <tbody>
+      <tr>
+        <td class="w">Phase 1</td><td class="w num">Weeks 1 to 2</td>
+        <td><b>Prove the data comes out</b>We request your full Kreloses export and inspect it, confirm what the upload limit actually is, and read your Kreloses subscription agreement so we know what automated access it permits. You get a written answer on whether to change systems.</td>
+        <td class="w">Toggle</td>
+      </tr>
+      <tr>
+        <td class="w">Phase 2</td><td class="w num">Weeks 2 to 6</td>
+        <td><b>Ads and the assistant go live</b>Campaign build, landing page, and the chatbot on WhatsApp and Instagram with a consent step. Creative goes to your dentist for MDC sign-off before anything runs. Bookings land in a shared calendar your front desk copies into Kreloses.</td>
+        <td class="w">Milkyway</td>
+      </tr>
+      <tr>
+        <td class="w">Phase 3</td><td class="w num">Weeks 6 to 10</td>
+        <td><b>Close the loop</b>Attendance and case values start flowing back to Google and Meta, so the platforms begin optimizing toward accepted cases. Recall and reactivation campaigns switch on for patients who consented.</td>
+        <td class="w">Toggle</td>
+      </tr>
+    </tbody>
+  </table>
+  <div class="card" style="margin-top:16px;background:var(--callout)">
+    <p class="bodytext" style="font-size:14.5px;color:var(--ink)"><b>Being straight about timing:</b> the ads can be live inside a few weeks. The full loop back from your clinic to the ad platforms takes longer, because it depends on what Phase 1 finds. We would rather tell you that now than at week two.</p>
+  </div>
+</section>
+
+<!-- 16 WHO DOES WHAT -->
+<div class="note act2">16 · Who Does What — <b>Belief:</b> "Two firms, one accountable line, no gaps."</div>
+<section class="slide act2">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">Who does what</h2>
+  <p class="kicker">Toggle leads the engagement and carries the result. Milkyway runs the media and messaging inside it. One line of accountability, and nothing falls between the two of us.</p>
+  <div class="grid cols2" style="gap:20px">
+    <div class="card topbar">
+      <span class="csk">Toggle leads</span>
+      <div class="cardtitle" style="margin-top:8px">Toggle Solutions</div>
+      <p class="bodytext">Accountable for the engagement end to end. Getting data out of Kreloses, the connection between your clinic and the funnel, feeding results back to the ad platforms, and the compliance design across MDC and PDPA.</p>
+      <div class="grid cols3" style="margin-top:16px;gap:10px">
+        <div style="text-align:center"><div class="stat focal num" style="font-size:26px">32,000+</div><div class="statcap" style="font-size:11.5px">leads · UNITAR</div></div>
+        <div style="text-align:center"><div class="stat num" style="font-size:26px">&minus;47%</div><div class="statcap" style="font-size:11.5px">cost per lead</div></div>
+        <div style="text-align:center"><div class="stat num" style="font-size:26px">11.5x</div><div class="statcap" style="font-size:11.5px">ROI · Al Hidayah</div></div>
+      </div>
+    </div>
+    <div class="card topbar">
+      <span class="csk" style="color:var(--teal)">Milkyway delivers</span>
+      <div class="cardtitle" style="margin-top:8px">Milkyway Marketing</div>
+      <p class="bodytext">The ad campaigns across Google and Meta, the chatbot and messaging platform, creative production, and the monthly campaign reporting.</p>
+      <div class="logorow" style="margin-top:16px;grid-template-columns:repeat(3,1fr)">
+        <span>SLEEK</span><span>iMOTORBIKE</span><span>SPEEDHOME</span>
+        <span>PARCELDAILY</span><span>ANGLO HEALTH</span><span>PINNACLE</span>
+      </div>
+    </div>
+  </div>
+  <div class="card" style="margin-top:18px;background:var(--callout)">
+    <p class="bodytext" style="font-size:14.5px;color:var(--ink)"><b>One thing we will not do:</b> let any automated system write into your clinical calendar. Bookings arrive in a shared calendar and your front desk moves them across. It takes seconds, and it means no software bug can ever wipe a real patient's appointment.</p>
+  </div>
+</section>
+
+<!-- 17 CLOSE -->
+<div class="note act2">17 · Close — <b>Belief:</b> "One next step, and it is small."</div>
+<section class="slide act2">
+  <div class="wm"><svg viewBox="0 0 1432 392" aria-hidden="true"><use href="#wmk"/></svg></div>
+  <div style="margin-top:104px;font-size:50px;font-weight:800;line-height:1.1;color:var(--blue);max-width:720px">Let's prove the data<br><span style="color:var(--ink)">comes out first.</span></div>
+  <div style="max-width:560px;margin-top:22px;font-size:16px;color:var(--body);line-height:1.55">
+    Phase 1 answers the question you walked in with, and it does it before you commit to any campaign spend or any change of software.
+  </div>
+  <div style="position:absolute;left:64px;bottom:64px">
+    <div style="font-weight:700;font-size:18px">Viknesh <span style="font-weight:400;color:var(--body)">· Sales &amp; Partnership Director, Toggle</span></div>
+    <div class="num" style="font-weight:700;font-size:17px;color:var(--deepd);margin-top:6px">(+60) 125 688 681</div>
+    <div style="font-weight:700;font-size:17px;color:var(--deepd);margin-top:2px">toggle.solutions</div>
+    <div style="font-size:13px;color:var(--sec);margin-top:12px">Presented by Zaid Saad (Toggle) and Harsha (Milkyway Marketing)</div>
+  </div>
+  <svg class="iso" viewBox="-150 -20 480 320" style="position:absolute;right:40px;top:180px;width:420px">
+    <g transform="translate(0,40)"><g transform="matrix(0.866,0.5,-0.866,0.5,0,0)"><rect x="0" y="0" width="260" height="150" rx="60" fill="none" stroke="#4A7BF7" stroke-width="2"/><rect x="34" y="34" width="192" height="82" rx="41" fill="none" stroke="#4A7BF7" stroke-width="2"/></g></g>
+    <g transform="translate(168,52)"><polygon points="0,-46 39.8,-23 0,0 -39.8,-23"/><polygon points="39.8,23 0,46 0,0 39.8,-23"/><polygon class="fill" points="-39.8,23 0,46 0,0 -39.8,-23"/></g>
+  </svg>
+</section>
+
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg"><symbol id="wmk" viewBox="0 0 1432 392"><path fill="currentColor" d="M1166.39 1.57487C1166.39 2.43389 1157.45 54.1188 1146.44 116.398C1135.43 178.678 1126.5 232.081 1126.5 234.944C1126.5 238.667 1127.77 241.244 1130.64 243.964C1134.47 247.4 1136.07 247.686 1147.4 247.686C1154.42 247.686 1160 247.973 1160 248.545C1160 249.261 1152.82 290.351 1151.23 298.799C1150.43 302.807 1149.63 303.523 1142.77 304.812C1120.27 309.107 1090.59 307.818 1072.88 301.948C1061.55 298.083 1049.75 288.347 1044.96 278.898C1041.61 272.169 1041.13 269.162 1041.29 254.129C1041.29 239.239 1044.16 221.486 1062.35 119.119C1074 54.4051 1083.41 1.00218 1083.41 0.715838C1083.41 0.286342 1102.08 0 1124.9 0C1154.26 0 1166.39 0.429496 1166.39 1.57487Z"/>
+<path fill="currentColor" d="M140.413 21.6189C140.413 22.9074 133.871 60.8478 131.637 72.5879L130.68 77.3125H155.571C171.527 77.3125 180.303 77.8852 180.303 78.7442C180.303 80.6054 172.485 125.418 171.527 129.856C170.73 133.006 170.091 133.149 145.678 133.436L120.787 133.865L111.533 186.123C101.321 243.821 101.002 246.971 104.672 248.259C106.108 248.689 116.798 249.118 128.606 249.118C148.391 249.118 150.146 249.261 149.349 251.552C148.87 252.984 146.636 265.583 144.243 279.614L139.775 305.241L100.523 304.669C66.058 304.096 60.1543 303.666 50.8998 300.946C30.7951 295.076 20.7428 285.054 17.7113 268.017C15.7965 256.849 16.4348 250.693 27.7636 187.411C32.7099 160.209 36.6989 136.872 36.6989 135.44C36.6989 133.436 34.3055 133.149 18.3495 133.149C6.86114 133.149 0 132.577 0 131.718C0 129.856 7.81846 85.0438 8.93536 80.4623C9.57368 77.4557 10.2118 77.3125 28.5613 77.3125H47.3895L51.0594 56.839C52.974 45.6716 55.2078 32.7862 56.1653 28.2047L57.7609 20.044H99.087C127.01 20.044 140.413 20.4735 140.413 21.6189Z"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M644.145 113.964C646.698 121.409 647.177 121.839 651.644 121.409L656.59 120.98L660.42 99.0745L664.09 77.3125H746.742L745.944 80.4623C745.475 82.2857 737.196 129.18 727.258 185.472L727.255 185.487L726.637 188.986C716.585 246.827 707.49 297.367 706.692 301.376C696.321 347.19 666.643 375.109 614.945 387.565C600.585 391.001 596.596 391.287 568.832 391.43C535.803 391.43 524.475 389.856 504.53 382.697C476.287 372.675 457.619 354.779 450.758 331.155C449.481 326.717 448.364 321.42 448.364 319.702V316.409H530.697L533.57 322.135C538.995 333.16 551.44 338.457 572.023 338.457C594.841 338.457 609.042 331.298 618.136 315.12C622.923 306.816 624.678 300.517 628.827 277.036C632.656 254.988 632.656 254.845 628.029 254.845C625.157 254.845 622.764 256.993 617.658 264.008C598.032 291.21 566.599 302.521 529.421 295.649C488.414 288.061 463.363 258.711 459.693 213.612C456.023 167.654 470.862 127.136 501.657 99.3609C512.029 90.0547 517.294 86.6186 528.145 81.894C552.078 71.5856 578.246 69.5813 600.585 76.1671C621.009 82.1803 638.241 97.2133 644.145 113.964ZM546.813 171.09C552.078 155.627 566.598 141.596 582.235 137.015C586.224 135.726 593.564 134.724 598.51 134.724C624.519 134.438 641.911 149.041 644.145 173.094C646.538 198.865 632.656 223.204 610.318 232.081C599.308 236.519 579.842 236.662 569.63 232.367C560.535 228.644 553.355 222.202 548.568 213.611C545.377 207.885 544.898 204.592 544.898 191.849C544.898 183.545 545.855 174.239 546.813 171.09Z"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M936.619 113.535C939.172 120.121 940.129 120.98 944.437 121.409C947.15 121.696 949.384 121.409 949.384 120.693C949.384 118.975 955.606 84.3279 956.564 80.4623L957.361 77.3125H998.049C1022.14 77.3125 1038.74 77.8852 1038.74 78.6011C1038.74 83.612 999.805 300.803 997.252 309.966C981.934 364.944 930.077 394.294 852.849 391.86C824.448 390.858 808.013 387.565 788.866 379.261C762.06 367.521 746.423 348.622 741.317 321.706L740.2 316.409H823.331L825.086 320.417C827.16 325.142 833.862 331.728 839.447 334.448C846.946 337.884 863.859 339.459 875.347 337.884C902.154 334.019 913.004 321.276 919.865 285.913L920.913 280.423C924.752 260.328 925.594 255.922 923.993 255.023C923.544 254.771 922.904 254.794 922.084 254.823C921.792 254.834 921.478 254.845 921.141 254.845C917.471 254.845 915.876 256.277 911.887 262.29C909.334 266.299 903.111 273.171 898.165 277.609C861.785 310.539 794.61 301.805 767.485 260.715C749.454 233.369 746.582 189.416 760.464 150.044C770.198 122.555 788.547 99.7904 812.64 85.7596C833.383 73.5901 864.816 69.1518 889.548 74.7354C910.451 79.46 929.439 95.0658 936.619 113.535ZM853.807 149.614C830.99 171.805 830.83 211.607 853.169 227.213C862.423 233.655 869.125 235.517 882.368 235.517C902.632 235.373 918.908 226.64 928.321 210.891C934.863 199.724 936.778 192.565 936.778 178.821C936.778 163.358 933.427 154.482 924.013 146.035C912.206 135.44 893.697 131.717 876.784 136.585C866.412 139.592 860.987 142.598 853.807 149.614Z"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M1352.75 76.883C1402.69 89.7684 1431.42 126.563 1431.26 177.246C1431.1 184.977 1430.3 194.999 1429.18 199.724L1427.11 208.314L1341.26 208.744L1255.26 209.03L1256.38 218.05C1257.65 228.931 1263.72 240.814 1270.74 245.539C1288.61 257.708 1324.99 254.272 1336.64 239.239L1341.1 233.512L1381.47 233.369C1406.52 233.369 1421.68 233.942 1421.68 234.801C1421.68 235.517 1419.93 240.385 1417.85 245.396C1401.1 285.197 1356.26 309.107 1298.34 309.25C1233.4 309.25 1190.32 279.327 1179.15 226.211C1176.92 215.759 1176.92 188.7 1179.31 176.53C1187.13 133.579 1212.82 101.508 1253.03 84.3279C1278.56 73.4469 1301.53 70.5835 1336 73.8764C1340.47 74.3059 1348.12 75.5944 1352.75 76.883ZM1263.08 161.354C1269.14 143.601 1284.14 129.999 1301.53 125.991C1311.59 123.843 1325.79 125.561 1333.92 129.999C1342.38 134.581 1349.08 145.319 1350.68 157.059L1351.79 164.647H1261.96L1263.08 161.354Z"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M345.927 75.3081C409.751 87.0481 448.364 137.301 440.706 199.008C439.588 207.598 437.195 219.052 435.44 224.349C420.441 267.873 379.594 299.944 328.854 307.818C314.653 310.109 285.134 309.823 271.731 307.246C222.746 298.083 187.962 267.587 177.91 224.922C174.878 211.894 174.878 185.407 177.75 171.519C188.281 121.982 231.043 83.7552 286.411 74.5923C299.814 72.4447 332.364 72.731 345.927 75.3081ZM297.42 137.158C281.624 142.169 269.976 153.766 262.955 171.376C258.328 182.973 257.211 207.026 260.721 217.907C266.944 237.092 281.305 247.686 301.409 247.686C315.929 247.686 325.503 244.393 335.555 236.232C350.873 223.777 358.053 207.026 357.894 184.691C357.894 161.64 350.714 147.323 335.715 139.449C325.982 134.295 309.387 133.292 297.42 137.158Z"/></symbol></svg>
+</body>
+</html>

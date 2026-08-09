@@ -1,0 +1,336 @@
+<title>Toggle Bespoke · AI-Literacy Curriculum Pathways</title>
+<style>
+  /* ---- Material 3 tokens (light). Primary seeded on Toggle blue; tracks = primary / tertiary / secondary ---- */
+  :root{
+    --canvas:#FBF8FE;      /* surface */
+    --card:#F3F0F9;        /* surface-container-low */
+    --card-2:#E9E7EF;      /* surface-container-high */
+    --ink:#1A1B21;         /* on-surface */
+    --body:#1A1B21;        /* on-surface */
+    --muted:#45464F;       /* on-surface-variant */
+    --faint:#767680;       /* outline */
+    --line:#C7C5D0;        /* outline-variant */
+    --line-strong:#767680; /* outline */
+    --brand:#3A5CC8; --brand-deep:#274BB5; --on-brand:#FFFFFF;   /* primary + on-primary */
+    --ai-acc:#3A5CC8; --mk-acc:#146C43; --ax-acc:#7A5900;         /* track accents on plain surface */
+    --ai:#001551; --ai-bg:#DCE1FF;      /* on-primary-container / primary-container */
+    --mk:#00210F; --mk-bg:#A4F5C4;      /* on-tertiary-container / tertiary-container */
+    --ax:#261900; --ax-bg:#FFDEA0;      /* on-secondary-container / secondary-container */
+    --shadow:0 1px 2px rgba(0,0,0,.28),0 1px 3px 1px rgba(0,0,0,.12);
+    --maxw:1180px;
+  }
+  @media (prefers-color-scheme:dark){
+    :root{
+      --canvas:#121318; --card:#1B1B21; --card-2:#2A2B31;
+      --ink:#E4E1E9; --body:#E4E1E9; --muted:#C7C5D0; --faint:#90909A;
+      --line:#45464F; --line-strong:#90909A;
+      --brand:#B4C5FF; --brand-deep:#DAE2FF; --on-brand:#002E69;
+      --ai-acc:#B4C5FF; --mk-acc:#7ED6A5; --ax-acc:#F0C060;
+      --ai:#DAE2FF; --ai-bg:#123E77; --mk:#A4F5C4; --mk-bg:#005231; --ax:#FFDEA0; --ax-bg:#5D4200;
+      --shadow:0 1px 3px rgba(0,0,0,.5),0 4px 8px 2px rgba(0,0,0,.3);
+    }
+  }
+  :root[data-theme="light"]{
+    --canvas:#FBF8FE; --card:#F3F0F9; --card-2:#E9E7EF; --ink:#1A1B21; --body:#1A1B21; --muted:#45464F; --faint:#767680; --line:#C7C5D0; --line-strong:#767680;
+    --brand:#3A5CC8; --brand-deep:#274BB5; --on-brand:#FFFFFF; --ai-acc:#3A5CC8; --mk-acc:#146C43; --ax-acc:#7A5900;
+    --ai:#001551; --ai-bg:#DCE1FF; --mk:#00210F; --mk-bg:#A4F5C4; --ax:#261900; --ax-bg:#FFDEA0;
+    --shadow:0 1px 2px rgba(0,0,0,.28),0 1px 3px 1px rgba(0,0,0,.12);
+  }
+  :root[data-theme="dark"]{
+    --canvas:#121318; --card:#1B1B21; --card-2:#2A2B31; --ink:#E4E1E9; --body:#E4E1E9; --muted:#C7C5D0; --faint:#90909A; --line:#45464F; --line-strong:#90909A;
+    --brand:#B4C5FF; --brand-deep:#DAE2FF; --on-brand:#002E69; --ai-acc:#B4C5FF; --mk-acc:#7ED6A5; --ax-acc:#F0C060;
+    --ai:#DAE2FF; --ai-bg:#123E77; --mk:#A4F5C4; --mk-bg:#005231; --ax:#FFDEA0; --ax-bg:#5D4200;
+    --shadow:0 1px 3px rgba(0,0,0,.5),0 4px 8px 2px rgba(0,0,0,.3);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--canvas);color:var(--body);font-family:"Roboto","Roboto Flex",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;font-size:15px;line-height:1.55;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 24px}
+  h1,h2,h3{color:var(--ink);text-wrap:balance;line-height:1.2;margin:0}
+  p{margin:0}
+
+  /* header - flat M3 surface, light display weight */
+  header{border-bottom:1px solid var(--line);background:var(--card);padding:40px 0 32px}
+  .eyebrow{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--brand-deep);margin-bottom:14px;display:flex;align-items:center;gap:10px}
+  .eyebrow .dot{width:8px;height:8px;border-radius:50%;background:var(--brand)}
+  header h1{font-size:clamp(28px,4.6vw,40px);font-weight:400;letter-spacing:0;margin-bottom:14px}
+  header .lede{font-size:clamp(15px,2vw,17px);color:var(--muted);max-width:none;line-height:1.5}
+
+  section{padding:38px 0;border-bottom:1px solid var(--line)}
+  section:last-of-type{border-bottom:none}
+  .kicker{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--brand-deep);margin-bottom:10px}
+  section h2{font-size:clamp(20px,3vw,26px);font-weight:400;letter-spacing:0;margin-bottom:8px}
+  section .sub{color:var(--muted);max-width:none;margin-bottom:24px;line-height:1.5}
+
+  /* legend */
+  .legend{display:flex;gap:18px;flex-wrap:wrap;margin-bottom:22px}
+  .legend .l{display:inline-flex;align-items:center;gap:8px;font-size:13px;font-weight:500;color:var(--muted)}
+  .sw{width:14px;height:14px;border-radius:4px;border:1px solid var(--line)}
+  .sw.ai{background:var(--ai-bg)} .sw.mk{background:var(--mk-bg)} .sw.ax{background:var(--ax-bg)}
+  .star{color:#F5B301;font-size:.92em;line-height:1}
+  .chip .star{margin-right:2px} .chip.key{outline:2px solid #F5B301;outline-offset:-2px}
+  td.mod .star{margin-left:5px}
+  .legend .star{font-size:15px}
+
+  /* library - elevated M3 cards, no border */
+  .lib{display:grid;grid-template-columns:1fr;gap:16px}
+  .track{background:var(--card);border-radius:16px;padding:20px 22px;box-shadow:var(--shadow)}
+  .track .th{font-size:12px;font-weight:600;letter-spacing:.09em;text-transform:uppercase;margin-bottom:14px;display:flex;align-items:center;gap:10px}
+  .track.ai .th{color:var(--ai-acc)} .track.mk .th{color:var(--mk-acc)} .track.ax .th{color:var(--ax-acc)}
+  .th .bar{width:24px;height:4px;border-radius:2px}
+  .track.ai .th .bar{background:var(--ai-acc)} .track.mk .th .bar{background:var(--mk-acc)} .track.ax .th .bar{background:var(--ax-acc)}
+  .chips{display:flex;flex-wrap:wrap;gap:10px}
+  .chip{display:inline-flex;align-items:center;gap:9px;border-radius:8px;padding:8px 13px;font-size:13.5px}
+  .chip .code{font-weight:700;font-variant-numeric:tabular-nums;letter-spacing:.02em}
+  .chip.ai{background:var(--ai-bg);color:var(--ai)} .chip.mk{background:var(--mk-bg);color:var(--mk)} .chip.ax{background:var(--ax-bg);color:var(--ax)}
+  .chip .use{font-size:10.5px;font-weight:600;color:var(--muted);background:transparent;border:1px solid currentColor;opacity:.75;border-radius:999px;padding:2px 9px;white-space:nowrap}
+  .chip .use.hot{opacity:1;font-weight:700}
+
+  /* pathways map */
+  .mapscroll{overflow-x:auto;padding-bottom:6px}
+  .map{display:grid;grid-template-columns:repeat(5,minmax(200px,1fr));gap:16px;min-width:960px}
+  .path{background:var(--card);border-radius:16px;padding:18px 16px;box-shadow:var(--shadow);display:flex;flex-direction:column}
+  .path.flag{outline:2px solid var(--brand);outline-offset:-2px}
+  .path .pid{font-size:11px;font-weight:600;letter-spacing:.09em;color:var(--faint);text-transform:uppercase}
+  .path h3{font-size:16px;font-weight:500;letter-spacing:0;margin:4px 0 4px}
+  .path .who{font-size:12.5px;color:var(--muted);min-height:34px;margin-bottom:14px;line-height:1.45}
+  .flagbadge{display:inline-block;font-size:10px;font-weight:600;letter-spacing:.07em;text-transform:uppercase;color:var(--on-brand);background:var(--brand);border-radius:999px;padding:3px 10px;margin-bottom:8px}
+  .route{display:flex;flex-direction:column;gap:0}
+  .step{position:relative;padding-bottom:16px}
+  .step:last-child{padding-bottom:0}
+  .step .node{display:flex;align-items:center;gap:8px;border-radius:8px;padding:8px 11px;font-size:12.5px}
+  .step .node .code{font-weight:700;font-variant-numeric:tabular-nums}
+  .step .node .nm{line-height:1.25}
+  .step.ai .node{background:var(--ai-bg);color:var(--ai)} .step.mk .node{background:var(--mk-bg);color:var(--mk)} .step.ax .node{background:var(--ax-bg);color:var(--ax)}
+  .step:not(:last-child)::after{content:"";position:absolute;left:20px;bottom:3px;width:2px;height:14px;background:var(--line)}
+
+  /* matrix - M3 data table on elevated surface */
+  .tblwrap{overflow-x:auto;border-radius:12px;background:var(--card);box-shadow:var(--shadow)}
+  table{border-collapse:collapse;width:100%;min-width:680px;font-size:13.5px}
+  th,td{padding:10px 12px;border-bottom:1px solid var(--line);text-align:center}
+  thead th{font-size:11px;letter-spacing:.05em;text-transform:uppercase;color:var(--muted);font-weight:600;background:var(--card-2);position:sticky;top:0}
+  th.mod,td.mod{text-align:left;white-space:nowrap;font-weight:500;color:var(--ink)}
+  td.mod .c{font-weight:700;font-variant-numeric:tabular-nums;margin-right:8px}
+  td.mod.ai .c{color:var(--ai-acc)} td.mod.mk .c{color:var(--mk-acc)} td.mod.ax .c{color:var(--ax-acc)}
+  tbody tr:last-child td{border-bottom:none}
+  tr.hot td{background:color-mix(in srgb,var(--brand) 12%,transparent)}
+  .dot{display:inline-block;width:12px;height:12px;border-radius:50%;background:var(--brand)}
+  td.empty{color:var(--faint)}
+  .cnt{font-weight:700;color:var(--brand-deep);font-variant-numeric:tabular-nums}
+
+  .note{background:var(--card-2);border-radius:12px;padding:16px 18px;font-size:13.5px;color:var(--body);margin-top:22px}
+  .note b{color:var(--ink)}
+  footer{padding:28px 0 56px;color:var(--muted);font-size:13px}
+  footer .wm{font-weight:600;color:var(--ink)}
+  @media(max-width:760px){.legend{gap:12px}}
+</style>
+
+<header>
+  <div class="wrap">
+    <div class="eyebrow"><span class="dot"></span> Toggle Bespoke · AI-Literacy Curriculum</div>
+    <h1>Learning Pathways and Crossover</h1>
+    <p class="lede">One shared library of lessons, five curated pathways through it. A client picks the pathway that matches where they are, and several pathways reuse the same core lessons. The ELI 15 to 30 toggle sets how deep each lesson goes, on its own dial.</p>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">The library</div>
+    <h2>21 lessons across three tracks</h2>
+    <p class="sub">Every lesson is a self-contained module. The pill on each shows how many pathways use it, so the high-reuse lessons are easy to spot and build first.</p>
+    <div class="legend">
+      <span class="l"><span class="sw ai"></span> AI track</span>
+      <span class="l"><span class="sw mk"></span> Marketing track</span>
+      <span class="l"><span class="sw ax"></span> AI in Marketing (applied)</span>
+      <span class="l"><span class="star">★</span> Most critical</span>
+    </div>
+    <div class="lib">
+      <div class="track ai">
+        <div class="th"><span class="bar"></span> AI track</div>
+        <div class="chips">
+          <span class="chip ai"><span class="star">★</span><span class="code">AI-1</span><span class="nm">AI Basics</span><span class="use hot">4 paths</span></span>
+          <span class="chip ai"><span class="code">AI-2</span><span class="nm">AI Literacy</span><span class="use">2 paths</span></span>
+          <span class="chip ai"><span class="star">★</span><span class="code">AI-3</span><span class="nm">Prompting and Tools</span><span class="use hot">3 paths</span></span>
+          <span class="chip ai"><span class="code">AI-4</span><span class="nm">AI Systems</span><span class="use">2 paths</span></span>
+          <span class="chip ai key"><span class="star">★</span><span class="code">AI-5</span><span class="nm">Agentic AI and Claude Code</span><span class="use hot">5 paths</span></span>
+          <span class="chip ai"><span class="code">AI-6</span><span class="nm">Generative AI</span><span class="use">2 paths</span></span>
+          <span class="chip ai"><span class="code">AI-7</span><span class="nm">AI on a Budget</span><span class="use">2 paths</span></span>
+          <span class="chip ai"><span class="code">AI-8</span><span class="nm">Data Privacy with AI</span><span class="use">2 paths</span></span>
+        </div>
+      </div>
+      <div class="track mk">
+        <div class="th"><span class="bar"></span> Marketing track</div>
+        <div class="chips">
+          <span class="chip mk"><span class="code">MK-1</span><span class="nm">Marketing Foundation</span><span class="use">2 paths</span></span>
+          <span class="chip mk"><span class="code">MK-2</span><span class="nm">Performance Basics</span><span class="use">1 path</span></span>
+          <span class="chip mk"><span class="code">MK-3</span><span class="nm">Content and Organic</span><span class="use">1 path</span></span>
+          <span class="chip mk"><span class="code">MK-4</span><span class="nm">Data and Measurement</span><span class="use">1 path</span></span>
+        </div>
+      </div>
+      <div class="track ax">
+        <div class="th"><span class="bar"></span> AI in Marketing (applied)</div>
+        <div class="chips">
+          <span class="chip ax"><span class="code">AX-1</span><span class="nm">AI in Marketing</span><span class="use">2 paths</span></span>
+          <span class="chip ax"><span class="code">AX-2</span><span class="nm">AI Content and Copy</span><span class="use">2 paths</span></span>
+          <span class="chip ax"><span class="code">AX-3</span><span class="nm">AI Creative and Visuals</span><span class="use">1 path</span></span>
+          <span class="chip ax"><span class="code">AX-4</span><span class="nm">AI Ads and Performance</span><span class="use">2 paths</span></span>
+          <span class="chip ax"><span class="code">AX-5</span><span class="nm">AI SEO and Discovery</span><span class="use">1 path</span></span>
+          <span class="chip ax"><span class="code">AX-6</span><span class="nm">AI Data and Reporting</span><span class="use">1 path</span></span>
+          <span class="chip ax"><span class="code">AX-7</span><span class="nm">AI CRM and Conversations</span><span class="use hot">3 paths</span></span>
+          <span class="chip ax"><span class="star">★</span><span class="code">AX-8</span><span class="nm">Build Your Workflow</span><span class="use hot">3 paths</span></span>
+          <span class="chip ax"><span class="code">AX-9</span><span class="nm">AI Dashboards, Sites and Reports</span><span class="use">2 paths</span></span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">The map</div>
+    <h2>Five pathways through the library</h2>
+    <p class="sub">Read each column top to bottom as the order a learner takes it. Chip colour shows which track the lesson belongs to, so you can see each pathway weave across AI, marketing, and the applied track.</p>
+    <div class="mapscroll">
+      <div class="map">
+
+        <div class="path">
+          <div class="pid">P1</div>
+          <h3>AI Fundamentals</h3>
+          <div class="who">For anyone new to AI, and non-technical owners who want literacy first.</div>
+          <div class="route">
+            <div class="step ai"><div class="node"><span class="code">AI-1</span><span class="nm">AI Basics</span></div></div>
+            <div class="step ai"><div class="node"><span class="code">AI-2</span><span class="nm">AI Literacy</span></div></div>
+            <div class="step ai"><div class="node"><span class="code">AI-8</span><span class="nm">Data Privacy with AI</span></div></div>
+            <div class="step ai"><div class="node"><span class="code">AI-3</span><span class="nm">Prompting and Tools</span></div></div>
+            <div class="step ai"><div class="node"><span class="code">AI-7</span><span class="nm">AI on a Budget</span></div></div>
+            <div class="step ai"><div class="node"><span class="code">AI-4</span><span class="nm">AI Systems</span></div></div>
+            <div class="step ai"><div class="node"><span class="code">AI-5</span><span class="nm">Agentic AI and Claude Code</span></div></div>
+            <div class="step ai"><div class="node"><span class="code">AI-6</span><span class="nm">Generative AI</span></div></div>
+          </div>
+        </div>
+
+        <div class="path">
+          <div class="pid">P2</div>
+          <h3>Marketing Fundamentals</h3>
+          <div class="who">For non-marketers, service providers, and founders with no marketing team.</div>
+          <div class="route">
+            <div class="step mk"><div class="node"><span class="code">MK-1</span><span class="nm">Marketing Foundation</span></div></div>
+            <div class="step mk"><div class="node"><span class="code">MK-2</span><span class="nm">Performance Basics</span></div></div>
+            <div class="step mk"><div class="node"><span class="code">MK-3</span><span class="nm">Content and Organic</span></div></div>
+            <div class="step mk"><div class="node"><span class="code">MK-4</span><span class="nm">Data and Measurement</span></div></div>
+            <div class="step ai"><div class="node"><span class="code">AI-5</span><span class="nm">Agentic AI and Claude Code</span></div></div>
+          </div>
+        </div>
+
+        <div class="path flag">
+          <div class="pid">P3</div>
+          <span class="flagbadge">Flagship</span>
+          <h3>AI for Marketers</h3>
+          <div class="who">For people with some marketing footing who want to multiply it with AI.</div>
+          <div class="route">
+            <div class="step ai"><div class="node"><span class="code">AI-1</span><span class="nm">AI Basics</span></div></div>
+            <div class="step ai"><div class="node"><span class="code">AI-3</span><span class="nm">Prompting and Tools</span></div></div>
+            <div class="step ai"><div class="node"><span class="code">AI-5</span><span class="nm">Agentic AI and Claude Code</span></div></div>
+            <div class="step ax"><div class="node"><span class="code">AX-1</span><span class="nm">AI in Marketing</span></div></div>
+            <div class="step ax"><div class="node"><span class="code">AX-2</span><span class="nm">AI Content and Copy</span></div></div>
+            <div class="step ax"><div class="node"><span class="code">AX-3</span><span class="nm">AI Creative and Visuals</span></div></div>
+            <div class="step ax"><div class="node"><span class="code">AX-4</span><span class="nm">AI Ads and Performance</span></div></div>
+            <div class="step ax"><div class="node"><span class="code">AX-5</span><span class="nm">AI SEO and Discovery</span></div></div>
+            <div class="step ax"><div class="node"><span class="code">AX-6</span><span class="nm">AI Data and Reporting</span></div></div>
+            <div class="step ax"><div class="node"><span class="code">AX-7</span><span class="nm">AI CRM and Conversations</span></div></div>
+            <div class="step ax"><div class="node"><span class="code">AX-9</span><span class="nm">AI Dashboards, Sites and Reports</span></div></div>
+            <div class="step ax"><div class="node"><span class="code">AX-8</span><span class="nm">Build Your Workflow</span></div></div>
+          </div>
+        </div>
+
+        <div class="path">
+          <div class="pid">P4</div>
+          <h3>Owner's Fast-Track</h3>
+          <div class="who">For time-poor SME owners who want practical wins fast, a bit of everything.</div>
+          <div class="route">
+            <div class="step ai"><div class="node"><span class="code">AI-1</span><span class="nm">AI Basics</span></div></div>
+            <div class="step ai"><div class="node"><span class="code">AI-2</span><span class="nm">AI Literacy</span></div></div>
+            <div class="step ai"><div class="node"><span class="code">AI-7</span><span class="nm">AI on a Budget</span></div></div>
+            <div class="step mk"><div class="node"><span class="code">MK-1</span><span class="nm">Marketing Foundation</span></div></div>
+            <div class="step ax"><div class="node"><span class="code">AX-1</span><span class="nm">AI in Marketing</span></div></div>
+            <div class="step ax"><div class="node"><span class="code">AX-2</span><span class="nm">AI Content and Copy</span></div></div>
+            <div class="step ax"><div class="node"><span class="code">AX-4</span><span class="nm">AI Ads and Performance</span></div></div>
+            <div class="step ax"><div class="node"><span class="code">AX-7</span><span class="nm">AI CRM and Conversations</span></div></div>
+            <div class="step ai"><div class="node"><span class="code">AI-5</span><span class="nm">Agentic AI and Claude Code</span></div></div>
+            <div class="step ax"><div class="node"><span class="code">AX-8</span><span class="nm">Build Your Workflow</span></div></div>
+          </div>
+        </div>
+
+        <div class="path">
+          <div class="pid">P5</div>
+          <h3>AI Systems and Automation</h3>
+          <div class="who">For builders who want AI inside their operations, not just chat tools.</div>
+          <div class="route">
+            <div class="step ai"><div class="node"><span class="code">AI-1</span><span class="nm">AI Basics</span></div></div>
+            <div class="step ai"><div class="node"><span class="code">AI-3</span><span class="nm">Prompting and Tools</span></div></div>
+            <div class="step ai"><div class="node"><span class="code">AI-4</span><span class="nm">AI Systems</span></div></div>
+            <div class="step ai"><div class="node"><span class="code">AI-5</span><span class="nm">Agentic AI and Claude Code</span></div></div>
+            <div class="step ai"><div class="node"><span class="code">AI-6</span><span class="nm">Generative AI</span></div></div>
+            <div class="step ai"><div class="node"><span class="code">AI-8</span><span class="nm">Data Privacy with AI</span></div></div>
+            <div class="step ax"><div class="node"><span class="code">AX-9</span><span class="nm">AI Dashboards, Sites and Reports</span></div></div>
+            <div class="step ax"><div class="node"><span class="code">AX-7</span><span class="nm">AI CRM and Conversations</span></div></div>
+            <div class="step ax"><div class="node"><span class="code">AX-8</span><span class="nm">Build Your Workflow</span></div></div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker">The crossover</div>
+    <h2>Which pathway uses which lesson</h2>
+    <p class="sub">A filled dot means the lesson sits in that pathway, and the rightmost column counts the reuse. The five highlighted rows are the shared backbone worth building first.</p>
+    <div class="tblwrap">
+      <table>
+        <thead>
+          <tr>
+            <th class="mod">Lesson</th>
+            <th>P1<br>AI Fund</th>
+            <th>P2<br>Mkt Fund</th>
+            <th>P3<br>AI-Mktr</th>
+            <th>P4<br>Fast-Track</th>
+            <th>P5<br>Systems</th>
+            <th>Reuse</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr class="hot"><td class="mod ai"><span class="c">AI-1</span>AI Basics <span class="star">★</span></td><td><span class="dot"></span></td><td class="empty">·</td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td class="cnt">4</td></tr>
+          <tr><td class="mod ai"><span class="c">AI-2</span>AI Literacy</td><td><span class="dot"></span></td><td class="empty">·</td><td class="empty">·</td><td><span class="dot"></span></td><td class="empty">·</td><td class="cnt">2</td></tr>
+          <tr class="hot"><td class="mod ai"><span class="c">AI-3</span>Prompting and Tools <span class="star">★</span></td><td><span class="dot"></span></td><td class="empty">·</td><td><span class="dot"></span></td><td class="empty">·</td><td><span class="dot"></span></td><td class="cnt">3</td></tr>
+          <tr><td class="mod ai"><span class="c">AI-4</span>AI Systems</td><td><span class="dot"></span></td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td><span class="dot"></span></td><td class="cnt">2</td></tr>
+          <tr class="hot"><td class="mod ai"><span class="c">AI-5</span>Agentic AI and Claude Code <span class="star">★</span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td class="cnt">5</td></tr>
+          <tr><td class="mod ai"><span class="c">AI-6</span>Generative AI</td><td><span class="dot"></span></td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td><span class="dot"></span></td><td class="cnt">2</td></tr>
+          <tr><td class="mod ai"><span class="c">AI-7</span>AI on a Budget</td><td><span class="dot"></span></td><td class="empty">·</td><td class="empty">·</td><td><span class="dot"></span></td><td class="empty">·</td><td class="cnt">2</td></tr>
+          <tr><td class="mod ai"><span class="c">AI-8</span>Data Privacy with AI</td><td><span class="dot"></span></td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td><span class="dot"></span></td><td class="cnt">2</td></tr>
+          <tr><td class="mod mk"><span class="c">MK-1</span>Marketing Foundation</td><td class="empty">·</td><td><span class="dot"></span></td><td class="empty">·</td><td><span class="dot"></span></td><td class="empty">·</td><td class="cnt">2</td></tr>
+          <tr><td class="mod mk"><span class="c">MK-2</span>Performance Basics</td><td class="empty">·</td><td><span class="dot"></span></td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="cnt">1</td></tr>
+          <tr><td class="mod mk"><span class="c">MK-3</span>Content and Organic</td><td class="empty">·</td><td><span class="dot"></span></td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="cnt">1</td></tr>
+          <tr><td class="mod mk"><span class="c">MK-4</span>Data and Measurement</td><td class="empty">·</td><td><span class="dot"></span></td><td class="empty">·</td><td class="empty">·</td><td class="empty">·</td><td class="cnt">1</td></tr>
+          <tr><td class="mod ax"><span class="c">AX-1</span>AI in Marketing</td><td class="empty">·</td><td class="empty">·</td><td><span class="dot"></span></td><td><span class="dot"></span></td><td class="empty">·</td><td class="cnt">2</td></tr>
+          <tr><td class="mod ax"><span class="c">AX-2</span>AI Content and Copy</td><td class="empty">·</td><td class="empty">·</td><td><span class="dot"></span></td><td><span class="dot"></span></td><td class="empty">·</td><td class="cnt">2</td></tr>
+          <tr><td class="mod ax"><span class="c">AX-3</span>AI Creative and Visuals</td><td class="empty">·</td><td class="empty">·</td><td><span class="dot"></span></td><td class="empty">·</td><td class="empty">·</td><td class="cnt">1</td></tr>
+          <tr><td class="mod ax"><span class="c">AX-4</span>AI Ads and Performance</td><td class="empty">·</td><td class="empty">·</td><td><span class="dot"></span></td><td><span class="dot"></span></td><td class="empty">·</td><td class="cnt">2</td></tr>
+          <tr><td class="mod ax"><span class="c">AX-5</span>AI SEO and Discovery</td><td class="empty">·</td><td class="empty">·</td><td><span class="dot"></span></td><td class="empty">·</td><td class="empty">·</td><td class="cnt">1</td></tr>
+          <tr><td class="mod ax"><span class="c">AX-6</span>AI Data and Reporting</td><td class="empty">·</td><td class="empty">·</td><td><span class="dot"></span></td><td class="empty">·</td><td class="empty">·</td><td class="cnt">1</td></tr>
+          <tr class="hot"><td class="mod ax"><span class="c">AX-7</span>AI CRM and Conversations</td><td class="empty">·</td><td class="empty">·</td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td class="cnt">3</td></tr>
+          <tr class="hot"><td class="mod ax"><span class="c">AX-8</span>Build Your Workflow <span class="star">★</span></td><td class="empty">·</td><td class="empty">·</td><td><span class="dot"></span></td><td><span class="dot"></span></td><td><span class="dot"></span></td><td class="cnt">3</td></tr>
+          <tr><td class="mod ax"><span class="c">AX-9</span>AI Dashboards, Sites and Reports</td><td class="empty">·</td><td class="empty">·</td><td><span class="dot"></span></td><td class="empty">·</td><td><span class="dot"></span></td><td class="cnt">2</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="note"><b>How to read this as a build plan:</b> the five highlighted lessons (AI-1, AI-3, AI-5, AX-7, AX-8) appear in three or more pathways, so building them first unlocks the most pathways for the least work. AI-5 Agentic AI and Claude Code now runs through every pathway, so it is the first thing to build. The single-use marketing lessons (MK-2 to MK-4, AX-3, AX-5, AX-6) can follow once a pathway needs them.</div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <span class="wm">Toggle Solutions</span> · Bespoke · AI-Literacy curriculum pathways · Working draft, pathway set not yet locked
+  </div>
+</footer>
