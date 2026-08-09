@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Patient chat, side by side: IKONIK and OasisEye</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --canvas:#FFFFFF; --card:#F2F3F6; --callout:#DDE5FE;
+  --ink:#0F0F0F; --body:#4A4A4A; --secondary:#6B7280; --muted:#9AA0A8;
+  --blue:#4A7BF7; --blue-deep:#3056C9;
+  --border:#E4E6EE; --border-strong:#D2D6E2;
+  --err:#C03028; --ok:#0B6B4D; --warn:#7A3D14; --neutral:#565D68;
+  --s1:4px; --s2:8px; --s3:12px; --s4:16px; --s5:24px; --s6:32px; --s7:48px; --s8:64px;
+}
+*{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%; overflow-x:hidden}
+img{max-width:100%; height:auto}
+body{
+  margin:0; background:var(--canvas); color:var(--body);
+  font-family:'Inter Tight',system-ui,-apple-system,'Segoe UI',sans-serif;
+  font-size:15px; line-height:1.5; font-weight:400;
+}
+.wrap{max-width:1060px; margin:0 auto; padding:var(--s7) var(--s5) var(--s8)}
+h1,h2,h3,h4{color:var(--ink); margin:0; line-height:1.15}
+h1{font-size:38px; font-weight:800; line-height:1.1; letter-spacing:-.01em}
+h2{font-size:28px; font-weight:800; margin-top:var(--s7); margin-bottom:var(--s3)}
+h3{font-size:22px; font-weight:700; margin-bottom:var(--s2)}
+h4{font-size:17px; font-weight:700; margin-bottom:var(--s1)}
+p{margin:0 0 var(--s3)}
+.overline{font-size:13px; font-weight:700; text-transform:uppercase; letter-spacing:.08em; color:var(--blue-deep); margin-bottom:var(--s2)}
+.kicker{font-size:16px; color:var(--body); margin-top:var(--s3)}
+.lede{font-size:17px; color:var(--ink); font-weight:500}
+header{border-bottom:2px solid var(--ink); padding-bottom:var(--s5); margin-bottom:var(--s5)}
+.meta{font-size:13px; color:var(--secondary); margin-top:var(--s4)}
+
+.finding{border-left:3px solid var(--blue); padding:var(--s1) 0 var(--s1) var(--s5); margin:var(--s5) 0}
+.finding h4{color:var(--blue-deep); font-size:19px}
+.finding p:last-child{margin-bottom:0}
+
+/* transcripts */
+.chats{display:grid; grid-template-columns:1fr 1fr; gap:var(--s5); margin:var(--s5) 0}
+.chat{background:var(--card); border-radius:12px; padding:var(--s5); border:1px solid var(--border)}
+.chat h4{margin-bottom:var(--s1)}
+.chat .src{font-size:13px; color:var(--secondary); margin-bottom:var(--s4)}
+.msg{margin-bottom:var(--s3); font-size:14px; line-height:1.45}
+.msg .who{font-size:12px; font-weight:700; color:var(--secondary); text-transform:uppercase; letter-spacing:.05em}
+.msg .txt{background:#fff; border:1px solid var(--border); border-radius:8px; padding:var(--s2) var(--s3); margin-top:2px}
+.msg.us .txt{background:#E8EDF9; border-color:#CBD8F5}
+.msg .note{font-size:12.5px; color:var(--err); font-weight:600; margin-top:var(--s2)}
+.gap{font-size:13px; color:var(--err); font-weight:700; text-align:center; padding:var(--s3) 0; border-top:1px dashed var(--border-strong); border-bottom:1px dashed var(--border-strong); margin:var(--s3) 0}
+
+/* table */
+.tablewrap{overflow-x:auto; -webkit-overflow-scrolling:touch; margin:var(--s4) 0 var(--s5)}
+table{border-collapse:collapse; width:100%; min-width:760px; font-size:14px}
+caption{text-align:left; font-size:13px; color:var(--secondary); padding-bottom:var(--s3)}
+th,td{text-align:left; vertical-align:top; padding:var(--s3); border-bottom:1px solid var(--border)}
+thead th{font-size:12.5px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--ink); border-bottom:2px solid var(--ink); white-space:nowrap}
+thead th.us{color:var(--blue-deep)}
+tbody th{font-weight:700; color:var(--ink); width:24%; font-size:14px}
+td.us{background:#F7F9FF}
+.tag{display:inline-flex; align-items:center; gap:6px; font-size:13px; font-weight:600; color:var(--ink); margin-bottom:2px}
+.tag::before{content:""; width:7px; height:7px; border-radius:50%; flex:0 0 auto}
+.t-no::before{background:var(--err)}
+.t-yes::before{background:var(--ok)}
+.t-part::before{background:var(--warn)}
+.t-unk::before{background:var(--muted)}
+.t-unk{color:var(--neutral)}
+.cell-note{display:block; font-size:13px; color:var(--body); margin-top:2px}
+
+.cols{display:grid; grid-template-columns:1fr 1fr; gap:var(--s5); margin:var(--s5) 0}
+.box{background:var(--card); border-radius:12px; padding:var(--s5)}
+.box p:last-child{margin-bottom:0}
+
+/* roadmap, deliberately un-boxed */
+.steps{margin:var(--s5) 0; counter-reset:step}
+.step{display:grid; grid-template-columns:52px 1fr; gap:var(--s4); padding:var(--s4) 0; border-top:1px solid var(--border)}
+.step:last-child{border-bottom:1px solid var(--border)}
+.step .num{font-size:30px; font-weight:800; color:var(--blue); line-height:1; font-variant-numeric:tabular-nums}
+.step p{margin:var(--s1) 0 0; font-size:14px}
+
+footer{margin-top:var(--s8); padding-top:var(--s5); border-top:1px solid var(--border); font-size:13px; color:var(--secondary)}
+footer p{margin-bottom:var(--s2)}
+
+@media (max-width:860px){
+  .wrap{padding:var(--s5) var(--s4) var(--s7)}
+  h1{font-size:29px} h2{font-size:23px; margin-top:var(--s6)}
+  .chats,.cols{grid-template-columns:1fr}
+}
+/* phone: reflow the table into one card per question */
+@media (max-width:640px){
+  .tablewrap{overflow-x:visible}
+  table{min-width:0}
+  table,tbody,tr{display:block; width:100%}
+  caption{display:block; width:100%}
+  thead{position:absolute; width:1px; height:1px; margin:-1px; padding:0; overflow:hidden; clip:rect(0 0 0 0); white-space:nowrap; border:0}
+  tr{border:1px solid var(--border); border-radius:10px; padding:var(--s4); margin-bottom:var(--s3); background:var(--canvas)}
+  tbody th{display:block; width:auto; font-size:15px; padding:0 0 var(--s3); border-bottom:none}
+  td{display:block; padding:var(--s3) 0 0; border-bottom:none; border-top:1px dashed var(--border)}
+  td.us{background:transparent}
+  td::before{display:block; font-size:11px; font-weight:700; text-transform:uppercase; letter-spacing:.06em; color:var(--secondary); margin-bottom:var(--s1)}
+  td:nth-of-type(1)::before{content:"IKONIK today"}
+  td:nth-of-type(2)::before{content:"OasisEye today"}
+  td:nth-of-type(3)::before{content:"What we would build"; color:var(--blue-deep)}
+  .step{grid-template-columns:40px 1fr; gap:var(--s3)}
+  .step .num{font-size:24px}
+}
+@media print{
+  @page{size:A4; margin:14mm}
+  body{font-size:10.5pt; color:#000}
+  .wrap{max-width:none; padding:0}
+  h1{font-size:22pt} h2{font-size:15pt; margin-top:16pt}
+  h2,h3,h4{break-after:avoid}
+  .chats,.cols{grid-template-columns:1fr; gap:10pt}
+  .chat,.finding,.box,.step{break-inside:avoid}
+  .tablewrap{overflow:visible}
+  table{min-width:0; break-inside:auto}
+  thead{display:table-header-group}
+  tr{break-inside:avoid}
+  td.us{border-left:2px solid var(--blue-deep)}
+  a{text-decoration:none; color:#000}
+}
+@media (prefers-reduced-motion:reduce){*{animation:none!important; transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header>
+  <div class="overline">Patient chat review</div>
+  <h1>How an enquiry actually gets handled: IKONIK and OasisEye, side by side</h1>
+  <p class="kicker">You asked to see how your chat compares to OasisEye's. We ran both ourselves, as a patient rather than as an agency, and asked each of them the same ordinary questions.</p>
+  <p class="meta">Prepared by Toggle Solutions for IKONIK Eye Specialist Centre · 4 August 2026</p>
+</header>
+
+<h2>The first thing we noticed</h2>
+
+<div class="finding">
+  <h4>OasisEye has a chat on their website. IKONIK has none.</h4>
+  <p>A visitor on ikonik-eyecentre.com has three ways to make contact: a phone number, an email address, and a form. There is no chat widget and no WhatsApp link anywhere on the site. Someone reading about LASIK at 10pm has nothing to tap.</p>
+  <p>So the first gap is not about quality. It is about presence. They are in the conversation and you are not.</p>
+</div>
+
+<h2>The same questions, both clinics</h2>
+
+<div class="chats">
+
+  <div class="chat">
+    <h4>IKONIK, on WhatsApp</h4>
+    <div class="src">One session, 4:14pm to 4:21pm</div>
+
+    <div class="msg us"><div class="who">Patient · 4:14pm</div><div class="txt">Assalamualaikum, Hi! I want eye treatment</div></div>
+    <div class="msg"><div class="who">IKONIK · 4:14pm</div><div class="txt">Salam Sejahtera 🙂 Terima kasih kerana menghubungi IKONIK Eye Specialist Centre. Adakah anda: [Pesakit Baru] [Pesakit Sedia Ada]</div></div>
+
+    <div class="msg us"><div class="who">Patient · 4:15pm</div><div class="txt">can you speak in english?</div></div>
+    <div class="msg"><div class="who">IKONIK · 4:15pm</div><div class="txt">Salam Sejahtera 🙂 Terima kasih kerana menghubungi IKONIK Eye Specialist Centre. Adakah anda: [Pesakit Baru] [Pesakit Sedia Ada]</div>
+      <div class="note">The identical message, sent a second time.</div></div>
+
+    <div class="msg us"><div class="who">Patient · 4:16pm</div><div class="txt">Taps through: Pesakit Baru, then Bebas Rabun (LASIK), then Continue</div></div>
+    <div class="msg"><div class="who">IKONIK · 4:18pm</div><div class="txt">This message can't be displayed here. Please open WhatsApp on your phone to view the message.</div>
+      <div class="note">The flow does not load on a laptop.</div></div>
+
+    <div class="msg"><div class="who">IKONIK · 4:21pm</div><div class="txt">Ya, Zaid, boleh saya bantu?</div>
+      <div class="note">A person, 7 minutes in. No price was given at any point.</div></div>
+  </div>
+
+  <div class="chat">
+    <h4>OasisEye, on their website</h4>
+    <div class="src">One session, 9:20am to 9:26am</div>
+
+    <div class="msg"><div class="who">OasisEye · 9:20am</div><div class="txt">Thank you for contacting OasisEye Specialists! Feel free to call or WhatsApp us at +603 2730 7666 to speak with us directly.</div>
+      <div class="note">The opening message points the patient to another channel.</div></div>
+
+    <div class="msg us"><div class="who">Patient · 9:20am</div><div class="txt">I would like to book an appointment</div></div>
+    <div class="msg"><div class="who">OasisEye · 9:20am</div><div class="txt">Sure, I'd be happy to help you with that. Could you please provide the following details for the appointment registration? Full name · Contact number · Age · Gender · Preferred branch · Doctor to consult · Reason for visit / eye condition · Preferred date and time</div>
+      <div class="note">Eight fields at once, including which doctor the patient wants to see.</div></div>
+
+    <div class="msg us"><div class="who">Patient · 9:21am</div><div class="txt">Can you speak in BM?</div></div>
+    <div class="msg us"><div class="who">Patient · 9:21am</div><div class="txt">Hello?</div></div>
+    <div class="msg us"><div class="who">Patient · 9:22am</div><div class="txt">Price?</div></div>
+    <div class="gap">Three messages, no reply in the four minutes we kept watching.</div>
+
+    <div class="msg"><div class="who">OasisEye · 9:24am</div><div class="txt">Thank you for contacting OasisEye Specialists! Feel free to call or WhatsApp us at +603 2730 7666 to speak with us directly.</div>
+      <div class="note">The same opening message, word for word, four minutes later.</div></div>
+
+    <div class="msg us"><div class="who">Patient · 9:25am</div><div class="txt">Can you give a price list?</div></div>
+    <div class="gap">No reply before our capture ends.</div>
+  </div>
+
+</div>
+
+<div class="finding">
+  <h4>Neither chat answered the question the patient asked twice.</h4>
+  <p>In the two sessions we ran, neither clinic gave a price. Yours is promoting RM2,500 per eye on TikTok and in the website popup, so the answer exists inside the business. It is just not reachable from the channel the ads point at.</p>
+  <p>Both chats also sent the same canned message a second time rather than responding to what the patient had just written.</p>
+</div>
+
+<h2>Side by side</h2>
+
+<div class="tablewrap">
+<table>
+  <caption>One observed session per clinic, on the times shown above. Where we did not test something, it is left out rather than guessed at.</caption>
+  <thead>
+    <tr>
+      <th scope="col">What the patient does</th>
+      <th scope="col">IKONIK today</th>
+      <th scope="col">OasisEye today</th>
+      <th scope="col" class="us">What we would build</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th scope="row">Finds a chat on the website</th>
+      <td><span class="tag t-unk">None</span><span class="cell-note">No chat and no WhatsApp link on the site</span></td>
+      <td><span class="tag t-yes">Yes</span><span class="cell-note">Chat widget on every page</span></td>
+      <td class="us"><span class="tag t-part">Planned</span><span class="cell-note">WhatsApp agent is written now, the website widget is a build step</span></td>
+    </tr>
+    <tr>
+      <th scope="row">Types a question instead of tapping</th>
+      <td><span class="tag t-no">No</span><span class="cell-note">Button menus only, the typed English message went unanswered</span></td>
+      <td><span class="tag t-part">Uneven</span><span class="cell-note">Answered the first message quickly, then three in a row went unanswered</span></td>
+      <td class="us"><span class="tag t-yes">Yes</span><span class="cell-note">Reads full sentences every time</span></td>
+    </tr>
+    <tr>
+      <th scope="row">Asks for another language</th>
+      <td><span class="tag t-no">No</span><span class="cell-note">Asked in English, received the same Malay message twice</span></td>
+      <td><span class="tag t-no">No</span><span class="cell-note">"Can you speak in BM?" went unanswered in the session</span></td>
+      <td class="us"><span class="tag t-yes">Yes</span><span class="cell-note">Malay, English and Chinese, switching mid conversation</span></td>
+    </tr>
+    <tr>
+      <th scope="row">Asks the price</th>
+      <td><span class="tag t-no">No price</span><span class="cell-note">Seven minutes, four taps, a person, and still no figure</span></td>
+      <td><span class="tag t-no">No price</span><span class="cell-note">Asked twice, unanswered in the session</span></td>
+      <td class="us"><span class="tag t-part">Yes, pending sign-off</span><span class="cell-note">From a fixed list you approve, once the promo is confirmed current and price disclosure is cleared under KKLIU</span></td>
+    </tr>
+    <tr>
+      <th scope="row">Uses a laptop</th>
+      <td><span class="tag t-no">No</span><span class="cell-note">The flow fails to load on desktop</span></td>
+      <td><span class="tag t-yes">Yes</span><span class="cell-note">It is a website widget</span></td>
+      <td class="us"><span class="tag t-yes">Yes</span><span class="cell-note">No dependency on the phone app</span></td>
+    </tr>
+    <tr>
+      <th scope="row">Gets a useful reply</th>
+      <td><span class="tag t-part">7 minutes</span><span class="cell-note">Reached a person, but with none of the questions answered</span></td>
+      <td><span class="tag t-part">Uneven</span><span class="cell-note">Immediate at first, then four minutes of silence</span></td>
+      <td class="us"><span class="tag t-yes">Seconds</span><span class="cell-note">Answers first, then hands over to your team</span></td>
+    </tr>
+    <tr>
+      <th scope="row">Arrives from an ad</th>
+      <td><span class="tag t-no">Not recorded</span><span class="cell-note">A booking currently cannot be traced back to the ad that produced it</span></td>
+      <td><span class="tag t-unk">Not tested</span></td>
+      <td class="us"><span class="tag t-part">Yes, once connected</span><span class="cell-note">The ad is recorded automatically once the click-to-WhatsApp integration is wired up</span></td>
+    </tr>
+  </tbody>
+</table>
+</div>
+
+<h2>What OasisEye gets right</h2>
+
+<div class="cols">
+  <div class="box">
+    <h4>The format is the right one</h4>
+    <p>Their replies are written in full sentences and read like a person. There are no button menus and no "choose option 1 or 2." Next to a rigid template, it feels like talking to a clinic, and patients respond to that.</p>
+    <p>If that is what you like about their chat, we agree with you.</p>
+  </div>
+  <div class="box">
+    <h4>It did not hold up for six minutes</h4>
+    <p>In the session we captured, three patient messages went unanswered for about four minutes, and the same automated greeting fired a second time. The price question was asked twice and not answered.</p>
+    <p>We cannot tell from the outside which parts of their chat are automated and which are a person typing. What we can see is what the patient experienced.</p>
+  </div>
+</div>
+
+<div class="finding">
+  <h4>The opportunity is to take the format they got right and make it hold.</h4>
+  <p>A patient should get that same natural conversation, and get it at 2am, in the language they wrote in, with prices you have approved. That is the gap between the two columns, and neither clinic has closed it yet.</p>
+</div>
+
+<h2>What we would do first</h2>
+
+<div class="steps">
+  <div class="step">
+    <div class="num">01</div>
+    <div>
+      <h4>Put a chat on the website</h4>
+      <p>There is none today, which is the clearest gap against OasisEye. The same agent answers on WhatsApp, so both channels behave identically.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="num">02</div>
+    <div>
+      <h4>Load the answers you approve</h4>
+      <p>Prices, procedures, hours, and what each technology covers. The agent cannot invent a figure or offer a discount, including under pressure from a patient.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="num">03</div>
+    <div>
+      <h4>Set the urgent-symptom rules</h4>
+      <p>A defined list of red flags leaves the booking flow and goes straight to a person. This one needs a decision from you about who receives them and how quickly, because routing urgent cases into an unwatched inbox would be worse than not routing them at all.</p>
+    </div>
+  </div>
+  <div class="step">
+    <div class="num">04</div>
+    <div>
+      <h4>Connect the ads to the record</h4>
+      <p>Once click-to-WhatsApp is wired up, every enquiry carries the ad that produced it, so spend can be pointed at whatever is actually booking patients.</p>
+    </div>
+  </div>
+</div>
+
+<p class="lede">We have already written the agent, in Malay, English and Chinese, including the clinical triage rules. We would rather show it to you working than describe it.</p>
+
+<footer>
+  <p><strong>Toggle Solutions</strong> · Your Digital Growth Partner · toggle.solutions · hello@toggle.solutions</p>
+  <p>Based on one observed session per clinic, at the times shown. Transcripts are reproduced from screen captures taken during those sessions and are trimmed for length, not edited for wording. The two chats run on different channels: OasisEye's on their website, IKONIK's on WhatsApp. The proposed agent is designed and written but not yet deployed, and several items in it need your confirmation before it could be.</p>
+</footer>
+
+</div>
+</body>
+</html>

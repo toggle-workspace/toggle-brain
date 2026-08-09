@@ -1,0 +1,565 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toggle × Oddle — Partnership Pitch</title>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#4A7BF7; --deep:#3056C9; --blue-soft:#EAF1FE;
+  --canvas:#FFFFFF; --page:#EBEEF5; --card:#F7F9FC; --bd:#E6EBF4; --bd2:#D9E0EE;
+  --ink:#111A2C; --body:#54607A; --sec:#8893A7;
+  --green:#16B981; --green-soft:#E6F8F1;
+  --amber:#E8912B; --amber-soft:#FDF1E2;
+  --purple:#8E6BE6; --purple-soft:#F0EBFB;
+  --red:#E5564B; --red-soft:#FBE9E7;
+  --oddle:#6B2FB5; --slate:#7E8AA0; --slate-soft:#EEF1F7;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--page);margin:0;padding:40px 0 90px;font-family:"Inter Tight",Inter,sans-serif;-webkit-font-smoothing:antialiased}
+.note{max-width:1280px;margin:34px auto 10px;font-size:13px;font-weight:500;color:#7783A0}
+.note b{color:var(--deep)}.note .tbd{color:#B8541E;font-weight:700}
+.slide{width:1280px;min-height:720px;background:var(--canvas);color:var(--ink);margin:0 auto;position:relative;padding:62px 72px;box-shadow:0 1px 2px rgba(17,26,44,.04),0 18px 48px rgba(17,26,44,.10);overflow:hidden;display:flex;flex-direction:column}
+.glow{position:absolute;width:680px;height:680px;border-radius:50%;background:radial-gradient(circle,rgba(74,123,247,.10),rgba(74,123,247,0) 68%);top:-220px;right:-160px;pointer-events:none}
+.num{font-variant-numeric:tabular-nums}
+.watermark{position:absolute;top:34px;right:72px;font-size:13px;font-weight:600;color:var(--slate);letter-spacing:.02em}
+.seal .br{font-weight:400}
+.wm{height:30px;color:var(--ink);display:inline-block}.wm svg{height:100%;width:auto;display:block;fill:currentColor}
+
+.h1{font-size:46px;font-weight:800;letter-spacing:-.02em;color:var(--ink);margin:0 0 10px;line-height:1.05}
+.h1 .b{color:var(--blue)}
+.kicker{font-size:18px;color:var(--body);margin:0;max-width:62ch;line-height:1.45}
+.eyebrow{font-size:13px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--blue);margin-bottom:14px}
+
+.card{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:26px}
+.grid{display:grid;gap:20px}
+.cols2{grid-template-columns:1fr 1fr}.cols3{grid-template-columns:repeat(3,1fr)}.cols4{grid-template-columns:repeat(4,1fr)}
+.ico{width:54px;height:54px;border-radius:14px;display:flex;align-items:center;justify-content:center;margin-bottom:16px;color:var(--blue);background:var(--blue-soft)}
+.ico svg{width:27px;height:27px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.ico.green{color:var(--green);background:var(--green-soft)}
+.ico.purple{color:var(--purple);background:var(--purple-soft)}
+.ico.amber{color:var(--amber);background:var(--amber-soft)}
+.ico.red{color:var(--red);background:var(--red-soft)}
+.ico.slate{color:var(--slate);background:var(--slate-soft)}
+.ctitle{font-size:20px;font-weight:800;margin:0 0 6px;letter-spacing:-.01em}
+.ctext{font-size:15px;color:var(--body);line-height:1.5}
+.big{font-size:21px}
+
+.chip{display:inline-flex;align-items:center;gap:8px;font-size:13.5px;font-weight:700;color:var(--deep);background:var(--blue-soft);border-radius:999px;padding:8px 15px}
+.livedot{width:8px;height:8px;border-radius:50%;background:var(--green);animation:ping 1.8s ease-out infinite}
+@keyframes ping{0%{box-shadow:0 0 0 0 rgba(22,185,129,.45)}70%{box-shadow:0 0 0 9px rgba(22,185,129,0)}100%{box-shadow:0 0 0 0 rgba(22,185,129,0)}}
+
+.reveal{opacity:0;transform:translateY(16px);transition:opacity .6s cubic-bezier(.22,.61,.36,1),transform .6s cubic-bezier(.22,.61,.36,1)}
+.reveal.in{opacity:1;transform:none}
+.stagger>*{opacity:0;transform:translateY(16px);transition:opacity .55s cubic-bezier(.22,.61,.36,1),transform .55s cubic-bezier(.22,.61,.36,1)}
+.stagger.in>*{opacity:1;transform:none}
+.stagger.in>*:nth-child(1){transition-delay:.00s}.stagger.in>*:nth-child(2){transition-delay:.09s}
+.stagger.in>*:nth-child(3){transition-delay:.18s}.stagger.in>*:nth-child(4){transition-delay:.27s}
+
+.stat{font-size:54px;font-weight:800;line-height:1;letter-spacing:-.02em;color:var(--ink)}
+.stat.b{color:var(--blue)}
+.statlbl{font-size:15px;font-weight:600;color:var(--body);margin-top:10px;line-height:1.4}
+
+.bars{display:flex;align-items:flex-end;gap:44px;height:200px;padding:0 10px}
+.barcol{display:flex;flex-direction:column;align-items:center;gap:12px;flex:1;height:100%;justify-content:flex-end}
+.barwrap{display:flex;align-items:flex-end;height:100%;width:100%;justify-content:center}
+.bar{width:100%;max-width:118px;border-radius:14px 14px 0 0;height:0;transition:height 1.1s cubic-bezier(.22,.61,.36,1);align-self:flex-end}
+.bar.before{background:#CBD4E4}.bar.after{background:linear-gradient(180deg,var(--blue),var(--deep))}
+.barcap{font-size:16px;font-weight:700;color:var(--ink)}.barsub{font-size:13px;color:var(--sec);margin-top:-6px}
+
+/* interactive story stepper */
+.story{display:flex;align-items:stretch;gap:0}
+.snode{flex:1;background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:24px 20px;text-align:center;opacity:.32;filter:grayscale(.5);transform:scale(.97);transition:all .55s cubic-bezier(.22,.61,.36,1)}
+.snode.show{opacity:1;filter:none;transform:none;box-shadow:0 14px 34px rgba(74,123,247,.14);border-color:#C2D4FB}
+.snode.compact{padding:18px 18px}
+.sico{width:64px;height:64px;border-radius:50%;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;color:var(--blue);background:var(--blue-soft)}
+.snode.compact .sico{width:54px;height:54px;margin-bottom:9px}
+.sico svg{width:31px;height:31px;fill:none;stroke:currentColor;stroke-width:1.9;stroke-linecap:round;stroke-linejoin:round}
+.sico.green{color:var(--green);background:var(--green-soft)}.sico.slate{color:var(--slate);background:var(--slate-soft)}
+.stt{font-size:20px;font-weight:800;margin-bottom:6px}.snode.compact .stt{font-size:18px}
+.stx{font-size:14.5px;color:var(--body);line-height:1.45}
+.sarrow{display:flex;align-items:center;justify-content:center;width:60px;flex:0 0 60px;color:#C3CCDC;font-size:30px;font-weight:800;transition:color .5s,transform .5s;transform:scale(.7)}
+.sarrow.show{color:var(--blue);transform:scale(1)}
+.btn{display:inline-flex;align-items:center;gap:9px;font-family:inherit;font-size:16px;font-weight:700;color:#fff;background:var(--blue);border:none;border-radius:12px;padding:13px 22px;cursor:pointer;transition:background .2s,transform .08s;box-shadow:0 6px 16px rgba(74,123,247,.28)}
+.btn:hover{background:var(--deep)}.btn:active{transform:translateY(1px)}
+
+/* accordion */
+.acc{background:var(--card);border:1px solid var(--bd);border-radius:18px;overflow:hidden;transition:border-color .2s,box-shadow .2s}
+.acc.open{border-color:#C2D4FB;box-shadow:0 12px 30px rgba(74,123,247,.12)}
+.acc-h{width:100%;display:flex;align-items:center;gap:16px;background:none;border:none;font-family:inherit;text-align:left;padding:19px 22px;cursor:pointer}
+.acc-h .ico{margin:0;flex:0 0 54px}
+.acc-h .ttl{font-size:19px;font-weight:800;color:var(--ink);flex:1}
+.acc-h .pm{font-size:26px;font-weight:700;color:var(--blue);transition:transform .3s;flex:0 0 auto}
+.acc.open .acc-h .pm{transform:rotate(45deg)}
+.acc-b{max-height:0;overflow:hidden;transition:max-height .4s ease}
+.acc.open .acc-b{max-height:200px}
+.acc-b p{margin:0;padding:0 22px 22px 92px;font-size:15px;color:var(--body);line-height:1.5}
+
+.teamgrid{display:grid;grid-template-columns:repeat(3,1fr);gap:30px}
+.colh{font-size:19px;font-weight:800;color:var(--ink)}
+.cols{font-size:14px;color:var(--body);margin:2px 0 18px}
+.people{display:grid;grid-template-columns:1fr 1fr;gap:20px 12px}
+.person{text-align:center}
+.av{width:74px;height:74px;border-radius:50%;margin:0 auto 9px;display:flex;align-items:center;justify-content:center;font-size:23px;font-weight:800;color:#fff;box-shadow:0 6px 16px rgba(17,26,44,.14)}
+.person small{font-size:14px;font-weight:700;color:var(--ink)}
+
+.strike{font-size:52px;font-weight:800;line-height:1.05;color:var(--sec);position:relative;display:inline-block;letter-spacing:-.01em}
+.strike::after{content:"";position:absolute;left:-6px;right:-6px;top:52%;height:5px;background:var(--blue);border-radius:6px;transform:rotate(-1.6deg);transform-origin:left;animation:strikein .9s .3s both cubic-bezier(.22,.61,.36,1);scale:0 1}
+@keyframes strikein{to{scale:1 1}}
+.statement{font-size:64px;font-weight:800;line-height:1.04;color:var(--ink);margin-top:16px;letter-spacing:-.02em}
+.statement .hl{color:var(--blue)}
+
+.tbdtag{display:inline-block;font-size:10.5px;font-weight:700;letter-spacing:.05em;text-transform:uppercase;color:#B8541E;background:#FBEADd;border:1px solid #EBC7A8;border-radius:5px;padding:2px 7px;vertical-align:middle;margin-left:8px}
+.tbd{outline:1px dashed #D99A6A;outline-offset:4px;border-radius:10px}
+.foot{font-size:13px;color:var(--sec);margin-top:auto;padding-top:16px}
+
+/* case study */
+.cs{display:grid;grid-template-columns:1fr .92fr;gap:34px;margin-top:26px;align-items:start}
+.cstl{position:relative;padding-left:30px}
+.cstl::before{content:"";position:absolute;left:6px;top:10px;bottom:10px;width:2px;background:var(--bd2)}
+.csstep{position:relative;margin-bottom:20px}
+.csstep:last-child{margin-bottom:0}
+.csstep::before{content:"";position:absolute;left:-30px;top:3px;width:14px;height:14px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 5px var(--blue-soft)}
+.csh{font-size:17px;font-weight:800;color:var(--ink);margin-bottom:7px;letter-spacing:-.01em}
+.csul{margin:0;padding-left:17px}
+.csul li{font-size:14.5px;color:var(--body);line-height:1.46;margin-bottom:5px}
+.csres{font-size:14.5px;color:var(--body);line-height:1.5;margin:0}
+.csres b{color:var(--deep)}
+.chart{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:22px 24px;display:flex;flex-direction:column}
+.chartttl{font-size:16px;font-weight:700;color:var(--ink)}
+.chartsub{font-size:13px;color:var(--sec);margin-top:2px}
+.chbars{display:flex;align-items:flex-end;gap:24px;height:230px;margin-top:18px;padding:0 4px}
+.chgroup{flex:1;display:flex;flex-direction:column;align-items:center;gap:9px;height:100%;justify-content:flex-end}
+.chpair{display:flex;align-items:flex-end;gap:7px;height:100%;width:100%;justify-content:center}
+.chbar{width:32px;border-radius:8px 8px 0 0;height:0;transition:height 1.1s cubic-bezier(.22,.61,.36,1);align-self:flex-end}
+.chbar.rev{background:linear-gradient(180deg,var(--blue),var(--deep))}
+.chbar.ord{background:#E5564B}
+.chx{font-size:13px;font-weight:700;color:var(--ink)}
+.chlegend{display:flex;gap:20px;margin-top:14px;justify-content:center}
+.lg{font-size:12.5px;font-weight:600;color:var(--body);display:inline-flex;align-items:center;gap:7px}
+.lg::before{content:"";width:11px;height:11px;border-radius:3px;display:inline-block}
+.lg.rev::before{background:var(--blue)}
+.lg.ord::before{background:#E5564B}
+
+/* pricing tiers */
+.prices{display:grid;grid-template-columns:repeat(3,1fr);gap:20px;margin-top:26px;align-items:stretch}
+.ptier{background:var(--card);border:1px solid var(--bd);border-radius:18px;padding:24px;display:flex;flex-direction:column}
+.ptier.feat{border-color:#C2D4FB;box-shadow:0 14px 34px rgba(74,123,247,.12);background:#fff}
+.ptag{font-size:12.5px;font-weight:700;letter-spacing:.07em;text-transform:uppercase;color:var(--blue);margin-bottom:10px}
+.pprice{font-size:32px;font-weight:800;color:var(--ink);letter-spacing:-.02em;line-height:1.05}
+.pprice .u{font-size:14px;font-weight:600;color:var(--sec);letter-spacing:0}
+.pul{margin:18px 0 0;padding-left:18px;border-top:1px solid var(--bd);padding-top:16px}
+.pul li{font-size:14px;color:var(--body);line-height:1.45;margin-bottom:9px}
+.pul li:last-child{margin-bottom:0}
+
+@media print{
+  @page{size:1280px 720px;margin:0}
+  body{background:#fff;padding:0}
+  .note{display:none}
+  .slide{box-shadow:none;page-break-after:always;height:720px;min-height:720px}
+  .reveal,.stagger>*{opacity:1!important;transform:none!important}
+  .snode{opacity:1!important;filter:none!important;transform:none!important}
+  .sarrow{color:var(--blue)!important;transform:none!important}
+  .bar,.chbar{transition:none!important}
+  .tbd{outline:none}
+}
+</style>
+</head>
+<body>
+
+<div class="note"><b>Toggle × Oddle — Partnership Pitch.</b> Plain-language · interactive (click the story + the cards) · scroll to trigger animations. <span class="tbd">Orange-dashed = real numbers to confirm before sending.</span></div>
+
+<!-- 1 · COVER -->
+<div class="note">1 · Cover</div>
+<section class="slide" style="justify-content:center"><div class="glow"></div>
+  <div class="wm"><svg viewBox="0 0 1432 392" aria-hidden="true"><use href="#wmk"/></svg></div>
+  <div class="reveal" style="margin-top:34px;max-width:840px">
+    <div class="chip" style="margin-bottom:22px"><span class="livedot"></span> A partnership idea for Oddle</div>
+    <div style="font-size:74px;font-weight:800;line-height:1.03;letter-spacing:-.02em">We help your restaurants<br><span style="color:var(--blue)">sell more.</span></div>
+    <div style="font-size:20px;color:var(--body);margin-top:22px;max-width:58ch;line-height:1.6">Oddle gives a restaurant the tools to take orders.<br>Toggle brings in more customers.<br>Let's put the two together.</div>
+  </div>
+  <div class="seal" style="position:absolute;left:72px;bottom:54px;color:var(--blue);font-size:17px;font-weight:700"><span class="br">[&nbsp;</span>Toggle × Oddle<span class="br">&nbsp;]</span></div>
+  <div class="seal" style="position:absolute;right:72px;bottom:54px"><img src="toggle-logo-trim.png" alt="toggle" style="height:30px;width:auto;display:block"></div>
+</section>
+
+<!-- 2 · STATEMENT -->
+<div class="note">2 · Positioning statement</div>
+<section class="slide" style="justify-content:center">
+  <div class="watermark seal"><img src="toggle-logo-trim.png" alt="toggle" style="height:24px;width:auto;display:block"></div>
+  <div class="reveal">
+    <div class="strike">Not just another marketing agency</div>
+    <div class="statement" style="white-space:nowrap">We help your <span class="hl">restaurants grow.</span></div>
+    <div style="font-size:19px;color:var(--body);margin-top:28px;line-height:1.5;white-space:nowrap">The kind of partner that keeps them busy, keeps them selling — and keeps them on Oddle.</div>
+  </div>
+</section>
+
+<!-- 3 · WHO IS TOGGLE -->
+<div class="note">3 · Who is Toggle</div>
+<section class="slide">
+  <div class="watermark seal"><img src="toggle-logo-trim.png" alt="toggle" style="height:24px;width:auto;display:block"></div>
+  <div class="reveal"><div class="eyebrow">Who we are</div>
+  <h2 class="h1">We get businesses <span class="b">more customers</span></h2>
+  <p class="kicker" style="max-width:none;white-space:nowrap">A team in Malaysia that helps businesses get noticed online and get more sales. We've done it for 50+ businesses.</p></div>
+  <div class="grid cols3 stagger reveal" style="margin-top:30px">
+    <div class="card"><div class="ico"><svg aria-hidden="true"><use href="#ic-megaphone"/></svg></div><div class="ctitle">We do the marketing</div><p class="ctext">Ads, posts, photos and videos — all handled for you on Facebook, Instagram, Google and TikTok.</p></div>
+    <div class="card"><div class="ico green"><svg aria-hidden="true"><use href="#ic-users"/></svg></div><div class="ctitle">Real people, not a call centre</div><p class="ctext">You work with the actual team doing the work.</p></div>
+    <div class="card"><div class="ico purple"><svg aria-hidden="true"><use href="#ic-trend"/></svg></div><div class="ctitle">We're judged on sales</div><p class="ctext">We only care about one thing: more orders and more money for the business. Same as Oddle.</p></div>
+  </div>
+</section>
+
+<!-- 4 · THE TEAM -->
+<div class="note">4 · The team — initials are placeholders, swap real headshots</div>
+<section class="slide">
+  <div class="watermark seal"><img src="toggle-logo-trim.png" alt="toggle" style="height:24px;width:auto;display:block"></div>
+  <div class="reveal"><div class="eyebrow">The team</div>
+  <h2 class="h1">The people behind it</h2>
+  <p class="kicker">A full team covering every part of growing a restaurant — getting noticed, building the website, and bringing customers back.</p></div>
+  <div class="teamgrid reveal stagger" style="margin-top:26px">
+    <div><div class="colh">Getting noticed</div><div class="cols">Ads &amp; Google</div>
+      <div class="people">
+        <div class="person"><div class="av" style="background:linear-gradient(135deg,#4A7BF7,#3056C9)">YY</div><small>Yi Yang</small></div>
+        <div class="person"><div class="av" style="background:linear-gradient(135deg,#4A7BF7,#3056C9)">JD</div><small>Jordan</small></div>
+        <div class="person"><div class="av" style="background:linear-gradient(135deg,#4A7BF7,#3056C9)">SH</div><small>Shaun</small></div>
+        <div class="person"><div class="av" style="background:linear-gradient(135deg,#4A7BF7,#3056C9)">JL</div><small>Julian</small></div>
+      </div></div>
+    <div><div class="colh">Website &amp; design</div><div class="cols">Looks &amp; ordering page</div>
+      <div class="people">
+        <div class="person"><div class="av" style="background:linear-gradient(135deg,#2ECC9B,#16B981)">AZ</div><small>Aizad</small></div>
+        <div class="person"><div class="av" style="background:linear-gradient(135deg,#2ECC9B,#16B981)">WL</div><small>Wei Lee</small></div>
+        <div class="person"><div class="av" style="background:linear-gradient(135deg,#2ECC9B,#16B981)">DV</div><small>David</small></div>
+        <div class="person"><div class="av" style="background:linear-gradient(135deg,#2ECC9B,#16B981)">LA</div><small>Lau</small></div>
+      </div></div>
+    <div><div class="colh">Bringing them back</div><div class="cols">Repeat customers</div>
+      <div class="people">
+        <div class="person"><div class="av" style="background:linear-gradient(135deg,#8E6BE6,#6B2FB5)">ZD</div><small>Zaid</small></div>
+        <div class="person"><div class="av" style="background:linear-gradient(135deg,#8E6BE6,#6B2FB5)">YY</div><small>Yi Yang</small></div>
+        <div class="person"><div class="av" style="background:linear-gradient(135deg,#8E6BE6,#6B2FB5)">VK</div><small>Viknesh</small></div>
+        <div class="person"><div class="av" style="background:linear-gradient(135deg,#8E6BE6,#6B2FB5)">TF</div><small>Tiffany</small></div>
+      </div></div>
+  </div>
+  <p class="foot"><span class="tbdtag">to swap</span> Replace initials with the real headshots from the Company Profile deck.</p>
+</section>
+
+<!-- 5 · WHAT WE DO -->
+<div class="note">5 · What we do — <b>click a card to expand it</b></div>
+<section class="slide">
+  <div class="watermark seal"><img src="toggle-logo-trim.png" alt="toggle" style="height:24px;width:auto;display:block"></div>
+  <div class="reveal"><div class="eyebrow">What we do</div>
+  <h2 class="h1">Three simple things</h2>
+  <p class="kicker">Tap each one to see what it means.</p></div>
+  <div class="grid reveal stagger" style="gap:16px;margin-top:26px">
+    <div class="acc" data-acc><button class="acc-h" aria-expanded="false"><span class="ico"><svg aria-hidden="true"><use href="#ic-eye"/></svg></span><span class="ttl">1 &nbsp;·&nbsp; We get the restaurant noticed</span><span class="pm">+</span></button>
+      <div class="acc-b"><p>We put it in front of hungry people nearby with ads, posts and good photos — so more people discover it and want to order.</p></div></div>
+    <div class="acc" data-acc><button class="acc-h" aria-expanded="false"><span class="ico green"><svg aria-hidden="true"><use href="#ic-cart"/></svg></span><span class="ttl">2 &nbsp;·&nbsp; We turn "just looking" into orders</span><span class="pm">+</span></button>
+      <div class="acc-b"><p>A clean ordering page and the right message mean more people who look actually buy — instead of leaving.</p></div></div>
+    <div class="acc" data-acc><button class="acc-h" aria-expanded="false"><span class="ico purple"><svg aria-hidden="true"><use href="#ic-repeat"/></svg></span><span class="ttl">3 &nbsp;·&nbsp; We bring customers back</span><span class="pm">+</span></button>
+      <div class="acc-b"><p>Friendly reminders and offers bring past customers back again — so one order becomes ten over time.</p></div></div>
+  </div>
+</section>
+
+<!-- 6 · THE SIMPLE STORY -->
+<div class="note">6 · The simple story · <b>click the button to reveal each step</b></div>
+<section class="slide">
+  <div class="watermark seal"><img src="toggle-logo-trim.png" alt="toggle" style="height:24px;width:auto;display:block"></div>
+  <div class="reveal"><div class="eyebrow">How it works</div>
+  <h2 class="h1">Where Toggle fits in</h2>
+  <p class="kicker">A great restaurant isn't enough on its own. Here's the simple version 👇</p></div>
+  <div class="story reveal" id="story" style="margin-top:34px">
+    <div class="snode show" data-step="1"><div class="sico slate"><svg aria-hidden="true"><use href="#ic-store"/></svg></div><div class="stt">A great restaurant</div><div class="stx">Good food, ready to take orders on Oddle — but not enough people know about it.</div></div>
+    <div class="sarrow" data-step="2">→</div>
+    <div class="snode" data-step="2"><div class="sico"><svg aria-hidden="true"><use href="#ic-megaphone"/></svg></div><div class="stt">Toggle brings the crowd</div><div class="stx">We run the ads and posts that get hungry people to notice it and click order.</div></div>
+    <div class="sarrow" data-step="3">→</div>
+    <div class="snode" data-step="3"><div class="sico green"><svg aria-hidden="true"><use href="#ic-trend"/></svg></div><div class="stt">More orders, they stay</div><div class="stx">Orders come in through Oddle. The restaurant grows — and stays with Oddle longer.</div></div>
+  </div>
+  <div style="margin-top:30px;display:flex;align-items:center;gap:18px">
+    <button class="btn" id="storyBtn" onclick="advanceStory()">See what happens next →</button>
+    <span style="font-size:15px;color:var(--sec)" id="storyHint">Oddle takes the order. Toggle makes the order happen.</span>
+  </div>
+</section>
+
+<!-- 7 · THE PROBLEM -->
+<div class="note">7 · The problem — framed in Oddle's interest</div>
+<section class="slide">
+  <div class="watermark seal"><img src="toggle-logo-trim.png" alt="toggle" style="height:24px;width:auto;display:block"></div>
+  <div class="reveal"><div class="eyebrow">The problem we both have</div>
+  <h2 class="h1">Quiet restaurants <span class="b">leave.</span></h2>
+  <p class="kicker">Many restaurants sign up full of hope, then the orders stay slow and they drop off — not because the food is bad, but because nobody is bringing them customers.</p></div>
+  <div class="grid cols3 reveal stagger" style="margin-top:28px">
+    <div class="card"><div class="ico amber"><svg aria-hidden="true"><use href="#ic-moon"/></svg></div><div class="ctitle">Orders stay slow</div><p class="ctext">Great tools, but a quiet ordering page — because no one's driving people to it.</p></div>
+    <div class="card"><div class="ico purple"><svg aria-hidden="true"><use href="#ic-help"/></svg></div><div class="ctitle">They don't know marketing</div><p class="ctext">Owners are chefs, not marketers. So it gets skipped — or done badly.</p></div>
+    <div class="card"><div class="ico red"><svg aria-hidden="true"><use href="#ic-exit"/></svg></div><div class="ctitle">So they cancel</div><p class="ctext">A restaurant that isn't growing blames the tool and leaves. That's lost income for Oddle too.</p></div>
+  </div>
+  <div class="card reveal" style="margin-top:20px;background:var(--blue-soft);border-color:#CFE0FE">
+    <p class="ctext big" style="color:var(--ink)"><b>Your problem and our offer are the same thing.</b> You want restaurants to stay. We keep them busy enough to want to.</p>
+  </div>
+</section>
+
+<!-- 8 · PROOF -->
+<div class="note">8 · Proof — animated numbers + before/after bars</div>
+<section class="slide">
+  <div class="watermark seal"><img src="toggle-logo-trim.png" alt="toggle" style="height:24px;width:auto;display:block"></div>
+  <div class="reveal"><div class="eyebrow">Real results</div>
+  <h2 class="h1">When we switch it on, sales follow</h2>
+  <p class="kicker">A few real examples from food &amp; online shops we've grown.</p></div>
+  <div style="display:grid;grid-template-columns:1.05fr .95fr;gap:36px;margin-top:24px;align-items:stretch">
+    <div class="grid cols2 reveal stagger">
+      <div class="card" style="text-align:center;display:flex;flex-direction:column;justify-content:center"><div class="stat b num" data-count="6" data-suffix="×">6×</div><div class="statlbl">Every <b>RM1</b> of ads brought back<br><b>RM6</b> in sales</div></div>
+      <div class="card" style="text-align:center;display:flex;flex-direction:column;justify-content:center"><div class="stat num" data-count="11.5" data-dec="1" data-suffix="×">11.5×</div><div class="statlbl">Another shop:<br><b>RM1 → RM11.50</b> back</div></div>
+      <div class="card" style="text-align:center;display:flex;flex-direction:column;justify-content:center"><div class="stat num" data-count="32000" data-suffix="+">32,000+</div><div class="statlbl">new customers brought in<br>for one brand</div></div>
+      <div class="card" style="text-align:center;display:flex;flex-direction:column;justify-content:center"><div class="stat num" data-count="50" data-suffix="+">50+</div><div class="statlbl">businesses grown across<br>Malaysia &amp; the region</div></div>
+    </div>
+    <div class="card reveal" id="barCard" style="display:flex;flex-direction:column">
+      <div style="font-size:16px;font-weight:700;margin-bottom:6px">Monthly orders — one shop, before &amp; after</div>
+      <div style="font-size:13px;color:var(--sec);margin-bottom:auto">Same shop. We started running their marketing.</div>
+      <div class="bars" id="bars" style="margin-top:18px">
+        <div class="barcol"><div class="barwrap"><div class="bar before" data-h="58"></div></div><div class="barcap">Before</div><div class="barsub">slow months</div></div>
+        <div class="barcol"><div class="barwrap"><div class="bar after" data-h="100"></div></div><div class="barcap">After</div><div class="barsub">3× the orders</div></div>
+      </div>
+    </div>
+  </div>
+  <p class="foot"><span class="tbdtag">to confirm</span> Swap in the real Oddle-merchant numbers (Mahboob, TPL, Kind Desserts) once Daron pulls them.</p>
+</section>
+
+<!-- 9 · CASE STUDY — TPL FRESH MEATS -->
+<div class="note">9 · Case study — TPL Fresh Meats</div>
+<section class="slide">
+  <div class="watermark seal"><img src="toggle-logo-trim.png" alt="toggle" style="height:24px;width:auto;display:block"></div>
+  <div class="reveal"><div class="eyebrow">Case study</div>
+  <h2 class="h1">TPL <span class="b">Fresh Meats</span></h2></div>
+  <div class="cs reveal">
+    <div class="cstl">
+      <div class="csstep"><div class="csh">Challenge</div>
+        <ul class="csul"><li>Struggled to establish a consistent stream of online sales.</li><li>Hard to expand brand reach in a crowded fresh-food market.</li></ul></div>
+      <div class="csstep"><div class="csh">Solution</div>
+        <ul class="csul"><li>Dual-platform approach with targeted Meta &amp; Google ads.</li><li>Repurposed organic social content into high-performing, authentic ad creatives.</li></ul></div>
+      <div class="csstep"><div class="csh">Result</div>
+        <p class="csres">Consistent <b>ROAS of +20</b>, with annual revenue scaled from <b>RM1.0M to RM1.55M</b> since the Toggle partnership began (2024).</p></div>
+    </div>
+    <div class="chart">
+      <div class="chartttl">Revenue growth · 2023 → 2025</div>
+      <div class="chartsub">Orders &amp; revenue, since Toggle began</div>
+      <div class="chbars">
+        <div class="chgroup"><div class="chpair"><div class="chbar rev" data-h="56"></div><div class="chbar ord" data-h="62"></div></div><div class="chx">2023</div></div>
+        <div class="chgroup"><div class="chpair"><div class="chbar rev" data-h="76"></div><div class="chbar ord" data-h="86"></div></div><div class="chx">2024</div></div>
+        <div class="chgroup"><div class="chpair"><div class="chbar rev" data-h="88"></div><div class="chbar ord" data-h="100"></div></div><div class="chx">2025</div></div>
+      </div>
+      <div class="chlegend"><span class="lg rev">Revenue</span><span class="lg ord">Orders</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 10 · CASE STUDY — RESTORAN MAHBUB -->
+<div class="note">10 · Case study — Restoran Mahbub</div>
+<section class="slide">
+  <div class="watermark seal"><img src="toggle-logo-trim.png" alt="toggle" style="height:24px;width:auto;display:block"></div>
+  <div class="reveal"><div class="eyebrow">Case study</div>
+  <h2 class="h1">Restoran <span class="b">Mahbub</span></h2></div>
+  <div class="cs reveal">
+    <div class="cstl">
+      <div class="csstep"><div class="csh">Challenge</div>
+        <ul class="csul"><li>Low online-ordering volume — heavy reliance on offline placements.</li><li>Outdated digital content; loyal customers unaware of online options.</li></ul></div>
+      <div class="csstep"><div class="csh">Solution</div>
+        <ul class="csul"><li>Digital growth strategy to close the online-ordering awareness gap.</li><li>Promotional campaigns focused on prospecting and long-term loyalty.</li></ul></div>
+      <div class="csstep"><div class="csh">Result</div>
+        <p class="csres">Scaled online revenue by <b>over 120%</b> (<b>RM419k → RM921k</b>) while holding a high-efficiency <b>ROAS of 20</b>.</p></div>
+    </div>
+    <div class="chart">
+      <div class="chartttl">Revenue growth · 2021 → 2024</div>
+      <div class="chartsub">Online revenue, year on year</div>
+      <div class="chbars">
+        <div class="chgroup"><div class="chpair"><div class="chbar rev" data-h="45"></div></div><div class="chx">2021</div></div>
+        <div class="chgroup"><div class="chpair"><div class="chbar rev" data-h="70"></div></div><div class="chx">2022</div></div>
+        <div class="chgroup"><div class="chpair"><div class="chbar rev" data-h="92"></div></div><div class="chx">2023</div></div>
+        <div class="chgroup"><div class="chpair"><div class="chbar rev" data-h="95"></div></div><div class="chx">2024</div></div>
+      </div>
+      <div class="chlegend"><span class="lg rev">Revenue</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- 11 · WHAT RESTAURANTS GET -->
+<div class="note">11 · What restaurants get — click to reveal</div>
+<section class="slide">
+  <div class="watermark seal"><img src="toggle-logo-trim.png" alt="toggle" style="height:24px;width:auto;display:block"></div>
+  <div class="reveal"><div class="eyebrow">Only for Oddle restaurants</div>
+  <h2 class="h1">What your restaurants get</h2>
+  <p class="kicker">A special package, only for Oddle restaurants. Tap to see each one.</p></div>
+  <div class="grid cols2 reveal stagger" style="gap:16px;margin-top:24px">
+    <div class="acc" data-acc><button class="acc-h" aria-expanded="false"><span class="ico"><svg aria-hidden="true"><use href="#ic-package"/></svg></span><span class="ttl">Everything done for them</span><span class="pm">+</span></button>
+      <div class="acc-b"><p>Ads, posts, photos, videos, website — the full marketing package, handled. The owner just keeps cooking.</p></div></div>
+    <div class="acc" data-acc><button class="acc-h" aria-expanded="false"><span class="ico green"><svg aria-hidden="true"><use href="#ic-tag"/></svg></span><span class="ttl">A cheaper price <span class="tbdtag">% TBD</span></span><span class="pm">+</span></button>
+      <div class="acc-b"><p>A special partner discount only for Oddle restaurants — so it's easy to say yes and easy to start.</p></div></div>
+    <div class="acc" data-acc><button class="acc-h" aria-expanded="false"><span class="ico amber"><svg aria-hidden="true"><use href="#ic-gift"/></svg></span><span class="ttl">Ready-made posts to start</span><span class="pm">+</span></button>
+      <div class="acc-b"><p>Ready-made social posts and content to get going — so their pages look alive from day one.</p></div></div>
+    <div class="acc" data-acc><button class="acc-h" aria-expanded="false"><span class="ico purple"><svg aria-hidden="true"><use href="#ic-star"/></svg></span><span class="ttl">Real pros on Facebook, Google &amp; TikTok</span><span class="pm">+</span></button>
+      <div class="acc-b"><p>Experts who run these ads every day. We hold <b>exclusive partnerships with Meta, Google and TikTok</b> — so restaurants get direct, expert support most agencies can't reach.</p></div></div>
+    <div class="acc" data-acc><button class="acc-h" aria-expanded="false"><span class="ico red"><svg aria-hidden="true"><use href="#ic-coins"/></svg></span><span class="ttl">Up to RM24k in free ad credits</span><span class="pm">+</span></button>
+      <div class="acc-b"><p>Up to <b>RM24,000</b> of ad spend behind each restaurant to kick things off — real reach from day one, on us.</p></div></div>
+    <div class="acc" data-acc><button class="acc-h" aria-expanded="false"><span class="ico slate"><svg aria-hidden="true"><use href="#ic-rocket"/></svg></span><span class="ttl">Up to 100 free TikTok creator videos</span><span class="pm">+</span></button>
+      <div class="acc-b"><p>Up to <b>100 TikTok influencer videos</b> made for the restaurant — real creators showing real food to hungry locals.</p></div></div>
+  </div>
+</section>
+
+<!-- 12 · PRICING TIERS -->
+<div class="note">12 · Pricing tiers · <span class="tbd">currency shown as RM — confirm RM vs USD</span></div>
+<section class="slide">
+  <div class="watermark seal"><img src="toggle-logo-trim.png" alt="toggle" style="height:24px;width:auto;display:block"></div>
+  <div class="reveal"><div class="eyebrow">Pricing</div>
+  <h2 class="h1">Service package <span class="b">tiers</span></h2>
+  <p class="kicker">Priced by restaurant size and marketing appetite — the Oddle partner discount applies on top.</p></div>
+  <div class="prices reveal stagger">
+    <div class="ptier">
+      <div class="ptag">Small clients</div>
+      <div class="pprice">RM1–1.5k</div>
+      <ul class="pul">
+        <li>1–2 platforms (likely Meta)</li>
+        <li>1–2 static ads</li>
+        <li>Website audit — suggestions only, no management or build</li>
+      </ul>
+    </div>
+    <div class="ptier feat">
+      <div class="ptag">Mid-tier clients</div>
+      <div class="pprice">RM2–2.5k <span class="u">per platform</span></div>
+      <ul class="pul">
+        <li>Ad management + reporting</li>
+        <li>Creative production</li>
+        <li>Website consultation &amp; enhancement</li>
+        <li>Focus on the user journey</li>
+      </ul>
+    </div>
+    <div class="ptier">
+      <div class="ptag">Large / enterprise</div>
+      <div class="pprice">RM4k+</div>
+      <ul class="pul">
+        <li>Same scope as mid-tier</li>
+        <li>Higher attention &amp; effort — justified by client size and marketing appetite</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- 13 · THE PARTNERSHIP -->
+<div class="note">13 · The partnership</div>
+<section class="slide">
+  <div class="watermark seal"><img src="toggle-logo-trim.png" alt="toggle" style="height:24px;width:auto;display:block"></div>
+  <div class="reveal"><div class="eyebrow">The deal</div>
+  <h2 class="h1">Simple: <span class="b">we share the income</span></h2>
+  <p class="kicker">You send us your restaurants. We grow them. You earn a share of what they pay us — every month, for as long as they stay.</p></div>
+  <div class="story reveal" style="margin-top:26px">
+    <div class="snode show compact"><div class="sico slate"><svg aria-hidden="true"><use href="#ic-store"/></svg></div><div class="stt">You introduce</div><div class="stx">Oddle refers its restaurants to Toggle's growth package.</div></div>
+    <div class="sarrow show">→</div>
+    <div class="snode show compact"><div class="sico"><svg aria-hidden="true"><use href="#ic-rocket"/></svg></div><div class="stt">We grow them</div><div class="stx">Toggle runs the marketing and gets them more orders.</div></div>
+    <div class="sarrow show">→</div>
+    <div class="snode show compact" style="border-color:#C2D4FB;box-shadow:0 14px 34px rgba(74,123,247,.14)"><div class="sico green"><svg aria-hidden="true"><use href="#ic-coins"/></svg></div><div class="stt">You get paid</div><div class="stx"><b>Oddle earns a share</b> of what each restaurant pays Toggle.</div></div>
+  </div>
+  <div class="grid cols3 reveal stagger" style="margin-top:22px">
+    <div class="card" style="text-align:center;padding:20px"><div class="stat b">~20%</div><div class="statlbl">of what each restaurant pays<br>Toggle, every month</div></div>
+    <div class="card" style="text-align:center;padding:20px"><div class="stat" style="font-size:30px;line-height:1.2">Small → Big</div><div class="statlbl">packages priced by<br>restaurant size</div></div>
+    <div class="card" style="text-align:center;padding:20px"><div class="stat" style="font-size:30px;line-height:1.2">For as long<br>as they stay</div><div class="statlbl">recurring payout to Oddle<br>every month</div></div>
+  </div>
+</section>
+
+<!-- 11 · CLOSE -->
+<div class="note">14 · Close</div>
+<section class="slide" style="justify-content:center"><div class="glow"></div>
+  <div class="wm"><svg viewBox="0 0 1432 392" aria-hidden="true"><use href="#wmk"/></svg></div>
+  <div class="reveal" style="margin-top:30px">
+    <div style="font-size:64px;font-weight:800;line-height:1.06;letter-spacing:-.02em">Oddle sets them up.<br><span style="color:var(--blue)">Toggle helps them sell.</span></div>
+    <div style="font-size:21px;color:var(--body);margin-top:22px;line-height:1.45;white-space:nowrap">More orders for every restaurant — and fewer of them ever leaving Oddle.</div>
+  </div>
+  <div style="position:absolute;left:72px;bottom:64px">
+    <div style="font-weight:800;font-size:19px">Viknesh <span style="font-weight:500;color:var(--body)">— Partnerships, Toggle</span></div>
+    <div class="num" style="font-weight:700;font-size:18px;color:var(--deep);margin-top:6px">(+60) 125 688 681</div>
+    <div style="font-weight:700;font-size:18px;color:var(--deep);margin-top:2px">toggle.solutions</div>
+  </div>
+  <div class="chip" style="position:absolute;right:72px;bottom:70px"><span class="livedot"></span> Let's grow your restaurants</div>
+</section>
+
+<!-- icon sprite + wordmark -->
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg">
+  <symbol id="ic-megaphone" viewBox="0 0 24 24"><path d="m3 11 18-5v12L3 14v-3z"/><path d="M11.6 16.8a3 3 0 1 1-5.8-1.6"/></symbol>
+  <symbol id="ic-users" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></symbol>
+  <symbol id="ic-trend" viewBox="0 0 24 24"><polyline points="22 7 13.5 15.5 8.5 10.5 2 17"/><polyline points="16 7 22 7 22 13"/></symbol>
+  <symbol id="ic-eye" viewBox="0 0 24 24"><path d="M2 12s3-7 10-7 10 7 10 7-3 7-10 7-10-7-10-7z"/><circle cx="12" cy="12" r="3"/></symbol>
+  <symbol id="ic-cart" viewBox="0 0 24 24"><circle cx="8" cy="21" r="1"/><circle cx="19" cy="21" r="1"/><path d="M2.05 2.05h2l2.66 12.42a2 2 0 0 0 2 1.58h9.78a2 2 0 0 0 1.95-1.57l1.65-7.43H5.12"/></symbol>
+  <symbol id="ic-repeat" viewBox="0 0 24 24"><path d="m17 2 4 4-4 4"/><path d="M3 11v-1a4 4 0 0 1 4-4h14"/><path d="m7 22-4-4 4-4"/><path d="M21 13v1a4 4 0 0 1-4 4H3"/></symbol>
+  <symbol id="ic-store" viewBox="0 0 24 24"><path d="m2 7 1.5-3.5A2 2 0 0 1 5.3 2h13.4a2 2 0 0 1 1.8 1.5L22 7"/><path d="M4 7.5V20a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V7.5"/><path d="M2 7h20"/><path d="M9 21v-6h6v6"/></symbol>
+  <symbol id="ic-rocket" viewBox="0 0 24 24"><path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z"/><path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z"/><path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0"/><path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5"/></symbol>
+  <symbol id="ic-coins" viewBox="0 0 24 24"><circle cx="8" cy="8" r="6"/><path d="M18.09 10.37A6 6 0 1 1 10.34 18"/><path d="M7 6h1v4"/><path d="m16.71 13.88.7.71-2.82 2.82"/></symbol>
+  <symbol id="ic-moon" viewBox="0 0 24 24"><path d="M12 3a6 6 0 0 0 9 9 9 9 0 1 1-9-9z"/></symbol>
+  <symbol id="ic-help" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M9.09 9a3 3 0 0 1 5.83 1c0 2-3 3-3 3"/><line x1="12" y1="17" x2="12.01" y2="17"/></symbol>
+  <symbol id="ic-exit" viewBox="0 0 24 24"><path d="M9 21H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h4"/><polyline points="16 17 21 12 16 7"/><line x1="21" y1="12" x2="9" y2="12"/></symbol>
+  <symbol id="ic-package" viewBox="0 0 24 24"><path d="m7.5 4.27 9 5.15"/><path d="M21 8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16Z"/><path d="m3.3 7 8.7 5 8.7-5"/><path d="M12 22V12"/></symbol>
+  <symbol id="ic-tag" viewBox="0 0 24 24"><path d="M12.586 2.586A2 2 0 0 0 11.172 2H4a2 2 0 0 0-2 2v7.172a2 2 0 0 0 .586 1.414l8.704 8.704a2.426 2.426 0 0 0 3.42 0l6.58-6.58a2.426 2.426 0 0 0 0-3.42z"/><circle cx="7.5" cy="7.5" r=".5" fill="currentColor"/></symbol>
+  <symbol id="ic-gift" viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="4" rx="1"/><path d="M12 8v13"/><path d="M19 12v7a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2v-7"/><path d="M7.5 8a2.5 2.5 0 0 1 0-5C9.5 3 12 5.5 12 8c0-2.5 2.5-5 4.5-5a2.5 2.5 0 0 1 0 5"/></symbol>
+  <symbol id="ic-star" viewBox="0 0 24 24"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></symbol>
+  <symbol id="wmk" viewBox="0 0 1432 392"><path fill="currentColor" d="M1166.39 1.57487C1166.39 2.43389 1157.45 54.1188 1146.44 116.398C1135.43 178.678 1126.5 232.081 1126.5 234.944C1126.5 238.667 1127.77 241.244 1130.64 243.964C1134.47 247.4 1136.07 247.686 1147.4 247.686C1154.42 247.686 1160 247.973 1160 248.545C1160 249.261 1152.82 290.351 1151.23 298.799C1150.43 302.807 1149.63 303.523 1142.77 304.812C1120.27 309.107 1090.59 307.818 1072.88 301.948C1061.55 298.083 1049.75 288.347 1044.96 278.898C1041.61 272.169 1041.13 269.162 1041.29 254.129C1041.29 239.239 1044.16 221.486 1062.35 119.119C1074 54.4051 1083.41 1.00218 1083.41 0.715838C1083.41 0.286342 1102.08 0 1124.9 0C1154.26 0 1166.39 0.429496 1166.39 1.57487Z"/>
+<path fill="currentColor" d="M140.413 21.6189C140.413 22.9074 133.871 60.8478 131.637 72.5879L130.68 77.3125H155.571C171.527 77.3125 180.303 77.8852 180.303 78.7442C180.303 80.6054 172.485 125.418 171.527 129.856C170.73 133.006 170.091 133.149 145.678 133.436L120.787 133.865L111.533 186.123C101.321 243.821 101.002 246.971 104.672 248.259C106.108 248.689 116.798 249.118 128.606 249.118C148.391 249.118 150.146 249.261 149.349 251.552C148.87 252.984 146.636 265.583 144.243 279.614L139.775 305.241L100.523 304.669C66.058 304.096 60.1543 303.666 50.8998 300.946C30.7951 295.076 20.7428 285.054 17.7113 268.017C15.7965 256.849 16.4348 250.693 27.7636 187.411C32.7099 160.209 36.6989 136.872 36.6989 135.44C36.6989 133.436 34.3055 133.149 18.3495 133.149C6.86114 133.149 0 132.577 0 131.718C0 129.856 7.81846 85.0438 8.93536 80.4623C9.57368 77.4557 10.2118 77.3125 28.5613 77.3125H47.3895L51.0594 56.839C52.974 45.6716 55.2078 32.7862 56.1653 28.2047L57.7609 20.044H99.087C127.01 20.044 140.413 20.4735 140.413 21.6189Z"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M644.145 113.964C646.698 121.409 647.177 121.839 651.644 121.409L656.59 120.98L660.42 99.0745L664.09 77.3125H746.742L745.944 80.4623C745.475 82.2857 737.196 129.18 727.258 185.472L727.255 185.487L726.637 188.986C716.585 246.827 707.49 297.367 706.692 301.376C696.321 347.19 666.643 375.109 614.945 387.565C600.585 391.001 596.596 391.287 568.832 391.43C535.803 391.43 524.475 389.856 504.53 382.697C476.287 372.675 457.619 354.779 450.758 331.155C449.481 326.717 448.364 321.42 448.364 319.702V316.409H530.697L533.57 322.135C538.995 333.16 551.44 338.457 572.023 338.457C594.841 338.457 609.042 331.298 618.136 315.12C622.923 306.816 624.678 300.517 628.827 277.036C632.656 254.988 632.656 254.845 628.029 254.845C625.157 254.845 622.764 256.993 617.658 264.008C598.032 291.21 566.599 302.521 529.421 295.649C488.414 288.061 463.363 258.711 459.693 213.612C456.023 167.654 470.862 127.136 501.657 99.3609C512.029 90.0547 517.294 86.6186 528.145 81.894C552.078 71.5856 578.246 69.5813 600.585 76.1671C621.009 82.1803 638.241 97.2133 644.145 113.964ZM546.813 171.09C552.078 155.627 566.598 141.596 582.235 137.015C586.224 135.726 593.564 134.724 598.51 134.724C624.519 134.438 641.911 149.041 644.145 173.094C646.538 198.865 632.656 223.204 610.318 232.081C599.308 236.519 579.842 236.662 569.63 232.367C560.535 228.644 553.355 222.202 548.568 213.611C545.377 207.885 544.898 204.592 544.898 191.849C544.898 183.545 545.855 174.239 546.813 171.09Z"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M936.619 113.535C939.172 120.121 940.129 120.98 944.437 121.409C947.15 121.696 949.384 121.409 949.384 120.693C949.384 118.975 955.606 84.3279 956.564 80.4623L957.361 77.3125H998.049C1022.14 77.3125 1038.74 77.8852 1038.74 78.6011C1038.74 83.612 999.805 300.803 997.252 309.966C981.934 364.944 930.077 394.294 852.849 391.86C824.448 390.858 808.013 387.565 788.866 379.261C762.06 367.521 746.423 348.622 741.317 321.706L740.2 316.409H823.331L825.086 320.417C827.16 325.142 833.862 331.728 839.447 334.448C846.946 337.884 863.859 339.459 875.347 337.884C902.154 334.019 913.004 321.276 919.865 285.913L920.913 280.423C924.752 260.328 925.594 255.922 923.993 255.023C923.544 254.771 922.904 254.794 922.084 254.823C921.792 254.834 921.478 254.845 921.141 254.845C917.471 254.845 915.876 256.277 911.887 262.29C909.334 266.299 903.111 273.171 898.165 277.609C861.785 310.539 794.61 301.805 767.485 260.715C749.454 233.369 746.582 189.416 760.464 150.044C770.198 122.555 788.547 99.7904 812.64 85.7596C833.383 73.5901 864.816 69.1518 889.548 74.7354C910.451 79.46 929.439 95.0658 936.619 113.535ZM853.807 149.614C830.99 171.805 830.83 211.607 853.169 227.213C862.423 233.655 869.125 235.517 882.368 235.517C902.632 235.373 918.908 226.64 928.321 210.891C934.863 199.724 936.778 192.565 936.778 178.821C936.778 163.358 933.427 154.482 924.013 146.035C912.206 135.44 893.697 131.717 876.784 136.585C866.412 139.592 860.987 142.598 853.807 149.614Z"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M1352.75 76.883C1402.69 89.7684 1431.42 126.563 1431.26 177.246C1431.1 184.977 1430.3 194.999 1429.18 199.724L1427.11 208.314L1341.26 208.744L1255.26 209.03L1256.38 218.05C1257.65 228.931 1263.72 240.814 1270.74 245.539C1288.61 257.708 1324.99 254.272 1336.64 239.239L1341.1 233.512L1381.47 233.369C1406.52 233.369 1421.68 233.942 1421.68 234.801C1421.68 235.517 1419.93 240.385 1417.85 245.396C1401.1 285.197 1356.26 309.107 1298.34 309.25C1233.4 309.25 1190.32 279.327 1179.15 226.211C1176.92 215.759 1176.92 188.7 1179.31 176.53C1187.13 133.579 1212.82 101.508 1253.03 84.3279C1278.56 73.4469 1301.53 70.5835 1336 73.8764C1340.47 74.3059 1348.12 75.5944 1352.75 76.883ZM1263.08 161.354C1269.14 143.601 1284.14 129.999 1301.53 125.991C1311.59 123.843 1325.79 125.561 1333.92 129.999C1342.38 134.581 1349.08 145.319 1350.68 157.059L1351.79 164.647H1261.96L1263.08 161.354Z"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M345.927 75.3081C409.751 87.0481 448.364 137.301 440.706 199.008C439.588 207.598 437.195 219.052 435.44 224.349C420.441 267.873 379.594 299.944 328.854 307.818C314.653 310.109 285.134 309.823 271.731 307.246C222.746 298.083 187.962 267.587 177.91 224.922C174.878 211.894 174.878 185.407 177.75 171.519C188.281 121.982 231.043 83.7552 286.411 74.5923C299.814 72.4447 332.364 72.731 345.927 75.3081ZM297.42 137.158C281.624 142.169 269.976 153.766 262.955 171.376C258.328 182.973 257.211 207.026 260.721 217.907C266.944 237.092 281.305 247.686 301.409 247.686C315.929 247.686 325.503 244.393 335.555 236.232C350.873 223.777 358.053 207.026 357.894 184.691C357.894 161.64 350.714 147.323 335.715 139.449C325.982 134.295 309.387 133.292 297.42 137.158Z"/></symbol>
+</svg>
+
+<script>
+function easeOutCubic(t){return 1-Math.pow(1-t,3);}
+function finalText(el){
+  const t=parseFloat(el.dataset.count); const dec=parseInt(el.dataset.dec||"0");
+  const pre=el.dataset.prefix||""; const suf=el.dataset.suffix||"";
+  return pre+(dec>0?t.toFixed(dec):Math.round(t).toLocaleString('en-US'))+suf;
+}
+function countUp(el){
+  if(el.dataset.done) return; el.dataset.done=1;
+  const target=parseFloat(el.dataset.count); const dec=parseInt(el.dataset.dec||"0");
+  const pre=el.dataset.prefix||""; const suf=el.dataset.suffix||""; const dur=1300; let start=null;
+  function fmt(v){ return dec>0 ? v.toFixed(dec) : Math.round(v).toLocaleString('en-US'); }
+  function step(ts){ if(!start)start=ts; const p=Math.min((ts-start)/dur,1);
+    el.textContent=pre+fmt(target*easeOutCubic(p))+suf; if(p<1) requestAnimationFrame(step); }
+  requestAnimationFrame(step);
+}
+function growBars(scope){ scope.querySelectorAll('[data-h]').forEach(b=>{ b.style.height=(b.dataset.h||0)+'%'; }); }
+
+/* single observer drives reveals + count-ups + bars (no double-fire) */
+const io=new IntersectionObserver((entries)=>{
+  entries.forEach(e=>{ if(e.isIntersecting){
+    e.target.classList.add('in');
+    e.target.querySelectorAll('[data-count]').forEach(countUp);
+    growBars(e.target);
+    io.unobserve(e.target);
+  }});
+},{threshold:.18});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* interactive story stepper */
+let storyStep=1; const STORY_MAX=3;
+function advanceStory(){
+  const btn=document.getElementById('storyBtn'); const hint=document.getElementById('storyHint');
+  if(storyStep>=STORY_MAX){
+    document.querySelectorAll('#story [data-step]').forEach(n=>{ if(n.dataset.step!=="1") n.classList.remove('show'); });
+    storyStep=1; btn.textContent='See what happens next →'; hint.textContent='Oddle takes the order. Toggle makes the order happen.'; return;
+  }
+  storyStep++;
+  document.querySelectorAll('#story [data-step="'+storyStep+'"]').forEach(n=>n.classList.add('show'));
+  if(storyStep>=STORY_MAX){ btn.textContent='↻ Replay'; hint.textContent='That’s the whole partnership in one picture.'; }
+}
+
+/* accordions */
+document.querySelectorAll('[data-acc] .acc-h').forEach(h=>{
+  h.addEventListener('click',()=>{
+    const open=h.parentElement.classList.toggle('open');
+    h.setAttribute('aria-expanded', open?'true':'false');
+  });
+});
+
+/* print/export: force every animation to its final state */
+window.addEventListener('beforeprint',()=>{
+  document.querySelectorAll('[data-count]').forEach(el=>{ el.dataset.done=1; el.textContent=finalText(el); });
+  document.querySelectorAll('[data-h]').forEach(b=>{ b.style.height=(b.dataset.h||0)+'%'; });
+  document.querySelectorAll('.reveal,.stagger').forEach(e=>e.classList.add('in'));
+  document.querySelectorAll('.snode,.sarrow').forEach(e=>e.classList.add('show'));
+});
+</script>
+</body>
+</html>

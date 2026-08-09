@@ -1,0 +1,714 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Toggle Solutions · UK Higher Education: Lead Acquisition</title>
+<meta name="description" content="Toggle's side of the UK university pitch: education case studies, a UK cost-per-lead projection in pounds, three funnel routes, and real education creative.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#4A7BF7; --ink:#0F0F0F; --navy:#0A1224; --card:#F2F3F6; --callout:#DDE5FE;
+  --body:#4A4A4A; --caption:#9AA0A8; --struck:#6B7280; --teal:#2ECC9B; --pink:#F59EC9;
+  --purple:#8E6BE6; --orange:#F28B4C; --slate:#2C2C36; --paper:#FAFAFA; --border:#E4E6EE; --blue-deep:#3056C9;
+  --warn:#A4541C;
+}
+*{box-sizing:border-box}
+body{background:#E9EBF1;margin:0;padding:40px 0 80px;font-family:"Inter Tight",Inter,-apple-system,"Segoe UI",sans-serif;color:var(--ink)}
+.dochead{max-width:1280px;margin:0 auto 12px;font-size:14px;color:#555}
+.dochead strong{color:var(--ink)}
+.note{max-width:1280px;margin:36px auto 10px;font-size:13px;font-weight:500;color:#667}
+.note b{color:var(--blue)}
+.slide{width:1280px;height:720px;background:#fff;margin:0 auto;position:relative;padding:56px 64px;box-shadow:0 2px 18px rgba(10,18,36,.14);overflow:hidden;display:flex;flex-direction:column}
+.slide.hasband{padding-bottom:116px}
+.slide.hasfoot{padding-bottom:88px}
+.slide > h2,.slide > p,.slide > table.dt,.slide > .flow{flex:none}
+.slide > .grid{flex:1 1 auto;align-content:stretch}
+.slide.dark{background:var(--navy);color:#fff}
+.num{font-variant-numeric:tabular-nums}
+.wm{position:absolute;top:34px;right:64px;width:104px;opacity:.9}
+.h1{font-size:38px;font-weight:800;color:var(--blue);margin:0 0 8px;line-height:1.08}
+.kicker{font-size:15px;color:var(--body);margin:0 0 26px;line-height:1.5}
+.pill{display:inline-block;background:var(--blue-deep);color:#fff;font-weight:700;font-size:17px;border-radius:999px;padding:9px 26px;vertical-align:middle;margin-left:16px}
+.pill.t{background:var(--teal);color:var(--ink)}.pill.o{background:var(--orange);color:#fff}
+.pill.est{background:#fff;color:var(--warn);border:1.5px solid var(--warn);font-size:13px;padding:7px 18px;font-weight:700;letter-spacing:.02em}
+.band{position:absolute;left:64px;right:64px;bottom:44px;background:var(--blue-deep);color:#fff;font-weight:700;font-size:14.5px;text-align:center;border-radius:8px;padding:13px 18px}
+.band.ink{background:var(--slate)}
+.grid{display:grid;gap:20px}
+.cols2{grid-template-columns:1fr 1fr}.cols3{grid-template-columns:1fr 1fr 1fr}.cols4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--card);border-radius:10px;padding:24px}
+.callout{background:var(--callout);border-radius:10px;padding:24px}
+.topbar{position:relative;padding-top:30px}
+.topbar::before{content:"";position:absolute;top:0;left:0;right:0;height:7px;border-radius:10px 10px 0 0;background:var(--blue)}
+.topbar.t-teal::before{background:var(--teal)}.topbar.t-pink::before{background:var(--pink)}
+.topbar.t-purple::before{background:var(--purple)}.topbar.t-slate::before{background:var(--slate)}.topbar.t-orange::before{background:var(--orange)}
+.stripe{position:relative;padding-left:30px}
+.stripe::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;border-radius:10px 0 0 10px;background:var(--blue)}
+.stripe.s-teal::before{background:var(--teal)}.stripe.s-pink::before{background:var(--pink)}
+.stripe.s-orange::before{background:var(--orange)}.stripe.s-purple::before{background:var(--purple)}.stripe.s-slate::before{background:var(--slate)}
+.stat{font-size:44px;font-weight:800;color:var(--blue);line-height:1}
+.stat.inkstat{color:var(--ink)}
+.stat.big{font-size:58px}
+.statlabel{font-size:15px;font-weight:700;color:var(--ink);margin-top:12px}
+.statcap{font-size:13.5px;color:var(--body);margin-top:6px;line-height:1.45}
+.cardtitle{font-size:17px;font-weight:700;margin:0 0 6px}
+.bodytext{font-size:14px;color:var(--body);line-height:1.5}
+ul.b{margin:12px 0 0;padding:0;list-style:none}
+ul.b li{font-size:13.5px;color:var(--body);line-height:1.45;padding:5px 0 5px 16px;position:relative}
+ul.b li::before{content:"";position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:50%;background:var(--blue)}
+.acc-teal ul.b li::before{background:var(--teal)}.acc-pink ul.b li::before{background:var(--pink)}
+.acc-slate ul.b li::before{background:var(--slate)}.acc-orange ul.b li::before{background:var(--orange)}.acc-purple ul.b li::before{background:var(--purple)}
+.chip{float:right;background:#fff;border:1.5px solid var(--blue);color:var(--ink);font-weight:700;font-size:13px;border-radius:8px;padding:6px 10px;text-align:center;line-height:1.2}
+.acc-teal .chip{border-color:var(--teal)}.acc-pink .chip{border-color:var(--pink)}.acc-orange .chip{border-color:var(--orange)}.acc-purple .chip{border-color:var(--purple)}
+table.dt{width:100%;border-collapse:collapse;font-size:13.5px}
+table.dt th{background:var(--blue-deep);color:#fff;font-weight:700;text-align:left;padding:11px 14px}
+table.dt td{padding:11px 14px;color:var(--body);vertical-align:top}
+table.dt tr:nth-child(even) td{background:var(--card)}
+table.dt td.k{color:var(--blue-deep);font-weight:700}
+table.dt td.head{color:var(--ink);font-weight:700}
+table.dt td.hi{color:var(--ink);font-weight:800}
+.ncircle{display:inline-flex;width:34px;height:34px;border-radius:50%;background:var(--blue-deep);color:#fff;font-weight:700;font-size:13px;align-items:center;justify-content:center;flex:none}
+.ncircle.t{background:var(--teal);color:var(--ink)}.ncircle.p{background:var(--purple)}.ncircle.o{background:var(--orange)}
+.iso polygon{fill:none;stroke:var(--blue);stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter}
+.iso polygon.fill{fill:var(--blue)}
+.seal{font-weight:700;letter-spacing:.01em}
+.seal .br{font-weight:400}
+.shot{width:100%;border-radius:8px;display:block;border:1px solid var(--border)}
+.shotcap{font-size:12px;color:var(--body);margin-top:8px;line-height:1.35}
+.flow{display:flex;align-items:center;gap:10px}
+.flowbox{flex:1;background:var(--card);border-radius:8px;padding:14px 12px;text-align:center}
+.flowbox .t{font-size:13.5px;font-weight:700;color:var(--ink)}
+.flowbox .n{font-size:22px;font-weight:800;color:var(--ink);margin-top:4px}
+.flowbox.focal{background:var(--callout)}.flowbox.focal .n{color:var(--blue)}
+.flowbox .c{font-size:11.5px;color:var(--body);margin-top:4px;line-height:1.3}
+.arrow{color:var(--caption);font-weight:700;font-size:17px;flex:none}
+.foot{position:absolute;left:64px;right:64px;bottom:26px;font-size:11.5px;color:var(--caption);line-height:1.4}
+@page{size:1280px 720px;margin:0}
+@media print{*{-webkit-print-color-adjust:exact;print-color-adjust:exact}body{background:#fff;padding:0}.note,.dochead{display:none}.slide{box-shadow:none;page-break-after:always}.slide:last-of-type{page-break-after:auto}}
+</style>
+</head>
+<body>
+
+<div class="dochead"><strong>Toggle Solutions · UK Higher Education: Lead Acquisition.</strong> 7 August 2026 · Toggle side of the joint pitch deck. Print to PDF (1280×720 landscape, no margins) to share.</div>
+
+<!-- ════════ SLIDE 1 · COVER ════════ -->
+<section class="slide">
+  <img class="wm" src="../../../../assets/logos/toggle-wordmark-black.png" alt="Toggle Solutions">
+  <div style="margin-top:112px;max-width:790px">
+    <div style="font-size:56px;font-weight:800;color:var(--blue);line-height:1.05">120,000 leads.<br>10,000 students enrolled.</div>
+    <div style="font-size:34px;font-weight:800;color:var(--ink);line-height:1.15;margin-top:14px">Student acquisition for UK higher education.</div>
+    <div style="font-size:16px;color:var(--body);margin-top:18px;max-width:66ch">We run the media, the funnel, and the creative for universities that are measured on enrollments. Our education work has delivered more than 120,000 qualified student leads and 10,000 enrollments, at a cost per lead 47% lower year on year.</div>
+  </div>
+  <svg class="iso" viewBox="-12 -12 336 344" style="position:absolute;right:88px;top:190px;width:330px">
+    <polygon points="14.6,112 70,144 70,214 14.6,182"/>
+    <polygon points="125.4,112 70,144 70,214 125.4,182"/>
+    <polygon points="70,80 125.4,112 70,144 14.6,112"/>
+    <polygon points="100.6,108 156,140 156,260 100.6,228"/>
+    <polygon points="211.4,108 156,140 156,260 211.4,228"/>
+    <polygon points="156,76 211.4,108 156,140 100.6,108"/>
+    <polygon points="186.6,99 242,131 242,306 186.6,274"/>
+    <polygon class="fill" points="297.4,99 242,131 242,306 297.4,274"/>
+    <polygon points="242,67 297.4,99 242,131 186.6,99"/>
+  </svg>
+  <div class="seal" style="position:absolute;left:64px;bottom:48px;color:var(--blue);font-size:18px"><span class="br">[&nbsp;</span>Your Digital Growth Partner<span class="br">&nbsp;]</span></div>
+</section>
+
+<!-- ════════ SLIDE 2 · WHO WE ARE ════════ -->
+<div class="note">Slide 2 · Who we are · <b>Belief:</b> "These people run education media for a living, not as a side vertical."</div>
+<section class="slide">
+  <img class="wm" src="../../../../assets/logos/toggle-wordmark-black.png" alt="Toggle Solutions">
+  <h2 class="h1">A performance team built around enrollment</h2>
+  <p class="kicker" style="max-width:none">Toggle Solutions is a digital growth partner based in Kuala Lumpur, buying media in eight markets across three continents. Education is our largest vertical by media spend. We buy media, build the lead capture, write the ads, and report on the only number that decides a semester: how many students enrolled.</p>
+  <div class="grid cols4" style="margin-bottom:22px">
+    <div class="card topbar">
+      <div class="stat num">120,000+</div>
+      <div class="statlabel">Qualified student leads</div>
+      <div class="statcap">Delivered for UNITAR International University across the engagement to date.</div>
+    </div>
+    <div class="card topbar t-teal">
+      <div class="stat num" style="color:var(--ink)">47%</div>
+      <div class="statlabel">Cost per lead reduction, year on year</div>
+      <div class="statcap">UNITAR, 2025. Achieved while spend was scaling, not while it was shrinking.</div>
+    </div>
+    <div class="card topbar t-orange">
+      <div class="stat num" style="color:var(--ink)">77%</div>
+      <div class="statlabel">Impression share, education category</div>
+      <div class="statcap">UNITAR, 2025. Share of all education and training impressions in Malaysia.</div>
+    </div>
+    <div class="card topbar t-purple">
+      <div class="stat num" style="color:var(--ink)">10,000</div>
+      <div class="statlabel">Students enrolled</div>
+      <div class="statcap">UNITAR, to date. The number the university is measured on, and the one we report against.</div>
+    </div>
+  </div>
+  <div class="grid cols3">
+    <div class="card stripe">
+      <div class="cardtitle">The work we own</div>
+      <ul class="b"><li>Paid media on Meta, Google, TikTok and LinkedIn.</li><li>Lead capture: instant forms, quizzes, landing pages, chat.</li><li>Creative production in English and local languages.</li></ul>
+    </div>
+    <div class="card stripe s-teal acc-teal">
+      <div class="cardtitle">Our operating rules</div>
+      <ul class="b"><li>Senior operators only. The person in the pitch is the person on the account.</li><li>Weekly reporting against targets, broken out by campus or course.</li><li>We diagnose the funnel before we recommend a budget.</li></ul>
+    </div>
+    <div class="card stripe s-slate acc-slate">
+      <div class="cardtitle">Where we are honest</div>
+      <ul class="b"><li>We already buy in eight markets including the United Kingdom, so this is a new client for us rather than a new auction.</li><li>We have not yet run a UK university recruiting home students, so every UK number in this deck stays a projection until we see your account.</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ SLIDE 3 · THE PORTFOLIO ════════ -->
+<div class="note">Slide 3 · The portfolio · <b>Belief:</b> "They are not a one-account agency, and the UK is not new to them."</div>
+<section class="slide hasband">
+  <img class="wm" src="../../../../assets/logos/toggle-wordmark-black.png" alt="Toggle Solutions">
+  <h2 class="h1">Nine education brands, eight markets</h2>
+  <p class="kicker" style="max-width:none">Six universities, two international schools and one global edtech company. One team has run all of them, which is why a playbook proven on one account reaches the next one in weeks rather than quarters.</p>
+  <div class="grid cols3" style="margin-bottom:22px">
+    <div class="card topbar">
+      <div class="stat num">6</div>
+      <div class="statlabel">Universities</div>
+      <div class="statcap" style="margin-bottom:10px">We run undergraduate, postgraduate and online recruitment on campus-level and course-level budgets.</div>
+      <div style="font-size:13px;font-weight:700;color:var(--ink);line-height:1.5">UNITAR International University<br>UNITAR College<br>City University<br>IOTA University College<br>IJN University College</div>
+    </div>
+    <div class="card topbar t-purple">
+      <div class="stat num" style="color:var(--ink)">1</div>
+      <div class="statlabel">Global edtech company</div>
+      <div class="statcap" style="margin-bottom:10px">We sell one product into eight very different auctions at the same time.</div>
+      <div style="font-size:13px;font-weight:700;color:var(--ink);line-height:1.5">Mindvalley</div>
+    </div>
+    <div class="card topbar t-teal">
+      <div class="stat num" style="color:var(--ink)">2</div>
+      <div class="statlabel">International schools</div>
+      <div class="statcap" style="margin-bottom:10px">We buy parent audiences on long consideration cycles for small, high-value intakes.</div>
+      <div style="font-size:13px;font-weight:700;color:var(--caption);line-height:1.5">Named on request</div>
+    </div>
+  </div>
+  <div class="callout" style="padding:20px 24px;margin-bottom:18px">
+    <div class="cardtitle" style="margin-bottom:12px">Where we buy</div>
+    <div class="grid cols4" style="gap:12px">
+      <div><div style="font-size:13px;font-weight:700;color:var(--blue-deep);margin-bottom:4px">Southeast Asia</div><div class="bodytext" style="font-size:13.5px">Malaysia · Singapore</div></div>
+      <div><div style="font-size:13px;font-weight:700;color:var(--blue-deep);margin-bottom:4px">South Asia</div><div class="bodytext" style="font-size:13.5px">Pakistan</div></div>
+      <div><div style="font-size:13px;font-weight:700;color:var(--blue-deep);margin-bottom:4px">English-speaking West</div><div class="bodytext" style="font-size:13.5px">United Kingdom · Australia · Canada · United States</div></div>
+      <div><div style="font-size:13px;font-weight:700;color:var(--blue-deep);margin-bottom:4px">Europe</div><div class="bodytext" style="font-size:13.5px">Continental Europe</div></div>
+    </div>
+  </div>
+  <div class="band">The United Kingdom is already inside our buying footprint, so you would be hiring a team that has bought this market before.</div>
+</section>
+
+<!-- ════════ SLIDE 4 · EDUCATION TRACK RECORD ════════ -->
+<div class="note">Slide 4 · Education track record · <b>Belief:</b> "They have done this at scale, more than once."</div>
+<section class="slide">
+  <img class="wm" src="../../../../assets/logos/toggle-wordmark-black.png" alt="Toggle Solutions">
+  <h2 class="h1">Education is our deepest vertical</h2>
+  <p class="kicker" style="max-width:none">Four of the nine accounts in detail, spanning university, professional qualification and early years. The programs differ, but the job is the same every time: turn a fixed media budget into a predictable number of qualified applicants.</p>
+  <table class="dt" style="margin-bottom:20px">
+    <tr><th style="width:24%">Client</th><th style="width:22%">Segment</th><th style="width:30%">What we ran</th><th style="width:24%">Headline result</th></tr>
+    <tr><td class="head">UNITAR International University</td><td>Private university, 10 campuses plus fully online</td><td>Full funnel across Meta, Google and TikTok, per-campus budgets, creative production in English and Bahasa Melayu</td><td class="hi">120,000+ leads and 10,000 enrollments, cost per lead down 47% year on year</td></tr>
+    <tr><td class="head">UNITAR College</td><td>Diploma and foundation, regional campuses</td><td>Campus-level lead generation in Bahasa Melayu, four creative angles per course</td><td class="hi">Spend up 126%, leads up 263%, cost per lead down 37%</td></tr>
+    <tr><td class="head">EduKids Books</td><td>Children's educational publishing, e-commerce</td><td>TikTok and Meta acquisition plus landing page optimization</td><td class="hi">6x return on ad spend by month two, 5.5% conversion rate</td></tr>
+    <tr><td class="head">Smart Reader Kids</td><td>Early years center, single location</td><td>Local search plus click-to-chat lead generation on a small budget</td><td class="hi">Proposal stage, roughly £540 monthly media test</td></tr>
+  </table>
+  <div class="grid cols2">
+    <div class="callout">
+      <div class="cardtitle">Why this matters for a UK university</div>
+      <div class="bodytext">A UNITAR intake and a UK clearing cycle have the same shape. Demand spikes inside a short window, the offer is a high-consideration purchase, and the deciding metric arrives months after the click. Everything we built for that pattern moves across: per-course budget control, a messaging matrix that carries a prospect from curiosity to application, and reporting that ties spend back to enrollments rather than clicks.</div>
+    </div>
+    <div class="card stripe s-orange acc-orange">
+      <div class="cardtitle">The parts that do not transfer</div>
+      <ul class="b"><li>Malaysian auction prices. UK cost per lead is higher, and we have priced this deck accordingly.</li><li>Local language creative. UK creative is English-first, with international student segments handled separately.</li><li>Compliance context. UK privacy consent and Advertising Standards Authority rules on course claims need a first-week review.</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ SLIDE 4 · CASE STUDY: UNITAR RESULTS ════════ -->
+<div class="note">Slide 5 · Flagship case study, the numbers · <b>Belief:</b> "This is real, and it is large."</div>
+<section class="slide hasfoot">
+  <img class="wm" src="../../../../assets/logos/toggle-wordmark-black.png" alt="Toggle Solutions">
+  <h2 class="h1">Case study: UNITAR International University <span class="pill">Flagship</span></h2>
+  <p class="kicker" style="max-width:none">Southeast Asia's first virtual university, founded in 1997. The first institution in Asia to earn a QS 5-Star rating for online learning, with a 98% graduate employment rate and 13 regional centers. In mid-2024 their cost per lead was climbing on every platform and the campaigns had stopped scaling.</p>
+  <div class="grid cols2" style="margin-bottom:20px">
+    <div class="card stripe s-orange acc-orange">
+      <div class="cardtitle">The problem in mid-2024</div>
+      <ul class="b"><li>Google cost per lead had reached £28.</li><li>Facebook cost per lead had reached £53.</li><li>TikTok cost per lead had reached £95.</li><li>Spend kept rising and lead volume did not follow. The account needed rebuilding, not optimizing.</li></ul>
+    </div>
+    <div class="card stripe s-teal acc-teal">
+      <div class="cardtitle">The result to date</div>
+      <ul class="b"><li>More than 120,000 qualified leads across the engagement to date.</li><li>More than 10,000 of those leads enrolled as students.</li><li>Cost per lead 47% below the same period the year before.</li><li>77% of all education and training impressions in Malaysia.</li><li>Monthly media scaled past £2 million without cost per lead inflating.</li></ul>
+    </div>
+  </div>
+  <div class="grid cols3">
+    <div class="card"><div class="stat big num">120k+</div><div class="statlabel">Qualified leads</div><div class="statcap">De-duplicated and validated, across the engagement to date.</div></div>
+    <div class="card"><div class="stat big num" style="color:var(--ink)">-47%</div><div class="statlabel">Cost per lead, year on year</div><div class="statcap">Measured against the equivalent 2024 intake window.</div></div>
+    <div class="card"><div class="stat big num" style="color:var(--ink)">10,000</div><div class="statlabel">Students enrolled</div><div class="statcap">Roughly 8% of every lead we delivered went on to enroll.</div></div>
+  </div>
+  <div class="foot">All UNITAR figures are actuals from the client's own reporting. Figures originally recorded in ringgit are stated here in pounds at the mid-market rate on 7 August 2026.</div>
+</section>
+
+<!-- ════════ SLIDE 5 · CASE STUDY: HOW ════════ -->
+<div class="note">Slide 6 · How the UNITAR result was built · <b>Belief:</b> "There is a method here I can apply to my own institution."</div>
+<section class="slide">
+  <img class="wm" src="../../../../assets/logos/toggle-wordmark-black.png" alt="Toggle Solutions">
+  <h2 class="h1">How we did it: three levers, in order</h2>
+  <p class="kicker" style="max-width:none">None of this was a media buying trick. We fixed the message first, then gave each platform a defined job, then repaired the technical plumbing that was throwing away signal.</p>
+  <div class="grid cols3" style="margin-bottom:20px">
+    <div class="card topbar">
+      <div style="display:flex;gap:12px;align-items:center;margin-bottom:10px"><span class="ncircle">1</span><div class="cardtitle" style="margin:0">A messaging matrix</div></div>
+      <div class="bodytext">We mapped every ad to a stage of the student decision. Top of funnel challenged an assumption, for example "Is traditional education holding you back?". Middle of funnel reassured, for example "Learn, apply, get hired". Bottom of funnel pushed the application with a deadline. Prospects stopped seeing the same enrollment ad at every stage.</div>
+    </div>
+    <div class="card topbar t-teal">
+      <div style="display:flex;gap:12px;align-items:center;margin-bottom:10px"><span class="ncircle t">2</span><div class="cardtitle" style="margin:0">One job per platform</div></div>
+      <div class="bodytext">Google Search and Performance Max took students already looking for a degree. Meta carried the middle of the funnel with lead forms and storytelling creative. TikTok built awareness among school leavers who had not yet considered the institution. No platform was asked to do all three.</div>
+    </div>
+    <div class="card topbar t-purple">
+      <div style="display:flex;gap:12px;align-items:center;margin-bottom:10px"><span class="ncircle p">3</span><div class="cardtitle" style="margin:0">Technical hygiene</div></div>
+      <div class="bodytext">We installed the Conversions API for server-side signal, consolidated fragmented campaigns so the algorithm could learn, replaced broad targeting with layered intent and lookalike audiences, and put pacing controls on daily spend so budget did not burn early in the month.</div>
+    </div>
+  </div>
+  <div class="callout">
+    <div class="cardtitle">The insight worth stealing</div>
+    <div class="bodytext">The 47% cost per lead reduction did not come from finding cheaper inventory. It came from removing the reasons the platforms were guessing: too many overlapping campaigns, no server-side signal, and creative that treated a curious 18 year old and a ready-to-apply adult as the same person. Fix those three things and the same budget buys more students.</div>
+  </div>
+</section>
+
+<!-- ════════ MINDVALLEY CASE STUDY ════════ -->
+<div class="note">Slide 7 · <b>Belief:</b> "They have run education outside Malaysia, at global scale, and cut a bad cost per lead by an order of magnitude."</div>
+<section class="slide hasfoot">
+  <img class="wm" src="../../../../assets/logos/toggle-wordmark-black.png" alt="Toggle Solutions">
+  <h2 class="h1">Case study: Mindvalley <span class="pill o">Global edtech</span></h2>
+  <p class="kicker" style="max-width:none">A personal growth education platform selling courses and a subscription app into North America, Europe and Asia at the same time. We ran product launches, a subscription business and a mobile app on Google, Facebook, LinkedIn, TikTok and programmatic, and held channel ownership on three of them.</p>
+  <div class="grid cols4" style="margin-bottom:20px">
+    <div class="card topbar">
+      <div class="stat num">4x</div>
+      <div class="statlabel">Return on ad spend</div>
+      <div class="statcap">We turned £370,000 of media into more than £1.5 million in revenue across product launches.</div>
+    </div>
+    <div class="card topbar t-teal">
+      <div class="stat num" style="color:var(--ink)">-90%</div>
+      <div class="statlabel">Cost per lead, B2B</div>
+      <div class="statcap">We moved it from more than £74 to roughly £7 using lead generation forms on LinkedIn and Facebook.</div>
+    </div>
+    <div class="card topbar t-purple">
+      <div class="stat num" style="color:var(--ink)">+100%</div>
+      <div class="statlabel">Net revenue, subscription and app</div>
+      <div class="statcap">We doubled it over the same period while cutting cost per install by 90%.</div>
+    </div>
+    <div class="card topbar t-orange">
+      <div class="stat num" style="color:var(--ink)">4</div>
+      <div class="statlabel">Creative agencies directed</div>
+      <div class="statcap">We briefed international studios and scored their work on performance.</div>
+    </div>
+  </div>
+  <div class="grid cols2">
+    <div class="card stripe">
+      <div class="cardtitle">Three things the account forced us to solve</div>
+      <ul class="b"><li>One product sold into several countries at once, so every market needed its own creative angle and its own price framing.</li><li>Two revenue models running side by side, a one-off course purchase and a recurring subscription, each with a different definition of a good acquisition cost.</li><li>Channel ownership across Facebook, LinkedIn and TikTok, including five first-round beta tests on the Facebook platform.</li></ul>
+    </div>
+    <div class="card stripe s-teal acc-teal">
+      <div class="cardtitle">Why it belongs in a UK pitch</div>
+      <ul class="b"><li>This is education sold in English to Western audiences, priced in a hard currency, which is much closer to your auction than a Malaysian campus campaign is.</li><li>The 90% cost per lead reduction came from the same two moves we propose here: qualify inside the form, and let structured creative testing pick the angle.</li><li>Fixing the product catalog and running dynamic prospecting ads is the same discipline a large course catalog needs.</li></ul>
+    </div>
+  </div>
+  <div class="foot">Mindvalley Labs, September 2019 to March 2022. Creative produced by specialist studios under our direction. Figures originally recorded in dollars are stated in pounds at the mid-market rate on 8 August 2026.</div>
+</section>
+
+<!-- ════════ SLIDE 6 · SUPPORTING CASE STUDIES ════════ -->
+<div class="note">Slide 8 · Supporting proof · <b>Belief:</b> "The method holds up outside one big account."</div>
+<section class="slide hasband">
+  <img class="wm" src="../../../../assets/logos/toggle-wordmark-black.png" alt="Toggle Solutions">
+  <h2 class="h1">Two more proofs: volume discipline and cost discipline</h2>
+  <p class="kicker" style="max-width:none">A large university account can hide inefficiency behind scale. These two smaller accounts show the same method working where every pound is visible.</p>
+  <div class="grid cols2" style="margin-bottom:20px">
+    <div class="card topbar t-teal acc-teal">
+      <div class="chip">Lead generation</div>
+      <div class="cardtitle">Kith &amp; Kin Realty</div>
+      <div class="bodytext" style="margin-bottom:6px">A property agency generating leads through cold calling and inconsistent organic posting, with no repeatable digital system.</div>
+      <ul class="b"><li>We built Meta lead generation campaigns targeting the gaps competitors were ignoring rather than fighting for the most expensive placements.</li><li>Creative was matched to message type: short video for the emotional pitch, static and animated formats for the offer.</li></ul>
+      <div class="grid cols3" style="margin-top:16px;gap:12px">
+        <div><div class="stat num" style="font-size:32px;color:var(--ink)">+392%</div><div class="statcap">Lead volume, three months</div></div>
+        <div><div class="stat num" style="font-size:32px;color:var(--ink)">£6.30</div><div class="statcap">Cost per lead, held steady</div></div>
+        <div><div class="stat num" style="font-size:32px;color:var(--ink)">10%</div><div class="statcap">Lead to closed deal</div></div>
+      </div>
+    </div>
+    <div class="card topbar t-purple acc-purple">
+      <div class="chip">Education, e-commerce</div>
+      <div class="cardtitle">EduKids Books</div>
+      <div class="bodytext" style="margin-bottom:6px">A children's educational publisher stuck below a 4x return on ad spend on TikTok against a 6x target, with a newly launched site making almost no sales.</div>
+      <ul class="b"><li>We narrowed the audience to high purchase intent before increasing spend, then ran structured creative tests to find the angles that carried.</li><li>Meta ran alongside landing page work, because the page was losing as much revenue as the ads were winning.</li></ul>
+      <div class="grid cols3" style="margin-top:16px;gap:12px">
+        <div><div class="stat num" style="font-size:32px;color:var(--ink)">6x</div><div class="statcap">Return on ad spend by month two</div></div>
+        <div><div class="stat num" style="font-size:32px;color:var(--ink)">£2.5k</div><div class="statcap">Monthly site revenue</div></div>
+        <div><div class="stat num" style="font-size:32px;color:var(--ink)">5.5%</div><div class="statcap">Site conversion rate</div></div>
+      </div>
+    </div>
+  </div>
+  <div class="band">In both accounts we changed the audience and the creative before we touched the budget, and the order is what moved them.</div>
+</section>
+
+<!-- ════════ SLIDE 7 · CPL METHODOLOGY ════════ -->
+<div class="note">Slide 9 · How we priced a UK lead · <b>Belief:</b> "They showed their working instead of quoting a number."</div>
+<section class="slide hasfoot">
+  <img class="wm" src="../../../../assets/logos/toggle-wordmark-black.png" alt="Toggle Solutions">
+  <h2 class="h1">What a UK student lead should cost <span class="pill est">[&nbsp;PROJECTION&nbsp;]</span></h2>
+  <p class="kicker" style="max-width:none">The number below comes from our own education accounts rather than from your auction. This is the working behind it, plus the conditions that would make it wrong.</p>
+  <div class="flow" style="margin-bottom:22px">
+    <div class="flowbox"><div class="t">Our benchmark</div><div class="n num">£36</div><div class="c">Blended cost per qualified lead across our education accounts</div></div>
+    <span class="arrow">›</span>
+    <div class="flowbox"><div class="t">What we are pricing</div><div class="n num" style="font-size:15px;line-height:1.3;margin-top:8px">Name, email,<br>phone, course</div><div class="c">A contactable lead, not a click</div></div>
+    <span class="arrow">›</span>
+    <div class="flowbox"><div class="t">Planning target</div><div class="n num">£36</div><div class="c">The number every scenario in this deck is built on</div></div>
+    <span class="arrow">›</span>
+    <div class="flowbox focal"><div class="t">Working band</div><div class="n num">£30 – £42</div><div class="c">Where we expect to land once the account has learned</div></div>
+  </div>
+  <div class="grid cols3">
+    <div class="card stripe s-teal acc-teal">
+      <div class="cardtitle">Why it could come in cheaper</div>
+      <ul class="b"><li>English-only creative removes the translation and localization overhead we carry in Malaysia.</li><li>UK audiences have higher form completion rates on mobile, which lifts the conversion rate on the same click.</li><li>A single brand with strong search demand costs far less per lead than ten regional campuses competing for the same audience.</li></ul>
+    </div>
+    <div class="card stripe s-orange acc-orange">
+      <div class="cardtitle">Why it could come in dearer</div>
+      <ul class="b"><li>UK media auctions are more expensive per thousand impressions than Malaysian ones, particularly in the run-up to clearing.</li><li>Education keywords on Google Search in the UK are among the most competitive in any category.</li><li>If the lead definition tightens to include qualification checks, volume drops and cost per lead rises. That is a good trade, but it changes the number.</li></ul>
+    </div>
+    <div class="card stripe s-slate acc-slate">
+      <div class="cardtitle">How we settle it</div>
+      <ul class="b"><li>A four-week test at the smallest budget that still produces statistically usable data.</li><li>We report actual cost per lead weekly from week one and replace this projection with real numbers by the end of month one.</li><li>If the real cost per lead lands above £42, we say so and re-plan the budget instead of absorbing it in silence.</li></ul>
+    </div>
+  </div>
+  <div class="foot">This projection assumes a lead is a person who submitted name, email, phone and course of interest. Change that definition and the number changes with it.</div>
+</section>
+
+<!-- ════════ SLIDE 8 · CPL BY CHANNEL ════════ -->
+<div class="note">Slide 10 · Cost per lead by channel · <b>Belief:</b> "The blended number is made of real, separable parts."</div>
+<section class="slide">
+  <img class="wm" src="../../../../assets/logos/toggle-wordmark-black.png" alt="Toggle Solutions">
+  <h2 class="h1">The £36 broken down by channel <span class="pill est">[&nbsp;PROJECTION&nbsp;]</span></h2>
+  <p class="kicker" style="max-width:none">A blended cost per lead hides the trade you are making. Cheap leads and good leads sit at opposite ends of this table, and the right mix depends on how much your admissions team can handle.</p>
+  <table class="dt" style="margin-bottom:14px">
+    <tr><th style="width:22%">Channel and format</th><th style="width:15%">Projected cost per lead</th><th style="width:13%">Share of budget</th><th style="width:20%">Lead quality</th><th style="width:30%">What this channel is for</th></tr>
+    <tr><td class="head">Google Search, brand terms</td><td class="k num">£12 – £20</td><td class="num">10%</td><td>Highest</td><td>Catching people already searching for you by name. Cheap, limited by demand, never scale beyond it.</td></tr>
+    <tr><td class="head">Google Search, course terms</td><td class="k num">£45 – £65</td><td class="num">25%</td><td>High</td><td>Buying active course research. Expensive per lead and worth it, because these prospects convert to applications at the highest rate.</td></tr>
+    <tr><td class="head">Meta instant form</td><td class="k num">£24 – £32</td><td class="num">30%</td><td>Medium</td><td>Volume at the top of the range. Fast to fill, and the leads need real nurture before they are worth a call.</td></tr>
+    <tr><td class="head">Meta form with qualifiers</td><td class="k num">£34 – £46</td><td class="num">25%</td><td>High</td><td>The same placements with three screening questions in the form. Fewer leads, much better calls.</td></tr>
+    <tr><td class="head">TikTok, awareness to form</td><td class="k num">£20 – £28</td><td class="num">10%</td><td>Lower</td><td>Reaching 17 to 21 year olds who have not shortlisted anyone yet. Cheap leads, longest time to application.</td></tr>
+    <tr><td class="hi">Blended planning target</td><td class="hi num">£36</td><td class="hi num">100%</td><td class="hi">Mixed by design</td><td class="hi">The mix weights half the budget to quality and half to volume.</td></tr>
+  </table>
+  <div class="grid cols2" style="gap:16px">
+    <div class="callout" style="padding:18px 20px"><div class="cardtitle">The trade to decide together</div><div class="bodytext" style="font-size:13.5px">If your admissions team can only call 100 prospects a week, buying 280 cheap leads a month wastes money. If they can call 400, the cheap channels become the best value on the table. Your calling capacity sets the mix.</div></div>
+    <div class="card stripe s-slate acc-slate" style="padding:18px 20px 18px 26px"><div class="cardtitle">The line we hold</div><div class="bodytext" style="font-size:13.5px">We will not chase a headline cost per lead by loosening the form. Dropping the phone number field would cut cost per lead by roughly a third overnight and make the leads unreachable. Every cost per lead in this deck assumes a contactable lead.</div></div>
+  </div>
+</section>
+
+<!-- ════════ SLIDE 9 · BUDGET SCENARIOS ════════ -->
+<div class="note">Slide 11 · Budget scenarios · <b>Belief:</b> "I can see what my money buys before I commit it."</div>
+<section class="slide hasband">
+  <img class="wm" src="../../../../assets/logos/toggle-wordmark-black.png" alt="Toggle Solutions">
+  <h2 class="h1">What each budget buys per month <span class="pill est">[&nbsp;PROJECTION&nbsp;]</span></h2>
+  <p class="kicker" style="max-width:none">All three scenarios use the same £36 blended cost per lead. All three run at the same efficiency. They differ in how many courses and audiences we can carry at once without starving any of them.</p>
+  <div class="grid cols3" style="margin-bottom:20px">
+    <div class="card topbar t-slate">
+      <div class="cardtitle">Test</div>
+      <div class="stat num" style="color:var(--ink);margin-top:8px">£5,000</div>
+      <div class="statcap" style="margin-bottom:12px">media per month</div>
+      <ul class="b"><li><b>139 leads</b> per month at £36.</li><li>Two courses, one country, two channels.</li><li>Enough data to prove or disprove the cost per lead in four weeks.</li><li>Not enough to run Google Search and Meta and TikTok at the same time.</li></ul>
+    </div>
+    <div class="card topbar">
+      <div class="chip" style="float:right">Recommended</div>
+      <div class="cardtitle">Build</div>
+      <div class="stat num" style="margin-top:8px">£10,000</div>
+      <div class="statcap" style="margin-bottom:12px">media per month</div>
+      <ul class="b"><li><b>278 leads</b> per month at £36.</li><li>Four to six courses, full channel mix, both domestic and international segments.</li><li>Enough volume per campaign for the platforms to exit the learning phase and stabilize.</li><li>This is the smallest budget at which the method in this deck works as designed.</li></ul>
+    </div>
+    <div class="card topbar t-teal">
+      <div class="cardtitle">Scale</div>
+      <div class="stat num" style="color:var(--ink);margin-top:8px">£20,000</div>
+      <div class="statcap" style="margin-bottom:12px">media per month</div>
+      <ul class="b"><li><b>556 leads</b> per month at £36.</li><li>Full course catalog, retargeting layer, and a separate international student campaign tree.</li><li>Creative refresh every two weeks, which is what stops cost per lead climbing at this level.</li><li>Requires an admissions team that can handle roughly 130 calls a week.</li></ul>
+    </div>
+  </div>
+  <div class="band ink">The client pays the platforms directly on their own card. Our management fee sits separately and is agreed with the partner before the pitch.</div>
+</section>
+
+<!-- ════════ SLIDE 10 · FUNNEL MATH ════════ -->
+<div class="note">Slide 12 · Lead to enrollment · <b>Belief:</b> "They are talking about students, not leads."</div>
+<section class="slide">
+  <img class="wm" src="../../../../assets/logos/toggle-wordmark-black.png" alt="Toggle Solutions">
+  <h2 class="h1">From £10,000 of media to enrolled students <span class="pill est">[&nbsp;PROJECTION&nbsp;]</span></h2>
+  <p class="kicker" style="max-width:none">The cost per lead only matters if it survives the rest of the funnel. The chain below runs at the recommended budget, with every conversion rate written down so you can argue with it.</p>
+  <div class="flow" style="margin-bottom:24px">
+    <div class="flowbox"><div class="t">Media</div><div class="n num">£10,000</div><div class="c">One month</div></div>
+    <span class="arrow">›</span>
+    <div class="flowbox"><div class="t">Leads</div><div class="n num">278</div><div class="c">At £36 each</div></div>
+    <span class="arrow">›</span>
+    <div class="flowbox"><div class="t">Contacted</div><div class="n num">167</div><div class="c">60% reached</div></div>
+    <span class="arrow">›</span>
+    <div class="flowbox"><div class="t">Qualified</div><div class="n num">75</div><div class="c">45% of contacted</div></div>
+    <span class="arrow">›</span>
+    <div class="flowbox"><div class="t">Applications</div><div class="n num">30</div><div class="c">40% of qualified</div></div>
+    <span class="arrow">›</span>
+    <div class="flowbox focal"><div class="t">Enrolled</div><div class="n num">14</div><div class="c">47% of applications</div></div>
+  </div>
+  <div class="grid cols3" style="margin-bottom:18px">
+    <div class="card"><div class="stat num">£714</div><div class="statlabel">Media cost per enrolled student</div><div class="statcap">£10,000 divided by 14 enrollments. This is the number to compare against tuition, not the cost per lead.</div></div>
+    <div class="card"><div class="stat num" style="color:var(--ink)">8%</div><div class="statlabel">Acquisition cost against a £9,250 fee</div><div class="statcap">Roughly 8% of one year of home undergraduate tuition, and under 4% against typical international fees.</div></div>
+    <div class="card"><div class="stat num" style="color:var(--ink)">5.0%</div><div class="statlabel">Lead to enrollment rate</div><div class="statcap">14 enrollments from 278 leads. On UNITAR the same rate runs at roughly 8%, so 5% is a conservative place to start.</div></div>
+  </div>
+  <div class="card stripe s-orange acc-orange">
+    <div class="cardtitle">Read this honestly</div>
+    <div class="bodytext">The four conversion rates above are planning assumptions drawn from our education accounts, not UK measurements. Two of them belong to your team rather than ours: the contact rate depends on how fast admissions calls a new lead, and the application to enrollment rate depends on your offer and your competition. We will replace all four with your actual numbers in month one, and the whole model moves with them.</div>
+  </div>
+</section>
+
+<!-- ════════ SLIDE 11 · FUNNEL OPTIONS OVERVIEW ════════ -->
+<div class="note">Slide 13 · Funnel options · <b>Belief:</b> "There is a real choice here and they have a view on it."</div>
+<section class="slide">
+  <img class="wm" src="../../../../assets/logos/toggle-wordmark-black.png" alt="Toggle Solutions">
+  <h2 class="h1">Three ways to capture a student lead</h2>
+  <p class="kicker" style="max-width:none">The capture mechanism decides your cost per lead, your lead quality, and how much work lands on the admissions team. We recommend running two of these together rather than picking one.</p>
+  <table class="dt" style="margin-bottom:14px">
+    <tr><th style="width:20%">Route</th><th style="width:14%">Cost per lead</th><th style="width:13%">Volume</th><th style="width:13%">Quality</th><th style="width:20%">Build time</th><th style="width:20%">Best used for</th></tr>
+    <tr><td class="head">A. Instant lead form</td><td class="k num">£24 – £32</td><td>Highest</td><td>Medium</td><td>Two days</td><td>Filling the top of the funnel fast, and open days</td></tr>
+    <tr><td class="head">B. Conditional quiz flow</td><td class="k num">£34 – £46</td><td>Medium</td><td>Highest</td><td>Two to three weeks</td><td>Course matching, and protecting admissions time</td></tr>
+    <tr><td class="head">C. Landing page to part-application</td><td class="k num">£55 – £80</td><td>Lowest</td><td>Very high</td><td>Three to four weeks</td><td>Late clearing, and postgraduate courses</td></tr>
+  </table>
+  <div class="grid cols3" style="gap:16px">
+    <div class="card topbar" style="padding:26px 20px 18px">
+      <div class="cardtitle">A. Instant lead form</div>
+      <div class="bodytext">The form opens inside Facebook, Instagram or TikTok and pre-fills from the user's profile. Four fields, no page load, no drop-off from a slow site.</div>
+      <ul class="b"><li>Strength: the cheapest reliable lead in the market and live within days.</li><li>Weakness: pre-fill makes it easy to submit without intent, so a share of leads will not remember filling it in.</li><li>Fix: three screening questions turn this into route B on the same placements.</li></ul>
+    </div>
+    <div class="card topbar t-teal acc-teal" style="padding:26px 20px 18px">
+      <div class="chip">Recommended</div>
+      <div class="cardtitle">B. Conditional quiz flow</div>
+      <div class="bodytext">A short branching quiz that asks what the prospect wants from a career, then recommends the courses that fit and captures contact details on the result screen.</div>
+      <ul class="b"><li>Strength: the prospect gets a useful answer, so they arrive at the call already engaged.</li><li>Strength: the answers become the routing logic, so admissions knows the course before they dial.</li><li>Weakness: costs more per lead, and the build takes three weeks.</li></ul>
+    </div>
+    <div class="card topbar t-purple acc-purple" style="padding:26px 20px 18px">
+      <div class="cardtitle">C. Landing page to part-application</div>
+      <div class="bodytext">A dedicated course page that carries the full pitch, then starts the real application rather than collecting an inquiry.</div>
+      <ul class="b"><li>Strength: the highest intent lead available, because the prospect has already begun applying.</li><li>Weakness: the most expensive per lead and the slowest to build.</li><li>Use when the intake window is closing and volume matters less than conversion.</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ SLIDE 12 · QUIZ FLOW DETAIL ════════ -->
+<div class="note">Slide 14 · The recommended route in detail · <b>Belief:</b> "I can picture exactly what they will build."</div>
+<section class="slide">
+  <img class="wm" src="../../../../assets/logos/toggle-wordmark-black.png" alt="Toggle Solutions">
+  <h2 class="h1">The course-match quiz, step by step <span class="pill t">Recommended</span></h2>
+  <p class="kicker" style="max-width:none">This is the mechanism we would build first for a UK university. It solves the problem every admissions team has, which is that most inquiries arrive without enough information to have a useful conversation.</p>
+  <div class="grid cols4" style="margin-bottom:22px">
+    <div class="card topbar">
+      <div style="display:flex;gap:10px;align-items:center;margin-bottom:8px"><span class="ncircle">1</span><div class="cardtitle" style="margin:0;font-size:15px">The hook</div></div>
+      <div class="bodytext" style="font-size:13px">The ad asks a question the prospect is already asking themselves, for example "Not sure which course leads to the job you want?" It offers a two-minute answer rather than a brochure.</div>
+    </div>
+    <div class="card topbar t-teal">
+      <div style="display:flex;gap:10px;align-items:center;margin-bottom:8px"><span class="ncircle t">2</span><div class="cardtitle" style="margin:0;font-size:15px">Five questions</div></div>
+      <div class="bodytext" style="font-size:13px">Study mode, start date, current qualification, funding route, and the outcome they want. Each answer narrows the next question, so it feels like a conversation rather than a form.</div>
+    </div>
+    <div class="card topbar t-purple">
+      <div style="display:flex;gap:10px;align-items:center;margin-bottom:8px"><span class="ncircle p">3</span><div class="cardtitle" style="margin:0;font-size:15px">The result</div></div>
+      <div class="bodytext" style="font-size:13px">Two or three matched courses with entry requirements, fees and start dates. We capture contact details here, at the moment the prospect wants the detail sent to them.</div>
+    </div>
+    <div class="card topbar t-orange">
+      <div style="display:flex;gap:10px;align-items:center;margin-bottom:8px"><span class="ncircle o">4</span><div class="cardtitle" style="margin:0;font-size:15px">The handover</div></div>
+      <div class="bodytext" style="font-size:13px">The lead lands in your CRM with all five answers attached and a priority score. Admissions opens the record already knowing the course, the start date and the funding question to expect.</div>
+    </div>
+  </div>
+  <div class="grid cols2">
+    <div class="callout">
+      <div class="cardtitle">The answers keep working after the click</div>
+      <ul class="b"><li>Prospects who selected a January start get a different call script and a different email sequence from those who selected September.</li><li>Anyone who answered that they are still studying goes into nurture rather than into the call queue, which stops admissions burning time on people who cannot enrol yet.</li><li>The five answers become audience signals we feed back into the ad platforms, so the targeting improves every week the quiz runs.</li></ul>
+    </div>
+    <div class="card stripe s-orange acc-orange">
+      <div class="cardtitle">Build cost and timeline</div>
+      <ul class="b"><li>Two to three weeks from brief to live, including the CRM connection and the tracking.</li><li>The quiz needs the real entry requirements and fee tables from your side. That is usually what sets the timeline, not the build.</li><li>We run route A instant forms alongside it from day one so that lead flow does not pause while the quiz is being built.</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ SLIDE 13 · SPEED TO LEAD ════════ -->
+<div class="note">Slide 15 · Speed to lead · <b>Belief:</b> "The gap between my ads and my admissions team is where I am losing students."</div>
+<section class="slide">
+  <img class="wm" src="../../../../assets/logos/toggle-wordmark-black.png" alt="Toggle Solutions">
+  <h2 class="h1">The five minutes that decide the enrollment</h2>
+  <p class="kicker" style="max-width:none">Most institutions lose more students in the handover than in the auction. A lead that waits a day for a first contact behaves like a much colder lead, no matter what it cost to buy.</p>
+  <div class="grid cols3" style="margin-bottom:22px">
+    <div class="card stripe s-orange acc-orange">
+      <div class="cardtitle">The usual handover</div>
+      <ul class="b"><li>The lead arrives in a spreadsheet or an inbox and waits for someone to open it.</li><li>The first call comes on the next working day, or on Monday if the lead arrived on Friday evening.</li><li>By then the prospect has filled in three other forms and taken a call from a competitor.</li></ul>
+    </div>
+    <div class="card stripe s-teal acc-teal">
+      <div class="cardtitle">The layer we install</div>
+      <ul class="b"><li>An automated first reply within one minute, by WhatsApp or SMS, that confirms the course and offers two call slots.</li><li>Routing rules that send high-priority leads straight to a named counselor and everyone else into a nurture sequence.</li><li>A shared inbox so every conversation is visible and nothing sits unanswered over a weekend.</li></ul>
+    </div>
+    <div class="card stripe s-purple acc-purple">
+      <div class="cardtitle">The difference it makes</div>
+      <ul class="b"><li>The contact rate in the funnel model on slide 12 is the one assumption your team owns outright.</li><li>Moving contact rate from 60% to 75% adds roughly three enrolled students a month at the recommended budget, with no extra media spend.</li><li>It also improves the ad platforms, because faster qualification means faster feedback into the optimization.</li></ul>
+    </div>
+  </div>
+  <div class="card">
+    <div class="cardtitle">The tooling question, answered plainly</div>
+    <div class="bodytext">We build this layer on a conversation platform such as Respond.io, which sits between the ad platforms and your CRM and handles WhatsApp, SMS, email and web chat in one place. Setup is a one-off project covering the routing logic, the message templates and the CRM connection, then an ongoing platform subscription. We scope and price that once we know which CRM you run and how many counselors need seats, since both drive the cost.</div>
+  </div>
+</section>
+
+<!-- ════════ SLIDE 14 · CREATIVE SYSTEM ════════ -->
+<div class="note">Slide 16 · Creative system · <b>Belief:</b> "They have a repeatable way of making ads, not a mood board."</div>
+<section class="slide">
+  <img class="wm" src="../../../../assets/logos/toggle-wordmark-black.png" alt="Toggle Solutions">
+  <h2 class="h1">Four angles per course, every time</h2>
+  <p class="kicker" style="max-width:none">Prospective students do not all want the same thing from a degree, so we never run one message per course. Every course gets the same four angles, and the platform tells us within two weeks which one that audience responds to.</p>
+  <div class="grid cols4" style="margin-bottom:22px">
+    <div class="card topbar">
+      <div class="cardtitle">The Pragmatist</div>
+      <div class="statcap" style="margin-bottom:8px">Career focused</div>
+      <div class="bodytext" style="font-size:13px">Speaks to employment. Names the job title, the starting salary and the employers who hire from the course. Wins with mature students and career changers.</div>
+    </div>
+    <div class="card topbar t-teal">
+      <div class="cardtitle">The Futurist</div>
+      <div class="statcap" style="margin-bottom:8px">Modern skills</div>
+      <div class="bodytext" style="font-size:13px">Speaks to relevance. Positions the course as the current version of the field rather than the version their parents studied. Wins with school leavers.</div>
+    </div>
+    <div class="card topbar t-purple">
+      <div class="cardtitle">The Dreamer</div>
+      <div class="statcap" style="margin-bottom:8px">Empathy focused</div>
+      <div class="bodytext" style="font-size:13px">Speaks to the fear underneath the decision, usually leaving home, cost, or being too old to start. Wins with part-time and online segments.</div>
+    </div>
+    <div class="card topbar t-orange">
+      <div class="cardtitle">The Strategist</div>
+      <div class="statcap" style="margin-bottom:8px">Affordability focused</div>
+      <div class="bodytext" style="font-size:13px">Speaks to money. Leads with the fee, the funding route and the scholarship. Wins in the final weeks of an intake window when the decision is financial.</div>
+    </div>
+  </div>
+  <div class="grid cols2">
+    <div class="callout">
+      <div class="cardtitle">Why four and not one</div>
+      <div class="bodytext">Running four angles at once means the platform finds the winner instead of us guessing it, and it gives us three tested alternatives ready the moment the winner fatigues. On the UNITAR account this rotation is the main reason cost per lead kept falling while spend kept rising. A single creative angle decays once the audience has seen it enough times.</div>
+    </div>
+    <div class="card stripe s-slate acc-slate">
+      <div class="cardtitle">Production, month one</div>
+      <ul class="b"><li>Four static concepts and two short videos per priority course, produced in-house.</li><li>Each concept sized for Meta feed, Meta stories, TikTok and Google display.</li><li>Refresh cycle every two weeks at the recommended budget, weekly at scale.</li></ul>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ CREATIVE: ANGLE TESTING EVIDENCE ════════ -->
+<div class="note">Slide 17 · <b>Belief:</b> "They do not argue about creative, they measure it."</div>
+<section class="slide hasfoot">
+  <img class="wm" src="../../../../assets/logos/toggle-wordmark-black.png" alt="Toggle Solutions">
+  <h2 class="h1">How the winning angle gets picked</h2>
+  <p class="kicker" style="max-width:none">The same four-angle method, running on the Mindvalley account. Five concepts went live against one audience, and we read the results below to decide which one took the budget and who saw it next.</p>
+  <div class="grid" style="grid-template-columns:1.6fr 1fr;gap:26px;align-items:start">
+    <img src="creatives/mv-angle-test.png" alt="Creative analysis comparing five advertising concepts, showing the share of male and female clicks and the age bands for each" style="width:100%;border-radius:8px;border:1px solid var(--border);display:block">
+    <div>
+      <div class="card stripe" style="padding:16px 18px 16px 24px;margin-bottom:14px"><div class="cardtitle" style="font-size:15px">Five reasons to buy, tested at once</div><div class="bodytext" style="font-size:13px">Social proof, value, content, community and benefit. Each one is a different reason to buy, so the test settles a business question rather than a design preference.</div></div>
+      <div class="card stripe s-teal acc-teal" style="padding:16px 18px 16px 24px;margin-bottom:14px"><div class="cardtitle" style="font-size:15px">Split by who responded</div><div class="bodytext" style="font-size:13px">The community angle pulled 89% male clicks and skewed 18 to 34, while the benefit angle split evenly from 25 up. That gave us two winners serving two audiences, each on its own budget.</div></div>
+      <div class="card stripe s-orange acc-orange" style="padding:16px 18px 16px 24px"><div class="cardtitle" style="font-size:15px">The output is a brief</div><div class="bodytext" style="font-size:13px">We turn each result into a named variable for the next round: change this headline, swap this imagery, use this device screenshot. The studio receives instructions rather than opinions.</div></div>
+    </div>
+  </div>
+  <div class="foot">Creative produced by a specialist studio under our direction. For a UK university the same read-out would split by course, start date and domestic versus international.</div>
+</section>
+
+<!-- ════════ SLIDE 15 · CREATIVE GALLERY ════════ -->
+<div class="note">Slide 18 · Real work · <b>Belief:</b> "This is what my ads will look like."</div>
+<section class="slide hasfoot">
+  <img class="wm" src="../../../../assets/logos/toggle-wordmark-black.png" alt="Toggle Solutions">
+  <h2 class="h1">Recent education creative: testing the angle</h2>
+  <p class="kicker" style="max-width:none;margin-bottom:20px">A postgraduate campaign for a university client, produced in-house. These three ran to the same audience in the same week, so the platform could tell us which promise that audience responds to before we put budget behind one.</p>
+  <div class="grid cols3" style="gap:20px">
+    <div>
+      <img class="shot" src="creatives/med-umbrella-a.jpg" alt="Umbrella ad for a Master of Education campaign, headline reading This Teachers' Day, UNITAR Invests in You">
+      <div class="shotcap"><b>Empathy angle, course family.</b> Opens with recognition rather than the offer, and lists all four specializations so a single ad can serve the whole family of courses.</div>
+    </div>
+    <div>
+      <img class="shot" src="creatives/med-umbrella-b.jpg" alt="Umbrella ad variant for the same campaign leading with the price after bursary">
+      <div class="shotcap"><b>Price angle, course family.</b> Same audience, same week, leading with the fee after the bursary instead. This is the test that tells us whether money or meaning moves the segment.</div>
+    </div>
+    <div>
+      <img class="shot" src="creatives/med-tesl.jpg" alt="Course specific ad leading with a large price figure for a Master of Education in TESL">
+      <div class="shotcap"><b>Price angle, single course.</b> One course, one number, one action. The figure carries the ad, and the conditions sit beneath it rather than in a footnote.</div>
+    </div>
+  </div>
+  <div class="foot">We show this client work with the institution's branding intact. UK creative would be produced in your visual identity using the same system.</div>
+</section>
+
+<!-- ════════ SLIDE 16 · CREATIVE GALLERY, COURSE LEVEL ════════ -->
+<div class="note">Slide 19 · Real work, course level · <b>Belief:</b> "One system can cover my whole catalog."</div>
+<section class="slide hasfoot">
+  <img class="wm" src="../../../../assets/logos/toggle-wordmark-black.png" alt="Toggle Solutions">
+  <h2 class="h1">One layout system, one course each</h2>
+  <p class="kicker" style="max-width:none;margin-bottom:20px">The same campaign at course level. The layout, the logo placement and the call to action stay fixed, so the set reads as one campaign while each ad speaks to a different reason for enrolling.</p>
+  <div class="grid cols3" style="gap:20px">
+    <div>
+      <img class="shot" src="creatives/med-leadership.jpg" alt="Course specific ad for a Master of Education in Educational Leadership and Management">
+      <div class="shotcap"><b>Career angle.</b> Built for prospects who already hold the job and want the qualification that promotes them. The headline names the outcome, not the course.</div>
+    </div>
+    <div>
+      <img class="shot" src="creatives/med-instech.jpg" alt="Course specific ad for a Master of Education in Instructional Technology">
+      <div class="shotcap"><b>Modern skills angle.</b> Positions the course as where the field is heading, aimed at the younger half of the same audience who fear being left behind.</div>
+    </div>
+    <div>
+      <img class="shot" src="creatives/med-ece.jpg" alt="Course specific ad for a Master of Education in Early Childhood Education">
+      <div class="shotcap"><b>Empathy angle.</b> Different photography and a different promise on the same grid, which is what keeps a large catalog from looking like ten unrelated campaigns.</div>
+    </div>
+  </div>
+  <div class="foot">Production time for a set of this size is roughly one week once the fee tables, entry requirements and brand assets are in hand.</div>
+</section>
+
+<!-- ════════ SLIDE 16 · FIRST 90 DAYS ════════ -->
+<div class="note">Slide 20 · First 90 days · <b>Belief:</b> "I know what happens in week one."</div>
+<section class="slide">
+  <img class="wm" src="../../../../assets/logos/toggle-wordmark-black.png" alt="Toggle Solutions">
+  <h2 class="h1">The first 90 days</h2>
+  <p class="kicker" style="max-width:none">Nothing here waits on a strategy document. We are live in the first two weeks and replacing the projections in this deck with real numbers by the end of month one.</p>
+  <table class="dt" style="margin-bottom:20px">
+    <tr><th style="width:14%">Period</th><th style="width:30%">What we do</th><th style="width:28%">What you get</th><th style="width:28%">What we need from you</th></tr>
+    <tr><td class="k">Weeks 1 – 2</td><td>Audit the existing accounts and tracking, agree the lead definition, build the first four creative angles for two priority courses, launch route A instant forms.</td><td>Campaigns live, tracking verified end to end, a shared weekly reporting sheet.</td><td>Ad account access, brand assets, entry requirements and fees for the priority courses.</td></tr>
+    <tr><td class="k">Weeks 3 – 4</td><td>Read the first cost per lead data, cut what is not working, build the course-match quiz and connect it to the CRM.</td><td>Actual UK cost per lead by channel, replacing the projection in this deck.</td><td>A CRM contact, and a decision on the two call slots the automated reply should offer.</td></tr>
+    <tr><td class="k">Month 2</td><td>Launch the quiz, add the retargeting layer, expand from two courses to the full priority set, start the international student segment if it applies.</td><td>A second capture route running, and lead quality reporting split by route.</td><td>Admissions feedback on which leads were worth calling. This is the input we cannot generate ourselves.</td></tr>
+    <tr><td class="k">Month 3</td><td>Rebuild the budget model on real numbers, set the mix from your admissions capacity, plan the next intake window.</td><td>A media plan for the next intake built on measured performance rather than assumptions.</td><td>Enrollment outcomes for the first cohort of leads, so we can close the loop.</td></tr>
+  </table>
+  <div class="grid cols2">
+    <div class="card stripe s-teal acc-teal"><div class="cardtitle">Day 90, done right</div><div class="bodytext">A verified cost per lead by channel, a capture route that arrives pre-qualified, a first contact time measured in minutes, and a budget model built on your own conversion rates rather than ours. By then you are planning on measured numbers instead of the ones in this deck.</div></div>
+    <div class="card stripe s-orange acc-orange"><div class="cardtitle">Our stop condition</div><div class="bodytext">If cost per lead sits above £42 after four weeks of optimization and the lead quality does not justify it, we will tell you and re-plan instead of spending into it. We would sooner hand the budget back than report a number we do not believe.</div></div>
+  </div>
+</section>
+
+<!-- ════════ SLIDE 17 · WHAT WE NEED ════════ -->
+<div class="note">Slide 21 · Close · <b>Belief:</b> "There is a clear next step and it is small."</div>
+<section class="slide">
+  <img class="wm" src="../../../../assets/logos/toggle-wordmark-black.png" alt="Toggle Solutions">
+  <h2 class="h1">What we need to make this real</h2>
+  <p class="kicker" style="max-width:none">Every projection in this deck is a placeholder for a number you already have. Four inputs turn it into a costed plan.</p>
+  <div class="grid cols4" style="margin-bottom:22px">
+    <div class="card topbar">
+      <div style="display:flex;gap:10px;align-items:center;margin-bottom:8px"><span class="ncircle">1</span><div class="cardtitle" style="margin:0;font-size:15px">Your target</div></div>
+      <div class="bodytext" style="font-size:13px">How many enrolled students you need this intake, and by which date. Everything in the media plan works backwards from that one number.</div>
+    </div>
+    <div class="card topbar t-teal">
+      <div style="display:flex;gap:10px;align-items:center;margin-bottom:8px"><span class="ncircle t">2</span><div class="cardtitle" style="margin:0;font-size:15px">Your budget</div></div>
+      <div class="bodytext" style="font-size:13px">The media budget available for the intake, and whether it is committed monthly or front-loaded into the peak weeks. Both change the plan.</div>
+    </div>
+    <div class="card topbar t-purple">
+      <div style="display:flex;gap:10px;align-items:center;margin-bottom:8px"><span class="ncircle p">3</span><div class="cardtitle" style="margin:0;font-size:15px">Your history</div></div>
+      <div class="bodytext" style="font-size:13px">Last intake's spend, leads and enrollments, even if the data is messy. Twelve months of imperfect history beats any benchmark we could quote.</div>
+    </div>
+    <div class="card topbar t-orange">
+      <div style="display:flex;gap:10px;align-items:center;margin-bottom:8px"><span class="ncircle o">4</span><div class="cardtitle" style="margin:0;font-size:15px">Your capacity</div></div>
+      <div class="bodytext" style="font-size:13px">How many prospects your admissions team can call in a week. This sets the channel mix, and it is the input most agencies never ask for.</div>
+    </div>
+  </div>
+  <div class="grid cols2" style="margin-bottom:20px">
+    <div class="callout">
+      <div class="cardtitle">The next step we propose</div>
+      <div class="bodytext">A 45 minute call with whoever owns the enrollment target, before any audit. We want to hear where the current funnel hurts most, because that decides whether the first thing we fix is the media, the capture, or the handover. We will bring the audit to the second meeting, once we know what to look for.</div>
+    </div>
+    <div class="card stripe s-slate acc-slate">
+      <div class="cardtitle">Engagement structure</div>
+      <ul class="b"><li>Monthly management, no long lock-in. You keep ownership of the ad accounts and the data.</li><li>You pay the platforms on your own card.</li><li>We scope the quiz and conversation platform as one-off builds, priced apart from the monthly fee.</li></ul>
+    </div>
+  </div>
+  <div class="seal" style="position:absolute;left:64px;bottom:46px;color:var(--blue);font-size:16px"><span class="br">[&nbsp;</span>Toggle Solutions · toggle.solutions · hello@toggle.solutions<span class="br">&nbsp;]</span></div>
+</section>
+
+</body>
+</html>

@@ -33,6 +33,14 @@ clients/*/assets/**/*.mov
 clients/*/assets/**/*.mp4
 clients/*/assets/**/*.zip
 
+# Build caches / local environments — never commit
+.venv/
+venv/
+__pycache__/
+*.pyc
+node_modules/
+.wrangler/
+
 # Local-only scratch
 **/scratch/
 **/_local/

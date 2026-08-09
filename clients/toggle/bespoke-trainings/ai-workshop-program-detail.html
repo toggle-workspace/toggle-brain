@@ -1,0 +1,880 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Toggle Bespoke · AI-Literacy Program Detail</title>
+<style>
+:root{
+  --md-radius-xs:4px; --md-radius-sm:8px; --md-radius-md:12px; --md-radius-lg:16px; --md-radius-xl:28px;
+  --md-font:"Roboto","Roboto Flex",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  --md-surface:#FBF8FE;
+  --md-surface-container-lowest:#FFFFFF;
+  --md-surface-container-low:#F3F0F9;
+  --md-surface-container:#EFEDF4;
+  --md-surface-container-high:#E9E7EF;
+  --md-surface-container-highest:#E4E1E9;
+  --md-on-surface:#1A1B21;
+  --md-on-surface-variant:#45464F;
+  --md-outline:#767680;
+  --md-outline-variant:#C7C5D0;
+  --md-primary:#3A5CC8; --md-on-primary:#FFFFFF; --md-primary-container:#DCE1FF; --md-on-primary-container:#001551;
+  --md-secondary:#7A5900; --md-on-secondary:#FFFFFF; --md-secondary-container:#FFDEA0; --md-on-secondary-container:#261900;
+  --md-tertiary:#146C43; --md-on-tertiary:#FFFFFF; --md-tertiary-container:#A4F5C4; --md-on-tertiary-container:#00210F;
+  --md-elev-1:0 1px 2px rgba(0,0,0,.28),0 1px 3px 1px rgba(0,0,0,.12);
+  --md-elev-2:0 1px 2px rgba(0,0,0,.28),0 2px 6px 2px rgba(0,0,0,.12);
+  --md-star:#F5B301;
+  --canvas:var(--md-surface);
+  --card:var(--md-surface-container-low);
+  --card-2:var(--md-surface-container-high);
+  --ink:var(--md-on-surface);
+  --body:var(--md-on-surface);
+  --muted:var(--md-on-surface-variant);
+  --faint:var(--md-outline);
+  --line:var(--md-outline-variant);
+  --line-strong:var(--md-outline);
+  --brand:var(--md-primary); --brand-deep:#274BB5; --on-brand:var(--md-on-primary);
+  --callout:var(--md-primary-container);
+  --ai-acc:#3A5CC8; --ai:var(--md-on-primary-container); --ai-bg:var(--md-primary-container);
+  --mk-acc:#146C43; --mk:var(--md-on-tertiary-container); --mk-bg:var(--md-tertiary-container);
+  --ax-acc:#7A5900; --ax:var(--md-on-secondary-container); --ax-bg:var(--md-secondary-container);
+  --teach:var(--md-tertiary); --teach-bg:var(--md-tertiary-container);
+  --do:var(--md-secondary); --do-bg:var(--md-secondary-container);
+  --shadow:var(--md-elev-1);
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --md-surface:#121318;
+    --md-surface-container-lowest:#0D0E13;
+    --md-surface-container-low:#1B1B21;
+    --md-surface-container:#1E1F25;
+    --md-surface-container-high:#2A2B31;
+    --md-surface-container-highest:#33343A;
+    --md-on-surface:#E4E1E9;
+    --md-on-surface-variant:#C7C5D0;
+    --md-outline:#90909A;
+    --md-outline-variant:#45464F;
+    --md-primary:#B4C5FF; --md-on-primary:#002E69; --md-primary-container:#123E77; --md-on-primary-container:#DAE2FF;
+    --md-secondary:#F0C060; --md-on-secondary:#412D00; --md-secondary-container:#5D4200; --md-on-secondary-container:#FFDEA0;
+    --md-tertiary:#7ED6A5; --md-on-tertiary:#003920; --md-tertiary-container:#005231; --md-on-tertiary-container:#A4F5C4;
+    --md-elev-1:0 1px 3px rgba(0,0,0,.5),0 4px 8px 2px rgba(0,0,0,.3);
+    --md-elev-2:0 2px 6px rgba(0,0,0,.5),0 6px 12px 3px rgba(0,0,0,.3);
+    --brand-deep:#DAE2FF; --ai-acc:#B4C5FF; --mk-acc:#7ED6A5; --ax-acc:#F0C060;
+  }
+}
+:root[data-theme="dark"]{
+  --md-surface:#121318; --md-surface-container-lowest:#0D0E13; --md-surface-container-low:#1B1B21; --md-surface-container:#1E1F25; --md-surface-container-high:#2A2B31; --md-surface-container-highest:#33343A;
+  --md-on-surface:#E4E1E9; --md-on-surface-variant:#C7C5D0; --md-outline:#90909A; --md-outline-variant:#45464F;
+  --md-primary:#B4C5FF; --md-on-primary:#002E69; --md-primary-container:#123E77; --md-on-primary-container:#DAE2FF;
+  --md-secondary:#F0C060; --md-on-secondary:#412D00; --md-secondary-container:#5D4200; --md-on-secondary-container:#FFDEA0;
+  --md-tertiary:#7ED6A5; --md-on-tertiary:#003920; --md-tertiary-container:#005231; --md-on-tertiary-container:#A4F5C4;
+  --md-elev-1:0 1px 3px rgba(0,0,0,.5),0 4px 8px 2px rgba(0,0,0,.3);
+  --md-elev-2:0 2px 6px rgba(0,0,0,.5),0 6px 12px 3px rgba(0,0,0,.3);
+  --brand-deep:#DAE2FF; --ai-acc:#B4C5FF; --mk-acc:#7ED6A5; --ax-acc:#F0C060;
+}
+
+*{box-sizing:border-box}
+body{margin:0;background:var(--canvas);color:var(--body);font-family:var(--md-font);font-size:16px;line-height:1.6;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{color:var(--ink);text-wrap:balance;line-height:1.22;margin:0}
+h1{font-weight:400;font-size:clamp(28px,4.4vw,40px);letter-spacing:-.4px}
+h2{font-weight:400;font-size:clamp(22px,3vw,29px);letter-spacing:-.2px}
+h3{font-weight:500;font-size:19px}
+h4{font-weight:500;font-size:15.5px}
+p{margin:0 0 14px}
+strong{color:var(--ink);font-weight:600}
+a{color:var(--brand)}
+
+.wrap{max-width:1080px;margin:0 auto;padding:44px 22px 90px}
+.sec{margin:66px 0 0}
+.sec-head{margin-bottom:26px}
+.kicker{font-size:12.5px;font-weight:600;letter-spacing:1.1px;text-transform:uppercase;color:var(--brand);margin:0 0 9px}
+.sec-head p{color:var(--muted);margin:11px 0 0;max-width:none}
+.lede{color:var(--muted);font-size:17.5px;margin-top:16px}
+
+.card{background:var(--card);border-radius:var(--md-radius-lg);padding:22px 24px;box-shadow:var(--shadow)}
+.card-2{background:var(--card-2);border-radius:var(--md-radius-lg);padding:22px 24px}
+.grid{display:grid;gap:16px}
+@media(min-width:760px){ .g2{grid-template-columns:1fr 1fr} .g3{grid-template-columns:repeat(3,1fr)} }
+
+/* masthead */
+.mast{background:var(--card);border-radius:var(--md-radius-xl);padding:36px 34px;box-shadow:var(--md-elev-2)}
+.mast .eyebrow{font-size:13px;font-weight:600;letter-spacing:.8px;text-transform:uppercase;color:var(--brand);margin:0 0 14px}
+.meta{display:flex;flex-wrap:wrap;gap:10px;margin-top:24px}
+.meta span{background:var(--md-surface-container-highest);color:var(--muted);border-radius:999px;padding:7px 15px;font-size:13px}
+
+/* chips */
+.chip{display:inline-flex;align-items:center;gap:7px;border-radius:var(--md-radius-sm);padding:5px 11px;font-size:12.5px;font-weight:600;white-space:nowrap}
+.chip.ai{background:var(--ai-bg);color:var(--ai)}
+.chip.mk{background:var(--mk-bg);color:var(--mk)}
+.chip.ax{background:var(--ax-bg);color:var(--ax)}
+.star{color:var(--md-star)}
+
+/* lesson block */
+.lesson{background:var(--card);border-radius:var(--md-radius-lg);padding:20px 22px;box-shadow:var(--shadow);margin-bottom:14px}
+.lesson-top{display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin-bottom:12px}
+.lesson-top h3{flex:1 1 auto;min-width:220px}
+.rows{display:grid;gap:11px;margin-top:6px}
+.row{display:grid;gap:4px}
+@media(min-width:700px){ .row{grid-template-columns:132px 1fr;gap:16px;align-items:start} }
+.row .lab{font-size:12px;font-weight:600;letter-spacing:.7px;text-transform:uppercase;color:var(--faint);padding-top:3px}
+.row .val{margin:0}
+.row.demo .val{background:var(--do-bg);color:var(--md-on-secondary-container);border-radius:var(--md-radius-md);padding:11px 14px}
+.depts{display:flex;flex-wrap:wrap;gap:7px}
+.dept{background:var(--md-surface-container-highest);color:var(--muted);border-radius:999px;padding:4px 11px;font-size:12px}
+
+/* tables */
+.tw{overflow-x:auto;border-radius:var(--md-radius-lg);box-shadow:var(--shadow);background:var(--card)}
+table{border-collapse:collapse;width:100%;min-width:620px;font-size:14.5px}
+th,td{text-align:left;padding:13px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+thead th{background:var(--md-surface-container-highest);color:var(--ink);font-weight:600;font-size:13px;letter-spacing:.3px;border-bottom:1px solid var(--line-strong)}
+tbody tr:last-child td{border-bottom:0}
+td.num{white-space:nowrap;font-variant-numeric:tabular-nums}
+
+/* callouts */
+.note{background:var(--callout);color:var(--md-on-primary-container);border-radius:var(--md-radius-lg);padding:18px 22px}
+.note h4{color:var(--md-on-primary-container);margin-bottom:7px}
+.note p:last-child{margin-bottom:0}
+.warn{background:var(--do-bg);color:var(--md-on-secondary-container);border-radius:var(--md-radius-lg);padding:18px 22px}
+.warn h4{color:var(--md-on-secondary-container);margin-bottom:7px}
+.warn p:last-child{margin-bottom:0}
+
+/* pathway cards */
+.path{background:var(--card);border-radius:var(--md-radius-lg);padding:20px 22px;box-shadow:var(--shadow)}
+.path .pid{font-size:12.5px;font-weight:600;letter-spacing:.9px;text-transform:uppercase;color:var(--brand)}
+.path h3{margin:6px 0 8px}
+.path .who{color:var(--muted);font-size:14.5px;margin:0 0 14px}
+.seq{display:flex;flex-wrap:wrap;gap:6px}
+.seq .chip{font-size:11.5px;padding:4px 9px;font-weight:500}
+
+ul,ol{margin:0 0 14px;padding-left:21px}
+li{margin-bottom:7px}
+li:last-child{margin-bottom:0}
+.tight li{margin-bottom:4px}
+
+.timeline{display:grid;gap:12px}
+.tl{display:grid;gap:4px}
+@media(min-width:700px){ .tl{grid-template-columns:118px 1fr;gap:18px} }
+.tl .t{font-weight:600;color:var(--brand);font-variant-numeric:tabular-nums}
+
+.foot{margin-top:76px;padding-top:24px;border-top:1px solid var(--line);color:var(--faint);font-size:13.5px}
+
+@media print{
+  @page{size:A4;margin:14mm 13mm}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  :root{
+    --md-surface:#FBF8FE; --md-surface-container-low:#F3F0F9; --md-surface-container-high:#E9E7EF; --md-surface-container-highest:#E4E1E9;
+    --md-on-surface:#1A1B21; --md-on-surface-variant:#45464F; --md-outline:#767680; --md-outline-variant:#C7C5D0;
+    --md-primary:#3A5CC8; --md-on-primary:#FFFFFF; --md-primary-container:#DCE1FF; --md-on-primary-container:#001551;
+    --md-secondary:#7A5900; --md-secondary-container:#FFDEA0; --md-on-secondary-container:#261900;
+    --md-tertiary:#146C43; --md-tertiary-container:#A4F5C4; --md-on-tertiary-container:#00210F;
+  }
+  body{background:#fff;color:var(--md-on-surface)}
+  .mast{box-shadow:none;border:1px solid var(--line)}
+  .tl{grid-template-columns:112px 1fr;gap:14px}
+  .wrap{padding:0;max-width:none}
+  body{font-size:10.5pt;line-height:1.42}
+  .wrap{padding:0}
+  h1{font-size:24pt} h2{font-size:15pt} h3{font-size:11.5pt} h4{font-size:10.5pt}
+  .mast{padding:20px 22px}
+  .lesson{padding:11px 13px;margin-bottom:9px}
+  .lesson-top{margin-bottom:7px;gap:8px}
+  .rows{gap:6px}
+  .row{grid-template-columns:104px 1fr;gap:11px}
+  .row .lab{font-size:8.5pt}
+  .row.demo .val{padding:7px 9px}
+  .card,.path,.note,.warn{padding:13px 15px}
+  .timeline{gap:7px}
+  p{margin:0 0 8px}
+  li{margin-bottom:4px}
+  .sec{margin-top:22px}
+  .sec-head{page-break-after:avoid}
+  h2,h3,h4{page-break-after:avoid}
+  .lesson,.card,.path,.note,.warn{box-shadow:none;border:1px solid var(--line);page-break-inside:avoid}
+  .tw{box-shadow:none;border:1px solid var(--line);overflow:visible}
+  table{min-width:0;font-size:11.5px}
+  th,td{padding:7px 9px}
+  tr{page-break-inside:avoid}
+  .grid{display:block}
+  .grid>*{margin-bottom:12px}
+}
+</style>
+
+</head>
+<body>
+<div class="wrap">
+
+<div class="mast">
+  <p class="eyebrow">Toggle Bespoke · AI-Literacy Program</p>
+  <h1>Program detail, department applications, and costing</h1>
+  <p class="lede">This document answers the four questions you sent: what each lesson covers and how it runs, the economics of the AI plans your team would be on, how each module lands department by department, and the costing including an HRDF claimable option.</p>
+  <div class="meta">
+    <span>21 lessons</span>
+    <span>3 tracks</span>
+    <span>5 pathways</span>
+    <span>Reading level ELI15 to ELI30</span>
+    <span>Prepared 9 August 2026</span>
+  </div>
+</div>
+
+<!-- ========================= 1. THE MODEL ========================= -->
+<section class="sec">
+  <div class="sec-head">
+    <p class="kicker">01 · The model</p>
+    <h2>One library of lessons, five curated routes through it</h2>
+    <p>Every lesson is a self-contained module with its own objective, its own hands-on exercise, and its own live demo. A department picks the pathway that matches where it starts, and several pathways reuse the same core lessons, so a finance manager and a marketing executive sitting in the same room on AI Basics are getting the same foundation before their routes separate.</p>
+  </div>
+
+  <div class="grid g3">
+    <div class="card">
+      <h3>Three tracks</h3>
+      <p style="margin-top:10px">The <strong>AI track</strong> (AI-1 to AI-8) builds general capability that every department uses. The <strong>Marketing track</strong> (MK-1 to MK-4) covers marketing fundamentals for people who never trained in it. The <strong>applied track</strong> (AX-1 to AX-9) puts the two together on real work.</p>
+    </div>
+    <div class="card">
+      <h3>The ELI dial</h3>
+      <p style="margin-top:10px">Each lesson re-pitches its explanations across four reading levels. <strong>ELI15</strong> is pitched for a bright teenager, <strong>ELI20</strong> for early-career staff, <strong>ELI25</strong> for an experienced professional outside the subject, and <strong>ELI30</strong> for an experienced practitioner inside it. The analogies, examples, and exercises stay the same, only the depth of explanation moves. A mixed-seniority room stays in one session instead of splitting into two.</p>
+    </div>
+    <div class="card">
+      <h3>Every lesson ends with something built</h3>
+      <p style="margin-top:10px">Every lesson ends with a Monday action: one task the attendee already does every week, done once with AI before they leave the room. The capstone lesson, AX-8, is entirely build time, so each person on a pathway that includes it walks out with one working, documented workflow of their own. AX-8 sits in P3, P4, and P5, which covers every department recommendation in section 05.</p>
+    </div>
+  </div>
+
+  <div class="note" style="margin-top:16px">
+    <h4>Five lessons carry the whole program</h4>
+    <p>AI-1 (AI Basics), AI-3 (Prompting and Tools), AI-5 (Agentic AI and Claude Code), AX-7 (AI CRM and Conversations), and AX-8 (Build Your Workflow) each appear in three or more pathways. AI-5 appears in all five. If you are choosing where to start with a small pilot group, start there.</p>
+  </div>
+</section>
+
+<!-- ========================= 2. HOW A LESSON RUNS ========================= -->
+<section class="sec">
+  <div class="sec-head">
+    <p class="kicker">02 · How it runs</p>
+    <h2>The anatomy of a session</h2>
+    <p>Most lessons run to the same 45-minute shape, so a pathway is predictable to schedule and an attendee always knows what is coming next. Two run longer, and they are noted below.</p>
+  </div>
+
+  <div class="card">
+    <div class="timeline">
+      <div class="tl"><div class="t">0 to 5 min</div><div><strong>Why this matters.</strong> The stakes for this specific room, in plain language. AI-1 opens on the observation that people rarely get replaced by AI, and that they get out-run by the colleague who learned it first.</div></div>
+      <div class="tl"><div class="t">5 to 25 min</div><div><strong>Teach.</strong> Five numbered concepts, each with an analogy and a worked example from the attendee's own job. The trainer sets the ELI level to match the room before starting.</div></div>
+      <div class="tl"><div class="t">25 to 35 min</div><div><strong>Live demo.</strong> The trainer does the thing on screen, on the client's own material where possible, including the part where the tool gets it wrong and gets corrected. Each lesson's demo is listed in the catalog below.</div></div>
+      <div class="tl"><div class="t">35 to 42 min</div><div><strong>Hands-on.</strong> Attendees do it themselves on their own laptops, with the trainer and one floater circulating. This is where most of the learning lands.</div></div>
+      <div class="tl"><div class="t">42 to 45 min</div><div><strong>Recap and Monday action.</strong> A one-line summary and one named task to repeat at their desk that week.</div></div>
+    </div>
+    <p style="margin:18px 0 0"><strong>The two exceptions.</strong> <strong>AX-8 Build Your Workflow</strong> is a build session and runs 120 minutes, because each attendee designs, builds, tests, and documents a workflow with a trainer beside them, then presents it to the room. <strong>AX-9 Dashboards, Sites and Reports</strong> runs 90 minutes, because attendees leave with a working page rather than a demonstration of one. The pathway hours quoted below already include both.</p>
+  </div>
+
+  <div class="grid g2" style="margin-top:16px">
+    <div class="card">
+      <h3>Scheduling a pathway</h3>
+      <p style="margin-top:10px">Counting the two longer lessons and adding breaks, each pathway lands as follows:</p>
+      <ul class="tight">
+        <li><strong>P2 Marketing Fundamentals</strong>, 5 lessons, 3 hours 45 minutes of teaching. One half day.</li>
+        <li><strong>P1 AI Fundamentals</strong>, 8 lessons, 6 hours. One full day.</li>
+        <li><strong>P5 AI Systems and Automation</strong>, 9 lessons including AX-8 and AX-9, 8 hours 45 minutes. One full day, or two half days.</li>
+        <li><strong>P4 Owner's Fast-Track</strong>, 10 lessons including AX-8, 8 hours 45 minutes. One long day, or two half days.</li>
+        <li><strong>P3 AI for Marketers</strong>, 12 lessons including AX-8 and AX-9, 11 hours. Two days.</li>
+      </ul>
+      <p style="margin-bottom:0">We can run consecutive days, or split a pathway into weekly half-day sessions so the team applies each block before the next one. The weekly split gets better retention, the consecutive block is easier on rosters.</p>
+    </div>
+    <div class="card">
+      <h3>What we need in the room</h3>
+      <ul class="tight" style="margin-bottom:0">
+        <li>One laptop per attendee, with the AI tool already installed and logged in. We send a setup sheet a week ahead and run a 20-minute check the morning of day one.</li>
+        <li>A projector or large screen, and stable Wi-Fi that does not block the AI tools. This is the single most common failure, so we test it in advance.</li>
+        <li>Real material to work on: your actual FAQs, past inquiries, a recent report, a live ad account. Sanitized where it needs to be. AI-8 covers how to sanitize it, and where a cohort is on a pathway without AI-8 we brief the redaction rules before the session instead.</li>
+        <li>Maximum 20 attendees per trainer for the hands-on segments to stay useful.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= 3. LESSON CATALOG ========================= -->
+<section class="sec">
+  <div class="sec-head">
+    <p class="kicker">03 · The catalog</p>
+    <h2>All 21 lessons, in detail</h2>
+    <p>For each lesson: what it covers, what the attendee can do by the end, the live demo we run, and which departments it is aimed at. A star marks a lesson that appears in three or more pathways.</p>
+  </div>
+
+  <h3 style="margin:26px 0 14px"><span class="chip ai">AI track</span> &nbsp;General AI capability, useful to every department</h3>
+
+  <div class="lesson">
+    <div class="lesson-top"><span class="chip ai">AI-1</span><h3>AI Basics: what AI actually is, and isn't</h3><span class="star">★</span></div>
+    <div class="rows">
+      <div class="row"><div class="lab">Covers</div><p class="val">This lesson explains what people mean by "AI" today, and the hierarchy underneath it: machine learning, generative AI, and large language models. Attendees see how an answer is produced, one predicted chunk at a time, with no lookup step and no reasoning behind it. We cover what the technology is strong at, which is drafts, rewrites, summaries, and variations at volume, and where it fails, which is facts it was not given, exact arithmetic, recent events, and anything carrying accountability. We treat hallucination as a structural consequence of predicting plausible text rather than a bug a better prompt removes. The lesson closes on what happens to data typed into a public tool.</p></div>
+      <div class="row"><div class="lab">Walk away able to</div><p class="val">Explain in one sentence what generative AI is, name two things it does well and two it does badly, and state the rule that keeps you safe: check the facts, guard the data.</p></div>
+      <div class="row demo"><div class="lab">Live demo</div><p class="val">We ask the same tool the same question twice and show the answers differ, which makes the guessing visible. Then we ask for three statistics about the client's own market, receive clean and specific numbers, and fact-check them live on screen until one of them turns out to be invented.</p></div>
+      <div class="row"><div class="lab">Departments</div><div class="val depts"><span class="dept">Marketing</span><span class="dept">Admin</span><span class="dept">Finance</span><span class="dept">HR</span><span class="dept">Education advisors</span></div></div>
+    </div>
+  </div>
+
+  <div class="lesson">
+    <div class="lesson-top"><span class="chip ai">AI-2</span><h3>AI Literacy: talking to AI so it gives you something useful</h3></div>
+    <div class="rows">
+      <div class="row"><div class="lab">Covers</div><p class="val">This lesson explains why the same question produces a mediocre answer for one person and a strong one for another. Attendees learn to give context up front rather than drip-feeding it, to assign a role and an audience, and to ask for a specific format. We cover how to iterate on a weak answer instead of starting over, and when to abandon a thread and open a fresh one. The lesson finishes on diagnosis, where an attendee reads a bad output and works out which part of the request caused it.</p></div>
+      <div class="row"><div class="lab">Walk away able to</div><p class="val">Turn a one-line request into a structured brief, and fix a disappointing answer in two follow-ups instead of giving up on the tool.</p></div>
+      <div class="row demo"><div class="lab">Live demo</div><p class="val">We take a vague prompt from someone in the room, run it as-is so everyone sees the generic result, then rewrite it in three visible passes: add context, add role and audience, add format and constraints. The room watches the same question produce usable output by the third pass.</p></div>
+      <div class="row"><div class="lab">Departments</div><div class="val depts"><span class="dept">Marketing</span><span class="dept">Admin</span><span class="dept">Finance</span><span class="dept">HR</span><span class="dept">Education advisors</span></div></div>
+    </div>
+  </div>
+
+  <div class="lesson">
+    <div class="lesson-top"><span class="chip ai">AI-3</span><h3>Prompting and Tools: the structure, and which tool for which job</h3><span class="star">★</span></div>
+    <div class="rows">
+      <div class="row"><div class="lab">Covers</div><p class="val">This lesson gives attendees a reusable prompt structure covering role, context, task, format, and constraints, and shows why examples work better than descriptions of what you want. We go through the current tool market and what each one is better at, covering ChatGPT, Claude, Gemini, Microsoft Copilot, and Perplexity. Attendees then learn to save their work so they never retype it, using custom instructions, saved prompts, project spaces, and a shared team prompt library.</p></div>
+      <div class="row"><div class="lab">Walk away able to</div><p class="val">Write a prompt that works the first time for a task you repeat, save it where a colleague can reuse it, and pick the right tool instead of defaulting to whichever one you opened first.</p></div>
+      <div class="row demo"><div class="lab">Live demo</div><p class="val">We take a task the room brings, build the prompt template live against the five-part structure, then save it as a Claude Project or a Custom GPT and hand it to a second attendee to run cold. If it works in their hands without explanation, the template is good.</p></div>
+      <div class="row"><div class="lab">Departments</div><div class="val depts"><span class="dept">Marketing</span><span class="dept">Admin</span><span class="dept">Finance</span><span class="dept">HR</span><span class="dept">Education advisors</span></div></div>
+    </div>
+  </div>
+
+  <div class="lesson">
+    <div class="lesson-top"><span class="chip ai">AI-4</span><h3>AI Systems: from one-off chats to something repeatable</h3></div>
+    <div class="rows">
+      <div class="row"><div class="lab">Covers</div><p class="val">This lesson closes the gap between a person who prompts well and a team that has a system. Attendees build projects and knowledge bases that hold their own documents, so the tool answers from your policies rather than from the internet. We cover custom instructions at team level, and connecting AI to files, drives, and other tools. The lesson ends on judgment, where attendees decide what to automate, what to keep human-assisted, and what to leave alone.</p></div>
+      <div class="row"><div class="lab">Walk away able to</div><p class="val">Build a shared workspace loaded with your own reference documents, so any colleague asking a policy question gets the same grounded answer.</p></div>
+      <div class="row demo"><div class="lab">Live demo</div><p class="val">We load the client's own handbook, price list, or policy documents into a project workspace during the session, then ask it a question that has a precise institutional answer. We show it citing the source document, and then we ask a question the documents do not cover, so the room sees the difference between grounded and guessed.</p></div>
+      <div class="row"><div class="lab">Departments</div><div class="val depts"><span class="dept">Admin</span><span class="dept">HR</span><span class="dept">Finance</span><span class="dept">Education advisors</span></div></div>
+    </div>
+  </div>
+
+  <div class="lesson">
+    <div class="lesson-top"><span class="chip ai">AI-5</span><h3>Agentic AI and Claude Code: AI that carries out the task</h3><span class="star">★</span></div>
+    <div class="rows">
+      <div class="row"><div class="lab">Covers</div><p class="val">This lesson separates a chatbot that answers from an agent that acts, reads files, runs steps, checks its own output, and reports back. We present Claude Code as a general-purpose work agent rather than a programming tool, which is the framing most people miss. Attendees learn how permissions and approval steps work, and what an agent should never do unsupervised. The lesson names both sides honestly, covering where agents save hours and where they quietly create risk.</p></div>
+      <div class="row"><div class="lab">Walk away able to</div><p class="val">Point an agent at a folder of your own files, ask a question that requires reading all of them, and get a sourced answer plus a formatted document, without writing any code.</p></div>
+      <div class="row demo"><div class="lab">Live demo</div><p class="val">We take a real folder from the client, a stack of application PDFs, a quarter of invoices, or a set of past reports, and ask a question no one could answer without opening every file. The room watches the agent work through them and produce a sourced answer, then we have it turn that answer into a formatted report. This lesson appears in all five pathways because it is the one that changes what people think is possible.</p></div>
+      <div class="row"><div class="lab">Departments</div><div class="val depts"><span class="dept">Marketing</span><span class="dept">Admin</span><span class="dept">Finance</span><span class="dept">HR</span><span class="dept">Education advisors</span></div></div>
+    </div>
+  </div>
+
+  <div class="lesson">
+    <div class="lesson-top"><span class="chip ai">AI-6</span><h3>Generative AI: images, video, and voice</h3></div>
+    <div class="rows">
+      <div class="row"><div class="lab">Covers</div><p class="val">This lesson explains how image and video models differ from text models, and why that changes the way you prompt them. Attendees learn the anatomy of a visual prompt, covering subject, style, composition, lighting, and what to exclude, and they learn to hold brand consistency across a set rather than getting one lucky image. We cover voice and video generation and judge where each is currently believable. The lesson also handles licensing, usage rights, and disclosure, and it names the failure modes, starting with text inside images.</p></div>
+      <div class="row"><div class="lab">Walk away able to</div><p class="val">Produce a consistent set of on-brand visuals from one prompt template, and recognize when a generated asset is not fit to publish.</p></div>
+      <div class="row demo"><div class="lab">Live demo</div><p class="val">We generate a set of images from a single template, iterate the prompt on screen to bring them onto brand, then deliberately ask for text inside an image so the room sees it fail, and show the workaround of adding the text afterward in a design tool.</p></div>
+      <div class="row"><div class="lab">Departments</div><div class="val depts"><span class="dept">Marketing</span><span class="dept">Education advisors</span><span class="dept">HR</span></div></div>
+    </div>
+  </div>
+
+  <div class="lesson">
+    <div class="lesson-top"><span class="chip ai">AI-7</span><h3>AI on a Budget: what to pay for, and what not to</h3></div>
+    <div class="rows">
+      <div class="row"><div class="lab">Covers</div><p class="val">This lesson sets out what you give up on a free tier in specific terms: usage limits, weaker models, no file handling, no team sharing, and inputs used for training. Attendees compare per-seat subscriptions against API and token pricing, and find the point where each one wins. We cover matching tiers to roles rather than buying one plan for everyone, and using cheaper or open models for tasks that do not need frontier quality. The lesson ends on tool sprawl, where four departments each buy a different subscription for the same job.</p></div>
+      <div class="row"><div class="lab">Walk away able to</div><p class="val">Build the per-seat cost model for your own headcount and defend the number to whoever signs it off.</p></div>
+      <div class="row demo"><div class="lab">Live demo</div><p class="val">We run one identical, realistic task on a free tier and a paid tier side by side on screen, so the difference is observed rather than claimed. Then we build the annual cost table for the client's actual headcount live in the session, which becomes the AI economics section of this document made specific to you.</p></div>
+      <div class="row"><div class="lab">Departments</div><div class="val depts"><span class="dept">Finance</span><span class="dept">Admin</span><span class="dept">Marketing</span><span class="dept">HR</span></div></div>
+    </div>
+  </div>
+
+  <div class="lesson">
+    <div class="lesson-top"><span class="chip ai">AI-8</span><h3>Data Privacy with AI: what you can and cannot paste</h3></div>
+    <div class="rows">
+      <div class="row"><div class="lab">Covers</div><p class="val">This lesson covers what happens to text typed into each tier of each tool, and which tiers train on your inputs by default. Attendees work through Malaysia's PDPA and, for teams handling UK and European student records, the GDPR obligations that travel with that data. We go through student, applicant, employee, and customer records and decide which of them can never enter a general tool. Attendees then learn practical redaction patterns that keep the work useful, and they draft an approved-tools policy staff will follow rather than a ban they will route around.</p></div>
+      <div class="row"><div class="lab">Walk away able to</div><p class="val">Configure your own account correctly, apply a redaction pattern to a real record, and state the rule for what never leaves the building.</p></div>
+      <div class="row demo"><div class="lab">Live demo</div><p class="val">We open the actual settings screens on each major tool and turn training off, live, so nobody has to take our word for where the toggle is. Then we take a real record with personal details in it, redact it on screen, and show the AI still does the job on the redacted version.</p></div>
+      <div class="row"><div class="lab">Departments</div><div class="val depts"><span class="dept">Admin</span><span class="dept">HR</span><span class="dept">Finance</span><span class="dept">Education advisors</span><span class="dept">Marketing</span></div></div>
+    </div>
+  </div>
+
+  <h3 style="margin:34px 0 14px"><span class="chip mk">Marketing track</span> &nbsp;Fundamentals for people who never trained in marketing</h3>
+
+  <div class="lesson">
+    <div class="lesson-top"><span class="chip mk">MK-1</span><h3>Marketing Foundation: audience, offer, message, channel</h3></div>
+    <div class="rows">
+      <div class="row"><div class="lab">Covers</div><p class="val">This lesson covers the four decisions every piece of marketing rests on, and the order to make them in. Attendees learn what a funnel is and what each stage is accountable for, and why most problems that look like a channel problem turn out to be an offer problem. The lesson gives a non-marketer the vocabulary to hold a useful conversation with an agency or an in-house team.</p></div>
+      <div class="row"><div class="lab">Walk away able to</div><p class="val">Map your organization's own funnel on one page and name the stage where you are losing people.</p></div>
+      <div class="row demo"><div class="lab">Live demo</div><p class="val">We map the client's real funnel on the board with the room, from first touch to enrolled or closed, then put the actual numbers against each stage. The leak is usually visible within ten minutes, and it is usually not where the room expected.</p></div>
+      <div class="row"><div class="lab">Departments</div><div class="val depts"><span class="dept">Education advisors</span><span class="dept">Admin</span><span class="dept">Marketing</span></div></div>
+    </div>
+  </div>
+
+  <div class="lesson">
+    <div class="lesson-top"><span class="chip mk">MK-2</span><h3>Performance Basics: how paid media works</h3></div>
+    <div class="rows">
+      <div class="row"><div class="lab">Covers</div><p class="val">This lesson explains campaign structure and why it matters more than creative in the first month. Attendees see how budget and bidding decide who sees an ad, and we explain the auction in plain language. We then separate the metrics that carry meaning, such as cost per lead, cost per acquisition, and return on ad spend, from the ones that mostly flatter a report, such as impressions and reach on their own.</p></div>
+      <div class="row"><div class="lab">Walk away able to</div><p class="val">Open an ad account, read a campaign, and say whether it is working and why, without needing the agency to interpret it for you.</p></div>
+      <div class="row demo"><div class="lab">Live demo</div><p class="val">We open a live ad account, read a real campaign together, and find the wasted spend. There is nearly always a set of ad sets consuming budget at several times the cost per lead of the rest, and finding it in the room is more convincing than any slide about optimization.</p></div>
+      <div class="row"><div class="lab">Departments</div><div class="val depts"><span class="dept">Marketing</span><span class="dept">Finance</span></div></div>
+    </div>
+  </div>
+
+  <div class="lesson">
+    <div class="lesson-top"><span class="chip mk">MK-3</span><h3>Content and Organic: what to publish, and how often</h3></div>
+    <div class="rows">
+      <div class="row"><div class="lab">Covers</div><p class="val">This lesson covers content pillars, so that publishing stops being a weekly scramble for ideas, and it covers what makes a hook work in the first two seconds. Attendees learn how format changes by platform, because the same message needs a different shape on LinkedIn than on TikTok. We set a realistic cadence for a team that has other jobs, and we show how organic and paid feed each other rather than competing for the same budget.</p></div>
+      <div class="row"><div class="lab">Walk away able to</div><p class="val">Turn one substantial asset into a month of scheduled posts, working from a pillar plan rather than from inspiration.</p></div>
+      <div class="row demo"><div class="lab">Live demo</div><p class="val">We take one long asset the client already owns, a recorded webinar, a course page, or a case study, and break it into a week of platform-specific posts on screen, hooks included, in about fifteen minutes.</p></div>
+      <div class="row"><div class="lab">Departments</div><div class="val depts"><span class="dept">Marketing</span><span class="dept">Education advisors</span></div></div>
+    </div>
+  </div>
+
+  <div class="lesson">
+    <div class="lesson-top"><span class="chip mk">MK-4</span><h3>Data and Measurement: knowing what worked</h3></div>
+    <div class="rows">
+      <div class="row"><div class="lab">Covers</div><p class="val">This lesson covers tracking setup in practical terms, including pixels, conversion events, and UTM discipline. Attendees learn how attribution works, and why two platforms report different numbers for the same week without either one lying. We decide what a dashboard should answer before anyone builds it, and we separate a metric you report from a metric you act on.</p></div>
+      <div class="row"><div class="lab">Walk away able to</div><p class="val">Trace a single lead from first click to CRM record, and point at the exact step where your data currently breaks.</p></div>
+      <div class="row demo"><div class="lab">Live demo</div><p class="val">We follow one real lead end to end through the client's own stack in front of the room. In most organizations the trail breaks at a specific, fixable point, usually an untagged link or a form that does not pass source through, and naming it is worth more than the rest of the session.</p></div>
+      <div class="row"><div class="lab">Departments</div><div class="val depts"><span class="dept">Marketing</span><span class="dept">Finance</span><span class="dept">Admin</span></div></div>
+    </div>
+  </div>
+
+  <h3 style="margin:34px 0 14px"><span class="chip ax">AI in Marketing, applied</span> &nbsp;The two tracks put together on real work</h3>
+
+  <div class="lesson">
+    <div class="lesson-top"><span class="chip ax">AX-1</span><h3>AI in Marketing: where it fits, and where it does not</h3></div>
+    <div class="rows">
+      <div class="row"><div class="lab">Covers</div><p class="val">This lesson maps the marketing function with AI's realistic contribution marked on each part, from research and planning through production, distribution, and reporting. Attendees identify the tasks worth automating first, which are usually high in volume and low in judgment, and the tasks to keep human, which usually carry accountability or a relationship. We then sequence adoption so the team gets a visible win before it reaches the hard part.</p></div>
+      <div class="row"><div class="lab">Walk away able to</div><p class="val">Sort your own team's weekly task list into automate, assist, and keep human, with a defensible reason for each.</p></div>
+      <div class="row demo"><div class="lab">Live demo</div><p class="val">We audit one real week of the client team's marketing tasks in the room and sort them live into the three buckets. The output is a prioritized adoption list specific to that team.</p></div>
+      <div class="row"><div class="lab">Departments</div><div class="val depts"><span class="dept">Marketing</span><span class="dept">Education advisors</span></div></div>
+    </div>
+  </div>
+
+  <div class="lesson">
+    <div class="lesson-top"><span class="chip ax">AX-2</span><h3>AI Content and Copy: writing that does not sound like AI wrote it</h3></div>
+    <div class="rows">
+      <div class="row"><div class="lab">Covers</div><p class="val">This lesson shows attendees how to build a voice guide the tool can follow, extracted from their own best work rather than described in adjectives. We cover drafting, generating variants, and repurposing across formats. Attendees learn the tells that make copy read as machine-written, and how to edit them out. The lesson is explicit about where AI copy beats a rushed human draft, and where it should never go out unedited.</p></div>
+      <div class="row"><div class="lab">Walk away able to</div><p class="val">Produce a voice profile from your existing material, generate new copy in it, and edit the output to publishable standard in one pass.</p></div>
+      <div class="row demo"><div class="lab">Live demo</div><p class="val">We feed in five of the client's best-performing pieces, extract a voice profile from them on screen, generate new copy against it, and then edit that copy live while narrating each change and why it was needed. The before and after is the point.</p></div>
+      <div class="row"><div class="lab">Departments</div><div class="val depts"><span class="dept">Marketing</span><span class="dept">Education advisors</span><span class="dept">HR</span><span class="dept">Admin</span></div></div>
+    </div>
+  </div>
+
+  <div class="lesson">
+    <div class="lesson-top"><span class="chip ax">AX-3</span><h3>AI Creative and Visuals: producing ad creative at volume</h3></div>
+    <div class="rows">
+      <div class="row"><div class="lab">Covers</div><p class="val">This lesson covers generating static and video creative for ads and social while staying inside brand guidelines. Attendees work from their own product photography rather than generating from nothing, which is what keeps the output usable. We build variant sets designed for testing rather than one hero asset, and we set the quality bar for what can go live along with the checks that happen before it does.</p></div>
+      <div class="row"><div class="lab">Walk away able to</div><p class="val">Turn one source photograph and one prompt template into a tested set of ad variants in under an hour.</p></div>
+      <div class="row demo"><div class="lab">Live demo</div><p class="val">Starting from one real product or campus photograph the client supplies, we produce six on-brand ad variants in under ten minutes on screen, then review which of the six would pass review and why the others would not.</p></div>
+      <div class="row"><div class="lab">Departments</div><div class="val depts"><span class="dept">Marketing</span></div></div>
+    </div>
+  </div>
+
+  <div class="lesson">
+    <div class="lesson-top"><span class="chip ax">AX-4</span><h3>AI Ads and Performance: working with the algorithm</h3></div>
+    <div class="rows">
+      <div class="row"><div class="lab">Covers</div><p class="val">This lesson explains what the automated campaign types decide for you and what you still control, covering Meta Advantage+ and Google Performance Max. Attendees learn to feed the algorithm properly through signals, creative volume, and conversion events. We use AI to write, test, and analyze campaigns rather than to run them unattended, and we finish on reading a result and separating a real effect from noise.</p></div>
+      <div class="row"><div class="lab">Walk away able to</div><p class="val">Brief an automated campaign correctly, and get a written diagnosis of a live campaign that you have verified rather than trusted.</p></div>
+      <div class="row demo"><div class="lab">Live demo</div><p class="val">We paste a real campaign's export into the tool and get a diagnosis, then go through it line by line checking each claim against the account. Some of it is right and useful, some of it is confidently wrong, and separating the two in front of the room is the skill being taught.</p></div>
+      <div class="row"><div class="lab">Departments</div><div class="val depts"><span class="dept">Marketing</span><span class="dept">Finance</span></div></div>
+    </div>
+  </div>
+
+  <div class="lesson">
+    <div class="lesson-top"><span class="chip ax">AX-5</span><h3>AI SEO and Discovery: getting found when the answer is an AI</h3></div>
+    <div class="rows">
+      <div class="row"><div class="lab">Covers</div><p class="val">This lesson explains how search changed once AI answers began sitting above the results, and what that means for traffic you used to get. Attendees learn what makes a page likely to be cited by an AI answer rather than skipped. We cover keyword research and content production workflows with AI assistance, and we name the risk of publishing AI content at volume along with what happens to the sites that do.</p></div>
+      <div class="row"><div class="lab">Walk away able to</div><p class="val">Check whether your organization gets cited for the questions your buyers ask, and fix one page so it is more likely to be.</p></div>
+      <div class="row demo"><div class="lab">Live demo</div><p class="val">We ask ChatGPT and Perplexity the questions a prospective student or customer would ask in the client's category, and see who gets named. Then we take one of the client's own pages and restructure it live to make it citable, and explain what changed.</p></div>
+      <div class="row"><div class="lab">Departments</div><div class="val depts"><span class="dept">Marketing</span><span class="dept">Education advisors</span></div></div>
+    </div>
+  </div>
+
+  <div class="lesson">
+    <div class="lesson-top"><span class="chip ax">AX-6</span><h3>AI Data and Reporting: asking questions of your own numbers</h3></div>
+    <div class="rows">
+      <div class="row"><div class="lab">Covers</div><p class="val">This lesson covers getting AI to read spreadsheets, exports, and CRM dumps reliably. Attendees ask business questions of their own data instead of building a pivot table for each one, and they produce a recurring monthly report that writes itself from a fresh export. We spend real time on verification, because a confident wrong number does the most damage here, and attendees practice the checks that catch it.</p></div>
+      <div class="row"><div class="lab">Walk away able to</div><p class="val">Drop a monthly export in, ask five business questions in plain language, get a written summary, and verify the figures before anyone acts on them.</p></div>
+      <div class="row demo"><div class="lab">Live demo</div><p class="val">We use a real export from the client and ask five questions the management team wants answered. Then we check every number against the source, find the one it got wrong, and show what in the question caused it. Everyone leaves this session checking a figure before acting on it.</p></div>
+      <div class="row"><div class="lab">Departments</div><div class="val depts"><span class="dept">Finance</span><span class="dept">Marketing</span><span class="dept">Admin</span><span class="dept">HR</span></div></div>
+    </div>
+  </div>
+
+  <div class="lesson">
+    <div class="lesson-top"><span class="chip ax">AX-7</span><h3>AI CRM and Conversations: handling inbound at volume</h3><span class="star">★</span></div>
+    <div class="rows">
+      <div class="row"><div class="lab">Covers</div><p class="val">This lesson covers AI across inbound conversations on WhatsApp, email, and web forms. Attendees learn to draft replies a human approves rather than replies that send unread, and to qualify and route inquiries automatically. We ground the assistant in your real FAQ and policies so that it does not invent an answer about fees, entry requirements, or timelines. The lesson finishes on designing the handover point to a human, and the tone rules that hold across both.</p></div>
+      <div class="row"><div class="lab">Walk away able to</div><p class="val">Stand up a grounded reply assistant for your own inbox, with a defined handover rule and a check step before anything sends.</p></div>
+      <div class="row demo"><div class="lab">Live demo</div><p class="val">We build a reply assistant grounded in the client's real FAQ during the session, then run five genuine past inquiries through it and compare its drafts against what the team sent at the time. The comparison settles the quality question directly, in both directions.</p></div>
+      <div class="row"><div class="lab">Departments</div><div class="val depts"><span class="dept">Education advisors</span><span class="dept">Admin</span><span class="dept">Marketing</span><span class="dept">HR</span></div></div>
+    </div>
+  </div>
+
+  <div class="lesson">
+    <div class="lesson-top"><span class="chip ax">AX-8</span><h3>Build Your Workflow: the capstone</h3><span class="star">★</span></div>
+    <div class="rows">
+      <div class="row"><div class="lab">Covers</div><p class="val">Each attendee picks one real recurring task from their own job, then designs, builds, tests, and documents an AI workflow for it with a trainer beside them. We cover how to choose a task worth automating, how to write documentation a colleague can follow, and where to place the human check step so an error gets caught before it costs anything. This lesson runs as a 120-minute build session, and every attendee finishes it holding something that works.</p></div>
+      <div class="row"><div class="lab">Walk away able to</div><p class="val">Run one documented workflow of your own from day one, and repeat the design process on the next task without us.</p></div>
+      <div class="row demo"><div class="lab">Live demo</div><p class="val">The lesson is the demo. Every attendee leaves with one working, documented workflow built on their own task, and the room presents them to each other at the end so the department sees what its colleagues automated.</p></div>
+      <div class="row"><div class="lab">Departments</div><div class="val depts"><span class="dept">Marketing</span><span class="dept">Admin</span><span class="dept">Finance</span><span class="dept">HR</span><span class="dept">Education advisors</span></div></div>
+    </div>
+  </div>
+
+  <div class="lesson">
+    <div class="lesson-top"><span class="chip ax">AX-9</span><h3>AI Dashboards, Sites and Reports: building the tool you needed</h3></div>
+    <div class="rows">
+      <div class="row"><div class="lab">Covers</div><p class="val">This lesson covers generating working dashboards, internal pages, and formatted reports from a prompt, with no development team involved. Attendees learn to judge when a generated tool is good enough for internal use, how to host and share it with colleagues, and how to keep it current as the underlying numbers change. We also set the line where a piece of work should be handed to IT instead.</p></div>
+      <div class="row"><div class="lab">Walk away able to</div><p class="val">Build a working dashboard from your own numbers and share the link with your team before the session ends.</p></div>
+      <div class="row demo"><div class="lab">Live demo</div><p class="val">We build a live dashboard from the client's own figures inside the session and share the working link with the room. For most attendees this is the first time they have made a piece of internal software, which reframes what they think they are allowed to ask for.</p></div>
+      <div class="row"><div class="lab">Departments</div><div class="val depts"><span class="dept">Finance</span><span class="dept">Marketing</span><span class="dept">Admin</span><span class="dept">HR</span></div></div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= 4. PATHWAYS ========================= -->
+<section class="sec">
+  <div class="sec-head">
+    <p class="kicker">04 · The pathways</p>
+    <h2>Five routes through the library</h2>
+    <p>Read each pathway top to bottom as the order a learner takes it. Chip color shows which track each lesson comes from, so you can see how a pathway weaves across general AI, marketing, and applied work.</p>
+  </div>
+
+  <div class="grid g2">
+    <div class="path">
+      <div class="pid">P1 · 8 lessons · 6 hours · 1 full day</div>
+      <h3>AI Fundamentals</h3>
+      <p class="who">For anyone new to AI, and non-technical staff who need literacy before anything else. This is the default starting point for admin, finance, and HR.</p>
+      <div class="seq">
+        <span class="chip ai">AI-1 AI Basics</span><span class="chip ai">AI-2 AI Literacy</span><span class="chip ai">AI-8 Data Privacy</span><span class="chip ai">AI-3 Prompting and Tools</span><span class="chip ai">AI-7 AI on a Budget</span><span class="chip ai">AI-4 AI Systems</span><span class="chip ai">AI-5 Agentic AI</span><span class="chip ai">AI-6 Generative AI</span>
+      </div>
+    </div>
+
+    <div class="path">
+      <div class="pid">P2 · 5 lessons · 3 hours 45 min · 1 half day</div>
+      <h3>Marketing Fundamentals</h3>
+      <p class="who">For non-marketers who need to understand marketing: education advisors, admissions staff, and anyone briefing or reviewing an agency's work.</p>
+      <div class="seq">
+        <span class="chip mk">MK-1 Marketing Foundation</span><span class="chip mk">MK-2 Performance Basics</span><span class="chip mk">MK-3 Content and Organic</span><span class="chip mk">MK-4 Data and Measurement</span><span class="chip ai">AI-5 Agentic AI</span>
+      </div>
+    </div>
+
+    <div class="path">
+      <div class="pid">P3 · 12 lessons · 11 hours · 2 days · flagship</div>
+      <h3>AI for Marketers</h3>
+      <p class="who">For people who already have marketing footing and want to multiply it with AI. This is the pathway for the marketing department.</p>
+      <div class="seq">
+        <span class="chip ai">AI-1 AI Basics</span><span class="chip ai">AI-3 Prompting and Tools</span><span class="chip ai">AI-5 Agentic AI</span><span class="chip ax">AX-1 AI in Marketing</span><span class="chip ax">AX-2 AI Content and Copy</span><span class="chip ax">AX-3 AI Creative and Visuals</span><span class="chip ax">AX-4 AI Ads and Performance</span><span class="chip ax">AX-5 AI SEO and Discovery</span><span class="chip ax">AX-6 AI Data and Reporting</span><span class="chip ax">AX-7 AI CRM and Conversations</span><span class="chip ax">AX-9 AI Dashboards and Sites</span><span class="chip ax">AX-8 Build Your Workflow</span>
+      </div>
+    </div>
+
+    <div class="path">
+      <div class="pid">P4 · 10 lessons · 8 hours 45 min · 1 long day or 2 half days</div>
+      <h3>Owner's Fast-Track</h3>
+      <p class="who">For time-poor senior staff and department heads who want practical wins fast and a working overview of everything, without the full flagship.</p>
+      <div class="seq">
+        <span class="chip ai">AI-1 AI Basics</span><span class="chip ai">AI-2 AI Literacy</span><span class="chip ai">AI-7 AI on a Budget</span><span class="chip mk">MK-1 Marketing Foundation</span><span class="chip ax">AX-1 AI in Marketing</span><span class="chip ax">AX-2 AI Content and Copy</span><span class="chip ax">AX-4 AI Ads and Performance</span><span class="chip ax">AX-7 AI CRM and Conversations</span><span class="chip ai">AI-5 Agentic AI</span><span class="chip ax">AX-8 Build Your Workflow</span>
+      </div>
+    </div>
+
+    <div class="path">
+      <div class="pid">P5 · 9 lessons · 8 hours 45 min · 1 full day</div>
+      <h3>AI Systems and Automation</h3>
+      <p class="who">For staff who want AI inside operations rather than in a chat window: admin leads, operations, finance, and anyone who owns a recurring process.</p>
+      <div class="seq">
+        <span class="chip ai">AI-1 AI Basics</span><span class="chip ai">AI-3 Prompting and Tools</span><span class="chip ai">AI-4 AI Systems</span><span class="chip ai">AI-5 Agentic AI</span><span class="chip ai">AI-6 Generative AI</span><span class="chip ai">AI-8 Data Privacy</span><span class="chip ax">AX-9 AI Dashboards and Sites</span><span class="chip ax">AX-7 AI CRM and Conversations</span><span class="chip ax">AX-8 Build Your Workflow</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= 5. DEPARTMENTS ========================= -->
+<section class="sec">
+  <div class="sec-head">
+    <p class="kicker">05 · By department</p>
+    <h2>What each team takes, and what they do with it on Monday</h2>
+    <p>The same lesson lands differently depending on who is sitting in the chair. This section is the version to circulate to management: which pathway each department should take, and the specific work each one changes when they get back to their desk.</p>
+  </div>
+
+  <div class="tw" style="margin-bottom:22px">
+    <table>
+      <thead><tr><th>Department</th><th>Recommended pathway</th><th>Length</th><th>The single biggest win</th></tr></thead>
+      <tbody>
+        <tr><td><strong>Marketing</strong></td><td>P3 AI for Marketers, plus AI-8 as an add-on</td><td class="num">12 lessons, 11 hours, over 2 days</td><td>Six to ten testable ad variants from one photograph, campaign copy in your own voice, and a monthly report they assemble and verify themselves.</td></tr>
+        <tr><td><strong>Admin and operations</strong></td><td>P5 AI Systems and Automation</td><td class="num">9 lessons, 8h45, 1 full day</td><td>A grounded internal answer desk, bulk document handling, and one documented workflow per person running on a real recurring task.</td></tr>
+        <tr><td><strong>Finance</strong></td><td>P5 AI Systems and Automation, plus AI-7 and AX-6 as add-ons</td><td class="num">9 lessons, 8h45, 1 full day</td><td>Reading a quarter of invoices without opening each one, and a live dashboard replacing a rebuilt monthly deck.</td></tr>
+        <tr><td><strong>HR</strong></td><td>P5 AI Systems and Automation</td><td class="num">9 lessons, 8h45, 1 full day</td><td>Application packs summarized against stated criteria, handbook questions answered with the clause cited, and the employee-data rules set first.</td></tr>
+        <tr><td><strong>Education advisors, UK and rest of world</strong></td><td>P2 Marketing Fundamentals, then P5 AI Systems and Automation</td><td class="num">5 then 9 lessons, 12h30 total</td><td>Inquiry replies drafted overnight against your real entry requirements and fees, for an advisor to approve at the start of their day.</td></tr>
+        <tr><td><strong>Department heads and management</strong></td><td>P4 Owner's Fast-Track, plus AI-8 as an add-on</td><td class="num">10 lessons, 8h45, 1 long day</td><td>A per-seat cost model they built themselves, and enough working knowledge to approve or reject an AI proposal on its merits.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="margin:30px 0 13px">Every module, against every department</h3>
+  <div class="tw" style="margin-bottom:11px">
+    <table>
+      <thead><tr><th>Module</th><th>Marketing</th><th>Admin</th><th>Finance</th><th>HR</th><th>Advisors</th><th>Where it lands in real work</th></tr></thead>
+      <tbody>
+        <tr><td><strong>AI-1</strong> AI Basics</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>Everyone stops guessing what the tool is, and starts checking its output as a habit.</td></tr>
+        <tr><td><strong>AI-2</strong> AI Literacy</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>The same request stops producing generic output, because staff learn to brief it properly.</td></tr>
+        <tr><td><strong>AI-3</strong> Prompting and Tools</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>A shared prompt library per department, so good work gets reused instead of retyped.</td></tr>
+        <tr><td><strong>AI-4</strong> AI Systems</td><td>○</td><td>●</td><td>●</td><td>●</td><td>●</td><td>Policy, handbook, and program documents loaded into one workspace that answers consistently.</td></tr>
+        <tr><td><strong>AI-5</strong> Agentic AI</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>Bulk reading: applications, invoices, past reports, all summarized without opening each file.</td></tr>
+        <tr><td><strong>AI-6</strong> Generative AI</td><td>●</td><td>○</td><td>·</td><td>●</td><td>●</td><td>Campus and campaign visuals, internal comms graphics, recruitment collateral.</td></tr>
+        <tr><td><strong>AI-7</strong> AI on a Budget</td><td>●</td><td>●</td><td>●</td><td>●</td><td>○</td><td>One organization-wide seat plan, instead of five departments buying five subscriptions.</td></tr>
+        <tr><td><strong>AI-8</strong> Data Privacy</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>The approved-tools policy, and the rule for student, applicant, and employee records.</td></tr>
+        <tr><td><strong>MK-1</strong> Marketing Foundation</td><td>●</td><td>●</td><td>·</td><td>·</td><td>●</td><td>Advisors and admin can read a marketing plan and challenge it instead of receiving it.</td></tr>
+        <tr><td><strong>MK-2</strong> Performance Basics</td><td>●</td><td>·</td><td>●</td><td>·</td><td>○</td><td>Finance can read an ad account and see where budget is being wasted.</td></tr>
+        <tr><td><strong>MK-3</strong> Content and Organic</td><td>●</td><td>·</td><td>·</td><td>○</td><td>●</td><td>One webinar or open day becomes a month of scheduled posts.</td></tr>
+        <tr><td><strong>MK-4</strong> Data and Measurement</td><td>●</td><td>●</td><td>●</td><td>·</td><td>○</td><td>A lead can be traced from first click to enrolled, and the broken step gets named.</td></tr>
+        <tr><td><strong>AX-1</strong> AI in Marketing</td><td>●</td><td>○</td><td>·</td><td>·</td><td>●</td><td>The team's weekly task list sorted into automate, assist, and keep human.</td></tr>
+        <tr><td><strong>AX-2</strong> AI Content and Copy</td><td>●</td><td>●</td><td>·</td><td>●</td><td>●</td><td>Campaign copy, student follow-ups, job descriptions, and policy announcements, all in one voice.</td></tr>
+        <tr><td><strong>AX-3</strong> AI Creative and Visuals</td><td>●</td><td>·</td><td>·</td><td>·</td><td>○</td><td>Six to ten testable ad variants from one photograph, in an afternoon.</td></tr>
+        <tr><td><strong>AX-4</strong> AI Ads and Performance</td><td>●</td><td>·</td><td>●</td><td>·</td><td>·</td><td>A verified diagnosis of a live campaign, which finance can read alongside the spend.</td></tr>
+        <tr><td><strong>AX-5</strong> AI SEO and Discovery</td><td>●</td><td>·</td><td>·</td><td>·</td><td>●</td><td>Whether an AI names your institution when a student asks it where to study.</td></tr>
+        <tr><td><strong>AX-6</strong> AI Data and Reporting</td><td>●</td><td>●</td><td>●</td><td>●</td><td>○</td><td>Monthly reporting assembled from an export, with a verification step before it circulates.</td></tr>
+        <tr><td><strong>AX-7</strong> AI CRM and Conversations</td><td>●</td><td>●</td><td>·</td><td>●</td><td>●</td><td>Inbound student inquiries drafted overnight and approved by an advisor in the morning.</td></tr>
+        <tr><td><strong>AX-8</strong> Build Your Workflow</td><td>●</td><td>●</td><td>●</td><td>●</td><td>●</td><td>Every attendee leaves with one documented workflow running on their own recurring task.</td></tr>
+        <tr><td><strong>AX-9</strong> Dashboards and Sites</td><td>●</td><td>●</td><td>●</td><td>●</td><td>○</td><td>The internal tracker or dashboard the team has been waiting on IT for.</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="color:var(--muted);font-size:14px;margin:0 0 26px">● core for that department &nbsp;·&nbsp; ○ useful, not essential &nbsp;·&nbsp; · not targeted at them</p>
+
+  <div class="grid g2">
+    <div class="card">
+      <h3>Marketing</h3>
+      <p style="margin:10px 0 8px"><strong>Core lessons within P3:</strong> AX-2, AX-3, AX-4, AX-5, AX-6, AX-9</p>
+      <ul class="tight" style="margin-bottom:0">
+        <li><strong>Campaign copy.</strong> Extract a voice profile from your best-performing past campaigns, then generate and edit a full set of ad variants in one sitting instead of one line at a time (AX-2).</li>
+        <li><strong>Creative volume.</strong> Produce six to ten on-brand ad variants from one campus or product photograph, enough to test rather than guess (AX-3).</li>
+        <li><strong>Campaign diagnosis.</strong> Export a live campaign, get a written diagnosis, verify it against the account, and act on the parts that hold up (AX-4).</li>
+        <li><strong>Monthly reporting.</strong> Turn the monthly export into a written performance summary with commentary, then check the figures before it goes to management (AX-6).</li>
+        <li><strong>Being found.</strong> Check whether your institution gets named when a prospective student asks an AI which provider to choose, and fix the pages that decide that (AX-5).</li>
+        <li><strong>Reporting without the rebuild.</strong> Put the campaign numbers management keeps asking for on a page that updates, instead of rebuilding the same deck every month (AX-9).</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Admin and operations</h3>
+      <p style="margin:10px 0 8px"><strong>Core lessons within P5:</strong> AI-4, AI-5, AX-7, AX-9, AI-8</p>
+      <ul class="tight" style="margin-bottom:0">
+        <li><strong>The internal answer desk.</strong> Load handbooks, policies, and process documents into one workspace so staff questions get a consistent, sourced answer instead of an email to whoever knows (AI-4).</li>
+        <li><strong>Document handling at volume.</strong> Point an agent at a folder of forms, applications, or scanned records, and get them read, summarized, and sorted without opening each one (AI-5).</li>
+        <li><strong>Inbox triage.</strong> Draft replies to routine inbound, route the rest to the right person, and keep a human approving anything that commits the organization (AX-7).</li>
+        <li><strong>Internal tools.</strong> Build the small tracker or dashboard the team has been asking IT for, starting it in the session and finishing it the same week, and know when it should go to IT instead (AX-9).</li>
+        <li><strong>The policy itself.</strong> Write the approved-tools policy the rest of the organization follows, with the redaction rules attached (AI-8).</li>
+      </ul>
+    </div>
+
+    <div class="card">
+      <h3>Finance</h3>
+      <p style="margin:10px 0 8px"><strong>Core lessons within P5:</strong> AI-5, AI-4, AX-9, AI-8, AX-8</p>
+      <ul class="tight" style="margin-bottom:0">
+        <li><strong>Reading documents in bulk.</strong> Have an agent work through a quarter of invoices, statements, or expense claims and produce a summary with the exceptions flagged for a human (AI-5).</li>
+        <li><strong>The finance answer desk.</strong> Load your own procedures, approval limits, and policy documents into one workspace, so a question about a claim limit gets the same answer whoever asks it (AI-4).</li>
+        <li><strong>Live dashboards.</strong> Put the numbers management keeps asking for on a page that updates, rather than rebuilding a deck each month (AX-9).</li>
+        <li><strong>Financial data, handled correctly.</strong> Set which tier of which tool is safe for statements, payroll, and supplier records, and apply a redaction pattern to anything that leaves the finance system (AI-8).</li>
+        <li><strong>One automated close task.</strong> In the capstone, pick a recurring month-end task and leave with it built and documented, with the human check step placed where an error would be costly (AX-8).</li>
+      </ul>
+      <p style="margin:12px 0 0;font-size:14px;color:var(--muted)">Two lessons finance would want sit outside P5: <strong>AI-7 AI on a Budget</strong>, which builds the organization-wide seat cost model, and <strong>AX-6 AI Data and Reporting</strong>, which turns a monthly export into written commentary. Both can be added to the finance cohort as extra lessons, and we would recommend it.</p>
+    </div>
+
+    <div class="card">
+      <h3>HR</h3>
+      <p style="margin:10px 0 8px"><strong>Core lessons within P5:</strong> AI-8, AI-5, AI-4, AX-7, AX-8</p>
+      <ul class="tight" style="margin-bottom:0">
+        <li><strong>Application screening, with the decision still human.</strong> Have an agent read a stack of applications against a stated set of criteria and summarize each one against those criteria, with a named person making every shortlisting decision and a record of why (AI-5).</li>
+        <li><strong>Employee questions.</strong> Ground an assistant in the staff handbook so leave, benefits, and policy questions get a consistent answer with the clause cited, instead of the same query reaching three people (AI-4).</li>
+        <li><strong>The HR inbox.</strong> Draft replies to routine staff queries for an HR officer to approve, and route anything touching a case or a grievance straight to a person (AX-7).</li>
+        <li><strong>Employee data, handled correctly.</strong> Set the tier, the redaction pattern, and the never-paste list for payroll, medical, disciplinary, and candidate records before anyone opens a tool (AI-8).</li>
+        <li><strong>One recurring HR task, automated.</strong> In the capstone, build and document a workflow for onboarding paperwork, a monthly headcount report, or reference checks (AX-8).</li>
+      </ul>
+    </div>
+
+    <div class="card" style="grid-column:1/-1">
+      <h3>Education advisors, UK and rest of world</h3>
+      <p style="margin:10px 0 8px"><strong>Core lessons within P2 and P5:</strong> MK-1, AX-7, AI-5, AI-4, AI-8</p>
+      <ul class="tight" style="margin-bottom:0">
+        <li><strong>Inquiry response across time zones.</strong> An advisor covering the UK and other regions loses hours to the gap between a student asking and someone being awake to answer. A grounded reply assistant drafts the response against your real entry requirements, fees, and timelines, and the advisor approves or edits it at the start of their day rather than writing from scratch (AX-7).</li>
+        <li><strong>Course and university matching.</strong> Give an agent the student's grades, budget, and preferences alongside your own program data, and get a shortlist with the reasoning attached, which the advisor then applies judgment to (AI-5).</li>
+        <li><strong>Application document review.</strong> Have an agent check a personal statement or an application pack against a requirements checklist and flag what is missing, so the advisor's time goes to the counseling rather than the checking (AI-5).</li>
+        <li><strong>Consistency across advisors.</strong> Ground every advisor's assistant in the same source documents, so a student asking about intake dates gets the same answer in Kuala Lumpur and in London (AI-4).</li>
+        <li><strong>Follow-up that does not lapse.</strong> Draft the sequence of follow-ups for students who went quiet, personalized to where each one stopped, and review them in a batch before they send (AX-7).</li>
+        <li><strong>Reading the funnel you sit in.</strong> Map where students drop out between first inquiry and enrollment, so advisors can challenge a marketing plan rather than receive it (MK-1).</li>
+        <li><strong>Student data under two regimes.</strong> Advisors handling UK and European student records carry GDPR obligations alongside Malaysia's PDPA. AI-8 covers what can be pasted, what must be redacted first, and which tier of which tool is contractually safe for this specific data.</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="note" style="margin-top:16px">
+    <h4>The lessons that hold the program together</h4>
+    <p><strong>AI-5 Agentic AI</strong> runs through all five pathways. It is the lesson that most often changes what a person believes is possible in their own job, so every department gets it whatever route they take. <strong>AI-1 AI Basics</strong> sets the shared mental model and appears in four of the five, the exception being P2, which is a marketing pathway rather than an AI one.</p>
+    <p style="margin-bottom:0"><strong>AI-8 Data Privacy sits only in P1 and P5.</strong> On the assignments above that covers admin, finance, HR, and the education advisors, and it leaves out marketing on P3 and department heads on P4. We would not run this program for an education institution with those two groups uncovered, so we recommend adding AI-8 to both cohorts as an extra lesson. It is 45 minutes, and it is the lesson that decides whether the rest is safe to do at all.</p>
+  </div>
+
+  <div class="card" style="margin-top:16px">
+    <h3>Where AI must not make the decision</h3>
+    <p style="margin-top:10px">Two applications above touch decisions about people: an agent summarizing job applications for HR, and an agent shortlisting courses for a student. Both are useful and both are handled the same way in the room. The agent reads, summarizes, and shows its reasoning against stated criteria. A named person makes the decision and owns it. We teach the criteria to be written down first, so a summary can be audited afterward against the standard it was measured on.</p>
+    <p style="margin-bottom:0">Alongside that, three risks specific to an education institution get named in AI-8 and revisited in the capstone: a generated answer about fees or entry requirements reaching a student and being wrong, which is why AX-7 assistants are grounded in your documents and approved by a human before sending; your student-facing position on academic integrity, which is a policy your institution sets and we do not; and the record-keeping you would need if a rejected applicant ever asked how their application was assessed.</p>
+  </div>
+</section>
+
+<!-- ========================= 6. AI ECONOMICS ========================= -->
+<section class="sec">
+  <div class="sec-head">
+    <p class="kicker">06 · AI economics</p>
+    <h2>The plans, what they cost, and what you are buying</h2>
+    <p>The training is one cost and the tools are another, and management should see both before approving either. This section is what we walk through in AI-7, and we rebuild it live in the session against your actual headcount.</p>
+  </div>
+  <div class="warn">
+    <h4>The decision that matters more than the price</h4>
+    <p style="margin-bottom:0">Across every major vendor, consumer plans use your conversations to train their models by default, or by a toggle your staff has to find and switch off. Business and enterprise plans contractually do not. On ChatGPT and on Claude, a personal seat and a business seat both cost around USD 20 a month, so the cheapest privacy upgrade available to you costs nothing. If your team is putting student records, applicant data, or employee information anywhere near these tools, the tier is a compliance decision rather than a budget one.</p>
+  </div>
+
+  <h3 style="margin:26px 0 13px">Individual plans</h3>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Tool</th><th>Plan</th><th>Price per person, per month</th><th>Trains on your input?</th></tr></thead>
+      <tbody>
+        <tr><td rowspan="3"><strong>ChatGPT</strong></td><td>Free</td><td class="num">RM0</td><td>Yes, by default. Carries ads.</td></tr>
+        <tr><td>Go</td><td class="num">RM24</td><td>Yes, by default</td></tr>
+        <tr><td>Plus</td><td class="num">RM99</td><td>Yes, by default</td></tr>
+        <tr><td rowspan="3"><strong>Claude</strong></td><td>Free</td><td class="num">USD 0</td><td>Only if the user opts in at signup</td></tr>
+        <tr><td>Pro</td><td class="num">USD 20, or USD 17 paid yearly</td><td>Only if the user opts in</td></tr>
+        <tr><td>Max</td><td class="num">From USD 100</td><td>Only if the user opts in</td></tr>
+        <tr><td rowspan="3"><strong>Google Gemini</strong></td><td>Free</td><td class="num">RM0</td><td>Yes, while Keep Activity is on</td></tr>
+        <tr><td>Google AI Plus</td><td class="num">RM23.99</td><td>Yes, while Keep Activity is on</td></tr>
+        <tr><td>Google AI Pro</td><td class="num">RM97.99</td><td>Yes, while Keep Activity is on</td></tr>
+        <tr><td><strong>Perplexity</strong></td><td>Pro</td><td class="num">USD 20, or USD 200 yearly</td><td>Yes, by default</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <h3 style="margin:26px 0 13px">Business and enterprise plans</h3>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Tool</th><th>Plan</th><th>Price per seat, per month</th><th>Seat minimum</th><th>Trains on your input?</th></tr></thead>
+      <tbody>
+        <tr><td><strong>ChatGPT</strong></td><td>Business</td><td class="num">USD 20 yearly, USD 25 monthly</td><td class="num">2</td><td>No, excluded by default</td></tr>
+        <tr><td><strong>ChatGPT</strong></td><td>Enterprise</td><td class="num">Quoted, not published</td><td class="num">High</td><td>No, excluded by default</td></tr>
+        <tr><td><strong>Claude</strong></td><td>Team</td><td class="num">USD 20 yearly, USD 25 monthly</td><td class="num">2</td><td>No, excluded by commercial terms</td></tr>
+        <tr><td><strong>Claude</strong></td><td>Team premium seat</td><td class="num">USD 100 yearly, USD 125 monthly</td><td class="num">2</td><td>No</td></tr>
+        <tr><td><strong>Google Workspace</strong></td><td>Business Starter, full suite</td><td class="num">RM29.20</td><td class="num">1</td><td>No, not outside your domain</td></tr>
+        <tr><td><strong>Google Workspace</strong></td><td>Business Standard, full suite</td><td class="num">RM58.40</td><td class="num">1</td><td>No</td></tr>
+        <tr><td><strong>Google Workspace</strong></td><td>Business Plus, full suite</td><td class="num">RM91.70</td><td class="num">1</td><td>No</td></tr>
+        <tr><td><strong>Microsoft 365</strong></td><td>Copilot business add-on</td><td class="num">USD 18 yearly promo, USD 21 standard</td><td class="num">Requires an M365 plan</td><td>No, and data stays inside Microsoft's boundary</td></tr>
+        <tr><td><strong>Microsoft 365</strong></td><td>Copilot enterprise add-on</td><td class="num">USD 30 paid yearly</td><td class="num">Requires a qualifying M365 license</td><td>No</td></tr>
+        <tr><td><strong>Perplexity</strong></td><td>Enterprise Pro</td><td class="num">USD 40, USD 30 for education</td><td class="num">Not published</td><td>No</td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="color:var(--muted);font-size:14px;margin-top:11px">Prices checked 9 August 2026 and move often, so we re-verify them at the scoping call before anyone commits a budget. Ringgit and dollar figures sit in the same tables because that is how each vendor publishes them. At an exchange rate of about 4.4, USD 20 a month is roughly RM88, which makes the business tiers broadly comparable to the ringgit-priced consumer plans above them. Claude, Perplexity, and Microsoft Copilot business tiers bill in US dollars, so budget for the exchange rate and for Malaysian service tax on digital services. ChatGPT's published ringgit prices come from Malaysian press coverage rather than from OpenAI's own page, so treat those three figures as indicative until we confirm them in your account.</p>
+
+  <div class="note" style="margin-top:16px">
+    <h4>What the tools would cost you, on the same illustrative headcount</h4>
+    <p>Section 07 costs the training for 38 people. Here is the tool bill for those same 38 people, so management sees both numbers together rather than one at a time. Taking a business or team seat at roughly USD 20 per person per month, paid annually:</p>
+    <p style="margin-bottom:0"><strong>38 seats × USD 20 × 12 months = about USD 9,120 a year, roughly RM40,000 at an exchange rate of 4.4, before Malaysian service tax on digital services.</strong> That is a recurring annual cost, and it is larger than the one-off training fee. Two things reduce it in practice: not every person needs a dedicated frontier seat, and if you already run Microsoft 365 or Google Workspace, part of the capability is included in what you pay today. Working out which of your 38 people need a paid seat is the exercise we run in AI-7, and it is usually where the largest saving is found.</p>
+  </div>
+
+  <h3 style="margin:30px 0 13px">What we would put each department on</h3>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Department</th><th>Recommended tier</th><th>Why</th></tr></thead>
+      <tbody>
+        <tr><td>Marketing</td><td>Business or Team seat, one per person</td><td>Heavy daily use, large files, shared prompt libraries, and campaign data that should never enter a training set.</td></tr>
+        <tr><td>Admin and operations</td><td>Business or Team seat, one per person</td><td>They handle the documents that carry personal data, which rules out consumer tiers outright.</td></tr>
+        <tr><td>Finance</td><td>Business or Team seat, one per person</td><td>Financial records, and the file-handling limits on free tiers make the work impossible anyway.</td></tr>
+        <tr><td>HR</td><td>Business or Team seat, one per person</td><td>Employee records are the most sensitive data in the organization. This is not a place to save RM80 a month.</td></tr>
+        <tr><td>Education advisors</td><td>Business or Team seat, one per person</td><td>Student records under both PDPA and, for UK and European students, GDPR.</td></tr>
+        <tr><td>Occasional users elsewhere</td><td>Shared Business seats, or the free Copilot Chat included with your M365 plan</td><td>Light users do not need a dedicated frontier seat, and Copilot Chat carries commercial data protection at no extra cost if you already run Microsoft 365.</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <div class="grid g2" style="margin-top:22px">
+    <div class="card">
+      <h3>The cheaper route most teams miss</h3>
+      <p style="margin-top:10px">Per-seat subscriptions are not the only way to buy AI. Paying per unit of use through an API costs a fraction of a subscription for anything running in the background rather than in front of a person. Processing ten thousand inquiries through a small fast model costs on the order of tens of US dollars in total, not thousands.</p>
+      <p style="margin-bottom:0">The spread between the cheapest and the most expensive model is roughly a hundred to one, so choosing the right model for each job is the largest cost lever available. Batching work that is not time-sensitive halves the price again.</p>
+    </div>
+    <div class="card">
+      <h3>What we walk you through in AI-7</h3>
+      <ul class="tight" style="margin-bottom:0">
+        <li>The same realistic task run on a free tier and a paid tier, side by side, so the difference is observed rather than argued.</li>
+        <li>Your actual headcount by department, turned into a monthly and annual cost, built live in the room.</li>
+        <li>Which roles need a frontier seat and which do not, so you are not buying forty identical subscriptions.</li>
+        <li>Where the free Copilot Chat in your existing Microsoft or Google plan already covers a use case you were about to pay again for.</li>
+        <li>The tool sprawl check: four departments quietly buying four different subscriptions for the same job is the most common waste we find.</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ========================= 7. COSTING ========================= -->
+<section class="sec">
+  <div class="sec-head">
+    <p class="kicker">07 · Investment</p>
+    <h2>Costing, standard and HRDF claimable</h2>
+  </div>
+  <div class="card">
+    <h3>Standard rate</h3>
+    <p style="margin-top:10px"><strong>RM650 per pathway, per person.</strong> One price covers the whole pathway for that attendee: every lesson in it, the live demos run on your own material, the hands-on time, the workbook, and the documented workflow they build in AX-8, on the pathways that include it. There is no separate materials or licensing charge from us.</p>
+    <p style="margin-bottom:0">A person taking two pathways, for example an education advisor who takes Marketing Fundamentals and then AI Systems and Automation, is charged per pathway.</p>
+  </div>
+
+  <h3 style="margin:26px 0 13px">Worked example, by department</h3>
+  <div class="tw">
+    <table>
+      <thead><tr><th>Department</th><th>Pathway</th><th>People</th><th>Pathways per person</th><th>Standard cost</th></tr></thead>
+      <tbody>
+        <tr><td>Marketing</td><td>P3 AI for Marketers</td><td class="num">6</td><td class="num">1</td><td class="num">RM3,900</td></tr>
+        <tr><td>Admin and operations</td><td>P5 AI Systems and Automation</td><td class="num">8</td><td class="num">1</td><td class="num">RM5,200</td></tr>
+        <tr><td>Finance</td><td>P5 AI Systems and Automation</td><td class="num">4</td><td class="num">1</td><td class="num">RM2,600</td></tr>
+        <tr><td>HR</td><td>P5 AI Systems and Automation</td><td class="num">4</td><td class="num">1</td><td class="num">RM2,600</td></tr>
+        <tr><td>Education advisors</td><td>P2, then P5</td><td class="num">10</td><td class="num">2</td><td class="num">RM13,000</td></tr>
+        <tr><td>Department heads</td><td>P4 Owner's Fast-Track</td><td class="num">6</td><td class="num">1</td><td class="num">RM3,900</td></tr>
+        <tr><td colspan="4"><strong>Total, 38 people, 48 pathway seats</strong></td><td class="num"><strong>RM31,200</strong></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p style="color:var(--muted);font-size:14px;margin-top:11px">Illustrative headcounts. Send us your real numbers per department and we return this table costed exactly, along with the delivery schedule.</p>
+
+  <div class="grid g2" style="margin-top:16px">
+    <div class="card">
+      <h4 style="margin-bottom:9px">Add-on lessons</h4>
+      <p style="margin-bottom:0">Section 05 recommends three additions to the standard pathways: AI-7 and AX-6 for the finance cohort, and AI-8 for the marketing and department-head cohorts. Because the library is modular, individual lessons can be added to any cohort. These are quoted separately from the pathway rate, and we will send that rate alongside the claimable rate.</p>
+    </div>
+    <div class="card">
+      <h4 style="margin-bottom:9px">The cost that is not on the invoice</h4>
+      <p style="margin-bottom:0">On the illustrative headcount, the program is about <strong>49 person-days away from desks</strong>. That is the larger cost to the institution than the fee, so it belongs in the decision. Pathways can be split into half-day blocks across separate weeks, and departments scheduled on different dates, to keep every desk covered. The weekly split also gets better retention, because the team applies each block before the next one.</p>
+    </div>
+  </div>
+
+  <h3 style="margin:30px 0 13px">HRDF claimable rate</h3>
+  <p style="color:var(--muted);font-size:14px;margin:0 0 14px">HRDF and HRD Corp are the same body. The fund was renamed HRD Corp, and the levy and claim process are what most people still call HRDF.</p>
+  <div class="grid g2">
+    <div class="card">
+      <h4 style="margin-bottom:9px">What changes</h4>
+      <p style="margin-bottom:9px">Claimable delivery is the same curriculum and the same trainers, run under HRD Corp's scheme so the cost draws against your levy instead of your training budget. What it adds on our side:</p>
+      <ul class="tight" style="margin-bottom:0">
+        <li>Course registration and approval with HRD Corp, per pathway.</li>
+        <li>Certified trainer assignment under the scheme.</li>
+        <li>Formal attendance records, assessment, and certificates of completion for every attendee.</li>
+        <li>Grant application support and the post-training claim documentation submitted on your behalf.</li>
+      </ul>
+    </div>
+    <div class="warn">
+      <h4>Claimable rate: to be confirmed</h4>
+      <p>We are finalizing the registered-provider paperwork and will send the claimable rate per pathway per person as a separate line, together with the scheme it runs under and the lead time we need before a session date.</p>
+      <p style="margin-bottom:0">Two things we need from you to quote it accurately: confirmation that your organization is an HRD Corp registered employer paying the levy, and your available levy balance, since that decides whether the whole program or one pathway at a time is the sensible first claim. Registration and course approval carry a lead time on our side, so if a claimable route matters to you, tell us your target month and we will confirm against it before you plan around it. The standard rate above is available on any date and needs no approval.</p>
+    </div>
+  </div>
+  <p style="color:var(--muted);font-size:14px;margin-top:13px">Under the claimable route the levy typically carries the training cost. Management should therefore weigh the claimable rate against the levy your organization has already contributed and not yet spent.</p>
+</section>
+
+<!-- ========================= 8. NEXT ========================= -->
+<section class="sec">
+  <div class="sec-head">
+    <p class="kicker">08 · Next steps</p>
+    <h2>What happens from here</h2>
+  </div>
+  <div class="card">
+    <div class="timeline">
+      <div class="tl"><div class="t">Step 0</div><div><strong>See the material before you commit.</strong> We can send you the complete built lesson for AI-1, the same file an attendee works from, with the reading-level dial live so you can set it to ELI15 and ELI30 and see the difference. If your management would rather watch a session than read one, run a single pathway with one department as a pilot at the standard rate, and decide on the rest afterward. Nothing in this document requires committing to all 48 seats at once.</div></div>
+      <div class="tl"><div class="t">Step 1</div><div><strong>Confirm the departments and headcount.</strong> Tell us how many people per department, and we return a costed schedule against the pathway recommendations in section 05.</div></div>
+      <div class="tl"><div class="t">Step 2</div><div><strong>Scoping call, 45 minutes.</strong> We collect the real material the demos run on: your FAQs, a recent report, a set of past inquiries, and access to whatever ad account or CRM the sessions will touch. This is what separates a session about AI from a session about your organization.</div></div>
+      <div class="tl"><div class="t">Step 3</div><div><strong>Tooling and setup sheet.</strong> We confirm which tier each department needs, send the setup instructions a week ahead, and run the network and login check on the morning of day one.</div></div>
+      <div class="tl"><div class="t">Step 4</div><div><strong>Run the pathway.</strong> Delivered on your site or ours, in the schedule shape you picked in section 02.</div></div>
+      <div class="tl"><div class="t">Step 5</div><div><strong>Thirty days after.</strong> Each attendee on a pathway containing AX-8 has a documented workflow from it. We check in once at the thirty-day mark to see which ones are still running, and fix the ones that stalled.</div></div>
+    </div>
+  </div>
+</section>
+
+<p class="foot">Toggle Bespoke, a premium wing of Toggle Solutions. Expert guidance without the retainer. hello@toggle.solutions</p>
+
+</div>
+</body>
+</html>

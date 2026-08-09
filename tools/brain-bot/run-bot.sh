@@ -25,4 +25,10 @@ if [[ -z "${TELEGRAM_TOKEN:-}" ]]; then
   exit 1
 fi
 
+# NO caffeinate. It used to wrap this exec with -dis, which held display, idle
+# and system sleep open for as long as the bot ran — in practice, permanently.
+# Zaid needs the Mac to sleep, so the listener now sleeps with it: the process
+# suspends on sleep and resumes on wake, and Telegram retains undelivered
+# updates for ~24h, so queued messages are answered on the next wake rather
+# than lost. The trade is that the bot cannot reply while the Mac is asleep.
 exec /opt/homebrew/bin/node "$SCRIPT_DIR/listener.js"
