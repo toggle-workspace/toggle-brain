@@ -70,7 +70,7 @@ When you don't know where something lives, look here. One question per line. Kee
 - `/landing-page` → `generators/landing-page.md`
 - `/image-prompt` → `generators/image-prompt.md`
 - `/video-prompt` → `generators/video-prompt.md`
-- `/monthly-report` → `generators/monthly-report.md`
+- `/client-report` → `.claude/skills/client-report/` (monthly / weekly / campaign recap / ad-platform commentary; absorbed the old `/monthly-report` generator)
 
 ## Prompts library
 - Hooks / bodies / CTAs? → `prompts/copy/{hooks,bodies,ctas}/`
@@ -125,7 +125,7 @@ When you don't know where something lives, look here. One question per line. Kee
 - Morning brief / day's plan? → `/toggle-brief` (reads `cockpit/`, `clients/*/CLIENT.md`)
 - Green/yellow/red across clients? → `/toggle-status` (reads `clients/*/CLIENT.md`, git mtime)
 - Pick the next task? → `/toggle-decide` (reads `cockpit/`, today's git activity)
-- UNITAR weekly leads breakdown? → `/unitar-weekly-report` (reads `clients/audaura-unitar/WEEKLY-REPORT-FORMAT.md`)
+- UNITAR weekly leads breakdown? → `/client-report` UNITAR-weekly path (reads `clients/audaura-unitar/WEEKLY-REPORT-FORMAT.md`)
 - Write a TikTok One creator brief? → `/tiktok-brief-writer` (enforces `brain/tiktok-one-rules.md`)
 - Validate a draft brief? → `brief-validator` subagent (adversarial check vs TikTok rules)
 

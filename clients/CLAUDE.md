@@ -10,6 +10,7 @@ Filled work, organised one folder per client. This is where the day-to-day happe
 2. **Pull voice/positioning/pricing from `brain/` by reference.** Don't paste them in.
 3. **Each client has at minimum `CLIENT.md` and `style-pack.md`.** Subfolders (`00-brief/`, `01-strategy/`, `02-creative/`, etc.) are created *when you need them*, not as ceremony.
 4. **One client per folder.** Don't share folders across clients even if they're related (e.g. Audaura/UNITAR vs Audaura/UNITAR-Creatives are two folders).
+5. **Check `CLIENT.md` for a branding rule before producing any deliverable.** Some accounts are white-labeled and must carry no Toggle branding at all — `audaura-unitar` and `audaura-unitar-creatives` are both white-label through Audaura: no Toggle logo, and never the words "Toggle" or "Madcrack" in the document. The account's `CLIENT.md` is the authority.
 
 ---
 
