@@ -39,6 +39,14 @@ last_reviewed: 2026-06-30
 - **Tools:** Google Ads (account "UNITAR - MY - Degree", 905-920-2225), GA4, Meta Business, Salesforce CRM, Zapier, TikTok Ads.
 - **Credentials location:** ⚠️ currently a **plaintext doc in the source archive** — migrate to a 1Password vault (name TBD) and **rotate**. Never paste creds in this repo.
 
+## Branding — white-label (binding)
+
+**Never put the Toggle logo on a UNITAR deliverable, and never write the words "Toggle" or "Madcrack" anywhere in one.** This covers every artifact type: reports, decks, HTML, PDFs, ad copy, briefs, emails, roadmaps. The engagement is white-labeled through Audaura, so the client-facing brand is Audaura's, not ours.
+
+Before delivering anything for this account, check the cover, header, footer, and body for a Toggle logo file or either word, and strip them. Templates copied out of `templates/` ship with Toggle branding by default — remove it on the copy. If you are unsure which brand mark belongs there instead, ask Kelvin (Audaura) rather than guessing.
+
+**Grepping for "Toggle" will not find the logo.** Our HTML decks inline the wordmark as an SVG sprite — `<symbol id="wm" viewBox="0 0 1432 392">` (the path from `assets/logos/toggle-wordmark.svg`), drawn via `<use href="#wm"/>` on every slide. No brand text is involved. Audit HTML with `grep -E '#wm|1432 392|M1166.39 1.57487'` as well as the brand words.
+
 ## Notes — quirks, politics, history
 - **Audaura is a 2025-incorporated intermediary** (Co. 202501006752) sitting between an established university and Toggle. UNITAR is *not* an MSA signatory.
 - **Won against incumbent Mindshare (GroupM)** via the 2025 RFP "Road to 10K" (goal 10,000 enrolments; later raised to 11,000). Mindshare fired for poor reporting / delayed launches / scope not delivered — hence the self-warning to be careful agreeing scope.

@@ -12464,3 +12464,218 @@ A1\_tt\_ONE\_ABO actually recovered this week (125 leads / RM120.38, from 110 / 
 
 **  
   
+****  
+**
+
+# (July) 1st July - 31st July**  
+**
+
+**July Monthly Reporting**
+
+|  |  |
+| :-: | :-: |
+| \*\*Top-Line Performance:\*\* |   |
+| \*\*Total Spend:\*\* | RM781,163.62 |
+| \*\*Total Leads:\*\* | 9,682 |
+| \*\*Blended CPL:\*\* | RM80.68 |
+
+### **  
+****Meta**
+
+|  |  |
+| :-: | :-: |
+| \*\*Total Spend:\*\* | RM323,763.21 |
+| \*\*Total Leads:\*\* | 6,159 |
+| \*\*Blended CPL:\*\* | RM52.57 |
+
+  
+
+### **Google**
+
+|  |  |
+| :-: | :-: |
+| \*\*Total Spend:\*\* | RM311,263.71 |
+| \*\*Total Leads:\*\* | 2,883 |
+| \*\*Blended CPL:\*\* | RM107.98 |
+
+  
+
+### **TikTok**
+
+|  |  |
+| :-: | :-: |
+| \*\*Total Spend:\*\* | RM146,136.70  |
+| \*\*Total Leads:\*\* | 640 |
+| \*\*Blended CPL:\*\* | RM228.34 |
+
+  
+**Insights:** **  
+**Our total investment for the month of July was RM781,163.62, generating 9,682 leads at a blended Cost Per Lead (CPL) of RM80.68.
+
+### **Month on Month: July vs June**
+
+|  |  |  |  |  |  |
+| :-: | :-: | :-: | :-: | :-: | :-: |
+|   | \*\*June\*\* | \*\*July\*\* | \*\*Spend\*\* | \*\*Leads\*\* | \*\*CPL\*\* |
+| Total | RM715,081 / 7,642 / RM93.57 | RM781,164 / 9,682 / RM80.68 | \\+9% | \\+27% | \\-14% |
+| Meta | RM246,319 / 3,343 / RM73.68 | RM323,763 / 6,159 / RM52.57 | \\+31% | \\+84% | \\-29% |
+| Google | RM356,677 / 3,708 / RM96.19 | RM311,264 / 2,883 / RM107.98 | \\-13% | \\-22% | \\+12% |
+| TikTok | RM112,085 / 591 / RM189.65 | RM146,137 / 640 / RM228.34 | \\+30% | \\+8% | \\+20% |
+
+  
+
+**Meta**
+
+### **  
+****Performance Analysis**
+
+#### **Website Conversion vs. Instant Form Campaigns**
+
+|  |  |  |  |  |  |
+| :-: | :-: | :-: | :-: | :-: | :-: |
+| \*\*Campaign Type\*\* | \*\*Spend (RM)\*\* | \*\*Leads\*\* | \*\*CPL (RM)\*\* | \*\*Message Conversation\*\* | \*\*Cost per message\*\* |
+| \*\*Instant Form\*\* | RM240,493.26 | 5,774 | RM41.65 | 5,019 | RM47.92 |
+| \*\*Message Generation\*\* | RM61,746.37 | 133 | RM464.26 | 1,173 | RM52.64 |
+| \*\*Awareness/\*\*\*\*  &#10;\*\*\*\*LPV\*\* | RM9,280.31 | / | / | / | / |
+| \*\*Website Conversion\*\* | RM12,243.27 | 244 | RM50.18 | 298 | RM41.08 |
+
+**  
+****Insight:****  
+**Meta delivered RM323,763.21 spend / 6,159 leads / RM52.57 blended CPL with spend +31%, leads +84% and CPL -29% versus June's RM73.68. On headline numbers this is Meta's best month since April (RM46.37), reversing three months of rising cost (Apr RM46 → May RM68 → Jun RM74 → Jul RM53).
+
+Instant Form did the work: RM240,493.26 / 5,774 leads / RM41.65 CPL, with leads +97% and CPL -26% vs June (RM56.21). Almost all of that incremental volume is Pakistan and Perkeso.
+
+Website Conversion is now a healthy, efficient line at RM12,243.27 / 244 leads / RM50.18 which is better than blended Meta and worth continuing.
+
+Message Generation deteriorated on both measures: 133 leads at RM464.26 (June: 150 at RM397.63), and as a conversation driver it is now far more expensive with 1,173 conversations at RM52.64 each, versus 2,815 at RM21.19 in June (volume -58%, cost per message +148%). At RM61,746 it is our third-largest Meta line and no longer earns that spend.
+
+  
+  
+
+  
+
+**Campaign Level Performance Insight**
+
+#### **Top 3 Campaigns by Leads:**
+
+|  |  |  |
+| :-: | :-: | :-: |
+| \*\*Campaign Name\*\* | \*\*Leads\*\* | \*\*CPL (RM)\*\* |
+| \*\*Audaura/ FB/ C1 2026/ Scale Up/ Lead Generation/ Instant Form/\*\* \*\*Retargeting\*\*\*\*/ ABO/ CAPI\*\* | 813 | RM94.37 |
+| \*\*Audaura/ FB/ C2 2026/ Lead Generation/ LG/ MC/ Prospecting/ ABO/ CAPI\*\* | 791 | RM55.40 |
+| \*\*Audaura/ FB/ C3 2026/ Lead Generation/ LG/ MY/\*\* \*\*Perkeso\*\*\*\*/ Prospecting/ ABO/ CAPI\*\* | 518 | RM15.99 |
+|   |   |   |
+| \*\*Audaura/ FB/ C2 2026/ Lead Generation/ LG/ Pakistan/ Prospecting/ ABO/ CAPI\*\* | 2,881 | RM6.43 |
+
+**Insight:****  
+**Pakistan Prospecting dominated the month at 2,881 leads / RM6.43 CPL, up from 322 leads / RM13.26 in June with both far more volume and half the cost. Perkeso launched well at 518 leads / RM15.99 and is now our most efficient Malaysia campaign.
+
+C1 Scale-Up Retargeting fell to 813 leads at RM94.37 (June: 993 at RM53.57) at CPL +76% while volume dropped 18%, and it regressed in every week of July. C2 Main Campus Prospecting held volume (791 leads, flat) but CPL rose 20% to RM55.40, and remains the volume anchor.
+
+**Key Next Steps:**
+
+  - **Get a definitive answer on Pakistan lead quality:**  it now underpins our blended CPL, and Pakistan alone is nearly half of Meta's lead volume. Confirm downstream enrolment intent before we plan August around it. The campaign was paused in the final week of July, so this is now urgent to resolve either way.
+  - **Scale Perkeso:**it is the cheapest Malaysia campaign at RM15.99 and stepped into the top 3 as Pakistan wound down. It is the most credible replacement for Pakistan volume. Apply the agreed creative direction (fear-based framing, testimonials, program value, limited-seat scarcity).
+  - **Fix or cut Retargeting:**  two consecutive months of decline and a rise from RM53.57 to RM94.37. Pause the fatigued ad sets and refresh creative rather than continuing to fund them.
+
+## **Google****  
+  
+**
+
+### **Overall Google Summary**
+
+|  |  |  |  |
+| :-: | :-: | :-: | :-: |
+| \*\*Campaign Type\*\* | \*\*Cost\*\* | \*\*Conversions\*\* | \*\*CPL\*\* |
+| Search | RM311,263.71 | 2,883 | RM107.98 |
+
+### **  
+****Insight:** Google Search spent RM311,263.71 for 2,883 leads at RM107.98 CPL with spend -13%, leads -22% and CPL +12% versus June's RM96.19. This is Google's weakest month across the last five (Mar RM91.70, Apr RM57.38, May RM88.79, Jun RM96.19), and the third consecutive month of rising CPL. Google also fell from 50% to 40% of total spend — part deliberate reallocation toward Meta, part efficiency loss.
+
+The monthly figure understates where we finished. Weekly CPL improved consistently through July (RM112.90 → RM103.94 → RM101.70), so the damage was concentrated early in the month and the channel is trending back toward the RM90s target.
+
+  
+
+### **Top 3 Campaigns by Conversions:**
+
+|  |  |  |  |
+| :-: | :-: | :-: | :-: |
+| \*\*Campaign\*\* | \*\*Cost (RM)\*\* | \*\*Conv.\*\* | \*\*CPL (RM)\*\* |
+| Aud\\\_Unitar\\\_MY\\\_SEM\\\_Level of study\\\_Low intent\\\_T1a+T2\\\_EN+BM\\\_Max\\\_Conversion\\\_TCPA | RM27,358.36 | 349 | RM78.45 |
+| Aud\\\_Unitar\\\_MY\\\_SEM\\\_Brand\\\_T2\\\_Max\\\_Conversion\\\_TCPA\\\_Test | RM25,633.07 | 249 | RM102.90 |
+| Aud\\\_Unitar\\\_MY\\\_SEM\\\_Brand\\\_T1a\\\_Max\\\_Conversion\\\_TCPA | RM25,688.39 | 219 | RM117.41 |
+
+**Insight:** Low-Intent T1a+T2 was the only top converter with improvement at 349 conversions at RM78.45, up from 338 at RM81 in June. It is now clearly our most efficient volume campaign (finishing at RM71.02).
+
+The Brand campaigns are the source of Google's regression. Brand T2 Test fell to 249 conversions at RM102.90 (June: 315 at RM76: conversions -21%, CPL +35%), and Brand T1a to 219 at RM117.41 (June: 265 at RM91 — CPL +29%). Brand was our efficiency backbone in June and is now our most expensive volume.
+
+Outside the top three, SPM remained the most efficient high-volume campaign (finishing July around RM82), while Brand T2 (non-test) stayed the weakest of the larger campaigns at roughly RM160.
+
+**Key Next Steps:**
+
+  - **Shift budget toward Low-Intent T1a+T2 and SPM:** both compounded efficiency gains every week in July and are the clearest place to add spend.
+  - **Run a proper diagnosis on the Brand deterioration:** a 29–35% CPL rise across two campaigns points to something systemic (auction competition, CPC inflation, or landing-page/quality-score) rather than campaign-level noise. Diagnose before restoring the budget.
+  - **Restructure or cut Brand T2 non-test:**  it is consuming a meaningful budget at roughly double the account's best CPL.
+  - **Hold the recovery:**  it exited July at RM101.70 and improved; protect that trajectory rather than re-scaling spend into it prematurely.
+
+  
+
+**TikTok**
+
+### **Overall TikTok Summary**
+
+|  |  |  |  |
+| :-: | :-: | :-: | :-: |
+| \*\*Campaign Type\*\* | \*\*Cost\*\* | \*\*Conversions\*\* | \*\*CPL\*\* |
+| TOF - Awareness | RM48,388.68 | / | / |
+| MOF - Instant Forms | RM97,748.02 | 623 | RM156.90 |
+| BOF - Retargeting Instant Forms | RM0 | 0 | RM0 |
+
+  
+
+### **Performance Analysis**
+
+**Top 5 Campaigns by Conversions:**
+
+|  |  |  |  |
+| :-: | :-: | :-: | :-: |
+| \*\*Campaign\*\* | \*\*Cost (RM)\*\* | \*\*Conv.\*\* | \*\*CPL (RM)\*\* |
+| audaura\\\_tiktok\\\_MOF\\\_InstantForms\\\_ConversionLeads\\\_A1\\\_tt\\\_ONE\\\_ABO | RM63,723.12 | 496 | RM128.47 |
+| audaura\\\_tiktok\\\_MOF\\\_InstantForms\\\_ConversionLeads\\\_A1\\\_Masters\\\_CBO | RM26,538.86 | 114 | RM232.80 |
+| audaura\\\_tiktok\\\_MOF\\\_InstantForms\\\_ConversionLeads\\\_A1\\\_T1a\\\_CBO | RM7,486.041 | 13 | RM575.85  |
+
+  
+
+**Insight:**TikTok delivered RM146,136.70 spend / 640 leads / RM228.34 blended CPL — spend +30% but leads only +8%, so CPL worsened 20% from June's RM189.65. We spent RM34,000 more to buy 49 more leads. This is TikTok's worst month since March (RM346), undoing the gains made in April and May (RM126 → RM206 → RM190 → RM228).
+
+TOF Awareness is the single biggest drag: RM48,388.68 with no direct leads, up 50% from June's RM32,287 and now 33% of all TikTok spend. Excluding it, TikTok's lead-generating spend ran at roughly RM153 per lead — still above target, but a very different number from RM228.
+
+MOF Instant Forms weakened to RM156.90 CPL (June: RM136.64). Within it, the ONE creative remains the engine (496 conversions) but its efficiency eroded as we scaled — RM128.47 versus RM104.13 in June (+23%). Masters worsened to RM232.80 (+22%) and T1a stayed unviable at RM575.85 on 13 conversions.
+
+One positive: the final week of July broke the three-week stall, with blended CPL down to RM207.95 and the ONE creative recovering to RM120.38 — evidence that pulling spend back improves efficiency rather than scaling it.
+
+  
+
+**Key Next Steps:**
+
+  - **Stop scaling A1\_tt\_ONE\_ABO into higher CPL:**  across June and July the pattern is consistent: every time we scale it, CPL rises; when we pull back, it recovers. Cap it at the level where it converts nearer RM100 until we have more creative.
+  - **Cut or rebuild A1\_T1a\_CBO:** it has been above RM500 CPL for two consecutive months on negligible volume. There is no case for continuing it in its current form.
+  - **Unblock the creative pipeline:** TikTok ONE video generation remains the binding constraint (only 2 new videos received). The programs list from Unitar is the blocker for the 3 prepared project drafts; without it, TikTok cannot improve regardless of budget.
+
+  
+  
+
+  - PERKESO Ads:
+      
+      - Paused  
+          
+  - C3 Macbook Neo
+
+<!-- end list -->
+
+  - Sticker to be applied to generic/brand ads and run in a new campaign  
+      
+
+<!-- end list -->
+
+  - Meta ads dashbo
