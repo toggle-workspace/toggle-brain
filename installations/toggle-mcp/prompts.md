@@ -31,7 +31,6 @@ Generators are output-producing recipes — they pull from `brain/` and produce 
 | `generators--video-prompt` | Video generation prompt (Sora / Kling) | `style`, `scene`, `duration` |
 | `generators--landing-page` | Landing page copy | `client`, `offer`, `audience` |
 | `generators--meta-ad-copy` | Meta ad copy (primary + headline + description) | `client`, `product`, `audience` |
-| `generators--monthly-report` | Monthly performance report | `client`, `month`, `platform` |
 
 ---
 

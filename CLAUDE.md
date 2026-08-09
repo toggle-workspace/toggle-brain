@@ -34,7 +34,8 @@ Plus supporting zones: **`playbooks/`** (how-we-do-things runbooks), **`assets/`
 | Write TikTok hooks | `generators/tiktok-hooks.md` | reads `brain/voice/`, `prompts/platforms/tiktok.md`, client `style-pack.md` |
 | Write a TikTok One creator brief | `/tiktok-brief-writer` global skill | enforces `brain/tiktok-one-rules.md`; writes `clients/<slug>/00-brief/` |
 | Validate a draft brief against TikTok rules | `brief-validator` subagent | reads `brain/tiktok-one-rules.md` |
-| Generate UNITAR weekly leads breakdown | `/unitar-weekly-report` global skill | format spec in `clients/audaura-unitar/WEEKLY-REPORT-FORMAT.md` |
+| Write any client report (monthly / weekly / campaign recap / ad-platform commentary) | `/client-report` skill | reads `clients/<slug>/CLIENT.md` + `04-reports/`; routes B2C / B2B / UNITAR-weekly; writes report + logs findings back |
+| Generate UNITAR weekly leads breakdown | `/client-report` skill (UNITAR-weekly path) | binding format spec in `clients/audaura-unitar/WEEKLY-REPORT-FORMAT.md` |
 | Morning brief / day's focus | `/toggle-brief` global skill | reads `cockpit/`, `clients/*/CLIENT.md`; writes `cockpit/current.md` |
 | Status across all clients (green/yellow/red) | `/toggle-status` global skill | reads `clients/*/CLIENT.md` + git mtime |
 | Refresh MRR / quotation / credit / pipeline trackers | `generators/sales-trackers.md` (`/sales-trackers`) | reads `clients/*/CLIENT.md` + `archive/quotes/`; writes `Sales/` |
