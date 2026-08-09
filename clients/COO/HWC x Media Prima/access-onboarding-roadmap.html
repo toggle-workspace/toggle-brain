@@ -108,9 +108,30 @@
     .cards,.cards--2{grid-template-columns:1fr}
   }
   @media print{
-    body{background:none}
+    @page{size:A4 landscape;margin:0}
+    body{background:var(--cream)}
     *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
-    .page--structured{break-inside:avoid}
+    .doc{max-width:none;margin:0}
+    .cards{grid-template-columns:repeat(3,1fr)}
+    .cards--2{grid-template-columns:1fr 1fr}
+    /* one section = one page: break before each, never split inside */
+    .cover,.page--structured,.docfoot{break-before:page;break-inside:avoid}
+    .cover{break-before:auto}
+    .cover,.docfoot{min-height:210mm;overflow:hidden;display:flex;flex-direction:column;justify-content:center}
+    .docfoot{align-items:center;text-align:center;gap:0}
+    .docfoot p{margin-top:20px}.docfoot .r{margin-top:26px}
+    /* compress density so the tall sections fit one page each */
+    .page--structured{padding-top:34px;padding-bottom:22px}
+    .headline{margin-bottom:.4em}
+    .standfirst{margin-bottom:.9rem}
+    .cards{gap:16px}
+    .card{padding:14px 16px 16px}
+    .steps{gap:7px}.steps li{line-height:1.35}
+    .idbox{margin-top:11px;padding-top:9px}
+    .footer-bar{margin-top:14px;padding:12px 20px}
+    .ctable td{padding:7px 15px}
+    .ctable th{padding:9px 15px}
+    .card,.ctable tr,.footer-bar{break-inside:avoid}
   }
 </style>
 </head>
