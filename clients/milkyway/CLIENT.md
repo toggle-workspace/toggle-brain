@@ -85,6 +85,19 @@ Milkyway on this account unless that changes in writing.
 - `brain/verticals/healthcare.md` is still a placeholder. If this account converts, the
   MDC and PDPA rules belong in that file through a separate PR against `brain/`.
 
+## Sub-engagements
+
+Milkyway brings Toggle more than one end client. Each gets its own subfolder here rather
+than a top-level client slug, because Toggle sits behind Milkyway on all of them.
+
+- **`uk-education-partnership/`** — UK higher education. Harsha brings the UK university
+  relationship and the branding; Toggle brings the education performance playbook, the
+  media buying, the funnel build and the creative. First deliverable is Toggle's side of
+  the joint pitch deck, in `uk-education-partnership/01-strategy/`. See that folder's
+  `README.md` for the open questions and the numbers used.
+- **Dental practice (veneers)** — the original scoping question. Lives in this folder's own
+  `01-strategy/` and `05-meetings/`.
+
 ## Standard subfolder conventions (create only when needed)
 - `00-brief/`: campaign briefs from templates/briefs/
 - `01-strategy/`: strategies, audits, roadmaps, proposals
