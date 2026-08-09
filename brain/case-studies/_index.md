@@ -9,6 +9,7 @@ Flat, grep-friendly index. One row per case. Filter by vertical, geo, or service
 | Client | Year | Vertical | Geo | Services | Key result | File |
 |---|---|---|---|---|---|---|
 | UNITAR International University | 2025 | education | malaysia | performance-marketing, creative-production, reporting-analysis | 32,000+ leads · 47% CPL reduction · 77% impression share | [unitar.md](./unitar.md) |
+| Mindvalley Labs | 2022 | education | global | performance-marketing, creative-production, conversion-optimisation | 4x ROAS on $500k · B2B CPL $100 → $10 · net revenue +100% | [mindvalley.md](./mindvalley.md) |
 | Kith and Kin | 2025 | real-estate | malaysia | performance-marketing, creative-production, reporting-analysis, conversion-optimisation | +392% leads · 10% conv rate · RM35 CPL | [kith-and-kin.md](./kith-and-kin.md) |
 | Great Eastern Singapore | 2025 | insurance | singapore | seo | #4 → #1 rankings · +16% organic clicks | [great-eastern-sg.md](./great-eastern-sg.md) |
 | Singlife | 2025 | insurance | singapore | seo | #3 → #1 rankings · +23% organic clicks | [singlife.md](./singlife.md) |
