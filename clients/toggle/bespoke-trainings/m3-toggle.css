@@ -1,0 +1,146 @@
+/* =============================================================================
+   Material 3, seeded on Toggle blue
+   Toggle Bespoke design system for the AI-literacy trainings.
+   -----------------------------------------------------------------------------
+   A Material 3 token system whose PRIMARY is Toggle blue (not the M3 baseline
+   purple). Three key colors map to the curriculum tracks:
+       primary   = blue   = AI track
+       tertiary  = green  = Marketing track
+       secondary = amber  = AI-in-Marketing (applied) track
+   Every color is an M3 role. Cards layer with tonal surface tiers plus a soft
+   elevation shadow, not hard borders. Headings use light M3 weights.
+
+   USAGE: paste this <style> (or its contents) into a self-contained lesson HTML.
+   Artifacts block external stylesheets under CSP, so this file is the SOURCE to
+   copy from, not a runtime @import. Style through the tokens, never hard-coded
+   hex. Both the raw M3 role names (--md-*) and the short app aliases
+   (--brand, --card, --ai-bg, --callout, --teach, --do, ...) are provided.
+
+   THEMES: :root defaults to light. Dark is applied by prefers-color-scheme AND
+   by a data-theme attribute (viewer toggle), which must win in both directions.
+   ============================================================================= */
+
+:root{
+  /* ---- shape scale (M3) ---- */
+  --md-radius-xs:4px; --md-radius-sm:8px; --md-radius-md:12px; --md-radius-lg:16px; --md-radius-xl:28px;
+
+  /* ---- type ---- */
+  --md-font:"Roboto","Roboto Flex",system-ui,-apple-system,"Segoe UI",Arial,sans-serif;
+  /* M3 scale (reference): display ~36/400 · headline ~24-28/400 · title ~16-22/500
+     · body ~14-17/400 · label ~11-14/500. Large text stays light (400), not bold. */
+
+  /* ---- M3 color roles: LIGHT ---- */
+  --md-surface:#FBF8FE;
+  --md-surface-container-lowest:#FFFFFF;
+  --md-surface-container-low:#F3F0F9;
+  --md-surface-container:#EFEDF4;
+  --md-surface-container-high:#E9E7EF;
+  --md-surface-container-highest:#E4E1E9;
+  --md-on-surface:#1A1B21;
+  --md-on-surface-variant:#45464F;
+  --md-outline:#767680;
+  --md-outline-variant:#C7C5D0;
+
+  --md-primary:#3A5CC8; --md-on-primary:#FFFFFF; --md-primary-container:#DCE1FF; --md-on-primary-container:#001551;
+  --md-secondary:#7A5900; --md-on-secondary:#FFFFFF; --md-secondary-container:#FFDEA0; --md-on-secondary-container:#261900;
+  --md-tertiary:#146C43; --md-on-tertiary:#FFFFFF; --md-tertiary-container:#A4F5C4; --md-on-tertiary-container:#00210F;
+
+  --md-elev-1:0 1px 2px rgba(0,0,0,.28),0 1px 3px 1px rgba(0,0,0,.12);
+  --md-elev-2:0 1px 2px rgba(0,0,0,.28),0 2px 6px 2px rgba(0,0,0,.12);
+
+  /* accent used for "critical" star (a warm gold, kept outside the M3 scheme on purpose) */
+  --md-star:#F5B301;
+
+  /* ---- app aliases (what the lesson/map HTML uses) ---- */
+  --canvas:var(--md-surface);
+  --card:var(--md-surface-container-low);
+  --card-2:var(--md-surface-container-high);
+  --ink:var(--md-on-surface);
+  --body:var(--md-on-surface);
+  --muted:var(--md-on-surface-variant);
+  --faint:var(--md-outline);
+  --line:var(--md-outline-variant);
+  --line-strong:var(--md-outline);
+  --brand:var(--md-primary); --brand-deep:#274BB5; --on-brand:var(--md-on-primary);
+  --callout:var(--md-primary-container);          /* obj / example / stakes blocks */
+  --ai-acc:#3A5CC8; --ai:var(--md-on-primary-container); --ai-bg:var(--md-primary-container);
+  --mk-acc:#146C43; --mk:var(--md-on-tertiary-container); --mk-bg:var(--md-tertiary-container);
+  --ax-acc:#7A5900; --ax:var(--md-on-secondary-container); --ax-bg:var(--md-secondary-container);
+  --teach:var(--md-tertiary); --teach-bg:var(--md-tertiary-container);   /* analogy blocks */
+  --do:var(--md-secondary); --do-bg:var(--md-secondary-container);       /* try-it / monday blocks */
+  --shadow:var(--md-elev-1);
+}
+
+/* ---- dark via OS preference ---- */
+@media (prefers-color-scheme:dark){
+  :root{
+    --md-surface:#121318;
+    --md-surface-container-lowest:#0D0E13;
+    --md-surface-container-low:#1B1B21;
+    --md-surface-container:#1E1F25;
+    --md-surface-container-high:#2A2B31;
+    --md-surface-container-highest:#33343A;
+    --md-on-surface:#E4E1E9;
+    --md-on-surface-variant:#C7C5D0;
+    --md-outline:#90909A;
+    --md-outline-variant:#45464F;
+
+    --md-primary:#B4C5FF; --md-on-primary:#002E69; --md-primary-container:#123E77; --md-on-primary-container:#DAE2FF;
+    --md-secondary:#F0C060; --md-on-secondary:#412D00; --md-secondary-container:#5D4200; --md-on-secondary-container:#FFDEA0;
+    --md-tertiary:#7ED6A5; --md-on-tertiary:#003920; --md-tertiary-container:#005231; --md-on-tertiary-container:#A4F5C4;
+
+    --md-elev-1:0 1px 3px rgba(0,0,0,.5),0 4px 8px 2px rgba(0,0,0,.3);
+    --md-elev-2:0 2px 6px rgba(0,0,0,.5),0 6px 12px 3px rgba(0,0,0,.3);
+
+    --brand-deep:#DAE2FF; --ai-acc:#B4C5FF; --mk-acc:#7ED6A5; --ax-acc:#F0C060;
+  }
+}
+
+/* ---- viewer toggle overrides (must beat the media query in both directions) ---- */
+:root[data-theme="light"]{
+  --md-surface:#FBF8FE; --md-surface-container-lowest:#FFFFFF; --md-surface-container-low:#F3F0F9; --md-surface-container:#EFEDF4; --md-surface-container-high:#E9E7EF; --md-surface-container-highest:#E4E1E9;
+  --md-on-surface:#1A1B21; --md-on-surface-variant:#45464F; --md-outline:#767680; --md-outline-variant:#C7C5D0;
+  --md-primary:#3A5CC8; --md-on-primary:#FFFFFF; --md-primary-container:#DCE1FF; --md-on-primary-container:#001551;
+  --md-secondary:#7A5900; --md-on-secondary:#FFFFFF; --md-secondary-container:#FFDEA0; --md-on-secondary-container:#261900;
+  --md-tertiary:#146C43; --md-on-tertiary:#FFFFFF; --md-tertiary-container:#A4F5C4; --md-on-tertiary-container:#00210F;
+  --md-elev-1:0 1px 2px rgba(0,0,0,.28),0 1px 3px 1px rgba(0,0,0,.12);
+  --brand-deep:#274BB5; --ai-acc:#3A5CC8; --mk-acc:#146C43; --ax-acc:#7A5900;
+}
+:root[data-theme="dark"]{
+  --md-surface:#121318; --md-surface-container-lowest:#0D0E13; --md-surface-container-low:#1B1B21; --md-surface-container:#1E1F25; --md-surface-container-high:#2A2B31; --md-surface-container-highest:#33343A;
+  --md-on-surface:#E4E1E9; --md-on-surface-variant:#C7C5D0; --md-outline:#90909A; --md-outline-variant:#45464F;
+  --md-primary:#B4C5FF; --md-on-primary:#002E69; --md-primary-container:#123E77; --md-on-primary-container:#DAE2FF;
+  --md-secondary:#F0C060; --md-on-secondary:#412D00; --md-secondary-container:#5D4200; --md-on-secondary-container:#FFDEA0;
+  --md-tertiary:#7ED6A5; --md-on-tertiary:#003920; --md-tertiary-container:#005231; --md-on-tertiary-container:#A4F5C4;
+  --md-elev-1:0 1px 3px rgba(0,0,0,.5),0 4px 8px 2px rgba(0,0,0,.3);
+  --brand-deep:#DAE2FF; --ai-acc:#B4C5FF; --mk-acc:#7ED6A5; --ax-acc:#F0C060;
+}
+
+/* =============================================================================
+   Base + component layer (optional, copy what a page needs)
+   ============================================================================= */
+*{box-sizing:border-box}
+body{margin:0;background:var(--canvas);color:var(--body);font-family:var(--md-font);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+h1,h2,h3,h4{color:var(--ink);text-wrap:balance;line-height:1.2;margin:0}
+h1{font-weight:400} h2{font-weight:400} h3{font-weight:500}
+strong{color:var(--ink);font-weight:600}
+
+/* elevated M3 card */
+.m3-card{background:var(--card);border-radius:var(--md-radius-lg);padding:20px 22px;box-shadow:var(--md-elev-1)}
+
+/* filled tonal chip, colored by track: add .ai / .mk / .ax */
+.m3-chip{display:inline-flex;align-items:center;gap:9px;border-radius:var(--md-radius-sm);padding:8px 13px;font-size:13.5px}
+.m3-chip.ai{background:var(--ai-bg);color:var(--ai)}
+.m3-chip.mk{background:var(--mk-bg);color:var(--mk)}
+.m3-chip.ax{background:var(--ax-bg);color:var(--ax)}
+
+/* M3 segmented buttons (used by the ELI reading-level toggle) */
+.m3-seg{display:inline-flex;background:var(--card-2);border:1px solid var(--line);border-radius:999px;padding:3px;gap:2px}
+.m3-seg button{appearance:none;border:0;background:transparent;color:var(--muted);font:inherit;font-size:13px;font-weight:600;padding:6px 14px;border-radius:999px;cursor:pointer;transition:.15s ease}
+.m3-seg button:hover{color:var(--ink)}
+.m3-seg button[aria-pressed="true"]{background:var(--brand);color:var(--on-brand)}
+.m3-seg button:focus-visible{outline:2px solid var(--brand-deep);outline-offset:2px}
+@media (prefers-reduced-motion:reduce){.m3-seg button{transition:none}}
+
+/* critical marker */
+.m3-star{color:var(--md-star);line-height:1}
