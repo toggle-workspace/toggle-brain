@@ -5,7 +5,7 @@ geo: PL                # HQ Gdynia, Poland; US office Seattle. Ad targeting is U
 status: active
 stage: won
 practice: acquisition
-currency: TBD          # confirm with Jordan; not recorded in any meeting note yet
+currency: TBD          # billing currency unconfirmed. The Google Ads account reports in PLN
 mrr: TBD               # confirm
 credit_pending: TBD    # confirm
 account_lead: Jordan Pinto
@@ -53,6 +53,7 @@ Three campaigns after the mid-July split, moving to five under the routing map i
 ## Access
 
 - **Tools we have access to:** Google Ads, GA4, WordPress (pillar page drafts land there).
+- **Google Ads account currency: PLN.** All Keyword Planner bid data returns in Polish złoty. Convert before quoting CPCs in any MYR or SGD context.
 - **Atlassian evaluation ID:** Atlassian now passes an evaluation ID into GA4 on post-trial "Review" and "Request" clicks. SolDevelo is cross-checking those IDs against their internal evaluation report. Privacy consent limits GA4 capture, and most traffic still lands under direct and referral.
 - **Credentials location:** TBD (1Password vault name; never paste credentials in this file)
 
@@ -60,6 +61,10 @@ Three campaigns after the mid-July split, moving to five under the routing map i
 
 - **The relevancy chain is the account's whole problem.** Ads earn clicks and the destinations cannot convert them. Every landing page except the product page carries only soft mid-content CTAs. Fixing destinations, not ads, is where the gains are.
 - **Their blog is a real asset.** Nine QAlity Plus pages already cover the ground the ads need. Audited 2026-08-11, all returning 200. The audit table lives in the strategy doc.
-- **Budget gate:** spend holds flat until hero CTAs are live on the four priority landing pages. Agreed 2026-08-05. Do not ask for an increase before then.
-- **Pillar Page #1 is the sequencing blocker.** The Resources dropdown cannot be built until it publishes, and Ewa's review is the blocker on publishing.
+- **The best keyword in the account is "defect tracking tool jira":** 1,600 monthly searches, Low competition, PLN 9.75 floor bid. Found in the differentiator research. Build the Differentiators campaign around it.
+- **The differentiators do not have search demand in their own words.** Every literal feature phrase came back at zero volume. Demand sits one level up, in the category term. Full analysis in `01-strategy/2026-08-landing-page-flow-and-keyword-strategy.md` section 8.
+- **CTA wording is locked:** "Try for free" and "Book a demo". Use those exact strings in ads, on-page buttons and decks.
+- **Client-facing writing rule:** attribute observations to "SolDevelo" rather than to individual team members. Jordan edits individual names out of sent decks.
+- **Budget gate:** spend holds flat until hero CTAs are live on the four priority landing pages. Agreed 2026-08-05, though the language was cut from the sent deck. Raise it verbally, not in writing.
+- **Pillar Page #1:** Ewa's review is done as of the August deck. Publishing it, and then building the Resources dropdown, now sits with **Toggle**, not SolDevelo. It remains the blocker for the dropdown.
 - **Geo prefix:** this folder is unprefixed. Per `clients/CLAUDE.md`, confirm before batch-prefixing. HQ is Poland, so `pl-soldevelo` would follow the convention, though the ad targeting is US-led.

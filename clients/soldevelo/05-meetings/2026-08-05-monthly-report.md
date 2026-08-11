@@ -81,8 +81,8 @@ Toggle sent the pillar page draft on WordPress. Ewa will review it once her coll
 |---|---|---|
 | Jordan | Share the updated deck with the GA4 evaluation ID screenshot in Slack | Done |
 | Jordan | Flesh out the ad landing page flow proposal, mapping keyword groups to landing page routes and CTA options | Delivered 2026-08-11, see `../01-strategy/2026-08-landing-page-flow-and-keyword-strategy.md` |
-| Jordan | Research keywords around the QAlity Plus differentiators, using them as messaging direction if no viable keywords exist | Delivered 2026-08-11, same doc |
-| Ewa | Review Pillar Page #1 on WordPress and give feedback | Pending her colleague's return |
+| Jordan | Research keywords around the QAlity Plus differentiators, using them as messaging direction if no viable keywords exist | Delivered 2026-08-11, same doc. Data pulled, Group B is the only group that earns a budget |
+| Ewa | Review Pillar Page #1 on WordPress and give feedback | Done. Publishing and the Resources dropdown moved to Toggle |
 | SolDevelo | Cross-check GA4 evaluation IDs against the internal evaluation report | Open |
 
 ## Open question carried forward

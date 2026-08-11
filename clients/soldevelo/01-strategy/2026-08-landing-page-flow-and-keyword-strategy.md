@@ -1,9 +1,10 @@
 # SolDevelo: landing page flow and differentiator keyword strategy
 
 **Date:** 2026-08-11
+**Status:** FINAL. Reflects the sent 24-slide deck, including real Google Ads Keyword Planner data.
 **Author:** Jordan Pinto
 **Delivers:** two action items from the 2026-08-05 monthly report call, recorded in `../05-meetings/2026-08-05-monthly-report.md`
-**Companion artifact:** `SolDevelo x Toggle - Landing Page Flow and Keyword Strategy (Aug 2026).pptx`, 25 slides, built from this document
+**Companion artifact:** `SolDevelo x Toggle - Landing Page Flow and Keyword Strategy (Aug 2026).pptx` and its PDF export, both on Jordan's Desktop
 **Scope guard:** everything here concerns QAlity Plus for Jira. Nothing points at SolDevelo's custom software development services.
 
 ---
@@ -18,43 +19,43 @@ Two of the three campaigns running in July earn clicks and lose the visit.
 | Agile / Jira QA | Best ad engagement of the three, near-zero conversions | Informational intent meeting a marketplace listing. |
 | Jira Test Case | 10% CTR, above benchmark, worst converter, high CPA | Two intents sharing one campaign and one destination. |
 
-The conversion drop from 30 in June to 9 in July is a separate matter and not a performance problem. It came from excluding generic terms, pausing low-quality keywords, an ads refresh that reset learning, and a daily budget cut that took cost down about 42%.
+The drop from 30 conversions in June to 9 in July is a separate matter and not a performance problem. It came from excluding generic terms, pausing low-quality keywords, an ads refresh that reset learning, and a daily budget cut that took cost down about 42%.
 
-**The thesis:** send every ad to the page that answers it, rather than to the marketplace listing. A 10% CTR on the worst converting campaign is the account telling us the ads work and the destinations do not.
+**The thesis, and the deck's one strikethrough:** ~~send every ad to the marketplace listing~~ send every ad to the page that answers it.
 
 ---
 
 ## 2. The intent ladder
 
-Intent decides the destination and the order of the two asks. This is the two-CTA proposal Jordan made on 2026-08-05, made specific.
-
 | Tier | Intent | Example query | Destination | Leads with | Then |
 |---|---|---|---|---|---|
-| 1 | Transactional | "jira test management app" | Marketplace listing | Install free | Book a demo |
-| 2 | Commercial investigation | "best test management tool for jira" | Comparison and choice pages | Book a demo | Try free |
-| 3 | Informational | "how to manage QA in jira" | QA process pages | Try free | Book a demo |
+| 1 | Transactional | "jira test management app" | Marketplace listing | Try for free | Install / Request App |
+| 2 | Commercial investigation | "best test management tool for jira" | Comparison and choice pages | Book a demo | Try for free |
+| 3 | Informational | "how to manage QA in jira" | QA process pages | Try for free | Book a demo |
 
-The demo leads on Tier 2 because a comparison shopper has questions a blog post cannot answer. The free tier leads on Tier 3 because a reader months from a decision will not book a sales call. Both CTAs appear on every page; only the order changes. The order is a hypothesis worth testing after one clean month of data. The two-path structure is not.
+The demo leads on Tier 2 because a comparison shopper has questions a blog post cannot answer. The free tier leads on Tier 3 because a reader months from a decision will not book a sales call. Both CTAs appear on every page; only the order changes.
+
+**CTA wording is locked as "Try for free" and "Book a demo".** Use those exact strings in ad copy, on-page buttons and future decks.
 
 ---
 
 ## 3. Content estate audit
 
-Audited 2026-08-11 against soldevelo.com. All nine URLs verified HTTP 200.
+Audited 2026-08-11. All nine URLs verified HTTP 200.
 
 | Page | Published | Tier | Ready to take a paid click? |
 |---|---|---|---|
-| [QAlity Plus product page](https://soldevelo.com/our-products/qality-plus-test-management-for-jira/) | Live | 1 | Ready. Both "Try QAlity Plus" and "Book a demo" present. |
+| [QAlity Plus product page](https://soldevelo.com/our-products/qality-plus-test-management-for-jira/) | Live | 1 | Ready. Both CTAs present. |
 | [What Teams Miss (Jira QA workflow)](https://soldevelo.com/blog/what-teams-miss-when-they-try-to-manage-their-jira-qa-workflow-using-native-tools-alone/) | Apr 2026 | 3 | Needs a hero CTA |
-| [Maximizing ROI with Structured Jira Test Case Management](https://soldevelo.com/blog/maximizing-roi-with-structured-jira-test-case-management/) | Apr 2026 | 2 | Needs a hero CTA |
-| [The Real Costs of Tests as Jira Issues vs Separate Test Storage](https://soldevelo.com/blog/the-real-costs-of-tests-as-jira-issues-vs-separate-test-storage-how-architecture-impacts-shift-left-adoption-speed/) | Apr 2026 | 3 | Bench |
-| [How to Choose the Right Jira Test Management Tool](https://soldevelo.com/blog/how-to-choose-the-right-jira-test-management-tool-for-visibility-speed-and-adoption/) | Mar 2026 | 2 | Needs a hero CTA |
+| [Maximizing ROI with Test Case Management](https://soldevelo.com/blog/maximizing-roi-with-structured-jira-test-case-management/) | Apr 2026 | 2 | Needs a hero CTA |
+| [The Real Costs of Tests as Jira Issues](https://soldevelo.com/blog/the-real-costs-of-tests-as-jira-issues-vs-separate-test-storage-how-architecture-impacts-shift-left-adoption-speed/) | Apr 2026 | 3 | Bench |
+| [How to Choose the Right Tool](https://soldevelo.com/blog/how-to-choose-the-right-jira-test-management-tool-for-visibility-speed-and-adoption/) | Mar 2026 | 2 | Needs a hero CTA |
 | [Why Jira Teams Struggle with Test Visibility](https://soldevelo.com/blog/test-management-for-jira-why-visibility-is-a-shift-left-must/) | Mar 2026 | 3 | Bench |
-| [How to Build Transparency Into Your Testing Process](https://soldevelo.com/blog/how-to-build-transparency-into-your-testing-process/) | Jun 2025 | 3 | Bench |
+| [How to Build Transparency Into Testing](https://soldevelo.com/blog/how-to-build-transparency-into-your-testing-process/) | Jun 2025 | 3 | Bench |
 | [How to Use Jira for Testing](https://soldevelo.com/blog/how-to-become-a-pro-tester-in-jira/) | Oct 2023 | 3 | Hero CTA and a content refresh |
 | [QAlity Plus vs Xray vs Zephyr Squad](https://soldevelo.com/blog/testing-apps-for-jira-qality-plus-vs-xray-vs-zephyr-squad/) | Aug 2023 | 2 | Rebuild before it takes traffic |
 
-**The finding that shapes everything below:** only the product page is conversion-ready. Every blog page carries soft mid-content text links, a generic "Get in touch" button, or a newsletter prompt. None has a hero CTA and none has a demo path. There is also no `/resources` hub yet, which is what the Pillar Page #1 dropdown creates.
+Only the product page is conversion-ready. Every blog page carries soft mid-content text links, a generic "Get in touch" button, or a newsletter prompt. None has a hero CTA and none has a demo path.
 
 ---
 
@@ -62,63 +63,55 @@ Audited 2026-08-11 against soldevelo.com. All nine URLs verified HTTP 200.
 
 ### LP1: What Teams Miss (Jira QA workflow)
 
-The page Sebastian described on the call. Roughly 2,900 words, carrying a "Jira alone vs Jira plus a tool" decision framework and a comparison table.
+Roughly 2,900 words, carrying a "Jira alone vs Jira plus a tool" decision framework and a comparison table.
 
-- **Keywords:** jira qa workflow · qa process in jira · managing qa in jira · jira for qa teams · agile qa process · jira native testing limits
-- **CTAs:** Try free leads, Book a demo follows
-- **Needs:** a hero CTA band above the fold; one mid-scroll CTA at the "Bridging the Gap" section where the article names the problem; paid UTM tags on the two existing marketplace links
+- **Keywords to target:** jira qa workflow · qa process in jira · managing qa in jira · jira for qa teams · agile qa process · jira native testing limits
+- **CTAs:** Try for free leads, Book a demo follows
+- **Needs:** a hero CTA band above the fold; one mid-scroll CTA at the "Bridging the Gap" section; paid UTM tags on the two existing marketplace links
 
 ### LP2: How to Use Jira for Testing
 
-The most valuable page for this strategy and the one in the worst shape. It carries its own subsections on the Execution History page and on auto-filled bug data, which makes it the natural home for differentiator groups A and C.
+The most valuable page for this strategy and the one in the worst shape. Its own subsections cover the Execution History page and auto-filled bug data, making it the home for differentiator groups A and C.
 
-- **Keywords:** how to use jira for testing · testing in jira · jira for test management · jira testing workflow · test management in jira
-- **CTAs:** Try free leads, Book a demo follows
-- **Needs:** a content refresh, since October 2023 predates the current feature set; a slug change with a 301 redirect, because the URL says "become-a-pro-tester" while the H1 says "How to Use Jira for Testing"; a hero CTA band
+- **Keywords to target:** how to use jira for testing · testing in jira · jira for test management · jira testing workflow · test management in jira
+- **CTAs:** Try for free leads, Book a demo follows
+- **Needs:** a content refresh (Oct 2023 predates the current feature set); a slug change with a 301 redirect, since the URL says "become-a-pro-tester" while the H1 says "How to Use Jira for Testing"; a hero CTA band
 - **Do the refresh before the differentiator campaigns launch.** This page is their destination.
 
 ### LP3: How to Choose the Right Jira Test Management Tool
 
-Commercial investigation intent, published March 2026, in good shape. Only needs the CTA layer.
+Commercial investigation intent, March 2026, in good shape. Needs only the CTA layer.
 
-- **Keywords:** best jira test management tool · test management app for jira · jira test management tools · choosing a test management tool · test management plugin for jira
-- **CTAs:** Book a demo leads, Try free follows
-- **Needs:** a hero CTA with the demo as primary; an anchor link to the selection criteria so the ad's headline promise appears above the fold; paid UTM tags
+- **Keywords to target:** best jira test management tool · test management app for jira · jira test management tools · choosing a test management tool · test management plugin for jira
+- **CTAs:** Book a demo leads, Try for free follows
+- **Needs:** a hero CTA with the demo as primary; an anchor link to the selection criteria; paid UTM tags
 
 ### LP4: Maximizing ROI with Structured Jira Test Case Management
 
-The salvage destination for the rescoped test case group. See section 5.
+Destination for the rescoped test case group. See section 5.
 
-- **Keywords:** jira test case management · test case repository jira · organize test cases in jira · test case folders jira · test case management tool
-- **CTAs:** Book a demo leads, Try free follows
+- **CTAs:** Book a demo leads, Try for free follows
 - **Needs:** a hero CTA band
 
 ### LP5: QAlity Plus vs Xray vs Zephyr Squad
 
-The highest commercial intent page on the site and the only home for conquest keywords. **Recommend holding the conquest keywords until this is rebuilt.**
+Highest commercial intent page on the site and the only home for conquest keywords. **Hold the conquest keywords until it is rebuilt.**
 
-- **Keywords:** xray alternative · zephyr squad alternative · xray vs qality plus · zephyr alternative for jira · jira test management comparison
-- **CTAs:** Book a demo leads, Try free follows
-- **Three problems:**
-  1. Published August 2023 and quotes 2023 cloud pricing for all three tools. A shortlisting buyer will check it.
-  2. It links out to the Xray and Zephyr marketplace listings, so paid clicks leave for competitors.
-  3. No demo path at all.
-
-### Bench
-
-Three pages available if more routes are needed later: Why Jira Teams Struggle with Test Visibility, The Real Costs of Tests as Jira Issues, and How to Build Transparency Into Your Testing Process.
+- **Keywords to target:** xray alternative · zephyr squad alternative · xray vs qality plus · zephyr alternative for jira · jira test management comparison
+- **CTAs:** Book a demo leads, Try for free follows
+- **Needs:** refresh the cloud pricing if needed, since it quotes 2023 figures for all three tools; remove the outbound links to the Xray and Zephyr marketplace listings; add a hero CTA, as there is no demo path today
 
 ---
 
 ## 5. The test case group: a partial save
 
-Sebastian flagged the "test cases" keywords for dropping. He is right about half of them.
+SolDevelo flagged the "test cases" keywords for dropping. They are right about half.
 
-**Cut, and add as negatives.** Searchers wanting AI generated test cases cannot convert, because QAlity Plus does not generate test cases: ai test case generation · ai generated test cases · generate test cases with ai · automatic test case generation · test case generator
+**Cut, and add as negatives.** QAlity Plus does not generate test cases, so the click cannot convert: ai test case generation · ai generated test cases · generate test cases with ai · automatic test case generation · test case generator
 
 **Keep, and route to LP4.** Managing, organizing and storing test cases is a different search from generating them: jira test case management · test case repository jira · organize test cases in jira · test case folders jira · test case management tool
 
-**The receipt:** this group ran a 10% CTR in July, above benchmark, while converting worst of the three. The pull is real. The destination was wrong. If SolDevelo still wants the whole group paused, agree, and fold the salvaged terms into the Differentiators campaign later rather than arguing it twice.
+**The receipt:** a 10% CTR in July, above benchmark, on the worst converting campaign in the account. The pull is real. The destination was wrong.
 
 ---
 
@@ -126,13 +119,13 @@ Sebastian flagged the "test cases" keywords for dropping. He is right about half
 
 | Keyword group | Campaign | Landing page | Leads with | Then |
 |---|---|---|---|---|
-| Jira test management (core) | Jira Test Management | Product page | Install free | Book a demo |
-| Jira QA workflow, QA process | Agile / Jira QA | LP1 | Try free | Book a demo |
-| How to use Jira for testing | Agile / Jira QA | LP2 | Try free | Book a demo |
-| Best Jira test management tool | Tool Comparison (new) | LP3 | Book a demo | Try free |
-| Test case management (kept) | Jira Test Case (rescoped) | LP4 | Book a demo | Try free |
-| Xray and Zephyr alternatives | Conquest (on hold) | LP5 | Book a demo | Try free |
-| Differentiator groups A, B, C | Differentiators (new) | LP2 + product page | Try free | Book a demo |
+| Jira test management (core) | Jira Test Management | Marketplace listing | Try & Buy Clicks | Install |
+| Jira QA workflow, QA process | Agile / Jira QA | LP1 | Try for free | Book a demo |
+| How to use Jira for testing | Agile / Jira QA | LP2 | Try for free | Book a demo |
+| Best Jira test management tool | Tool Comparison (new) | LP3 | Book a demo | Try for free |
+| Test case management (kept) | Jira Test Case (rescoped) | LP4 | Book a demo | Try for free |
+| Xray and Zephyr alternatives | Conquest (on hold) | LP5 | Book a demo | Try for free |
+| Differentiator groups A, B, C | Differentiators (new) | LP2 + product page | Try for free | Book a demo |
 
 Three campaigns become five. Two are new, one gets rescoped, and one waits on the LP5 rebuild.
 
@@ -140,13 +133,11 @@ Three campaigns become five. Two are new, one gets rescoped, and one waits on th
 
 ## 7. The conversion layer
 
-Five changes, none of which requires a new page.
-
-1. **A hero CTA band above the fold**, carrying both paths side by side. Order follows the intent tier.
-2. **One mid-scroll CTA**, placed where the article names the problem the product solves, not at the bottom where readers have already left.
+1. **A hero CTA band above the fold**, carrying both paths side by side: "Try QAlity Plus for free" and "Book a demo". Order follows the intent tier.
+2. **One mid-scroll CTA**, placed where the article names the problem the product solves, not at the bottom where readers may have already left.
 3. **Competitor marketplace links removed from LP5.**
-4. **A consistent UTM scheme** on every marketplace link, so GA4 can follow a paid click through the blog to the listing.
-5. **The Resources dropdown published.** Blocked on Pillar Page #1 going live, which is blocked on Ewa's review.
+4. **A consistent UTM scheme** on every marketplace link.
+5. **The Resources dropdown published.** Blocked on Pillar Page #1 going live.
 
 ### UTM convention
 
@@ -158,104 +149,160 @@ Five changes, none of which requires a new page.
 | `utm_content` | The landing page reference, for example `lp1-qa-workflow` |
 | `utm_term` | The matched keyword |
 
-Keep `utm_campaign` identical to the Google Ads campaign name. Do not paraphrase.
-
 ### The measurement chain
 
 Paid click, then blog landing page, then marketplace listing, then evaluation ID in GA4, then a retargeting audience.
 
-**What we cannot see yet:** most traffic still lands under direct and referral, and privacy consent limits GA4 capture. Organic and paid search are not separating. SolDevelo's cross-check of evaluation IDs against their internal evaluation report tells us how much of this path we can trust. Do not oversell the retargeting until that comes back.
+**What we cannot see yet:** most traffic still lands under direct and referral, and privacy consent limits GA4 capture. Organic and paid search are not separating. SolDevelo's cross-check of evaluation IDs against their internal evaluation report tells us how much of this path we can trust. They noted the ID format resembles a license number, so the match should be quick to confirm.
 
 ---
 
-## 8. Differentiator keyword research
+## 8. Differentiator keyword research: the results
 
-Ewa and Sebastian named three things QAlity Plus does that competitors do not. Each becomes a keyword group. 14 candidates per group, deliberately over-supplied so each can be cut to a clean 10 once Google Ads Keyword Planner returns the zero-volume terms.
+Ewa and Sebastian named three things QAlity Plus does that competitors do not. Each became a keyword group, pulled through Google Ads Keyword Planner.
 
-**No search volume, bid or competition figures appear anywhere in this document or the deck.** Those columns ship blank on purpose, for Jordan to fill from Keyword Planner. An estimate presented in a client deck reads as data.
+**41 keywords pulled across three groups (14 / 13 / 14).** All figures below are Keyword Planner output. **The account reports in PLN**, so every bid is Polish złoty.
+
+**16 of the 41 returned zero volume.** Combined searchable demand across all three groups is roughly **4,010 searches per month**, and it is distributed very unevenly.
 
 ### Group A: execution history
 
-The execution page carries the full history of previous runs beside the current test. Destination: LP2 and the product page execution section.
+The execution page carries the full history of previous runs beside the current test. Destination: LP2 and the product page.
 
-test execution history · jira test execution history · test run history · test execution report jira · test execution tracking · track test execution jira · test execution status jira · test execution log · historical test results · test cycle history jira · test execution dashboard jira · previous test run results · test execution audit trail · test execution report tool
+| Keyword | Avg. monthly searches | Bid low | Bid high | Competition |
+|---|---|---|---|---|
+| test report tool | 70 | PLN 16.40 | PLN 74.53 | Medium |
+| jira test execution | 40 | PLN 7.63 | PLN 29.91 | Low |
+| create test execution in jira | 10 | N/A | N/A | Low |
+| jira execute test case | 10 | N/A | N/A | Medium |
+| test execution status jira | 10 | N/A | N/A | Medium |
+| test execution log | 10 | N/A | N/A | Low |
+| dashboard testing test cases | 10 | N/A | N/A | N/A |
+| test management dashboard | 10 | PLN 17.56 | PLN 66.89 | Medium |
+| jira test execution dashboard | 10 | N/A | N/A | Low |
+| test execution history | 0 | N/A | N/A | N/A |
+| jira test execution history | 0 | N/A | N/A | N/A |
+| test run history | 0 | N/A | N/A | N/A |
+| previous test run results | 0 | N/A | N/A | N/A |
+| test execution audit trail | 0 | N/A | N/A | N/A |
+
+**Verdict: the weakest group. About 180 searches per month total.** The literal differentiator language returns nothing. "test execution history", "test run history" and "test execution audit trail" are all zero, which means nobody searches for the feature in the words the product team uses to describe it. What demand exists sits in generic tooling terms ("test report tool", "test management dashboard") where QAlity Plus competes against every reporting tool rather than on its differentiator.
+
+**Recommendation:** do not build a campaign on Group A. Bid only on "jira test execution" (40, Low competition, PLN 7.63 floor) as a cheap Jira-qualified entry, and move the execution-history story into ad copy and into Pillar Page #3.
 
 ### Group B: unresolved bug surfacing
 
 Re-execution surfaces the bugs still open, so testers stop re-reporting known issues. Destination: LP1 and LP2.
 
-duplicate bug reports · avoid duplicate bug reports · known issues tracking · unresolved bugs jira · open defect tracking · defect management jira · link bugs to test cases · bug traceability jira · bug traceability matrix · defect tracking tool jira · regression defect tracking · known defects list · bug deduplication tool · requirements traceability jira
+| Keyword | Avg. monthly searches | Bid low | Bid high | Competition |
+|---|---|---|---|---|
+| defect tracking tool jira | 1,600 | PLN 9.75 | PLN 56.43 | Low |
+| jira for defect tracking | 260 | PLN 9.63 | PLN 45.08 | Low |
+| defect management jira | 260 | PLN 9.63 | PLN 45.08 | Low |
+| requirements traceability jira | 30 | PLN 31.50 | PLN 40.77 | Medium |
+| bug tracking report | 10 | N/A | N/A | Low |
+| bug logging in jira | 10 | N/A | N/A | Low |
+| jira bug management tool | 10 | N/A | N/A | Low |
+| link bugs to test cases | 0 | N/A | N/A | N/A |
+| bug traceability jira | 0 | N/A | N/A | N/A |
+| bug traceability matrix | 0 | N/A | N/A | N/A |
+| regression defect tracking | 0 | N/A | N/A | N/A |
+| known defects list | 0 | N/A | N/A | N/A |
+| bug deduplication tool | 0 | N/A | N/A | N/A |
+
+**Verdict: the clear winner, and the most important finding in the whole research.** About 2,180 searches per month, and roughly 99% of it sits in four Jira-qualified, buy-intent terms.
+
+**"defect tracking tool jira" is the single best keyword found: 1,600 searches per month, Low competition, a PLN 9.75 floor bid.** High volume with low competition on a tool-qualified term is rare, and it points straight at the QAlity Plus proposition.
+
+Note that "jira for defect tracking" and "defect management jira" return identical figures (260 / PLN 9.63 / PLN 45.08), so Keyword Planner is treating them as close variants of one concept. Bid on one and let the other come in as a close match rather than paying for both.
+
+**Recommendation: build the Differentiators campaign around Group B first.** It is the only group that justifies its own budget on the data.
 
 ### Group C: auto-filled bug descriptions
 
-A bug created from a failed step arrives with its description and repro steps already written. Destination: LP2, and Pillar Page #2 once it exists.
+A bug created from a failed step arrives with its description and repro steps written. Destination: LP2, and Pillar Page #2 once it exists.
 
-bug report template · bug report template jira · how to write a bug report · automated bug reporting · bug reporting tool jira · create bug from test case · steps to reproduce template · bug report generator · defect report template · jira bug report automation · auto create bug from failed test · bug reproduction steps template · bug report format · bug reporting best practices
+| Keyword | Avg. monthly searches | Bid low | Bid high | Competition |
+|---|---|---|---|---|
+| bug report template | 590 | PLN 5.37 | PLN 26.12 | Low |
+| bug report format | 390 | PLN 6.14 | PLN 26.05 | Low |
+| bug reporting tool jira | 260 | N/A | N/A | Low |
+| how to write a bug report | 110 | N/A | N/A | Low |
+| jira bug report template | 90 | N/A | N/A | Low |
+| defect report template | 90 | PLN 8.84 | PLN 37.82 | Low |
+| jira bug report example | 70 | N/A | N/A | Low |
+| bug reporting best practices | 40 | PLN 11.17 | PLN 31.48 | Low |
+| automated bug reporting | 10 | N/A | N/A | Low |
+| create bug from test case | 0 | N/A | N/A | N/A |
+| bug report generator | 0 | N/A | N/A | N/A |
+| jira bug report automation | 0 | N/A | N/A | N/A |
+| auto create bug from failed test | 0 | N/A | N/A | N/A |
+| bug reproduction steps template | 0 | N/A | N/A | N/A |
 
-### Pull method
+**Verdict: highest raw volume, worst intent match.** About 1,650 searches per month, but roughly 1,180 of that (72%) sits in template-and-format terms: "bug report template" (590), "bug report format" (390), "how to write a bug report" (110), "defect report template" (90). Those searchers want a document to copy, not an app to install. Bidding on them buys traffic that will never convert.
 
-Google Ads, Tools, Keyword Planner, "Get search volume and forecasts". Location set to the current performing markets (US, France, Canada), language English, last 12 months. Fill volume, top of page bid low, top of page bid high and competition per row. Then cut the four weakest terms per group.
+The defensible subset is the Jira-qualified terms, worth about 420 searches per month combined:
 
-### The expected read
+- **bug reporting tool jira** (260, Low) is the strongest, because "tool" plus "jira" is a buying signal.
+- **jira bug report template** (90) and **jira bug report example** (70) are template-intent but Jira-scoped, so a QAlity Plus page has a genuine chance of answering them.
 
-- **Bid on:** terms carrying a jira, tool, app or plugin qualifier. The qualifier is the buying signal that separates a tester shopping for software from a student reading about testing. Groups A and B hold most of these.
-- **Exclude:** template, format, example and how-to-write terms. They carry most of the volume in Group C, and the searcher wants a document to copy rather than an app to install.
-- **Turn into ad copy:** the differentiator language itself. Nobody types "unresolved bugs surfaced during re-execution", and every tester recognizes the problem when an ad names it.
+The zero-volume rows are all the literal product mechanics: "create bug from test case", "auto create bug from failed test", "jira bug report automation". Same pattern as Group A. Nobody searches for the mechanism.
 
-Group C will split hardest. Expect two or three bid-worthy terms out of fourteen. The 2026-08-05 call agreed this outcome in advance: if no viable keywords exist, the insights shape messaging direction instead.
+**Recommendation:** bid only on the three Jira-qualified terms. Add "bug report template", "bug report format" and "how to write a bug report" as **negatives**, not targets, despite the volume. Then use the template demand as an organic content play on Pillar Page #2 rather than a paid one.
+
+### The pattern across all three groups
+
+The differentiators are real product advantages and almost nobody searches for them by name. Every group's literal feature language came back at zero. Demand exists one level up, in the category term the feature belongs to: "defect tracking tool jira" rather than "bug deduplication tool", "test report tool" rather than "test execution audit trail".
+
+This is what the 5 August call anticipated: where the volume is not there, the differentiator becomes ad copy instead of a keyword. Group B is the exception that earns paid budget.
+
+**Priority order for the Differentiators campaign:**
+
+1. **Group B**, on its four Jira-qualified terms. This is the campaign.
+2. **Group C**, three Jira-qualified terms only, as a small ad group.
+3. **Group A**, one keyword ("jira test execution") or nothing at all.
 
 ---
 
 ## 9. Ad copy direction
 
-Responsive search ad assets built from the differentiators. All headlines are within the 30 character limit and all descriptions within 90, verified at build time.
+Responsive search ad assets built from the differentiators. Twelve headlines within the 30 character limit, three descriptions within 90.
 
 ### Group A: execution history
 
-| Headline | Chars |
-|---|---|
-| See Every Past Test Run | 23 |
-| Test History, Inline In Jira | 28 |
-| Stop Guessing What You Tested | 29 |
-| Full Run History Per Test | 25 |
+See Every Past Test Run · Test History, Inline In Jira · Stop Guessing What You Tested · Full Run History Per Test
 
 Description: "Execute tests in Jira and see every previous run beside the current one. Free to try."
 
 ### Group B: unresolved bug surfacing
 
-| Headline | Chars |
-|---|---|
-| Stop Re-Reporting Known Bugs | 28 |
-| Open Bugs Surface On Retest | 27 |
-| Never File A Duplicate Again | 28 |
-| See Which Bugs Are Still Open | 29 |
+Stop Re-Reporting Known Bugs · Open Bugs Surface On Retest · Never File A Duplicate Again · See Which Bugs Are Still Open
 
 Description: "Re-execution shows the bugs still open, so your testers stop filing the same one twice."
 
 ### Group C: auto-filled bug descriptions
 
-| Headline | Chars |
-|---|---|
-| Bug Reports Write Themselves | 28 |
-| Repro Steps Filled In For You | 29 |
-| One Click From Fail To Bug | 26 |
-| No More Blank Bug Tickets | 25 |
+Bug Reports Write Themselves · Repro Steps Filled In For You · One Click From Fail To Bug · No More Blank Bug Tickets
 
 Description: "A failed step becomes a bug report with the description and repro steps already written."
 
-Ask Ewa or Sebastian to veto anything that overstates what the product does. Better before launch than after a support ticket. Load a minimum of 8 headlines and 3 descriptions per ad group for RSA asset coverage.
+Since Group A and Group C have almost no biddable volume, their headlines matter more than their keywords. Load them into the Group B ad group as well, so the execution-history and auto-fill stories reach the defect-tracking audience that does search.
+
+Ask Ewa or Sebastian to veto anything that overstates the product. Load a minimum of 8 headlines and 3 descriptions per ad group for RSA asset coverage.
 
 ---
 
 ## 10. Negatives
 
-Apply as a shared negative keyword list in Google Ads so it propagates across campaigns automatically.
+Apply as a shared negative keyword list so it propagates across campaigns.
 
-**The AI test case cluster.** The mismatch Sebastian identified: ai test case generation · ai generated test cases · generate test cases with ai · chatgpt test cases · test case generator ai · automatic test case generation
+**The AI test case cluster.** The mismatch SolDevelo raised: ai test case generation · ai generated test cases · generate test cases with ai · chatgpt test cases · test case generator ai · automatic test case generation
 
-**Free and open source seekers.** A free QAlity tier exists, but these searchers rarely upgrade and the click costs the same as a paying prospect: free test management tool · open source test management · free jira plugin · testlink · test management excel template
+**Free and open source seekers.** A free QAlity tier exists, but these searchers rarely upgrade and the click costs full price: free test management tool · open source test management · free jira plugin · testlink · test management excel template
 
 **Wrong audience.** Career and training traffic follows QA keywords everywhere: qa jobs · qa course · qa certification · tester salary · how to become a qa · qa interview questions
+
+**Added after the keyword pull, high volume and wrong intent:** bug report template · bug report format · how to write a bug report · defect report template
 
 Already excluded in July: "jira for free", "jira login", and the generic Jira navigation terms.
 
@@ -263,32 +310,38 @@ Already excluded in July: "jira for free", "jira login", and the generic Jira na
 
 ## 11. Content gaps
 
-Groups B and C have no dedicated destination and currently share LP2.
-
 **Pillar Page #2: bug reporting quality in Jira.** What a bug report needs before a developer can act on it, how to stop duplicate reports when the same defect keeps failing, and linking a bug to the test step that found it. Houses groups B and C.
 
-**Pillar Page #3: test execution reporting and history.** How to read execution history across a release, what a test execution report should show a delivery lead, and auditing what was tested, skipped and risky before shipping. Houses group A, which today lives in one subsection of a 2023 post.
+The keyword data strengthens the case for this page. About 1,180 searches per month of template and format demand cannot be bought profitably, but it can be earned organically. Pillar Page #2 is the right home for it.
 
-Publish Pillar Page #1 first. The Resources dropdown cannot be built until it is live, and every landing page above wants that dropdown as its next step.
+**Pillar Page #3: test execution reporting and history.** How to read execution history across a release, what a test execution report should show a delivery lead, and auditing what was tested, skipped and risky before shipping. Houses group A, whose paid route does not exist.
+
+Publish Pillar Page #1 first. The Resources dropdown cannot be built until it is live.
 
 ---
 
 ## 12. Next steps
 
-| Action | Owner | By when |
-|---|---|---|
-| Publish Pillar Page #1, then build the Resources dropdown | SolDevelo | Once Ewa signs off |
-| Pull volume and bid data for the 42 candidate keywords | Toggle | Within one week |
-| Add the hero CTA band to LP1, LP2, LP3 and LP4 | SolDevelo | Before the new campaigns launch |
-| Refresh LP5 and remove the competitor marketplace links | SolDevelo | Before conquest goes live |
-| Rescope the Jira Test Case campaign, add the negatives | Toggle | This week |
-| Build the Differentiators campaign on surviving keywords | Toggle | After the data pull |
-| Cross-check GA4 evaluation IDs against the internal report | SolDevelo | Open since 2026-08-05 |
+Owners as sent. Note that publishing Pillar Page #1 and building the Resources dropdown now sits with Toggle, not SolDevelo.
 
-**Budget holds at current levels until the hero CTAs are live on LP1 through LP4.** That is the gate agreed on 2026-08-05.
+| Action | Owner |
+|---|---|
+| Publish Pillar Page #1, then build the Resources dropdown | Toggle |
+| Pull volume and bid data for the candidate keywords | Toggle (done, section 8) |
+| Add the hero CTA band to LP1, LP2, LP3 and LP4 | SolDevelo |
+| Refresh LP5 and remove the competitor marketplace links | SolDevelo |
+| Rescope the Jira Test Case campaign, add the negatives | Toggle |
+| Build the Differentiators campaign on surviving keywords | Toggle |
+| Cross-check GA4 evaluation IDs against the internal report | SolDevelo |
+
+Three actions sit with SolDevelo and four with Toggle.
+
+The budget-hold language from the 5 August call was cut from the sent deck. The commitment still stands from that meeting: spend holds until the foundation is cleaner. Raise it verbally rather than in writing at the next call.
 
 ---
 
-## Open question carried forward
+## Open items
 
-Whether the SolDevelo team has insight into how the Atlassian "similar apps" tab affects them or other marketplace partners. On the 2026-08-05 agenda, unanswered in the notes. Re-ask.
+- The Atlassian "similar apps" tab question from the 2026-08-05 agenda is still unanswered. Re-ask.
+- Contact roles for Anna, Ewa, Pawel and Sebastian remain unconfirmed.
+- The sent deck carries three small arithmetic inconsistencies worth fixing before it is reused as a template: it says 42 keywords where 41 were pulled (Group B has 13), "fifteen headlines and four descriptions" where the slide shows twelve and three, and "four with SolDevelo and three with Toggle" where the table reads three and four. Corrected throughout this document.
