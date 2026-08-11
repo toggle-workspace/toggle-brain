@@ -1,7 +1,7 @@
 # SolDevelo: landing page flow and differentiator keyword strategy
 
 **Date:** 2026-08-11
-**Status:** FINAL. Reflects the sent 24-slide deck, including real Google Ads Keyword Planner data.
+**Status:** FINAL, reconciled to the signed-off 24-slide deck. Jordan confirmed this version on 2026-08-11 after a correction pass. Everything below matches the deck as it stands.
 **Author:** Jordan Pinto
 **Delivers:** two action items from the 2026-08-05 monthly report call, recorded in `../05-meetings/2026-08-05-monthly-report.md`
 **Companion artifact:** `SolDevelo x Toggle - Landing Page Flow and Keyword Strategy (Aug 2026).pptx` and its PDF export, both on Jordan's Desktop
@@ -266,7 +266,7 @@ This is what the 5 August call anticipated: where the volume is not there, the d
 
 ## 9. Ad copy direction
 
-Responsive search ad assets built from the differentiators. Twelve headlines within the 30 character limit, three descriptions within 90.
+Responsive search ad assets built from the differentiators. **A Responsive Search Ad holds up to 15 headlines and 4 descriptions**, so the twelve headlines and three descriptions below are a starting set with room to expand, not the full load. Every headline is within the 30 character limit and every description within 90.
 
 ### Group A: execution history
 
@@ -288,7 +288,7 @@ Description: "A failed step becomes a bug report with the description and repro 
 
 Since Group A and Group C have almost no biddable volume, their headlines matter more than their keywords. Load them into the Group B ad group as well, so the execution-history and auto-fill stories reach the defect-tracking audience that does search.
 
-Ask Ewa or Sebastian to veto anything that overstates the product. Load a minimum of 8 headlines and 3 descriptions per ad group for RSA asset coverage.
+Ask Ewa or Sebastian to veto anything that overstates the product. Load a minimum of 8 headlines and 3 descriptions per ad group for RSA asset coverage, and fill toward the 15 and 4 ceiling as more angles get approved.
 
 ---
 
@@ -344,4 +344,13 @@ The budget-hold language from the 5 August call was cut from the sent deck. The 
 
 - The Atlassian "similar apps" tab question from the 2026-08-05 agenda is still unanswered. Re-ask.
 - Contact roles for Anna, Ewa, Pawel and Sebastian remain unconfirmed.
-- The sent deck carries three small arithmetic inconsistencies worth fixing before it is reused as a template: it says 42 keywords where 41 were pulled (Group B has 13), "fifteen headlines and four descriptions" where the slide shows twelve and three, and "four with SolDevelo and three with Toggle" where the table reads three and four. Corrected throughout this document.
+
+## Deck cleanup carried forward
+
+The correction pass fixed the keyword count to 41 across slides 4, 15 and 16, and corrected the action split to three with SolDevelo and four with Toggle. Five cosmetic items remain in the deck file. None changes a number or a decision, so they are noted here rather than chased:
+
+- **Slide 23** still reads "the 42 candidate keywords" in the Next steps table. It is the last surviving 42 in the deck. Worth fixing before the deck is reused, since it contradicts slides 4, 15 and 16.
+- **Slide 2** labels Ewa's Pillar Page row "Outstanding" while its status cell says "Done".
+- **Slide 2** says part two runs "slides 15 to 23". The keyword content ends at 22; 23 is Next steps.
+- **Slide 11** reads "a comparison user can check every claim on quickly", missing the end of the sentence.
+- **Slide 11** is the one slide still using "Keyword group" and "Try free" while every other slide uses "Keywords to target" and "Try for free".
