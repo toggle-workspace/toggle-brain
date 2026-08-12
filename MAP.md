@@ -99,6 +99,8 @@ When you don't know where something lives, look here. One question per line. Kee
 - Audaura (UNITAR)? → `clients/audaura-unitar/`
 - IJN University College? → `clients/ijn-university-college/`
 - Sunway TES? → `clients/sunway-tes/`
+- Kynare (physio + PT clinic, PJ and Mont Kiara)? → `clients/kynare/`
+- Kynare KPI (cost per signed client, NOT cost per lead)? → `clients/kynare/KPI.md`
 - (Full client list — see `clients/` directory)
 
 ## Playbooks
