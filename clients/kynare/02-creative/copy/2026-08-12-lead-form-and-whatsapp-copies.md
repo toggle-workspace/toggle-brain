@@ -46,7 +46,11 @@ Covers the Meta Instant Lead Gen Form, the Meta WhatsApp greeting template, and 
 
 ## 2. Meta — English FB/IG/WhatsApp greeting (Start Conversations)
 
-> Hi! Thanks for messaging Kynare. Every client starts with a one to one assessment, so we can explain what is actually causing the problem before you decide on any program.
+**Option A (recommended)**
+
+> Hi! Thanks for messaging Kynare. Our approach is Human Performance Medicine, which brings together physical therapy, strength and movement calibration, and diagnostics such as blood and biomarker analysis.
+>
+> Every client starts with a one to one assessment, so we can explain what is causing the problem before you decide on any program.
 >
 > To arrange your appointment, send us the following details and your interested service in one message:
 > 1. Your full name
@@ -55,6 +59,10 @@ Covers the Meta Instant Lead Gen Form, the Meta WhatsApp greeting template, and 
 > 4. Interested service
 >
 > Our team will confirm your appointment from there.
+
+**Option B (tighter opening, same list and closing as Option A)**
+
+> Hi! Thanks for messaging Kynare. Our approach is Human Performance Medicine: physical therapy, strength and movement calibration, and diagnostics working together. Every client starts with a one to one assessment so we can explain what is causing the problem before you decide on any program.
 
 ---
 
@@ -87,7 +95,11 @@ Covers the Meta Instant Lead Gen Form, the Meta WhatsApp greeting template, and 
 
 ## 4. Meta — Bahasa Malaysia FB/IG/WhatsApp greeting (Start Conversations)
 
-> Hai! Terima kasih kerana menghubungi Kynare. Setiap klien kami bermula dengan sesi pemeriksaan satu ke satu, supaya kami boleh terangkan punca sebenar masalah anda sebelum anda memilih sebarang program.
+**Option A (recommended)**
+
+> Hai! Terima kasih kerana menghubungi Kynare. Pendekatan kami ialah Human Performance Medicine, yang menggabungkan terapi fizikal, kalibrasi kekuatan dan pergerakan, serta diagnostik seperti analisis darah dan biomarker.
+>
+> Setiap klien bermula dengan sesi pemeriksaan satu ke satu, supaya kami boleh terangkan punca sebenar masalah anda sebelum anda memilih sebarang program.
 >
 > Untuk menetapkan temujanji, sila hantar maklumat berikut beserta perkhidmatan yang diminati dalam satu mesej:
 > 1. Nama penuh anda
@@ -96,6 +108,10 @@ Covers the Meta Instant Lead Gen Form, the Meta WhatsApp greeting template, and 
 > 4. Perkhidmatan yang diminati
 >
 > Pasukan kami akan mengesahkan temujanji anda selepas itu.
+
+**Option B (tighter opening, same list and closing as Option A)**
+
+> Hai! Terima kasih kerana menghubungi Kynare. Pendekatan kami ialah Human Performance Medicine: terapi fizikal, kalibrasi kekuatan dan pergerakan, serta diagnostik yang bekerja bersama. Setiap klien bermula dengan sesi pemeriksaan satu ke satu, supaya kami boleh terangkan punca sebenar masalah anda sebelum anda memilih sebarang program.
 
 ---
 
@@ -157,15 +173,19 @@ TikTok runs broad with no interest targeting, so the reader arrives cold and may
 
 ## Where a real testimonial goes
 
-Once the client supplies a quote with a first name and a rough timeframe, swap it into the opening slot of both greetings:
+Once the client supplies a quote with a first name and a rough timeframe, add it after the Human Performance Medicine line in either greeting. Keep the term, since it is the positioning the client asked for, and let the quote carry the proof.
 
 **English**
 
-> Hi! Thanks for messaging Kynare. "[exact client quote]" is how [First name, age] described it after [number] weeks with us. Every client starts the same way, with a one to one assessment.
+> Hi! Thanks for messaging Kynare. Our approach is Human Performance Medicine, which brings together physical therapy, strength and movement calibration, and diagnostics such as blood and biomarker analysis.
+>
+> "[exact client quote]" is how [First name, age] described it after [number] weeks with us. Every client starts the same way, with a one to one assessment.
 
 **Bahasa Malaysia**
 
-> Hai! Terima kasih kerana menghubungi Kynare. "[petikan klien]" itu kata [Nama, umur] selepas [bilangan] minggu bersama kami. Setiap klien bermula dengan cara yang sama, iaitu sesi pemeriksaan satu ke satu.
+> Hai! Terima kasih kerana menghubungi Kynare. Pendekatan kami ialah Human Performance Medicine, yang menggabungkan terapi fizikal, kalibrasi kekuatan dan pergerakan, serta diagnostik seperti analisis darah dan biomarker.
+>
+> "[petikan klien]" itu kata [Nama, umur] selepas [bilangan] minggu bersama kami. Setiap klien bermula dengan cara yang sama, iaitu sesi pemeriksaan satu ke satu.
 
 ---
 
