@@ -16,6 +16,8 @@ last_reviewed: 2026-08-12
 
 Hybrid physiotherapy and personal training clinic in Klang Valley, running two locations. The engagement is local lead generation for the PT Hybrid program, with a second arm (an in-house doctor) launching in November 2026.
 
+**The client positions this as "Human Performance Medicine"** (directed 2026-08-12) and has explicitly rejected "physio and personal training under one roof" as a commodity claim. See `style-pack.md` for the definition to use and two compliance cautions on the word "Medicine".
+
 The business is education-first. Clients come in for a walk-in assessment, the team explains what is causing the problem, and the client signs after that conversation. The paid media job is booking assessments, not selling packages. Everything in this folder should be read through that lens.
 
 > **First healthcare client in the book.** `brain/verticals/healthcare.md` is still an empty placeholder, and `brain/geos/malaysia.md` lists BNM, MQA and PDPA but nothing on healthcare advertising. Once this account has run a quarter, promote the reusable parts into both files.
@@ -121,7 +123,7 @@ Both Dataslayer queries refresh successfully, and every row from 1 August to 12 
 
 ## Notes
 
-- **There is no public footprint to draw proof from.** `kynare.com` is JavaScript-rendered and returns nothing to a fetch, and searches surface no reviews, listings or directory entries for Kynare as of 2026-08-12. Every value line in the current ad copy is built from structurally true facts (assessment before any program, physio and training under one roof, two locations, a named first-timer session). **Do not invent a testimonial or a patient number to fill the gap.**
+- **There is no public footprint to draw proof from.** `kynare.com` is JavaScript-rendered and returns nothing to a fetch, and searches surface no reviews, listings or directory entries for Kynare as of 2026-08-12. Every value line in the current ad copy is built from structurally true facts (assessment before any program, the four services that make up Human Performance Medicine, two locations, a named first-timer session). **Do not invent a testimonial or a patient number to fill the gap.**
 - **The budget tracker was copied from the Ikonik file.** The remarks columns still carry Ikonik's optimization history and a `taplink.cc/ikoniktiktok` link, the Google column returns `#N/A` because the source sheet does not exist in the workbook, and the January to June formulas point at the wrong sheet and columns. Clean it before it is shared outside Toggle. Detail in `03-media/2026-08-12-campaign-structure-and-budget.md`.
 - **Two daily budget figures exist in the same workbook.** The campaign structure tab divides monthly by 30, giving RM150 a day. The budget tab divides by remaining days in the month, giving RM225 a day. Resolve before launch.
 - **Both clinics sit in one ad set,** which is correct for auction and learning reasons at this budget, but it means the platform cannot report cost per location. The preferred-location question on the form is the only attribution we get.
