@@ -16,9 +16,22 @@ last_reviewed: 2026-08-12
 - Concrete over clinical. "You are not back in the same chair in six months" beats "improved long-term outcomes".
 - Languages: English and Bahasa Malaysia. Malay copy should read native Malaysian, with natural code-switching (keep "personal training" in English rather than forcing "latihan peribadi"). Mandarin is unconfirmed and worth raising for Mont Kiara.
 
-## The positioning line to keep reaching for
+## The positioning term (client-directed, 2026-08-12)
 
-Physiotherapy settles the pain, then the trainers rebuild the strength around it. A normal physio clinic discharges you at that point, and a normal gym does not understand the injury. That sentence is the differentiator, it is true, and no single-discipline competitor can copy it.
+**"Human Performance Medicine"** is the category term the client wants to own. Use it as the headline and define it immediately underneath, because no reader arrives knowing what it means.
+
+The definition to keep reaching for, which is grounded in their actual service list rather than a slogan:
+
+> Human Performance Medicine looks at the whole system behind the pain. It brings together physical therapy, strength and movement calibration, and diagnostics such as blood and biomarker analysis.
+
+Keep the term in English on Malay surfaces. Translating it ("Perubatan Prestasi Manusia") reads clumsy and breaks it as a brand term.
+
+**Do not write "physio and personal training under one roof" or any variant of it.** The client rejected this framing on 2026-08-12 on the grounds that plenty of clinics claim it and deliver poorly, so it reads as a commodity claim rather than a differentiator. This retires the earlier Toggle positioning line.
+
+Two cautions on the term, raised with the client on 2026-08-12:
+
+1. **"Medicine" is a heavier word than "physio and PT" from a compliance angle.** The PT Hybrid program is delivered by physiotherapists and personal trainers, and the doctor does not join until November 2026. Advertising a program as Medicine before a doctor is in place invites scrutiny under Malaysian private healthcare advertising rules, and platform reviewers flag medical language on health accounts. The exposure drops once the doctor arm is live.
+2. **The term is safest post-click.** A lead form headline is read by someone who already tapped the ad, so an unfamiliar category name costs little. Using it as the ad hook is a different bet, since nobody is scrolling or searching for it. Keep ad creative in plain problem language and let the form carry the brand term.
 
 ## Compliance (binding, do not waive)
 
@@ -55,7 +68,8 @@ Do not sync these.
 ## Examples of yes and no
 
 - ✓ "Every client starts with the KYNARE Outset, a one to one assessment. We explain what is causing the problem and show you the plan before you commit."
-- ✓ "Physiotherapy settles the pain. Our trainers rebuild the strength around it so it does not come back as easily."
+- ✓ "Human Performance Medicine looks at the whole system behind the pain. It brings together physical therapy, strength and movement calibration, and diagnostics such as blood and biomarker analysis."
+- ✗ "Physio and personal training under one roof." (client-rejected, reads as a commodity claim)
 - ✗ "Say goodbye to back pain for good." (cure claim, and a personal attribute assertion)
 - ✗ "Join 500+ happy clients." (no verified number exists)
 - ✗ "Struggling with knee pain?" (Meta personal attributes rejection)

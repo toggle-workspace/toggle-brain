@@ -18,7 +18,9 @@ Internal document. Written for the freelancer handling the account day to day. D
 - A hybrid physiotherapy and personal training clinic with two locations, PJ Section 13 and Mont Kiara. Website is kynare.com. Operating hours are Monday to Sunday, 8am to 7pm.
   - Small team of 3 practitioners (physiotherapists and personal trainers) managing all clients.
   - Ad accounts are named "Kynare Ecosystems" on Meta and "KYNARE WELLNESS & PERFORMANCE" on TikTok.
-- Unique Selling Point (USP): physiotherapy and personal training under one roof. Physiotherapy settles the pain, then the trainers rebuild strength around it so the same problem is less likely to return. A standard physio clinic discharges you at that point and a standard gym does not understand the injury.
+- Unique Selling Point (USP): the client positions the clinic as **"Human Performance Medicine"**, which brings together physical therapy, strength and movement calibration, and diagnostics such as blood and biomarker analysis. Use that term as the headline and define it immediately underneath, because nobody arrives knowing what it means.
+  - **Do not write "physio and personal training under one roof" or any variant.** The client rejected this on 2026-08-12, on the grounds that plenty of clinics claim it and deliver poorly.
+  - Note that "Medicine" carries more compliance weight than "physio and PT". The doctor does not join until November, so keep the language descriptive and avoid anything that reads as a medical outcome promise. Full detail in `../style-pack.md`.
 - Business model is education-first. Every client comes in for a walk-in assessment where the team explains what is causing the problem before selling anything. The client closes reliably once someone walks in, so the job of our ads is booking assessments, not selling packages.
 - Core services (these are the exact options in the lead gen forms):
   - KYNARE Outset (First Timer), the entry assessment, and the main thing we are driving

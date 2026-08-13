@@ -11,6 +11,8 @@ last_reviewed: 2026-08-12
 
 Covers the Meta Instant Lead Gen Form, the Meta WhatsApp greeting template, and the TikTok Instant Lead Gen Form, in English and Bahasa Malaysia.
 
+> **Client feedback applied 2026-08-12.** The client asked for **"Human Performance Medicine"** as the form headline on both platforms, with the description explaining what it consists of. They also asked us to drop "physio and PT under one roof", because plenty of clinics claim it and deliver poorly. Both changes are in below. The term stays in English on the Malay forms so it holds as a brand term. Two cautions on the word "Medicine" are recorded in `../../style-pack.md`.
+
 > **No verified proof exists for this client.** As of 2026-08-12 there is no testimonial, review count or outcome statistic available (site is JavaScript-rendered and returns nothing, no listings indexed). Every value line below is built from structurally true facts. Do not substitute an invented number. The testimonial slot at the bottom shows where a real quote goes once the client supplies one.
 
 ---
@@ -21,20 +23,14 @@ Covers the Meta Instant Lead Gen Form, the Meta WhatsApp greeting template, and 
 
 | Field | Copy |
 |---|---|
-| Headline | A full assessment first, then a plan built for you. |
-| Alt headline to test | Physio and personal training under one roof. |
+| Headline | Human Performance Medicine |
+| Alt headline to test | Human Performance Medicine at Kynare. |
 
-**Description (recommended)**
+**Description**
 
-> Every client starts with the KYNARE Outset, a one to one assessment. We check how you move, explain what is causing the problem, and show you the plan before you commit.
+> Human Performance Medicine looks at the whole system behind the pain. It brings together physical therapy, strength and movement calibration, and diagnostics such as blood and biomarker analysis.
 >
-> Physiotherapy settles the pain. Our trainers rebuild the strength around it so it does not come back as easily.
-
-**Description (shortest)**
-
 > Every client starts with the KYNARE Outset, a one to one assessment. We explain what is causing the problem and show you the plan before you commit.
->
-> Physiotherapy settles the pain. Our trainers rebuild the strength so it does not come back as easily.
 
 ### Ending (Message for Leads)
 
@@ -68,20 +64,14 @@ Covers the Meta Instant Lead Gen Form, the Meta WhatsApp greeting template, and 
 
 | Field | Copy |
 |---|---|
-| Headline | Pemeriksaan penuh dahulu, kemudian pelan anda. |
-| Alt headline to test | Fisioterapi dan personal training di bawah satu bumbung. |
+| Headline | Human Performance Medicine |
+| Alt headline to test | Human Performance Medicine di Kynare. |
 
-**Description (recommended)**
+**Description**
 
-> Setiap klien bermula dengan KYNARE Outset, sesi pemeriksaan satu ke satu. Kami periksa cara anda bergerak, terangkan punca masalah, dan tunjukkan pelan anda sebelum anda membuat keputusan.
+> Human Performance Medicine melihat keseluruhan sistem di sebalik kesakitan anda. Ia menggabungkan terapi fizikal, kalibrasi kekuatan dan pergerakan, serta diagnostik seperti analisis darah dan biomarker.
 >
-> Fisioterapi meredakan kesakitan. Jurulatih kami membina semula kekuatan di sekelilingnya supaya ia tidak mudah kembali.
-
-**Description (shortest)**
-
 > Setiap klien bermula dengan KYNARE Outset, sesi pemeriksaan satu ke satu. Kami terangkan punca masalah dan tunjukkan pelan anda sebelum anda membuat keputusan.
->
-> Fisioterapi meredakan kesakitan. Jurulatih kami membina semula kekuatan supaya ia tidak mudah kembali.
 
 ### Ending (Message for Leads)
 
@@ -117,14 +107,14 @@ TikTok runs broad with no interest targeting, so the reader arrives cold and may
 
 | Field | Copy |
 |---|---|
-| Headline | Physio and personal training in PJ and Mont Kiara. |
-| Alt headline to test | See what is causing the pain before you commit. |
+| Headline | Human Performance Medicine |
+| Alt headline to test (recommended on TikTok) | Human Performance Medicine in PJ and Mont Kiara. |
 
 **Description**
 
-> Kynare is a physio and personal training clinic in PJ Section 13 and Mont Kiara. Every client starts with the KYNARE Outset, a one to one assessment where we explain what is causing the problem and show you the plan.
+> Human Performance Medicine at Kynare, in PJ Section 13 and Mont Kiara. It brings together physical therapy, strength and movement calibration, and diagnostics such as blood and biomarker analysis.
 >
-> Leave your details and our team will WhatsApp you to set a time.
+> Every client starts with the KYNARE Outset, a one to one assessment. Leave your details and our team will WhatsApp you to set a time.
 
 ### Ending (client-authored, unchanged)
 
@@ -144,14 +134,14 @@ TikTok runs broad with no interest targeting, so the reader arrives cold and may
 
 | Field | Copy |
 |---|---|
-| Headline | Fisioterapi dan personal training di PJ dan Mont Kiara. |
-| Alt headline to test | Kenal pasti punca sakit sebelum anda mula. |
+| Headline | Human Performance Medicine |
+| Alt headline to test (recommended on TikTok) | Human Performance Medicine di PJ dan Mont Kiara. |
 
 **Description**
 
-> Kynare ialah klinik fisioterapi dan personal training di PJ Seksyen 13 dan Mont Kiara. Setiap klien bermula dengan KYNARE Outset, sesi pemeriksaan satu ke satu di mana kami terangkan punca masalah dan tunjukkan pelan anda.
+> Human Performance Medicine di Kynare, PJ Seksyen 13 dan Mont Kiara. Ia menggabungkan terapi fizikal, kalibrasi kekuatan dan pergerakan, serta diagnostik seperti analisis darah dan biomarker.
 >
-> Tinggalkan maklumat anda dan pasukan kami akan WhatsApp untuk tetapkan masa.
+> Setiap klien bermula dengan KYNARE Outset, sesi pemeriksaan satu ke satu. Tinggalkan maklumat anda dan pasukan kami akan WhatsApp untuk tetapkan masa.
 
 ### Ending (client-authored, unchanged)
 
