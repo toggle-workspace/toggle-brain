@@ -1,0 +1,732 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ICMS Media Plan Proposal (Toggle Solutions)</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --blue:#4A7BF7; --ink:#0F0F0F; --navy:#0A1224; --card:#F2F3F6; --callout:#DDE5FE;
+  --body:#4A4A4A; --caption:#9AA0A8; --struck:#6B7280; --teal:#2ECC9B; --pink:#F59EC9;
+  --purple:#8E6BE6; --orange:#F28B4C; --slate:#2C2C36; --paper:#FAFAFA; --border:#E4E6EE; --blue-deep:#3056C9;
+}
+*{box-sizing:border-box}
+body{background:#E9EBF1;margin:0;padding:40px 0 80px;font-family:"Inter Tight",Inter,-apple-system,"Segoe UI",sans-serif;color:var(--ink)}
+.dochead{max-width:1280px;margin:0 auto 12px;font-size:14px;color:#555}
+.dochead strong{color:var(--ink)}
+.note{max-width:1280px;margin:36px auto 10px;font-size:13px;font-weight:500;color:#667}
+.note b{color:var(--blue)}
+.slide{width:1280px;height:720px;background:#fff;margin:0 auto;position:relative;padding:52px 64px;box-shadow:0 2px 18px rgba(10,18,36,.14);overflow:hidden}
+.num{font-variant-numeric:tabular-nums}
+.watermark{position:absolute;top:30px;right:64px;font-size:13px;font-weight:500;color:var(--caption);letter-spacing:.02em}
+.h1{font-size:36px;font-weight:800;color:var(--blue);margin:0 0 8px;line-height:1.08}
+.kicker{font-size:15px;color:var(--body);margin:0 0 26px;max-width:104ch;line-height:1.45}
+.pill{display:inline-block;background:var(--blue-deep);color:#fff;font-weight:700;font-size:17px;border-radius:999px;padding:8px 24px;vertical-align:middle;margin-left:14px}
+.band{position:absolute;left:64px;right:64px;bottom:40px;background:var(--blue-deep);color:#fff;font-weight:700;font-size:14px;text-align:center;border-radius:8px;padding:12px 18px}
+.grid{display:grid;gap:18px}
+.cols2{grid-template-columns:1fr 1fr}.cols3{grid-template-columns:1fr 1fr 1fr}.cols4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--card);border-radius:10px;padding:22px}
+.callout{background:var(--callout);border-radius:10px;padding:22px}
+.topbar{position:relative;padding-top:28px}
+.topbar::before{content:"";position:absolute;top:0;left:0;right:0;height:7px;border-radius:10px 10px 0 0;background:var(--blue)}
+.topbar.t-teal::before{background:var(--teal)}.topbar.t-pink::before{background:var(--pink)}
+.topbar.t-purple::before{background:var(--purple)}.topbar.t-slate::before{background:var(--slate)}
+.topbar.t-orange::before{background:var(--orange)}
+.stripe{position:relative;padding-left:28px}
+.stripe::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;border-radius:10px 0 0 10px;background:var(--blue)}
+.stripe.s-teal::before{background:var(--teal)}.stripe.s-pink::before{background:var(--pink)}
+.stripe.s-orange::before{background:var(--orange)}.stripe.s-purple::before{background:var(--purple)}
+.stripe.s-slate::before{background:var(--slate)}
+.stat{font-size:42px;font-weight:800;color:var(--blue);line-height:1}
+.stat.inkstat{color:var(--ink)}
+.statlabel{font-size:14.5px;font-weight:700;color:var(--ink);margin-top:10px}
+.statcap{font-size:13px;color:var(--body);margin-top:5px;line-height:1.42}
+.cardtitle{font-size:16.5px;font-weight:700;margin:0 0 5px}
+.bodytext{font-size:13.5px;color:var(--body);line-height:1.5}
+ul.b{margin:10px 0 0;padding:0;list-style:none}
+ul.b li{font-size:13px;color:var(--body);line-height:1.42;padding:4px 0 4px 15px;position:relative}
+ul.b li::before{content:"";position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:50%;background:var(--blue)}
+.acc-teal ul.b li::before{background:var(--teal)}.acc-pink ul.b li::before{background:var(--pink)}
+.acc-slate ul.b li::before{background:var(--slate)}.acc-orange ul.b li::before{background:var(--orange)}
+.acc-purple ul.b li::before{background:var(--purple)}
+.chip{float:right;background:#fff;border:1.5px solid var(--blue);color:var(--ink);font-weight:700;font-size:12.5px;border-radius:8px;padding:5px 9px;text-align:center;line-height:1.2}
+.acc-teal .chip{border-color:var(--teal)}.acc-pink .chip{border-color:var(--pink)}
+.acc-slate .chip{border-color:var(--slate)}.acc-orange .chip{border-color:var(--orange)}
+.seal{font-weight:700;letter-spacing:.01em}
+.seal .br{font-weight:400}
+table.dt{width:100%;border-collapse:collapse;font-size:13px}
+table.dt th{background:var(--blue-deep);color:#fff;font-weight:700;text-align:left;padding:10px 13px}
+table.dt th.r,table.dt td.r{text-align:right}
+table.dt td{padding:9px 13px;color:var(--body);vertical-align:top}
+table.dt tr:nth-child(even) td{background:var(--card)}
+table.dt td.k{color:var(--blue-deep);font-weight:700}
+table.dt td.head{color:var(--ink);font-weight:700}
+table.dt tr.total td{background:var(--callout);color:var(--ink);font-weight:700;border-top:2px solid var(--blue-deep)}
+table.dt.dense{font-size:12px}
+table.dt.dense th{padding:6px 12px}
+table.dt.dense td{padding:4px 12px}
+.ncircle{display:inline-flex;width:32px;height:32px;border-radius:50%;background:var(--blue-deep);color:#fff;font-weight:700;font-size:13px;align-items:center;justify-content:center;flex:none}
+.wmk{height:32px;color:var(--ink)}
+.wmk svg{height:100%;width:auto;display:block}
+.iso polygon{fill:none;stroke:var(--blue);stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter}
+.iso polygon.fill{fill:var(--blue)}
+.struck{color:var(--struck);text-decoration:line-through;text-decoration-thickness:.12em}
+.splitbar{display:flex;height:38px;border-radius:8px;overflow:hidden;margin-top:6px}
+.splitbar div{display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:13.5px}
+.legend{display:flex;gap:22px;margin-top:10px;font-size:12.5px;color:var(--body);font-weight:500}
+.legend span{display:flex;align-items:center;gap:7px}
+.legend i{width:12px;height:12px;border-radius:3px;display:inline-block}
+.tag{display:inline-block;font-size:11.5px;font-weight:700;color:var(--ink);background:#fff;border:1.5px solid var(--border);border-radius:6px;padding:3px 8px;margin:0 5px 5px 0}
+.libnote{max-width:1280px;margin:64px auto 8px;padding-top:24px;border-top:2px solid #cfd3e0;font-size:15px;font-weight:700;color:#444}
+@page{size:1280px 720px;margin:0}
+@media print{*{-webkit-print-color-adjust:exact;print-color-adjust:exact}body{background:#fff;padding:0}.note,.dochead,.libnote{display:none}.slide{box-shadow:none;page-break-after:always}.slide:last-of-type{page-break-after:auto}}
+</style>
+</head>
+<body>
+
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg"><symbol id="wm" viewBox="0 0 1432 392"><path fill="currentColor" d="M1166.39 1.57487C1166.39 2.43389 1157.45 54.1188 1146.44 116.398C1135.43 178.678 1126.5 232.081 1126.5 234.944C1126.5 238.667 1127.77 241.244 1130.64 243.964C1134.47 247.4 1136.07 247.686 1147.4 247.686C1154.42 247.686 1160 247.973 1160 248.545C1160 249.261 1152.82 290.351 1151.23 298.799C1150.43 302.807 1149.63 303.523 1142.77 304.812C1120.27 309.107 1090.59 307.818 1072.88 301.948C1061.55 298.083 1049.75 288.347 1044.96 278.898C1041.61 272.169 1041.13 269.162 1041.29 254.129C1041.29 239.239 1044.16 221.486 1062.35 119.119C1074 54.4051 1083.41 1.00218 1083.41 0.715838C1083.41 0.286342 1102.08 0 1124.9 0C1154.26 0 1166.39 0.429496 1166.39 1.57487Z"/>
+<path fill="currentColor" d="M140.413 21.6189C140.413 22.9074 133.871 60.8478 131.637 72.5879L130.68 77.3125H155.571C171.527 77.3125 180.303 77.8852 180.303 78.7442C180.303 80.6054 172.485 125.418 171.527 129.856C170.73 133.006 170.091 133.149 145.678 133.436L120.787 133.865L111.533 186.123C101.321 243.821 101.002 246.971 104.672 248.259C106.108 248.689 116.798 249.118 128.606 249.118C148.391 249.118 150.146 249.261 149.349 251.552C148.87 252.984 146.636 265.583 144.243 279.614L139.775 305.241L100.523 304.669C66.058 304.096 60.1543 303.666 50.8998 300.946C30.7951 295.076 20.7428 285.054 17.7113 268.017C15.7965 256.849 16.4348 250.693 27.7636 187.411C32.7099 160.209 36.6989 136.872 36.6989 135.44C36.6989 133.436 34.3055 133.149 18.3495 133.149C6.86114 133.149 0 132.577 0 131.718C0 129.856 7.81846 85.0438 8.93536 80.4623C9.57368 77.4557 10.2118 77.3125 28.5613 77.3125H47.3895L51.0594 56.839C52.974 45.6716 55.2078 32.7862 56.1653 28.2047L57.7609 20.044H99.087C127.01 20.044 140.413 20.4735 140.413 21.6189Z"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M644.145 113.964C646.698 121.409 647.177 121.839 651.644 121.409L656.59 120.98L660.42 99.0745L664.09 77.3125H746.742L745.944 80.4623C745.475 82.2857 737.196 129.18 727.258 185.472L727.255 185.487L726.637 188.986C716.585 246.827 707.49 297.367 706.692 301.376C696.321 347.19 666.643 375.109 614.945 387.565C600.585 391.001 596.596 391.287 568.832 391.43C535.803 391.43 524.475 389.856 504.53 382.697C476.287 372.675 457.619 354.779 450.758 331.155C449.481 326.717 448.364 321.42 448.364 319.702V316.409H530.697L533.57 322.135C538.995 333.16 551.44 338.457 572.023 338.457C594.841 338.457 609.042 331.298 618.136 315.12C622.923 306.816 624.678 300.517 628.827 277.036C632.656 254.988 632.656 254.845 628.029 254.845C625.157 254.845 622.764 256.993 617.658 264.008C598.032 291.21 566.599 302.521 529.421 295.649C488.414 288.061 463.363 258.711 459.693 213.612C456.023 167.654 470.862 127.136 501.657 99.3609C512.029 90.0547 517.294 86.6186 528.145 81.894C552.078 71.5856 578.246 69.5813 600.585 76.1671C621.009 82.1803 638.241 97.2133 644.145 113.964ZM546.813 171.09C552.078 155.627 566.598 141.596 582.235 137.015C586.224 135.726 593.564 134.724 598.51 134.724C624.519 134.438 641.911 149.041 644.145 173.094C646.538 198.865 632.656 223.204 610.318 232.081C599.308 236.519 579.842 236.662 569.63 232.367C560.535 228.644 553.355 222.202 548.568 213.611C545.377 207.885 544.898 204.592 544.898 191.849C544.898 183.545 545.855 174.239 546.813 171.09Z"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M936.619 113.535C939.172 120.121 940.129 120.98 944.437 121.409C947.15 121.696 949.384 121.409 949.384 120.693C949.384 118.975 955.606 84.3279 956.564 80.4623L957.361 77.3125H998.049C1022.14 77.3125 1038.74 77.8852 1038.74 78.6011C1038.74 83.612 999.805 300.803 997.252 309.966C981.934 364.944 930.077 394.294 852.849 391.86C824.448 390.858 808.013 387.565 788.866 379.261C762.06 367.521 746.423 348.622 741.317 321.706L740.2 316.409H823.331L825.086 320.417C827.16 325.142 833.862 331.728 839.447 334.448C846.946 337.884 863.859 339.459 875.347 337.884C902.154 334.019 913.004 321.276 919.865 285.913L920.913 280.423C924.752 260.328 925.594 255.922 923.993 255.023C923.544 254.771 922.904 254.794 922.084 254.823C921.792 254.834 921.478 254.845 921.141 254.845C917.471 254.845 915.876 256.277 911.887 262.29C909.334 266.299 903.111 273.171 898.165 277.609C861.785 310.539 794.61 301.805 767.485 260.715C749.454 233.369 746.582 189.416 760.464 150.044C770.198 122.555 788.547 99.7904 812.64 85.7596C833.383 73.5901 864.816 69.1518 889.548 74.7354C910.451 79.46 929.439 95.0658 936.619 113.535ZM853.807 149.614C830.99 171.805 830.83 211.607 853.169 227.213C862.423 233.655 869.125 235.517 882.368 235.517C902.632 235.373 918.908 226.64 928.321 210.891C934.863 199.724 936.778 192.565 936.778 178.821C936.778 163.358 933.427 154.482 924.013 146.035C912.206 135.44 893.697 131.717 876.784 136.585C866.412 139.592 860.987 142.598 853.807 149.614Z"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M1352.75 76.883C1402.69 89.7684 1431.42 126.563 1431.26 177.246C1431.1 184.977 1430.3 194.999 1429.18 199.724L1427.11 208.314L1341.26 208.744L1255.26 209.03L1256.38 218.05C1257.65 228.931 1263.72 240.814 1270.74 245.539C1288.61 257.708 1324.99 254.272 1336.64 239.239L1341.1 233.512L1381.47 233.369C1406.52 233.369 1421.68 233.942 1421.68 234.801C1421.68 235.517 1419.93 240.385 1417.85 245.396C1401.1 285.197 1356.26 309.107 1298.34 309.25C1233.4 309.25 1190.32 279.327 1179.15 226.211C1176.92 215.759 1176.92 188.7 1179.31 176.53C1187.13 133.579 1212.82 101.508 1253.03 84.3279C1278.56 73.4469 1301.53 70.5835 1336 73.8764C1340.47 74.3059 1348.12 75.5944 1352.75 76.883ZM1263.08 161.354C1269.14 143.601 1284.14 129.999 1301.53 125.991C1311.59 123.843 1325.79 125.561 1333.92 129.999C1342.38 134.581 1349.08 145.319 1350.68 157.059L1351.79 164.647H1261.96L1263.08 161.354Z"/>
+<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M345.927 75.3081C409.751 87.0481 448.364 137.301 440.706 199.008C439.588 207.598 437.195 219.052 435.44 224.349C420.441 267.873 379.594 299.944 328.854 307.818C314.653 310.109 285.134 309.823 271.731 307.246C222.746 298.083 187.962 267.587 177.91 224.922C174.878 211.894 174.878 185.407 177.75 171.519C188.281 121.982 231.043 83.7552 286.411 74.5923C299.814 72.4447 332.364 72.731 345.927 75.3081ZM297.42 137.158C281.624 142.169 269.976 153.766 262.955 171.376C258.328 182.973 257.211 207.026 260.721 217.907C266.944 237.092 281.305 247.686 301.409 247.686C315.929 247.686 325.503 244.393 335.555 236.232C350.873 223.777 358.053 207.026 357.894 184.691C357.894 161.64 350.714 147.323 335.715 139.449C325.982 134.295 309.387 133.292 297.42 137.158Z"/></symbol></svg>
+
+<div class="dochead"><strong>ICMS Media Plan Proposal.</strong> Toggle Solutions · 22 August 2026 · 16 slides, 1280&times;720. Gray labels above each slide are internal notes and do not print. Built on <code>clients/toggle/design-system/proposal-master.html</code>.</div>
+
+<!-- ════════ 1 · COVER ════════ -->
+<div class="note">Slide 1 · Cover. <b>Belief:</b> "This was built for us by a firm with a settled identity."</div>
+<section class="slide">
+  <div class="wmk"><svg viewBox="0 0 1432 392"><use href="#wm"/></svg></div>
+  <div style="margin-top:120px;max-width:600px">
+    <div style="font-size:62px;font-weight:800;color:var(--blue);line-height:1.05">ICMS</div>
+    <div style="font-size:50px;font-weight:800;color:var(--ink);line-height:1.1;margin-top:6px">Media Plan<br>Proposal</div>
+    <div style="font-size:16px;color:var(--body);margin-top:22px;font-weight:500">TikTok &middot; Meta &middot; Google Search &nbsp;|&nbsp; Three budget scenarios &nbsp;|&nbsp; 22 August 2026</div>
+  </div>
+  <svg class="iso" viewBox="-4 -4 449 326" style="position:absolute;right:84px;top:132px;width:450px">
+    <g><polygon points="90.1,0.0 135.1,26.0 45.0,78.0 0.0,52.0"/><polygon points="135.1,130.0 180.1,156.0 90.1,208.0 45.0,182.0"/><polygon points="135.1,130.0 45.0,182.0 45.0,78.0 135.1,26.0"/><polygon class="fill" points="180.1,208.0 90.1,260.0 90.1,208.0 180.1,156.0"/><polygon points="0.0,208.0 45.0,234.0 45.0,78.0 0.0,52.0"/><polygon points="45.0,234.0 90.1,260.0 90.1,208.0 45.0,182.0"/></g>
+    <g transform="translate(216,110)"><polygon points="90.1,0.0 180.1,52.0 90.1,104.0 0.0,52.0"/><polygon points="180.1,104.0 225.2,130.0 135.1,182.0 90.1,156.0"/><polygon points="180.1,104.0 90.1,156.0 90.1,104.0 180.1,52.0"/><polygon points="225.2,182.0 135.1,234.0 135.1,182.0 225.2,130.0"/><polygon points="0.0,156.0 90.1,208.0 90.1,104.0 0.0,52.0"/><polygon points="90.1,208.0 135.1,234.0 135.1,182.0 90.1,156.0"/></g>
+  </svg>
+  <div class="seal" style="position:absolute;left:64px;bottom:48px;color:var(--blue);font-size:17px"><span class="br">[&nbsp;</span>Your Digital Growth Partner<span class="br">&nbsp;]</span></div>
+  <div class="seal" style="position:absolute;right:64px;bottom:48px;color:var(--blue);font-size:17px"><span class="br">[&nbsp;</span>toggle.solutions<span class="br">&nbsp;]</span></div>
+</section>
+
+<!-- ════════ 2 · WHERE ICMS STANDS ════════ -->
+<div class="note">Slide 2 · Diagnosis. <b>Belief:</b> "They looked at our account before they quoted us." Numbers verified in the Google Ads audit, 23 Jul to 21 Aug 2026.</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">What we found before writing this plan</h2>
+  <p class="kicker">We audited the live Google Ads account and read the page source on icms.edu.my before proposing a single ringgit of spend. These are the numbers as they stand today.</p>
+  <div class="grid cols4">
+    <div class="card topbar">
+      <div class="stat num inkstat">RM3,137</div>
+      <div class="statlabel">Spent in 30 days</div>
+      <div class="statcap">Google Search only, 23 July to 21 August 2026.</div>
+    </div>
+    <div class="callout topbar">
+      <div class="stat num">0</div>
+      <div class="statlabel">Leads recorded</div>
+      <div class="statcap">The account reports zero conversions for that spend.</div>
+    </div>
+    <div class="card topbar t-slate">
+      <div class="stat num inkstat">1 of 8</div>
+      <div class="statlabel">Programmes advertised</div>
+      <div class="statcap">Only Enforcement Management runs. Football Studies is blocked by a negative keyword.</div>
+    </div>
+    <div class="card topbar t-orange">
+      <div class="stat num inkstat">0</div>
+      <div class="statlabel">Sitelinks in the account</div>
+      <div class="statcap">No sitelinks, no call asset, no WhatsApp route anywhere on the site.</div>
+    </div>
+  </div>
+  <div class="callout" style="margin-top:18px;padding:20px 26px">
+    <span style="font-weight:700">The cause is one missing line of code.</span>
+    <span class="bodytext"> The Google Ads tag loads on every page and never fires a conversion event. The enquiry form submits without leaving the page and no thank you page exists, so a form submission is never reportable. The only thing the tag can report is a page view, which is why one auto created action counted 732 &ldquo;conversions&rdquo; while all three lead form actions counted zero.</span>
+  </div>
+</section>
+
+<!-- ════════ 3 · THE GATE ════════ -->
+<div class="note">Slide 3 · The gate. <b>Belief:</b> "They will not take our money before the meter works." This slide carries the artifact's single strikethrough (SIGNATURE-DEVICES §B1).</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">Two weeks of measurement before any scale</h2>
+  <p class="kicker">The category default when a college is short of students is <span class="struck">spend more on ads</span> &nbsp;fix the meter, then spend. Every plan in this document begins the same way, and none of them bills you for media you cannot measure.</p>
+  <div class="grid cols3">
+    <div class="callout stripe">
+      <div style="font-size:12.5px;font-weight:700;color:var(--body);letter-spacing:.04em">WEEK 1</div>
+      <div class="cardtitle" style="margin-top:4px">Make the meter work</div>
+      <ul class="b">
+        <li>Bind a Google Ads conversion event to the form success event, site wide</li>
+        <li>Add a thank you page so GA4 and Meta can read the same signal</li>
+        <li>Delete the three broken conversion actions and the page view action</li>
+        <li>Demote Business Profile taps out of bidding</li>
+      </ul>
+    </div>
+    <div class="callout stripe s-teal acc-teal">
+      <div style="font-size:12.5px;font-weight:700;color:var(--body);letter-spacing:.04em">WEEK 2</div>
+      <div class="cardtitle" style="margin-top:4px">Make the click land somewhere</div>
+      <ul class="b">
+        <li>Repair the Apply Now link, which has pointed at a February 2026 seminar page for six months</li>
+        <li>Build one Malay landing page per priority programme, form above the fold</li>
+        <li>Add a WhatsApp click to chat route</li>
+        <li>Agree one intake calendar, since the site and the ads currently give five answers</li>
+      </ul>
+    </div>
+    <div class="card stripe s-slate acc-slate">
+      <div style="font-size:12.5px;font-weight:700;color:var(--body);letter-spacing:.04em">WEEK 3 ONWARD</div>
+      <div class="cardtitle" style="margin-top:4px">Then media scales</div>
+      <ul class="b">
+        <li>Full budget goes live only once a test lead has been recorded end to end</li>
+        <li>Week 6 read out against the CPL ceilings printed in this document</li>
+        <li>Any channel over its ceiling by 50 percent gets paused, not defended</li>
+      </ul>
+      <div class="bodytext" style="margin-top:12px;font-weight:700;color:var(--ink)">Weeks 1 and 2 run at 25 percent of the chosen budget.</div>
+    </div>
+  </div>
+  <div class="band">If we cannot show you a lead in the platform by the end of week 2, we do not scale the spend and you do not pay for the media you did not use.</div>
+</section>
+
+<!-- ════════ 4 · WHAT WE SELL FIRST ════════ -->
+<div class="note">Slide 4 · Programme priority. <b>Belief:</b> "They understood which of our nine programmes actually earns."</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">The order we sell your programmes in</h2>
+  <p class="kicker">ICMS management named the focus programmes for this year. This is the sequence we fund them in, and the reason for each position.</p>
+  <div class="grid cols3">
+    <div class="callout stripe s-teal acc-teal">
+      <span class="chip num">First<br>funded</span>
+      <div class="cardtitle">Football &amp; Sports Studies</div>
+      <div style="font-size:12.5px;font-weight:700;color:var(--body)">Diploma in Football Studies &middot; Sports Science &middot; Exercise Science</div>
+      <ul class="b">
+        <li>ICMS states it is the only college in Southeast Asia offering the Football Studies diploma</li>
+        <li>Your own reported cost per lead on Meta is RM2.13, roughly a third of every other programme</li>
+        <li>Nobody is bidding these terms on Google Search today</li>
+        <li>Currently blocked in your account by a paused keyword and a live negative</li>
+      </ul>
+    </div>
+    <div class="callout stripe">
+      <span class="chip num">Second<br>funded</span>
+      <div class="cardtitle">Enforcement &amp; Policing</div>
+      <div style="font-size:12.5px;font-weight:700;color:var(--body)">Diploma in Enforcement Management &middot; Policing &amp; Investigation &middot; Bachelor in Law Enforcement</div>
+      <ul class="b">
+        <li>The only programme running today, with a proven 9.97 percent click through rate</li>
+        <li>Your reported cost per lead on Meta is RM7.00</li>
+        <li>One keyword, law enforcement course malaysia, produced the only leads the account has recorded</li>
+        <li>Direct competitive pressure from a cooperative college with a far larger campus</li>
+      </ul>
+    </div>
+    <div class="card stripe s-slate acc-slate">
+      <span class="chip num">Third<br>funded</span>
+      <div class="cardtitle">Business, Technology &amp; Postgraduate</div>
+      <div style="font-size:12.5px;font-weight:700;color:var(--body)">Business Administration &middot; Computer Science &middot; Applied AI &middot; MBA &middot; Master in Management &middot; DBA</div>
+      <ul class="b">
+        <li>Higher fee value per student, longer consideration cycle</li>
+        <li>Postgraduate search demand is small but cheap to own</li>
+        <li>Funded from the RM12,000 plan upward, not before</li>
+        <li>Computer Science and Applied AI wait until the lab upgrade lands</li>
+      </ul>
+    </div>
+  </div>
+  <div class="band">We do not fund all nine programmes at once. Two students per programme is an operating cost problem, not a marketing win.</div>
+</section>
+
+<!-- ════════ 5 · CHANNEL ROLES ════════ -->
+<div class="note">Slide 5 · Channel roles. <b>Belief:</b> "Each platform has a named job, and they told us where the ceiling is."</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">Three platforms, three different jobs</h2>
+  <p class="kicker">Google Search is the smallest line in every plan, and that is deliberate. Search captures demand that already exists. TikTok and Meta create it.</p>
+  <div class="grid cols3">
+    <div class="card topbar">
+      <div class="cardtitle">Meta &nbsp;<span style="font-size:12.5px;color:var(--body);font-weight:500">Facebook &amp; Instagram</span></div>
+      <div class="bodytext" style="margin-top:6px"><b>Job:</b> reliable lead volume at a known cost, plus retargeting everyone the other two channels touch.</div>
+      <ul class="b">
+        <li>Instant lead forms with qualifying questions, plus click to WhatsApp</li>
+        <li>The only channel where ICMS already has first party cost per lead data</li>
+        <li>Carries the largest share at every budget level</li>
+      </ul>
+      <div style="margin-top:12px"><span class="tag">Lead forms</span><span class="tag">Click to WhatsApp</span><span class="tag">Retargeting</span></div>
+    </div>
+    <div class="card topbar t-teal acc-teal">
+      <div class="cardtitle">TikTok</div>
+      <div class="bodytext" style="margin-top:6px"><b>Job:</b> reach SPM leavers and football prospects who are not searching yet, and fix the brand problem while doing it.</div>
+      <ul class="b">
+        <li>Where the 17 to 22 audience actually spends its attention</li>
+        <li>Football and campus content is native to the platform, not adapted to it</li>
+        <li>Doubles as the branding fix management asked for, at media cost</li>
+      </ul>
+      <div style="margin-top:12px"><span class="tag">Spark Ads</span><span class="tag">Instant Forms</span><span class="tag">Creator content</span></div>
+    </div>
+    <div class="card topbar t-slate acc-slate">
+      <div class="cardtitle">Google Search</div>
+      <div class="bodytext" style="margin-top:6px"><b>Job:</b> capture the person already typing your programme name, defend your brand, and take Unikop comparison traffic.</div>
+      <ul class="b">
+        <li>Highest intent and highest close rate of the three</li>
+        <li>Also the most expensive per lead, at roughly RM3.96 per click today</li>
+        <li>Volume is capped by how many Malaysians search these terms, so a larger budget here buys the same generic queries that already failed</li>
+      </ul>
+      <div style="margin-top:12px"><span class="tag">Brand</span><span class="tag">Programme</span><span class="tag">Competitor</span></div>
+    </div>
+  </div>
+  <div class="band">Search is capped on purpose. The account has produced 10,996 impressions in 30 days across 80 keywords, so the honest ceiling on Google is real and we have priced to it.</div>
+</section>
+
+<!-- ════════ 6 · THREE PLANS AT A GLANCE ════════ -->
+<div class="note">Slide 6 · The comparison. <b>Belief:</b> "I can see all three options side by side and the arithmetic holds." This is the decision slide.</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">Three plans, side by side</h2>
+  <p class="kicker">All figures are monthly media spend. Lead counts are the literal sum of the per channel arithmetic on slides 7 to 9. Enrolment ranges apply the 2 to 3 percent lead to enrolment rate ICMS reported.</p>
+  <table class="dt">
+    <tr>
+      <th>Monthly media</th><th class="r">Meta</th><th class="r">TikTok</th><th class="r">Google Search</th>
+      <th class="r">Leads / month</th><th class="r">Blended CPL</th><th class="r">Enrolments / month</th><th class="r">Cost per enrolment</th>
+    </tr>
+    <tr>
+      <td class="head">Plan A &middot; RM6,000</td>
+      <td class="r num">RM2,400</td><td class="r num">RM2,400</td><td class="r num">RM1,200</td>
+      <td class="r num">727</td><td class="r num">RM8.25</td><td class="r num">15 to 22</td><td class="r num">RM273 to RM400</td>
+    </tr>
+    <tr>
+      <td class="head">Plan B &middot; RM12,000</td>
+      <td class="r num">RM4,800</td><td class="r num">RM4,200</td><td class="r num">RM3,000</td>
+      <td class="r num">966</td><td class="r num">RM12.42</td><td class="r num">19 to 29</td><td class="r num">RM414 to RM632</td>
+    </tr>
+    <tr>
+      <td class="head">Plan C &middot; RM20,000</td>
+      <td class="r num">RM8,000</td><td class="r num">RM6,000</td><td class="r num">RM6,000</td>
+      <td class="r num">1,180</td><td class="r num">RM16.95</td><td class="r num">24 to 35</td><td class="r num">RM571 to RM833</td>
+    </tr>
+  </table>
+  <div class="grid cols2" style="margin-top:20px">
+    <div class="callout" style="padding:20px 24px">
+      <div class="cardtitle">Why the cost per lead rises as budget grows</div>
+      <div class="bodytext" style="margin-top:5px">Your RM2.13 football lead came from roughly RM100 a day. At ten times that spend the same audience sees the ad more often, frequency climbs, and the auction charges more for the next thousand people. We have priced that in rather than quoting your best day back to you.</div>
+    </div>
+    <div class="card" style="padding:20px 24px">
+      <div class="cardtitle">What stays the same in all three</div>
+      <div class="bodytext" style="margin-top:5px">The two week measurement gate, the CPL ceiling per channel, the weekly search term and creative review, and the kill rule. The plans differ in how many programmes they can carry and how fast they reach your enrolment target, not in how carefully they are run.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ 7 · PLAN A ════════ -->
+<div class="note">Slide 7 · Plan A detail. <b>Belief:</b> "The entry plan is a real plan, not a token."</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">Plan A &middot; Prove the channel<span class="pill num">RM6,000 / month</span></h2>
+  <p class="kicker">Two programmes only. This plan exists to prove the cost per lead on real tracking before ICMS commits a larger budget.</p>
+  <div class="splitbar">
+    <div style="width:40%;background:var(--blue)">Meta 40%</div>
+    <div style="width:40%;background:var(--teal)">TikTok 40%</div>
+    <div style="width:20%;background:var(--slate)">Google Search 20%</div>
+  </div>
+  <div class="legend"><span><i style="background:var(--blue)"></i>Meta RM2,400</span><span><i style="background:var(--teal)"></i>TikTok RM2,400</span><span><i style="background:var(--slate)"></i>Google Search RM1,200</span></div>
+  <div class="grid cols2" style="margin-top:18px">
+    <div>
+      <table class="dt dense">
+        <tr><th>Channel</th><th class="r">Monthly</th><th class="r">CPL ceiling</th><th class="r">Leads</th></tr>
+        <tr><td class="k">Meta &middot; Football</td><td class="r num">RM1,000</td><td class="r num">RM8</td><td class="r num">125</td></tr>
+        <tr><td class="k">Meta &middot; Enforcement</td><td class="r num">RM1,000</td><td class="r num">RM8</td><td class="r num">125</td></tr>
+        <tr><td class="k">Meta &middot; Retargeting</td><td class="r num">RM400</td><td class="r num">RM8</td><td class="r num">50</td></tr>
+        <tr><td class="k">TikTok &middot; Football</td><td class="r num">RM1,400</td><td class="r num">RM6</td><td class="r num">233</td></tr>
+        <tr><td class="k">TikTok &middot; Enforcement</td><td class="r num">RM1,000</td><td class="r num">RM6</td><td class="r num">167</td></tr>
+        <tr><td class="k">Google &middot; Brand</td><td class="r num">RM240</td><td class="r num">RM44</td><td class="r num">5</td></tr>
+        <tr><td class="k">Google &middot; Enforcement</td><td class="r num">RM480</td><td class="r num">RM44</td><td class="r num">11</td></tr>
+        <tr><td class="k">Google &middot; Football</td><td class="r num">RM480</td><td class="r num">RM44</td><td class="r num">11</td></tr>
+        <tr class="total"><td>Total</td><td class="r num">RM6,000</td><td class="r num">RM8.25</td><td class="r num">727</td></tr>
+      </table>
+    </div>
+    <div>
+      <div class="grid cols2">
+        <div class="callout" style="padding:18px">
+          <div class="stat num">727</div>
+          <div class="statlabel">Leads per month</div>
+          <div class="statcap">Sum of the eight lines at left.</div>
+        </div>
+        <div class="card" style="padding:18px">
+          <div class="stat num inkstat">15 to 22</div>
+          <div class="statlabel">Enrolments per month</div>
+          <div class="statcap">At your reported 2 to 3 percent close rate.</div>
+        </div>
+      </div>
+      <div class="card" style="margin-top:16px;padding:18px 22px">
+        <div class="cardtitle">What this plan does not cover</div>
+        <ul class="b acc-slate">
+          <li>Business Administration, Computer Science and Applied AI stay unfunded</li>
+          <li>No postgraduate campaigns, so MBA and Master in Management run on organic only</li>
+          <li>No competitor conquest against Unikop</li>
+          <li>No international layer, so the Bangladesh, Pakistan and China pipeline stays with your agents</li>
+          <li>At 180 to 264 enrolments a year, this plan does not reach the 300 target on its own</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ 8 · PLAN B ════════ -->
+<div class="note">Slide 8 · Plan B detail. <b>Belief:</b> "The middle plan buys me the programmes that matter and a brand defense."</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">Plan B &middot; Build the machine<span class="pill num">RM12,000 / month</span></h2>
+  <p class="kicker">Adds Business Administration, a brand defense campaign, and the first competitor conquest against Unikop.</p>
+  <div class="splitbar">
+    <div style="width:40%;background:var(--blue)">Meta 40%</div>
+    <div style="width:35%;background:var(--teal)">TikTok 35%</div>
+    <div style="width:25%;background:var(--slate)">Google Search 25%</div>
+  </div>
+  <div class="legend"><span><i style="background:var(--blue)"></i>Meta RM4,800</span><span><i style="background:var(--teal)"></i>TikTok RM4,200</span><span><i style="background:var(--slate)"></i>Google Search RM3,000</span></div>
+  <div class="grid cols2" style="margin-top:18px">
+    <div>
+      <table class="dt dense">
+        <tr><th>Channel</th><th class="r">Monthly</th><th class="r">CPL ceiling</th><th class="r">Leads</th></tr>
+        <tr><td class="k">Meta &middot; Football</td><td class="r num">RM1,700</td><td class="r num">RM11</td><td class="r num">155</td></tr>
+        <tr><td class="k">Meta &middot; Enforcement</td><td class="r num">RM1,500</td><td class="r num">RM11</td><td class="r num">136</td></tr>
+        <tr><td class="k">Meta &middot; Business Admin</td><td class="r num">RM800</td><td class="r num">RM11</td><td class="r num">73</td></tr>
+        <tr><td class="k">Meta &middot; Retargeting</td><td class="r num">RM800</td><td class="r num">RM11</td><td class="r num">72</td></tr>
+        <tr><td class="k">TikTok &middot; Football</td><td class="r num">RM2,000</td><td class="r num">RM9</td><td class="r num">222</td></tr>
+        <tr><td class="k">TikTok &middot; Enforcement</td><td class="r num">RM1,400</td><td class="r num">RM9</td><td class="r num">156</td></tr>
+        <tr><td class="k">TikTok &middot; Business Admin</td><td class="r num">RM800</td><td class="r num">RM9</td><td class="r num">89</td></tr>
+        <tr><td class="k">Google &middot; Brand</td><td class="r num">RM450</td><td class="r num">RM48</td><td class="r num">9</td></tr>
+        <tr><td class="k">Google &middot; Enforcement &amp; Policing</td><td class="r num">RM900</td><td class="r num">RM48</td><td class="r num">19</td></tr>
+        <tr><td class="k">Google &middot; Football &amp; Sports</td><td class="r num">RM900</td><td class="r num">RM48</td><td class="r num">19</td></tr>
+        <tr><td class="k">Google &middot; Business Admin</td><td class="r num">RM450</td><td class="r num">RM48</td><td class="r num">9</td></tr>
+        <tr><td class="k">Google &middot; Competitor</td><td class="r num">RM300</td><td class="r num">RM48</td><td class="r num">7</td></tr>
+        <tr class="total"><td>Total</td><td class="r num">RM12,000</td><td class="r num">RM12.42</td><td class="r num">966</td></tr>
+      </table>
+    </div>
+    <div>
+      <div class="grid cols2">
+        <div class="callout" style="padding:18px">
+          <div class="stat num">966</div>
+          <div class="statlabel">Leads per month</div>
+          <div class="statcap">Sum of the twelve lines at left.</div>
+        </div>
+        <div class="card" style="padding:18px">
+          <div class="stat num inkstat">19 to 29</div>
+          <div class="statlabel">Enrolments per month</div>
+          <div class="statcap">At your reported 2 to 3 percent close rate.</div>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:16px;padding:18px 22px">
+        <div class="cardtitle">What RM12,000 adds over RM6,000</div>
+        <ul class="b">
+          <li>Business Administration funded on all three platforms</li>
+          <li>A dedicated brand campaign, so you stop paying RM4.69 a click for your own name</li>
+          <li>Competitor conquest on Unikop, Unicom, SEGI and UNITAR comparison terms</li>
+          <li>Enough Meta budget to run a real retargeting pool rather than a token one</li>
+        </ul>
+        <div class="bodytext" style="margin-top:10px;font-weight:700;color:var(--ink)">At 228 to 348 enrolments a year, this plan reaches 300 only if the close rate holds near 3 percent.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ 9 · PLAN C ════════ -->
+<div class="note">Slide 9 · Plan C detail. <b>Belief:</b> "This is the plan that actually hits my number."</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">Plan C &middot; Scale to target<span class="pill num">RM20,000 / month</span></h2>
+  <p class="kicker">Carries every focus programme including postgraduate, and adds the international layer your agent network is currently carrying alone.</p>
+  <div class="splitbar">
+    <div style="width:40%;background:var(--blue)">Meta 40%</div>
+    <div style="width:30%;background:var(--teal)">TikTok 30%</div>
+    <div style="width:30%;background:var(--slate)">Google Search 30%</div>
+  </div>
+  <div class="legend"><span><i style="background:var(--blue)"></i>Meta RM8,000</span><span><i style="background:var(--teal)"></i>TikTok RM6,000</span><span><i style="background:var(--slate)"></i>Google Search RM6,000</span></div>
+  <div class="grid cols2" style="margin-top:18px">
+    <div>
+      <table class="dt dense">
+        <tr><th>Channel</th><th class="r">Monthly</th><th class="r">CPL ceiling</th><th class="r">Leads</th></tr>
+        <tr><td class="k">Meta &middot; Football</td><td class="r num">RM2,400</td><td class="r num">RM14</td><td class="r num">171</td></tr>
+        <tr><td class="k">Meta &middot; Enforcement</td><td class="r num">RM2,000</td><td class="r num">RM14</td><td class="r num">143</td></tr>
+        <tr><td class="k">Meta &middot; Business Admin</td><td class="r num">RM1,200</td><td class="r num">RM14</td><td class="r num">86</td></tr>
+        <tr><td class="k">Meta &middot; Postgraduate</td><td class="r num">RM1,200</td><td class="r num">RM14</td><td class="r num">86</td></tr>
+        <tr><td class="k">Meta &middot; Retargeting</td><td class="r num">RM1,200</td><td class="r num">RM14</td><td class="r num">85</td></tr>
+        <tr><td class="k">TikTok &middot; Football</td><td class="r num">RM2,400</td><td class="r num">RM12</td><td class="r num">200</td></tr>
+        <tr><td class="k">TikTok &middot; Enforcement</td><td class="r num">RM1,600</td><td class="r num">RM12</td><td class="r num">133</td></tr>
+        <tr><td class="k">TikTok &middot; Business Admin</td><td class="r num">RM1,000</td><td class="r num">RM12</td><td class="r num">83</td></tr>
+        <tr><td class="k">TikTok &middot; Campus &amp; brand</td><td class="r num">RM1,000</td><td class="r num">RM12</td><td class="r num">84</td></tr>
+        <tr><td class="k">Google &middot; Brand</td><td class="r num">RM600</td><td class="r num">RM55</td><td class="r num">11</td></tr>
+        <tr><td class="k">Google &middot; Enforcement &amp; Policing</td><td class="r num">RM1,400</td><td class="r num">RM55</td><td class="r num">25</td></tr>
+        <tr><td class="k">Google &middot; Football &amp; Sports</td><td class="r num">RM1,400</td><td class="r num">RM55</td><td class="r num">25</td></tr>
+        <tr><td class="k">Google &middot; Business &amp; Technology</td><td class="r num">RM900</td><td class="r num">RM55</td><td class="r num">17</td></tr>
+        <tr><td class="k">Google &middot; Postgraduate</td><td class="r num">RM1,000</td><td class="r num">RM55</td><td class="r num">18</td></tr>
+        <tr><td class="k">Google &middot; Competitor</td><td class="r num">RM700</td><td class="r num">RM55</td><td class="r num">13</td></tr>
+        <tr class="total"><td>Total</td><td class="r num">RM20,000</td><td class="r num">RM16.95</td><td class="r num">1,180</td></tr>
+      </table>
+    </div>
+    <div>
+      <div class="grid cols2">
+        <div class="callout" style="padding:18px">
+          <div class="stat num">1,180</div>
+          <div class="statlabel">Leads per month</div>
+          <div class="statcap">Sum of the fifteen lines at left.</div>
+        </div>
+        <div class="card" style="padding:18px">
+          <div class="stat num inkstat">24 to 35</div>
+          <div class="statlabel">Enrolments per month</div>
+          <div class="statcap">At your reported 2 to 3 percent close rate.</div>
+        </div>
+      </div>
+      <div class="callout" style="margin-top:16px;padding:18px 22px">
+        <div class="cardtitle">What RM20,000 adds over RM12,000</div>
+        <ul class="b">
+          <li>Postgraduate funded on Meta and Google, covering MBA, Master in Management and the DBA</li>
+          <li>A campus and brand track on TikTok, which is the branding repair management asked for, paid for as media</li>
+          <li>Computer Science and Applied AI enter the Google mix</li>
+          <li>Headroom to run an international test into Bangladesh, Pakistan and the Gulf without cutting local budget</li>
+        </ul>
+        <div class="bodytext" style="margin-top:10px;font-weight:700;color:var(--ink)">At 288 to 420 enrolments a year, this is the only plan that clears 300 across most of its range.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ 10 · DOES IT REACH THE NUMBER ════════ -->
+<div class="note">Slide 10 · The arithmetic. <b>Belief:</b> "They did the division instead of promising me a number." Honest: only Plan C clears 300 comfortably.</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">Which plan reaches 600 students</h2>
+  <p class="kicker">ICMS is targeting roughly 600 enrolments this calendar year, with about 150 already closed and international agents covering a further share. That leaves roughly 300 for marketing to deliver.</p>
+  <table class="dt">
+    <tr><th>Plan</th><th class="r">Monthly media</th><th class="r">Enrolments / month</th><th class="r">Enrolments / year</th><th class="r">Annual media</th><th class="r">Media per enrolment</th><th>Reaches 300?</th></tr>
+    <tr><td class="head">Plan A</td><td class="r num">RM6,000</td><td class="r num">15 to 22</td><td class="r num">180 to 264</td><td class="r num">RM72,000</td><td class="r num">RM273 to RM400</td><td>No. Falls short at both ends of the range.</td></tr>
+    <tr><td class="head">Plan B</td><td class="r num">RM12,000</td><td class="r num">19 to 29</td><td class="r num">228 to 348</td><td class="r num">RM144,000</td><td class="r num">RM414 to RM632</td><td>Only if the close rate holds near 3 percent.</td></tr>
+    <tr><td class="head">Plan C</td><td class="r num">RM20,000</td><td class="r num">24 to 35</td><td class="r num">288 to 420</td><td class="r num">RM240,000</td><td class="r num">RM571 to RM833</td><td>Yes, across most of the range.</td></tr>
+  </table>
+  <div class="grid cols3" style="margin-top:20px">
+    <div class="callout" style="padding:20px">
+      <div class="stat num">4%</div>
+      <div class="statlabel">Media cost as a share of one student's fees</div>
+      <div class="statcap">Worst case in the most expensive plan: RM833 of media against a diploma listed near the RM21,000 PTPTN cap.</div>
+    </div>
+    <div class="card" style="padding:20px">
+      <div class="cardtitle">The lever that beats budget</div>
+      <div class="bodytext" style="margin-top:5px">Moving the lead to enrolment rate from 2 percent to 4 percent halves the media required for the same 300 students. A CRM, a written response time and a WhatsApp route are worth more than any bid adjustment in this document. We have listed them on slide 14 as asks, not as billable scope.</div>
+    </div>
+    <div class="card" style="padding:20px">
+      <div class="cardtitle">What would make these numbers wrong</div>
+      <ul class="b acc-slate">
+        <li>Tracking not fixed, in which case none of it is measurable</li>
+        <li>Close rate below 2 percent, which we will see by week 6</li>
+        <li>Search volume thinner than the account suggests</li>
+        <li>Sales capacity below 30 calls a day at Plan C volume</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ 11 · WHERE THE CPLs COME FROM ════════ -->
+<div class="note">Slide 11 · CPL provenance. <b>Belief:</b> "They showed their working instead of quoting my best day back at me."</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">Where every cost per lead in this plan comes from</h2>
+  <p class="kicker">Three of these numbers are yours, one is a benchmark, and one is arithmetic off your own click cost. None of them is a round number we liked the look of.</p>
+  <table class="dt">
+    <tr><th>Channel</th><th>What ICMS reports today</th><th class="r">Toggle planning CPL</th><th>Why we planned higher</th></tr>
+    <tr>
+      <td class="head">Meta &middot; Football</td><td>RM2.13 per lead</td><td class="r num">RM8 to RM14</td>
+      <td>That figure came from roughly RM100 a day. At Plan C the same audience sees the ad far more often, and the auction charges more for each additional thousand people reached.</td>
+    </tr>
+    <tr>
+      <td class="head">Meta &middot; Enforcement</td><td>RM7.00 per lead</td><td class="r num">RM8 to RM14</td>
+      <td>Closest to a scalable figure of the three you reported. We hold it as the floor and plan above it.</td>
+    </tr>
+    <tr>
+      <td class="head">Meta &middot; International</td><td>RM19.00 per lead</td><td class="r num">Plan C only</td>
+      <td>Kept out of the local blended figure so it cannot flatter the Malaysian numbers.</td>
+    </tr>
+    <tr>
+      <td class="head">TikTok</td><td>Not running</td><td class="r num">RM6 to RM12</td>
+      <td>No first party data exists for ICMS on TikTok. This is a Malaysian education category benchmark and it is the single assumption in this document we most want to replace with your own data by week 6.</td>
+    </tr>
+    <tr>
+      <td class="head">Google Search</td><td>No measurable leads</td><td class="r num">RM44 to RM55</td>
+      <td>Your current average cost per click is RM3.96. At a 9 percent landing page conversion rate that is RM44 a lead. Today the page converts at zero because it is a contact page with the form below the fold.</td>
+    </tr>
+  </table>
+  <div class="band">Every CPL above is a ceiling, not a forecast. If a channel runs 50 percent over its ceiling for two consecutive weeks, we pause it and move the budget rather than defend it in a report.</div>
+</section>
+
+<!-- ════════ 12 · CREATIVE ════════ -->
+<div class="note">Slide 12 · Creative. <b>Belief:</b> "They will fix the message, not just the media buying." Ties to the ad copy contradictions found in the audit.</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">The message we lead with</h2>
+  <p class="kicker">Your current ads promise affordable fees, PTPTN and online study. Your website publishes no fee, never mentions PTPTN on the programme page, and lists no online mode. We fix the claim before we buy the click.</p>
+  <div class="callout" style="padding:20px 26px">
+    <div style="font-size:12.5px;font-weight:700;color:var(--body);letter-spacing:.04em">THE POSITIONING</div>
+    <div style="font-size:22px;font-weight:800;color:var(--ink);margin-top:6px;line-height:1.3">Register for RM300, not RM1,900. The only Football Studies diploma in Southeast Asia, and a monthly intake that does not make you wait for next year.</div>
+    <div class="bodytext" style="margin-top:8px">Every clause is checkable. The registration fee is a fact ICMS already owns and currently publishes nowhere. The Football Studies claim is ICMS's own, stated on the homepage. The intake cadence needs one decision from management before it goes live.</div>
+  </div>
+  <div class="grid cols3" style="margin-top:18px">
+    <div class="card topbar t-teal acc-teal">
+      <div class="cardtitle">TikTok</div>
+      <ul class="b">
+        <li>Titans FC training and match footage, shot vertical on a phone, not repurposed from Facebook</li>
+        <li>Student voice, one programme per video, Malay first with code switching</li>
+        <li>Spark Ads on the strongest organic posts before paying for cold creative</li>
+        <li>Six new hooks a month, tested against a 1 percent click through kill rule</li>
+      </ul>
+    </div>
+    <div class="card topbar">
+      <div class="cardtitle">Meta</div>
+      <ul class="b">
+        <li>Instant forms with a programme question and a financing question, so sales gets a qualified lead</li>
+        <li>Click to WhatsApp as a parallel route for prospects who will not fill a form</li>
+        <li>Carousel on career outcomes, which is the objection that actually blocks enrolment</li>
+        <li>Retargeting split by programme page visited</li>
+      </ul>
+    </div>
+    <div class="card topbar t-slate acc-slate">
+      <div class="cardtitle">Google Search</div>
+      <ul class="b">
+        <li>Two responsive search ads per ad group instead of the current one</li>
+        <li>Six sitelinks, four callouts, structured snippets and a call asset per campaign</li>
+        <li>Malay landing pages for Malay queries, which the account does not have today</li>
+        <li>The RM300 registration fee in a headline, since no competitor can copy it</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ 13 · MEASUREMENT ════════ -->
+<div class="note">Slide 13 · Measurement. <b>Belief:</b> "I will know whether this is working, weekly, in numbers."</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">How you will know it is working</h2>
+  <p class="kicker">Reporting is a cadence, not a monthly PDF. These are the numbers we hold ourselves to and the days you see them.</p>
+  <div class="grid cols4">
+    <div class="card topbar">
+      <div class="stat num inkstat">Weekly</div>
+      <div class="statlabel">Search terms and creative</div>
+      <div class="statcap">Negative keywords added, losing creative paused, budget shifted between programmes.</div>
+    </div>
+    <div class="card topbar t-teal">
+      <div class="stat num inkstat">Week 6</div>
+      <div class="statlabel">First full read out</div>
+      <div class="statcap">Actual cost per lead per channel against every ceiling printed on slide 11.</div>
+    </div>
+    <div class="callout topbar t-slate">
+      <div class="stat num">Monthly</div>
+      <div class="statlabel">Lead to enrolment</div>
+      <div class="statcap">The only number that decides whether the media budget is right. Requires ICMS to report closes back to us.</div>
+    </div>
+    <div class="card topbar t-orange">
+      <div class="stat num inkstat">Quarterly</div>
+      <div class="statlabel">Programme mix review</div>
+      <div class="statcap">Which programmes earn their budget, which get cut, which get added.</div>
+    </div>
+  </div>
+  <div class="grid cols2" style="margin-top:18px">
+    <div class="card" style="padding:20px 24px">
+      <div class="cardtitle">The kill rules, printed before launch</div>
+      <ul class="b acc-slate">
+        <li>Any channel 50 percent over its CPL ceiling for two consecutive weeks gets paused</li>
+        <li>Any ad below 1 percent click through rate after 5,000 impressions gets replaced</li>
+        <li>Any programme below half the account average close rate loses its budget at the quarterly review</li>
+      </ul>
+    </div>
+    <div class="callout" style="padding:20px 24px">
+      <div class="cardtitle">What we will not report</div>
+      <div class="bodytext" style="margin-top:5px">Impressions as a headline, optimisation score, and any conversion count that includes a page view or a Business Profile directions tap. Your account currently reports 732 of those a month as conversions. We will not put that number in a report and call it performance.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ 14 · WHAT WE NEED ════════ -->
+<div class="note">Slide 14 · The asks. <b>Belief:</b> "They told me what they need from me in week one." Items 4 and 5 are the ones that actually move the close rate.</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">What we need from ICMS</h2>
+  <p class="kicker">Six items. The first three unblock the media. The last three are worth more than the media, and none of them is billable scope.</p>
+  <div class="grid cols3">
+    <div class="card stripe">
+      <div style="display:flex;gap:12px;align-items:center"><span class="ncircle num">1</span><div class="cardtitle" style="margin:0">Admin access</div></div>
+      <div class="bodytext" style="margin-top:8px">Standard or Admin on Google Ads, plus Meta Business Manager and a TikTok Business Center. We currently hold reports only access, granted 18 August, which means we cannot change a single setting.</div>
+    </div>
+    <div class="card stripe">
+      <div style="display:flex;gap:12px;align-items:center"><span class="ncircle num">2</span><div class="cardtitle" style="margin:0">Half a day of developer time</div></div>
+      <div class="bodytext" style="margin-top:8px">To bind the conversion event to the form success event and add a thank you page. Without this every number in this document is unmeasurable.</div>
+    </div>
+    <div class="card stripe">
+      <div style="display:flex;gap:12px;align-items:center"><span class="ncircle num">3</span><div class="cardtitle" style="margin:0">One intake calendar</div></div>
+      <div class="bodytext" style="margin-top:8px">Your programme pages say January, May and September. Your Apply Now page sells a March 2026 intake. Your ads say July and August. Management says monthly. We need one answer before any ad goes live.</div>
+    </div>
+    <div class="callout stripe s-teal acc-teal">
+      <div style="display:flex;gap:12px;align-items:center"><span class="ncircle num" style="background:var(--blue-deep)">4</span><div class="cardtitle" style="margin:0">Permission to publish fees</div></div>
+      <div class="bodytext" style="margin-top:8px">The RM300 registration fee against Unikop's RM1,900 is the strongest checkable claim ICMS owns, and it appears nowhere on the site or in any ad.</div>
+    </div>
+    <div class="callout stripe s-teal acc-teal">
+      <div style="display:flex;gap:12px;align-items:center"><span class="ncircle num" style="background:var(--blue-deep)">5</span><div class="cardtitle" style="margin:0">A lead owner and a response time</div></div>
+      <div class="bodytext" style="margin-top:8px">Leads currently land in a shared spreadsheet with no CRM and no response SOP. At Plan C volume that is roughly 40 leads a day. Name an owner and commit to a first contact time.</div>
+    </div>
+    <div class="callout stripe s-teal acc-teal">
+      <div style="display:flex;gap:12px;align-items:center"><span class="ncircle num" style="background:var(--blue-deep)">6</span><div class="cardtitle" style="margin:0">A WhatsApp Business number</div></div>
+      <div class="bodytext" style="margin-top:8px">Your own team said prospects click WhatsApp and abandon forms. There is no WhatsApp link anywhere on icms.edu.my today. This is the cheapest conversion rate gain available to you.</div>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ 15 · COMMERCIALS ════════ -->
+<div class="note">Slide 15 · Commercials. <b>INTERNAL FLAG:</b> <b>the management fee row is deliberately blank.</b> <code>brain/pricing/rate-card-my.md</code> is 100% <code>TBD (MYR)</code> and forbids inventing values. Viknesh and Zaid must fill the fee before this goes to ICMS. Everything else on this slide is final.</div>
+<section class="slide">
+  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <h2 class="h1">Commercials</h2>
+  <p class="kicker">Media is paid to the platforms and billed at cost. The management fee is separate and covers strategy, build, creative, optimisation and reporting.</p>
+  <table class="dt">
+    <tr><th>Line</th><th class="r">Plan A</th><th class="r">Plan B</th><th class="r">Plan C</th><th>Notes</th></tr>
+    <tr><td class="head">Media, paid to platforms</td><td class="r num">RM6,000</td><td class="r num">RM12,000</td><td class="r num">RM20,000</td><td>Billed at cost. Platform invoices shared in full every month.</td></tr>
+    <tr><td class="head">Toggle management fee</td><td class="r">RM (to be confirmed)</td><td class="r">RM (to be confirmed)</td><td class="r">RM (to be confirmed)</td><td>To be confirmed by Toggle before issue.</td></tr>
+    <tr><td class="head">Months 1 and 2 media</td><td class="r num">RM1,500</td><td class="r num">RM3,000</td><td class="r num">RM5,000</td><td>Measurement gate runs at 25 percent of budget. You are not billed for media you cannot measure.</td></tr>
+    <tr class="total"><td>Minimum term</td><td class="r">3 months</td><td class="r">3 months</td><td class="r">6 months</td><td>The week 6 read out only means something with a month 3 behind it.</td></tr>
+  </table>
+  <div class="grid cols2" style="margin-top:20px">
+    <div class="card" style="padding:20px 24px">
+      <div class="cardtitle">Included in the management fee</div>
+      <ul class="b acc-slate">
+        <li>Account rebuild across all three platforms, including the Google Ads structure teardown</li>
+        <li>Conversion tracking specification and verification, working with your developer</li>
+        <li>Creative direction and copy for all three platforms, in Malay and English</li>
+        <li>Weekly optimisation, monthly reporting, quarterly programme mix review</li>
+      </ul>
+    </div>
+    <div class="card" style="padding:20px 24px">
+      <div class="cardtitle">Quoted separately, not assumed</div>
+      <ul class="b acc-slate">
+        <li>Website rebuild, which the evidence in this document supports but which is not media scope</li>
+        <li>Video and photo production on campus</li>
+        <li>CRM selection and implementation</li>
+        <li>SEO, which we have deliberately kept out of a media plan</li>
+      </ul>
+    </div>
+  </div>
+</section>
+
+<!-- ════════ 16 · THANK YOU ════════ -->
+<div class="note">Slide 16 · Thank you. <b>Belief:</b> "A named senior operator picks up when I call."</div>
+<section class="slide">
+  <div class="wmk"><svg viewBox="0 0 1432 392"><use href="#wm"/></svg></div>
+  <div style="margin-top:150px;max-width:640px">
+    <div style="font-size:56px;font-weight:800;color:var(--blue);line-height:1.05">Thank you</div>
+    <div class="bodytext" style="font-size:16px;margin-top:18px;max-width:60ch">Fix the meter, unblock football, repair the Apply Now link. Those three cost almost nothing and address more of the problem than any budget decision in this document.</div>
+    <div style="margin-top:30px">
+      <div style="font-size:19px;font-weight:700;color:var(--ink)">Viknesh</div>
+      <div style="font-size:14px;color:var(--body);margin-top:2px">Toggle Solutions</div>
+      <div class="num" style="font-size:15px;color:var(--blue-deep);font-weight:700;margin-top:8px">+60 12 568 8681</div>
+      <div style="font-size:15px;color:var(--blue-deep);font-weight:700">hello@toggle.solutions</div>
+    </div>
+  </div>
+  <svg class="iso" viewBox="-4 -4 300 326" style="position:absolute;right:120px;top:180px;width:330px">
+    <g><polygon points="90.1,0.0 180.1,52.0 90.1,104.0 0.0,52.0"/><polygon points="180.1,104.0 225.2,130.0 135.1,182.0 90.1,156.0"/><polygon class="fill" points="180.1,104.0 90.1,156.0 90.1,104.0 180.1,52.0"/><polygon points="225.2,182.0 135.1,234.0 135.1,182.0 225.2,130.0"/><polygon points="0.0,156.0 90.1,208.0 90.1,104.0 0.0,52.0"/><polygon points="90.1,208.0 135.1,234.0 135.1,182.0 90.1,156.0"/></g>
+  </svg>
+  <div class="seal" style="position:absolute;left:64px;bottom:48px;color:var(--blue);font-size:17px"><span class="br">[&nbsp;</span>Your Digital Growth Partner<span class="br">&nbsp;]</span></div>
+  <div class="seal" style="position:absolute;right:64px;bottom:48px;color:var(--blue);font-size:17px"><span class="br">[&nbsp;</span>toggle.solutions<span class="br">&nbsp;]</span></div>
+</section>
+
+<div class="libnote">End of proposal. Internal notes above each slide do not print. Convert with <code>/html-to-pdf</code>.</div>
+
+</body>
+</html>
