@@ -4,11 +4,16 @@ platform: google-ads
 account_id: 255-593-6693
 account_name: "Google Ads account (ICMS, International University College of Management and Sports)"
 audit_date: 2026-08-19
-data_window: 2026-07-20 to 2026-08-18 (last 30 days, GMT+8 Malaysia)
+last_updated: 2026-08-22
+data_window: "Part 1: 2026-07-20 to 2026-08-18. Part 2: 2026-07-23 to 2026-08-21 (GMT+8 Malaysia)"
 currency: MYR
 auditor: Toggle Solutions
 access_level: Google Ads reports only (read-only)
-rounds: 2 (round 1 collection, round 2 verification)
+rounds: 3 (round 1 collection, round 2 verification, round 3 business and website context)
+sources:
+  - Google Ads account 255-593-6693 (live, read-only)
+  - Discovery call transcript, ICMS management (text-FD55BF683D77-1.txt)
+  - icms.edu.my (live page source inspected 2026-08-22)
 ---
 
 # Google Ads audit: ICMS (255-593-6693)
@@ -18,6 +23,8 @@ rounds: 2 (round 1 collection, round 2 verification)
 This audit covers the last 30 days of data (20 July to 18 August 2026). The account is young. The Search campaigns started on 18 July 2026, so this window is close to the full life of the account. Findings are graded by how much money they are costing right now.
 
 Two things to note before the findings. First, Toggle (media@audaura.my) was granted access on 18 August 2026 at 18:15 with the permission level "Google Ads reports only", which is read-only. None of the fixes below can be applied by us until ICMS upgrades that access to Standard or Admin. Second, several numbers in the account interface are misleading because conversion tracking is broken, and that is finding number one.
+
+> **Part 2 added 22 August 2026.** Part 1 below is the platform audit on its own. Part 2 starts at "Part 2: the business behind the account" and adds three things Part 1 did not have: refreshed numbers to 21 August, the proven root cause of the tracking failure read from the live page source, and the gap between what ICMS actually sells and what this account advertises. Read Part 2 before quoting anything to the client, because it changes the recommendation.
 
 ## Headline numbers (last 30 days)
 
@@ -277,8 +284,218 @@ Stating these plainly rather than guessing:
 - **The Working Adults campaign settings panel.** It would not open during this session. Settings above are verified on School Leavers only, and the Google recommendation about search partners suggests the two campaigns differ.
 - **Which specific conversion actions produced the 12 reported conversions.** The four local actions total 34 recorded conversions over this window, so the campaign-level figure of 12 is a subset. What is verified beyond doubt is that none of the 12 came from a lead form, because all three lead form actions report zero.
 
-## Bottom line
+## Bottom line on the account
 
 ICMS spent MYR 2,840 in 30 days and can prove zero enquiries from it. The account is not underperforming because of bids, budget, or copy. It is underperforming because the conversion tracking has never worked, the bid strategy has been optimizing against a goal Google itself marks as unusable, and one generic keyword set points at a single-programme page.
 
 The good news is that the one keyword aligned with the actual offer, "law enforcement course malaysia", delivered leads at MYR 48.87 against an account average of MYR 236.68. There is a working campaign inside this account. It needs measurement first, structure second, and only then more budget.
+
+---
+
+# Part 2: the business behind the account
+
+Added 22 August 2026. Sources for this part are the ICMS discovery call transcript, the live icms.edu.my page source, and a refreshed pull of the Google Ads account covering 23 July to 21 August 2026.
+
+## 13. Refreshed numbers: reported conversions are now zero
+
+| Metric | 20 Jul to 18 Aug | 23 Jul to 21 Aug | Change |
+|---|---|---|---|
+| Impressions | 10,592 | 10,996 | Up 404 |
+| Clicks | 752 | 793 | Up 41 |
+| CTR | 7.10% | 7.21% | Up |
+| Average CPC | MYR 3.78 | MYR 3.96 | Up MYR 0.18 |
+| Cost | MYR 2,840.13 | MYR 3,137.17 | Up MYR 297.04 |
+| Reported conversions | 12.00 | **0.00** | Down 12 |
+
+| Campaign | Cost | Clicks | Interaction rate | Avg cost | Conv | Conv rate |
+|---|---|---|---|---|---|---|
+| ICMS - DEM - Working Adults - Search | MYR 1,365.50 | 484 | 9.97% | MYR 2.82 | 0.00 | 0.00% |
+| ICMS - DEM - School Leavers - Search | MYR 1,771.68 | 309 | 5.03% | MYR 5.73 | 0.00 | 0.00% |
+| Penguatkuasaan Undang-Undang (paused) | MYR 0.00 | 0 | n/a | n/a | 0.00 | 0.00% |
+
+Shifting the window forward by three days took the account from 12 reported conversions to zero. The most likely explanation is that all 12 fell in the 20 to 22 July period that dropped out of the window, which matches the impression spike visible at the left edge of every chart in the account. Confirm this in change history before repeating it to the client, because the alternative explanation is that someone changed the goal configuration in the last three days.
+
+Either way the practical position is worse than Part 1 described. The School Leavers campaign no longer shows even the misleading local-action conversions that produced the MYR 139.90 figure. The account now reports a flat 0.00 conversions against MYR 3,137.17 of spend, and both campaigns still run Maximise conversions.
+
+Google's own account banner changed to match. It now reads "Measure conversions to get the most from your spend" with a "Get started" link, alongside "Add sitelinks to your account". Google is telling ICMS the same two things this audit found first.
+
+## 14. Root cause of the tracking failure, proven in the page source
+
+Part 1 said the tracking was broken. Reading the live page source for `https://icms.edu.my/diploma-in-enforcement-management/` on 22 August 2026 shows exactly why:
+
+| What was checked | Result |
+|---|---|
+| Google Ads tag present | Yes, `AW-18326335266` |
+| GA4 tag present | Yes, `G-K9NB9HZDHE` |
+| Meta pixel present | Yes, `connect.facebook.net` |
+| Google Tag Manager container | **None.** Tags are installed through the Google Site Kit WordPress plugin |
+| Google Ads conversion event fired anywhere on the page | **None.** `AW-18326335266` appears once, on the tag load line, with no matching `gtag('event', 'conversion', ...)` call |
+| Form technology | Contact Form 7, form ID `wpcf7-f3414-p3114-o1` |
+| Form action | `action="/diploma-in-enforcement-management/#wpcf7-f3414-p3114-o1"`, an AJAX submit that never leaves the page |
+| Thank-you page or redirect | **None.** No "thank you" or "terima kasih" URL exists |
+| `wpcf7mailsent` success event | Present, but nothing is hooked to it |
+
+The chain is now complete and provable. The Google Ads tag loads on every page and fires a page view. Nothing ever fires a conversion event. Contact Form 7 submits over AJAX, the URL never changes, and no thank-you page exists, so there is no page load for a URL-based rule to catch and no event for an event-based rule to catch.
+
+That single fact explains every symptom in Part 1. The auto-created "Page load icms.edu.my" action counts 732 conversions because a page view is the only thing the tag ever reports. All three "form submission" actions report zero because a form submission is never reported at all. Google Site Kit is also the reason those junk actions and the GA4 "Form" import appeared without anyone creating them.
+
+There is a second, separate error stacked on top. The form-submission conversion action was keyed to the single URL `https://icms.edu.my/contact-us/contact-us/`. Forms sit on **every** programme page, each with its own Contact Form 7 instance. Even if URL detection had worked, it would have watched one page out of roughly forty.
+
+**Fix, stated precisely so a developer can action it:** add a `gtag('event', 'conversion', {'send_to': 'AW-18326335266/<label>'})` call bound to the `wpcf7mailsent` event, site-wide, passing the selected programme as a parameter. That is a 30-minute job for whoever maintains the WordPress site. Building a real thank-you page is the better long-term answer because it also unlocks GA4 funnels and Meta tracking, but the event hook fixes Google Ads today.
+
+## 15. The account advertises one programme out of eight the client is selling
+
+In the discovery call, ICMS management named the programmes they are actively pushing this year:
+
+| Level | Focus programmes named by ICMS |
+|---|---|
+| Diploma | Enforcement Management, Football Studies, Sports Science, Business Administration |
+| Bachelor | Business Management, Law Enforcement |
+| Postgraduate | MBA, Master of Management, DBA and PhD |
+
+The Google Ads account advertises exactly one of these, the Diploma in Enforcement Management. Both campaigns, both ad groups, both ads and every keyword point at that one programme.
+
+This is the single largest strategic finding in the audit, and it gets worse when you look at which programme is missing.
+
+## 16. Football and sports, the flagship product, is actively blocked in Google Ads
+
+ICMS says on its own homepage that it is "the only college in Southeast Asia to offer our signature Diploma in Football Studies". The homepage tagline is "Transforming Communities through Education and Sports". In the discovery call, when asked directly what the differentiator is, management answered sports. They also reported a Meta cost per lead of **MYR 2.13** for football against **MYR 7** for enforcement management, roughly a third of the price.
+
+Here is what this Google Ads account does with that product:
+
+| Item | Status in the account |
+|---|---|
+| Keyword `diploma sukan malaysia` | **Paused** (had 2,694 impressions, the highest of any keyword) |
+| Negative keyword `bola sepak` | **Active** in the Working Adults campaign |
+| Keywords `diploma lepas spm sukan` and `diploma bola sepak malaysia` | Blocked by the account's own negatives, flagged by Google |
+| Football or sports campaign | None |
+| Football or sports ad | None |
+
+ICMS is paying Google to suppress its own flagship programme. Part 1 recorded the paused keyword and the negative conflict as housekeeping errors. With the business context they are not housekeeping, they are the account working against the commercial strategy.
+
+The opportunity is also unusually clean. Toggle's own observation in the discovery call was that nobody is bidding on football and sports diploma terms in Malaysia on Google. Combine that with a stated MYR 2.13 Meta cost per lead and a programme with a genuine "only one in Southeast Asia" claim, and this is the highest-return single action available on the account.
+
+## 17. No brand campaign, no competitor defense, no international campaign
+
+Three more absences, each tied to something the client said matters.
+
+**Brand.** The term "icms malaysia" took 24 clicks at MYR 4.69 each inside a generic campaign. There is no brand campaign. ICMS is a college fighting a perception problem, so paying MYR 4.69 to defend its own name with no dedicated budget or messaging is a straightforward loss.
+
+**Competitors.** Management named Unicom or Unikop as the direct threat: a cooperative police college with roughly 4,000 students, a large Cyberjaya campus, and a direct-mail programme to SPM leavers using envelopes that resemble PDRM correspondence. They charge a RM1,900 registration fee against ICMS at RM300. Management also stated plainly that the police association is misleading, since no study route guarantees entry to PDRM. There is no competitor conquest campaign in the account, and "city university" is the only competitor term negated.
+
+**International.** Management said roughly half of recent new enrollment is international, drawn from Bangladesh, Pakistan, Sri Lanka, India and China, with a Meta cost per lead of about MYR 19 on a Middle East test. Google Ads targets Malaysia only, so this entire half of the funnel has no search presence at all.
+
+## 18. The ad copy contradicts the website in five places
+
+Comparing the two responsive search ads against the live site:
+
+| Ad claim | What the site says | Problem |
+|---|---|---|
+| "Diploma separuh masa 2.5 tahun" (part-time, 2.5 years) | The DEM page lists only "Full-time = 2 years 6 months" | The ad sells a part-time duration equal to the site's full-time duration. Either the page is incomplete or the ad is wrong |
+| "PTPTN disediakan" | The DEM programme page never mentions PTPTN or fees | The visitor clicks a financing promise and lands on a page that does not mention financing |
+| "Yuran Berpatutan" (affordable fees) | No fee figure appears anywhere on the site | Unverifiable by the visitor, and management confirmed fees sit at the PTPTN cap of about RM21,000 like every competitor, so affordability is parity rather than a differentiator |
+| "Belajar di Kampus atau Online" (study on campus or online) | The DEM page lists no online delivery mode | Needs verification before it keeps running, because an unsupported delivery claim is a policy risk as well as a conversion killer |
+| "Ambilan 2026" plus callout "Intake Julai 2026" | Programme pages say intakes are "January, May and September" | The July intake advertised has passed, and the site contradicts it anyway |
+
+The intake story is the messiest part. The account, the site and the client give five different answers: the callout says July 2026, the disapproved lead form says August 2026, the programme pages say January, May and September, the Apply Now page sells a March 2026 intake, and management said in the call that "every month is an intake". A prospect who checks two of these sources will find them inconsistent.
+
+## 19. Ad strength is capped by two things Google has already named
+
+The responsive search ad editor rates both ads **Average** and gives a checklist. Two items are unresolved:
+
+- **"Include popular keywords in your headlines"** is not done. Google lists six popular keywords for the ad group (`diploma kemahiran`, `diploma programmes`, `without SPM diploma`, `diploma separuh masa`, `diploma kerajaan`, `diploma part time`) and marks only two of the six as used, `diploma separuh masa` and `diploma kerajaan`.
+- **"Add more sitelinks"** is not done, which independently confirms the Part 1 finding that the account has zero advertiser sitelinks.
+
+The 10 visible headlines are: "Diploma Penguatkuasaan ICMS", "Program Untuk Lepasan SPM", "Yuran Berpatutan & Diiktiraf", "Daftar Sekarang, Tempat Terhad", "Diploma Enforcement Management", "Belajar di Kampus atau Online", "Sijil Diiktiraf Kerajaan", "Kerjaya dalam Penguatkuasaan", "ICMS, Kolej Bertauliah" and "Biasiswa & Pinjaman Tersedia".
+
+Two notes on the set. "Diploma Enforcement Management" is English inside an otherwise Malay ad, which will read as filler to a Malay searcher. More importantly, not one headline carries a checkable number. The strongest, most ownable fact ICMS has is a **RM300 registration fee against Unicom's RM1,900**, and it appears in no headline, no callout, and nowhere on the website.
+
+The first three headline fields are labeled "Required" in the editor, which is Google's minimum-three requirement rather than evidence of pinning. Whether any asset is pinned could not be confirmed from the read-only view, so check it when edit access arrives, because pinning would cap ad strength on its own.
+
+## 20. The website cannot convert the traffic the account is buying
+
+| What was checked | Finding |
+|---|---|
+| "APPLY NOW" in the main navigation | Points to a **stale Career Seminar page for 28 Februari 2026**, promoting priority enrollment for the "Mac 2026" intake. It has been dead for roughly six months and is still the site-wide primary call to action |
+| WhatsApp click to chat | **None.** No `wa.me` or `api.whatsapp.com` link exists on the homepage or the programme page, confirming what management said in the call |
+| Form placement | Sits in the lower third of every programme page, below the full syllabus and entry requirements |
+| Form fields | Name, Email, Contact No, City, Programme, Message. Six fields for a first-touch enquiry |
+| Fees | Published nowhere, on any programme page |
+| Registration fee of RM300 | Published nowhere |
+| Landing page language | English by default, while 100% of the ad copy and most of the converting keywords are Malay |
+| Dedicated paid landing page | None. Paid traffic goes to a standard organic programme page |
+| GA4 ownership | Installed and unattended. Management said in the call that nobody watches it |
+
+Management described the site accurately in their own words: content gets added without a plan, nobody manages it, and there is no WhatsApp button on all pages. That assessment is correct and it is measurable. Sending Malay-language paid traffic to an English page whose main call to action links to a six-month-old seminar is enough on its own to produce a zero-conversion account, even before the tracking failure.
+
+## 21. Operations will cap paid performance even after the fixes land
+
+Three items from the discovery call that no amount of media buying will fix:
+
+1. **No CRM.** Leads land in a Google Sheet that all staff can open. A previous Sales Candy and LeadSquared subscription went unused.
+2. **No lead response SOP.** Asked how fast a lead gets called, management answered that a process existed and was never followed. For monthly intakes with short lead maturity, speed to first contact is the largest single lever on close rate.
+3. **Lead to enrolment sits at 2 to 3%,** by management's own estimate.
+
+That last number sets the arithmetic for the whole engagement, and it should go in the proposal.
+
+## 22. The volume arithmetic, stated plainly
+
+Management's stated target is roughly 600 enrollments for the calendar year against about 150 paid applications so far, with total student population around 310 falling to about 290 after graduations. Discussion in the call settled on roughly **300 additional enrollments** coming from ICMS-side marketing, with international agents covering a further chunk.
+
+At the client's own 2 to 3% lead-to-enrolment rate, 300 enrollments needs **10,000 to 15,000 leads**.
+
+| Scenario | Cost per lead | Media needed for 12,000 leads |
+|---|---|---|
+| Client's reported football CPL on Meta | MYR 2.13 | About MYR 25,600 |
+| Client's reported enforcement CPL on Meta | MYR 7.00 | About MYR 84,000 |
+| Client's reported international CPL | MYR 19.00 | About MYR 228,000 |
+| Current Google Ads, measured | No measurable leads | MYR 3,137 spent in 30 days for zero recorded leads |
+
+Management described current total digital spend as "8,000, 9,000" and called it very small, without specifying whether that figure is monthly or annual. Clarify that before pricing anything.
+
+Two warnings belong in the proposal. First, the low costs per lead quoted above come from spending roughly MYR 100 to MYR 300 a day, and they will not hold when spend scales by a factor of ten or more. Toggle already made this point in the call and should repeat it in writing rather than let the client anchor on MYR 2.13. Second, a 2 to 3% close rate is the constraint, not the media. Moving the close rate from 2% to 4% halves the media budget required for the same 300 enrollments, which makes the CRM, the response SOP and the WhatsApp route worth more than any bid adjustment in this document.
+
+## 23. Revised priority order
+
+Part 1's action plan stands, with these changes to sequence and scope.
+
+**Do first, this week, in this order:**
+
+1. Get Standard or Admin access. Everything below is blocked without it.
+2. Have the ICMS web developer bind a Google Ads conversion event to the `wpcf7mailsent` event site-wide, and verify it with Tag Assistant. This is the only item that turns the account from unmeasurable to measurable.
+3. Fix or replace the "APPLY NOW" destination. It is a six-month-stale seminar page sitting in the main navigation.
+4. Unblock football and sports. Remove `bola sepak` from the negatives, unpause `diploma sukan malaysia`, and resolve the two conflicting negatives.
+5. Pause the generic diploma keywords that have spent over MYR 80 with zero conversions.
+
+**Then, weeks 2 to 4:**
+
+6. Launch a Diploma in Football Studies campaign with its own ad group, ad and landing page. On the client's own numbers this is the cheapest lead source they have and it has no Google competition.
+7. Launch a brand campaign and pull brand terms out of the generic campaigns.
+8. Rewrite ad copy so every claim matches the site, and lead with the RM300 registration fee once it is published on the site.
+9. Add six sitelinks, structured snippets, a call asset and a WhatsApp route per campaign.
+10. Build dedicated Malay landing pages per programme with the form above the fold, three or four fields, and a real thank-you URL.
+
+**Raise with the client as scope beyond media:**
+
+11. A CRM or at minimum a WhatsApp routing tool with round-robin assignment, plus a written lead response SOP with a target time to first contact.
+12. Publishing fees and the RM300 registration fee on the site, which is the only checkable, ownable claim ICMS currently has against Unicom.
+13. A website rebuild. Toggle already framed this as a separate charge in the discovery call, and the evidence in sections 18 and 20 supports it.
+
+## What Part 2 could not verify
+
+- **Whether the drop from 12 conversions to zero came from the date shift or from a configuration change.** Check change history, filtered to the Conversion category, as soon as access allows.
+- **The actual final URL on both responsive search ads.** The display path `icms.edu.my/diploma/penguatkuasaan` does not resolve, and the real programme page is `icms.edu.my/diploma-in-enforcement-management/`. A display path is not required to be a live URL, so this is not a policy breach, but the true destination still needs reading from the ad editor.
+- **Whether any RSA asset is pinned.** The "Required" labels in the editor are Google's minimum-three requirement, not pins.
+- **Whether the "Belajar di Kampus atau Online" claim is true.** The site does not support it. Ask ICMS before this ad keeps running.
+- **Whether the reported "8,000, 9,000" digital spend is monthly or annual.**
+- **Impression share and lost impression share,** still outstanding from Part 1.
+
+## Bottom line
+
+The Google Ads account is not underperforming. It is unmeasured, and it is selling the wrong product.
+
+The tracking failure is now proven rather than suspected: the Google Ads tag sits on every page and no conversion event is ever fired, so a Contact Form 7 AJAX submit with no thank-you page can never be recorded. That is a half-day of developer work, and until it happens every number in this account is decoration.
+
+The strategic failure is larger. ICMS sells eight focus programmes and advertises one. The programme management calls their differentiator, the one their homepage claims is unique in Southeast Asia, and the one that delivers a MYR 2.13 cost per lead on Meta, is not just absent from Google Ads. It is blocked by a paused keyword and an active negative that ICMS is paying to enforce.
+
+Fix the measurement, unblock football, and repair the Apply Now link. Those three actions cost almost nothing and address more of the problem than any bidding or budget change in this document.
