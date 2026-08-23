@@ -22,6 +22,12 @@ clients/*/assets/raw/
 clients/*/assets/exports/
 clients/*/03-media/raw/
 
+# Oversized source decks handed to us by partners. They stay on local disk and
+# in Drive, linked from the client's CLIENT.md, never in git history.
+# Paths are one level deeper than the rules above because COO files its
+# sub-clients as clients/COO/<client>/.
+clients/COO/Colgate/01-strategy/COLGATE - COO Plan.pptx
+
 # Common heavy file types under clients/<x>/assets/ — preview-size only in git
 clients/*/assets/**/*.psd
 clients/*/assets/**/*.ai
