@@ -46,3 +46,7 @@ last_reviewed: 2026-06-08
 
 ## Notes
 <!-- Anything weird about this account. Quirks, politics, history. -->
+- Client-supplied account data for Aug 2025 to Jul 2026 is filed in `01-strategy/`:
+  `customer-segmentation-2025-08-to-2026-07.pdf` and
+  `multiple-app-combinations-2025-08-to-2026-07.pdf`. Use these as the input data
+  behind the Google Ads and technical SEO plans in the same folder.
