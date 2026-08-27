@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>BRU. × HWC — design system sample</title>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:ital,wght@0,400;0,700;1,400;1,700&family=Archivo+Black&family=Lexend:wght@300;400;700&family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="tokens.css">
+<style>
+  body { margin: 0; background: #e8dccb; display: flex; flex-direction: column; gap: 24px; padding: 24px; }
+  .page { width: 1000px; margin: 0 auto; box-shadow: 0 2px 12px rgba(0,0,0,.15); }
+  @media print { body { padding: 0; gap: 0; background: none; } .page { box-shadow: none; } }
+</style>
+</head>
+<body>
+
+<!-- ============ MODE A — photo / section divider ============ -->
+<section class="page page--slide page--photo"
+         style="background-image: radial-gradient(120% 120% at 70% 40%, #3a2a1a 0%, #14100b 60%, #0a0805 100%);">
+  <div class="scrim"></div>
+  <div class="photo-block">
+    <div class="section-no">01.</div>
+    <h1>Conversation</h1>
+    <div class="sub">Talkability Strategy</div>
+  </div>
+</section>
+
+<!-- ============ MODE B — statement ============ -->
+<section class="page page--slide page--statement">
+  <div class="running-header"><span class="no">01.</span>Conversation Talkability Strategy</div>
+  <div class="statement">
+    <span class="kicker">Strategy</span>
+    Develop a <mark>conversation ecosystem around every episode.</mark><br><br>
+    Instead of only publishing promotional content, we engineer reasons for audiences to
+    <mark>react, debate and share.</mark>
+  </div>
+</section>
+
+<!-- ============ MODE B — bullet list ============ -->
+<section class="page page--slide page--statement">
+  <div class="running-header"><span class="no">02.</span>Ownership BRU as an IP / Identity</div>
+  <div class="statement">
+    <span class="quiet">Now BRU can have:</span>
+    <ul>
+      <li>Own personality</li>
+      <li>Own fanbase</li>
+      <li>Merchandise space</li>
+      <li>BRU playlists</li>
+      <li>Future Collaborations &amp; etc</li>
+    </ul>
+  </div>
+</section>
+
+<!-- ============ MODE C — structured / cards ============ -->
+<section class="page page--slide page--structured">
+  <div class="dash"></div>
+  <h2 class="headline">One story. <span class="accent">Three content engines.</span></h2>
+  <p class="standfirst">Every asset ladders into one of three engines — each with a clear job, a lead platform set, and a lead pillar it serves. Nothing gets posted “just to post”.</p>
+
+  <div class="cards cards--positional">
+    <div class="card">
+      <div class="no">01</div>
+      <h3>Hype &amp; Talkability</h3>
+      <div class="label">Organic-led · serves pillar 1</div>
+      <p>Thread seeds, reaction bait, theories, memes and cast moments.</p>
+      <div class="label">Platforms</div>
+      <p>Threads · TikTok · IG · BRU account</p>
+      <div class="label">Job</div>
+      <p>Make BRU a daily topic.</p>
+    </div>
+    <div class="card">
+      <div class="no">02</div>
+      <h3>Binge Fuel</h3>
+      <div class="label">Paid-led · drives views</div>
+      <p>Episode cut-downs, cliffhangers, KOL reacts, trailers &amp; launch-day heroes.</p>
+      <div class="label">Platforms</div>
+      <p>TikTok · Reels · YouTube</p>
+      <div class="label">Job</div>
+      <p>Get episodes played and binged.</p>
+    </div>
+    <div class="card">
+      <div class="no">03</div>
+      <h3>Offer &amp; Experience</h3>
+      <div class="label">Conversion + community</div>
+      <p>Combo-offer retargets, event content, UGC amplification, character menus.</p>
+      <div class="label">Platforms</div>
+      <p>Meta retarget · Demand Gen · BRU account</p>
+      <div class="label">Job</div>
+      <p>Turn attention into subs &amp; fans.</p>
+    </div>
+  </div>
+
+  <div class="footer-bar"><span class="lead">Cadence:</span> talkability posts daily · binge fuel refreshed weekly · offer layer always-on after Jul 22.</div>
+</section>
+
+<!-- ============ MODE C — stats variant ============ -->
+<section class="page page--slide page--structured">
+  <div class="dash"></div>
+  <h2 class="headline">RM 100K — <span class="accent">every ringgit on attention.</span></h2>
+  <p class="standfirst">Budget split 45 / 30 / 25 across TikTok, Meta and Google, optimised daily to cost-per-view.</p>
+
+  <div class="split-bar">
+    <div class="seg" style="flex: 45;">45%<span class="name">TikTok</span></div>
+    <div class="seg" style="flex: 30;">30%<span class="name">Meta</span></div>
+    <div class="seg" style="flex: 25;">25%<span class="name">Google</span></div>
+  </div>
+
+  <div class="cards cards--positional">
+    <div class="card">
+      <div class="label">TikTok · 45%</div>
+      <div class="stat">RM 45K</div>
+      <p>Spark Ads + In-Feed, always-on · release-day Top Feed takeover · ~4.5M views at ~RM 0.010 CPV</p>
+    </div>
+    <div class="card">
+      <div class="label">Meta · 30%</div>
+      <div class="stat">RM 30K</div>
+      <p>Reels-first reach + engagement · combo-offer retargeting at ≥ 50% viewers · ~2.2M views</p>
+    </div>
+    <div class="card">
+      <div class="label">Google / YouTube · 25%</div>
+      <div class="stat">RM 25K</div>
+      <p>Bumpers (6s) + skippable (15s) · Demand Gen across YT, Discover &amp; Gmail · ~1.0M premium views</p>
+    </div>
+  </div>
+
+  <div class="footer-bar"><span class="lead">Reallocation:</span> reviewed weekly — spend follows the cheapest attention; no platform is guaranteed its split.</div>
+</section>
+
+<!-- ============ Component gallery ============ -->
+<section class="page page--structured" style="padding-bottom: 80px;">
+  <div class="dash"></div>
+  <h2 class="headline">Component <span class="accent">gallery.</span></h2>
+
+  <p class="standfirst">Panel pair · circle badges (photo overlays) · orange panel · timeline.</p>
+
+  <div class="panel-pair" style="margin-bottom: var(--gap);">
+    <div class="panel panel--brick">
+      <div class="no">01</div>
+      <h3>Drive Tonton Viewership</h3>
+      <p>Get 2-minute episodes played, binged, and shared. Views are the currency of the drop.</p>
+    </div>
+    <div class="plus">+</div>
+    <div class="panel panel--purple">
+      <div class="no">02</div>
+      <h3>Drive Tonton Subscriptions</h3>
+      <p>Turn attention into sign-ups — powered by demand generation and the drink + free-month combo.</p>
+    </div>
+  </div>
+
+  <div style="display:flex; gap: var(--gap); align-items:flex-start; background: var(--ink); padding: 32px; justify-content: center;">
+    <div class="circle-badge" style="--badge-size:200px">
+      <div class="no">1.</div>
+      <div class="title">Conversation</div>
+      <div class="sub">Talkability Strategy</div>
+    </div>
+    <div class="circle-badge" style="--badge-size:200px">
+      <div class="no">2.</div>
+      <div class="title">Ownership</div>
+      <div class="sub">BRU as an IP / Identity</div>
+    </div>
+    <div class="orange-panel" style="max-width:280px">
+      <h4>Before watching</h4>
+      <ul style="margin:0; padding-left:1.2em;">
+        <li>Curiosity</li>
+        <li>Trailer reactions</li>
+        <li>Character introductions</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="timeline">
+    <div class="stop"><div class="tag"><div class="when">Jul 3</div><div class="what">Proposal + access request</div></div><div class="node"></div></div>
+    <div class="stop stop--below"><div class="tag"><div class="when">Jul 4–5</div><div class="what">KOL shoot (3 videographers)</div></div><div class="node"></div></div>
+    <div class="stop"><div class="tag"><div class="when">Jul 6</div><div class="what">Accounts live · campaign kicks off</div></div><div class="node node--milestone"></div></div>
+    <div class="stop stop--below"><div class="tag"><div class="when">Jul 13</div><div class="what">Press con · BTS assets in</div></div><div class="node"></div></div>
+    <div class="stop"><div class="tag"><div class="when">Jul 22</div><div class="what">Tonton release · Top Feed takeover</div></div><div class="node node--milestone"></div></div>
+    <div class="stop stop--below"><div class="tag"><div class="when">Aug 2</div><div class="what">Meet &amp; greet · UGC amplification</div></div><div class="node"></div></div>
+    <div class="stop"><div class="tag"><div class="when">Aug 26</div><div class="what">Campaign end · final report</div></div><div class="node node--milestone"></div></div>
+  </div>
+
+  <div class="footer-bar footer-bar--flow"><span class="lead">One rule:</span> everything must feel like it moves the same story forward — never separate marketing activities.</div>
+</section>
+
+</body>
+</html>
