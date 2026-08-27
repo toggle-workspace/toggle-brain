@@ -30,6 +30,9 @@ Plus supporting zones: **`playbooks/`** (how-we-do-things runbooks), **`assets/`
 |---|---|---|
 | Build a quote (one client) | `generators/quote.md` | reads `brain/pricing/` + `clients/<slug>/CLIENT.md` + `archive/quotes/` anchors; renders print-faithful HTML |
 | Pre-generate this month's quotes for every active client | `generators/monthly-quotes.md` (`/monthly-quotes`) | batches `/quote` across the book; one ready-to-send HTML draft per client, anchored to past quotes |
+| Run a sales call | `clients/toggle/design-system/deck-master.html` | the interactive diagnostic deck. Open in a browser, press `S` to load the prospect, `N` for the script. HTML only, never exported to PPTX |
+| Prep and run the sales conversation | `playbooks/sales-play.md` | the call script: 90 minutes of pre-call research, the 30 minute structure, objections, and what never to say |
+| Check what our case studies can and cannot prove | `brain/case-studies/PROOF-GAPS.md` | drives slide 11 of the deck; update it when a case gains a client quote or verification |
 | Draft a proposal | `generators/proposal.md` | reads `brain/services/`, `brain/positioning/`, `brain/case-studies/` |
 | Write TikTok hooks | `generators/tiktok-hooks.md` | reads `brain/voice/`, `prompts/platforms/tiktok.md`, client `style-pack.md` |
 | Write a TikTok One creator brief | `/tiktok-brief-writer` global skill | enforces `brain/tiktok-one-rules.md`; writes `clients/<slug>/00-brief/` |

@@ -4,11 +4,19 @@
 
 ---
 
-## 8a — Company Deck Master (dark) — `deck-master.html`
+## 8a - Company Deck Master (dark, interactive) - `deck-master.html`
 
-**Belief:** *"A settled firm with named work — I could hand this deck to my board."*
-14 slides: Cover (step-form + new tall-block composite + seals) · Who We Are (3 pillars + 4-stat receipt row) · Problem We Solve (3 named pains + the UNITAR before-state as the cost) · We Solve This By (4-step timeline + channel-stack) · What We Do (12 services in 3 practice groups) · Why Partner (4 checkable differentiators + the honest fifth) · **5 case slides** (UNITAR, CIMB, Singlife, Al Hidayah, EduKids — every number from `brain/case-studies/_index.md`) · How We Engage (5 models + "start anywhere") · Clients (logo wall) · Close (one person, one number, loop-form).
-Rules: stat slides carry one focal blue numeral; every case stat names its client and period; the deck section nav (scope-doc item) = the watermark seal + slide numbers in Slides master. **No strikethrough in the deck** — the device budget stays with proposals (C1).
+**Belief:** *"They opened their analysis tool, not a slide deck. They already know my business."*
+
+Rebuilt 2026-08-26 as a running instrument rather than a static master, after the CEO read that our calls lack authority. The old 14-slide company profile (Cover, Who We Are, What We Do, Why Partner) is in git history. It was replaced because a company profile is a supplicant structure: every slide asks the prospect to be impressed by us.
+
+**15 slides, four acts.** Cover (we looked before we called) - Agenda (they set the order, blocks are clickable) - Pre-call findings (three fixes given away free) - **The money math** (their spend, lead cost, close rate and customer value typed in live, computed to cost per customer and annual value of the gap) - Failure modes (three, the matching one highlights itself from the inputs) - **Live scorecard** (five areas rated on the call, the verdict writes itself and names the first fix) - How we diagnose (the benchmark-outside-marketing position) - The rebuild (four steps, fixed order) - **Receipts** (all nine cases from `brain/case-studies/`, filterable by vertical, click to pin) - Case in full (the pinned case with method and transfer line) - **What we do not claim** (where our evidence runs out, generated from `brain/case-studies/PROOF-GAPS.md`) - Qualification (who we take on, who we turn down) - How we engage (five models, prices stay open) - The one decision - Leave-behind (printable, built from what was entered).
+
+**How it runs.** Arrow keys or space to move, `G` for overview, `N` for presenter notes (every slide carries the script), `S` for Call setup, `Escape` to close everything, number keys to jump. Call setup persists in the browser's local storage, so prep survives a reload. The Leave-behind button prints every slide with the call's inputs baked in.
+
+**Rules.** Every number traces to a file in `brain/case-studies/`; nothing is invented here. The improvement slider on the money slide prints an on-screen warning above 50 percent, because a reduction that size came from a structural change rather than from ad account tuning and must not be left on screen unsourced. Prices stay open on the engagement slide, and quotes come from `brain/pricing/` after the call. Colors come from `tokens.json`, with two severity values (`--warn`, `--risk`) minted here and marked in the file pending addition to the token set. **No strikethrough in the deck**, since the device budget stays with proposals (C1).
+
+**The call script that goes with it:** `playbooks/sales-play.md`.
 
 ## 8b — Free Brand Audit Master (light) — `audit-master.html`
 
