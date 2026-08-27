@@ -1,0 +1,6 @@
+# Generated. Rebuild with:
+#   python3 build/build.py && python3 build/qr.py
+# Not committed because the QR codes encode absolute URLs and are regenerated
+# whenever data/config.json baseUrl changes, so a committed copy goes stale
+# and silently disagrees with the deployed one.
+dist/

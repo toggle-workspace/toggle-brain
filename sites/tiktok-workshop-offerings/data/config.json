@@ -1,0 +1,6 @@
+{
+  "_note": "baseUrl is set after the first Pages deploy prints the real URL. bookingUrl must be the live scheduling link. Both are validated: the build FAILS on a placeholder, because a dead QR code or a dead CTA is worse than no page.",
+  "baseUrl": "https://toggle-workshop-pathways.pages.dev",
+  "bookingUrl": "https://toggle.solutions",
+  "email": "hello@toggle.solutions"
+}

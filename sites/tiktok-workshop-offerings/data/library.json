@@ -1,0 +1,107 @@
+{
+  "AI-1": {
+    "name": "AI Basics",
+    "track": "ai",
+    "line": "You get a clear picture of what these tools actually do, where they help and where they do not, so you can decide without guessing."
+  },
+  "AI-2": {
+    "name": "AI Literacy",
+    "track": "ai",
+    "line": "You learn to judge AI output, spot when it is wrong, and explain to other people what it is safe to trust it with."
+  },
+  "AI-3": {
+    "name": "Prompting and Tools",
+    "track": "ai",
+    "line": "You learn to write instructions that get usable results the first time, and which tool to open for which job."
+  },
+  "AI-4": {
+    "name": "AI Systems",
+    "track": "ai",
+    "line": "You learn to connect prompts, files and tools into a repeatable process, so the same task stops being rebuilt from scratch every time."
+  },
+  "AI-5": {
+    "name": "Agentic AI and Claude Code",
+    "track": "ai",
+    "line": "You learn to hand a whole task to an AI agent that can work with your files and tools, and to check its work before it goes out."
+  },
+  "AI-6": {
+    "name": "Generative AI",
+    "track": "ai",
+    "line": "You learn to produce images, video, voice and audio to a usable standard, and keep them consistent with how your brand already looks."
+  },
+  "AI-7": {
+    "name": "AI on a Budget",
+    "track": "ai",
+    "line": "You learn which paid tools are worth it, which free ones are enough, and how to run a proper AI setup on a small monthly spend."
+  },
+  "AI-8": {
+    "name": "Data Privacy with AI",
+    "track": "ai",
+    "line": "You learn what is safe to put into an AI tool, what is not, and how to write simple rules the whole team can follow."
+  },
+  "MK-1": {
+    "name": "Marketing Foundation",
+    "track": "mk",
+    "line": "You learn to name your audience, your offer and your message clearly, so everything you publish pulls in the same direction."
+  },
+  "MK-2": {
+    "name": "Performance Basics",
+    "track": "mk",
+    "line": "You learn how paid advertising actually works, from budgets and targeting to what a result is worth, so you can spend on purpose."
+  },
+  "MK-3": {
+    "name": "Content and Organic",
+    "track": "mk",
+    "line": "You learn to plan and produce content on a schedule you can keep, and to tell what is worth making more of."
+  },
+  "MK-4": {
+    "name": "Data and Measurement",
+    "track": "mk",
+    "line": "You learn which numbers matter, where to find them, and how to tell real movement from noise."
+  },
+  "AX-1": {
+    "name": "AI in Marketing",
+    "track": "ax",
+    "line": "You map your own marketing work and see exactly which parts AI should take over first."
+  },
+  "AX-2": {
+    "name": "AI Content and Copy",
+    "track": "ax",
+    "line": "Draft, adapt and localise marketing copy with AI doing the first pass, so your time goes on judgement instead of a blank page."
+  },
+  "AX-3": {
+    "name": "AI Creative and Visuals",
+    "track": "ax",
+    "line": "You learn to make and vary visuals and video quickly, so you can test many versions instead of betting everything on one."
+  },
+  "AX-4": {
+    "name": "AI Ads and Performance",
+    "track": "ax",
+    "line": "You learn to build, launch and read paid campaigns, with AI helping on targeting, creative variants and day to day optimisation."
+  },
+  "AX-5": {
+    "name": "AI SEO and Discovery",
+    "track": "ax",
+    "line": "You learn how people find you through search and through AI answers, and how to get your pages into those results."
+  },
+  "AX-6": {
+    "name": "AI Data and Reporting",
+    "track": "ax",
+    "line": "You learn to turn raw platform data into a clear read on what happened and what to do next, without living in spreadsheets."
+  },
+  "AX-7": {
+    "name": "AI CRM and Conversations",
+    "track": "ax",
+    "line": "You learn to handle enquiries, follow ups and customer questions with AI support, so nobody waits and nothing gets dropped."
+  },
+  "AX-8": {
+    "name": "Build Your Workflow",
+    "track": "ax",
+    "line": "You leave with your own workflow written down and running, so the training keeps paying out long after the weekend ends."
+  },
+  "AX-9": {
+    "name": "AI Dashboards, Sites and Reports",
+    "track": "ax",
+    "line": "You learn to build a working dashboard, page or report yourself, so you stop waiting on someone else to make one."
+  }
+}
