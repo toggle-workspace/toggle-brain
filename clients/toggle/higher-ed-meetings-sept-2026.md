@@ -11,11 +11,11 @@ Pre-call research for the meetings Viknesh laid out on WhatsApp. Every finding h
 
 | Date | Prospect | Meeting | Audit file |
 |---|---|---|---|
-| 2 Sept | CDC Management, Strathclyde MBA Malaysia | CEO, audit and proposal already prepared | [cdc-strathclyde](../cdc-strathclyde/00-audit/audit-2026-09.md) |
-| 2 Sept | Universiti Malaya-Wales | First meeting | [umwales](../umwales/00-audit/audit-2026-09.md) |
-| 3 Sept | University of Cyberjaya | First meeting | [university-of-cyberjaya](../university-of-cyberjaya/00-audit/audit-2026-09.md) |
-| 4 Sept | Multimedia University | First meeting | [mmu](../mmu/00-audit/audit-2026-09.md) |
-| 8 Sept | Kolej Yayasan, institution not yet confirmed | First meeting | [kolej-yayasan](../kolej-yayasan/00-audit/audit-2026-09.md) |
+| 2 Sept | CDC Management, Strathclyde MBA Malaysia | CEO, audit and proposal already prepared | [cdc-strathclyde](../cdc-strathclyde/01-strategy/audit-2026-09.md) |
+| 2 Sept | Universiti Malaya-Wales | First meeting | [umwales](../umwales/01-strategy/audit-2026-09.md) |
+| 3 Sept | University of Cyberjaya | First meeting | [university-of-cyberjaya](../university-of-cyberjaya/01-strategy/audit-2026-09.md) |
+| 4 Sept | Multimedia University | First meeting | [mmu](../mmu/01-strategy/audit-2026-09.md) |
+| 8 Sept | Kolej Yayasan, institution not yet confirmed | First meeting | [kolej-yayasan](../kolej-yayasan/01-strategy/audit-2026-09.md) |
 
 ---
 
