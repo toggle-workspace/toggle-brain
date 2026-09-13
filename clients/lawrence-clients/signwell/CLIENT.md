@@ -14,6 +14,10 @@ last_reviewed: 2026-09-13
 
 # SignWell
 
+> **Cold start? Read `README.md` in this folder first.** It carries the whole
+> engagement in one file: how it came in, what we found, what was built, the mistakes
+> already made, and how to rebuild the deck on another machine.
+
 Electronic signature platform based in Portland, Oregon, operating as Docsketch LLC
 after renaming from Docsketch. Founded 2019 by Ruben Gamez. Introduced through
 Lawrence Quan, the same partner who referred VoiceRun, except Lawrence now writes
