@@ -3,7 +3,7 @@ client: signwell
 artifact: verified data layer for the brand audit deck
 collected: 2026-09-13
 collector: Jordan, with Claude
-method: live page fetches, sitemap parsing, raw page source inspection, public web research
+method: rendered DOM in headless Chromium (full scroll) for all signup-control claims, served HTML for sitemaps and tag deployment, plus public ad libraries and web research
 status: no account access. Nothing here is SignWell first party data.
 ---
 
@@ -14,13 +14,20 @@ be traced here is an assumption and gets labeled as one on the slide.
 
 ## Method and its limits
 
-Read on 13 September 2026 by fetching live pages and reading the served HTML, plus
-`robots.txt`, `sitemap.xml` and `resources/sitemap_index.xml`. Two findings were
-confirmed visually by Jordan in a browser, marked below.
+Read on 13 September 2026. Sitemaps, `robots.txt` and tag deployment come from the
+served HTML. **Every claim about signup controls comes from the rendered DOM**, read
+in headless Chromium at 1440 x 900 with the full page scrolled so anything lazy had
+rendered.
 
-What this method cannot see: anything rendered by JavaScript after page load,
-anything behind the app login, and any account data at all. Where JavaScript could
-change the picture, it is said so.
+**The method correction that matters.** The first pass read only the served HTML and
+concluded that all six comparison pages lacked a signup control. Jordan checked them
+in a browser and four of them plainly had one. SignWell injects several of these
+controls with JavaScript, so an HTML-only reading reports them as missing. Everything
+in section 2 below is the corrected, browser-verified reading. Any earlier version of
+this file that says otherwise is wrong.
+
+What the method still cannot see: anything behind the app login, and any account data
+at all.
 
 ---
 
@@ -49,75 +56,61 @@ automated bidding is being pointed at volume rather than value.
 
 ## 2. The conversion sweep
 
-Fifteen commercial pages were fetched and their served HTML searched for signup
-machinery: the Google one click button (`btn-google`), any `<form>` element, and the
-phrases sign up free, get started, start free, try it free and create account.
+Every page below was loaded in headless Chromium at 1440 x 900, scrolled from top to
+bottom so anything lazy had rendered, then searched for every visible control whose
+destination is a signup route (`/sign_up`, `/sign_up/register`, the Google OAuth
+signup form, or the app signup upgrade path).
 
-| Page | HTML size | Google button | Forms | CTA text matches |
-|---|---|---|---|---|
-| `/docusign-alternative/` | 76 KB | 0 | 0 | 0 |
-| `/hellosign-alternative/` | 163 KB | 0 | 0 | 0 |
-| `/adobe-sign-alternative/` | 74 KB | 0 | 0 | 0 |
-| `/signnow-alternative/` | 146 KB | 0 | 0 | 0 |
-| `/dochub-alternative/` | 44 KB | 0 | 0 | 0 |
-| `/signable-alternative/` | 176 KB | 0 | 0 | 2 |
-| `/sign-pdf/` | 183 KB | 1 | 3 | 0 |
-| `/sign-documents-online/` | 227 KB | 1 | 3 | 0 |
-| `/online-signature/` | 113 KB | 0 | 0 | 0 |
-| `/online-signature/draw/` | 38 KB | 0 | 0 | 0 |
-| `/online-signature/type/` | 39 KB | 0 | 0 | 0 |
-| `/contracts/` | 74 KB | 0 | 0 | 0 |
-| `/pricing/` | 309 KB | 0 | 0 | 7 |
-| `/api/` | 104 KB | 0 | 0 | 2 |
-| `/industries/real-estate-and-property-management/` | 227 KB | 0 | 0 | 0 |
-| `/industries/healthcare/` | 128 KB | 0 | 0 | 1 |
-| `/signwell-for-startups/` | 70 KB | 0 | 0 | 0 |
+| Page | Page length | Route to signup, as rendered |
+|---|---|---|
+| `/docusign-alternative/` | 10,625 px | **None anywhere on the page** |
+| `/adobe-sign-alternative/` | 9,109 px | **None anywhere on the page** |
+| `/signnow-alternative/` | 9,486 px | "Create your free account today" in the body, plus "Sign my documents" |
+| `/signable-alternative/` | 9,564 px | "Get started for free" to `/sign_up/register/` |
+| `/hellosign-alternative/` | 9,236 px | "Sign my documents" to `/sign_up/` |
+| `/dochub-alternative/` | 6,184 px | "Sign my documents" to `/sign_up/` |
+| `/electronic-signature/` | 14,147 px | "Start for free" twice in the body, plus header |
+| `/industries/healthcare/` | 10,478 px | "Start for free, no sales call required" |
+| `/industries/real-estate-and-property-management/` | 9,001 px | **None** |
+| `/signwell-for-startups/` | 6,885 px | **None** |
+| `/sign-pdf/` | 9,397 px | Google signup form present in the DOM but hidden on arrival |
+| `/sign-documents-online/` | 7,367 px | Same, hidden Google signup form |
+| `/online-signature/` and its draw and type tools | 8,500 px | Appears only after the signature is finished |
+| `/contracts/` and its 41 templates | 17,866 px | **None** |
 
-### 2a. The comparison pages carry no signup path
+### 2a. Two comparison pages have no signup route, and they are the two biggest
 
-**Confirmed by Jordan in a browser on 13 September 2026.** `/docusign-alternative/`
-offers Log in and nothing else. Its only two HTML `<button>` elements are carousel
-arrows (`docusign-carousel-arrow--prev` and `--next`). Its only in body call to
-action reads "Reach out to us!". A full anchor dump returns nav links, footer links,
-the Perplexity and Google AI Mode deep links, and social profiles. No signup link.
+Four of the six comparison pages carry a working signup control. `/docusign-alternative/`
+and `/adobe-sign-alternative/` carry none, on pages 10,625 px and 9,109 px long.
+Confirmed both in the rendered DOM and on screen by Jordan.
 
-The same absence holds across all six comparison pages.
+Why it matters: DocuSign is the incumbent SignWell's customers are leaving and Adobe
+is the second. "docusign alternative" is among the most expensive and highest intent
+queries in the category. The fix needs no new design, because the pattern already
+exists on the SignNow, Signable, HelloSign and DocHub pages.
 
-Why this matters: "docusign alternative" is among the most expensive and highest
-intent queries in this category, and these are the pages built to win it.
+### 2b. The free tools offer signup only after the work is done
 
-### 2b. The free signature generator converts, but only at the end
+`/sign-pdf/` and `/sign-documents-online/` both carry a Google OAuth signup form
+(`/app/users/auth/google_oauth2/?origin=sign_up`) in the DOM, hidden on arrival. The
+signature generator behaves the same way, as Jordan confirmed by drawing one.
 
-**Confirmed by Jordan in a browser.** A call to action appears after clicking draw or
-type and completing a signature.
+This is deliberate and it matches SignWell's own Google ad copy: "No Account Needed
+to Sign, Free and Takes Under a Minute." So the question is not why the button is
+missing. It is whether the prompt that appears after the work fires a tracked event,
+and whether anyone retargets the people who finished a document and never took it.
 
-Verified against the HTML: `/online-signature/`, `/online-signature/draw/` and
-`/online-signature/type/` all serve zero signup buttons and zero forms. The prompt
-Jordan saw is injected by JavaScript after the user finishes the signature.
+### 2c. The contract templates offer nothing at all
 
-Two consequences. A visitor who reads and leaves without drawing never sees an
-offer. And a JavaScript element appearing that late is easy to leave untracked, so
-whether it fires a GA4 event is an open question for Henry.
+`/contracts/` runs 17,866 px and carries no signup route anywhere on it. The 41
+templates beneath it were last modified in July 2021.
 
-### 2c. Two tool pages are built to convert
+### 2d. Industry pages are inconsistent
 
-`/sign-pdf/` and `/sign-documents-online/` each serve the Google one click button
-plus three forms in the HTML. These are the only non homepage pages in the sweep
-with server rendered signup machinery.
+`/industries/healthcare/` carries a signup control. `/industries/real-estate-and-property-management/`
+carries none. Worth asking whether that is deliberate.
 
-### 2d. The contract templates offer nothing
-
-`/contracts/` serves no signup button and no form.
-
-### 2e. The main category page has no signup form either
-
-`/electronic-signature/`, titled "Free Electronic Signature Software, Simple,
-Compliant, and Affordable", is 472 KB and serves zero signup buttons and zero forms.
-The only matches for signup wording on the page sit inside customer testimonials.
-
-This is the page most likely to receive generic category traffic, paid or organic.
-
-### 2f. A caution about the ad display paths
+### 2e. A caution about the ad display paths
 
 SignWell's Google ads show display paths of `signwell.com/esignature` and
 `signwell.com/esignature/contracts`. Neither resolves: `/esignature/` returns a 404.
@@ -126,7 +119,6 @@ this proves nothing about where paid traffic actually lands. It does mean nobody
 tell from outside which pages the $20,000 a month points at, which makes it a
 question for Henry rather than a finding.
 
----
 
 ## 3. Tracking as deployed
 
