@@ -52,32 +52,49 @@ BEFORE_MTIME="$(stat -f '%m' "$DEST" 2>/dev/null || echo 0)"
 #     failure since June logged nothing at all.
 #   - perl alarm as a timeout. There is no coreutils `timeout` on this machine, and
 #     the 2026-08-01 run sat on a stalled Drive read for ~10 minutes before dying.
+#   - a retry loop around the whole attempt. The 2026-08-08 run died on
+#     "API Error: Connection closed mid-response" — the Drive doc is ~460 KB and a
+#     single dropped connection used to take the whole weekly sync down.
 TIMEOUT_SECS="${GDOC_TIMEOUT_SECS:-600}"
-RC=0
-/usr/bin/perl -e 'alarm shift; exec @ARGV or exit 127' "$TIMEOUT_SECS" \
-  "$CLAUDE_BIN" -p "$PROMPT" \
-  --allowedTools "mcp__claude_ai_Google_Drive__read_file_content" "Bash" "Read" "Write" \
-  --permission-mode bypassPermissions \
-  < /dev/null \
-  >> "$LOG_DIR/sync.log" 2>&1 || RC=$?
+TRIES="${GDOC_TRIES:-3}"
+BACKOFF_SECS="${GDOC_BACKOFF_SECS:-45}"
+
+REASON=""
+OK=0
+for attempt in $(seq 1 "$TRIES"); do
+  RC=0
+  /usr/bin/perl -e 'alarm shift; exec @ARGV or exit 127' "$TIMEOUT_SECS" \
+    "$CLAUDE_BIN" -p "$PROMPT" \
+    --allowedTools "mcp__claude_ai_Google_Drive__read_file_content" "Bash" "Read" "Write" \
+    --permission-mode bypassPermissions \
+    < /dev/null \
+    >> "$LOG_DIR/sync.log" 2>&1 || RC=$?
+
+  AFTER_MTIME="$(stat -f '%m' "$DEST" 2>/dev/null || echo 0)"
+
+  if [[ $RC -eq 142 ]]; then
+    REASON="timed out after ${TIMEOUT_SECS}s (Drive read stalled)"
+  elif [[ $RC -ne 0 ]]; then
+    REASON="rc=$RC (claude error; see output above)"
+  elif [[ ! -s "$DEST" ]]; then
+    REASON="dest missing or empty"
+  elif [[ "$AFTER_MTIME" == "$BEFORE_MTIME" ]]; then
+    REASON="claude exited 0 but $DEST was never rewritten (stale copy left in place)"
+  else
+    OK=1
+    break
+  fi
+
+  if [[ $attempt -lt $TRIES ]]; then
+    echo "[$(date '+%Y-%m-%d %H:%M:%S %z')] pull-gdoc attempt $attempt/$TRIES did not succeed: $REASON. Retrying in ${BACKOFF_SECS}s" >> "$LOG_DIR/sync.log"
+    sleep "$BACKOFF_SECS"
+  fi
+done
 
 END="$(date '+%Y-%m-%d %H:%M:%S %z')"
-AFTER_MTIME="$(stat -f '%m' "$DEST" 2>/dev/null || echo 0)"
 
-if [[ $RC -eq 142 ]]; then
-  echo "[$END] pull-gdoc FAILED: timed out after ${TIMEOUT_SECS}s (Drive read stalled)" >> "$LOG_DIR/sync.log"
-  exit 1
-fi
-if [[ $RC -ne 0 ]]; then
-  echo "[$END] pull-gdoc FAILED rc=$RC (claude error; see output above)" >> "$LOG_DIR/sync.log"
-  exit 1
-fi
-if [[ ! -s "$DEST" ]]; then
-  echo "[$END] pull-gdoc FAILED: dest missing or empty" >> "$LOG_DIR/sync.log"
-  exit 1
-fi
-if [[ "$AFTER_MTIME" == "$BEFORE_MTIME" ]]; then
-  echo "[$END] pull-gdoc FAILED: claude exited 0 but $DEST was never rewritten (stale copy left in place)" >> "$LOG_DIR/sync.log"
+if [[ $OK -ne 1 ]]; then
+  echo "[$END] pull-gdoc FAILED after $TRIES attempts: $REASON" >> "$LOG_DIR/sync.log"
   exit 1
 fi
 echo "[$END] pull-gdoc OK  bytes=$(wc -c < "$DEST" | tr -d ' ')" >> "$LOG_DIR/sync.log"
