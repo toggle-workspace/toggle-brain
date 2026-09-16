@@ -19,7 +19,7 @@ SignWell sells e-signature software through a product-led, free-trial funnel. Th
 ## Contacts
 - **Primary:** Lawrence Quan · marketing lead (runs the agency evaluation) · lawrence@signwell.com
 - **Paid media:** Henry Brown · henry@signwell.com
-- **Also referenced:** Ruben (Henry is checking with him on the free tools question)
+- **Founder:** Ruben Gamez (also founded Bidsketch). Henry is asking him whether the free tools convert to paid or take sign-ups from it.
 - **Decision-maker:** TBD, confirm whether Lawrence signs off alone
 - **Toggle side:** Jordan (lead, head of performance marketing), Zaid (AI and performance), Yi Yang (on the invite)
 
@@ -61,6 +61,13 @@ SignWell sells e-signature software through a product-led, free-trial funnel. Th
 - Start of Q4 2026: SignWell picks a partner
 
 ## Notes
+- SignWell was bootstrapped until about 1.5 years ago, with the founder, a couple of engineers, and one PM/CS person. Engineering time is the tightest constraint on anything we propose.
+- Lifecycle today: one email after sign-up and a top-bar upgrade banner. No retargeting runs anywhere.
+- Account ownership: Reddit and ChatGPT ad accounts belong to SignWell. Google Ads is controlled by Prosomo and access may not be possible. Meta and LinkedIn ownership is unknown.
+- SEO and AEO sit with a separate agency and are out of scope for us.
+- The next vertical after healthcare (Q4) is undecided. Our audit recommends accounting and bookkeeping firms.
+- Lawrence and Henry inherited Prosomo and dislike its one-page monthly PDF. They are meeting several agencies this week and next.
+- Audit: `01-strategy/2026-09-marketing-audit.md`
 - Prosomo runs the ads out of its own accounts. SignWell sees dashboards but does not own the accounts or the data. Account ownership is a selling point for us.
 - Prosomo has trouble running a change review process in GTM.
 - Technical and API buyers want clear pricing and docs, and do not want a sales call. Outbound that pushed prospects to a trial beat outbound that pushed them to sales.
