@@ -46,6 +46,8 @@ Generators are the entry points. They are *recipes Claude executes*, not content
 - `quote.md` — fully fleshed; first generator stood up. Renders print-faithful HTML (QT-195/QT-226 house format).
 - `monthly-quotes.md` — batch of `quote.md` across every active client; one ready-to-send HTML draft per client per month, anchored to past quotes.
 - `sales-trackers.md` — rolls `clients/*/CLIENT.md` + quotes into the `Sales/` trackers.
-- `proposal.md`, `tiktok-hooks.md`, `meta-ad-copy.md`, `caption.md`, `email.md`, `landing-page.md`, `image-prompt.md`, `video-prompt.md`, `monthly-report.md` — scaffolded; build out under demand.
+- `proposal.md`, `tiktok-hooks.md`, `meta-ad-copy.md`, `caption.md`, `email.md`, `landing-page.md`, `image-prompt.md`, `video-prompt.md` — scaffolded; build out under demand.
+
+Client reports are no longer a generator here — the old `monthly-report.md` was absorbed into the `/client-report` skill (`.claude/skills/client-report/`), which is the single entry point for monthly, weekly, campaign-recap, and ad-platform commentary.
 
 Don't pre-build generators no one is calling. **Build under demand.**
