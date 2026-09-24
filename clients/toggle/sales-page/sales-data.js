@@ -1,7 +1,8 @@
 /* =========================================================================
-   Toggle sales data, shared by index.html (post-audit diagnosis) and
-   profile.html (company profile). Loaded as a classic script, so CASES,
-   BOOK and STARS land on window and both pages read the same roster.
+   Toggle sales data, shared by index.html (the company profile) and
+   diagnosis.html (the post-audit page). Loaded as a classic script, so
+   CASES, BOOK, STARS and the derived counts land on window, and both
+   pages read the same roster and report the same numbers.
    Edit here once. Never copy this into a page.
    ========================================================================= */
 /* =========================================================================
@@ -79,19 +80,21 @@ const CASES = [
 
    `caseId`  pulls the full published case out of CASES above.
    `logo`    is a path under assets/logos/clients/. When present the chip and
-             the modal render the image instead of the name. No client logo
-             files exist in this repo yet, so every entry currently renders
-             typographically. Drop a file in and add the one field.
+             the modal render the image instead of the name. 43 of the rows
+             below carry one and render as a mark in the carousel; the rest
+             are in the book and in every count, and do not appear on the
+             wall. Drop a file in and add the one field.
    `proved`  is set automatically for entries with a caseId or stats.
 
    HONESTY RULE: an entry gets `line`, `stats` or `method` only where the repo
    documents it. Everything else carries `unpublished` and says so on the card.
    Fill in clients/<slug>/CLIENT.md and the card upgrades itself.
+
+   THE BOOK IS THE CLIENT LIST. Every account we claim on either page is a row
+   here, and every counter is computed from these rows (see DERIVED COUNTS at
+   the foot of this file). There is no hand-typed total to keep in step. To
+   claim another client, add the row.
    ========================================================================= */
-/* The rows only carry clients whose logo we hold and have cleared. CLIENT_COUNT
-   is the full book including the ones with no usable mark, and it is what every
-   counter on both pages reports. Raise it as the book grows. */
-const CLIENT_COUNT = 62;
 
 const BOOK = [
   /* --- published cases, full detail lives in CASES --- */
@@ -203,6 +206,47 @@ const BOOK = [
     proved: !!c
   });
 });
+
+/* =========================================================================
+   DERIVED COUNTS. Every number a counter reports on either page is computed
+   here from BOOK. Nothing below is typed by hand, so adding or removing a
+   row renumbers the hero, the authority panel and the portfolio at once.
+   ========================================================================= */
+
+/* A market string carries 2 kinds of token: a country we can name, and a
+   region we cannot resolve to one. Only the first kind may be counted as a
+   country, because a prospect who opens the rows can check it. Clients whose
+   market is recorded as a region still count as clients and as industries;
+   they just cannot add to the country figure until we record where they are. */
+const REGION_LABELS = new Set(["Global", "ASEAN", "Europe", "Southeast Asia"]);
+
+const CONTINENT_OF = {
+  "Malaysia": "Asia",
+  "Singapore": "Asia",
+  "Japan": "Asia",
+  "United Kingdom": "Europe",
+  "Poland": "Europe",
+  "United States": "North America"
+};
+
+const MARKETS = [...new Set(
+  BOOK.flatMap(b => b.m.split(" and ").map(s => s.trim()))
+)].sort();
+
+const COUNTRIES = MARKETS.filter(m => !REGION_LABELS.has(m));
+const CONTINENTS = [...new Set(COUNTRIES.map(c => CONTINENT_OF[c]).filter(Boolean))].sort();
+const VERTICALS = [...new Set(BOOK.map(b => b.v))].sort();
+
+const CLIENT_COUNT = BOOK.length;   /* the whole book, logo or not */
+
+/* WHAT THE PAGE CLAIMS. The rows above currently give 58 clients, 17
+   industries and 6 named countries. These are the figures Zaid set for the
+   profile on 2026-09-19, and they run ahead of the rows on purpose. Write the
+   missing accounts and countries into BOOK and delete this, and every counter
+   goes back to being fully derived. */
+const SHOWN_COUNTS = { clients:"60+", verticals:"17", countries:"8+" };
+const MARKET_COUNT = MARKETS.length; /* countries plus the region labels */
+const PROVED_COUNT = BOOK.filter(b => b.proved).length;
 
 /* stars floating around the constellation headline: value, label, position */
 const STARS = [

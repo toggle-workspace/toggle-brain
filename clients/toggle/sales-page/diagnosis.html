@@ -752,7 +752,7 @@ body.setup #setup{transform:none}
 <section class="sec" id="book">
   <div class="wrap">
     <div class="sechead">
-      <h2 class="h2 words"><span data-book="count">62</span> accounts. <em>The same method</em> every time.</h2>
+      <h2 class="h2 words"><span data-book="count">58</span> accounts. <em>The same method</em> every time.</h2>
       <p class="lede rv" data-d="2">Higher education, insurance, banking, healthcare, commerce and business software, across <span data-book="markets">9</span> markets.</p>
     </div>
     <div class="bookstats rv" data-d="1" id="bookstats"></div>
@@ -1143,20 +1143,20 @@ function buildRows(){
   $$(".chip-c").forEach(c => c.addEventListener("click", () => openModal(parseInt(c.dataset.b, 10))));
 }
 function buildBookStats(){
-  const verticals = new Set(BOOK.map(b => b.v));
-  const markets = new Set();
-  BOOK.forEach(b => b.m.split(" and ").forEach(m => markets.add(m.trim())));
+  /* Derived in sales-data.js from the rows. COUNTRIES excludes the region
+     labels, so the countries figure is one a prospect can check. */
   const cells = [
     [CLIENT_COUNT, "companies"],
-    [verticals.size, "industries"],
-    [markets.size, "countries"]
+    [VERTICALS.length, "industries"],
+    [COUNTRIES.length, "countries"]
   ];
   $("#bookstats").innerHTML = cells.map(([v, l]) =>
     '<div class="bookstat"><div class="v num">' + v + '</div><div class="l">' + l + "</div></div>"
   ).join("");
   /* numerals everywhere: a digit stands out in a sentence, a word does not */
   $$('[data-book="count"]').forEach(e => { e.textContent = String(CLIENT_COUNT); });
-  $$('[data-book="markets"]').forEach(e => { e.textContent = String(markets.size); });
+  $$('[data-book="markets"]').forEach(e => { e.textContent = String(MARKET_COUNT); });
+  $$('[data-book="countries"]').forEach(e => { e.textContent = String(COUNTRIES.length); });
 }
 
 /* modal */

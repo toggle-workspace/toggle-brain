@@ -59,7 +59,7 @@ Five beats, in this order, set by Zaid on 2026-08-27:
 |---|---|---|
 | 1 | `#hero` and `#who` | **Introduce Toggle.** What the firm is, the three practices, the twelve services, the named team, and the no-junior-account-manager claim made structurally. |
 | 2 | `#authority` | **Toggle is the market authority.** Four claims on the full-bleed accent panel, each with the figure that proves it and the case it traces to. |
-| 3 | `#book` | **How many clients.** 34 accounts in moving rows, clickable into cases, with the proof depth and the proof limits stated side by side. |
+| 3 | `#book` | **How many clients.** 58 accounts, the 43 with a cleared mark shown in moving rows, clickable into cases, with the proof depth and the proof limits stated side by side. |
 | 4 | `#doing`, `#math`, `#engage` | **What Toggle will do for you.** The fixed four-step method, what it is worth in their own numbers, and the five ways to start. |
 | 5 | `#bant` | **Are they ready.** Budget, Authority, Need and Timing, answered on screen, scored live. |
 
@@ -97,15 +97,17 @@ Both were cut from the supplied files, which arrived on baked white with no alph
 
 ## The book (the client rows)
 
-Three horizontal rows scroll in alternating directions, one chip per account. Hover a row and it stops, so a moving name is still clickable. Click any name and a modal opens with that account's case. Arrow keys move between accounts inside the modal, Escape closes it.
+Seven horizontal rows scroll in alternating directions, one chip per account. Hover a row and it stops, so a moving name is still clickable. Click any name and a modal opens with that account's case. Arrow keys move between accounts inside the modal, Escape closes it.
 
 The roster is the `BOOK` array in `sales-data.js`. Each entry either carries a `caseId` that pulls a published case out of `CASES`, or its own fields.
 
-**The honesty rule this section runs on:** an entry gets a `line`, `stats` or `method` only where this repo documents it. Everything else falls through to a card that says there is no published result, because a client wall that implies a result for every name is the kind of thing a prospect checks. 9 of the 34 currently have a published result. Fill in a client's `CLIENT.md` and write the case into `brain/case-studies/`, and the card upgrades itself.
+**The honesty rule this section runs on:** an entry gets a `line`, `stats` or `method` only where this repo documents it. Everything else falls through to a card that says there is no published result, because a client wall that implies a result for every name is the kind of thing a prospect checks. 9 of the 58 currently have a published result. Fill in a client's `CLIENT.md` and write the case into `brain/case-studies/`, and the card upgrades itself.
 
-The four counters above the rows and the count in the headline are computed from `BOOK` at load, so adding or removing an account renumbers everything. Quantities render as numerals (34, not "thirty four") everywhere on both pages, because a digit stands out in a sentence and a spelled-out word does not.
+The counters above the rows and the count in the headline are computed from `BOOK` at load by the DERIVED COUNTS block at the foot of `sales-data.js`, so adding or removing an account renumbers both pages at once. Nothing is typed by hand. Quantities render as numerals (58, not "fifty eight") everywhere on both pages, because a digit stands out in a sentence and a spelled-out word does not.
 
-**Logos.** There are none in this repo yet, so every chip renders the client name typographically. See `assets/logos/clients/README.md` for how to drop a real logo in, which is one field per client and no other change. Get permission before you add one.
+**Countries are counted separately from markets.** A client's `m` field holds either a country we can name or a region we cannot resolve to one. `COUNTRIES` excludes the region labels `Global`, `ASEAN` and `Europe`, so the profile's countries figure is 6 and is one a prospect can verify by opening the rows. `MARKET_COUNT` keeps all 9 tokens and is what the diagnosis page reports, where the word used is "markets". Do not report a region as a country. If you learn where a `Europe` or `Global` client actually is, put the country in `m` and the figure rises on its own.
+
+**Logos.** 43 of the 58 rows carry one and render as a mark. The other 15 are in the book and in every count, and do not appear on the wall, because a partial set renders as bare text chips among the marks. See `assets/logos/clients/README.md` for how to drop a real logo in, which is one field per client and no other change. Get permission before you add one.
 
 ## Editing content
 
