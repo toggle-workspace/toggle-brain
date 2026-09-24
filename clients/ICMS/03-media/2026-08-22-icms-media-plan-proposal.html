@@ -2,120 +2,202 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<title>ICMS Advertising Plan (Toggle Solutions)</title>
+<title>ICMS Advertising Plan (Audaura Digital)</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
 <style>
+/* ─────────────────────────────────────────────────────────────────────────────
+   Cerulean (better-design.com/design-systems/cerulean), internal codename
+   "Command Noir". Tokens verbatim from the deployed registry
+   /registry/cerulean/globals.json, cross-checked against the rendered page.
+   Dark-only: its light and dark cssVars blocks are byte-identical.
+   Cerulean defines no type scale, no weights and no spacing scale, so those
+   are set here and are NOT part of the source system.
+   ───────────────────────────────────────────────────────────────────────── */
 :root{
-  --blue:#4A7BF7; --ink:#0F0F0F; --navy:#0A1224; --card:#F2F3F6; --callout:#DDE5FE;
-  --body:#4A4A4A; --caption:#9AA0A8; --struck:#6B7280; --teal:#2ECC9B; --pink:#F59EC9;
-  --purple:#8E6BE6; --orange:#F28B4C; --slate:#2C2C36; --paper:#FAFAFA; --border:#E4E6EE; --blue-deep:#3056C9;
+  --background:oklch(0.145 0.004 250);
+  --foreground:oklch(0.97 0.003 250);
+  --card-bg:oklch(0.185 0.005 252);
+  --popover:oklch(0.205 0.006 252);
+  --primary:oklch(0.56 0.142 248);
+  --primary-foreground:oklch(0.985 0.006 240);
+  --secondary:oklch(0.225 0.006 252);
+  --secondary-foreground:oklch(0.82 0.004 250);
+  --muted:oklch(0.205 0.006 252);
+  --muted-foreground:oklch(0.62 0.006 250);
+  --accent:oklch(0.255 0.012 240);
+  --destructive:oklch(0.62 0.2 22);
+  --border:oklch(1 0 0 / 0.16); /* deviation: source 0.07 composites to 1.19:1 on card and closes up under dot gain */
+  --input:oklch(0.17 0.005 252);
+  --ring:oklch(0.7 0.122 233 / 0.55);
+
+  /* Chart ramp. DELIBERATE DEVIATION from Cerulean, which derives this ramp
+     downward from --primary (L 0.56 to 0.20). Those lower steps measure
+     1.04:1 to 2.00:1 against --card, which is fine for large chart fills but
+     invisible when the deck uses them as 5px rules, 5px bullets and 11px
+     legend swatches. Re-authored upward on the same hue so every step clears
+     3:1 on both --background and --card. Measured, lightest to darkest:
+     9.38 / 7.03 / 5.15 / 3.77 / 3.12 against --card. */
+  --chart-1:oklch(0.78 0.115 248);
+  --chart-2:oklch(0.70 0.128 248);
+  --chart-3:oklch(0.62 0.140 248);
+  --chart-4:oklch(0.545 0.145 248);
+  --chart-5:oklch(0.50 0.136 248);
+
+  --radius:0.5rem;
+  --radius-sm:calc(var(--radius) - 4px);
+  --radius-md:calc(var(--radius) - 2px);
+  --radius-lg:var(--radius);
+  --radius-xl:calc(var(--radius) + 4px);
+
+  --shadow-md:0 0 0 0.5px oklch(1 0 0 / 0.07), 0 6px 18px oklch(0 0 0 / 0.5);
+  --shadow-lg:0 0 0 0.5px oklch(1 0 0 / 0.08), 0 14px 36px oklch(0 0 0 / 0.55);
+  --shadow-well:inset 0 1px 1px oklch(0 0 0 / 0.5), inset 0 -1px 0 oklch(1 0 0 / 0.03);
+  --accent-fill:linear-gradient(180deg, oklch(0.50 0.142 248) 0%, oklch(0.44 0.138 248) 100%); /* deviation: source 0.58>0.50 gave 4.09:1 under near-white type */
+  --shadow-accent:0 0 0 0.5px oklch(0.78 0.13 233 / 0.7), inset 0 1px 0 oklch(1 0 0 / 0.2), 0 1px 3px oklch(0 0 0 / 0.5), 0 0 12px oklch(0.7 0.122 233 / 0.28);
+
+  /* Deck aliases: the slide markup addresses these names. */
+  --ink:var(--foreground); --body:var(--secondary-foreground); --caption:var(--muted-foreground);
+  --card:var(--card-bg); --callout:var(--accent); --struck:var(--muted-foreground);
+  --blue:var(--primary); --blue-deep:var(--secondary);
+  --teal:var(--chart-2); --slate:var(--chart-3); --orange:var(--chart-4);
+  --purple:var(--chart-5); --paper:var(--card-bg);
 }
 *{box-sizing:border-box}
-body{background:#E9EBF1;margin:0;padding:40px 0 80px;font-family:"Inter Tight",Inter,-apple-system,"Segoe UI",sans-serif;color:var(--ink)}
-.dochead{max-width:1280px;margin:0 auto 12px;font-size:14px;color:#555}
-.dochead strong{color:var(--ink)}
-.note{max-width:1280px;margin:36px auto 10px;font-size:13px;font-weight:500;color:#667}
-.note b{color:var(--blue)}
-.slide{width:1280px;height:720px;background:#fff;margin:0 auto;position:relative;padding:52px 64px;box-shadow:0 2px 18px rgba(10,18,36,.14);overflow:hidden}
+body{background:var(--background);margin:0;padding:40px 0 80px;
+  font-family:"Geist Mono",ui-monospace,"SF Mono","Fira Code","Roboto Mono",Menlo,Consolas,monospace;
+  color:var(--foreground);letter-spacing:-.005em}
+.dochead{max-width:1280px;margin:0 auto 12px;font-size:13px;color:var(--muted-foreground)}
+.dochead strong{color:var(--foreground)}
+.note{max-width:1280px;margin:36px auto 10px;font-size:12.5px;font-weight:400;color:var(--muted-foreground)}
+.note b{color:var(--primary)}
+.slide{width:1280px;height:720px;background:var(--background);margin:0 auto;position:relative;
+  padding:52px 64px;border:1px solid var(--border);border-radius:var(--radius-lg);
+  box-shadow:var(--shadow-lg);overflow:hidden}
 .num{font-variant-numeric:tabular-nums}
-.watermark{position:absolute;top:30px;right:64px;font-size:13px;font-weight:500;color:var(--caption);letter-spacing:.02em}
-.h1{font-size:36px;font-weight:800;color:var(--blue);margin:0 0 8px;line-height:1.08}
-.kicker{font-size:15px;color:var(--body);margin:0 0 26px;max-width:none;line-height:1.45}
-.pill{display:inline-block;background:var(--blue-deep);color:#fff;font-weight:700;font-size:17px;border-radius:999px;padding:8px 24px;vertical-align:middle;margin-left:14px}
-.band{position:absolute;left:64px;right:64px;bottom:40px;background:var(--blue-deep);color:#fff;font-weight:700;font-size:14px;text-align:center;border-radius:8px;padding:12px 18px}
-.grid{display:grid;gap:18px}
+.watermark{position:absolute;top:32px;right:64px;font-size:11px;font-weight:500;color:var(--muted-foreground);letter-spacing:.13em;text-transform:uppercase}
+.h1{font-size:33px;font-weight:600;color:var(--foreground);margin:0 0 8px;line-height:1.14;letter-spacing:-.02em}
+.kicker{font-size:14px;font-weight:400;color:var(--secondary-foreground);margin:0 0 26px;max-width:none;line-height:1.5}
+.pill{display:inline-block;background:var(--accent-fill);color:var(--primary-foreground);font-weight:600;font-size:16px;
+  border-radius:999px;padding:8px 22px;vertical-align:middle;margin-left:14px;box-shadow:var(--shadow-accent)}
+.band{position:absolute;left:64px;right:64px;bottom:40px;background:var(--accent-fill);color:var(--primary-foreground);
+  font-weight:600;font-size:13.5px;text-align:center;border-radius:var(--radius-lg);padding:12px 18px;box-shadow:var(--shadow-accent)}
+.grid{display:grid;gap:16px}
 .cols2{grid-template-columns:1fr 1fr}.cols3{grid-template-columns:1fr 1fr 1fr}.cols4{grid-template-columns:repeat(4,1fr)}
-.card{background:var(--card);border-radius:10px;padding:22px}
-.callout{background:var(--callout);border-radius:10px;padding:22px}
-.topbar{position:relative;padding-top:28px}
-.topbar::before{content:"";position:absolute;top:0;left:0;right:0;height:7px;border-radius:10px 10px 0 0;background:var(--blue)}
-.topbar.t-teal::before{background:var(--teal)}.topbar.t-pink::before{background:var(--pink)}
-.topbar.t-purple::before{background:var(--purple)}.topbar.t-slate::before{background:var(--slate)}
-.topbar.t-orange::before{background:var(--orange)}
-.stripe{position:relative;padding-left:28px}
-.stripe::before{content:"";position:absolute;left:0;top:0;bottom:0;width:6px;border-radius:10px 0 0 10px;background:var(--blue)}
-.stripe.s-teal::before{background:var(--teal)}.stripe.s-pink::before{background:var(--pink)}
-.stripe.s-orange::before{background:var(--orange)}.stripe.s-purple::before{background:var(--purple)}
-.stripe.s-slate::before{background:var(--slate)}
-.stat{font-size:42px;font-weight:800;color:var(--blue);line-height:1}
-.stat.inkstat{color:var(--ink)}
-.statlabel{font-size:14.5px;font-weight:700;color:var(--ink);margin-top:10px}
-.statcap{font-size:13px;color:var(--body);margin-top:5px;line-height:1.42}
-.cardtitle{font-size:16.5px;font-weight:700;margin:0 0 5px}
-.bodytext{font-size:13.5px;color:var(--body);line-height:1.5}
+.card{background:var(--card-bg);border:1px solid var(--border);border-radius:var(--radius-lg);padding:21px;box-shadow:var(--shadow-md)}
+.callout{background:var(--accent);border:1px solid var(--border);border-radius:var(--radius-lg);padding:21px;box-shadow:var(--shadow-md)}
+.topbar{position:relative;padding-top:27px}
+.topbar::before{content:"";position:absolute;top:0;left:0;right:0;height:5px;border-radius:var(--radius-lg) var(--radius-lg) 0 0;background:var(--primary)}
+.topbar.t-teal::before{background:var(--chart-2)}
+.topbar.t-purple::before{background:var(--chart-5)}.topbar.t-slate::before{background:var(--chart-3)}
+.topbar.t-orange::before{background:var(--chart-4)}
+.stripe{position:relative;padding-left:27px}
+.stripe::before{content:"";position:absolute;left:0;top:0;bottom:0;width:5px;border-radius:var(--radius-lg) 0 0 var(--radius-lg);background:var(--primary)}
+.stripe.s-teal::before{background:var(--chart-2)}
+.stripe.s-orange::before{background:var(--chart-4)}.stripe.s-purple::before{background:var(--chart-5)}
+.stripe.s-slate::before{background:var(--chart-3)}
+.stat{font-size:38px;font-weight:600;color:var(--primary);line-height:1;letter-spacing:-.03em}
+.stat.inkstat{color:var(--foreground)}
+.display{font-weight:600;letter-spacing:-.03em}
+.statlabel{font-size:13.5px;font-weight:600;color:var(--foreground);margin-top:10px}
+.statcap{font-size:12.5px;font-weight:400;color:var(--muted-foreground);margin-top:5px;line-height:1.45}
+.callout .statcap{color:var(--secondary-foreground)} /* muted on accent is 4.33:1 */
+.cardtitle{font-size:15.5px;font-weight:600;color:var(--foreground);margin:0 0 5px}
+.bodytext{font-size:12.5px;font-weight:400;color:var(--secondary-foreground);line-height:1.55}
 ul.b{margin:10px 0 0;padding:0;list-style:none}
-ul.b li{font-size:13px;color:var(--body);line-height:1.42;padding:4px 0 4px 15px;position:relative}
-ul.b li::before{content:"";position:absolute;left:0;top:10px;width:6px;height:6px;border-radius:50%;background:var(--blue)}
-.acc-teal ul.b li::before{background:var(--teal)}.acc-pink ul.b li::before{background:var(--pink)}
-.acc-slate ul.b li::before{background:var(--slate)}.acc-orange ul.b li::before{background:var(--orange)}
-.acc-purple ul.b li::before{background:var(--purple)}
-.chip{float:right;background:#fff;border:1.5px solid var(--blue);color:var(--ink);font-weight:700;font-size:12.5px;border-radius:8px;padding:5px 9px;text-align:center;line-height:1.2}
-.acc-teal .chip{border-color:var(--teal)}.acc-pink .chip{border-color:var(--pink)}
-.acc-slate .chip{border-color:var(--slate)}.acc-orange .chip{border-color:var(--orange)}
-.seal{font-weight:700;letter-spacing:.01em}
-.seal .br{font-weight:400}
-table.dt{width:100%;border-collapse:collapse;font-size:13px}
-table.dt th{background:var(--blue-deep);color:#fff;font-weight:700;text-align:left;padding:10px 13px}
+ul.b li{font-size:12.5px;font-weight:400;color:var(--secondary-foreground);line-height:1.5;padding:4px 0 4px 15px;position:relative}
+ul.b li::before{content:"";position:absolute;left:0;top:10px;width:5px;height:5px;border-radius:var(--radius-sm);background:var(--primary)}
+.acc-teal ul.b li::before{background:var(--chart-2)}
+.acc-slate ul.b li::before{background:var(--chart-3)}.acc-orange ul.b li::before{background:var(--chart-4)}
+.acc-purple ul.b li::before{background:var(--chart-5)}
+.chip{float:right;background:var(--secondary);border:1px solid var(--border);color:var(--foreground);font-weight:600;font-size:12px;
+  border-radius:var(--radius-md);padding:5px 9px;text-align:center;line-height:1.2;box-shadow:var(--shadow-well)}
+.acc-teal .chip{border-color:var(--chart-2)}
+.acc-slate .chip{border-color:var(--chart-3)}.acc-orange .chip{border-color:var(--chart-4)}
+.seal{font-size:12px;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:var(--muted-foreground)}
+.lockup{font-size:18px;font-weight:600;color:var(--foreground);letter-spacing:-.02em}
+.lockup span{font-weight:400;color:var(--muted-foreground);letter-spacing:.02em;margin-left:7px}
+table.dt{width:100%;border-collapse:separate;border-spacing:0;font-size:12.5px;
+  border:1px solid var(--border);border-radius:var(--radius-lg);overflow:hidden}
+table.dt th{background:var(--secondary);color:var(--foreground);font-weight:600;text-align:left;padding:10px 13px;
+  border-bottom:1px solid var(--secondary-foreground)}
 table.dt th.r,table.dt td.r{text-align:right}
-table.dt td{padding:9px 13px;color:var(--body);vertical-align:top}
-table.dt tr:nth-child(even) td{background:var(--card)}
-table.dt td.k{color:var(--blue-deep);font-weight:700}
-table.dt td.head{color:var(--ink);font-weight:700}
-table.dt tr.total td{background:var(--callout);color:var(--ink);font-weight:700;border-top:2px solid var(--blue-deep)}
-table.dt.dense{font-size:12px}
+table.dt td{padding:9px 13px;font-weight:400;color:var(--secondary-foreground);vertical-align:top;border-bottom:1px solid var(--border)}
+table.dt tr:last-child td{border-bottom:0}
+table.dt tr:nth-child(even) td{background:var(--accent)}
+table.dt td.k{color:var(--secondary-foreground);font-weight:600} /* primary at 11.5px measured 4.02:1 */
+table.dt td.head{color:var(--foreground);font-weight:600}
+table.dt tr.total td{background:var(--secondary);color:var(--foreground);font-weight:600;border-top:1px solid var(--secondary-foreground)}
+table.dt.dense{font-size:12.5px} /* 11.5px reversed mono plugs under dot gain */
 table.dt.dense th{padding:6px 12px}
 table.dt.dense td{padding:4px 12px}
-.ncircle{display:inline-flex;width:32px;height:32px;border-radius:50%;background:var(--blue-deep);color:#fff;font-weight:700;font-size:13px;align-items:center;justify-content:center;flex:none}
-.wmk{height:32px;color:var(--ink)}
-.wmk svg{height:100%;width:auto;display:block}
-.iso polygon{fill:none;stroke:var(--blue);stroke-width:1.5;stroke-linecap:butt;stroke-linejoin:miter}
-.iso polygon.fill{fill:var(--blue)}
-.struck{color:var(--struck);text-decoration:line-through;text-decoration-thickness:.12em}
-.splitbar{display:flex;height:38px;border-radius:8px;overflow:hidden;margin-top:6px}
-.splitbar div{display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:13.5px}
-.legend{display:flex;gap:22px;margin-top:10px;font-size:12.5px;color:var(--body);font-weight:500}
+.ncircle{display:inline-flex;width:30px;height:30px;border-radius:50%;background:var(--accent-fill);color:var(--primary-foreground);
+  font-weight:600;font-size:12.5px;align-items:center;justify-content:center;flex:none;box-shadow:var(--shadow-accent)}
+.ncircle.quiet{background:var(--secondary);color:var(--secondary-foreground);box-shadow:var(--shadow-well)}
+.ladder text{font-family:"Geist Mono",ui-monospace,monospace;font-size:12.5px;font-weight:500;fill:var(--secondary-foreground)}
+.ladder .cap{font-size:10.5px;letter-spacing:.12em;fill:var(--muted-foreground)}
+.ladder rect{rx:var(--radius-lg)}
+.ladder .r1{fill:var(--chart-3)}.ladder .r2{fill:var(--chart-2)}.ladder .r3{fill:var(--chart-1)}
+.ladder line{stroke:var(--border)}
+.struck{color:var(--muted-foreground);text-decoration:line-through;text-decoration-thickness:.12em}
+.splitbar{display:flex;height:36px;border-radius:var(--radius-lg);overflow:hidden;margin-top:6px;border:1px solid var(--border)}
+.splitbar div{display:flex;align-items:center;justify-content:center;color:var(--background);font-weight:600;font-size:13px}
+.legend{display:flex;gap:20px;margin-top:10px;font-size:12px;color:var(--muted-foreground);font-weight:400}
 .legend span{display:flex;align-items:center;gap:7px}
-.legend i{width:12px;height:12px;border-radius:3px;display:inline-block}
-.tag{display:inline-block;font-size:11.5px;font-weight:700;color:var(--ink);background:#fff;border:1.5px solid var(--border);border-radius:6px;padding:3px 8px;margin:0 5px 5px 0}
-.libnote{max-width:1280px;margin:64px auto 8px;padding-top:24px;border-top:2px solid #cfd3e0;font-size:15px;font-weight:700;color:#444}
+.legend i{width:11px;height:11px;border-radius:var(--radius-sm);display:inline-block;box-shadow:0 0 0 1px var(--muted-foreground)}
+.tag{display:inline-block;font-size:11px;font-weight:500;color:var(--secondary-foreground);background:var(--secondary);
+  border:1px solid var(--border);border-radius:var(--radius-md);padding:3px 8px;margin:0 5px 5px 0}
+.libnote{max-width:1280px;margin:64px auto 8px;padding-top:24px;border-top:1px solid var(--border);font-size:14px;font-weight:600;color:var(--muted-foreground)}
 @page{size:1280px 720px;margin:0}
-@media print{*{-webkit-print-color-adjust:exact;print-color-adjust:exact}body{background:#fff;padding:0}.note,.dochead,.libnote{display:none}.slide{box-shadow:none;page-break-after:always}.slide:last-of-type{page-break-after:auto}}
+@media print{
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:var(--background);padding:0}
+  .note,.dochead,.libnote{display:none}
+  .slide{box-shadow:none;border:1px solid var(--border);border-radius:0;page-break-after:always}
+  .slide:last-of-type{page-break-after:auto}
+  /* the outer glow term prints as a muddy halo on many RIPs */
+  .pill,.band,.ncircle{box-shadow:none}
+  /* a 1152px-wide low-delta gradient bands badly in PDF-to-print */
+  .pill,.band{background:oklch(0.47 0.140 248)}
+  .ncircle{background:oklch(0.47 0.140 248)}
+  .ncircle.quiet{background:var(--secondary)}
+}
 </style>
 </head>
 <body>
 
-<svg style="display:none" xmlns="http://www.w3.org/2000/svg"><symbol id="wm" viewBox="0 0 1432 392"><path fill="currentColor" d="M1166.39 1.57487C1166.39 2.43389 1157.45 54.1188 1146.44 116.398C1135.43 178.678 1126.5 232.081 1126.5 234.944C1126.5 238.667 1127.77 241.244 1130.64 243.964C1134.47 247.4 1136.07 247.686 1147.4 247.686C1154.42 247.686 1160 247.973 1160 248.545C1160 249.261 1152.82 290.351 1151.23 298.799C1150.43 302.807 1149.63 303.523 1142.77 304.812C1120.27 309.107 1090.59 307.818 1072.88 301.948C1061.55 298.083 1049.75 288.347 1044.96 278.898C1041.61 272.169 1041.13 269.162 1041.29 254.129C1041.29 239.239 1044.16 221.486 1062.35 119.119C1074 54.4051 1083.41 1.00218 1083.41 0.715838C1083.41 0.286342 1102.08 0 1124.9 0C1154.26 0 1166.39 0.429496 1166.39 1.57487Z"/>
-<path fill="currentColor" d="M140.413 21.6189C140.413 22.9074 133.871 60.8478 131.637 72.5879L130.68 77.3125H155.571C171.527 77.3125 180.303 77.8852 180.303 78.7442C180.303 80.6054 172.485 125.418 171.527 129.856C170.73 133.006 170.091 133.149 145.678 133.436L120.787 133.865L111.533 186.123C101.321 243.821 101.002 246.971 104.672 248.259C106.108 248.689 116.798 249.118 128.606 249.118C148.391 249.118 150.146 249.261 149.349 251.552C148.87 252.984 146.636 265.583 144.243 279.614L139.775 305.241L100.523 304.669C66.058 304.096 60.1543 303.666 50.8998 300.946C30.7951 295.076 20.7428 285.054 17.7113 268.017C15.7965 256.849 16.4348 250.693 27.7636 187.411C32.7099 160.209 36.6989 136.872 36.6989 135.44C36.6989 133.436 34.3055 133.149 18.3495 133.149C6.86114 133.149 0 132.577 0 131.718C0 129.856 7.81846 85.0438 8.93536 80.4623C9.57368 77.4557 10.2118 77.3125 28.5613 77.3125H47.3895L51.0594 56.839C52.974 45.6716 55.2078 32.7862 56.1653 28.2047L57.7609 20.044H99.087C127.01 20.044 140.413 20.4735 140.413 21.6189Z"/>
-<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M644.145 113.964C646.698 121.409 647.177 121.839 651.644 121.409L656.59 120.98L660.42 99.0745L664.09 77.3125H746.742L745.944 80.4623C745.475 82.2857 737.196 129.18 727.258 185.472L727.255 185.487L726.637 188.986C716.585 246.827 707.49 297.367 706.692 301.376C696.321 347.19 666.643 375.109 614.945 387.565C600.585 391.001 596.596 391.287 568.832 391.43C535.803 391.43 524.475 389.856 504.53 382.697C476.287 372.675 457.619 354.779 450.758 331.155C449.481 326.717 448.364 321.42 448.364 319.702V316.409H530.697L533.57 322.135C538.995 333.16 551.44 338.457 572.023 338.457C594.841 338.457 609.042 331.298 618.136 315.12C622.923 306.816 624.678 300.517 628.827 277.036C632.656 254.988 632.656 254.845 628.029 254.845C625.157 254.845 622.764 256.993 617.658 264.008C598.032 291.21 566.599 302.521 529.421 295.649C488.414 288.061 463.363 258.711 459.693 213.612C456.023 167.654 470.862 127.136 501.657 99.3609C512.029 90.0547 517.294 86.6186 528.145 81.894C552.078 71.5856 578.246 69.5813 600.585 76.1671C621.009 82.1803 638.241 97.2133 644.145 113.964ZM546.813 171.09C552.078 155.627 566.598 141.596 582.235 137.015C586.224 135.726 593.564 134.724 598.51 134.724C624.519 134.438 641.911 149.041 644.145 173.094C646.538 198.865 632.656 223.204 610.318 232.081C599.308 236.519 579.842 236.662 569.63 232.367C560.535 228.644 553.355 222.202 548.568 213.611C545.377 207.885 544.898 204.592 544.898 191.849C544.898 183.545 545.855 174.239 546.813 171.09Z"/>
-<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M936.619 113.535C939.172 120.121 940.129 120.98 944.437 121.409C947.15 121.696 949.384 121.409 949.384 120.693C949.384 118.975 955.606 84.3279 956.564 80.4623L957.361 77.3125H998.049C1022.14 77.3125 1038.74 77.8852 1038.74 78.6011C1038.74 83.612 999.805 300.803 997.252 309.966C981.934 364.944 930.077 394.294 852.849 391.86C824.448 390.858 808.013 387.565 788.866 379.261C762.06 367.521 746.423 348.622 741.317 321.706L740.2 316.409H823.331L825.086 320.417C827.16 325.142 833.862 331.728 839.447 334.448C846.946 337.884 863.859 339.459 875.347 337.884C902.154 334.019 913.004 321.276 919.865 285.913L920.913 280.423C924.752 260.328 925.594 255.922 923.993 255.023C923.544 254.771 922.904 254.794 922.084 254.823C921.792 254.834 921.478 254.845 921.141 254.845C917.471 254.845 915.876 256.277 911.887 262.29C909.334 266.299 903.111 273.171 898.165 277.609C861.785 310.539 794.61 301.805 767.485 260.715C749.454 233.369 746.582 189.416 760.464 150.044C770.198 122.555 788.547 99.7904 812.64 85.7596C833.383 73.5901 864.816 69.1518 889.548 74.7354C910.451 79.46 929.439 95.0658 936.619 113.535ZM853.807 149.614C830.99 171.805 830.83 211.607 853.169 227.213C862.423 233.655 869.125 235.517 882.368 235.517C902.632 235.373 918.908 226.64 928.321 210.891C934.863 199.724 936.778 192.565 936.778 178.821C936.778 163.358 933.427 154.482 924.013 146.035C912.206 135.44 893.697 131.717 876.784 136.585C866.412 139.592 860.987 142.598 853.807 149.614Z"/>
-<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M1352.75 76.883C1402.69 89.7684 1431.42 126.563 1431.26 177.246C1431.1 184.977 1430.3 194.999 1429.18 199.724L1427.11 208.314L1341.26 208.744L1255.26 209.03L1256.38 218.05C1257.65 228.931 1263.72 240.814 1270.74 245.539C1288.61 257.708 1324.99 254.272 1336.64 239.239L1341.1 233.512L1381.47 233.369C1406.52 233.369 1421.68 233.942 1421.68 234.801C1421.68 235.517 1419.93 240.385 1417.85 245.396C1401.1 285.197 1356.26 309.107 1298.34 309.25C1233.4 309.25 1190.32 279.327 1179.15 226.211C1176.92 215.759 1176.92 188.7 1179.31 176.53C1187.13 133.579 1212.82 101.508 1253.03 84.3279C1278.56 73.4469 1301.53 70.5835 1336 73.8764C1340.47 74.3059 1348.12 75.5944 1352.75 76.883ZM1263.08 161.354C1269.14 143.601 1284.14 129.999 1301.53 125.991C1311.59 123.843 1325.79 125.561 1333.92 129.999C1342.38 134.581 1349.08 145.319 1350.68 157.059L1351.79 164.647H1261.96L1263.08 161.354Z"/>
-<path fill="currentColor" fill-rule="evenodd" clip-rule="evenodd" d="M345.927 75.3081C409.751 87.0481 448.364 137.301 440.706 199.008C439.588 207.598 437.195 219.052 435.44 224.349C420.441 267.873 379.594 299.944 328.854 307.818C314.653 310.109 285.134 309.823 271.731 307.246C222.746 298.083 187.962 267.587 177.91 224.922C174.878 211.894 174.878 185.407 177.75 171.519C188.281 121.982 231.043 83.7552 286.411 74.5923C299.814 72.4447 332.364 72.731 345.927 75.3081ZM297.42 137.158C281.624 142.169 269.976 153.766 262.955 171.376C258.328 182.973 257.211 207.026 260.721 217.907C266.944 237.092 281.305 247.686 301.409 247.686C315.929 247.686 325.503 244.393 335.555 236.232C350.873 223.777 358.053 207.026 357.894 184.691C357.894 161.64 350.714 147.323 335.715 139.449C325.982 134.295 309.387 133.292 297.42 137.158Z"/></symbol></svg>
 
-<div class="dochead"><strong>ICMS Advertising Plan.</strong> Toggle Solutions &middot; 22 August 2026 &middot; 16 slides, 1280&times;720. Gray labels above each slide are internal notes and do not print. Built on <code>clients/toggle/design-system/proposal-master.html</code>.</div>
+
+<div class="dochead"><strong>ICMS Advertising Plan.</strong> Audaura Digital &middot; 22 August 2026 &middot; 16 slides, 1280&times;720. Labels above each slide are internal notes and do not print. Built on the Cerulean design system.</div>
 
 <!-- ════════ 1 · COVER ════════ -->
 <div class="note">Slide 1 · Cover. <b>Belief:</b> "This was built for us by a firm with a settled identity."</div>
 <section class="slide">
-  <div class="wmk"><svg viewBox="0 0 1432 392"><use href="#wm"/></svg></div>
+  <div class="lockup">Audaura<span>Digital</span></div>
   <div style="margin-top:120px;max-width:600px">
-    <div style="font-size:62px;font-weight:800;color:var(--blue);line-height:1.05">ICMS</div>
-    <div style="font-size:50px;font-weight:800;color:var(--ink);line-height:1.1;margin-top:6px">Advertising<br>Plan</div>
+    <div class="display" style="font-size:62px;color:var(--ink);line-height:1.05">ICMS</div>
+    <div class="display" style="font-size:50px;color:var(--body);line-height:1.1;margin-top:6px">Advertising<br>Plan</div>
     <div style="font-size:16px;color:var(--body);margin-top:22px;font-weight:500;max-width:none">TikTok, Facebook and Instagram, and Google Search &nbsp;|&nbsp; Three budget options &nbsp;|&nbsp; 22 August 2026</div>
   </div>
-  <svg class="iso" viewBox="-4 -4 449 326" style="position:absolute;right:84px;top:132px;width:450px">
-    <g><polygon points="90.1,0.0 135.1,26.0 45.0,78.0 0.0,52.0"/><polygon points="135.1,130.0 180.1,156.0 90.1,208.0 45.0,182.0"/><polygon points="135.1,130.0 45.0,182.0 45.0,78.0 135.1,26.0"/><polygon class="fill" points="180.1,208.0 90.1,260.0 90.1,208.0 180.1,156.0"/><polygon points="0.0,208.0 45.0,234.0 45.0,78.0 0.0,52.0"/><polygon points="45.0,234.0 90.1,260.0 90.1,208.0 45.0,182.0"/></g>
-    <g transform="translate(216,110)"><polygon points="90.1,0.0 180.1,52.0 90.1,104.0 0.0,52.0"/><polygon points="180.1,104.0 225.2,130.0 135.1,182.0 90.1,156.0"/><polygon points="180.1,104.0 90.1,156.0 90.1,104.0 180.1,52.0"/><polygon points="225.2,182.0 135.1,234.0 135.1,182.0 225.2,130.0"/><polygon points="0.0,156.0 90.1,208.0 90.1,104.0 0.0,52.0"/><polygon points="90.1,208.0 135.1,234.0 135.1,182.0 90.1,156.0"/></g>
+  <svg class="ladder" viewBox="0 0 460 300" style="position:absolute;right:64px;top:158px;width:470px">
+    <text class="cap" x="0" y="14">THREE BUDGET OPTIONS, ONE MONTH OF ADVERTISING</text>
+    <rect class="r1" x="0" y="36" width="129" height="46"/>
+    <text x="141" y="65">Plan A &#183; RM6,000</text>
+    <rect class="r2" x="0" y="112" width="258" height="46"/>
+    <text x="270" y="141">Plan B &#183; RM12,000</text>
+    <rect class="r3" x="0" y="188" width="430" height="46"/>
+    <text x="0" y="262">Plan C &#183; RM20,000</text>
+    <line x1="0" y1="282" x2="430" y2="282" stroke-width="1"/>
   </svg>
-  <div class="seal" style="position:absolute;left:64px;bottom:48px;color:var(--blue);font-size:17px"><span class="br">[&nbsp;</span>Your Digital Growth Partner<span class="br">&nbsp;]</span></div>
-  <div class="seal" style="position:absolute;right:64px;bottom:48px;color:var(--blue);font-size:17px"><span class="br">[&nbsp;</span>toggle.solutions<span class="br">&nbsp;]</span></div>
+  <div class="seal" style="position:absolute;left:64px;bottom:48px">Audaura Digital</div>
+  <div class="seal" style="position:absolute;right:64px;bottom:48px">audaura.my</div>
 </section>
 
 <!-- ════════ 2 · WHAT WE FOUND ════════ -->
 <div class="note">Slide 2 · Diagnosis. <b>Belief:</b> "They looked at our account before they quoted us." Numbers from the Google Ads audit, 23 Jul to 21 Aug 2026.</div>
 <section class="slide">
-  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <div class="watermark">audaura.my</div>
   <h2 class="h1">Where the account stands today</h2>
   <p class="kicker">A lead means one person who fills in your form or messages you.</p>
   <div class="grid cols4">
@@ -149,7 +231,7 @@ table.dt.dense td{padding:4px 12px}
 <!-- ════════ 3 · THE FIRST TWO WEEKS ════════ -->
 <div class="note">Slide 3 · The gate. <b>Belief:</b> "They will not take our money before the meter works." Carries the deck's single strikethrough (SIGNATURE-DEVICES §B1).</div>
 <section class="slide">
-  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <div class="watermark">audaura.my</div>
   <h2 class="h1">Two weeks of fixing before we spend big</h2>
   <p class="kicker">Every plan starts the same way. Nothing scales until an enquiry can be traced from click to inbox.</p>
   <div class="grid cols3">
@@ -189,7 +271,7 @@ table.dt.dense td{padding:4px 12px}
 <!-- ════════ 4 · COURSE ORDER ════════ -->
 <div class="note">Slide 4 · Course priority. <b>Belief:</b> "They understood which of our nine courses actually earns."</div>
 <section class="slide">
-  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <div class="watermark">audaura.my</div>
   <h2 class="h1">The order we advertise your courses in</h2>
   <p class="kicker">The order we fund the courses you named.</p>
   <div class="grid cols3">
@@ -230,7 +312,7 @@ table.dt.dense td{padding:4px 12px}
 <!-- ════════ 5 · PLATFORM JOBS ════════ -->
 <div class="note">Slide 5 · Platform roles. <b>Belief:</b> "Each platform has a named job, and they told us where the ceiling is."</div>
 <section class="slide">
-  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <div class="watermark">audaura.my</div>
   <h2 class="h1">Three platforms, three different jobs</h2>
   <p class="kicker">Google Search is the smallest line in every plan. It only reaches people already searching. TikTok and Facebook reach people before they start looking.</p>
   <div class="grid cols3">
@@ -268,7 +350,7 @@ table.dt.dense td{padding:4px 12px}
 <!-- ════════ 6 · THE THREE PLANS ════════ -->
 <div class="note">Slide 6 · The comparison. <b>Belief:</b> "I can see all three options side by side and the arithmetic holds." This is the decision slide.</div>
 <section class="slide">
-  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <div class="watermark">audaura.my</div>
   <h2 class="h1">The three plans side by side</h2>
   <p class="kicker">Monthly ad spend. Lead numbers are the sum of slides 7 to 9. Student numbers use your own figure of 2 to 3 sign-ups per 100 enquiries.</p>
   <table class="dt">
@@ -307,15 +389,15 @@ table.dt.dense td{padding:4px 12px}
 <!-- ════════ 7 · PLAN A ════════ -->
 <div class="note">Slide 7 · Plan A detail. <b>Belief:</b> "The entry plan is a real plan, not a token."</div>
 <section class="slide">
-  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <div class="watermark">audaura.my</div>
   <h2 class="h1">Plan A &middot; Prove it works<span class="pill num">RM6,000 a month</span></h2>
   <p class="kicker">Two courses only. Establishes the real cost of an enquiry once the counting works.</p>
   <div class="splitbar">
-    <div style="width:40%;background:var(--blue)">Meta 40%</div>
-    <div style="width:40%;background:var(--teal)">TikTok 40%</div>
-    <div style="width:20%;background:var(--slate)">Google Search 20%</div>
+    <div style="width:40%;background:var(--chart-1)">Meta 40%</div>
+    <div style="width:40%;background:var(--chart-2)">TikTok 40%</div>
+    <div style="width:20%;background:var(--chart-3)">Google Search 20%</div>
   </div>
-  <div class="legend"><span><i style="background:var(--blue)"></i>Meta RM2,400</span><span><i style="background:var(--teal)"></i>TikTok RM2,400</span><span><i style="background:var(--slate)"></i>Google Search RM1,200</span></div>
+  <div class="legend"><span><i style="background:var(--chart-1)"></i>Meta RM2,400</span><span><i style="background:var(--chart-2)"></i>TikTok RM2,400</span><span><i style="background:var(--chart-3)"></i>Google Search RM1,200</span></div>
   <div class="grid cols2" style="margin-top:18px">
     <div>
       <table class="dt dense">
@@ -361,15 +443,15 @@ table.dt.dense td{padding:4px 12px}
 <!-- ════════ 8 · PLAN B ════════ -->
 <div class="note">Slide 8 · Plan B detail. <b>Belief:</b> "The middle plan buys me the courses that matter and protects my name."</div>
 <section class="slide">
-  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <div class="watermark">audaura.my</div>
   <h2 class="h1">Plan B &middot; Build it out<span class="pill num">RM12,000 a month</span></h2>
   <p class="kicker">Adds Business Administration, your own name on Google, and rival college searches.</p>
   <div class="splitbar">
-    <div style="width:40%;background:var(--blue)">Meta 40%</div>
-    <div style="width:35%;background:var(--teal)">TikTok 35%</div>
-    <div style="width:25%;background:var(--slate)">Google Search 25%</div>
+    <div style="width:40%;background:var(--chart-1)">Meta 40%</div>
+    <div style="width:35%;background:var(--chart-2)">TikTok 35%</div>
+    <div style="width:25%;background:var(--chart-3)">Google Search 25%</div>
   </div>
-  <div class="legend"><span><i style="background:var(--blue)"></i>Meta RM4,800</span><span><i style="background:var(--teal)"></i>TikTok RM4,200</span><span><i style="background:var(--slate)"></i>Google Search RM3,000</span></div>
+  <div class="legend"><span><i style="background:var(--chart-1)"></i>Meta RM4,800</span><span><i style="background:var(--chart-2)"></i>TikTok RM4,200</span><span><i style="background:var(--chart-3)"></i>Google Search RM3,000</span></div>
   <div class="grid cols2" style="margin-top:18px">
     <div>
       <table class="dt dense">
@@ -410,7 +492,7 @@ table.dt.dense td{padding:4px 12px}
           <li>Your ad appears against Unikop, Unicom, SEGI and UNITAR</li>
           <li>Enough Facebook budget to chase people who visited and left</li>
         </ul>
-        <div class="bodytext" style="margin-top:10px;font-weight:700;color:var(--ink)">At 228 to 348 students a year, this plan reaches 300 only if 3 in 100 enquiries sign up.</div>
+        <div class="bodytext" style="margin-top:10px;font-weight:700;color:var(--foreground)">At 228 to 348 students a year, this plan reaches 300 only if 3 in 100 enquiries sign up.</div>
       </div>
     </div>
   </div>
@@ -419,15 +501,15 @@ table.dt.dense td{padding:4px 12px}
 <!-- ════════ 9 · PLAN C ════════ -->
 <div class="note">Slide 9 · Plan C detail. <b>Belief:</b> "This is the plan that actually hits my number."</div>
 <section class="slide">
-  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <div class="watermark">audaura.my</div>
   <h2 class="h1">Plan C &middot; Reach the target<span class="pill num">RM20,000 a month</span></h2>
   <p class="kicker">Covers every course you named, including the MBA and doctorate, and starts advertising overseas.</p>
   <div class="splitbar">
-    <div style="width:40%;background:var(--blue)">Meta 40%</div>
-    <div style="width:30%;background:var(--teal)">TikTok 30%</div>
-    <div style="width:30%;background:var(--slate)">Google Search 30%</div>
+    <div style="width:40%;background:var(--chart-1)">Meta 40%</div>
+    <div style="width:30%;background:var(--chart-2)">TikTok 30%</div>
+    <div style="width:30%;background:var(--chart-3)">Google Search 30%</div>
   </div>
-  <div class="legend"><span><i style="background:var(--blue)"></i>Meta RM8,000</span><span><i style="background:var(--teal)"></i>TikTok RM6,000</span><span><i style="background:var(--slate)"></i>Google Search RM6,000</span></div>
+  <div class="legend"><span><i style="background:var(--chart-1)"></i>Meta RM8,000</span><span><i style="background:var(--chart-2)"></i>TikTok RM6,000</span><span><i style="background:var(--chart-3)"></i>Google Search RM6,000</span></div>
   <div class="grid cols2" style="margin-top:18px">
     <div>
       <table class="dt dense">
@@ -471,7 +553,7 @@ table.dt.dense td{padding:4px 12px}
           <li>Computer Science and Applied AI join the Google list</li>
           <li>Room to test Bangladesh, Pakistan and the Gulf without cutting Malaysia</li>
         </ul>
-        <div class="bodytext" style="margin-top:10px;font-weight:700;color:var(--ink)">At 288 to 420 students a year, this is the only plan that passes 300 across most of its range.</div>
+        <div class="bodytext" style="margin-top:10px;font-weight:700;color:var(--foreground)">At 288 to 420 students a year, this is the only plan that passes 300 across most of its range.</div>
       </div>
     </div>
   </div>
@@ -480,7 +562,7 @@ table.dt.dense td{padding:4px 12px}
 <!-- ════════ 10 · THE ARITHMETIC ════════ -->
 <div class="note">Slide 10 · The arithmetic. <b>Belief:</b> "They did the division instead of promising me a number." Honest: only Plan C clears 300 comfortably.</div>
 <section class="slide">
-  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <div class="watermark">audaura.my</div>
   <h2 class="h1">Which plan gets you to 600 students</h2>
   <p class="kicker">Target is about 600 students this year. Around 150 have signed up and agents bring a share of the rest, leaving roughly 300 for advertising.</p>
   <table class="dt">
@@ -514,7 +596,7 @@ table.dt.dense td{padding:4px 12px}
 <!-- ════════ 11 · WHERE THE NUMBERS COME FROM ════════ -->
 <div class="note">Slide 11 · Number provenance. <b>Belief:</b> "They showed their working instead of quoting my best day back at me."</div>
 <section class="slide">
-  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <div class="watermark">audaura.my</div>
   <h2 class="h1">Where every cost per lead comes from</h2>
   <p class="kicker">Three numbers are yours, one is an industry average, one is worked out from your click cost.</p>
   <table class="dt">
@@ -546,7 +628,7 @@ table.dt.dense td{padding:4px 12px}
 <!-- ════════ 12 · WHAT THE ADS SAY ════════ -->
 <div class="note">Slide 12 · Creative. <b>Belief:</b> "They will fix the message, not just the buying." Ties to the ad copy contradictions found in the audit.</div>
 <section class="slide">
-  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <div class="watermark">audaura.my</div>
   <h2 class="h1">What the ads will say</h2>
   <p class="kicker">Your ads promise low fees, PTPTN and online study. Your website shows no fee, never mentions PTPTN on the course page, and offers no online option. The promise gets fixed before we pay for the click.</p>
   <div class="callout" style="padding:20px 26px">
@@ -588,7 +670,7 @@ table.dt.dense td{padding:4px 12px}
 <!-- ════════ 13 · REPORTING ════════ -->
 <div class="note">Slide 13 · Measurement. <b>Belief:</b> "I will know whether this is working, weekly, in numbers."</div>
 <section class="slide">
-  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <div class="watermark">audaura.my</div>
   <h2 class="h1">How you will know it is working</h2>
   <p class="kicker">The figures we hold ourselves to, and when you see them.</p>
   <div class="grid cols4">
@@ -624,7 +706,7 @@ table.dt.dense td{padding:4px 12px}
     </div>
     <div class="callout" style="padding:20px 24px">
       <div class="cardtitle">What we will not put in a report</div>
-      <div class="bodytext" style="margin-top:5px">How often an ad was shown, Google's optimisation score, and any enquiry count that includes page views or map taps. Your account counts 732 of those a month.</div>
+      <div class="bodytext" style="margin-top:5px">How often an ad was shown, Google's optimization score, and any enquiry count that includes page views or map taps. Your account counts 732 of those a month.</div>
     </div>
   </div>
 </section>
@@ -632,7 +714,7 @@ table.dt.dense td{padding:4px 12px}
 <!-- ════════ 14 · WHAT WE NEED ════════ -->
 <div class="note">Slide 14 · The asks. <b>Belief:</b> "They told me what they need from me in week one." Items 4 to 6 move the sign-up rate, and we are not charging for them.</div>
 <section class="slide">
-  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <div class="watermark">audaura.my</div>
   <h2 class="h1">What we need from you</h2>
   <p class="kicker">Six things. The first three unblock the advertising. The last three are not billable and matter more.</p>
   <div class="grid cols3">
@@ -649,30 +731,30 @@ table.dt.dense td{padding:4px 12px}
       <div class="bodytext" style="margin-top:8px">Your course pages say January, May and September. Your Apply Now page sells a March 2026 intake. Your ads say July and August. You told us it is monthly. We need one answer before any ad runs.</div>
     </div>
     <div class="callout stripe s-teal acc-teal">
-      <div style="display:flex;gap:12px;align-items:center"><span class="ncircle num" style="background:var(--blue-deep)">4</span><div class="cardtitle" style="margin:0">Permission to publish your fees</div></div>
+      <div style="display:flex;gap:12px;align-items:center"><span class="ncircle num quiet">4</span><div class="cardtitle" style="margin:0">Permission to publish your fees</div></div>
       <div class="bodytext" style="margin-top:8px">RM300 to register against Unikop's RM1,900. It appears nowhere on your site or in any ad.</div>
     </div>
     <div class="callout stripe s-teal acc-teal">
-      <div style="display:flex;gap:12px;align-items:center"><span class="ncircle num" style="background:var(--blue-deep)">5</span><div class="cardtitle" style="margin:0">Someone who owns the enquiries</div></div>
+      <div style="display:flex;gap:12px;align-items:center"><span class="ncircle num quiet">5</span><div class="cardtitle" style="margin:0">Someone who owns the enquiries</div></div>
       <div class="bodytext" style="margin-top:8px">Enquiries land in a shared spreadsheet with no tracking and no call-back rule. Plan C means about 40 a day. Name the owner and set a call-back time.</div>
     </div>
     <div class="callout stripe s-teal acc-teal">
-      <div style="display:flex;gap:12px;align-items:center"><span class="ncircle num" style="background:var(--blue-deep)">6</span><div class="cardtitle" style="margin:0">A WhatsApp business number</div></div>
+      <div style="display:flex;gap:12px;align-items:center"><span class="ncircle num quiet">6</span><div class="cardtitle" style="margin:0">A WhatsApp business number</div></div>
       <div class="bodytext" style="margin-top:8px">Your team said people click WhatsApp and give up on forms. There is no WhatsApp link anywhere on icms.edu.my today.</div>
     </div>
   </div>
 </section>
 
 <!-- ════════ 15 · COSTS ════════ -->
-<div class="note">Slide 15 · Commercials. <b>INTERNAL FLAG: the management fee row is deliberately blank.</b> <code>brain/pricing/rate-card-my.md</code> is 100% <code>TBD (MYR)</code> and forbids inventing values. Viknesh and Zaid must fill the fee before this goes to ICMS. Everything else on this slide is final.</div>
+<div class="note">Slide 15 · Commercials. Fee set by Zaid on 25 August 2026: RM4,000 / RM6,000 / RM8,000 a month, with RM4,000 the lowest base fee we take. <b>CHECK BEFORE SENDING:</b> the 10 percent tier is written here as RM100,000 of <i>monthly</i> ad spend. If it was meant as annual or cumulative spend, the band at the bottom of this slide is wrong, because Plan C already reaches RM240,000 a year.</div>
 <section class="slide">
-  <div class="watermark seal"><span>[&nbsp;</span>toggle.solutions<span>&nbsp;]</span></div>
+  <div class="watermark">audaura.my</div>
   <h2 class="h1">What it costs</h2>
   <p class="kicker">Ad money goes straight to the platforms at cost. Our fee is separate and covers planning, build, creative, weekly work and reporting.</p>
   <table class="dt">
     <tr><th>Line</th><th class="r">Plan A</th><th class="r">Plan B</th><th class="r">Plan C</th><th>Notes</th></tr>
     <tr><td class="head">Ad money, paid to the platforms</td><td class="r num">RM6,000</td><td class="r num">RM12,000</td><td class="r num">RM20,000</td><td>Platform invoices shared in full every month.</td></tr>
-    <tr><td class="head">Toggle fee</td><td class="r">RM (to be confirmed)</td><td class="r">RM (to be confirmed)</td><td class="r">RM (to be confirmed)</td><td>To be confirmed by Toggle before this is issued.</td></tr>
+    <tr><td class="head">Audaura fee</td><td class="r num">RM4,000</td><td class="r num">RM6,000</td><td class="r num">RM8,000</td><td>Charged every month, separate from the ad money above.</td></tr>
     <tr><td class="head">Ad money in months 1 and 2</td><td class="r num">RM1,500</td><td class="r num">RM3,000</td><td class="r num">RM5,000</td><td>The fixing period runs at a quarter of the budget.</td></tr>
     <tr class="total"><td>Shortest commitment</td><td class="r">3 months</td><td class="r">3 months</td><td class="r">6 months</td><td>The week 6 review needs a third month behind it.</td></tr>
   </table>
@@ -696,27 +778,25 @@ table.dt.dense td{padding:4px 12px}
       </ul>
     </div>
   </div>
+  <div class="band">Once your ad spend passes RM100,000 in a month, the fee becomes 10 percent of that spend instead of a flat figure.</div>
 </section>
 
 <!-- ════════ 16 · THANK YOU ════════ -->
-<div class="note">Slide 16 · Thank you. <b>Belief:</b> "A named senior operator picks up when I call."</div>
+<div class="note">Slide 16 · Thank you. <b>INTERNAL FLAG: the contact name and phone are blank.</b> media@audaura.my is the address already on the ICMS Google Ads account. The person who signs this and the number they answer on both need confirming before it goes out.</div>
 <section class="slide">
-  <div class="wmk"><svg viewBox="0 0 1432 392"><use href="#wm"/></svg></div>
+  <div class="lockup">Audaura<span>Digital</span></div>
   <div style="margin-top:150px;max-width:640px">
-    <div style="font-size:56px;font-weight:800;color:var(--blue);line-height:1.05">Thank you</div>
+    <div class="display" style="font-size:56px;color:var(--ink);line-height:1.05">Thank you</div>
     <div class="bodytext" style="font-size:16px;margin-top:18px;max-width:none">First three jobs: fix the counting, unblock football, repair the Apply Now link.</div>
     <div style="margin-top:30px">
-      <div style="font-size:19px;font-weight:700;color:var(--ink)">Viknesh</div>
-      <div style="font-size:14px;color:var(--body);margin-top:2px">Toggle Solutions</div>
-      <div class="num" style="font-size:15px;color:var(--blue-deep);font-weight:700;margin-top:8px">+60 12 568 8681</div>
-      <div style="font-size:15px;color:var(--blue-deep);font-weight:700">hello@toggle.solutions</div>
+      <div style="font-size:19px;font-weight:700;color:var(--foreground)">Audaura Digital</div>
+      <div style="font-size:14px;color:var(--body);margin-top:2px">Name and direct line to be confirmed</div>
+      <div style="font-size:15px;color:var(--ink);font-weight:600;margin-top:8px">media@audaura.my</div>
+      <div style="font-size:15px;color:var(--ink);font-weight:600">audaura.my</div>
     </div>
   </div>
-  <svg class="iso" viewBox="-4 -4 300 326" style="position:absolute;right:120px;top:180px;width:330px">
-    <g><polygon points="90.1,0.0 180.1,52.0 90.1,104.0 0.0,52.0"/><polygon points="180.1,104.0 225.2,130.0 135.1,182.0 90.1,156.0"/><polygon class="fill" points="180.1,104.0 90.1,156.0 90.1,104.0 180.1,52.0"/><polygon points="225.2,182.0 135.1,234.0 135.1,182.0 225.2,130.0"/><polygon points="0.0,156.0 90.1,208.0 90.1,104.0 0.0,52.0"/><polygon points="90.1,208.0 135.1,234.0 135.1,182.0 90.1,156.0"/></g>
-  </svg>
-  <div class="seal" style="position:absolute;left:64px;bottom:48px;color:var(--blue);font-size:17px"><span class="br">[&nbsp;</span>Your Digital Growth Partner<span class="br">&nbsp;]</span></div>
-  <div class="seal" style="position:absolute;right:64px;bottom:48px;color:var(--blue);font-size:17px"><span class="br">[&nbsp;</span>toggle.solutions<span class="br">&nbsp;]</span></div>
+  <div class="seal" style="position:absolute;left:64px;bottom:48px">Audaura Digital</div>
+  <div class="seal" style="position:absolute;right:64px;bottom:48px">audaura.my</div>
 </section>
 
 <div class="libnote">End of deck. Internal notes above each slide do not print. Convert with <code>/html-to-pdf</code>.</div>

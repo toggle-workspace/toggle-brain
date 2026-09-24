@@ -1,0 +1,1547 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Toggle Solutions, company profile</title>
+<meta name="description" content="The growth partner for ambitious companies. 60+ clients, 17 industries, 8+ countries.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* =========================================================================
+   Toggle Solutions, sales surface. Identity is deliberately separate from
+   clients/toggle/design-system/ (blueprint blue, Inter Tight). Superseded for
+   sales material on 2026-08-27. Light theme only, locked.
+   ========================================================================= */
+:root{
+  /* Toggle colorway, sampled from toggle.solutions: navy ink, royal blue
+     action, and the sky-to-aqua wave field behind the hero. */
+  --paper:#F4F8FD;
+  --paper-lift:#FFFFFF;
+  --paper-deep:#E6EFFA;
+  --ink:#0E1B33;
+  --ink-2:#4A5A75;
+  --ink-3:#8794AC;
+  --line:#D5E2F0;
+  --line-soft:#E7EFF9;
+  --accent:#2A6BE0;
+  --accent-deep:#1B4CB0;
+  --accent-wash:#E3EDFC;
+  --sky:#7FB3EE;
+  --aqua:#8CE0EC;
+  --deep:#0F2A47;
+  --alert:#DB4A45;
+  --amber:#D2971E;
+  --gutter:clamp(20px,5vw,84px);
+  --maxw:1440px;
+  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --sans:"Instrument Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{
+  margin:0;background:var(--paper);color:var(--ink);
+  font-family:var(--sans);font-size:17px;line-height:1.55;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+body::before{
+  /* paper grain, kept faint so it reads as stock rather than as texture */
+  content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.055'/%3E%3C/svg%3E");
+}
+img,svg{max-width:100%;display:block}
+button,input,select,textarea{font:inherit;color:inherit}
+a{color:inherit}
+
+/* ---------- type scale ---------- */
+.display{
+  font-family:var(--serif);font-weight:400;line-height:.95;letter-spacing:-.025em;
+  font-size:clamp(40px,6.4vw,104px);margin:0;
+}
+.display em{font-style:italic;color:var(--accent)}
+.display .plain{font-family:var(--sans);font-weight:600;letter-spacing:-.035em;font-size:.78em}
+.h2{
+  font-family:var(--serif);font-weight:400;line-height:1.0;letter-spacing:-.02em;
+  font-size:clamp(34px,5.4vw,76px);margin:0;
+}
+.h2 em{font-style:italic;color:var(--accent)}
+.h2 .plain{font-family:var(--sans);font-weight:600;letter-spacing:-.03em;font-size:.76em}
+.h3{font-family:var(--sans);font-weight:600;font-size:clamp(21px,2.1vw,27px);line-height:1.2;letter-spacing:-.02em;margin:0}
+.lede{font-size:clamp(17px,1.5vw,21px);line-height:1.5;color:var(--ink-2);max-width:44ch;margin:0}
+.body{font-size:16px;line-height:1.6;color:var(--ink-2);margin:0}
+.small{font-size:14.5px;line-height:1.55;color:var(--ink-2);margin:0}
+.mono{font-family:var(--mono);font-size:11.5px;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3)}
+.mono.accent{color:var(--accent)}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+/* ---------- layout ---------- */
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter);position:relative;z-index:1}
+section{position:relative;z-index:1}
+.sec{padding:clamp(84px,11vw,168px) 0}
+.sechead{display:grid;grid-template-columns:minmax(0,1fr);gap:22px;margin-bottom:clamp(40px,5vw,72px)}
+@media(min-width:900px){
+  .sechead{grid-template-columns:1fr minmax(300px,380px);align-items:end;gap:56px}
+}
+/* a heading with no kicker beside it takes the whole column rather than
+   leaving the 380px slot standing empty */
+.sechead:has(.h2:only-child){grid-template-columns:minmax(0,1fr)}
+.rule{height:1px;background:var(--line);border:0;margin:0}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(26px);transition:opacity .9s cubic-bezier(.16,1,.3,1),transform .9s cubic-bezier(.16,1,.3,1)}
+.rv.in{opacity:1;transform:none}
+.rv[data-d="1"]{transition-delay:.08s}.rv[data-d="2"]{transition-delay:.16s}
+.rv[data-d="3"]{transition-delay:.24s}.rv[data-d="4"]{transition-delay:.32s}
+.rv[data-d="5"]{transition-delay:.4s}.rv[data-d="6"]{transition-delay:.48s}
+/* word by word headline reveal */
+/* overflow:hidden is what makes the word reveal work, so the box has to be
+   deep enough to clear a descender or it shears the tail off a g or a y.
+   The negative margin cancels the padding, so layout is unchanged. */
+.wr{display:inline-block;overflow:hidden;vertical-align:bottom;padding-bottom:.18em;margin-bottom:-.18em}
+.wr > span{display:inline-block;transform:translateY(105%);transition:transform 1.05s cubic-bezier(.16,1,.3,1)}
+.in .wr > span,.wr.in > span{transform:none}
+
+/* ---------- top chrome ---------- */
+#top{
+  position:fixed;top:0;left:0;right:0;z-index:60;
+  display:flex;align-items:center;gap:18px;
+  padding:16px var(--gutter);
+  transition:background .35s,border-color .35s,padding .35s;
+  border-bottom:1px solid transparent;
+}
+#top.stuck{background:rgba(244,248,253,.86);backdrop-filter:blur(14px) saturate(1.3);-webkit-backdrop-filter:blur(14px) saturate(1.3);border-bottom-color:var(--line);padding-top:11px;padding-bottom:11px}
+#top .mark{height:19px;flex:0 0 auto}
+#top .mark svg{height:100%;width:auto;fill:var(--ink)}
+#top .prep{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+#top .prep b{color:var(--ink);font-weight:700}
+.grow{flex:1 1 auto;min-width:0}
+.btn{
+  font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  padding:10px 16px;border-radius:999px;border:1px solid var(--ink);background:transparent;color:var(--ink);
+  cursor:pointer;transition:.2s;white-space:nowrap;
+}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn.solid{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.solid:hover{background:var(--accent-deep);border-color:var(--accent-deep)}
+.btn.ghost{border-color:var(--line);color:var(--ink-2)}
+.btn.ghost:hover{border-color:var(--ink);background:transparent;color:var(--ink)}
+@media(max-width:760px){#top .prep{display:none}}
+
+/* ---------- hero ---------- */
+#hero{min-height:100svh;display:flex;flex-direction:column;justify-content:center;padding:104px 0 70px;overflow:hidden}
+#hero .display{font-size:clamp(36px,5.1vw,82px)}
+#hero .lede{max-width:none}   /* deck kickers span the heading, no 44ch cap */
+/* the wordmark standing over the headline on the opening screen */
+.heromark{margin-bottom:clamp(22px,3.2vw,46px)}
+.heromark svg{display:block;width:clamp(210px,30vw,470px);height:auto;fill:var(--ink)}
+/* when .sechead stacks below 900px the kicker sits under its heading and
+   must span it, so the 44ch reading cap comes off there too */
+.sechead .lede{max-width:none}
+/* the sky-to-aqua wave field from toggle.solutions, kept under the type and
+   faded at the top so the navy headline always sits on near-white */
+.wavewrap{position:absolute;left:0;right:0;bottom:0;height:68%;z-index:0;pointer-events:none;
+  -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 26%);
+  mask-image:linear-gradient(180deg,transparent 0%,#000 26%)}
+.wavewrap svg{width:100%;height:100%;display:block}
+#close .wavewrap{height:54%;opacity:.5;
+  -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 40%);
+  mask-image:linear-gradient(180deg,transparent 0%,#000 40%)}
+#close{position:relative;overflow:hidden}
+.herogrid{display:grid;grid-template-columns:1fr;gap:clamp(40px,6vw,72px);align-items:center}
+@media(min-width:1040px){.herogrid{grid-template-columns:minmax(0,1.06fr) minmax(0,.94fr)}}
+.herometa{display:flex;gap:18px;flex-wrap:wrap;align-items:center;margin-bottom:clamp(24px,3vw,40px)}
+.herometa span{display:inline-flex;align-items:center;gap:9px}
+.dot{width:5px;height:5px;border-radius:50%;background:var(--accent);flex:0 0 auto}
+.herosub{margin-top:clamp(26px,3vw,40px);display:flex;flex-direction:column;gap:22px;align-items:flex-start}
+.scrollcue{position:absolute;left:var(--gutter);bottom:34px;display:flex;align-items:center;gap:11px;z-index:2}
+.scrollcue i{display:block;width:34px;height:1px;background:var(--ink-3);position:relative;overflow:hidden}
+.scrollcue i::after{content:"";position:absolute;inset:0;background:var(--accent);transform:translateX(-100%);animation:sweep 2.6s cubic-bezier(.6,0,.2,1) infinite}
+@keyframes sweep{0%{transform:translateX(-100%)}55%{transform:translateX(0)}100%{transform:translateX(100%)}}
+
+/* ---------- the fan of cards ---------- */
+.fan{position:relative;height:clamp(300px,34vw,430px);perspective:1400px}
+.fcard{
+  position:absolute;top:50%;left:50%;width:clamp(148px,13.4vw,186px);aspect-ratio:3/4;
+  border-radius:14px;padding:16px;border:1px solid rgba(14,27,51,.13);
+  box-shadow:0 0 0 1px rgba(255,255,255,.6) inset,0 2px 4px rgba(14,27,51,.07),0 18px 38px -12px rgba(14,27,51,.3);
+  display:flex;flex-direction:column;justify-content:space-between;
+  transform-origin:50% 118%;
+  transform:translate(-50%,-50%) rotate(var(--r0,0deg)) translateY(var(--y0,0px));
+  transition:transform 1.15s cubic-bezier(.16,1,.3,1),box-shadow .4s;
+  will-change:transform;
+}
+.fan.spread .fcard{transform:translate(-50%,-50%) rotate(var(--r,0deg)) translate(var(--x,0px),var(--y,0px))}
+.fcard:hover{box-shadow:0 0 0 1px rgba(255,255,255,.75) inset,0 4px 8px rgba(14,27,51,.09),0 34px 60px -16px rgba(14,27,51,.36);z-index:9}
+.fan.spread .fcard:hover{transform:translate(-50%,-50%) rotate(0deg) translate(var(--x,0px),calc(var(--y,0px) - 16px)) scale(1.035)}
+.fcard .ft{font-family:var(--sans);font-weight:600;font-size:14px;line-height:1.28;letter-spacing:-.012em}
+.fcard .fm{font-family:var(--mono);font-size:9px;letter-spacing:.11em;text-transform:uppercase;opacity:.62}
+.fcard .fn{font-family:var(--serif);font-size:31px;line-height:1;letter-spacing:-.02em}
+.tint-a{background:#CBDFFA}.tint-b{background:#BFE8F2}.tint-c{background:#D6DCF7}
+.tint-d{background:#FFFFFF}.tint-e{background:#B7D7F8}.tint-f{background:#D2E7F2}
+.pill{
+  position:absolute;font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.1em;
+  text-transform:uppercase;background:var(--ink);color:var(--paper);padding:5px 10px;border-radius:999px;
+  white-space:nowrap;box-shadow:0 6px 16px -6px rgba(14,27,51,.4);
+}
+.pill.accent{background:var(--accent)}
+/* below the two-column hero breakpoint the fan would be clipped by
+   #hero's overflow, so the cards become a swipeable row instead */
+@media(max-width:1039px){
+  .fan{height:auto;display:flex;gap:11px;overflow-x:auto;padding:10px 3px 18px;
+       scroll-snap-type:x mandatory;-webkit-overflow-scrolling:touch;perspective:none}
+  .fan::-webkit-scrollbar{height:0}
+  .fcard,.fan.spread .fcard{position:static;flex:0 0 clamp(146px,42vw,180px);width:auto;
+       transform:rotate(calc(var(--r0,0deg) * .5));scroll-snap-align:start}
+  .fan.spread .fcard:hover,.fcard:hover{transform:rotate(0deg) translateY(-6px)}
+  .fan .pill{display:none}
+}
+
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  .rv{opacity:1;transform:none;transition:none}
+  .wr > span{transform:none;transition:none}
+  .fcard{transition:none}
+  .scrollcue i::after{animation:none}
+}
+
+/* ---------- findings ---------- */
+.findings{display:grid;grid-template-columns:1fr;gap:clamp(18px,2vw,26px)}
+@media(min-width:860px){.findings{grid-template-columns:repeat(3,1fr)}}
+.find{
+  background:var(--paper-lift);border:1px solid var(--line);border-radius:16px;
+  padding:clamp(24px,2.6vw,34px);display:flex;flex-direction:column;gap:16px;
+  transition:transform .7s cubic-bezier(.16,1,.3,1),box-shadow .45s,border-color .45s;
+  transform:rotate(var(--tilt,0deg));
+}
+.find:hover{transform:rotate(0deg) translateY(-7px);box-shadow:0 30px 56px -26px rgba(14,27,51,.3);border-color:var(--ink-3)}
+.find .idx{font-family:var(--serif);font-size:52px;line-height:.8;color:var(--line);letter-spacing:-.03em}
+.find:hover .idx{color:var(--accent)}
+.find .idx{transition:color .45s}
+.sev{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+.sev b{width:7px;height:7px;border-radius:2px;background:var(--alert)}
+.sev.b b{background:var(--amber)}.sev.c b{background:var(--accent)}
+.freewill{
+  margin-top:clamp(30px,3.5vw,50px);padding:clamp(26px,3vw,40px);border-radius:16px;
+  background:var(--ink);color:var(--paper);display:grid;gap:16px;
+}
+@media(min-width:860px){.freewill{grid-template-columns:1fr auto;align-items:center;gap:44px}}
+.freewill p{margin:0;font-family:var(--serif);font-size:clamp(23px,2.6vw,34px);line-height:1.14;letter-spacing:-.015em}
+.freewill em{font-style:italic;color:var(--aqua)}
+
+/* ---------- arithmetic ---------- */
+#math{background:var(--paper-deep)}
+.mathgrid{display:grid;grid-template-columns:1fr;gap:clamp(38px,5vw,72px);align-items:start}
+@media(min-width:1000px){.mathgrid{grid-template-columns:minmax(0,.86fr) minmax(0,1.14fr)}}
+.inputs{display:flex;flex-direction:column}
+.irow{display:flex;justify-content:space-between;align-items:baseline;gap:18px;padding:15px 0;border-bottom:1px solid var(--line)}
+.irow:first-child{border-top:1px solid var(--line)}
+.irow label{font-size:15.5px;color:var(--ink-2);flex:1 1 auto}
+.irow .field{position:relative;display:inline-flex;align-items:baseline;gap:3px}
+.irow input{
+  font-family:var(--mono);font-size:19px;font-weight:500;font-variant-numeric:tabular-nums;
+  text-align:right;background:transparent;border:0;border-bottom:1.5px dashed var(--ink-3);
+  padding:1px 2px 3px;width:6.6em;outline:none;transition:.2s;color:var(--ink);
+}
+.irow input:focus{border-bottom-color:var(--accent);border-bottom-style:solid}
+.irow input::placeholder{color:var(--ink-3);opacity:.55}
+.irow .u{font-family:var(--mono);font-size:13px;color:var(--ink-3)}
+.irow.derived{border-bottom-style:dotted}
+.irow.derived .val{font-family:var(--mono);font-size:19px;font-weight:500;font-variant-numeric:tabular-nums;color:var(--ink)}
+.irow.derived label{color:var(--ink-3)}
+.hintline{margin-top:14px;font-size:13.5px;color:var(--ink-3);line-height:1.5}
+
+.readout{border-top:2px solid var(--ink);padding-top:clamp(22px,2.5vw,34px)}
+.bignum{
+  font-family:var(--serif);font-size:clamp(58px,10.5vw,152px);line-height:.86;letter-spacing:-.035em;
+  color:var(--accent);margin:0;font-variant-numeric:tabular-nums;
+}
+.bigcap{margin:16px 0 0;font-size:clamp(16px,1.6vw,20px);color:var(--ink-2);max-width:34ch;line-height:1.4}
+.subnums{display:grid;grid-template-columns:repeat(auto-fit,minmax(150px,1fr));gap:2px;margin-top:clamp(28px,3vw,44px);background:var(--line);border:1px solid var(--line)}
+.subnum{background:var(--paper-deep);padding:18px 20px}
+.subnum .v{font-family:var(--mono);font-size:clamp(19px,2vw,26px);font-weight:500;font-variant-numeric:tabular-nums;letter-spacing:-.02em}
+.subnum .l{font-size:12.5px;color:var(--ink-2);margin-top:6px;line-height:1.35}
+.sliderrow{margin-top:clamp(26px,3vw,40px);display:flex;flex-direction:column;gap:14px}
+.sliderhead{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+.sliderhead .pct{font-family:var(--serif);font-size:34px;line-height:1;color:var(--ink);font-variant-numeric:tabular-nums}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:2px;background:var(--ink-3);outline:none;border-radius:2px}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--accent);cursor:grab;border:4px solid var(--paper-deep);box-shadow:0 0 0 1px var(--accent)}
+input[type=range]::-webkit-slider-thumb:active{cursor:grabbing}
+input[type=range]::-moz-range-thumb{width:22px;height:22px;border-radius:50%;background:var(--accent);cursor:grab;border:4px solid var(--paper-deep)}
+.anchorrow{display:flex;gap:8px;flex-wrap:wrap;align-items:center}
+.anchorrow .lb{font-family:var(--mono);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3);margin-right:4px}
+.chip{
+  font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;
+  padding:7px 13px;border-radius:999px;border:1px solid var(--line);background:transparent;cursor:pointer;transition:.2s;color:var(--ink-2);
+}
+.chip:hover{border-color:var(--ink);color:var(--ink)}
+.chip.on{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.warnline{
+  margin-top:20px;padding:16px 20px;border-left:2px solid var(--accent);background:var(--accent-wash);
+  font-size:14.5px;line-height:1.55;color:var(--ink);display:none;
+}
+.warnline.show{display:block}
+.warnline b{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:6px;color:var(--accent-deep)}
+
+/* ---------- full-bleed accent panel ---------- */
+#diagnose{background:var(--accent);color:#fff}
+#diagnose .mono{color:rgba(255,255,255,.66)}
+#diagnose .h2 em{color:#08152C}
+#diagnose .lede{color:rgba(255,255,255,.86)}
+.measures{display:grid;grid-template-columns:1fr;margin-top:clamp(40px,5vw,68px);border-top:1px solid rgba(255,255,255,.28)}
+.measure{
+  display:grid;grid-template-columns:1fr;gap:8px;padding:clamp(22px,2.6vw,32px) 0;
+  border-bottom:1px solid rgba(255,255,255,.28);transition:padding-left .5s cubic-bezier(.16,1,.3,1);
+}
+@media(min-width:820px){
+  .measure{grid-template-columns:52px minmax(0,1fr) minmax(0,1.25fr);gap:clamp(20px,3vw,48px);align-items:baseline}
+  .measure:hover{padding-left:14px}
+}
+.measure .mi{font-family:var(--mono);font-size:11px;letter-spacing:.1em;color:rgba(255,255,255,.6)}
+.measure h4{margin:0;font-family:var(--serif);font-size:clamp(22px,2.5vw,32px);line-height:1.08;letter-spacing:-.015em;font-weight:400}
+.measure p{margin:0;font-size:15.5px;line-height:1.5;color:rgba(255,255,255,.84)}
+.walkline{
+  margin-top:clamp(38px,4.5vw,60px);font-family:var(--serif);font-size:clamp(24px,3.2vw,44px);
+  line-height:1.12;letter-spacing:-.02em;max-width:24ch;
+}
+.walkline span{color:#08152C;font-style:italic}
+
+/* ---------- constellation of work ---------- */
+#work{overflow:hidden}
+.constellation{position:relative;padding:clamp(30px,5vw,60px) 0;min-height:clamp(400px,46vw,560px);display:flex;align-items:center;justify-content:center}
+.consttext{text-align:center;max-width:640px;position:relative;z-index:4;margin:0 auto;padding:0 10px}
+.cstar{
+  position:absolute;border-radius:12px;border:1px solid rgba(14,27,51,.1);
+  box-shadow:0 10px 26px -12px rgba(14,27,51,.26);
+  padding:13px 15px;width:clamp(132px,13vw,176px);cursor:pointer;background:var(--paper-lift);
+  transition:transform .75s cubic-bezier(.16,1,.3,1),box-shadow .35s,opacity .75s;
+  transform:rotate(var(--r,0deg)) translateY(var(--in,30px));opacity:0;
+  z-index:2;
+}
+.constellation.in .cstar{opacity:1;transform:rotate(var(--r,0deg)) translateY(0)}
+.cstar:hover{transform:rotate(0deg) translateY(-8px) scale(1.05);box-shadow:0 26px 46px -18px rgba(14,27,51,.34);z-index:6}
+.cstar .cm{font-family:var(--mono);font-size:9px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3)}
+.cstar .cv{font-family:var(--serif);font-size:clamp(23px,2.4vw,31px);line-height:1;letter-spacing:-.02em;margin:8px 0 5px}
+.cstar .cl{font-size:11.5px;line-height:1.3;color:var(--ink-2)}
+.cstar.hot .cv{color:var(--accent)}
+@media(max-width:820px){
+  .constellation{min-height:0;display:block;padding:0}
+  .cstar{position:relative!important;inset:auto!important;width:auto;transform:none!important;opacity:1;margin-bottom:10px}
+  .consttext{margin:26px auto 30px}
+}
+.caseshelf{margin-top:clamp(44px,5vw,76px)}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:26px;align-items:center}
+.caselist{border-top:1px solid var(--line)}
+.caserow{
+  display:grid;grid-template-columns:1fr;gap:6px;padding:clamp(20px,2.3vw,28px) 0;
+  border-bottom:1px solid var(--line);cursor:pointer;transition:padding-left .5s cubic-bezier(.16,1,.3,1),background .3s;
+  align-items:baseline;
+}
+@media(min-width:900px){
+  .caserow{grid-template-columns:minmax(0,1.5fr) minmax(0,1.9fr) auto;gap:clamp(20px,3vw,48px)}
+}
+.caserow:hover{padding-left:12px}
+.caserow h4{margin:0;font-family:var(--serif);font-size:clamp(22px,2.4vw,30px);line-height:1.05;letter-spacing:-.02em;font-weight:400}
+.caserow .cr{margin:0;font-size:15.5px;color:var(--ink-2);line-height:1.45}
+.caserow .go{font-family:var(--mono);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3);white-space:nowrap;transition:color .3s}
+.caserow:hover .go{color:var(--accent)}
+.caserow.open{background:transparent}
+.casebody{grid-column:1/-1;display:none;padding-top:clamp(20px,2.4vw,30px)}
+.caserow.open .casebody{display:block}
+.casebody .cbgrid{display:grid;grid-template-columns:1fr;gap:clamp(24px,3vw,46px)}
+@media(min-width:900px){.casebody .cbgrid{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr)}}
+.casebody h5{margin:0 0 10px;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);font-weight:500}
+.casebody ul{margin:0;padding-left:17px}
+.casebody li{font-size:15px;line-height:1.55;color:var(--ink-2);margin-bottom:8px}
+.cbstats{display:flex;gap:2px;flex-wrap:wrap;margin:22px 0 0;background:var(--line);border:1px solid var(--line)}
+.cbstat{background:var(--paper);padding:14px 18px;flex:1 1 130px}
+.cbstat .v{font-family:var(--serif);font-size:clamp(24px,2.4vw,32px);line-height:1;letter-spacing:-.02em}
+.cbstat:first-child .v{color:var(--accent)}
+.cbstat .l{font-size:12px;color:var(--ink-2);margin-top:6px;line-height:1.3}
+.transfer{margin-top:22px;padding:18px 22px;background:var(--paper-lift);border:1px solid var(--line);border-radius:12px;font-size:15px;line-height:1.55}
+.transfer b{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:7px;color:var(--accent-deep)}
+.tagrow{display:flex;gap:7px;flex-wrap:wrap;margin-top:16px}
+.tg{font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;text-transform:uppercase;padding:5px 10px;border:1px solid var(--line);border-radius:999px;color:var(--ink-3)}
+
+/* ---------- the book: marquee rows of client chips ---------- */
+#book{background:var(--paper-lift);overflow:hidden}
+.bookstats{display:grid;grid-template-columns:repeat(auto-fit,minmax(132px,1fr));gap:2px;background:var(--line);
+  border:1px solid var(--line);margin-bottom:clamp(34px,4vw,56px)}
+.bookstat{background:var(--paper-lift);padding:20px 22px}
+.bookstat .v{font-family:var(--serif);font-size:clamp(30px,3.4vw,46px);line-height:1;letter-spacing:-.03em}
+.bookstat:first-child .v{color:var(--accent)}
+.bookstat .l{font-size:12.5px;color:var(--ink-2);margin-top:8px;line-height:1.35}
+
+.rows{display:flex;flex-direction:column;gap:clamp(11px,1.2vw,15px);
+  margin-left:calc(var(--gutter) * -1);margin-right:calc(var(--gutter) * -1)}
+/* overflow:hidden keeps the track from spilling sideways, but it clips the
+   hover lift and its drop shadow too. The padding opens room inside the clip
+   box and the matching negative margin cancels it out, so the row's margin box
+   and the gap between rows are unchanged. */
+.mrow{overflow:hidden;padding:18px 0;margin:-18px 0;
+  -webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);
+  mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+/* a hovered row paints above its neighbours so the shadow is not covered */
+.mrow:hover{position:relative;z-index:2}
+.mtrack{display:flex;gap:clamp(11px,1.2vw,15px);width:max-content;
+  animation:marquee var(--dur,60s) linear infinite;will-change:transform}
+.mrow.rev .mtrack{animation-direction:reverse}
+.mrow:hover .mtrack,body.modal-on .mtrack{animation-play-state:paused}
+@keyframes marquee{from{transform:translate3d(0,0,0)}to{transform:translate3d(-50%,0,0)}}
+
+.chip-c{
+  flex:0 0 auto;display:flex;flex-direction:column;justify-content:center;gap:5px;
+  min-width:clamp(168px,17vw,224px);padding:15px 22px;border-radius:13px;
+  background:var(--paper);border:1px solid var(--line);cursor:pointer;text-align:left;
+  transition:transform .3s cubic-bezier(.16,1,.3,1),box-shadow .3s,border-color .3s,background .3s;
+}
+.chip-c:hover,.chip-c:focus-visible{transform:translateY(-4px);border-color:var(--accent);
+  box-shadow:0 18px 34px -18px rgba(14,27,51,.34);outline:none;background:var(--paper-lift)}
+.chip-c .cn{display:flex;align-items:center;gap:9px;font-family:var(--sans);font-weight:600;
+  font-size:16.5px;letter-spacing:-.012em;line-height:1.15;white-space:nowrap}
+.chip-c .cn i{width:6px;height:6px;border-radius:50%;background:var(--line);flex:0 0 auto}
+.chip-c.proved .cn i{background:var(--accent)}
+.chip-c .cs{font-family:var(--mono);font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;
+  color:var(--ink-3);white-space:nowrap}
+.chip-c img{height:26px;width:auto;max-width:184px;object-fit:contain;object-position:left center}
+.booknote{margin-top:clamp(26px,3vw,40px);display:flex;gap:22px;flex-wrap:wrap;align-items:center;
+  font-size:14px;color:var(--ink-3)}
+.booknote span{display:inline-flex;align-items:center;gap:8px}
+.booknote i{width:6px;height:6px;border-radius:50%;background:var(--line)}
+.booknote i.on{background:var(--accent)}
+
+/* ---------- modal ---------- */
+#modal{position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;padding:clamp(14px,4vw,40px)}
+body.modal-on{overflow:hidden}
+body.modal-on #modal{display:flex}
+#modal .mscrim{position:absolute;inset:0;background:rgba(14,27,51,.42);backdrop-filter:blur(4px);
+  opacity:0;transition:opacity .3s}
+body.modal-on #modal .mscrim{opacity:1}
+#modal .mcard{
+  position:relative;background:var(--paper);border-radius:18px;width:min(760px,100%);
+  max-height:min(86vh,860px);overflow-y:auto;padding:clamp(26px,3.4vw,46px);
+  box-shadow:0 40px 90px -30px rgba(14,27,51,.5);
+  transform:translateY(16px) scale(.985);opacity:0;transition:transform .38s cubic-bezier(.16,1,.3,1),opacity .3s;
+}
+body.modal-on #modal .mcard{transform:none;opacity:1}
+.mclose{position:absolute;top:16px;right:16px;width:36px;height:36px;border-radius:50%;
+  border:1px solid var(--line);background:var(--paper-lift);cursor:pointer;display:grid;place-items:center;
+  font-size:17px;line-height:1;color:var(--ink-2);transition:.2s;z-index:2}
+.mclose:hover{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.mcard h3{margin:12px 0 0;font-family:var(--serif);font-weight:400;letter-spacing:-.025em;
+  font-size:clamp(30px,4vw,46px);line-height:1.02;max-width:16ch}
+.mcard .mlede{margin:16px 0 0;font-size:clamp(16px,1.5vw,18.5px);line-height:1.5;color:var(--ink-2)}
+.mcard .mstats{display:flex;gap:2px;flex-wrap:wrap;margin:24px 0 0;background:var(--line);border:1px solid var(--line)}
+.mcard .mstat{background:var(--paper);padding:16px 20px;flex:1 1 132px}
+.mcard .mstat .v{font-family:var(--serif);font-size:clamp(25px,2.6vw,34px);line-height:1;letter-spacing:-.02em}
+.mcard .mstat:first-child .v{color:var(--accent)}
+.mcard .mstat .l{font-size:12px;color:var(--ink-2);margin-top:6px;line-height:1.3}
+.mcard h5{margin:26px 0 10px;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-3);font-weight:500}
+.mcard ul{margin:0;padding-left:17px}
+.mcard li{font-size:15px;line-height:1.55;color:var(--ink-2);margin-bottom:8px}
+.mcard .unpub{margin-top:24px;padding:18px 22px;border-left:2px solid var(--ink-3);
+  background:var(--paper-lift);font-size:14.5px;line-height:1.55;color:var(--ink-2)}
+.mcard .unpub b{display:block;font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;
+  text-transform:uppercase;margin-bottom:7px;color:var(--ink)}
+.mcard .mfoot{margin-top:26px;padding-top:18px;border-top:1px solid var(--line);
+  display:flex;gap:10px;flex-wrap:wrap;align-items:center;justify-content:space-between}
+.mnav{display:flex;gap:8px}
+
+@media (prefers-reduced-motion:reduce){
+  .mtrack{animation:none;width:auto;flex-wrap:wrap}
+  .mrow{-webkit-mask-image:none;mask-image:none}
+  .rows{margin-left:0;margin-right:0}
+  .chip-c.dup{display:none}
+  #modal .mcard,#modal .mscrim{transition:none;transform:none;opacity:1}
+}
+
+/* ---------- limits + terms ---------- */
+#limits{background:var(--paper-lift)}
+.twocol{display:grid;grid-template-columns:1fr;gap:clamp(26px,3vw,44px)}
+@media(min-width:880px){.twocol{grid-template-columns:1fr 1fr}}
+.panel{padding:clamp(26px,3vw,40px);border-radius:16px;border:1px solid var(--line);background:var(--paper)}
+.panel.dark{background:var(--deep);border-color:var(--deep);color:#E8F0F9}
+.panel.dark .body,.panel.dark li{color:rgba(232,240,249,.84)}
+.panel.dark h3{color:#fff}
+.panel h3{margin:0 0 16px;font-family:var(--serif);font-size:clamp(23px,2.4vw,31px);line-height:1.08;font-weight:400;letter-spacing:-.015em}
+.panel ul{margin:0;padding-left:17px}
+.panel li{font-size:15.5px;line-height:1.55;color:var(--ink-2);margin-bottom:11px}
+.panel li:last-child{margin-bottom:0}
+.panel li b{color:inherit;font-weight:600}
+.pilotline{margin-top:clamp(26px,3vw,40px);padding:clamp(22px,2.6vw,32px);border-left:2px solid var(--accent);background:var(--accent-wash);font-size:16px;line-height:1.55}
+.pilotline b{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:8px;color:var(--accent-deep)}
+
+/* ---------- close ---------- */
+#close{background:var(--ink);color:var(--paper);padding:clamp(96px,13vw,190px) 0}
+#close .mono{color:rgba(244,248,253,.52)}
+#close .display em{color:var(--aqua)}
+.closegrid{display:grid;grid-template-columns:1fr;gap:clamp(44px,6vw,80px);align-items:end;margin-top:clamp(44px,5vw,76px)}
+@media(min-width:900px){.closegrid{grid-template-columns:minmax(0,1fr) minmax(260px,340px)}}
+.contact{display:flex;flex-direction:column;gap:6px}
+.contact .nm{font-size:19px;font-weight:600}
+.contact .rl{font-size:14.5px;color:rgba(244,248,253,.62)}
+.contact a{font-family:var(--mono);font-size:15px;letter-spacing:.02em;text-decoration:none;color:var(--aqua);border-bottom:1px solid rgba(140,224,236,.4);padding-bottom:2px;width:fit-content;transition:.2s}
+.contact a:hover{border-bottom-color:var(--aqua)}
+.foot{margin-top:clamp(56px,7vw,110px);padding-top:26px;border-top:1px solid rgba(244,248,253,.18);display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
+.foot .mark{height:17px}
+.foot .mark svg{fill:var(--paper);height:100%;width:auto}
+.foot .fm{font-family:var(--mono);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:rgba(244,248,253,.48)}
+
+/* ---------- setup drawer ---------- */
+#scrim{position:fixed;inset:0;background:rgba(14,27,51,.34);backdrop-filter:blur(3px);z-index:70;opacity:0;pointer-events:none;transition:opacity .3s}
+body.setup #scrim{opacity:1;pointer-events:auto}
+#setup{
+  position:fixed;top:0;right:0;bottom:0;width:min(430px,100vw);background:var(--paper-lift);
+  border-left:1px solid var(--line);z-index:80;transform:translateX(101%);
+  transition:transform .46s cubic-bezier(.16,1,.3,1);overflow-y:auto;
+  padding:26px clamp(22px,3vw,32px) 80px;
+}
+body.setup #setup{transform:none}
+#setup h3{margin:0 0 6px;font-family:var(--serif);font-size:30px;font-weight:400;letter-spacing:-.02em}
+#setup .sub{margin:0 0 26px;font-size:14.5px;color:var(--ink-2);line-height:1.5}
+#setup fieldset{border:0;padding:22px 0 0;margin:0 0 22px;border-top:1px solid var(--line)}
+#setup legend{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-deep);padding:0 10px 0 0}
+.f{margin-bottom:15px}
+.f label{display:block;font-size:13.5px;font-weight:500;color:var(--ink-2);margin-bottom:6px}
+.f input,.f select,.f textarea{
+  width:100%;background:var(--paper);border:1px solid var(--line);border-radius:9px;
+  padding:10px 12px;font-size:15px;outline:none;transition:.2s;font-family:inherit;
+}
+.f input:focus,.f select:focus,.f textarea:focus{border-color:var(--accent);box-shadow:0 0 0 3px var(--accent-wash)}
+.f textarea{resize:vertical;min-height:62px;line-height:1.45}
+.f .help{margin-top:5px;font-size:12.5px;color:var(--ink-3);line-height:1.4}
+.f2{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.setupactions{display:flex;gap:9px;margin-top:8px}
+.setupactions .btn{flex:1;justify-content:center;text-align:center}
+#toast{
+  position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(12px);
+  background:var(--ink);color:var(--paper);font-family:var(--mono);font-size:11px;font-weight:700;
+  letter-spacing:.11em;text-transform:uppercase;padding:12px 20px;border-radius:999px;
+  opacity:0;transition:.25s;z-index:90;pointer-events:none;
+}
+#toast.on{opacity:1;transform:translateX(-50%)}
+
+/* ---------- print ---------- */
+@media print{
+  @page{margin:14mm}
+  body{background:#fff;overflow:visible;font-size:11pt}
+  body::before,#top,#scrim,#setup,#toast,.scrollcue,.fan,.constellation .cstar{display:none!important}
+  .rv{opacity:1!important;transform:none!important}
+  .sec{padding:18pt 0;break-inside:avoid}
+  #diagnose,#close{background:#fff!important;color:#000!important}
+  #diagnose .h2 em,#close .display em{color:#B8341C!important}
+  #diagnose .lede,#diagnose .measure p{color:#333!important}
+  .measure{border-color:#ccc!important}
+  .measures{border-color:#ccc!important}
+  #close .mono,.contact .rl,.foot .fm{color:#555!important}
+  .contact a{color:#B8341C!important}
+  .foot .mark svg{fill:#000!important}
+  .chip-c.dup{display:none}
+  .mrow{overflow:visible;-webkit-mask-image:none;mask-image:none}
+  .mtrack{animation:none;width:auto;flex-wrap:wrap}
+  .rows{margin-left:0;margin-right:0}
+  #book{background:#fff!important}
+  .chip-c{break-inside:avoid}
+  #modal{display:none!important}
+  .casebody{display:block!important}
+  .caserow{break-inside:avoid}
+}
+
+/* ================= company profile only ================= */
+.navlinks{display:none;gap:4px}
+@media(min-width:1080px){.navlinks{display:flex}}
+.navlinks a{font-family:var(--mono);font-size:10.5px;font-weight:500;letter-spacing:.11em;
+  text-transform:uppercase;color:var(--ink-2);text-decoration:none;padding:8px 11px;border-radius:999px;transition:.2s}
+.navlinks a:hover{color:var(--ink);background:var(--accent-wash)}
+
+/* failure modes, click to expand */
+.modes{display:grid;grid-template-columns:1fr;gap:clamp(12px,1.4vw,18px)}
+@media(min-width:900px){.modes{grid-template-columns:repeat(3,1fr);align-items:start}}
+.mode{background:var(--paper-lift);border:1px solid var(--line);border-radius:16px;
+  padding:clamp(22px,2.4vw,30px);cursor:pointer;text-align:left;width:100%;
+  transition:border-color .3s,box-shadow .35s,transform .5s cubic-bezier(.16,1,.3,1)}
+.mode:hover{border-color:var(--accent);transform:translateY(-4px);box-shadow:0 26px 48px -24px rgba(14,27,51,.3)}
+.mode.on{border-color:var(--accent);box-shadow:0 26px 48px -24px rgba(14,27,51,.3)}
+.mode .mk{display:flex;align-items:baseline;justify-content:space-between;gap:12px}
+.mode .mn{font-family:var(--serif);font-size:44px;line-height:.85;color:var(--line);letter-spacing:-.03em;transition:color .35s}
+.mode.on .mn,.mode:hover .mn{color:var(--accent)}
+.mode .mtog{font-family:var(--mono);font-size:10px;letter-spacing:.11em;text-transform:uppercase;color:var(--ink-3)}
+.mode h3{margin:16px 0 10px;font-family:var(--sans);font-weight:600;font-size:clamp(19px,1.9vw,23px);
+  line-height:1.18;letter-spacing:-.02em}
+.mode .msym{margin:0;font-size:14.5px;line-height:1.55;color:var(--ink-2)}
+.mode .mdet{display:none;margin-top:18px;padding-top:18px;border-top:1px solid var(--line)}
+.mode.on .mdet{display:block}
+.mode .mdet h4{margin:0 0 6px;font-family:var(--mono);font-size:10px;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--ink-3);font-weight:500}
+.mode .mdet p{margin:0 0 14px;font-size:14.5px;line-height:1.55;color:var(--ink-2)}
+.mode .mdet p:last-child{margin-bottom:0}
+.mode .mdet b{color:var(--ink);font-weight:600}
+
+/* practices and services */
+.practices{display:grid;grid-template-columns:1fr;gap:2px;background:var(--line);border:1px solid var(--line)}
+@media(min-width:880px){.practices{grid-template-columns:repeat(3,1fr)}}
+.practice{background:var(--paper);padding:clamp(24px,2.6vw,34px)}
+.practice .pk{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-deep)}
+.practice h3{margin:12px 0 4px;font-family:var(--serif);font-weight:400;font-size:clamp(24px,2.5vw,32px);
+  line-height:1.05;letter-spacing:-.02em}
+.practice .psub{margin:0 0 18px;font-size:13.5px;color:var(--ink-3);line-height:1.4}
+.practice ul{margin:0;padding:0;list-style:none}
+.practice li{font-size:15px;line-height:1.5;color:var(--ink-2);padding:9px 0;border-bottom:1px solid var(--line-soft)}
+.practice li:last-child{border-bottom:0}
+.practice .who{margin-top:18px;padding-top:16px;border-top:1px solid var(--line);
+  display:flex;flex-wrap:wrap;gap:6px}
+/* ---- turnable practice cards -------------------------------------------
+   The front keeps the plain-language promise. The back names the services
+   as we sell them. Front sits in flow and sets the height; the back is
+   absolutely positioned on top of it and rotated away until turned. */
+.practice{position:relative;padding:0;background:transparent;perspective:1500px}
+.pflip{position:relative;height:100%;transform-style:preserve-3d;
+  transition:transform .6s cubic-bezier(.22,.7,.2,1)}
+.practice.turned .pflip{transform:rotateY(180deg)}
+.pface{background:var(--paper);padding:clamp(24px,2.6vw,34px);
+  backface-visibility:hidden;-webkit-backface-visibility:hidden}
+.pfront{position:relative;height:100%;display:flex;flex-direction:column}
+.pback{position:absolute;inset:0;transform:rotateY(180deg);
+  display:flex;flex-direction:column;overflow:auto}
+.practice .who{margin-bottom:18px}
+.pturn{margin-top:auto;align-self:flex-start;display:inline-flex;align-items:center;gap:8px;
+  background:var(--accent-wash);border:1px solid var(--accent);border-radius:999px;
+  padding:9px 16px;cursor:pointer;font-family:var(--mono);font-size:10.5px;font-weight:500;
+  letter-spacing:.12em;text-transform:uppercase;color:var(--accent-deep);transition:.2s}
+.pturn:hover{background:var(--accent);border-color:var(--accent);color:#fff}
+.pturn .pta{transition:transform .2s}
+.pturn:hover .pta{transform:translateX(3px)}
+.pback .pturn:hover .pta{transform:translateX(-3px)}
+/* the services list on the back, set as named services rather than prose */
+.practice ul.svc{margin-top:4px}
+.practice ul.svc li{font-family:var(--sans);font-size:15.5px;color:var(--ink);font-weight:500}
+@media (prefers-reduced-motion:reduce){ .pflip{transition:none} }
+@media print{
+  .practice{perspective:none}
+  .pflip{transform:none!important;height:auto}
+  .pface{backface-visibility:visible;-webkit-backface-visibility:visible}
+  .pback{position:static;transform:none;padding-top:0}
+  .pback .pk,.pback h3,.pback .psub{display:none}
+  .pturn{display:none}
+}
+.who .nm{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;
+  padding:5px 10px;border-radius:999px;background:var(--accent-wash);color:var(--accent-deep)}
+
+
+/* any figure still waiting on a real number screams until someone fills it in */
+[data-needs]{color:#D6202F!important;outline:2px dashed #D6202F;outline-offset:4px;border-radius:4px}
+[data-needs]::after{content:" NEEDS A REAL NUMBER";font-family:var(--mono);font-size:10px;letter-spacing:.1em;vertical-align:super}
+
+/* ================= team stage ================= */
+#team[hidden]{display:none}
+#team{position:relative;overflow:hidden;min-height:100svh;display:flex;flex-direction:column;
+  justify-content:flex-start;padding:clamp(84px,8vw,104px) 0 0}
+/* this section leads with the photograph, so its heading runs compact */
+#team .sechead{margin-bottom:clamp(18px,2vw,28px);align-items:start}
+#team .h2{font-size:clamp(30px,4.2vw,58px)}
+#team .lede{font-size:clamp(15px,1.35vw,18px)}
+/* the wave field fills this whole section rather than sitting at its foot */
+#team .wavewrap{height:100%;-webkit-mask-image:none;mask-image:none}
+.teamhead{position:relative;z-index:2}
+/* 4 across, 2 down. Each cutout stands on the floor of its own tile, so the
+   heads line up on a shared baseline instead of floating at 8 different heights. */
+.teamgrid{position:relative;z-index:3;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));
+  gap:clamp(10px,1.1vw,16px);padding:clamp(26px,3vw,44px) 0 clamp(30px,3.4vw,52px)}
+.tcard{position:relative;display:flex;flex-direction:column;justify-content:flex-end;align-items:stretch;
+  aspect-ratio:1/1.06;border:1px solid rgba(14,27,51,.1);border-radius:18px;padding:0;cursor:pointer;
+  background:linear-gradient(180deg,rgba(255,255,255,.9),rgba(255,255,255,.58));
+  backdrop-filter:blur(8px);overflow:hidden;text-align:left;
+  transition:border-color .28s,box-shadow .38s cubic-bezier(.16,1,.3,1),transform .38s cubic-bezier(.16,1,.3,1)}
+.tcard:hover,.tcard:focus-visible{border-color:var(--ink);transform:translateY(-4px);
+  box-shadow:0 22px 40px -22px rgba(14,27,51,.5);outline:none}
+.tcard .tim{width:100%;flex:1 1 auto;min-height:0;object-fit:contain;object-position:bottom center;
+  padding:clamp(14px,1.6vw,22px) clamp(16px,2vw,28px) 0;
+  user-select:none;-webkit-user-drag:none;
+  filter:grayscale(.55) contrast(.98);
+  /* the cutouts end flat at the neck, so the bottom edge is dissolved rather
+     than left as a cut line across the throat */
+  -webkit-mask-image:linear-gradient(180deg,#000 74%,rgba(0,0,0,.55) 89%,transparent 99%);
+          mask-image:linear-gradient(180deg,#000 74%,rgba(0,0,0,.55) 89%,transparent 99%);
+  transform:translateY(2px) scale(.98);transform-origin:50% 100%;
+  transition:filter .34s,transform .46s cubic-bezier(.16,1,.3,1)}
+.tcard:hover .tim,.tcard:focus-visible .tim{filter:none;transform:translateY(0) scale(1.045)}
+.tcard .tmeta{position:relative;z-index:2;padding:11px 13px 13px;
+  background:linear-gradient(180deg,rgba(255,255,255,0),rgba(255,255,255,.94) 42%)}
+.tcard .tno{display:block;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.12em;
+  color:var(--accent);margin-bottom:3px}
+.tcard .tnm{display:block;font-size:13.5px;font-weight:600;color:var(--ink);line-height:1.28}
+.tcard .trl{display:block;font-size:11.5px;color:var(--ink-2);line-height:1.35;margin-top:2px}
+@media(max-width:820px){
+  #team{min-height:0;padding-top:clamp(80px,14vw,110px)}
+  .teamgrid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+
+/* ================= authority claims ================= */
+/* the authority beat carries the full-bleed accent panel, which is why the
+   claim text below is written for a colored ground rather than for paper */
+#authority{background:var(--accent);color:#fff}
+#authority .mono{color:rgba(255,255,255,.66)}
+#authority .h2{color:#fff}
+#authority .h2 em{color:#08152C}
+#authority .lede{color:rgba(255,255,255,.86)}
+#authority .walkline{color:#fff}
+.claims{margin-top:clamp(40px,5vw,68px);border-top:1px solid rgba(255,255,255,.28)}
+.claim{display:grid;grid-template-columns:1fr;gap:10px;padding:clamp(24px,2.8vw,34px) 0;
+  border-bottom:1px solid rgba(255,255,255,.28);transition:padding-left .5s cubic-bezier(.16,1,.3,1)}
+@media(min-width:900px){
+  .claim{grid-template-columns:190px minmax(0,1fr) minmax(0,1.05fr);gap:clamp(20px,3vw,44px);align-items:baseline}
+  .claim:hover{padding-left:14px}
+}
+.claim .cfig{font-family:var(--serif);font-size:clamp(34px,4vw,54px);line-height:.9;letter-spacing:-.03em;color:#08152C}
+.claim h4{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(21px,2.3vw,29px);line-height:1.08;letter-spacing:-.015em}
+.claim p{margin:0;font-size:15px;line-height:1.55;color:rgba(255,255,255,.84)}
+.claim .src{display:block;margin-top:8px;font-family:var(--mono);font-size:10px;letter-spacing:.11em;
+  text-transform:uppercase;color:rgba(255,255,255,.55)}
+
+/* ================= steps ================= */
+.steps{display:grid;grid-template-columns:1fr;gap:2px;background:var(--line);border:1px solid var(--line)}
+@media(min-width:760px){.steps{grid-template-columns:repeat(2,1fr)}}
+@media(min-width:1160px){.steps{grid-template-columns:repeat(4,1fr)}}
+.step{background:var(--paper);padding:clamp(24px,2.6vw,32px);display:flex;flex-direction:column;gap:11px;transition:background .3s}
+.step:hover{background:var(--paper-lift)}
+.step .sn{font-family:var(--serif);font-size:46px;line-height:.82;color:var(--line);letter-spacing:-.03em;transition:color .35s}
+.step:hover .sn{color:var(--accent)}
+.step h4{margin:0;font-family:var(--sans);font-weight:600;font-size:18px;line-height:1.2;letter-spacing:-.015em}
+.step p{margin:0;font-size:14.5px;line-height:1.55;color:var(--ink-2)}
+
+/* ================= BANT readiness ================= */
+#bant{background:var(--paper-deep)}
+.bant{display:grid;grid-template-columns:1fr;gap:clamp(14px,1.6vw,20px)}
+@media(min-width:900px){.bant{grid-template-columns:repeat(2,1fr)}}
+.bq{background:var(--paper-lift);border:1px solid var(--line);border-radius:16px;padding:clamp(22px,2.4vw,30px)}
+.bq .bk{display:flex;align-items:center;gap:11px;margin-bottom:12px}
+.bq .bl{width:30px;height:30px;border-radius:9px;display:grid;place-items:center;flex:0 0 auto;
+  font-family:var(--serif);font-size:19px;line-height:1;background:var(--accent-wash);color:var(--accent-deep);transition:.3s}
+.bq.answered .bl{background:var(--accent);color:#fff}
+.bq .bt{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.bq h4{margin:0 0 16px;font-family:var(--sans);font-weight:600;font-size:clamp(17px,1.75vw,20px);
+  line-height:1.28;letter-spacing:-.018em}
+.bopts{display:flex;flex-direction:column;gap:8px}
+.bopt{display:flex;align-items:flex-start;gap:11px;width:100%;text-align:left;cursor:pointer;
+  background:var(--paper);border:1px solid var(--line);border-radius:11px;padding:12px 15px;
+  font-size:14.5px;line-height:1.4;color:var(--ink-2);transition:.2s}
+.bopt:hover{border-color:var(--ink-3);color:var(--ink)}
+.bopt i{width:15px;height:15px;border-radius:50%;border:1.5px solid var(--line);flex:0 0 auto;margin-top:2px;transition:.2s}
+.bopt.sel{border-color:var(--accent);background:var(--accent-wash);color:var(--ink);font-weight:500}
+.bopt.sel i{border-color:var(--accent);background:var(--accent);box-shadow:inset 0 0 0 3px var(--accent-wash)}
+/* the 1 to 10 worry scale: one compact row, no radio dot */
+.bopts.scale{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:6px}
+.bopts.scale .bopt{width:auto;min-width:0;justify-content:center;text-align:center;
+  padding:9px 4px;font-family:var(--mono);font-size:13px;font-variant-numeric:tabular-nums}
+.bopts.scale .bopt span{width:100%;text-align:center}
+.bq .bnote{margin:12px 0 0;font-size:13.5px;line-height:1.5;color:var(--ink-3);display:none}
+.bq.answered .bnote{display:block}
+
+.verdict{margin-top:clamp(26px,3vw,40px);border-radius:18px;padding:clamp(26px,3.2vw,44px);
+  background:var(--ink);color:var(--paper);display:grid;gap:20px;position:relative;overflow:hidden}
+@media(min-width:940px){.verdict{grid-template-columns:minmax(0,1fr) minmax(260px,330px);align-items:center;gap:44px}}
+.verdict.ready{background:var(--accent)}
+.verdict.hold{background:var(--deep)}
+.verdict .vk{font-family:var(--mono);font-size:10.5px;letter-spacing:.13em;text-transform:uppercase;
+  color:rgba(255,255,255,.6);margin:0 0 12px}
+.verdict h3{margin:0;font-family:var(--serif);font-weight:400;font-size:clamp(25px,3.1vw,40px);
+  line-height:1.1;letter-spacing:-.02em;max-width:24ch}
+.verdict p{margin:14px 0 0;font-size:15.5px;line-height:1.55;color:rgba(255,255,255,.85);max-width:56ch}
+.vscore{display:flex;gap:7px}
+.vscore span{flex:1;height:5px;border-radius:3px;background:rgba(255,255,255,.22);transition:background .4s}
+.vscore span.g{background:var(--aqua)}
+.vscore span.a{background:#F0C468}
+.vscore span.r{background:#F08A85}
+.vside{display:flex;flex-direction:column;gap:14px}
+.vside .vsl{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:rgba(255,255,255,.6)}
+
+/* ---------- the team photograph, full bleed ----------
+   One screen, edge to edge, no type over it. The photo is 16:9, so a tall
+   narrow viewport would crop the group out of it. Above 820px it fills the
+   screen and crops the sides; below that it keeps its own proportions so
+   everybody still reads. */
+/* dvh, not svh: the credentials card is anchored to the bottom of this
+   section, and svh can resolve taller than the actual viewport, which
+   pushes the card below the fold. */
+#photo{position:relative;width:100%;height:100vh;height:100dvh;overflow:hidden;background:var(--paper-deep)}
+#photo img{display:block;width:100%;height:100%;object-fit:cover;object-position:center 38%}
+
+/* the 8 hover targets, laid over the faces. positionFaces() in the script
+   places them, because object-fit:cover crops the photo and a percentage of
+   the section is not a percentage of the photograph. */
+#faces{position:absolute;inset:0}
+/* a small dot on each person's shirt. the button is 30px so it is easy to
+   hit and reaches the 44px guideline together with its neighbours' spacing,
+   but only the 10px dot is drawn. */
+.face{position:absolute;transform:translate(-50%,-50%);width:30px;height:30px;
+  display:grid;place-items:center;border:0;padding:0;background:transparent;
+  border-radius:50%;cursor:pointer;-webkit-tap-highlight-color:transparent}
+.face::after{content:"";width:10px;height:10px;border-radius:50%;background:#fff;opacity:.5;
+  transition:transform .2s cubic-bezier(.2,.8,.2,1),opacity .2s}
+.face:hover::after,.face:focus-visible::after,.face.on::after{transform:scale(1.5);opacity:1}
+.face:focus{outline:none}
+
+/* the credentials card, bottom left of the photograph */
+#facecard{position:absolute;left:clamp(16px,3vw,48px);bottom:clamp(16px,3vw,48px);
+  width:min(370px,calc(100% - 32px));background:rgba(255,255,255,.95);
+  border:1px solid var(--line);border-radius:16px;padding:20px 22px;
+  box-shadow:0 20px 50px -18px rgba(14,27,51,.45);
+  opacity:0;visibility:hidden;transform:translateY(10px);
+  transition:opacity .22s,transform .22s,visibility .22s;pointer-events:none;z-index:2}
+#facecard.show{opacity:1;visibility:visible;transform:none}
+#facecard .fk{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;
+  color:var(--accent-deep);display:block;margin-bottom:8px}
+#facecard .fn{font-family:var(--serif);font-weight:400;font-size:26px;line-height:1.1;
+  letter-spacing:-.015em;color:var(--ink);margin:0}
+#facecard .fr{margin:5px 0 0;font-size:14px;color:var(--ink-2);line-height:1.45}
+#facecard ul{margin:13px 0 0;padding:0;list-style:none}
+#facecard li{font-size:13.5px;line-height:1.5;color:var(--ink-2);padding:6px 0;
+  border-top:1px solid var(--line-soft)}
+#facecard .fempty{margin:6px 0 0;font-size:13.5px;line-height:1.5;color:var(--ink-2)}
+
+@media(max-width:820px){
+  #photo{height:auto}
+  #photo img{height:auto;aspect-ratio:16/9}
+  #facecard{position:static;width:auto;margin:14px clamp(16px,5vw,24px) 0;transform:none;
+    opacity:0;visibility:hidden;height:0;padding:0;border:0;box-shadow:none;overflow:hidden}
+  #facecard.show{height:auto;padding:18px 20px;border:1px solid var(--line);margin-bottom:22px}
+}
+@media print{
+  #photo{height:auto;break-inside:avoid}
+  #photo img{height:auto;aspect-ratio:16/9}
+  #faces,#facecard{display:none}
+}
+
+</style>
+</head>
+<body>
+
+<header id="top">
+  <a class="mark" href="#hero" aria-label="Toggle Solutions"><svg viewBox="0 0 1432 392" aria-hidden="true"><use href="#wm"/></svg></a>
+  <div class="grow"></div>
+  <a class="btn solid" href="mailto:hello@toggle.solutions?subject=Growth%20audit" style="text-decoration:none;display:inline-flex;align-items:center">Book the audit</a>
+</header>
+
+<!-- ==================== 1. INTRODUCE ==================== -->
+<section id="hero">
+  <div class="wavewrap" aria-hidden="true">
+    <svg viewBox="0 0 1440 620" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="wv1" x1="0" y1="0" x2=".7" y2="1"><stop offset="0" stop-color="#CFE2FA"/><stop offset="1" stop-color="#AFD3F5"/></linearGradient>
+        <linearGradient id="wv2" x1=".1" y1="0" x2=".9" y2="1"><stop offset="0" stop-color="#A9CFF3"/><stop offset="1" stop-color="#8FC9EF"/></linearGradient>
+        <linearGradient id="wv3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9AD5EE"/><stop offset="1" stop-color="#8CE0EC"/></linearGradient>
+      </defs>
+      <path fill="url(#wv1)" opacity=".72" d="M0,168 C240,86 430,214 730,176 C1010,141 1190,54 1440,110 L1440,620 L0,620 Z"/>
+      <path fill="url(#wv2)" opacity=".74" d="M0,296 C300,224 496,362 796,314 C1074,270 1252,186 1440,244 L1440,620 L0,620 Z"/>
+      <path fill="url(#wv3)" opacity=".8" d="M0,438 C268,378 512,506 812,448 C1090,394 1272,340 1440,388 L1440,620 L0,620 Z"/>
+    </svg>
+  </div>
+  <!-- The card fan was removed on 2026-09-19. The headline now owns the hero
+       on its own, so the grid is gone and the wrap runs full width. -->
+  <div class="wrap">
+    <div class="heromark rv" data-d="0"><svg viewBox="0 0 1432 392" role="img" aria-label="Toggle Solutions"><use href="#wm"/></svg></div>
+    <h1 class="display words">The growth partner for <em>ambitious companies</em>.</h1>
+  </div>
+</section>
+
+<!-- ==================== 1a. THE TEAM ==================== -->
+<!-- HIDDEN on 2026-08-29 at Zaid's request. Remove the `hidden` attribute
+     below to bring it back; nothing else needs changing. The nav never
+     linked here, so no other section depends on it. -->
+<section id="team" hidden>
+  <div class="wavewrap" aria-hidden="true">
+    <svg viewBox="0 0 1440 620" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="tw1" x1="0" y1="0" x2=".7" y2="1"><stop offset="0" stop-color="#DCEAFB"/><stop offset="1" stop-color="#B7D8F6"/></linearGradient>
+        <linearGradient id="tw2" x1=".1" y1="0" x2=".9" y2="1"><stop offset="0" stop-color="#AFD2F4"/><stop offset="1" stop-color="#93CBEF"/></linearGradient>
+        <linearGradient id="tw3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9DD7EF"/><stop offset="1" stop-color="#8CE0EC"/></linearGradient>
+      </defs>
+      <path fill="url(#tw1)" opacity=".8" d="M0,150 C240,68 430,196 730,158 C1010,123 1190,36 1440,92 L1440,620 L0,620 Z"/>
+      <path fill="url(#tw2)" opacity=".8" d="M0,282 C300,210 496,348 796,300 C1074,256 1252,172 1440,230 L1440,620 L0,620 Z"/>
+      <path fill="url(#tw3)" opacity=".85" d="M0,430 C268,370 512,498 812,440 C1090,386 1272,332 1440,380 L1440,620 L0,620 Z"/>
+    </svg>
+  </div>
+
+  <div class="wrap teamhead">
+    <div class="sechead">
+      <h2 class="h2 words">The people who will <em>run your account</em>.</h2>
+      <p class="lede rv" data-d="2">The people who win your business are the people who run it. Nobody is handed over after the pitch.</p>
+    </div>
+  </div>
+
+  <div class="wrap"><div class="teamgrid" id="teamgrid"></div></div>
+</section>
+
+<!-- ==================== 1b. WHO WE ARE ==================== -->
+<section class="sec" id="who">
+  <div class="wrap">
+    <div class="sechead">
+      <h2 class="h2 words">Our key <em>services</em>.</h2>
+    </div>
+    <div class="practices rv" data-d="1">
+      <div class="practice" data-p="1">
+        <div class="pflip">
+          <div class="pface pfront">
+            <span class="pk">Practice 1 &middot; Acquisition</span>
+            <h3>Bringing new people to your business</h3>
+            <ul><li>We buy on Google, Meta and TikTok, and each platform works a different stage of the decision.</li><li>We rewrite pages around the question people type, and name the author and the sources on each one.</li><li>We group articles by subject so each new one lifts the ones published before it. Nothing runs as a one-off.</li><li>We buy outdoor to support the channels that close, and report it against them.</li></ul>
+            <div class="who"><span class="nm">Yi Yang</span><span class="nm">Jordan</span><span class="nm">Shaun</span><span class="nm">Julian</span></div>
+            <button class="pturn" type="button" aria-expanded="false" aria-controls="pback-1">The services we run<span class="pta" aria-hidden="true">&#8594;</span></button>
+          </div>
+          <div class="pface pback" id="pback-1">
+            <span class="pk">Practice 1 &middot; Acquisition</span>
+            <h3>Bringing new people to your business</h3>
+            <ul class="svc"><li>Performance Marketing</li><li>SEO</li><li>GEO</li><li>Content Marketing</li><li>Out of Home</li></ul>
+            <button class="pturn" type="button" tabindex="-1"><span class="pta" aria-hidden="true">&#8592;</span>Back</button>
+          </div>
+        </div>
+      </div>
+      <div class="practice" data-p="2">
+        <div class="pflip">
+          <div class="pface pfront">
+            <span class="pk">Practice 2 &middot; Conversion</span>
+            <h3>Turning prospects into customers</h3>
+            <ul><li>We will not point paid traffic at a page we have not instrumented, even when that delays the launch.</li><li>Qualifying questions go on the form. Fewer leads reach your sales team, and more of them buy.</li><li>We sort the catalog by what earns. Best sellers get the budget, slow stock gets cleared.</li><li>Naming, logo, colors, and the rules that govern them. Your team gets the file, not only the artwork.</li></ul>
+            <div class="who"><span class="nm">Aizad</span><span class="nm">Zaid</span><span class="nm">Lau</span></div>
+            <button class="pturn" type="button" aria-expanded="false" aria-controls="pback-2">The services we run<span class="pta" aria-hidden="true">&#8594;</span></button>
+          </div>
+          <div class="pface pback" id="pback-2">
+            <span class="pk">Practice 2 &middot; Conversion</span>
+            <h3>Turning prospects into customers</h3>
+            <ul class="svc"><li>Web Development</li><li>Conversion Optimization</li><li>Online Store Management</li><li>Branding</li></ul>
+            <button class="pturn" type="button" tabindex="-1"><span class="pta" aria-hidden="true">&#8592;</span>Back</button>
+          </div>
+        </div>
+      </div>
+      <div class="practice" data-p="3">
+        <div class="pflip">
+          <div class="pface pfront">
+            <span class="pk">Practice 3 &middot; Retention</span>
+            <h3>Keeping the customers you win</h3>
+            <ul><li>We send your closed-sale records back to Google and Meta. They stop optimizing toward form fills.</li><li>Automated follow-up after a first order, built from your order history rather than a template.</li><li>Our team shoots and cuts the ads, changing one thing per version so a test shows what moved it.</li><li>Each month we check the leads the platforms claim against your records, and we report the second number.</li></ul>
+            <div class="who"><span class="nm">Zaid</span><span class="nm">Yi Yang</span><span class="nm">Viknesh</span></div>
+            <button class="pturn" type="button" aria-expanded="false" aria-controls="pback-3">The services we run<span class="pta" aria-hidden="true">&#8594;</span></button>
+          </div>
+          <div class="pface pback" id="pback-3">
+            <span class="pk">Practice 3 &middot; Retention</span>
+            <h3>Keeping the customers you win</h3>
+            <ul class="svc"><li>CRM</li><li>Email Marketing</li><li>Creative Production</li><li>Reporting and Analytics</li></ul>
+            <button class="pturn" type="button" tabindex="-1"><span class="pta" aria-hidden="true">&#8592;</span>Back</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== 2. AUTHORITY ==================== -->
+
+<!-- ==================== 2a. THE TEAM PHOTOGRAPH ====================
+     Full bleed, one screen, no type over it. Added 2026-09-19. -->
+<section id="photo">
+  <img id="pimg" src="team-group.jpg" alt="The Toggle Solutions team" fetchpriority="low" decoding="async">
+  <div id="faces"></div>
+  <div id="facecard" aria-live="polite"></div>
+</section>
+
+<!-- ==================== 3. THE BOOK ==================== -->
+<section class="sec" id="book">
+  <div class="wrap">
+    <div class="sechead">
+      <h2 class="h2 words">Our <em>portfolio</em>.</h2>
+    </div>
+    <div class="bookstats rv" data-d="1" id="bookstats"></div>
+    <div class="rows rv" data-d="2" id="rows"></div>
+  </div>
+</section>
+
+<!-- ==================== 4. WHAT WE DO FOR YOU ==================== -->
+<section class="sec" id="doing">
+  <div class="wrap">
+    <div class="sechead">
+      <h2 class="h2 words">What we <em>do</em> in your first 3 months.</h2>
+    </div>
+    <div class="steps rv" data-d="1">
+      <div class="step">
+        <span class="sn num">01</span>
+        <h4>What is actually stopping your growth</h4>
+        <p>We look at your advertising, your website, your social media, your ads, and how your sales people work. Then we check the supporting factors: how long your team takes to reply to a new enquiry, whether your customer records are kept properly, your website performance, and your retail location performance.</p>
+      </div>
+      <div class="step">
+        <span class="sn num">02</span>
+        <h4>Mapping out the whole structure</h4>
+        <p>Our team of senior marketers, developers and consultants analyze your business structure from top to bottom and find gaps that we can help improve.</p>
+      </div>
+      <div class="step">
+        <span class="sn num">03</span>
+        <h4>Service to problem matching</h4>
+        <p>Traditional marketing agencies often position marketing as the solution to every growth challenge, charging premium fees to deliver it.</p>
+        <p>Toggle.solutions takes a different approach. We&rsquo;re your growth partner, not just another marketing agency. We first identify what&rsquo;s truly holding your business back and where the greatest growth opportunities lie. Then, we determine whether our expertise, experience, and services are the right fit to help you move forward.</p>
+        <p>Our goal isn&rsquo;t to win you as a client. It&rsquo;s to help your business grow.</p>
+      </div>
+      <div class="step">
+        <span class="sn num">04</span>
+        <h4>Delivering system, strategy and total visibility</h4>
+        <p>The marketing, branding, creatives and strategies we deliver are built to be adaptable to different seasons, market trends and business needs.</p>
+        <p>And we maximize your visibility via dashboards, apps and reports so you&rsquo;re always in the know.</p>
+      </div>
+    </div>
+    <div class="freewill rv" data-d="2" style="margin-top:clamp(30px,3.5vw,50px)">
+      <p>You get on with running the business. <em>We handle the rest of this</em>.</p>
+    </div>
+  </div>
+</section>
+
+
+
+<!-- ==================== 5. BANT ==================== -->
+<section class="sec" id="bant">
+  <div class="wrap">
+    <div class="sechead">
+      <h2 class="h2 words">We check whether we are <em>right for you</em>.</h2>
+    </div>
+    <div class="bant" id="bant-grid"></div>
+  </div>
+</section>
+
+<!-- ==================== CLOSE ==================== -->
+<section id="close">
+  <div class="wavewrap" aria-hidden="true">
+    <svg viewBox="0 0 1440 480" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="wvd1" x1="0" y1="0" x2=".8" y2="1"><stop offset="0" stop-color="#16406E"/><stop offset="1" stop-color="#0F2A47"/></linearGradient>
+        <linearGradient id="wvd2" x1=".2" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1D5488"/><stop offset="1" stop-color="#14355C"/></linearGradient>
+      </defs>
+      <path fill="url(#wvd1)" opacity=".85" d="M0,150 C280,74 500,208 800,158 C1080,112 1260,44 1440,96 L1440,480 L0,480 Z"/>
+      <path fill="url(#wvd2)" opacity=".7" d="M0,290 C300,224 540,348 840,296 C1110,250 1280,196 1440,238 L1440,480 L0,480 Z"/>
+    </svg>
+  </div>
+  <div class="wrap">
+    <div class="closegrid">
+      <div class="contact rv" data-d="3">
+        <span class="nm">Viknesh</span>
+        <span class="rl">Sales and Partnership Director</span>
+        <a href="tel:+60125688681">(+60) 12 568 8681</a>
+        <a href="mailto:hello@toggle.solutions">hello@toggle.solutions</a>
+      </div>
+    </div>
+    <div class="foot">
+      <span class="mark"><svg viewBox="0 0 1432 392" aria-hidden="true"><use href="#wm"/></svg></span>
+    </div>
+  </div>
+</section>
+
+<div id="modal" role="dialog" aria-modal="true" aria-labelledby="mtitle">
+  <div class="mscrim"></div>
+  <div class="mcard">
+    <button class="mclose" id="mclose" aria-label="Close">&#215;</button>
+    <div id="mbody"></div>
+  </div>
+</div>
+
+<div id="toast" role="status" aria-live="polite"></div>
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg"><symbol id="wm" viewBox="0 0 1432 392"><path d="M1166.39 1.57487C1166.39 2.43389 1157.45 54.1188 1146.44 116.398C1135.43 178.678 1126.5 232.081 1126.5 234.944C1126.5 238.667 1127.77 241.244 1130.64 243.964C1134.47 247.4 1136.07 247.686 1147.4 247.686C1154.42 247.686 1160 247.973 1160 248.545C1160 249.261 1152.82 290.351 1151.23 298.799C1150.43 302.807 1149.63 303.523 1142.77 304.812C1120.27 309.107 1090.59 307.818 1072.88 301.948C1061.55 298.083 1049.75 288.347 1044.96 278.898C1041.61 272.169 1041.13 269.162 1041.29 254.129C1041.29 239.239 1044.16 221.486 1062.35 119.119C1074 54.4051 1083.41 1.00218 1083.41 0.715838C1083.41 0.286342 1102.08 0 1124.9 0C1154.26 0 1166.39 0.429496 1166.39 1.57487Z"/>
+<path d="M140.413 21.6189C140.413 22.9074 133.871 60.8478 131.637 72.5879L130.68 77.3125H155.571C171.527 77.3125 180.303 77.8852 180.303 78.7442C180.303 80.6054 172.485 125.418 171.527 129.856C170.73 133.006 170.091 133.149 145.678 133.436L120.787 133.865L111.533 186.123C101.321 243.821 101.002 246.971 104.672 248.259C106.108 248.689 116.798 249.118 128.606 249.118C148.391 249.118 150.146 249.261 149.349 251.552C148.87 252.984 146.636 265.583 144.243 279.614L139.775 305.241L100.523 304.669C66.058 304.096 60.1543 303.666 50.8998 300.946C30.7951 295.076 20.7428 285.054 17.7113 268.017C15.7965 256.849 16.4348 250.693 27.7636 187.411C32.7099 160.209 36.6989 136.872 36.6989 135.44C36.6989 133.436 34.3055 133.149 18.3495 133.149C6.86114 133.149 0 132.577 0 131.718C0 129.856 7.81846 85.0438 8.93536 80.4623C9.57368 77.4557 10.2118 77.3125 28.5613 77.3125H47.3895L51.0594 56.839C52.974 45.6716 55.2078 32.7862 56.1653 28.2047L57.7609 20.044H99.087C127.01 20.044 140.413 20.4735 140.413 21.6189Z"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M644.145 113.964C646.698 121.409 647.177 121.839 651.644 121.409L656.59 120.98L660.42 99.0745L664.09 77.3125H746.742L745.944 80.4623C745.475 82.2857 737.196 129.18 727.258 185.472L727.255 185.487L726.637 188.986C716.585 246.827 707.49 297.367 706.692 301.376C696.321 347.19 666.643 375.109 614.945 387.565C600.585 391.001 596.596 391.287 568.832 391.43C535.803 391.43 524.475 389.856 504.53 382.697C476.287 372.675 457.619 354.779 450.758 331.155C449.481 326.717 448.364 321.42 448.364 319.702V316.409H530.697L533.57 322.135C538.995 333.16 551.44 338.457 572.023 338.457C594.841 338.457 609.042 331.298 618.136 315.12C622.923 306.816 624.678 300.517 628.827 277.036C632.656 254.988 632.656 254.845 628.029 254.845C625.157 254.845 622.764 256.993 617.658 264.008C598.032 291.21 566.599 302.521 529.421 295.649C488.414 288.061 463.363 258.711 459.693 213.612C456.023 167.654 470.862 127.136 501.657 99.3609C512.029 90.0547 517.294 86.6186 528.145 81.894C552.078 71.5856 578.246 69.5813 600.585 76.1671C621.009 82.1803 638.241 97.2133 644.145 113.964ZM546.813 171.09C552.078 155.627 566.598 141.596 582.235 137.015C586.224 135.726 593.564 134.724 598.51 134.724C624.519 134.438 641.911 149.041 644.145 173.094C646.538 198.865 632.656 223.204 610.318 232.081C599.308 236.519 579.842 236.662 569.63 232.367C560.535 228.644 553.355 222.202 548.568 213.611C545.377 207.885 544.898 204.592 544.898 191.849C544.898 183.545 545.855 174.239 546.813 171.09Z"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M936.619 113.535C939.172 120.121 940.129 120.98 944.437 121.409C947.15 121.696 949.384 121.409 949.384 120.693C949.384 118.975 955.606 84.3279 956.564 80.4623L957.361 77.3125H998.049C1022.14 77.3125 1038.74 77.8852 1038.74 78.6011C1038.74 83.612 999.805 300.803 997.252 309.966C981.934 364.944 930.077 394.294 852.849 391.86C824.448 390.858 808.013 387.565 788.866 379.261C762.06 367.521 746.423 348.622 741.317 321.706L740.2 316.409H823.331L825.086 320.417C827.16 325.142 833.862 331.728 839.447 334.448C846.946 337.884 863.859 339.459 875.347 337.884C902.154 334.019 913.004 321.276 919.865 285.913L920.913 280.423C924.752 260.328 925.594 255.922 923.993 255.023C923.544 254.771 922.904 254.794 922.084 254.823C921.792 254.834 921.478 254.845 921.141 254.845C917.471 254.845 915.876 256.277 911.887 262.29C909.334 266.299 903.111 273.171 898.165 277.609C861.785 310.539 794.61 301.805 767.485 260.715C749.454 233.369 746.582 189.416 760.464 150.044C770.198 122.555 788.547 99.7904 812.64 85.7596C833.383 73.5901 864.816 69.1518 889.548 74.7354C910.451 79.46 929.439 95.0658 936.619 113.535ZM853.807 149.614C830.99 171.805 830.83 211.607 853.169 227.213C862.423 233.655 869.125 235.517 882.368 235.517C902.632 235.373 918.908 226.64 928.321 210.891C934.863 199.724 936.778 192.565 936.778 178.821C936.778 163.358 933.427 154.482 924.013 146.035C912.206 135.44 893.697 131.717 876.784 136.585C866.412 139.592 860.987 142.598 853.807 149.614Z"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M1352.75 76.883C1402.69 89.7684 1431.42 126.563 1431.26 177.246C1431.1 184.977 1430.3 194.999 1429.18 199.724L1427.11 208.314L1341.26 208.744L1255.26 209.03L1256.38 218.05C1257.65 228.931 1263.72 240.814 1270.74 245.539C1288.61 257.708 1324.99 254.272 1336.64 239.239L1341.1 233.512L1381.47 233.369C1406.52 233.369 1421.68 233.942 1421.68 234.801C1421.68 235.517 1419.93 240.385 1417.85 245.396C1401.1 285.197 1356.26 309.107 1298.34 309.25C1233.4 309.25 1190.32 279.327 1179.15 226.211C1176.92 215.759 1176.92 188.7 1179.31 176.53C1187.13 133.579 1212.82 101.508 1253.03 84.3279C1278.56 73.4469 1301.53 70.5835 1336 73.8764C1340.47 74.3059 1348.12 75.5944 1352.75 76.883ZM1263.08 161.354C1269.14 143.601 1284.14 129.999 1301.53 125.991C1311.59 123.843 1325.79 125.561 1333.92 129.999C1342.38 134.581 1349.08 145.319 1350.68 157.059L1351.79 164.647H1261.96L1263.08 161.354Z"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M345.927 75.3081C409.751 87.0481 448.364 137.301 440.706 199.008C439.588 207.598 437.195 219.052 435.44 224.349C420.441 267.873 379.594 299.944 328.854 307.818C314.653 310.109 285.134 309.823 271.731 307.246C222.746 298.083 187.962 267.587 177.91 224.922C174.878 211.894 174.878 185.407 177.75 171.519C188.281 121.982 231.043 83.7552 286.411 74.5923C299.814 72.4447 332.364 72.731 345.927 75.3081ZM297.42 137.158C281.624 142.169 269.976 153.766 262.955 171.376C258.328 182.973 257.211 207.026 260.721 217.907C266.944 237.092 281.305 247.686 301.409 247.686C315.929 247.686 325.503 244.393 335.555 236.232C350.873 223.777 358.053 207.026 357.894 184.691C357.894 161.64 350.714 147.323 335.715 139.449C325.982 134.295 309.387 133.292 297.42 137.158Z"/></symbol></svg>
+
+<script src="sales-data.js"></script>
+<script>
+"use strict";
+/* Company profile. Roster and cases come from sales-data.js, shared with
+   diagnosis.html so there is one place to edit the facts. */
+
+/* ---------- BANT. The four conditions are the ones in brain, turned into
+   questions the prospect answers on screen rather than a rep's checklist. --- */
+const BANT = [
+  { k:"b", letter:"B", tag:"Budget",
+    q:"What can you spend on advertising each month, separate from what you pay an agency?",
+    note:"We ask because you pay the platforms directly. This number is your advertising money, not our fee.",
+    opts:[
+      { v:"g", t:"Above RM100k (USD25k)",  why:"Enough room to test properly, and then put more money behind whatever works." },
+      { v:"g", t:"RM20k (USD5k) to RM100k (USD25k)", why:"Workable. Testing takes longer at this budget, but the results are still solid enough to act on." },
+      { v:"a", t:"Under RM20k (USD5k)",   why:"Below this level, a test does not run long enough to tell you anything you can trust. Start with the audit instead." },
+      { v:"r", t:"Not decided yet",  why:"Without a number we cannot work out what to propose, and anything we quoted you would be a guess." }
+    ]},
+  { k:"a", letter:"A", tag:"Decision Maker",
+    q:"Who from your side is the decision maker to choose a marketing agency?",
+    note:"We ask so we know who needs to be in the room, and how long a decision takes.",
+    opts:[
+      { v:"g", t:"You", why:"The quickest way through. We can agree the scope in the room and start without waiting on anyone." },
+      { v:"a", t:"A senior", why:"Workable. We would ask for them in the second meeting, because a decision made without them tends to get reopened." },
+      { v:"a", t:"Group decision with multiple stakeholders", why:"Normal for a larger organisation, and it changes how we work rather than whether we work. We would build the audit so it answers the questions each stakeholder will raise." }
+    ]},
+  { k:"n", letter:"N", tag:"Need", scale:true,
+    q:"On a scale of 1 to 10, how worried are you about the current state of your marketing?",
+    note:"1 means it is running fine and this is a routine review. 10 means it is the thing keeping you up at night.",
+    opts:[
+      { v:"r", t:"1",  why:"At a 1 there is nothing here that needs fixing, and we would be selling you work you do not need." },
+      { v:"r", t:"2",  why:"At a 2 the problem is not big enough yet to pay for solving. Come back when it is." },
+      { v:"r", t:"3",  why:"At a 3 you are watching rather than acting, and an audit would tell you things you are not ready to spend against." },
+      { v:"a", t:"4",  why:"Mild concern. The audit is the right size of step, and it will tell you whether the worry is justified." },
+      { v:"a", t:"5",  why:"You suspect something is wrong but cannot name it. That is exactly what the 2 day audit is for." },
+      { v:"a", t:"6",  why:"Real concern with no diagnosis behind it yet. We would start by finding out what is actually causing it." },
+      { v:"g", t:"7",  why:"Serious enough to act on, and early enough that we have room to fix it properly rather than patch it." },
+      { v:"g", t:"8",  why:"You know something is broken and you want it dealt with. That is the right time to bring us in." },
+      { v:"g", t:"9",  why:"Urgent, and still fixable. We would order the work so the fastest paybacks land first." },
+      { v:"g", t:"10", why:"This is the thing you are judged on and it is not working. We would start with the audit and move immediately." }
+    ]},
+  { k:"t", letter:"T", tag:"Timeline",
+    q:"By when do you need to fix your marketing?",
+    note:"Testing new ads properly takes 6 to 8 weeks before the results mean anything.",
+    opts:[
+      { v:"g", t:"6 to 8 weeks or more", why:"Enough time to test, learn from it and then grow." },
+      { v:"a", t:"About a month",              why:"That is tight. We would start with the fixes that pay back quickest, and tell you plainly which ones we had to skip." },
+      { v:"r", t:"We need movement in weeks",  why:"That is a job for someone who simply buys advertising space for you, and we are not the right company for it." },
+      { v:"a", t:"No fixed deadline",          why:"Work with no deadline tends never to begin. We would ask you to pick a date before we start." }
+    ]}
+];
+
+const KEY = "toggle-profile-v2";
+const DEF = { cur:"RM", spend:"", cpl:"", closer:"", deal:"", delta:30, bant:{} };
+let S = Object.assign({}, DEF);
+try { const raw = localStorage.getItem(KEY); if (raw) S = Object.assign({}, DEF, JSON.parse(raw)); } catch (e) {}
+S.bant = S.bant || {};
+const save = () => { try { localStorage.setItem(KEY, JSON.stringify(S)); } catch (e) {} };
+
+const $  = (s, r) => (r || document).querySelector(s);
+const $$ = (s, r) => Array.from((r || document).querySelectorAll(s));
+const num = v => { const x = parseFloat(v); return isFinite(x) ? x : 0; };
+const REDUCED = matchMedia("(prefers-reduced-motion: reduce)").matches;
+let toastT;
+function toast(msg){
+  const t = $("#toast"); t.textContent = msg; t.classList.add("on");
+  clearTimeout(toastT); toastT = setTimeout(() => t.classList.remove("on"), 1900);
+}
+
+/* ---------- word by word headline reveal ---------- */
+function splitWords(el){
+  if (el.dataset.split) return;
+  el.dataset.split = "1";
+  const out = [];
+  el.childNodes.forEach(node => {
+    if (node.nodeType === 3){
+      node.textContent.split(/(\s+)/).forEach(tok => {
+        if (!tok) return;
+        if (/^\s+$/.test(tok)) { out.push(document.createTextNode(" ")); return; }
+        const w = document.createElement("span"); w.className = "wr";
+        const inner = document.createElement("span"); inner.textContent = tok;
+        w.appendChild(inner); out.push(w);
+      });
+    } else {
+      const w = document.createElement("span"); w.className = "wr";
+      const inner = document.createElement("span");
+      inner.appendChild(node.cloneNode(true));
+      w.appendChild(inner); out.push(w);
+    }
+  });
+  el.textContent = "";
+  out.forEach(nd => el.appendChild(nd));
+  $$(".wr", el).forEach((w, i) => { w.firstChild.style.transitionDelay = (i * 0.055).toFixed(3) + "s"; });
+}
+$$(".words").forEach(splitWords);
+
+/* ---------- reveals, header, scroll ---------- */
+const io = new IntersectionObserver(es => {
+  es.forEach(e => { if (e.isIntersecting) { e.target.classList.add("in"); io.unobserve(e.target); } });
+}, { rootMargin:"0px 0px -12% 0px", threshold:.08 });
+function observe(){ $$(".rv:not(.in), .words:not(.in)").forEach(el => io.observe(el)); }
+observe();
+
+const fan = $("#fan");
+setTimeout(() => fan && fan.classList.add("spread"), REDUCED ? 0 : 900);
+
+const topBar = $("#top");   /* not `top`: that name is already window.top */
+addEventListener("scroll", () => { topBar.classList.toggle("stuck", scrollY > 40); }, { passive:true });
+$$("[data-scroll]").forEach(b => b.addEventListener("click", () => {
+  const t = $(b.dataset.scroll);
+  if (t) t.scrollIntoView({ behavior: REDUCED ? "auto" : "smooth", block:"start" });
+}));
+if ($("#bPrint")) $("#bPrint").addEventListener("click", () => {
+  $$(".rv, .words").forEach(el => el.classList.add("in"));
+  toast("Choose Save as PDF in the print dialog");
+  setTimeout(() => print(), 600);
+});
+
+/* ---------- arithmetic ---------- */
+
+/* =========================================================================
+   THE TEAM GRID
+
+   One tile per sitter, 4 across and 2 down, each holding that person's own
+   cutout from heads/. `where` describes where they sit in the original studio
+   photograph, which is the only handle we have until the names are filled in.
+
+   NAMES ARE NOT YET MAPPED. brain/team/roster.md lists 11 people
+   (Yi Yang, Jordan, Shaun, Julian, Aizad, Wei Lee, David, Lau, Zaid,
+   Viknesh, Tiffany) and the studio photograph shows 8. Nobody outside Toggle
+   can tell which face is which, so each slot below carries the sitter's
+   position instead of a guess. Attaching the wrong name to a real person in
+   a client deck is not a small error, so fill `name` and `role` in yourself.
+   ========================================================================= */
+/* x/y/d and l/t/w are the old hotspot and cutout coordinates against the full
+   studio photograph. The grid does not read them. They are kept so the
+   photo-with-hotspots layout can be restored without re-measuring 8 faces. */
+const TEAM = [
+  { x:19.3, y:20.7, d:9.2, l:16.17, t:13.89, w:6.26, where:"Standing, back left, cream sweater", name:"", role:"", practice:"", owns:"" },
+  { x:19.0, y:50.3, d:9.6, l:15.74, t:43.25, w:6.53, where:"Seated on the cane chair, front left", name:"", role:"", practice:"", owns:"" },
+  { x:37.5, y:27.8, d:8.4, l:34.64, t:21.43, w:5.71, where:"Standing, pale blue shirt", name:"", role:"", practice:"", owns:"" },
+  { x:35.5, y:43.2, d:9.0, l:32.44, t:36.66, w:6.12, where:"Seated front, white t-shirt", name:"", role:"", practice:"", owns:"" },
+  { x:54.1, y:26.6, d:8.4, l:51.24, t:20.93, w:5.71, where:"Seated on the wooden stool, navy camp shirt", name:"", role:"", practice:"", owns:"" },
+  { x:63.1, y:28.4, d:9.0, l:60.04, t:21.80, w:6.12, where:"Seated centre, navy shirt", name:"", role:"", practice:"", owns:"" },
+  { x:74.7, y:24.9, d:8.6, l:71.78, t:17.84, w:5.85, where:"Standing, back right, black shirt", name:"", role:"", practice:"", owns:"" },
+  { x:87.0, y:16.6, d:8.8, l:84.01, t:10.23, w:5.98, where:"Standing, far right, striped shirt", name:"", role:"", practice:"", owns:"" }
+];
+
+const grid = $("#teamgrid");
+
+function buildTeam(){
+  if (!grid || grid.closest("[hidden]")) return;   /* section is hidden: nothing to build */
+  grid.innerHTML = TEAM.map((p, i) =>
+    '<button class="tcard" data-p="' + i + '" aria-label="' + (p.name || p.where) + ', open profile">' +
+      '<img class="tim" src="heads/h' + (i + 1) + '.webp" alt="" aria-hidden="true" width="520" height="640" loading="lazy">' +
+      '<span class="tmeta">' +
+        '<span class="tno">0' + (i + 1) + "</span>" +
+        '<span class="tnm">' + (p.name || "Name not filled in") + "</span>" +
+        '<span class="trl">' + (p.role || p.where) + "</span>" +
+      "</span>" +
+    "</button>").join("");
+  $$("#teamgrid .tcard").forEach(c =>
+    c.addEventListener("click", () => openPerson(+c.dataset.p)));
+}
+
+function openPerson(i){
+  const p = TEAM[i];
+  modalMode = "person";
+  pIndex = i;
+  lastFocus = document.activeElement;
+  const named = !!p.name;
+  $("#mbody").innerHTML =
+    '<p class="mono accent">' + (p.practice || "Toggle Solutions") + "</p>" +
+    '<h3 id="mtitle">' + (p.name || p.where) + "</h3>" +
+    (p.role ? '<p class="mlede">' + p.role + "</p>" : "") +
+    (p.owns ? "<h5>What they own</h5><p class=\"body\">" + p.owns + "</p>" : "") +
+    (named ? "" :
+      '<div class="unpub"><b>Not filled in yet</b>The studio photograph shows 8 people and the roster names 11, so we have not guessed who is who. Add <code>name</code>, <code>role</code>, <code>practice</code> and <code>owns</code> for the sitter described above in the <code>TEAM</code> array, and this profile fills itself in.</div>') +
+    '<div class="mfoot"><span class="mono">' + (i + 1) + " of " + TEAM.length + "</span>" +
+    '<span class="mnav"><button class="btn ghost" data-pm="prev">Previous</button>' +
+    '<button class="btn ghost" data-pm="next">Next</button></span></div>';
+  $$("[data-pm]").forEach(btn => btn.addEventListener("click", e => {
+    e.stopPropagation();
+    openPerson((i + (btn.dataset.pm === "next" ? 1 : TEAM.length - 1)) % TEAM.length);
+  }));
+  document.body.classList.add("modal-on");
+  $("#modal .mcard").scrollTop = 0;
+  $("#mclose").focus();
+}
+
+/* ---------- the team photograph, 8 hoverable faces ----------
+   x and y are the centre of each face as a percentage of the PHOTOGRAPH,
+   not of the section, because object-fit:cover crops it. r is the hover
+   radius, also a percentage of the photograph's width.
+
+   Names mapped by Zaid on 2026-09-19. `role` is practice membership, taken
+   from the practice cards in #who, because no job titles exist yet: every
+   brain/team/bios/*.md still carries `role: TBD`. `creds` is empty for the
+   same reason. Fill both in and the card grows to fit. Nothing is guessed. */
+const FACES = [
+  { x:26.0, y:39.1, where:"Back row, pale blue shirt, holding a laptop overhead",
+    name:"Lau", role:"Conversion practice", creds:[] },
+  { x:42.0, y:41.8, where:"Back row, black shirt, pointing up",
+    name:"Julian", role:"Acquisition practice", creds:[] },
+  { x:53.8, y:42.4, where:"Back row, cream sweater, holding a camera",
+    name:"Shaun", role:"Acquisition practice", creds:[] },
+  { x:74.0, y:50.7, where:"Back row, far right, navy shirt",
+    name:"Aizad", role:"Conversion practice", creds:[] },
+  /* this one sits on the shoulder rather than mid chest: the credentials
+     card opens over the bottom left corner and would hide a lower dot. */
+  { x:6.7, y:68.1, where:"Front row, far left, black shirt and glasses",
+    name:"Jordan", role:"Acquisition practice", creds:[] },
+  { x:36.0, y:70.2, where:"Front row, white t-shirt, reading a notebook",
+    name:"Viknesh", role:"Retention practice", creds:[] },
+  { x:56.5, y:76.4, where:"Front row, centre, navy shirt, holding a flask",
+    name:"Yi Yang", role:"Acquisition and Retention practices", creds:[] },
+  { x:89.0, y:76.4, where:"Front row, far right, blue striped shirt",
+    name:"Zaid", role:"Conversion and Retention practices", creds:[] }
+];
+
+const pimg = $("#pimg"), faceLayer = $("#faces"), faceCard = $("#facecard");
+
+if (pimg && faceLayer) {
+  faceLayer.innerHTML = FACES.map((f, i) =>
+    '<button class="face" type="button" data-f="' + i + '" aria-describedby="facecard" ' +
+    'aria-label="' + (f.name || f.where) + '"></button>'
+  ).join("");
+
+  /* object-fit:cover paints the photo larger than the box and crops it, so
+     work out the painted rectangle and place each face inside that. */
+  function positionFaces(){
+    const box = pimg.getBoundingClientRect();
+    const iw = pimg.naturalWidth, ih = pimg.naturalHeight;
+    if (!iw || !ih) return;
+    const scale = Math.max(box.width / iw, box.height / ih);
+    const pw = iw * scale, ph = ih * scale;
+    const ox = (box.width - pw) * 0.5;    /* object-position: center ... */
+    const oy = (box.height - ph) * 0.38;  /* ... 38% */
+    $$(".face").forEach((el, i) => {
+      const f = FACES[i];
+      el.style.left = (ox + pw * f.x / 100) + "px";
+      el.style.top = (oy + ph * f.y / 100) + "px";
+    });
+  }
+
+  function showFace(i){
+    const f = FACES[i];
+    const body = f.name
+      ? '<p class="fn">' + f.name + "</p>" +
+        (f.role ? '<p class="fr">' + f.role + "</p>" : "") +
+        (f.creds.length ? "<ul>" + f.creds.map(c => "<li>" + c + "</li>").join("") + "</ul>" : "")
+      : '<p class="fn">' + f.where + "</p>" +
+        '<p class="fempty">We have not written this one up yet.</p>';
+    faceCard.innerHTML = '<span class="fk">' + (f.name ? "Who runs your work" : "Not filled in") + "</span>" + body;
+    faceCard.classList.add("show");
+    $$(".face").forEach((el, n) => el.classList.toggle("on", n === i));
+  }
+  function hideFace(){
+    faceCard.classList.remove("show");
+    $$(".face").forEach(el => el.classList.remove("on"));
+  }
+
+  $$(".face").forEach(el => {
+    const i = parseInt(el.dataset.f, 10);
+    el.addEventListener("mouseenter", () => showFace(i));
+    el.addEventListener("focus", () => showFace(i));
+    el.addEventListener("click", e => { e.preventDefault(); showFace(i); });  /* touch */
+  });
+  faceLayer.addEventListener("mouseleave", hideFace);
+  faceLayer.addEventListener("focusout", e => {
+    if (!faceLayer.contains(e.relatedTarget)) hideFace();
+  });
+  addEventListener("keydown", e => { if (e.key === "Escape") hideFace(); });
+
+  if (pimg.complete) positionFaces(); else pimg.addEventListener("load", positionFaces);
+  addEventListener("resize", positionFaces, { passive:true });
+}
+
+/* ---------- turnable practice cards ---------- */
+$$(".practice").forEach(card => {
+  const flip = () => {
+    const on = card.classList.toggle("turned");
+    const btn = $(".pfront .pturn", card);
+    if (btn) btn.setAttribute("aria-expanded", on ? "true" : "false");
+    $$(".pback .pturn", card).forEach(b => { b.tabIndex = on ? 0 : -1; });
+  };
+  card.addEventListener("click", e => {
+    /* a drag to select text should not turn the card */
+    if (String(window.getSelection())) return;
+    e.preventDefault(); flip();
+  });
+});
+
+/* ---------- BANT ---------- */
+$("#bant-grid").innerHTML = BANT.map(q =>
+  '<div class="bq" data-q="' + q.k + '">' +
+    '<div class="bk"><span class="bl">' + q.letter + '</span><span class="bt">' + q.tag + "</span></div>" +
+    "<h4>" + q.q + "</h4>" +
+    '<div class="bopts' + (q.scale ? " scale" : "") + '">' + q.opts.map((o, i) =>
+      '<button class="bopt" data-q="' + q.k + '" data-i="' + i + '">' +
+        (q.scale ? "" : "<i></i>") + "<span>" + o.t + "</span></button>"
+    ).join("") + "</div>" +
+    '<p class="bnote"></p>' +
+  "</div>"
+).join("");
+
+$$(".bopt").forEach(b => b.addEventListener("click", () => {
+  const k = b.dataset.q, i = parseInt(b.dataset.i, 10);
+  S.bant[k] = (S.bant[k] === i) ? undefined : i;
+  if (S.bant[k] === undefined) delete S.bant[k];
+  save(); paintBant();
+}));
+
+function paintBant(){
+  BANT.forEach(q => {
+    const pick = S.bant[q.k];
+    const card = $('.bq[data-q="' + q.k + '"]');
+    const answered = pick !== undefined;
+    card.classList.toggle("answered", answered);
+    $$('.bopt[data-q="' + q.k + '"]').forEach(b =>
+      b.classList.toggle("sel", parseInt(b.dataset.i, 10) === pick));
+    $(".bnote", card).textContent = answered ? q.opts[pick].why : q.note;
+  });
+  paintVerdict();
+}
+
+function paintVerdict(){
+  const marks = BANT.map(q => {
+    const p = S.bant[q.k];
+    return p === undefined ? "" : q.opts[p].v;
+  });
+  const answered = marks.filter(Boolean).length;
+  const red   = marks.filter(m => m === "r").length;
+  const amber = marks.filter(m => m === "a").length;
+  const green = marks.filter(m => m === "g").length;
+
+  const bars = '<div class="vscore">' + marks.map(m => '<span class="' + m + '"></span>').join("") + "</div>";
+  let cls = "", kicker = "Readiness", head = "", body = "", side = "";
+
+  if (answered === 0){
+    head = "4 questions, about 90 seconds.";
+    body = "We will tell you honestly whether this is worth the time of either of us. We would much rather find that out now than 3 months in.";
+    side = "";
+  } else if (answered < BANT.length){
+    head = "Keep going. " + (BANT.length - answered) + " to go.";
+    body = "";
+    side = "";
+  } else if (red > 0){
+    cls = "hold";
+    kicker = "We would say no today";
+    const firstRed = BANT.find(q => q.opts[S.bant[q.k]].v === "r");
+    head = "We would turn this work down today, and " + firstRed.tag.toLowerCase() + " is the reason.";
+    body = firstRed.opts[S.bant[firstRed.k]].why + " Fix that one thing and this becomes a conversation worth having. Telling you now costs us a piece of work and saves you a year.";
+    side = "Sort out that one thing first. We will happily tell you how on a call, and we will not charge you for it.";
+  } else if (amber > 0){
+    kicker = "Close, with one thing to settle";
+    const firstAmber = BANT.find(q => q.opts[S.bant[q.k]].v === "a");
+    head = "You pass " + green + " of 4. " + firstAmber.tag + " is the one to sort out.";
+    body = firstAmber.opts[S.bant[firstAmber.k]].why + " None of that stops us starting. The 2 day audit exists to answer exactly this kind of open question before either of us signs anything.";
+    side = "The next step is the audit. 2 days, priced small, and it ends with a list of what to fix first.";
+  } else {
+    cls = "ready";
+    kicker = "You are ready";
+    head = "You pass all 4. The next step is the 2 day audit.";
+    body = "You have the budget, a clear decision maker, a problem worth solving and enough time. That is the situation where this work reliably pays for itself. The audit takes 2 days and can start on a date you choose before we finish this conversation.";
+    side = "The next step is to pick a start date. Call Viknesh on (+60) 12 568 8681.";
+  }
+
+  if (!$("#verdict")) return;
+  $("#verdict").className = "verdict rv in " + cls;
+  $("#verdict").innerHTML =
+    '<div><p class="vk">' + kicker + "</p><h3>" + head + "</h3><p>" + body + "</p></div>" +
+    '<div class="vside"><span class="vsl">Where you stand</span>' + bars +
+    '<span style="font-size:14px;line-height:1.5;color:rgba(255,255,255,.85)">' + side + "</span></div>";
+}
+
+/* ---------- the book ---------- */
+/* the book indexes we actually put on the page, in book order */
+const SHOWN = BOOK.map((b, i) => (b.logo ? i : -1)).filter(i => i >= 0);
+const ROWS = 7;
+function chipHTML(b, i, dup){
+  const safe = b.n.replace(/"/g, "&quot;");
+  const logo = b.logo ? '<img src="' + b.logo + '" alt="' + (dup ? "" : safe) + '">'
+                      : '<span class="cn"><i></i>' + b.n + "</span>";
+  return '<button class="chip-c' + (b.proved ? " proved" : "") + (dup ? " dup" : "") + '" data-b="' + i + '"' +
+         (dup ? ' tabindex="-1" aria-hidden="true"' : ' aria-label="' + safe + ', open details"') + ">" +
+         logo + '<span class="cs">' + b.v + " &middot; " + b.m + "</span></button>";
+}
+function buildRows(){
+  const rows = Array.from({ length: ROWS }, () => []);
+  /* a name with no logo would sit in a row of marks as a bare text chip, so the
+     carousel carries only the clients whose logo we hold and have cleared. The
+     counters above it still report the whole book. */
+  SHOWN.forEach((bookIndex, n) => rows[n % ROWS].push(bookIndex));
+  $("#rows").innerHTML = rows.map((idxs, r) => {
+    /* One pass of a short row is narrower than a wide monitor, which would open
+       a gap in the loop. Repeat until a pass clears any screen, then hold the
+       track twice over so translateX(-50%) still lands seamlessly. */
+    const reps = Math.max(1, Math.ceil(2800 / (idxs.length * 240)));
+    const pass = [];
+    for (let k = 0; k < reps; k++) pass.push(...idxs);
+    const inner = pass.map(i => chipHTML(BOOK[i], i, false)).join("");
+    const copy  = pass.map(i => chipHTML(BOOK[i], i, true)).join("");
+    return '<div class="mrow' + (r % 2 ? " rev" : "") + '">' +
+           '<div class="mtrack" style="--dur:' + (pass.length * 7) + 's">' +
+           inner + copy + "</div></div>";
+  }).join("");
+  $$(".chip-c").forEach(c => c.addEventListener("click", () => openModal(parseInt(c.dataset.b, 10))));
+}
+function buildBookStats(){
+  /* Every figure here is derived in sales-data.js from the rows themselves.
+     COUNTRIES excludes the region labels, so the countries figure is one a
+     prospect can check by opening the rows and counting. */
+  $("#bookstats").innerHTML = [
+    [SHOWN_COUNTS.clients, "companies"],
+    [SHOWN_COUNTS.verticals, "industries"],
+    [SHOWN_COUNTS.countries, "countries"]
+  ].map(([v, l]) => '<div class="bookstat"><div class="v num">' + v + '</div><div class="l">' + l + "</div></div>").join("");
+  /* numerals everywhere: a digit stands out in a sentence, a word does not */
+  $$('[data-book="count"]').forEach(e => { e.textContent = SHOWN_COUNTS.clients; });
+  $$('[data-book="markets-n"]').forEach(e => { e.textContent = SHOWN_COUNTS.countries; });
+  $$('[data-book="verticals-n"]').forEach(e => { e.textContent = SHOWN_COUNTS.verticals; });
+  $$('[data-book="continents-n"]').forEach(e => { e.textContent = String(CONTINENTS.length); });
+  $$('[data-book="continents"]').forEach(e => { e.textContent = listSentence(CONTINENTS); });
+}
+/* "Asia, Europe and North America" from the continents actually in the book */
+function listSentence(a){
+  return a.length < 2 ? (a[0] || "") : a.slice(0, -1).join(", ") + " and " + a[a.length - 1];
+}
+
+/* ---------- modal ---------- */
+/* Previous and Next walk the clients on the page, not the whole book, so
+   paging never lands on a card the carousel does not show. */
+function step(bookIndex, dir){
+  const at = SHOWN.indexOf(bookIndex);
+  return SHOWN[(at + dir + SHOWN.length) % SHOWN.length];
+}
+let mIndex = -1, pIndex = -1, lastFocus = null, modalMode = "case";
+function openModal(i){
+  const b = BOOK[i];
+  if (!b) return;
+  modalMode = "case";
+  mIndex = i;
+  lastFocus = document.activeElement;
+  $("#mbody").innerHTML =
+    '<p class="mono accent">' + b.v + " &middot; " + b.m + (b.year ? " &middot; " + b.year : "") + "</p>" +
+    '<h3 id="mtitle">' + b.n + "</h3>" +
+    (b.line ? '<p class="mlede">' + b.line + "</p>" : "") +
+    (b.stats ? '<div class="mstats">' + b.stats.map(st =>
+        '<div class="mstat"><div class="v">' + st.v + '</div><div class="l">' + st.l + "</div></div>").join("") + "</div>" : "") +
+    (b.challenge ? '<h5>What we walked into</h5><p class="body">' + b.challenge + "</p>" : "") +
+    (b.method ? "<h5>What we did</h5><ul>" + b.method.map(m => "<li>" + m + "</li>").join("") + "</ul>" : "") +
+    (b.transfer ? '<div class="transfer" style="margin-top:24px"><b>The part that transfers to you</b>' + b.transfer + "</div>" : "") +
+    (b.unpublished ? '<div class="unpub"><b>No published result</b>' + b.unpublished + "</div>" : "") +
+    (!b.proved && !b.unpublished ? '<div class="unpub"><b>We have worked with them</b>We have worked with this company, and we have not written up a public account of it, so there is no result to show you here. Ask us on the call and we will tell you what we did, including the parts that did not work.</div>' : "") +
+    '<div class="mfoot"><span class="mono">' + (SHOWN.indexOf(mIndex) + 1) + " of " + SHOWN.length + "</span>" +
+    '<span class="mnav"><button class="btn ghost" data-m="prev">Previous</button>' +
+    '<button class="btn ghost" data-m="next">Next</button></span></div>';
+  $$("[data-m]").forEach(btn => btn.addEventListener("click", e => {
+    e.stopPropagation();
+    openModal(step(mIndex, btn.dataset.m === "next" ? 1 : -1));
+  }));
+  document.body.classList.add("modal-on");
+  $("#modal .mcard").scrollTop = 0;
+  $("#mclose").focus();
+}
+function closeModal(){
+  document.body.classList.remove("modal-on");
+  mIndex = -1; pIndex = -1;
+  if (lastFocus && lastFocus.focus) lastFocus.focus();
+}
+$("#mclose").addEventListener("click", closeModal);
+$("#modal .mscrim").addEventListener("click", closeModal);
+addEventListener("keydown", e => {
+  if (!document.body.classList.contains("modal-on")) return;
+  if (e.key === "Escape") { e.stopPropagation(); closeModal(); }
+  else if (modalMode === "person"){
+    if (e.key === "ArrowRight") openPerson((pIndex + 1) % TEAM.length);
+    else if (e.key === "ArrowLeft") openPerson((pIndex + TEAM.length - 1) % TEAM.length);
+  } else {
+    if (e.key === "ArrowRight") openModal(step(mIndex, 1));
+    else if (e.key === "ArrowLeft") openModal(step(mIndex, -1));
+  }
+}, true);
+
+/* ---------- render ---------- */
+
+/* ---------- boot ---------- */
+buildTeam();
+buildBookStats();
+buildRows();
+paintBant();
+requestAnimationFrame(() => { $$("#hero .words, #hero .rv").forEach(el => el.classList.add("in")); });
+</script>
+</body>
+</html>

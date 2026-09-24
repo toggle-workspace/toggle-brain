@@ -30,6 +30,11 @@ Plus supporting zones: **`playbooks/`** (how-we-do-things runbooks), **`assets/`
 |---|---|---|
 | Build a quote (one client) | `generators/quote.md` | reads `brain/pricing/` + `clients/<slug>/CLIENT.md` + `archive/quotes/` anchors; renders print-faithful HTML |
 | Pre-generate this month's quotes for every active client | `generators/monthly-quotes.md` (`/monthly-quotes`) | batches `/quote` across the book; one ready-to-send HTML draft per client, anchored to past quotes |
+| First sales call, or "what does Toggle do?" | `clients/toggle/sales-page/index.html` | the company profile. Generic, no prospect name. One scrolling HTML page, never exported to PPTX |
+| Second call, after you have audited a named prospect | `clients/toggle/sales-page/diagnosis.html` | carries their name, your three pre-call findings and their arithmetic. Click Set up first |
+| Edit the client roster or a case study shown on either page | `clients/toggle/sales-page/sales-data.js` | shared by both pages; every number traces to `brain/case-studies/` |
+| Prep the sales conversation | `playbooks/sales-play.md` | the call script: 90 minutes of pre-call research, the 30 minute structure, objections, and what never to say |
+| Check what our case studies can and cannot prove | `brain/case-studies/PROOF-GAPS.md` | the internal record of what each case can and cannot prove; the sales pages no longer mirror it |
 | Draft a proposal | `generators/proposal.md` | reads `brain/services/`, `brain/positioning/`, `brain/case-studies/` |
 | Write TikTok hooks | `generators/tiktok-hooks.md` | reads `brain/voice/`, `prompts/platforms/tiktok.md`, client `style-pack.md` |
 | Write a TikTok One creator brief | `/tiktok-brief-writer` global skill | enforces `brain/tiktok-one-rules.md`; writes `clients/<slug>/00-brief/` |

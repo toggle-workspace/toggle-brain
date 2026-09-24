@@ -1,0 +1,405 @@
+<!doctype html>
+<html lang="en-MY">
+<meta charset="utf-8">
+<title>Your Toggle Bespoke Pathway</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<style>
+  :root{
+    --brand:#4A7BF7; --brand-deep:#3056C9;
+    --canvas:#FFFFFF; --card:#F7F8FB; --card-2:#EFF1F7; --callout:#E5ECFE;
+    --ink:#0F0F0F; --body:#3F434B; --muted:#5E6472; --faint:#767C88;
+    --line:#E4E6EE; --line-strong:#D2D6E2;
+    --ai:#3056C9; --ai-bg:#E5ECFE; --ai-line:#C3D3FB;
+    --mk:#0B6B4D; --mk-bg:#E4F3EC; --mk-line:#BFE4D4;
+    --ax:#835400; --ax-bg:#FBF1DA; --ax-line:#EBD8A8;
+    --shadow:0 1px 2px rgba(15,20,45,.05),0 6px 22px rgba(15,20,45,.06);
+    --maxw:960px;
+    color-scheme:light;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --brand:#6E95F9; --brand-deep:#8BAAFB;
+      --canvas:#0A1224; --card:#111B31; --card-2:#0E1730; --callout:#17244A;
+      --ink:#FFFFFF; --body:#C3CAD9; --muted:#A6AEC0; --faint:#8B93A6;
+      --line:#1F2A44; --line-strong:#2A3756;
+      --ai:#8BAAFB; --ai-bg:#17244A; --ai-line:#2A3E70;
+      --mk:#3DD6A3; --mk-bg:#0E2B24; --mk-line:#1C4A3D;
+      --ax:#F0C060; --ax-bg:#2C2410; --ax-line:#4A3D18;
+      --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.35);
+      color-scheme:dark;
+    }
+  }
+  :root[data-theme="dark"]{
+    --brand:#6E95F9; --brand-deep:#8BAAFB;
+    --canvas:#0A1224; --card:#111B31; --card-2:#0E1730; --callout:#17244A;
+    --ink:#FFFFFF; --body:#C3CAD9; --muted:#A6AEC0; --faint:#8B93A6;
+    --line:#1F2A44; --line-strong:#2A3756;
+    --ai:#8BAAFB; --ai-bg:#17244A; --ai-line:#2A3E70;
+    --mk:#3DD6A3; --mk-bg:#0E2B24; --mk-line:#1C4A3D;
+    --ax:#F0C060; --ax-bg:#2C2410; --ax-line:#4A3D18;
+    --shadow:0 1px 2px rgba(0,0,0,.4),0 10px 30px rgba(0,0,0,.35);
+    color-scheme:dark;
+  }
+  *{box-sizing:border-box}
+  html,body{overflow-x:clip}
+  body{
+    margin:0;background:var(--canvas);color:var(--body);
+    font-family:"Inter Tight","Inter",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+    font-size:15.5px;line-height:1.6;-webkit-font-smoothing:antialiased;
+  }
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 22px}
+  h1,h2,h3,h4{color:var(--ink);text-wrap:balance;line-height:1.15;margin:0}
+  p{margin:0}
+  strong,b{color:var(--ink);font-weight:650}
+
+  /* ---------- picker ---------- */
+  .picker{position:sticky;top:0;z-index:30;border-bottom:1px solid var(--line);
+    background:var(--canvas);
+    background:color-mix(in srgb,var(--canvas) 92%,transparent);
+    -webkit-backdrop-filter:blur(12px);backdrop-filter:blur(12px)}
+  .picker .wrap{display:flex;gap:14px;align-items:center;padding:13px 22px;flex-wrap:wrap}
+  .brandmark{font-size:13.5px;font-weight:800;color:var(--ink);letter-spacing:-.01em;white-space:nowrap}
+  .brandmark span{color:var(--brand-deep);font-weight:700}
+  .selwrap{flex:1 1 260px;min-width:0;position:relative}
+  .selwrap::after{content:"▾";position:absolute;right:14px;top:50%;transform:translateY(-50%);
+    color:var(--faint);pointer-events:none;font-size:13px}
+  select{
+    -webkit-appearance:none;appearance:none;width:100%;
+    font:inherit;font-size:16px;font-weight:650;color:var(--ink);
+    background:var(--card);border:1px solid var(--line-strong);border-radius:11px;
+    padding:11px 38px 11px 14px;cursor:pointer;
+  }
+  select:focus-visible{outline:2px solid var(--brand-deep);outline-offset:2px}
+  select option{color:var(--ink);background:var(--card)}
+  .sellbl{font-size:11px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;
+    color:var(--brand-deep);white-space:nowrap}
+
+  /* ---------- hero ---------- */
+  header{border-bottom:1px solid var(--line);
+    background:radial-gradient(120% 140% at 88% -30%, color-mix(in srgb,var(--brand) 17%, transparent), transparent 62%),var(--canvas)}
+  .headpad{padding:38px 0 32px}
+  .eyebrow{font-size:11.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+    color:var(--brand-deep);margin-bottom:12px;display:flex;align-items:center;gap:9px;flex-wrap:wrap}
+  .eyebrow .dot{width:7px;height:7px;border-radius:50%;background:var(--brand);flex:0 0 7px}
+  header h1{font-size:clamp(27px,5.2vw,44px);font-weight:800;letter-spacing:-.022em;margin-bottom:12px}
+  header .lede{font-size:clamp(15.5px,2.1vw,18.5px);color:var(--body)}
+  .hchips{display:flex;gap:9px;flex-wrap:wrap;margin-top:22px}
+  .chip{display:inline-flex;align-items:center;gap:7px;padding:7px 13px;border-radius:999px;
+    background:var(--card);border:1px solid var(--line);font-size:12.5px;font-weight:600;color:var(--body)}
+  .chip b{color:var(--ink)}
+
+  /* ---------- sections ---------- */
+  section{padding:38px 0;border-bottom:1px solid var(--line)}
+  section:last-of-type{border-bottom:none}
+  .kicker{font-size:11.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;
+    color:var(--brand-deep);margin-bottom:9px;display:flex;align-items:center;gap:9px}
+  .kicker .num{font-variant-numeric:tabular-nums;color:var(--faint)}
+  section > .wrap > h2{font-size:clamp(20px,3vw,27px);font-weight:800;letter-spacing:-.015em;margin-bottom:8px}
+  section > .wrap > .sub{color:var(--muted);margin-bottom:22px}
+
+  .grid{display:grid;gap:14px}
+  .g2{grid-template-columns:repeat(2,1fr)}
+  @media(max-width:760px){.g2{grid-template-columns:1fr}}
+  .card{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:20px;box-shadow:var(--shadow)}
+  .card h3{font-size:15.5px;font-weight:750;margin-bottom:7px;display:flex;align-items:baseline;gap:9px}
+  .card p{font-size:14px;color:var(--body)}
+  .card .pn{font-size:11px;font-weight:800;color:var(--brand-deep);font-variant-numeric:tabular-nums;
+    letter-spacing:.08em;flex:0 0 auto}
+
+  /* pathway hero card */
+  .pway{background:var(--card);border:1px solid var(--line);border-radius:16px;box-shadow:var(--shadow);
+    padding:22px;display:grid;grid-template-columns:88px 1fr;gap:20px;align-items:start}
+  @media(max-width:640px){.pway{grid-template-columns:1fr;gap:14px}}
+  .pbadge{min-width:88px;width:auto;max-width:100%;min-height:88px;height:auto;padding:10px 12px;
+    border-radius:16px;background:var(--brand);color:#fff;
+    display:flex;flex-direction:column;align-items:center;justify-content:center;line-height:1}
+  .pbadge small{font-size:10px;font-weight:700;letter-spacing:.12em;margin-bottom:5px}
+  .pbadge span{font-size:clamp(18px,7vw,31px);font-weight:800;letter-spacing:-.02em;overflow-wrap:anywhere}
+  .pway h3{font-size:19px;font-weight:800;letter-spacing:-.01em;margin-bottom:6px}
+  .pway .pmeta{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:11px}
+  .mtag{font-size:11px;font-weight:700;padding:3px 9px;border-radius:999px;background:var(--card-2);color:var(--body)}
+  .mtag.b{background:var(--callout);color:var(--brand-deep)}
+  .pway .shape{font-size:13.5px;color:var(--muted);margin-bottom:9px}
+  .pway .why{font-size:14.5px;color:var(--body)}
+
+  /* module list */
+  ol.mods{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:9px;counter-reset:m}
+  ol.mods li{counter-increment:m;display:grid;grid-template-columns:26px 82px 1fr;gap:12px;
+    align-items:baseline;background:var(--card);border:1px solid var(--line);border-radius:11px;padding:13px 15px}
+  @media(max-width:640px){ol.mods li{grid-template-columns:24px 1fr;row-gap:5px}
+    ol.mods li .mid{grid-column:2}ol.mods li .mtxt{grid-column:2}}
+  ol.mods li .mnum{font-size:11.5px;font-weight:800;color:var(--muted);font-variant-numeric:tabular-nums}
+  ol.mods li .mnum::before{content:counter(m)}
+  .mid{font-size:11px;font-weight:800;letter-spacing:.04em;padding:3px 8px;border-radius:6px;
+    display:inline-block;text-align:center;white-space:nowrap}
+  .t-ai .mid,.mid.t-ai{background:var(--ai-bg);color:var(--ai);border:1px solid var(--ai-line)}
+  .t-mk .mid,.mid.t-mk{background:var(--mk-bg);color:var(--mk);border:1px solid var(--mk-line)}
+  .t-ax .mid,.mid.t-ax{background:var(--ax-bg);color:var(--ax);border:1px solid var(--ax-line)}
+  .mtxt .mname{font-size:14.5px;font-weight:700;color:var(--ink);overflow-wrap:anywhere}
+  .mtxt .mname .star{color:var(--brand-deep);font-size:12px;margin-left:5px}
+  .mtxt .mwhy{font-size:13.5px;color:var(--muted);margin-top:2px}
+  ol.mods li.focus{border-color:var(--brand);box-shadow:0 0 0 1px var(--brand) inset}
+  .legend{display:flex;gap:15px;flex-wrap:wrap;margin-top:16px}
+  .legend span{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;color:var(--muted)}
+  .sw{width:11px;height:11px;border-radius:3px}
+  .sw-ai{background:var(--ai)}.sw-mk{background:var(--mk)}.sw-ax{background:var(--ax)}
+
+  /* outcomes */
+  ul.out{list-style:none;margin:0;padding:0;display:flex;flex-direction:column;gap:10px}
+  ul.out li{position:relative;padding-left:30px;font-size:14.5px;color:var(--body)}
+  ul.out li::before{content:"✓" / "";position:absolute;left:0;top:0;width:20px;height:20px;border-radius:6px;
+    background:var(--callout);color:var(--brand-deep);font-size:11px;font-weight:800;
+    display:flex;align-items:center;justify-content:center}
+  ul.out li b{color:var(--ink)}
+
+  .proof{background:var(--callout);border-left:3px solid var(--brand);border-radius:0 12px 12px 0;padding:16px 18px}
+  .proof .xl{font-size:11px;font-weight:800;letter-spacing:.09em;text-transform:uppercase;
+    color:var(--brand-deep);margin-bottom:6px}
+  .proof p{font-size:14px;color:var(--body)}
+
+  /* library disclosure */
+  details.lib{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:6px}
+  details.lib summary{cursor:pointer;padding:16px 20px;font-size:14.5px;font-weight:700;color:var(--ink);
+    list-style:none;display:flex;align-items:center;justify-content:space-between;gap:12px}
+  details.lib summary::-webkit-details-marker{display:none}
+  details.lib summary::after{content:"+";font-size:19px;font-weight:700;color:var(--faint);flex:0 0 auto}
+  details.lib[open] summary::after{content:"−"}
+  details.lib summary:focus-visible{outline:2px solid var(--brand);outline-offset:-2px}
+  .libbody{padding:0 20px 18px;border-top:1px solid var(--line)}
+  .libtrack{margin-top:16px}
+  .libtrack .tl{font-size:11px;font-weight:800;letter-spacing:.1em;text-transform:uppercase;margin-bottom:9px}
+  .libtrack.t-ai .tl{color:var(--ai)}.libtrack.t-mk .tl{color:var(--mk)}.libtrack.t-ax .tl{color:var(--ax)}
+  .librow{display:grid;grid-template-columns:82px 1fr;gap:12px;padding:8px 0;border-top:1px solid var(--line);align-items:baseline}
+  .librow:first-of-type{border-top:none}
+  @media(max-width:640px){.librow{grid-template-columns:1fr;row-gap:4px}}
+  .librow .ln{font-size:13.5px;color:var(--body);overflow-wrap:anywhere}
+  .librow .ln b{color:var(--ink)}
+  .librow.on{background:color-mix(in srgb,var(--brand) 7%,transparent);border-radius:8px;padding:8px 10px;margin:0 -10px}
+
+  /* cta */
+  .cta{background:var(--card);border:1px solid var(--line-strong);border-radius:16px;padding:24px;box-shadow:var(--shadow)}
+  .cta h3{font-size:19px;font-weight:800;margin-bottom:8px}
+  .cta p{font-size:14.5px;color:var(--body)}
+  .cta .btns{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}
+  .btn{display:inline-flex;align-items:center;gap:8px;padding:11px 18px;border-radius:10px;
+    font-size:14.5px;font-weight:700;text-decoration:none;border:1px solid transparent}
+  .btn.p{background:var(--brand-deep);color:#fff}
+  @media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .btn.p{background:var(--brand);color:#0A1224}}
+  :root[data-theme="dark"] .btn.p{background:var(--brand);color:#0A1224}
+  .btn.s{background:transparent;color:var(--brand-deep);border-color:var(--line-strong)}
+  .btn:focus-visible{outline:2px solid var(--brand);outline-offset:2px}
+
+  footer{padding:30px 0 54px;color:var(--muted);font-size:12.5px}
+  footer .wm{font-weight:800;color:var(--ink);letter-spacing:-.01em}
+  .sr{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap}
+  .fade{animation:fi .28s ease}
+  @keyframes fi{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+  @media(prefers-reduced-motion:reduce){.fade{animation:none}}
+</style>
+
+<nav class="picker" aria-label="Organisation picker">
+  <div class="wrap">
+    <div class="brandmark">Toggle <span>Bespoke</span></div>
+    <label class="sellbl" for="orgsel">Your organisation</label>
+    <div class="selwrap"><select id="orgsel"></select></div>
+  </div>
+</nav>
+
+<p id="live" class="sr" role="status" aria-live="polite"></p>
+
+<main id="app"></main>
+
+<footer>
+  <div class="wrap">
+    <span class="wm">Toggle Solutions</span> · Toggle Bespoke · AI-literacy curriculum pathways<br>
+    Prepared for the TikTok x Toggle workshop. Pathways are a starting proposal, shaped with you before anything is locked.
+  </div>
+</footer>
+
+<script>
+const ORGS = /*__ORGS__*/[]/*__END__*/;
+const LIBRARY = /*__LIBRARY__*/{}/*__END__*/;
+const TRACKS = {ai:"AI track", mk:"Marketing track", ax:"AI in Marketing, applied"};
+const CONTACT = /*__CONTACT__*/{}/*__END__*/;
+
+const esc = s => String(s == null ? "" : s).replace(/[&<>"']/g, c =>
+  ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[c]));
+
+function libraryHTML(activeIds){
+  const on = new Set(activeIds);
+  let out = "";
+  for (const tk of ["ai","mk","ax"]) {
+    const rows = Object.entries(LIBRARY).filter(([,m]) => m.track === tk);
+    if (!rows.length) continue;
+    out += '<div class="libtrack t-' + tk + '"><div class="tl">' + esc(TRACKS[tk]) + '</div>';
+    for (const [id, m] of rows) {
+      out += '<div class="librow' + (on.has(id) ? " on" : "") + '">' +
+        '<span class="mid t-' + tk + '">' + esc(id) + '</span>' +
+        '<span class="ln"><b>' + esc(m.name) + '.</b> ' + esc(m.line) + '</span></div>';
+    }
+    out += "</div>";
+  }
+  return out;
+}
+
+function render(org){
+  const ids = (org.modules || []).map(m => m.id);
+  const p = org.pathway || {};
+  const html = `
+<header>
+  <div class="wrap headpad">
+    <div class="eyebrow"><span class="dot"></span> Prepared for ${esc(org.name)}</div>
+    <h1>${esc(org.headline)}</h1>
+    <p class="lede">${esc(org.situation)}</p>
+    <div class="hchips">
+      <span class="chip"><span aria-hidden="true">🧭</span> Pathway <b>${esc(p.code)} ${esc(p.name)}</b></span>
+      <span class="chip"><span aria-hidden="true">🎚️</span> <b>Paced to your team</b></span>
+      <span class="chip"><span aria-hidden="true">📚</span> <b>${ids.length} module${ids.length === 1 ? "" : "s"}</b></span>
+      <span class="chip"><span aria-hidden="true">🏷️</span> ${esc(org.sector)}</span>
+    </div>
+  </div>
+</header>
+
+<section>
+  <div class="wrap">
+    <div class="kicker"><span class="num">01</span> Your pathway</div>
+    <h2>Where we would start with you</h2>
+    <p class="sub">One shared library of lessons, five curated pathways through it. This is the one that fits you.</p>
+    <div class="pway">
+      <div class="pbadge"><small>PATHWAY</small><span>${esc(p.code)}</span></div>
+      <div>
+        <h3>${esc(p.name)}</h3>
+        <div class="pmeta">
+          <span class="mtag b">Depth set with you</span>
+        </div>
+        <p class="shape">${esc(p.shape)}</p>
+        <p class="why">${esc(p.why)}</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker"><span class="num">02</span> Engagement pillars</div>
+    <h2>The four things we would build with you</h2>
+    <p class="sub">Not a generic syllabus. These are shaped around how your business actually makes money.</p>
+    <div class="grid g2">
+      ${(org.pillars || []).map((pl, i) => `
+      <div class="card">
+        <h3><span class="pn">0${i + 1}</span> ${esc(pl.title)}</h3>
+        <p>${esc(pl.body)}</p>
+      </div>`).join("")}
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker"><span class="num">03</span> Your modules</div>
+    <h2>${esc(p.code)} in the order you would take it</h2>
+    <p class="sub">Highlighted modules are the ones weighted heaviest for you. Every module is self-contained, and we set how deep each one goes with you before the weekend, not in advance.</p>
+    <ol class="mods">
+      ${(org.modules || []).map(m => `
+      <li class="t-${esc(m.track)}${m.focus ? " focus" : ""}">
+        <span class="mnum"></span>
+        <span class="mid t-${esc(m.track)}">${esc(m.id)}</span>
+        <span class="mtxt">
+          <span class="mname">${esc(m.name)}${m.focus ? '<span class="star"><span aria-hidden="true">★</span> weighted</span>' : ""}</span>
+          <span class="mwhy">${esc(m.why)}</span>
+        </span>
+      </li>`).join("")}
+    </ol>
+    <div class="legend">
+      <span><span class="sw sw-ai" aria-hidden="true"></span> AI track</span>
+      <span><span class="sw sw-mk" aria-hidden="true"></span> Marketing track</span>
+      <span><span class="sw sw-ax" aria-hidden="true"></span> AI in Marketing, applied</span>
+      <span><span aria-hidden="true">★</span> weighted heaviest for you</span>
+    </div>
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker"><span class="num">04</span> What you walk away with</div>
+    <h2>Things your team can do on Monday</h2>
+    <p class="sub">The test of the engagement is not what you learned. It is what you can run without us.</p>
+    <ul class="out">
+      ${(org.outcomes || []).map(o => `<li>${esc(o)}</li>`).join("")}
+    </ul>
+    ${org.proof ? `<div class="proof" style="margin-top:22px">
+      <div class="xl">Proof · ${esc(org.proof.label)}</div>
+      <p>${esc(org.proof.body)}</p>
+    </div>` : ""}
+  </div>
+</section>
+
+<section>
+  <div class="wrap">
+    <div class="kicker"><span class="num">05</span> The full library</div>
+    <h2>All 21 modules</h2>
+    <p class="sub">Your pathway is highlighted. Anything here can be added, swapped or dropped when we scope the engagement.</p>
+    <details class="lib">
+      <summary>Open the full lesson library, 21 modules across three tracks</summary>
+      <div class="libbody">${libraryHTML(ids)}</div>
+    </details>
+    <div class="cta" style="margin-top:22px">
+      <h3>Next step is a short scoping call</h3>
+      <p>Twenty minutes to confirm who is in the room, set the depth dial, and lock the module order. Nothing here is fixed until you have shaped it.</p>
+      <div class="btns">
+        <a class="btn p" href="${esc(CONTACT.bookingUrl)}">Book a scoping call</a>
+        <a class="btn s" href="mailto:${esc(CONTACT.email)}?subject=${esc(encodeURIComponent("Toggle Bespoke pathway, " + org.name))}">Email us instead</a>
+      </div>
+    </div>
+  </div>
+</section>`;
+  const app = document.getElementById("app");
+  app.innerHTML = html;
+  app.classList.remove("fade");
+  void app.offsetWidth;
+  app.classList.add("fade");
+  const live = document.getElementById("live");
+  if (live) live.textContent = "Showing the pathway for " + org.name;
+  document.title = org.slug === "other"
+    ? "Your Toggle Bespoke Pathway"
+    : org.name + " · Toggle Bespoke Pathway";
+}
+
+function pick(slug, push){
+  const org = ORGS.find(o => o.slug === slug) || ORGS.find(o => o.slug === "other") || ORGS[0];
+  if (!org) return;
+  document.getElementById("orgsel").value = org.slug;
+  render(org);
+  if (push) {
+    // opaque origin on file:// makes replaceState throw, and the render above
+    // has already happened, so the URL is the only thing we lose
+    try {
+      const u = new URL(location.href);
+      u.searchParams.set("org", org.slug);
+      history.replaceState(null, "", u);
+    } catch (e) { /* not fatal */ }
+  }
+}
+
+(function init(){
+  const sel = document.getElementById("orgsel");
+  const named = ORGS.filter(o => o.slug !== "other");
+  const other = ORGS.find(o => o.slug === "other");
+  named.sort((a, b) => a.name.localeCompare(b.name));
+  for (const o of named) {
+    const opt = document.createElement("option");
+    opt.value = o.slug; opt.textContent = o.name; sel.appendChild(opt);
+  }
+  if (other) {
+    const opt = document.createElement("option");
+    opt.value = other.slug; opt.textContent = other.name; sel.appendChild(opt);
+  }
+  sel.addEventListener("change", () => {
+    pick(sel.value, true);
+    window.scrollTo({ top: 0 });
+  });
+  const q = new URLSearchParams(location.search).get("org");
+  pick(q && ORGS.some(o => o.slug === q) ? q : (other ? "other" : named[0] && named[0].slug), false);
+})();
+</script>
