@@ -50,3 +50,6 @@ node_modules/
 # Local-only scratch
 **/scratch/
 **/_local/
+
+# Scratch output from the lavish CLI — previews, not deliverables
+.lavish/

@@ -1,0 +1,751 @@
+<!doctype html>
+<html lang="ms">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>TerSaji Raya 2027 | Peraduan Beli &amp; Menang Saji x Bulan Bintang</title>
+<meta name="description" content="Beli RM150 baju Bulan Bintang dan RM25 produk Saji di kaunter pop-up dalam butik yang sama. Menang Saji sepanjang tahun plus RM500 duit raya, atau jumpa Tiket Emas bernilai RM29,000.">
+<meta name="theme-color" content="#04331C">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+/* ==========================================================================
+   TerSaji Raya 2027 contest page
+   Palette sampled from the client's own 2027 key visuals.
+   Type: Fraunces for display warmth, Plus Jakarta Sans for the interface.
+   ========================================================================== */
+:root{
+  --cream:#FBFDF4; --card:#EDF5E2; --card-2:#F4F9EC;
+  --green:#006838; --green-dk:#04331C; --green-lt:#0C8049;
+  --bright:#00A651; --red:#C5192B; --red-dk:#9E1222;
+  --yellow:#F5EC2E; --gold:#F5C542; --orange:#F0A03C;
+  --ink:#04331C; --muted:#63806C; --line:#DCE9CE; --white:#fff;
+
+  --wrap:580px; --r:16px; --r-sm:11px;
+  --sh-1:0 1px 2px rgba(4,51,28,.05), 0 2px 8px rgba(4,51,28,.045);
+  --sh-2:0 2px 4px rgba(4,51,28,.05), 0 10px 26px rgba(4,51,28,.08);
+  --sh-cta:0 5px 16px rgba(197,25,43,.3);
+  --disp:"Fraunces",Georgia,serif;
+  --ui:"Plus Jakarta Sans",system-ui,-apple-system,"Segoe UI",Roboto,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{background:var(--cream);color:var(--ink);font-family:var(--ui);
+  font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;
+  padding-bottom:84px}
+img{max-width:100%;display:block}
+:focus-visible{outline:3px solid var(--orange);outline-offset:2px;border-radius:6px}
+.wrap{max-width:var(--wrap);margin:0 auto;padding:0 20px}
+.sec{padding:30px 0}
+.vh{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* ---- ketupat weave, used as a light texture ---- */
+.weave{background-image:
+  linear-gradient(45deg,rgba(255,255,255,.055) 25%,transparent 25%,transparent 75%,rgba(255,255,255,.055) 75%),
+  linear-gradient(45deg,rgba(255,255,255,.055) 25%,transparent 25%,transparent 75%,rgba(255,255,255,.055) 75%);
+  background-size:26px 26px;background-position:0 0,13px 13px}
+
+/* ==================== header ==================== */
+header{position:sticky;top:0;z-index:40;background:rgba(255,255,255,.93);
+  backdrop-filter:saturate(160%) blur(10px);border-bottom:1px solid var(--line)}
+.hbar{display:flex;align-items:center;gap:11px;padding:11px 20px;
+  max-width:var(--wrap);margin:0 auto}
+.logo{background:var(--green);color:var(--white);font-weight:800;font-size:16px;
+  letter-spacing:.2px;padding:7px 14px;border-radius:999px;box-shadow:var(--sh-1)}
+.xsm{color:#AFC3B4;font-weight:700;font-size:13px}
+.bb{font-weight:800;font-size:14.5px;letter-spacing:.2px;color:var(--ink)}
+.bb i{color:var(--orange);font-style:normal}
+.lang{margin-left:auto;display:flex;background:var(--card);border-radius:999px;padding:3px}
+.lang button{border:0;background:transparent;color:var(--muted);cursor:pointer;
+  font:800 11.5px/1 var(--ui);padding:7px 12px;border-radius:999px;letter-spacing:.4px}
+.lang button[aria-pressed="true"]{background:var(--green);color:var(--white)}
+
+/* ==================== hero ==================== */
+.hero{position:relative;overflow:hidden;color:var(--white);
+  background:radial-gradient(115% 85% at 82% 6%,#0C8049 0%,var(--green) 42%,var(--green-dk) 100%)}
+.hero::after{content:"";position:absolute;inset:0;pointer-events:none;
+  background:radial-gradient(58% 42% at 50% 100%,rgba(245,197,66,.22),transparent 70%)}
+.hero .wrap{position:relative;z-index:1;padding-top:34px;padding-bottom:30px}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:11px;font-weight:800;
+  letter-spacing:1.5px;color:var(--gold);background:rgba(245,197,66,.13);
+  border:1px solid rgba(245,197,66,.32);padding:6px 13px;border-radius:999px;margin-bottom:16px}
+.eyebrow::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--gold)}
+h1{font-family:var(--disp);font-weight:700;font-size:clamp(31px,8.2vw,45px);
+  line-height:1.1;letter-spacing:-.6px}
+h1 em{font-style:normal;color:var(--gold)}
+.lede{font-size:14.5px;line-height:1.6;margin-top:13px;color:#CEE3D5;max-width:33em}
+
+.prizes{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:22px}
+.pz{background:rgba(255,255,255,.09);border:1px solid rgba(255,255,255,.17);
+  border-radius:var(--r-sm);padding:15px 12px;text-align:center;backdrop-filter:blur(3px)}
+.pz .ic{font-size:17px;line-height:1;margin-bottom:6px}
+.pz b{display:block;font-family:var(--disp);font-size:23px;font-weight:700;color:var(--gold);line-height:1.1}
+.pz span{display:block;font-size:10.5px;line-height:1.35;color:#B9D3C2;margin-top:4px;font-weight:500}
+.tot{margin-top:16px;font-size:12.5px;font-weight:700;color:#CEE3D5;line-height:1.5}
+.tot b{color:var(--gold)}
+.tot::before{content:"";display:block;width:22px;height:2px;background:var(--gold);border-radius:2px;margin-bottom:9px}
+
+/* ---- the Golden Ticket, hero strip and section panel ---- */
+.gt-hero{display:flex;align-items:center;gap:13px;margin-top:12px;padding:14px 15px;
+  border-radius:var(--r-sm);background:linear-gradient(120deg,rgba(245,197,66,.20),rgba(245,197,66,.07));
+  border:1px solid rgba(245,197,66,.42)}
+.gt-hero .tk{flex:0 0 42px;width:42px;height:42px;border-radius:10px;background:var(--gold);
+  color:var(--ink);display:flex;align-items:center;justify-content:center;font-size:20px}
+.gt-hero b{display:block;font-family:var(--disp);font-size:19px;font-weight:700;color:var(--gold);line-height:1.15}
+.gt-hero span{display:block;font-size:11.5px;line-height:1.45;color:#CEE3D5;margin-top:3px;font-weight:600}
+.gtp{background:linear-gradient(135deg,#FFFBEC,#FFF7DC);border:1px solid rgba(245,197,66,.55);
+  border-radius:var(--r);padding:18px;box-shadow:var(--sh-1)}
+.gtp h3{font-family:var(--disp);font-size:19px;font-weight:700;color:var(--green);margin-bottom:6px}
+.gtp p{font-size:13px;color:#5C6B4E;line-height:1.6}
+.gtp ul{margin:11px 0 0 17px;font-size:13px;color:#5C6B4E;line-height:1.6}
+.gtp li{margin-bottom:5px}
+.gtp b{color:var(--ink)}
+
+/* ==================== urgency + proof ==================== */
+.urgency{background:linear-gradient(90deg,var(--red),var(--red-dk));color:var(--white)}
+.urgency .wrap{display:flex;justify-content:space-between;align-items:center;gap:12px;
+  padding-top:11px;padding-bottom:11px}
+.urgency span{font-size:12.5px;font-weight:700;letter-spacing:.2px}
+.urgency b{font-size:17px;font-weight:800;color:var(--yellow);font-variant-numeric:tabular-nums;
+  white-space:nowrap}
+.proof{background:var(--card)}
+.proof .wrap{display:grid;grid-template-columns:repeat(3,1fr);padding-top:15px;padding-bottom:15px}
+.proof div{text-align:center;position:relative}
+.proof div+div::before{content:"";position:absolute;left:0;top:14%;height:72%;
+  width:1px;background:var(--line)}
+.proof b{display:block;font-family:var(--disp);font-size:22px;font-weight:700;color:var(--green);
+  line-height:1.15;font-variant-numeric:tabular-nums}
+.proof span{font-size:10px;font-weight:800;letter-spacing:.7px;color:var(--muted)}
+
+/* ==================== section heads ==================== */
+h2{font-family:var(--disp);font-size:22px;font-weight:700;color:var(--green);
+  letter-spacing:-.3px;margin-bottom:5px}
+.sub{font-size:13.5px;color:var(--muted);margin-bottom:17px;line-height:1.5}
+
+/* ==================== the three steps ==================== */
+.steps{position:relative}
+.steps::before{content:"";position:absolute;left:22px;top:26px;bottom:26px;width:2px;
+  background:linear-gradient(var(--bright),var(--line));border-radius:2px}
+.step{position:relative;display:flex;gap:14px;background:var(--white);
+  border:1px solid var(--line);border-radius:var(--r);padding:15px;margin-bottom:11px;
+  box-shadow:var(--sh-1)}
+.step.hl{border-color:var(--gold);background:linear-gradient(180deg,#FFFDF3,var(--white))}
+.tick{position:relative;z-index:1;width:30px;height:30px;flex:0 0 30px;border-radius:50%;
+  background:var(--green);color:var(--white);display:flex;align-items:center;
+  justify-content:center;font:800 14px/1 var(--ui);box-shadow:0 0 0 4px var(--cream)}
+.step.hl .tick{background:var(--gold);color:var(--ink)}
+.step.done .tick{background:var(--bright)}
+.step h3{font-size:15.5px;font-weight:800;margin-bottom:3px;letter-spacing:-.1px}
+.step p{font-size:13px;color:var(--muted);line-height:1.5}
+.step p b{color:var(--green);font-weight:700}
+.bonus{display:inline-flex;align-items:center;gap:5px;margin-top:9px;background:var(--gold);
+  color:var(--ink);font-size:11px;font-weight:800;letter-spacing:.4px;
+  padding:5px 10px;border-radius:999px}
+
+/* ==================== form ==================== */
+.formcard{background:var(--white);border:1px solid var(--line);border-radius:var(--r);
+  padding:19px;box-shadow:var(--sh-2)}
+/* receipt progress. Both receipts are required, so this counts to 2 of 2. */
+.meter{background:linear-gradient(135deg,var(--card),var(--card-2));border-radius:var(--r-sm);
+  padding:13px 15px;margin-bottom:17px}
+.meter .top{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.meter .lb{font-size:12px;font-weight:800;color:var(--green);letter-spacing:.2px}
+.meter .val{font-family:var(--disp);font-size:25px;font-weight:700;color:var(--green);
+  line-height:1;transition:color .25s}
+.meter.max .val{color:var(--bright)}
+.bar{height:7px;background:#DCE7D0;border-radius:99px;margin-top:10px;overflow:hidden}
+.bar i{display:block;height:100%;width:0;border-radius:99px;
+  background:linear-gradient(90deg,var(--bright),var(--gold));transition:width .45s cubic-bezier(.4,0,.2,1)}
+.meter small{display:block;font-size:11.5px;color:var(--muted);margin-top:8px;font-weight:600}
+
+.field{margin-bottom:15px}
+label.lbl{display:block;font-size:11px;font-weight:800;letter-spacing:.8px;
+  text-transform:uppercase;color:var(--green);margin-bottom:7px}
+.opt{color:var(--orange);margin-left:5px}
+.req{color:var(--red);margin-left:5px}
+input[type=text],input[type=tel]{width:100%;font:500 16px/1.4 var(--ui);color:var(--ink);
+  background:var(--cream);border:1.5px solid var(--line);border-radius:var(--r-sm);padding:13px 14px;
+  transition:border-color .15s,background .15s}
+input::placeholder{color:#A6BBAC}
+input:focus{border-color:var(--green);background:var(--white);outline:none}
+.drop{display:flex;align-items:center;gap:13px;cursor:pointer;background:var(--cream);
+  border:2px dashed #BFD4AF;border-radius:var(--r-sm);padding:13px;transition:all .18s}
+.drop:hover{border-color:var(--green);background:var(--card-2)}
+.drop.ok{border:2px solid var(--bright);background:#F2FBF1}
+.dic{width:38px;height:38px;flex:0 0 38px;border-radius:10px;background:var(--card);
+  display:flex;align-items:center;justify-content:center;overflow:hidden;color:var(--green)}
+.dic svg{width:19px;height:19px}
+.drop.ok .dic{background:var(--bright);color:var(--white)}
+.dic img{width:100%;height:100%;object-fit:cover}
+.drop strong{display:block;font-size:13.5px;font-weight:800;line-height:1.3}
+.drop small{font-size:12px;color:var(--muted)}
+.drop.ok small{color:var(--bright);font-weight:700}
+.drop input{position:absolute;width:1px;height:1px;opacity:0}
+.err{color:var(--red);font-size:12.5px;font-weight:700;margin-top:7px}
+
+.consent{display:flex;gap:11px;align-items:flex-start;margin:17px 0}
+.consent input{width:19px;height:19px;flex:0 0 19px;margin-top:2px;accent-color:var(--green)}
+.consent label{font-size:12px;color:var(--muted);line-height:1.55}
+.consent a{color:var(--green);font-weight:700}
+.cta{display:block;width:100%;border:0;cursor:pointer;color:var(--white);
+  background:linear-gradient(180deg,var(--red),var(--red-dk));
+  font:800 17px/1 var(--ui);letter-spacing:.2px;padding:17px;border-radius:var(--r-sm);
+  box-shadow:var(--sh-cta);transition:transform .12s,box-shadow .18s}
+.cta:hover{transform:translateY(-1px);box-shadow:0 8px 22px rgba(197,25,43,.36)}
+.cta:active{transform:translateY(0)}
+.savenote{text-align:center;font-size:12.5px;color:var(--muted);margin-top:12px;font-weight:600}
+.savenote b{color:var(--green);font-weight:800}
+
+/* ==================== thank you ==================== */
+.thanks{display:none;text-align:center;padding:8px 4px 4px}
+.thanks.on{display:block}
+.tmark{width:62px;height:62px;margin:0 auto 15px;border-radius:50%;background:var(--bright);
+  color:var(--white);font-size:30px;display:flex;align-items:center;justify-content:center;
+  box-shadow:0 0 0 9px #E7F7EC}
+.thanks h3{font-family:var(--disp);font-size:24px;font-weight:700;color:var(--green);margin-bottom:8px}
+.thanks p{font-size:14px;color:var(--muted);line-height:1.6}
+.refbox{background:linear-gradient(135deg,var(--card),var(--card-2));border-radius:var(--r-sm);
+  padding:16px;margin-top:19px;text-align:left}
+.refbox h4{font-size:14px;font-weight:800;color:var(--green);margin-bottom:5px}
+.refbox p{font-size:12.5px}
+.share{display:flex;gap:9px;margin-top:12px}
+.share button{flex:1;border:1.5px solid var(--green);background:var(--white);color:var(--green);
+  border-radius:9px;padding:11px;font:800 13px/1 var(--ui);cursor:pointer;transition:background .15s}
+.share button:hover{background:var(--card)}
+
+/* ==================== winners ==================== */
+.win{background:var(--white);border:1px solid var(--line);border-radius:var(--r);
+  padding:6px 16px;box-shadow:var(--sh-1)}
+.wrow{display:flex;align-items:center;gap:13px;padding:12px 0;border-bottom:1px solid var(--line)}
+.wrow:last-child{border:0}
+.av{width:38px;height:38px;flex:0 0 38px;border-radius:50%;color:var(--white);
+  font:800 13px/1 var(--ui);display:flex;align-items:center;justify-content:center;
+  background:linear-gradient(135deg,var(--green-lt),var(--green))}
+.wrow strong{display:block;font-size:14px;font-weight:800}
+.wrow small{font-size:12px;color:var(--muted)}
+.wtag{margin-left:auto;background:#E7F7EC;color:var(--bright);font-size:11.5px;font-weight:800;
+  padding:6px 11px;border-radius:999px;white-space:nowrap}
+
+/* ==================== where to buy ==================== */
+.buy{display:grid;grid-template-columns:1fr 1fr;gap:11px}
+.bcard{background:var(--white);border:1px solid var(--line);border-radius:var(--r);
+  padding:16px;box-shadow:var(--sh-1);position:relative;overflow:hidden}
+.bcard::before{content:"";position:absolute;inset:0 auto 0 0;width:4px}
+.bcard.s::before{background:var(--green)}
+.bcard.b::before{background:var(--orange)}
+.bcard h3{font-size:14.5px;font-weight:800;color:var(--green);margin-bottom:5px}
+.bcard p{font-size:12.5px;color:var(--muted);line-height:1.5}
+.bcard a{display:inline-flex;align-items:center;gap:5px;margin-top:10px;font-size:13px;
+  font-weight:800;color:var(--red);text-decoration:none}
+.bcard a:hover{gap:8px}
+
+/* ==================== accordion ==================== */
+details{background:var(--white);border:1px solid var(--line);border-radius:var(--r-sm);
+  margin-bottom:9px;overflow:hidden}
+details[open]{box-shadow:var(--sh-1)}
+summary{padding:15px 16px;font-size:14px;font-weight:800;color:var(--green);cursor:pointer;
+  list-style:none;display:flex;justify-content:space-between;align-items:center;gap:12px}
+summary::-webkit-details-marker{display:none}
+summary::after{content:"+";font-size:21px;font-weight:700;color:var(--orange);line-height:1;flex:0 0 auto}
+details[open] summary::after{content:"\2013"}
+.acc{padding:0 16px 16px;font-size:13px;color:var(--muted);line-height:1.7}
+.acc ul{margin:9px 0 0 17px}
+.acc li{margin-bottom:6px}
+.acc b{color:var(--ink)}
+
+/* ==================== footer ==================== */
+footer{background:var(--green-dk);color:#9FBFA9;padding:28px 0 30px;margin-top:14px;
+  font-size:12px;line-height:1.65}
+footer .fb{font-family:var(--disp);color:var(--white);font-weight:700;font-size:16px;margin-bottom:10px}
+footer a{color:var(--gold);font-weight:700}
+footer .fl{margin-top:12px;display:flex;gap:14px;flex-wrap:wrap}
+
+/* ==================== sticky CTA ==================== */
+.sticky{position:fixed;left:0;right:0;bottom:0;z-index:50;padding:11px 20px 13px;
+  background:rgba(255,255,255,.94);backdrop-filter:blur(10px);border-top:1px solid var(--line)}
+.sticky a{display:flex;align-items:center;justify-content:center;gap:9px;max-width:var(--wrap);
+  margin:0 auto;background:linear-gradient(180deg,var(--red),var(--red-dk));color:var(--white);
+  padding:15px;border-radius:var(--r-sm);font-weight:800;font-size:16px;text-decoration:none;
+  box-shadow:var(--sh-cta)}
+.sticky small{font-weight:600;opacity:.85;font-size:12px}
+
+@media(min-width:620px){
+  .sticky{display:none}
+  body{padding-bottom:0}
+  .hero .wrap{padding-top:46px;padding-bottom:40px}
+  .sec{padding:36px 0}
+}
+@media(prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  html{scroll-behavior:auto}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <div class="hbar">
+    <span class="logo">Saji</span>
+    <span class="xsm">&times;</span>
+    <span class="bb">bulan <i>&#9733;</i> bintang</span>
+    <div class="lang" role="group" aria-label="Bahasa">
+      <button type="button" data-lang="ms" aria-pressed="true">BM</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
+    </div>
+  </div>
+</header>
+
+<section class="hero weave">
+  <div class="wrap">
+    <p class="eyebrow" data-ms="PERADUAN BELI &amp; MENANG &middot; 1 FEB hingga 5 APRIL 2027"
+       data-en="BUY &amp; WIN CONTEST &middot; 1 FEB to 5 APRIL 2027">PERADUAN BELI &amp; MENANG &middot; 1 FEB hingga 5 APRIL 2027</p>
+
+    <h1 data-ms="Menang <em>Saji sepanjang tahun</em> + RM500 duit raya."
+        data-en="Win <em>Saji for a whole year</em> + RM500 cash.">Menang <em>Saji sepanjang tahun</em> + RM500 duit raya.</h1>
+
+    <p class="lede" data-ms="Beli baju raya di butik Bulan Bintang, dan beli produk Saji di kaunter pop-up dalam butik yang sama. Dua resit, satu kunjungan. 40 pemenang mingguan sepanjang 10 minggu."
+       data-en="Buy your baju raya at a Bulan Bintang boutique, then buy your Saji at the pop-up counter inside the same shop. Two receipts, one visit. 40 weekly winners across 10 weeks.">Beli baju raya di butik Bulan Bintang, dan beli produk Saji di kaunter pop-up dalam butik yang sama. Dua resit, satu kunjungan. 40 pemenang mingguan sepanjang 10 minggu.</p>
+
+    <div class="prizes">
+      <div class="pz"><div class="ic">&#128176;</div><b>RM500</b>
+        <span data-ms="Duit raya tunai" data-en="Cash in hand">Duit raya tunai</span></div>
+      <div class="pz"><div class="ic">&#127858;</div><b>RM2,400</b>
+        <span data-ms="Produk Saji untuk setahun" data-en="A full year of Saji products">Produk Saji untuk setahun</span></div>
+    </div>
+
+    <div class="gt-hero">
+      <span class="tk" aria-hidden="true">&#127915;</span>
+      <span>
+        <b data-ms="Tiket Emas RM29,000" data-en="RM29,000 Golden Ticket">Tiket Emas RM29,000</b>
+        <span data-ms="Tersembunyi secara rawak dalam produk Saji yang dijual di kaunter pop-up sahaja. Satu tiket, satu pemenang."
+              data-en="Hidden at random in Saji stock sold at the pop-up counters only. One ticket, one winner.">Tersembunyi secara rawak dalam produk Saji yang dijual di kaunter pop-up sahaja. Satu tiket, satu pemenang.</span>
+      </span>
+    </div>
+
+    <p class="tot" data-ms="Hadiah mingguan <b>RM2,900</b> setiap satu untuk 40 pemenang, campur satu Tiket Emas <b>RM29,000</b>. Jumlah hadiah <b>RM145,000</b>."
+       data-en="Weekly prizes of <b>RM2,900</b> each for 40 winners, plus one <b>RM29,000</b> Golden Ticket. Total prize pool <b>RM145,000</b>.">Hadiah mingguan <b>RM2,900</b> setiap satu untuk 40 pemenang, campur satu Tiket Emas <b>RM29,000</b>. Jumlah hadiah <b>RM145,000</b>.</p>
+  </div>
+</section>
+
+<div class="urgency">
+  <div class="wrap">
+    <span data-ms="Cabutan minggu ini ditutup dalam" data-en="This week&rsquo;s draw closes in">Cabutan minggu ini ditutup dalam</span>
+    <b id="cd">5 hari 1 jam</b>
+  </div>
+</div>
+
+<div class="proof">
+  <div class="wrap">
+    <div><b id="cnt">2,480</b><span data-ms="PENYERTAAN" data-en="ENTRIES">PENYERTAAN</span></div>
+    <div><b id="wct">24</b><span data-ms="PEMENANG" data-en="WINNERS">PEMENANG</span></div>
+    <div><b id="gtc">1</b><span data-ms="TIKET EMAS" data-en="GOLDEN TICKET">TIKET EMAS</span></div>
+  </div>
+</div>
+
+<section class="sec">
+  <div class="wrap">
+    <h2 data-ms="Tiga langkah, satu kedai" data-en="Three steps, one shop">Tiga langkah, satu kedai</h2>
+    <p class="sub" data-ms="Kedua-dua pembelian berlaku dalam kunjungan yang sama, jadi anda tidak perlu simpan resit selama berhari-hari."
+       data-en="Both purchases happen in the same visit, so no receipt has to survive a week in your handbag.">Kedua-dua pembelian berlaku dalam kunjungan yang sama, jadi anda tidak perlu simpan resit selama berhari-hari.</p>
+
+    <div class="steps">
+      <div class="step hl" id="s0">
+        <div class="tick">1</div>
+        <div>
+          <h3 data-ms="Beli baju raya Bulan Bintang RM150" data-en="Buy RM150 of Bulan Bintang">Beli baju raya Bulan Bintang RM150</h3>
+          <p data-ms="Di mana-mana antara <b>14 butik rasmi</b>. Setiap butik ada kaunter pop-up Saji di dalamnya sepanjang tempoh peraduan."
+             data-en="At any of the <b>14 official boutiques</b>. Every one of them has a Saji pop-up counter inside for the whole contest period.">Di mana-mana antara <b>14 butik rasmi</b>. Setiap butik ada kaunter pop-up Saji di dalamnya sepanjang tempoh peraduan.</p>
+          <span class="bonus">&#127915; <span data-ms="TIKET EMAS DI KAUNTER INI SAHAJA" data-en="GOLDEN TICKET, THIS COUNTER ONLY">TIKET EMAS DI KAUNTER INI SAHAJA</span></span>
+        </div>
+      </div>
+
+      <div class="step" id="s1">
+        <div class="tick">2</div>
+        <div>
+          <h3 data-ms="Beli produk Saji RM25 di kaunter" data-en="Buy RM25 of Saji at the counter">Beli produk Saji RM25 di kaunter</h3>
+          <p data-ms="Dalam <b>satu resit</b>. Minyak masak, santan, ketupat, creamer, kicap, tepung dan semua produk Saji dikira. Belanja RM50 dan anda dapat hadiah misteri."
+             data-en="In <b>one receipt</b>. Cooking oil, coconut milk, ketupat, creamer, soy sauce, flour and every Saji product counts. Spend RM50 and a mystery gift goes in the bag.">Dalam <b>satu resit</b>. Minyak masak, santan, ketupat, creamer, kicap, tepung dan semua produk Saji dikira. Belanja RM50 dan anda dapat hadiah misteri.</p>
+        </div>
+      </div>
+
+      <div class="step" id="s3">
+        <div class="tick">3</div>
+        <div>
+          <h3 data-ms="Muat naik kedua-dua resit" data-en="Upload both receipts">Muat naik kedua-dua resit</h3>
+          <p data-ms="Ambil gambar kedua-dua resit, isi nama dan nombor telefon. Siap dalam <b>kurang seminit</b>."
+             data-en="Snap both receipts, fill in your name and phone number. Done in <b>under a minute</b>.">Ambil gambar kedua-dua resit, isi nama dan nombor telefon. Siap dalam <b>kurang seminit</b>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="sertai" style="padding-top:0">
+  <div class="wrap">
+    <h2 data-ms="Hantar penyertaan anda" data-en="Submit your entry">Hantar penyertaan anda</h2>
+    <p class="sub" data-ms="Tiga ruangan sahaja. Tiada akaun, tiada aplikasi."
+       data-en="Three fields only. No account, no app.">Tiga ruangan sahaja. Tiada akaun, tiada aplikasi.</p>
+
+    <div class="formcard">
+      <form id="entry" novalidate>
+        <div class="meter" id="meter">
+          <div class="top">
+            <span class="lb" data-ms="Resit yang dilampirkan" data-en="Receipts attached">Resit yang dilampirkan</span>
+            <span class="val" id="mult">0/2</span>
+          </div>
+          <div class="bar"><i id="barfill"></i></div>
+          <small id="mhint" data-ms="Kedua-dua resit diperlukan: RM150 Bulan Bintang dan RM25 Saji."
+                 data-en="Both receipts are required: RM150 of Bulan Bintang and RM25 of Saji.">Kedua-dua resit diperlukan: RM150 Bulan Bintang dan RM25 Saji.</small>
+        </div>
+
+        <div class="field">
+          <label class="lbl" for="nama" data-ms="Nama penuh" data-en="Full name">Nama penuh</label>
+          <input type="text" id="nama" name="nama" autocomplete="name" required
+                 data-ms-ph="Seperti dalam kad pengenalan" data-en-ph="As printed on your IC"
+                 placeholder="Seperti dalam kad pengenalan">
+        </div>
+
+        <div class="field">
+          <label class="lbl" for="tel" data-ms="Nombor telefon" data-en="Phone number">Nombor telefon</label>
+          <input type="tel" id="tel" name="tel" autocomplete="tel" inputmode="tel" required
+                 placeholder="012 345 6789">
+        </div>
+
+        <div class="field">
+          <label class="lbl" for="r1" data-ms='Resit Saji<span class="req">WAJIB</span>' data-en='Saji receipt<span class="req">REQUIRED</span>'>Resit Saji<span class="req">WAJIB</span></label>
+          <label class="drop" for="r1" id="d1">
+            <span class="dic" id="i1"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L8 6H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-4l-1.5-2Z"/><circle cx="12" cy="13" r="3.5"/></svg></span>
+            <span>
+              <strong data-ms="Ambil gambar resit Saji" data-en="Snap your Saji receipt">Ambil gambar resit Saji</strong>
+              <small data-ms="JPG atau PNG, sehingga 5MB" data-en="JPG or PNG, up to 5MB">JPG atau PNG, sehingga 5MB</small>
+            </span>
+            <input type="file" id="r1" name="resit_saji" accept="image/*" required>
+          </label>
+        </div>
+
+        <div class="field">
+          <label class="lbl" for="r2" data-ms='Resit Bulan Bintang<span class="req">WAJIB</span>' data-en='Bulan Bintang receipt<span class="req">REQUIRED</span>'>Resit Bulan Bintang<span class="req">WAJIB</span></label>
+          <label class="drop" for="r2" id="d2">
+            <span class="dic" id="i2"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M14.5 4h-5L8 6H4a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8a2 2 0 0 0-2-2h-4l-1.5-2Z"/><circle cx="12" cy="13" r="3.5"/></svg></span>
+            <span>
+              <strong data-ms="Ambil gambar resit Bulan Bintang" data-en="Snap your Bulan Bintang receipt">Ambil gambar resit Bulan Bintang</strong>
+              <small data-ms="JPG atau PNG, sehingga 5MB" data-en="JPG or PNG, up to 5MB">JPG atau PNG, sehingga 5MB</small>
+            </span>
+            <input type="file" id="r2" name="resit_bb" accept="image/*" required>
+          </label>
+        </div>
+
+        <div class="consent">
+          <input type="checkbox" id="setuju" required>
+          <label for="setuju" data-ms='Saya bersetuju dengan <a href="#terma">terma dan syarat</a> peraduan dan membenarkan Delima Oil Products memproses data saya mengikut <a href="#terma">Notis Privasi PDPA</a>.'
+                 data-en='I agree to the <a href="#terma">contest terms</a> and allow Delima Oil Products to process my data under the <a href="#terma">PDPA Privacy Notice</a>.'>Saya bersetuju dengan <a href="#terma">terma dan syarat</a> peraduan dan membenarkan Delima Oil Products memproses data saya mengikut <a href="#terma">Notis Privasi PDPA</a>.</label>
+        </div>
+        <p class="err" id="err" hidden></p>
+
+        <button class="cta" type="submit" data-ms="Sertai Sekarang" data-en="Enter Now">Sertai Sekarang</button>
+        <p class="savenote" data-ms="Belum ada kedua-dua resit? <b>Simpan dan sambung nanti.</b>"
+           data-en="Missing one of the two receipts? <b>Save and finish later.</b>">Belum ada kedua-dua resit? <b>Simpan dan sambung nanti.</b></p>
+      </form>
+
+      <div class="thanks" id="thanks">
+        <div class="tmark">&#10003;</div>
+        <h3 data-ms="Penyertaan diterima!" data-en="Entry received!">Penyertaan diterima!</h3>
+        <p id="tmsg" data-ms="Anda kini dalam cabutan minggu ini. Kami akan menghubungi pemenang melalui telefon dan WhatsApp."
+           data-en="You are in this week&rsquo;s draw. We contact winners by phone and WhatsApp.">Anda kini dalam cabutan minggu ini. Kami akan menghubungi pemenang melalui telefon dan WhatsApp.</p>
+        <div class="refbox">
+          <h4 data-ms="Nak peluang tambahan?" data-en="Want an extra chance?">Nak peluang tambahan?</h4>
+          <p data-ms="Kongsi peraduan ini. Setiap kawan yang menyertai memberi anda satu penyertaan tambahan."
+             data-en="Share this contest. Every friend who enters gives you one bonus entry.">Kongsi peraduan ini. Setiap kawan yang menyertai memberi anda satu penyertaan tambahan.</p>
+          <div class="share">
+            <button type="button" data-share="wa">WhatsApp</button>
+            <button type="button" data-share="copy" data-ms="Salin pautan" data-en="Copy link">Salin pautan</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <h2 data-ms="Pemenang minggu lepas" data-en="Last week&rsquo;s winners">Pemenang minggu lepas</h2>
+    <p class="sub" data-ms="Empat pemenang setiap minggu, selama sepuluh minggu."
+       data-en="Four winners every week, for ten weeks.">Empat pemenang setiap minggu, selama sepuluh minggu.</p>
+    <div class="win">
+      <div class="wrow"><div class="av">SF</div><div><strong>Siti Fatimah A.</strong><small>Kota Bharu, Kelantan</small></div><span class="wtag">RM2,900</span></div>
+      <div class="wrow"><div class="av">MH</div><div><strong>Mohd Hafiz I.</strong><small>Sungai Petani, Kedah</small></div><span class="wtag">RM2,900</span></div>
+      <div class="wrow"><div class="av">RN</div><div><strong>Rohaya N.</strong><small>Muar, Johor</small></div><span class="wtag">RM2,900</span></div>
+      <div class="wrow"><div class="av">AZ</div><div><strong>Ahmad Zaki B.</strong><small>Kuantan, Pahang</small></div><span class="wtag">RM2,900</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <h2 data-ms="Tiket Emas" data-en="The Golden Ticket">Tiket Emas</h2>
+    <p class="sub" data-ms="Satu tiket. Satu pemenang. Tiada cabutan."
+       data-en="One ticket. One winner. No draw involved.">Satu tiket. Satu pemenang. Tiada cabutan.</p>
+    <div class="gtp">
+      <h3 data-ms="RM29,000 kepada sesiapa yang menjumpainya" data-en="RM29,000 to whoever finds it">RM29,000 kepada sesiapa yang menjumpainya</h3>
+      <p data-ms="Satu tiket disembunyikan secara rawak dalam stok Saji yang dijual di kaunter pop-up. Nilainya sama dengan sepuluh hadiah mingguan, dan ia dimenangi terus tanpa menunggu cabutan Jumaat."
+         data-en="One ticket is hidden at random in the Saji stock sold at the pop-up counters. It is worth ten weekly prizes, and it is won outright without waiting for a Friday draw.">Satu tiket disembunyikan secara rawak dalam stok Saji yang dijual di kaunter pop-up. Nilainya sama dengan sepuluh hadiah mingguan, dan ia dimenangi terus tanpa menunggu cabutan Jumaat.</p>
+      <ul data-ms="<li>Hanya dalam produk yang dibeli di kaunter pop-up dalam butik Bulan Bintang</li><li>Satu tiket sahaja sepanjang tempoh peraduan</li><li>Periksa pembungkusan produk Saji edisi kempen anda</li><li>Hubungi talian peraduan dalam 30 hari selepas menjumpainya</li>"
+          data-en="<li>Only in stock bought at a pop-up counter inside a Bulan Bintang boutique</li><li>One ticket for the whole contest period</li><li>Check the packaging of your campaign edition Saji product</li><li>Call the contest line within 30 days of finding it</li>"><li>Hanya dalam produk yang dibeli di kaunter pop-up dalam butik Bulan Bintang</li><li>Satu tiket sahaja sepanjang tempoh peraduan</li><li>Periksa pembungkusan produk Saji edisi kempen anda</li><li>Hubungi talian peraduan dalam 30 hari selepas menjumpainya</li></ul>
+    </div>
+  </div>
+</section>
+
+<section class="sec" style="padding-top:0">
+  <div class="wrap">
+    <h2 data-ms="Di mana nak sertai" data-en="Where to enter">Di mana nak sertai</h2>
+    <p class="sub" data-ms="Kedua-dua pembelian berlaku di tempat yang sama."
+       data-en="Both purchases happen in the same place.">Kedua-dua pembelian berlaku di tempat yang sama.</p>
+    <div class="buy">
+      <div class="bcard b">
+        <h3>Bulan Bintang</h3>
+        <p data-ms="14 butik rasmi di seluruh Malaysia. Beli baju raya anda seperti biasa, dan simpan resit."
+           data-en="14 official boutiques nationwide. Buy your baju raya as you normally would, and keep the receipt.">14 butik rasmi di seluruh Malaysia. Beli baju raya anda seperti biasa, dan simpan resit.</p>
+        <a href="#bb" data-ms="Cari butik terdekat &#8594;" data-en="Find your nearest boutique &#8594;">Cari butik terdekat &#8594;</a>
+      </div>
+      <div class="bcard s">
+        <h3 data-ms="Kaunter pop-up Saji" data-en="Saji pop-up counter">Kaunter pop-up Saji</h3>
+        <p data-ms="Di dalam kesemua 14 butik, dari 1 Februari hingga 5 April 2027. Penyertaan memerlukan resit dari kaunter ini, kerana di situlah Tiket Emas berada."
+           data-en="Inside all 14 boutiques, from 1 February to 5 April 2027. Entry needs a receipt from this counter, because that is where the Golden Ticket is.">Di dalam kesemua 14 butik, dari 1 Februari hingga 5 April 2027. Penyertaan memerlukan resit dari kaunter ini, kerana di situlah Tiket Emas berada.</p>
+        <a href="#sertai" data-ms="Hantar penyertaan &#8594;" data-en="Submit your entry &#8594;">Hantar penyertaan &#8594;</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="sec" id="terma" style="padding-top:0">
+  <div class="wrap">
+    <h2 data-ms="Mekanik penuh dan terma" data-en="Full mechanics and terms">Mekanik penuh dan terma</h2>
+    <p class="sub" data-ms="Semuanya di sini, tanpa cetakan halus."
+       data-en="All of it here, with no fine print.">Semuanya di sini, tanpa cetakan halus.</p>
+
+    <details>
+      <summary data-ms="Produk Saji yang layak" data-en="Qualifying Saji products">Produk Saji yang layak</summary>
+      <div class="acc" data-ms="Semua produk jenama Saji dikira ke arah RM25 dalam satu resit, dan resit itu mesti dari kaunter pop-up di dalam butik Bulan Bintang.<ul><li>Minyak masak Saji, semua saiz</li><li>Santan, krimer manis dan krimer sejat</li><li>Ketupat Saji dan Ketupat Mini</li><li>Kicap, sos, pes dan bunjut sup</li><li>Tepung salut, kerisik dan AIO</li><li>Belanja RM50 di kaunter dan anda dapat hadiah misteri</li></ul>"
+           data-en="Every Saji branded product counts toward the RM25 in a single receipt, and that receipt has to come from the pop-up counter inside a Bulan Bintang boutique.<ul><li>Saji cooking oil, all sizes</li><li>Coconut milk, sweetened and evaporated creamer</li><li>Saji Ketupat and Ketupat Mini</li><li>Soy sauce, sauces, pastes and soup bunjut</li><li>Coating flour, kerisik and AIO</li><li>Spend RM50 at the counter and a mystery gift comes with it</li></ul>">Semua produk jenama Saji dikira ke arah RM25 dalam satu resit, dan resit itu mesti dari kaunter pop-up di dalam butik Bulan Bintang.<ul><li>Minyak masak Saji, semua saiz</li><li>Santan, krimer manis dan krimer sejat</li><li>Ketupat Saji dan Ketupat Mini</li><li>Kicap, sos, pes dan bunjut sup</li><li>Tepung salut, kerisik dan AIO</li><li>Belanja RM50 di kaunter dan anda dapat hadiah misteri</li></ul></div>
+    </details>
+
+    <details>
+      <summary data-ms="Cara pemenang dipilih" data-en="How winners are picked">Cara pemenang dipilih</summary>
+      <div class="acc" data-ms="Cabutan diadakan setiap Jumaat, bermula 19 Februari 2027 dan berakhir 9 April 2027.<ul><li><b>4 pemenang</b> setiap minggu, 40 keseluruhan</li><li>Setiap pemenang menerima <b>RM500 tunai</b> dan produk Saji bernilai <b>RM2,400</b> untuk setahun</li><li>Satu <b>Tiket Emas RM29,000</b> disembunyikan dalam stok kaunter pop-up dan dimenangi terus, di luar cabutan mingguan</li><li>Setiap penyertaan mesti mempunyai <b>kedua-dua resit</b>, Bulan Bintang dan Saji</li><li>Penyertaan tanpa had, tetapi setiap satu mesti guna pasangan resit yang berlainan</li></ul>"
+           data-en="Draws run every Friday, from 19 February 2027 to 9 April 2027.<ul><li><b>4 winners</b> a week, 40 in total</li><li>Each winner receives <b>RM500 in cash</b> and <b>RM2,400</b> of Saji products for a year</li><li>One <b>RM29,000 Golden Ticket</b> is hidden in pop-up counter stock and is won outright, outside the weekly draw</li><li>Every entry needs <b>both receipts</b>, Bulan Bintang and Saji</li><li>Unlimited entries, but each one needs a different pair of receipts</li></ul>">Cabutan diadakan setiap Jumaat, bermula 19 Februari 2027 dan berakhir 9 April 2027.<ul><li><b>4 pemenang</b> setiap minggu, 40 keseluruhan</li><li>Setiap pemenang menerima <b>RM500 tunai</b> dan produk Saji bernilai <b>RM2,400</b> untuk setahun</li><li>Satu <b>Tiket Emas RM29,000</b> disembunyikan dalam stok kaunter pop-up dan dimenangi terus, di luar cabutan mingguan</li><li>Setiap penyertaan mesti mempunyai <b>kedua-dua resit</b>, Bulan Bintang dan Saji</li><li>Penyertaan tanpa had, tetapi setiap satu mesti guna pasangan resit yang berlainan</li></ul></div>
+    </details>
+
+    <details>
+      <summary data-ms="Pengesahan resit dan tuntutan hadiah" data-en="Receipt checks and prize claims">Pengesahan resit dan tuntutan hadiah</summary>
+      <div class="acc" data-ms="Resit disahkan dalam 5 hari bekerja. Nombor resit mesti jelas dan tarikh mesti dalam tempoh peraduan.<ul><li>Pemenang dihubungi melalui telefon dan WhatsApp dalam 7 hari selepas cabutan</li><li>Resit asal mesti ditunjukkan semasa menuntut hadiah</li><li>Hadiah yang tidak dituntut dalam 30 hari akan dicabut semula</li></ul>"
+           data-en="Receipts are checked within 5 working days. The receipt number must be legible and the date must fall inside the contest window.<ul><li>Winners are contacted by phone and WhatsApp within 7 days of the draw</li><li>The original receipt must be produced when claiming</li><li>Prizes unclaimed after 30 days are redrawn</li></ul>">Resit disahkan dalam 5 hari bekerja. Nombor resit mesti jelas dan tarikh mesti dalam tempoh peraduan.<ul><li>Pemenang dihubungi melalui telefon dan WhatsApp dalam 7 hari selepas cabutan</li><li>Resit asal mesti ditunjukkan semasa menuntut hadiah</li><li>Hadiah yang tidak dituntut dalam 30 hari akan dicabut semula</li></ul></div>
+    </details>
+
+    <details>
+      <summary data-ms="Kelayakan peserta" data-en="Who can enter">Kelayakan peserta</summary>
+      <div class="acc" data-ms="Terbuka kepada warganegara dan pemastautin tetap Malaysia berumur 18 tahun ke atas. Kakitangan Delima Oil Products Sdn Bhd, FGV Holdings Berhad, Bulan Bintang, agensi yang dilantik dan ahli keluarga terdekat mereka tidak layak menyertai."
+           data-en="Open to Malaysian citizens and permanent residents aged 18 and above. Staff of Delima Oil Products Sdn Bhd, FGV Holdings Berhad, Bulan Bintang, appointed agencies and their immediate families are not eligible.">Terbuka kepada warganegara dan pemastautin tetap Malaysia berumur 18 tahun ke atas. Kakitangan Delima Oil Products Sdn Bhd, FGV Holdings Berhad, Bulan Bintang, agensi yang dilantik dan ahli keluarga terdekat mereka tidak layak menyertai.</div>
+    </details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <p class="fb">TerSaji Raya 2027</p>
+    <p data-ms="Dianjurkan oleh Delima Oil Products Sdn Bhd (23120-H), Tingkat 3A, Wisma FGV, Jalan Raja Laut, 50350 Kuala Lumpur, dengan kerjasama Bulan Bintang."
+       data-en="Organised by Delima Oil Products Sdn Bhd (23120-H), Level 3A, Wisma FGV, Jalan Raja Laut, 50350 Kuala Lumpur, in collaboration with Bulan Bintang.">Dianjurkan oleh Delima Oil Products Sdn Bhd (23120-H), Tingkat 3A, Wisma FGV, Jalan Raja Laut, 50350 Kuala Lumpur, dengan kerjasama Bulan Bintang.</p>
+    <p class="fl">
+      <a href="#terma" data-ms="Terma dan syarat" data-en="Terms">Terma dan syarat</a>
+      <a href="#terma" data-ms="Notis Privasi PDPA" data-en="PDPA notice">Notis Privasi PDPA</a>
+      <a href="#hubungi" data-ms="Hubungi kami" data-en="Contact">Hubungi kami</a>
+    </p>
+  </div>
+</footer>
+
+<div class="sticky">
+  <a href="#sertai">
+    <span data-ms="Sertai Sekarang" data-en="Enter Now">Sertai Sekarang</span>
+    <small data-ms="&middot; ambil 1 minit" data-en="&middot; takes 1 minute">&middot; ambil 1 minit</small>
+  </a>
+</div>
+
+<script>
+(function () {
+  'use strict';
+  var $ = function (s, r) { return (r || document).querySelector(s); };
+  var $$ = function (s, r) { return Array.prototype.slice.call((r || document).querySelectorAll(s)); };
+
+  /* ---------- language toggle ---------- */
+  var lang = 'ms';
+  function applyLang(next) {
+    lang = next;
+    $$('[data-ms]').forEach(function (el) {
+      var v = el.getAttribute('data-' + lang);
+      if (v !== null) el.innerHTML = v;
+    });
+    $$('[data-ms-ph]').forEach(function (el) {
+      var v = el.getAttribute('data-' + lang + '-ph');
+      if (v !== null) el.placeholder = v;
+    });
+    $$('.lang button').forEach(function (b) {
+      b.setAttribute('aria-pressed', String(b.dataset.lang === lang));
+    });
+    document.documentElement.lang = lang;
+    renderProgress();
+  }
+  $$('.lang button').forEach(function (b) {
+    b.addEventListener('click', function () { applyLang(b.dataset.lang); });
+  });
+
+  /* ---------- source attribution, so every touchpoint is reportable ---------- */
+  try {
+    var p = new URLSearchParams(location.search);
+    ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'src'].forEach(function (k) {
+      if (p.get(k)) sessionStorage.setItem(k, p.get(k));
+    });
+  } catch (e) { /* private mode */ }
+
+  /* ---------- countdown to the coming Friday draw ---------- */
+  var cd = $('#cd');
+  function tickClock() {
+    if (!cd) return;
+    var now = new Date();
+    var draw = new Date(now);
+    draw.setDate(now.getDate() + ((5 - now.getDay() + 7) % 7 || 7));
+    draw.setHours(23, 59, 0, 0);
+    var ms = draw - now;
+    var d = Math.floor(ms / 86400000);
+    var h = Math.floor((ms % 86400000) / 3600000);
+    cd.textContent = lang === 'ms' ? (d + ' hari ' + h + ' jam') : (d + 'd ' + h + 'h');
+  }
+  tickClock();
+  setInterval(tickClock, 60000);
+
+  /* ---------- receipt uploads, with a real thumbnail so the state is obvious ---------- */
+  function wireUpload(inputId, dropId, icId, stepId) {
+    var input = $('#' + inputId), drop = $('#' + dropId), ic = $('#' + icId), step = $('#' + stepId);
+    if (!input) return;
+    input.addEventListener('change', function () {
+      var f = input.files && input.files[0];
+      if (!f) return;
+      if (f.size > 5 * 1024 * 1024) {
+        showErr(lang === 'ms' ? 'Fail terlalu besar. Maksimum 5MB.' : 'That file is too large. 5MB maximum.');
+        input.value = '';
+        return;
+      }
+      drop.classList.add('ok');
+      if (step) step.classList.add('done');
+      $('strong', drop).textContent = f.name;
+      $('small', drop).textContent = lang === 'ms' ? 'Resit dilampirkan' : 'Receipt attached';
+      var url = URL.createObjectURL(f);
+      ic.innerHTML = '<img alt="" src="' + url + '">';
+      renderProgress();
+      hideErr();
+    });
+  }
+  wireUpload('r1', 'd1', 'i1', 's1');
+  wireUpload('r2', 'd2', 'i2', 's0');
+
+  /* ---------- receipt progress. Both receipts are required. ---------- */
+  function renderProgress() {
+    var a = $('#r1') && $('#r1').files.length > 0;
+    var b = $('#r2') && $('#r2').files.length > 0;
+    var n = (a ? 1 : 0) + (b ? 1 : 0);
+    var val = $('#mult'), fill = $('#barfill'), hint = $('#mhint'), meter = $('#meter');
+    if (!val) return;
+    val.textContent = n + '/2';
+    fill.style.width = (n === 2 ? 100 : n === 1 ? 50 : 6) + '%';
+    meter.classList.toggle('max', n === 2);
+    if (n === 2) {
+      hint.textContent = lang === 'ms'
+        ? 'Kedua-duanya sudah ada. Hantar penyertaan anda.'
+        : 'Both are attached. Send your entry.';
+    } else if (a) {
+      hint.textContent = lang === 'ms'
+        ? 'Tinggal resit Bulan Bintang sahaja.'
+        : 'Just the Bulan Bintang receipt left.';
+    } else if (b) {
+      hint.textContent = lang === 'ms'
+        ? 'Tinggal resit Saji dari kaunter pop-up sahaja.'
+        : 'Just the Saji receipt from the pop-up counter left.';
+    } else {
+      hint.textContent = lang === 'ms'
+        ? 'Kedua-dua resit diperlukan: RM150 Bulan Bintang dan RM25 Saji.'
+        : 'Both receipts are required: RM150 of Bulan Bintang and RM25 of Saji.';
+    }
+  }
+  renderProgress();
+
+  /* ---------- save and finish later ---------- */
+  try {
+    ['nama', 'tel'].forEach(function (id) {
+      var el = $('#' + id);
+      var saved = localStorage.getItem('tersaji_' + id);
+      if (saved) el.value = saved;
+      el.addEventListener('input', function () {
+        try { localStorage.setItem('tersaji_' + id, el.value); } catch (e) {}
+      });
+    });
+  } catch (e) { /* storage blocked */ }
+
+  /* ---------- validation ---------- */
+  var errEl = $('#err');
+  function showErr(m) { errEl.textContent = m; errEl.hidden = false; }
+  function hideErr() { errEl.hidden = true; }
+
+  $('#entry').addEventListener('submit', function (ev) {
+    ev.preventDefault();
+    hideErr();
+    var nama = $('#nama').value.trim();
+    var tel = $('#tel').value.replace(/\D/g, '');
+    if (nama.length < 3) {
+      return showErr(lang === 'ms' ? 'Sila masukkan nama penuh anda.' : 'Please enter your full name.');
+    }
+    if (tel.length < 9) {
+      return showErr(lang === 'ms' ? 'Sila masukkan nombor telefon yang sah.' : 'Please enter a valid phone number.');
+    }
+    if (!$('#r1').files.length) {
+      return showErr(lang === 'ms' ? 'Sila muat naik resit Saji anda.' : 'Please upload your Saji receipt.');
+    }
+    if (!$('#r2').files.length) {
+      return showErr(lang === 'ms'
+        ? 'Sila muat naik resit Bulan Bintang anda. Kedua-dua resit diperlukan.'
+        : 'Please upload your Bulan Bintang receipt. Both receipts are required.');
+    }
+    if (!$('#setuju').checked) {
+      return showErr(lang === 'ms' ? 'Sila setuju dengan terma dan syarat.' : 'Please accept the terms and conditions.');
+    }
+    // Wire this to the real endpoint. The entry count, the winner count and the
+    // winner wall must read from the live database before launch.
+    $('#entry').style.display = 'none';
+    var t = $('#thanks');
+    t.classList.add('on');
+    $('#tmsg').textContent = lang === 'ms'
+      ? 'Anda kini dalam cabutan Jumaat ini. Jangan lupa periksa pembungkusan produk Saji anda untuk Tiket Emas. Kami menghubungi pemenang melalui telefon dan WhatsApp.'
+      : 'You are in this Friday’s draw. Check your Saji packaging for the Golden Ticket before you throw it away. We contact winners by phone and WhatsApp.';
+    t.scrollIntoView({ behavior: 'smooth', block: 'center' });
+    try { ['nama', 'tel'].forEach(function (id) { localStorage.removeItem('tersaji_' + id); }); } catch (e) {}
+  });
+
+  /* ---------- share, the highest intent moment in the campaign ---------- */
+  $$('[data-share]').forEach(function (b) {
+    b.addEventListener('click', function () {
+      var url = location.origin + location.pathname + '?src=share';
+      var msg = lang === 'ms'
+        ? 'Jom sertai peraduan TerSaji Raya. Menang Saji sepanjang tahun + RM500 duit raya, atau jumpa Tiket Emas RM29,000! '
+        : 'Join the TerSaji Raya contest. Win Saji for a year + RM500 cash, or find the RM29,000 Golden Ticket! ';
+      if (b.dataset.share === 'wa') {
+        window.open('https://wa.me/?text=' + encodeURIComponent(msg + url), '_blank', 'noopener');
+      } else if (navigator.clipboard) {
+        navigator.clipboard.writeText(url).then(function () {
+          b.textContent = lang === 'ms' ? 'Pautan disalin' : 'Link copied';
+        });
+      }
+    });
+  });
+})();
+</script>
+
+</body>
+</html>

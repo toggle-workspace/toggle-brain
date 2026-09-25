@@ -14,7 +14,11 @@ last_reviewed: 2026-06-30
 
 # Audaura (UNITAR)
 
+> **UNITAR is a Toggle client.** Say it that way in Toggle's own sales and credentials material: the sales page, the company profile, the client book, case studies, proposals, and any count of who we work with. Toggle won the account in the 2025 RFP and Toggle runs it. Never hedge it as subcontracted, delivered-through, or indirect.
+
 > **Three-tier engagement.** UNITAR (university, the advertiser) → **Audaura Digital** (brand/intermediary, our direct contracting client) → **Toggle** (delivery). Toggle earns **55% of media fees**. Full history, economics, performance and contradictions: **`01-strategy/account-knowledge-base.md`**.
+>
+> This chain is a commercial and invoicing arrangement. It is not a limit on what Toggle may claim, and it has been misread as one. The only constraint running out of it is the white-label rule below, which governs what goes **on** UNITAR deliverables. Toggle branding stays off their deliverables; UNITAR stays on our client list.
 
 ## Contacts
 - **Client decision-maker (UNITAR):** Nikki Poh · marketing lead / day-to-day decision-maker · nikki.poh@unitar.my · +60 17-570 2039

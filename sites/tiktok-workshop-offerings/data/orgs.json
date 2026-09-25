@@ -1,0 +1,1693 @@
+[
+  {
+    "slug": "acebrix",
+    "name": "AceBrix",
+    "sector": "Training and enablement",
+    "headline": "Five pathways, one shared library. We map yours with you rather than guessing it.",
+    "situation": "Every Toggle Bespoke engagement runs off one library of 21 lessons and five pathways through it. Which one fits depends on where you are starting and what you need working by Monday, so we would rather scope it with you than assume it. The five modules below sit in three or more of the five pathways, so wherever you begin, you will do these.",
+    "pathway": {
+      "code": "P?",
+      "name": "We will map it with you",
+      "depth": "ELI 15 to 30, set per engagement",
+      "shape": "One-weekend intensive, scoped in a short conversation first",
+      "why": "We do not guess the pathway from a form. A short conversation about your team, your tools and what you need working by Monday decides it, and the depth is set separately on its own dial."
+    },
+    "pillars": [
+      {
+        "title": "Five ways in",
+        "body": "P1 starts with AI literacy and P2 with Marketing Fundamentals. P3 applies AI across a marketing function, P4 is the founder's route through everything at pace, and P5 puts AI inside your operations. Five different starting points, and none of them is a level."
+      },
+      {
+        "title": "One shared backbone",
+        "body": "The five modules below appear in three or more of the five pathways, so the core of the weekend is the same wherever you begin. What changes is what gets built around it."
+      },
+      {
+        "title": "The depth dial",
+        "body": "Every lesson runs on an ELI 15 to 30 setting, so the same module can be a plain introduction or a deep technical build. We set it to the people in the room."
+      },
+      {
+        "title": "A weekend, not a retainer",
+        "body": "The engagement is one intensive weekend where senior marketers build the thing with your team, document it, and support you for 30 days after. You own the accounts, the data and the system afterwards."
+      }
+    ],
+    "modules": [
+      {
+        "id": "AI-1",
+        "name": "AI Basics",
+        "track": "ai",
+        "focus": false,
+        "why": "The shared starting point in four of the five pathways, so everyone works from the same picture."
+      },
+      {
+        "id": "AI-3",
+        "name": "Prompting and Tools",
+        "track": "ai",
+        "focus": false,
+        "why": "The practical skill that makes every later module faster, whichever pathway you take."
+      },
+      {
+        "id": "AI-5",
+        "name": "Agentic AI and Claude Code",
+        "track": "ai",
+        "focus": false,
+        "why": "The one module in all five pathways, because handing whole tasks to an agent changes any job."
+      },
+      {
+        "id": "AX-7",
+        "name": "AI CRM and Conversations",
+        "track": "ax",
+        "focus": false,
+        "why": "Every organisation has enquiries and follow-ups, and this is where the quickest wins usually sit."
+      },
+      {
+        "id": "AX-8",
+        "name": "Build Your Workflow",
+        "track": "ax",
+        "focus": false,
+        "why": "The closing module in three pathways, where the weekend becomes a written workflow you keep using."
+      }
+    ],
+    "outcomes": [
+      "Name which of the five pathways fits you, and say why",
+      "List the three tasks in your week AI should take over first",
+      "Explain to your team what a one-weekend intensive would actually change",
+      "Come to a short scoping call with a specific goal instead of general interest"
+    ],
+    "proof": {
+      "label": "EduKids, e-commerce and education",
+      "body": "EduKids was stuck under a 4x return on TikTok and hit its 6x target by month two, alongside RM14,000 in monthly website revenue and a steady 5.5% conversion rate. It is relevant to anyone here because the gain came from method, testing and tightening rather than from a bigger budget."
+    }
+  },
+  {
+    "slug": "ayu-borneo",
+    "name": "Ayu Borneo",
+    "sector": "Local services, massage and head-spa outlets",
+    "headline": "Fill appointment slots outlet by outlet, and build a Klang Valley name from a Sabah base.",
+    "situation": "You run massage and head-spa outlets across Kota Kinabalu and the Klang Valley, with an established presence on TikTok and Xiaohongshu and creator coverage behind it. The commercial job is different from awareness: every empty slot in a day is revenue that does not come back. In a new market you are also building recognition outlet by outlet, catchment by catchment.",
+    "pathway": {
+      "code": "P4",
+      "name": "Owner's Fast-Track",
+      "depth": "ELI 20 to 25",
+      "shape": "One-weekend intensive with the owner on Owner's Fast-Track (P4), with AI for Marketers (P3) as a follow-on for the marketing lead",
+      "why": "The owner needs practical decisions about where spend and attention go across outlets, which is what Fast-Track gives. The person publishing daily goes deeper on the applied track afterwards, and both meet on the same documented routine."
+    },
+    "pillars": [
+      {
+        "title": "Two tracks, one routine",
+        "body": "The owner learns to set direction, judge output and read numbers. The marketing lead takes the full production and ads craft on the applied track afterwards, finishing on the same documented routine, so briefs and reviews take minutes."
+      },
+      {
+        "title": "Slots, not just followers",
+        "body": "Attention is already there, so we point it at bookings for specific days and times. Quiet weekday hours get their own offers and their own creative."
+      },
+      {
+        "title": "Outlet by outlet targeting",
+        "body": "Every outlet sits in its own catchment with its own demand, and a chain your size cannot run them off one national campaign. You leave able to launch and read each location on its own without rebuilding anything."
+      },
+      {
+        "title": "A new market from a known base",
+        "body": "Klang Valley customers do not know you yet, so the content has to establish the experience before it asks for a booking. We build a launch sequence you can reuse for the next outlet you open."
+      }
+    ],
+    "modules": [
+      {
+        "id": "AI-1",
+        "name": "AI Basics",
+        "track": "ai",
+        "focus": false,
+        "why": "The owner and the marketing lead leave with the same vocabulary, so a brief across five outlets needs no translating."
+      },
+      {
+        "id": "AI-2",
+        "name": "AI Literacy",
+        "track": "ai",
+        "focus": false,
+        "why": "Judge AI output quickly, and know what still needs a human eye."
+      },
+      {
+        "id": "AI-7",
+        "name": "AI on a Budget",
+        "track": "ai",
+        "focus": true,
+        "why": "A tool stack that suits a multi-outlet chain, not an enterprise."
+      },
+      {
+        "id": "MK-1",
+        "name": "Marketing Foundation",
+        "track": "mk",
+        "focus": false,
+        "why": "Decide what each outlet is selling to its own neighbourhood."
+      },
+      {
+        "id": "AX-1",
+        "name": "AI in Marketing",
+        "track": "ax",
+        "focus": true,
+        "why": "Where AI saves the most time across posting, offers and replies."
+      },
+      {
+        "id": "AX-2",
+        "name": "AI Content and Copy",
+        "track": "ax",
+        "focus": false,
+        "why": "Write outlet-specific offers and captions in one sitting."
+      },
+      {
+        "id": "AX-4",
+        "name": "AI Ads and Performance",
+        "track": "ax",
+        "focus": true,
+        "why": "Run local campaigns per outlet and see which ones fill slots."
+      },
+      {
+        "id": "AX-7",
+        "name": "AI CRM and Conversations",
+        "track": "ax",
+        "focus": true,
+        "why": "Turn enquiries into booked appointments and bring guests back."
+      },
+      {
+        "id": "AI-5",
+        "name": "Agentic AI and Claude Code",
+        "track": "ai",
+        "focus": false,
+        "why": "Automate the weekly reporting across outlets."
+      },
+      {
+        "id": "AX-8",
+        "name": "Build Your Workflow",
+        "track": "ax",
+        "focus": false,
+        "why": "The routine the owner briefs from and the marketing lead runs, so a new outlet opens off a checklist."
+      }
+    ],
+    "outcomes": [
+      "Launch an offer aimed at one outlet's quiet hours",
+      "See which outlet is winning bookings and which needs help",
+      "Reply to booking enquiries fast without hiring for it",
+      "Reuse one launch sequence the next time you open a location"
+    ],
+    "proof": {
+      "label": "Kith and Kin, one tight catchment",
+      "body": "Kith and Kin's campaigns worked because they were drawn tight around a single Kuala Lumpur catchment instead of the whole city, which is what kept the cost per enquiry down. Radius, not reach, is the call you make once per outlet, across the whole estate."
+    }
+  },
+  {
+    "slug": "damia-nash",
+    "name": "Damia Nash",
+    "sector": "Beauty content creator, TikTok, Instagram, YouTube and Lemon8",
+    "headline": "A commercial layer under the audience you already built, so attention becomes income you can plan.",
+    "situation": "The audience is built, across four platforms, and kept. This is about the business underneath it: a clear offer, pricing you can defend, a way to capture demand you own, and the few numbers that tell you what is working. The content half is already yours.",
+    "pathway": {
+      "code": "P2",
+      "name": "Marketing Fundamentals",
+      "depth": "ELI 15 to 25",
+      "shape": "One-weekend intensive built around your own brand and rate card",
+      "why": "Marketing Fundamentals is the track that puts structure under a brand, which is the half that turns reach into revenue you can forecast. Everything is built against your actual platforms and your actual rate card, not a case study."
+    },
+    "pillars": [
+      {
+        "title": "Price your brand deals",
+        "body": "You learn to put a defensible number on reach, engagement, exclusivity and usage rights, so quotes stop coming from a feeling. A rate card is much easier to hold when you can show how you built it."
+      },
+      {
+        "title": "An offer that is yours",
+        "body": "Brand deals depend on somebody else's budget cycle. We work on something you own, a product, a service or a paid community, so there is income nobody has to approve."
+      },
+      {
+        "title": "From audience to contacts",
+        "body": "Your followers live on platforms you do not control and cannot export. You leave with a simple path from a post to a contact list you can reach directly."
+      },
+      {
+        "title": "Numbers past views",
+        "body": "Views are where the question starts, not where it ends. You learn the handful of numbers that show whether attention is converting, and a ten minute weekly check to keep an eye on them."
+      }
+    ],
+    "modules": [
+      {
+        "id": "MK-1",
+        "name": "Marketing Foundation",
+        "track": "mk",
+        "focus": true,
+        "why": "Get your audience, offer and positioning written down, so it reads as a brand rather than a feed."
+      },
+      {
+        "id": "MK-2",
+        "name": "Performance Basics",
+        "track": "mk",
+        "focus": false,
+        "why": "Learn how paid works from the inside, both for your own offers and for reading what brands ask of you."
+      },
+      {
+        "id": "MK-3",
+        "name": "Content and Organic",
+        "track": "mk",
+        "focus": false,
+        "why": "Already your strongest ground, so we go light and use it to tighten planning across four platforms."
+      },
+      {
+        "id": "MK-4",
+        "name": "Data and Measurement",
+        "track": "mk",
+        "focus": true,
+        "why": "Track the numbers that back your rate card and show which platform earns you money."
+      },
+      {
+        "id": "AI-5",
+        "name": "Agentic AI and Claude Code",
+        "track": "ai",
+        "focus": false,
+        "why": "Hand the admin to an agent, from pitch decks and invoices to sorting brand enquiries."
+      }
+    ],
+    "outcomes": [
+      "Send a rate card with the reasoning behind every number",
+      "Describe one offer you own, priced, in a single paragraph",
+      "Capture contacts from a post instead of losing them in comments",
+      "Run a ten minute weekly check on the numbers that matter"
+    ],
+    "proof": {
+      "label": "Al Hidayah, content plus somewhere to buy",
+      "body": "Al Hidayah put a shop and paid support behind content that was already working, and orders rose 200% in four months. Content was never their problem either. The gain came from having somewhere for attention to land."
+    }
+  },
+  {
+    "slug": "destinasi-tv",
+    "name": "Destinasi TV",
+    "sector": "Travel and food media, over one million followers",
+    "headline": "You already make shows people watch. Two modules to make more of them, faster, and reach further.",
+    "situation": "You have solved the part nobody can shortcut. Mat Salleh Cari Makan and the shows around it earn attention on their own, which is the thing most brands try to buy and fail at. The opening sits on either side of that strength: producing at higher volume without adding crew, and putting spend behind the episodes that have already proven themselves.",
+    "pathway": {
+      "code": "Modules",
+      "name": "Selected modules",
+      "depth": "ELI 20 to 25",
+      "shape": "One-weekend intensive scoped to two modules, with your production and social team",
+      "why": "A focused engagement rather than a full pathway, because throughput and the paid layer are the two places we can add to what you already do. Everything else in the library would be teaching you your own job."
+    },
+    "pillars": [
+      {
+        "title": "The craft stays yours",
+        "body": "Nothing here changes how you make a show or who decides what is funny. AI sits around the edit, on the repetitive parts, so taste and judgement stay with your team."
+      },
+      {
+        "title": "More cuts per shoot",
+        "body": "One trip should fill more than one slot. You learn to generate vertical cuts, thumbnails, subtitles and alternate hooks quickly, so a single production day covers a longer schedule."
+      },
+      {
+        "title": "Paid behind what already works",
+        "body": "Organic tells you which episode landed, which is better information than any targeting guess. Paid takes that same clip to people who have never seen the show, in Malaysia and beyond."
+      },
+      {
+        "title": "Amplification you can plan",
+        "body": "Reach you chose is worth more than reach that happened, because you can repeat it. Being able to plan amplification and show what it returned turns a good month into a method."
+      }
+    ],
+    "modules": [
+      {
+        "id": "AX-3",
+        "name": "AI Creative and Visuals",
+        "track": "ax",
+        "focus": false,
+        "why": "Get more finished assets out of every shoot, from vertical cuts and thumbnails to alternate hooks for the same episode."
+      },
+      {
+        "id": "AX-4",
+        "name": "AI Ads and Performance",
+        "track": "ax",
+        "focus": false,
+        "why": "Put budget behind the episodes that already performed, and read the result well enough to do it again next month."
+      }
+    ],
+    "outcomes": [
+      "Ship several formats of one episode instead of a single upload",
+      "Test five hooks on the same clip in an afternoon",
+      "Launch a paid campaign behind your best organic performer and know what it returned",
+      "Show a sponsor planned reach, not just past view counts"
+    ],
+    "proof": {
+      "label": "Kualesa, testing creative before spending",
+      "body": "Kualesa found its winning angles by testing creative at low spend first, then raised budget and held ROAS at 2.0x. You have a stronger version of that first step already, because your organic numbers tell you which episode landed before a ringgit is spent."
+    }
+  },
+  {
+    "slug": "glowith-global",
+    "name": "Glowith Global",
+    "sector": "Health and wellness distribution, retail and online",
+    "headline": "Practical AI wins across a multi-brand portfolio, usable the Monday after.",
+    "situation": "You bring Korean health brands into Malaysia, led by LactoDay, with an Instagram audience in place and TikTok still being built out. The group also runs a long-standing distribution business with retail pharmacy reach. The job is to make online demand and pharmacy offtake pull in the same direction, from one content effort rather than two.",
+    "pathway": {
+      "code": "P4",
+      "name": "Owner's Fast-Track",
+      "depth": "ELI 15 to 20",
+      "shape": "One-weekend intensive built around the owner's calendar, with AI for Marketers (P3) as a follow-on for the content and marketplace side of the team",
+      "why": "You need a bit of everything and you need it usable on Monday, not a specialist's version of one topic. Fast-Track gives you enough of each discipline to brief, judge and direct the work."
+    },
+    "pillars": [
+      {
+        "title": "Retail and online, one message",
+        "body": "We build a content system where the same product story drives online sales and asks for the pharmacy purchase too. One shoot, two jobs, and a clear call to action for each."
+      },
+      {
+        "title": "Two rulebooks, one phrase bank",
+        "body": "Probiotic claims answer to the regulator and to platform ad review, and the two do not agree. You leave with a phrase bank that clears both, so a pharmacy label and a TikTok hook can say the same thing."
+      },
+      {
+        "title": "One portfolio, many brands",
+        "body": "A multi-brand house cannot rebuild strategy per product. You leave with a repeatable launch pack that any new brand in the portfolio can be dropped into."
+      },
+      {
+        "title": "A standard to brief against",
+        "body": "As the content and marketplace side of the team grows, output has to be judged in minutes rather than rewritten. We write the briefs, the review checklist and the reporting format with you."
+      }
+    ],
+    "modules": [
+      {
+        "id": "AI-1",
+        "name": "AI Basics",
+        "track": "ai",
+        "focus": false,
+        "why": "Ninety minutes to know which tools are worth paying for across two businesses, before anyone signs up."
+      },
+      {
+        "id": "AI-2",
+        "name": "AI Literacy",
+        "track": "ai",
+        "focus": true,
+        "why": "Know what to trust, what to check, and where AI should not touch product claims."
+      },
+      {
+        "id": "AI-7",
+        "name": "AI on a Budget",
+        "track": "ai",
+        "focus": false,
+        "why": "A small tool stack that covers the portfolio without new subscriptions piling up."
+      },
+      {
+        "id": "MK-1",
+        "name": "Marketing Foundation",
+        "track": "mk",
+        "focus": false,
+        "why": "The frame for deciding what each brand in the portfolio is selling."
+      },
+      {
+        "id": "AX-1",
+        "name": "AI in Marketing",
+        "track": "ax",
+        "focus": true,
+        "why": "Where AI saves you the most hours across launch, content and reporting."
+      },
+      {
+        "id": "AX-2",
+        "name": "AI Content and Copy",
+        "track": "ax",
+        "focus": true,
+        "why": "Product copy for probiotics that stays compliant and still persuades."
+      },
+      {
+        "id": "AX-4",
+        "name": "AI Ads and Performance",
+        "track": "ax",
+        "focus": false,
+        "why": "Get TikTok running properly next to the Instagram audience you already have."
+      },
+      {
+        "id": "AX-7",
+        "name": "AI CRM and Conversations",
+        "track": "ax",
+        "focus": false,
+        "why": "Handle repeat questions and reorders without eating your day."
+      },
+      {
+        "id": "AI-5",
+        "name": "Agentic AI and Claude Code",
+        "track": "ai",
+        "focus": false,
+        "why": "A first taste of work that runs without anyone starting it."
+      },
+      {
+        "id": "AX-8",
+        "name": "Build Your Workflow",
+        "track": "ax",
+        "focus": true,
+        "why": "The launch pack and review checklist on paper, so the next brand you import starts from a template."
+      }
+    ],
+    "outcomes": [
+      "Brief a content hire in five minutes against a written standard",
+      "Write compliant product copy for a new SKU the same day",
+      "Launch one TikTok test for LactoDay with a clear read on results",
+      "Reuse one launch pack across any brand you bring in next"
+    ],
+    "proof": {
+      "label": "Al Hidayah, sorting a product range",
+      "body": "Al Hidayah sorted products into scale up, maintain and scale down groups, then put spend and creators behind the ones that earned it, and delivered 11.5x ROI in four months. Sorting SKUs by potential is the same call you make across a portfolio of imported brands."
+    }
+  },
+  {
+    "slug": "he-medical",
+    "name": "HE Medical Group",
+    "sector": "Healthcare, multi-branch clinics",
+    "headline": "Bilingual clinic creative, built at volume, for ten branches with ten catchments.",
+    "situation": "Ten branches from Penang to Johor to Kuching each pull from a different catchment, and every piece of work has to exist in Malay and English. You already run paid social with creative direction in house, so the next gain is not another channel. It is more approved creative per week from the same team.",
+    "pathway": {
+      "code": "P3",
+      "name": "AI for Marketers",
+      "depth": "ELI 25 to 30",
+      "shape": "One-weekend intensive with your creative and marketing team",
+      "why": "You have marketing footing already, so the flagship adds applied AI on top of it rather than starting from theory. We weight the creative and ads modules, because that is where your weekly output is capped."
+    },
+    "pillars": [
+      {
+        "title": "Creative that passes review",
+        "body": "We build a claims-safe copy and visual system with your team, so the message stays strong and the ad still gets approved. You leave with a method for reworking anything review sends back, rather than a guess at what tripped it."
+      },
+      {
+        "title": "Two languages, one brief",
+        "body": "Malay and English versions come out of the same brief, with no second round of writing. Tone stays consistent whichever branch is running the ad."
+      },
+      {
+        "title": "Ten branches, one engine",
+        "body": "Location-level ad sets run off a shared master creative, so Penang, Johor and Kuching each get work that fits their catchment. Your team keeps control of the master."
+      },
+      {
+        "title": "Volume without more headcount",
+        "body": "Enough variations each week to keep testing honest and cost per enquiry moving down. Your creative team directs, and the repetitive builds stop eating a person's whole day."
+      }
+    ],
+    "modules": [
+      {
+        "id": "AI-1",
+        "name": "AI Basics",
+        "track": "ai",
+        "focus": false,
+        "why": "Which of these tools can touch a patient enquiry, and which must never see one."
+      },
+      {
+        "id": "AI-3",
+        "name": "Prompting and Tools",
+        "track": "ai",
+        "focus": false,
+        "why": "House prompts for health copy that stay inside claims you can support."
+      },
+      {
+        "id": "AI-5",
+        "name": "Agentic AI and Claude Code",
+        "track": "ai",
+        "focus": false,
+        "why": "Hand repeat production tasks to a workflow so your team spends time on direction."
+      },
+      {
+        "id": "AX-1",
+        "name": "AI in Marketing",
+        "track": "ax",
+        "focus": false,
+        "why": "Where AI belongs between a branch enquiry and a booked appointment, and where a human takes over."
+      },
+      {
+        "id": "AX-2",
+        "name": "AI Content and Copy",
+        "track": "ax",
+        "focus": true,
+        "why": "Malay and English versions from one brief, in a register that suits sensitive topics."
+      },
+      {
+        "id": "AX-3",
+        "name": "AI Creative and Visuals",
+        "track": "ax",
+        "focus": true,
+        "why": "Visual variations at volume in a category with tight rules on what you can show."
+      },
+      {
+        "id": "AX-4",
+        "name": "AI Ads and Performance",
+        "track": "ax",
+        "focus": true,
+        "why": "Campaign builds, review-safe assets, and a method for fixing a rejected ad."
+      },
+      {
+        "id": "AX-5",
+        "name": "AI SEO and Discovery",
+        "track": "ax",
+        "focus": false,
+        "why": "Keep your bilingual site earning search demand as answers move into AI results."
+      },
+      {
+        "id": "AX-6",
+        "name": "AI Data and Reporting",
+        "track": "ax",
+        "focus": true,
+        "why": "Compare ten branches on the same numbers without a manual weekly rebuild."
+      },
+      {
+        "id": "AX-7",
+        "name": "AI CRM and Conversations",
+        "track": "ax",
+        "focus": false,
+        "why": "Reply to enquiries faster, with the discretion this category needs."
+      },
+      {
+        "id": "AX-9",
+        "name": "AI Dashboards, Sites and Reports",
+        "track": "ax",
+        "focus": false,
+        "why": "A branch-level view your clinic managers can read without asking marketing."
+      },
+      {
+        "id": "AX-8",
+        "name": "Build Your Workflow",
+        "track": "ax",
+        "focus": false,
+        "why": "The production line written down, so a locum marketing hire can run Penang and Kuching in week one."
+      }
+    ],
+    "outcomes": [
+      "Produce a week of bilingual clinic creative from a single brief",
+      "Rework an asset that review sent back, using a method rather than a guess",
+      "Compare all ten branches on one performance view",
+      "Launch a branch-level campaign build in under an hour"
+    ],
+    "proof": {
+      "label": "CIMB Malaysia, publishing under approval",
+      "body": "A bank is the closest thing to your review problem: every line had to clear internal approval before it could go out, and that was the bottleneck, not the ideas. Toggle rebuilt the publishing workflow with their team and organic clicks grew 34.5%. The transferable part is the workflow, not the sector."
+    }
+  },
+  {
+    "slug": "hm-aerospace",
+    "name": "HM Aerospace",
+    "sector": "Aviation training, commercial pilot academy",
+    "headline": "The marketing foundation behind cadet enrolment, built around how the academy runs.",
+    "situation": "You have trained pilots in Langkawi since 2005 with your own fleet and simulators, an active website and an established Facebook presence, and TikTok is new ground. A cadet place is a considered decision made over months, at a value where a single enrolment matters. That makes the marketing job trust and pipeline rather than impulse.",
+    "pathway": {
+      "code": "P2",
+      "name": "Marketing Fundamentals",
+      "depth": "ELI 15 to 20",
+      "shape": "One-weekend intensive for the training and admissions leadership, with AI for Marketers (P3) afterwards for whoever runs admissions marketing day to day",
+      "why": "You get Marketing Foundation, Performance Basics and the measurement layer first, so decisions about spend rest on something solid. The applied AI track follows for the person publishing day to day."
+    },
+    "pillars": [
+      {
+        "title": "Built around how the academy already runs",
+        "body": "Every session starts from your intake and admissions reality rather than from marketing theory, so nothing is abstract and nothing is padding. You ask any question in the room and get a straight answer."
+      },
+      {
+        "title": "A months-long decision, mapped",
+        "body": "We map the path from first curiosity to a signed cadet, across the months that decision actually takes. Each stage gets its own message and its own next step."
+      },
+      {
+        "title": "Proof of a real academy",
+        "body": "Your fleet, simulators and airport-side location are the strongest assets you own. We turn that into content that shows the training rather than describing it."
+      },
+      {
+        "title": "One enrolment pipeline you can see",
+        "body": "Enquiries are worth following properly when each one matters this much. You leave with a simple way to record, follow up and count them, so nobody is guessing what the pipeline holds."
+      }
+    ],
+    "modules": [
+      {
+        "id": "MK-1",
+        "name": "Marketing Foundation",
+        "track": "mk",
+        "focus": true,
+        "why": "What marketing is for, framed around filling cadet intakes."
+      },
+      {
+        "id": "MK-2",
+        "name": "Performance Basics",
+        "track": "mk",
+        "focus": false,
+        "why": "How paid channels work before you commit budget, at a value where one enrolment pays for a lot of testing."
+      },
+      {
+        "id": "MK-3",
+        "name": "Content and Organic",
+        "track": "mk",
+        "focus": true,
+        "why": "Turning flight-line and simulator activity into steady content, including your first TikTok."
+      },
+      {
+        "id": "MK-4",
+        "name": "Data and Measurement",
+        "track": "mk",
+        "focus": false,
+        "why": "Count enquiries, applications and enrolments in a way you trust."
+      },
+      {
+        "id": "AI-5",
+        "name": "Agentic AI and Claude Code",
+        "track": "ai",
+        "focus": false,
+        "why": "Where AI takes admin work off your admissions team."
+      }
+    ],
+    "outcomes": [
+      "Explain your enrolment funnel stage by stage on one page",
+      "Publish content from a normal training day without a production crew",
+      "Read whether an enquiry channel is working or wasting money",
+      "Track enquiries through to enrolment in one shared place"
+    ],
+    "proof": {
+      "label": "UNITAR International University, student recruitment",
+      "body": "UNITAR's gain came from writing different messages for curiosity, reassurance and application instead of repeating one advert, and cost per lead fell 47% year on year. A decision taken over months needs exactly that separation."
+    }
+  },
+  {
+    "slug": "icms",
+    "name": "International University College of Management and Sports (ICMS)",
+    "sector": "Higher education, private university college",
+    "headline": "A student recruitment engine your own small team can run every intake.",
+    "situation": "Your programmes have real differentiators, including South East Asia's only Football Studies degree and an English Premier League club academic partnership. Enrolment depends on digital lead generation at every intake, and that work sits with a small in-house comms function. AI is how a small team produces intake-level volume without handing the funnel to someone else.",
+    "pathway": {
+      "code": "P3",
+      "name": "AI for Marketers",
+      "depth": "ELI 20 to 25",
+      "shape": "One-weekend intensive with your marketing and comms team",
+      "why": "You already own your content, so the flagship's applied spine turns that into a repeatable recruitment system. Content, ads and enquiry handling map straight onto the intake calendar."
+    },
+    "pillars": [
+      {
+        "title": "Built around the intake calendar",
+        "body": "Campaign phases mapped to open, closing and late-intake weeks, so spend follows demand across the calendar. Each intake reuses the assets and learnings of the one before it."
+      },
+      {
+        "title": "Programmes that sell themselves",
+        "body": "Football Studies, business, IT, occupational safety and health, and design each get their own angle and proof, in place of one generic institution ad. Parents and school leavers see different versions of the same truth."
+      },
+      {
+        "title": "Enquiry to enrolment follow-up",
+        "body": "Speed of reply decides most education leads. We set up AI-assisted responses and follow-up sequences that your team will actually use, so an enquiry at 11pm is not answered on Monday."
+      },
+      {
+        "title": "Runnable by one person",
+        "body": "Weekly production reduced to a set of steps and templates. Documented so a new hire can pick it up mid-intake."
+      }
+    ],
+    "modules": [
+      {
+        "id": "AI-1",
+        "name": "AI Basics",
+        "track": "ai",
+        "focus": false,
+        "why": "Which tools belong near an enquiry from a seventeen-year-old and their parents, and which do not."
+      },
+      {
+        "id": "AI-3",
+        "name": "Prompting and Tools",
+        "track": "ai",
+        "focus": false,
+        "why": "Prompts for the programme pages, news posts and campaign copy you write weekly."
+      },
+      {
+        "id": "AI-5",
+        "name": "Agentic AI and Claude Code",
+        "track": "ai",
+        "focus": false,
+        "why": "Hand the repeat intake tasks to a workflow instead of a late night."
+      },
+      {
+        "id": "AX-1",
+        "name": "AI in Marketing",
+        "track": "ax",
+        "focus": false,
+        "why": "Where AI helps across the recruitment funnel, and where it should stay out."
+      },
+      {
+        "id": "AX-2",
+        "name": "AI Content and Copy",
+        "track": "ax",
+        "focus": true,
+        "why": "Programme-specific content in English and Malay, produced at intake pace."
+      },
+      {
+        "id": "AX-3",
+        "name": "AI Creative and Visuals",
+        "track": "ax",
+        "focus": false,
+        "why": "Campus, pitch and studio footage turned into short video that recruits."
+      },
+      {
+        "id": "AX-4",
+        "name": "AI Ads and Performance",
+        "track": "ax",
+        "focus": true,
+        "why": "Run lead-generation ads with a structure tied to your intake dates."
+      },
+      {
+        "id": "AX-5",
+        "name": "AI SEO and Discovery",
+        "track": "ax",
+        "focus": false,
+        "why": "A parent typing football studies Malaysia at 11pm should not find the only degree of its kind fourth."
+      },
+      {
+        "id": "AX-6",
+        "name": "AI Data and Reporting",
+        "track": "ax",
+        "focus": false,
+        "why": "Cost per enquiry and cost per enrolment on one page, updated without effort."
+      },
+      {
+        "id": "AX-7",
+        "name": "AI CRM and Conversations",
+        "track": "ax",
+        "focus": true,
+        "why": "Faster follow-up on every enquiry, from first reply to application reminder."
+      },
+      {
+        "id": "AX-9",
+        "name": "AI Dashboards, Sites and Reports",
+        "track": "ax",
+        "focus": false,
+        "why": "An intake dashboard your leadership can read at a glance."
+      },
+      {
+        "id": "AX-8",
+        "name": "Build Your Workflow",
+        "track": "ax",
+        "focus": true,
+        "why": "The intake playbook on paper, so the next intake starts from the last one instead of from scratch."
+      }
+    ],
+    "outcomes": [
+      "Build a full intake campaign from a documented playbook",
+      "Publish programme content in English and Malay the same day",
+      "Reply to every enquiry in minutes rather than days",
+      "See cost per enquiry by programme on one page"
+    ],
+    "proof": {
+      "label": "UNITAR International University, student recruitment",
+      "body": "Toggle generated 32,000+ qualified leads for UNITAR between June and September 2025, and held 77% impression share in the Education and Training category. Same country, same category, same intake pressure."
+    }
+  },
+  {
+    "slug": "jomhotel",
+    "name": "JOMhotel",
+    "sector": "Travel, same-day hotel booking platform",
+    "headline": "Enough creative angles to catch someone deciding where to sleep tonight.",
+    "situation": "You are a homegrown Malaysian booking platform for same-day and last-minute rooms, built by people who ran hotels, with an app coming and Visit Malaysia 2026 ahead of you. Same-day booking is an impulse decision, which is close to a perfect match for short-form video. The job is to make many angles cheaply, learn fast from what converts, and keep acquisition cost low while the app lands.",
+    "pathway": {
+      "code": "P3",
+      "name": "AI for Marketers",
+      "depth": "ELI 15 to 20",
+      "shape": "One-weekend intensive with your marketing team, built hands-on in the room",
+      "why": "One small team covers creative, ads and reporting, so you need the full marketer toolkit rather than one slice of it. Every session is built around work you will run the following week."
+    },
+    "pillars": [
+      {
+        "title": "Built for impulse booking",
+        "body": "Tonight, near you, at this price is a very short decision. We build hooks and offers that work in the first two seconds of a video."
+      },
+      {
+        "title": "Many angles, small budget",
+        "body": "You get a production routine that turns one hotel and one offer into a batch of variations. More angles tested means less money spent finding the one that works."
+      },
+      {
+        "title": "A fast learning loop",
+        "body": "Short creative cycles only pay off if you read the results quickly. We set a weekly rhythm where testing, reading and reshooting all happen inside the same week."
+      },
+      {
+        "title": "Ready for peak demand",
+        "body": "Travel demand comes in waves, and 2026 will bring plenty. You leave with a playbook you can point at a long weekend, a school holiday or a city event with a day's notice."
+      }
+    ],
+    "modules": [
+      {
+        "id": "AI-1",
+        "name": "AI Basics",
+        "track": "ai",
+        "focus": false,
+        "why": "One session so the person writing offers and the person buying media stop meaning different things by the same word."
+      },
+      {
+        "id": "AI-3",
+        "name": "Prompting and Tools",
+        "track": "ai",
+        "focus": true,
+        "why": "The prompt habits behind daily creative and copy output."
+      },
+      {
+        "id": "AI-5",
+        "name": "Agentic AI and Claude Code",
+        "track": "ai",
+        "focus": false,
+        "why": "Take the repetitive weekly admin off a team of your size."
+      },
+      {
+        "id": "AX-1",
+        "name": "AI in Marketing",
+        "track": "ax",
+        "focus": false,
+        "why": "Where AI fits across your booking funnel, start to finish."
+      },
+      {
+        "id": "AX-2",
+        "name": "AI Content and Copy",
+        "track": "ax",
+        "focus": true,
+        "why": "Offer and hook writing for last-minute rooms, at speed."
+      },
+      {
+        "id": "AX-3",
+        "name": "AI Creative and Visuals",
+        "track": "ax",
+        "focus": true,
+        "why": "Enough angles that a Tuesday-night vacancy and a long-weekend rush get different videos, not the same one."
+      },
+      {
+        "id": "AX-4",
+        "name": "AI Ads and Performance",
+        "track": "ax",
+        "focus": false,
+        "why": "Put the budget where it converts, and cut what does not, inside the same week."
+      },
+      {
+        "id": "AX-5",
+        "name": "AI SEO and Discovery",
+        "track": "ax",
+        "focus": false,
+        "why": "Someone searching for a room in the next hour is not browsing, and the copy should know that."
+      },
+      {
+        "id": "AX-6",
+        "name": "AI Data and Reporting",
+        "track": "ax",
+        "focus": false,
+        "why": "Know your cost per booking by angle without a data team."
+      },
+      {
+        "id": "AX-7",
+        "name": "AI CRM and Conversations",
+        "track": "ax",
+        "focus": false,
+        "why": "Answer booking questions fast, and bring past guests back."
+      },
+      {
+        "id": "AX-9",
+        "name": "AI Dashboards, Sites and Reports",
+        "track": "ax",
+        "focus": false,
+        "why": "Bookings against spend by the hour, because an offer that stops working at 9pm needs to be visible by 9pm."
+      },
+      {
+        "id": "AX-8",
+        "name": "Build Your Workflow",
+        "track": "ax",
+        "focus": true,
+        "why": "The Monday routine on one page, so a public holiday announced on Thursday still gets creative by Friday."
+      }
+    ],
+    "outcomes": [
+      "Ship a batch of short-form ads for one offer in a day",
+      "Read cost per booking by creative angle each week",
+      "Spin up a campaign for a holiday weekend at short notice",
+      "Run the whole loop with the team you already have"
+    ],
+    "proof": {
+      "label": "EduKids, e-commerce and education",
+      "body": "EduKids hit a 6x ROAS target by month two and RM14,000 in monthly website revenue at a steady 5.5% conversion rate, by testing many angles at low spend and then backing the winner. That is the loop a same-day offer lives on."
+    }
+  },
+  {
+    "slug": "parcel-daily",
+    "name": "Parcel Daily (AXVEL)",
+    "sector": "Logistics technology, e-commerce shipping platform",
+    "headline": "Get creative volume and testing speed up so your cost per seller comes down.",
+    "situation": "You run a rate comparison, cash on delivery and fulfilment platform for e-commerce sellers, and you are already buying attention on TikTok. With a lean team, nobody's whole week is creative testing. The opening is an AI production line, so the same team ships many more angles a month and lets the data pick the winners.",
+    "pathway": {
+      "code": "P3",
+      "name": "AI for Marketers",
+      "depth": "ELI 25 to 30",
+      "shape": "One-weekend intensive with your growth team, with AI Systems and Automation (P5) as the natural follow-on",
+      "why": "Your team already runs paid, so the fastest gain is applied AI across creative, ads and reporting. Because you are a tech platform, the follow-on P5 track turns those habits into automated systems your engineers can own."
+    },
+    "pillars": [
+      {
+        "title": "Creative volume without new hires",
+        "body": "We build a repeatable way to turn one seller story into a batch of ad variations. Your team leaves able to produce a month of TikTok creative in an afternoon."
+      },
+      {
+        "title": "A test and learn loop that holds",
+        "body": "You get a testing cadence with clear rules for scaling, holding and cutting each angle. That is how cost per signup comes down while spend goes up."
+      },
+      {
+        "title": "Seller intent and discovery",
+        "body": "Sellers compare courier rates before they commit, so we work on how you show up in that comparison moment. The same prompts feed your landing pages and your ad copy."
+      },
+      {
+        "title": "Skills that compound with your customers",
+        "body": "Your customers are e-commerce sellers who need exactly these skills to grow their own shipping volume. What your team learns becomes content and support that makes the platform stickier."
+      }
+    ],
+    "modules": [
+      {
+        "id": "AI-1",
+        "name": "AI Basics",
+        "track": "ai",
+        "focus": false,
+        "why": "Where these tools help a growth team with no in-house AI specialist and no plans to hire one."
+      },
+      {
+        "id": "AI-3",
+        "name": "Prompting and Tools",
+        "track": "ai",
+        "focus": true,
+        "why": "Prompts that write in seller language, cash on delivery and rate cards, not courier marketing language."
+      },
+      {
+        "id": "AI-5",
+        "name": "Agentic AI and Claude Code",
+        "track": "ai",
+        "focus": false,
+        "why": "Where the repetitive parts of your reporting and ops start running themselves."
+      },
+      {
+        "id": "AX-1",
+        "name": "AI in Marketing",
+        "track": "ax",
+        "focus": false,
+        "why": "Maps every step of your acquisition funnel to the AI that speeds it up."
+      },
+      {
+        "id": "AX-2",
+        "name": "AI Content and Copy",
+        "track": "ax",
+        "focus": false,
+        "why": "Seller-facing copy for rates, cash on delivery and fulfilment, written fast."
+      },
+      {
+        "id": "AX-3",
+        "name": "AI Creative and Visuals",
+        "track": "ax",
+        "focus": true,
+        "why": "Turn one seller's before-and-after shipping numbers into a batch of ad variations, since the proof is already in your dashboard."
+      },
+      {
+        "id": "AX-4",
+        "name": "AI Ads and Performance",
+        "track": "ax",
+        "focus": true,
+        "why": "Structure, budgets and testing rules that pull acquisition cost down."
+      },
+      {
+        "id": "AX-5",
+        "name": "AI SEO and Discovery",
+        "track": "ax",
+        "focus": false,
+        "why": "Sellers compare rates before they commit, so the comparison moment is the one to win."
+      },
+      {
+        "id": "AX-6",
+        "name": "AI Data and Reporting",
+        "track": "ax",
+        "focus": false,
+        "why": "Turn platform and ad data into a weekly read anyone can act on."
+      },
+      {
+        "id": "AX-7",
+        "name": "AI CRM and Conversations",
+        "track": "ax",
+        "focus": false,
+        "why": "Faster replies and better onboarding for new sellers in the queue."
+      },
+      {
+        "id": "AX-9",
+        "name": "AI Dashboards, Sites and Reports",
+        "track": "ax",
+        "focus": false,
+        "why": "Spend, signups and parcels moving on one screen, so you can see the day a rate change shows up in volume."
+      },
+      {
+        "id": "AX-8",
+        "name": "Build Your Workflow",
+        "track": "ax",
+        "focus": true,
+        "why": "The production line written down, so the next growth hire ships ads in week one instead of week five."
+      }
+    ],
+    "outcomes": [
+      "Produce a batch of new TikTok ad variations in a single sitting",
+      "Run a weekly test cycle with clear scale, hold and cut rules",
+      "Read cost per signup by creative angle without waiting for a report",
+      "Hand a new growth hire a written workflow they can follow"
+    ],
+    "proof": {
+      "label": "Kualesa, test cheap then scale",
+      "body": "Kualesa lifted ROAS 45% by cutting spend first and finding the winning angle at low cost, then putting budget behind it and diversifying across Google, TikTok and Meta. Finding the angle cheaply is the whole game when acquisition cost is the number you are managing."
+    }
+  },
+  {
+    "slug": "supervisor-my",
+    "name": "Supervisor My",
+    "sector": "Renovation and fit-out project management, business to business",
+    "headline": "Turn completed fit-outs into a steady stream of proof that brings the next client.",
+    "situation": "You supervise and validate commercial fit-outs from Publika, with a large body of completed work behind you. Buying your service is a considered, high-trust decision, and what you are really selling is the removal of risk from someone else's build. Every job you finish is evidence, and the opportunity is to publish that evidence consistently rather than when there happens to be time.",
+    "pathway": {
+      "code": "P4",
+      "name": "Owner's Fast-Track",
+      "depth": "ELI 20 to 25",
+      "shape": "One-weekend intensive with the founder and whoever supports marketing",
+      "why": "You already understand marketing, so the gain is speed and a system rather than theory. Fast-Track covers enough of each discipline for a founder-led firm to run the whole thing without a marketing department."
+    },
+    "pillars": [
+      {
+        "title": "Projects into proof, on repeat",
+        "body": "We build a workflow that turns each completed fit-out into a case story, a set of posts and a sales asset. Site photos and a short voice note become finished content."
+      },
+      {
+        "title": "Business to business lead generation",
+        "body": "Your buyers are developers, brand owners and operators planning a build. We work on reaching them with the specific risk you remove, not with general renovation talk."
+      },
+      {
+        "title": "Trust before the first call",
+        "body": "A high-trust service is won before anyone speaks to you. You leave with content that answers the questions a cautious buyer asks in their head."
+      },
+      {
+        "title": "A pipeline a founder can run",
+        "body": "Enquiries are few and valuable, so each one deserves a proper follow-up sequence. We set up the tracking and the replies so nothing sits unanswered while you are on site."
+      }
+    ],
+    "modules": [
+      {
+        "id": "AI-1",
+        "name": "AI Basics",
+        "track": "ai",
+        "focus": false,
+        "why": "What these tools can and cannot do with a site photo and a voice note, which is most of what you have."
+      },
+      {
+        "id": "AI-2",
+        "name": "AI Literacy",
+        "track": "ai",
+        "focus": false,
+        "why": "Where AI is reliable and where a project claim still needs your eyes."
+      },
+      {
+        "id": "AI-7",
+        "name": "AI on a Budget",
+        "track": "ai",
+        "focus": false,
+        "why": "A boutique-sized tool stack, no enterprise spend needed."
+      },
+      {
+        "id": "MK-1",
+        "name": "Marketing Foundation",
+        "track": "mk",
+        "focus": false,
+        "why": "Sharpen the positioning around the risk you take off a client's build."
+      },
+      {
+        "id": "AX-1",
+        "name": "AI in Marketing",
+        "track": "ax",
+        "focus": true,
+        "why": "Where the hours go back into your week across content and follow-up."
+      },
+      {
+        "id": "AX-2",
+        "name": "AI Content and Copy",
+        "track": "ax",
+        "focus": true,
+        "why": "Case stories and posts written from site notes in one pass."
+      },
+      {
+        "id": "AX-4",
+        "name": "AI Ads and Performance",
+        "track": "ax",
+        "focus": false,
+        "why": "Put budget in front of decision makers planning a commercial fit-out."
+      },
+      {
+        "id": "AX-7",
+        "name": "AI CRM and Conversations",
+        "track": "ax",
+        "focus": true,
+        "why": "Follow up every enquiry properly while you are running projects."
+      },
+      {
+        "id": "AI-5",
+        "name": "Agentic AI and Claude Code",
+        "track": "ai",
+        "focus": false,
+        "why": "Automate the reporting and admin that eats founder time."
+      },
+      {
+        "id": "AX-8",
+        "name": "Build Your Workflow",
+        "track": "ax",
+        "focus": true,
+        "why": "One routine on paper, so the day you hire a marketing person there is a job to hand them."
+      }
+    ],
+    "outcomes": [
+      "Publish a case story from a finished project the week it completes",
+      "Write outreach that names the risk you remove, not your services",
+      "Follow up every enquiry with a sequence that runs itself",
+      "See how many active enquiries you have in one glance"
+    ],
+    "proof": {
+      "label": "Kith and Kin, property in Kuala Lumpur and Selangor",
+      "body": "Kith and Kin sold a considered, high-value purchase off organic and cold calling alone, then lifted lead volume 392% at RM35 per lead with 10% closing once proof-led creative reached buyers at several touchpoints. Your sale has the same shape and the same reliance on evidence."
+    }
+  },
+  {
+    "slug": "earnest-co",
+    "name": "The Earnest Co",
+    "sector": "Regenerative agriculture, 301 acres across five farm sites",
+    "headline": "Turn your land, your method and your own story into output you can publish every week.",
+    "situation": "You already have the thing most food and produce brands pay to invent, a real farm, a real method, and a founder people want to hear from. What is scarce is time, because the same small leadership team runs the land, the buyers and the story. AI is how one person turns 301 acres of provenance into steady output for produce buyers, consumers and the people funding the next phase.",
+    "pathway": {
+      "code": "P4",
+      "name": "Owner's Fast-Track",
+      "depth": "ELI 15 to 25",
+      "shape": "One-weekend intensive with you and your farm leads, with two performance modules added",
+      "why": "Owner's Fast-Track is built for founders who need practical wins across the whole picture rather than depth in one corner. If you push consumer produce sales, we add Performance Basics and Data and Measurement so that push has real numbers under it."
+    },
+    "pillars": [
+      {
+        "title": "Provenance is the asset",
+        "body": "Your land, your growers and your method are things nobody else can copy or buy. We turn field footage, harvest notes and site visits into a content supply that runs every week."
+      },
+      {
+        "title": "One founder, weekly output",
+        "body": "You should not need a marketing department to publish consistently. You leave with a workflow that turns one hour walking a site into a week of posts, captions and updates."
+      },
+      {
+        "title": "Two audiences, one system",
+        "body": "Consumers want taste, trust and where it came from. Buyers and backers want progress, volume and proof. Same source material, two output formats, built once."
+      },
+      {
+        "title": "Numbers you can put in a deck",
+        "body": "If you take produce direct to consumers, Performance Basics and Data and Measurement give you a plain read on demand and what a lead costs. You will know which stories move buyers, and which ones are worth telling for other reasons."
+      }
+    ],
+    "modules": [
+      {
+        "id": "AI-1",
+        "name": "AI Basics",
+        "track": "ai",
+        "focus": false,
+        "why": "What these tools do for a business your size, aimed at the writing you keep postponing."
+      },
+      {
+        "id": "AI-2",
+        "name": "AI Literacy",
+        "track": "ai",
+        "focus": false,
+        "why": "Learn to check AI output before it goes near a buyer deck or a product claim."
+      },
+      {
+        "id": "AI-7",
+        "name": "AI on a Budget",
+        "track": "ai",
+        "focus": false,
+        "why": "Set up a working AI stack for a small monthly cost, so spend stays on the farm."
+      },
+      {
+        "id": "MK-1",
+        "name": "Marketing Foundation",
+        "track": "mk",
+        "focus": true,
+        "why": "Write down who you are talking to and what you are promising them, produce side and investor side."
+      },
+      {
+        "id": "MK-2",
+        "name": "Performance Basics",
+        "track": "mk",
+        "focus": false,
+        "why": "Added if you put money behind consumer demand, so you understand what the spend bought."
+      },
+      {
+        "id": "MK-4",
+        "name": "Data and Measurement",
+        "track": "mk",
+        "focus": false,
+        "why": "Added so you track the few numbers that show whether produce demand is really growing."
+      },
+      {
+        "id": "AX-1",
+        "name": "AI in Marketing",
+        "track": "ax",
+        "focus": true,
+        "why": "Map your own week and pick the parts AI takes over first, starting with the writing you keep postponing."
+      },
+      {
+        "id": "AX-2",
+        "name": "AI Content and Copy",
+        "track": "ax",
+        "focus": true,
+        "why": "Turn harvest notes and site visits into captions, newsletters and buyer updates in a single sitting."
+      },
+      {
+        "id": "AX-4",
+        "name": "AI Ads and Performance",
+        "track": "ax",
+        "focus": false,
+        "why": "Put the best farm story in front of people who have never heard of you, without a big budget."
+      },
+      {
+        "id": "AX-7",
+        "name": "AI CRM and Conversations",
+        "track": "ax",
+        "focus": false,
+        "why": "Keep enquiries from buyers, distributors and visitors answered quickly while you are out on site."
+      },
+      {
+        "id": "AI-5",
+        "name": "Agentic AI and Claude Code",
+        "track": "ai",
+        "focus": false,
+        "why": "Hand repeating jobs to an agent, from drafting a monthly update to tidying yield records."
+      },
+      {
+        "id": "AX-8",
+        "name": "Build Your Workflow",
+        "track": "ax",
+        "focus": true,
+        "why": "Leave with your own documented weekly routine, so publishing survives planting and harvest season."
+      }
+    ],
+    "outcomes": [
+      "Publish a week of farm content from one hour of footage and notes",
+      "Send a monthly progress update to buyers and backers without starting from a blank page",
+      "Run a small paid test on your best-performing produce story and read the result",
+      "Answer buyer and visitor enquiries the same day, from the field"
+    ],
+    "proof": {
+      "label": "Kith and Kin, a good offer with no engine",
+      "body": "Kith and Kin had a genuinely strong offer and nothing behind it but organic posts and cold calls. The first paid work succeeded because the offer was already true, and it took three months. Yours is already true too, which is why the engine is the only missing part."
+    }
+  },
+  {
+    "slug": "flexi-group",
+    "name": "The Flexi Group",
+    "sector": "Flexible workspace, APAC",
+    "headline": "One creative system that serves every brand and every market on short video.",
+    "situation": "Your group already produces polished B2B content across Common Ground, the Hive and The Cluster. Short video is where B2B has to work harder, because the audience arrives in consumer mode. With 50+ workspaces across nine markets, the gain is a shared creative engine rather than nine separate content efforts.",
+    "pathway": {
+      "code": "P3",
+      "name": "AI for Marketers",
+      "depth": "ELI 25 to 30",
+      "shape": "One-weekend intensive with your group marketing and comms team",
+      "why": "Your team has real marketing depth, so the flagship's applied spine is the multiplier rather than the introduction. We tune it to multi-brand, multi-market production and to paid short video specifically."
+    },
+    "pillars": [
+      {
+        "title": "B2B on a consumer feed",
+        "body": "Hooks built for a founder scouting an office, delivered in the language of the platform. We build the route from tour footage and member stories through to a real enquiry."
+      },
+      {
+        "title": "Three brands, one engine",
+        "body": "A shared brief and asset structure with brand-specific tone rules, so Common Ground, the Hive and The Cluster stay distinct. The work triples in output without tripling in effort."
+      },
+      {
+        "title": "Nine markets, local not translated",
+        "body": "Market versions come off one master and get adjusted for language, price framing and workspace mix. The centre holds the standard while local teams stay fast."
+      },
+      {
+        "title": "Paid short video, built live",
+        "body": "Campaign structure, tracking and enquiry handoff set up with your team during the weekend. You leave able to run and read a paid video test in any of your markets."
+      }
+    ],
+    "modules": [
+      {
+        "id": "AI-1",
+        "name": "AI Basics",
+        "track": "ai",
+        "focus": false,
+        "why": "One vocabulary across nine markets, so a Manila brief reads the same way in Bangkok."
+      },
+      {
+        "id": "AI-3",
+        "name": "Prompting and Tools",
+        "track": "ai",
+        "focus": false,
+        "why": "Prompt libraries that hold each brand's voice instead of averaging them out."
+      },
+      {
+        "id": "AI-5",
+        "name": "Agentic AI and Claude Code",
+        "track": "ai",
+        "focus": false,
+        "why": "Automate the repeat work of shipping the same campaign into nine markets."
+      },
+      {
+        "id": "AX-1",
+        "name": "AI in Marketing",
+        "track": "ax",
+        "focus": false,
+        "why": "Where AI fits a funnel that ends in a tour booking or a membership enquiry."
+      },
+      {
+        "id": "AX-2",
+        "name": "AI Content and Copy",
+        "track": "ax",
+        "focus": true,
+        "why": "One brief into brand and market versions, without rewriting from zero each time."
+      },
+      {
+        "id": "AX-3",
+        "name": "AI Creative and Visuals",
+        "track": "ax",
+        "focus": true,
+        "why": "Turn workspace footage and member stories into short video at volume."
+      },
+      {
+        "id": "AX-4",
+        "name": "AI Ads and Performance",
+        "track": "ax",
+        "focus": false,
+        "why": "Paid short-video structure for B2B intent, tracked through to enquiry."
+      },
+      {
+        "id": "AX-5",
+        "name": "AI SEO and Discovery",
+        "track": "ax",
+        "focus": false,
+        "why": "Workspace searches are local even when the brand is regional, and nine markets means nine sets of terms."
+      },
+      {
+        "id": "AX-6",
+        "name": "AI Data and Reporting",
+        "track": "ax",
+        "focus": false,
+        "why": "Read performance across brands and markets on one consistent set of definitions."
+      },
+      {
+        "id": "AX-7",
+        "name": "AI CRM and Conversations",
+        "track": "ax",
+        "focus": false,
+        "why": "Faster, more useful replies to enquiries that arrive through social and DM."
+      },
+      {
+        "id": "AX-9",
+        "name": "AI Dashboards, Sites and Reports",
+        "track": "ax",
+        "focus": true,
+        "why": "One dashboard the group and each market can both work from."
+      },
+      {
+        "id": "AX-8",
+        "name": "Build Your Workflow",
+        "track": "ax",
+        "focus": true,
+        "why": "The production system documented centrally, so a new market launch does not start with a phone call to KL."
+      }
+    ],
+    "outcomes": [
+      "Turn one workspace shoot into a month of short video",
+      "Ship brand-correct versions for three brands from a single master",
+      "Launch a paid short-video test in a new market",
+      "Read brand and market performance on one dashboard"
+    ],
+    "proof": {
+      "label": "Kualesa, one brand into four new markets",
+      "body": "Kualesa went into Singapore, Brunei, the Philippines and Dubai on one brand system, with creative localised per market rather than translated, and held ROAS steady at 2.0 while doing it. Holding a standard while nine local teams move at their own pace is the same problem."
+    }
+  },
+  {
+    "slug": "time-dotcom",
+    "name": "TIME dotCom",
+    "sector": "Telecommunications, fibre broadband",
+    "headline": "A creative operating layer fast enough for an always-on brand, owned by your own team.",
+    "situation": "You have a mature in-house function, an agency roster and an active presence on the platform, so the gap is not knowledge of the channels. It is the operating layer: how fast creative gets produced, tested, read and documented without adding people. Consumer broadband and enterprise sit on different buying cycles, and both run through the same team.",
+    "pathway": {
+      "code": "P3",
+      "name": "AI for Marketers",
+      "depth": "ELI 30",
+      "shape": "One-weekend intensive with your in-house marketing team",
+      "why": "The flagship treats every module as practitioner work rather than orientation, so nothing is spent on ground your team already holds. For whoever owns systems and martech on your side, P5 AI Systems and Automation is the natural follow-on, taking the same workflows into automation and internal tooling."
+    },
+    "pillars": [
+      {
+        "title": "Creative ops, not creative tips",
+        "body": "We build the pipeline: brief to variant set to trafficked ad, with versioning and naming your team keeps. The deliverable is a documented process your team owns."
+      },
+      {
+        "title": "Testing velocity you can audit",
+        "body": "Enough concepts and cuts per cycle to make results readable, with a test log that survives staff changes. You can say what scaled and why from your own records."
+      },
+      {
+        "title": "Reporting written once",
+        "body": "Pull the numbers, draft the commentary, and keep human judgement where it belongs. Weekly and monthly reporting stops consuming analyst days."
+      },
+      {
+        "title": "Sharper briefs for your roster",
+        "body": "When your side briefs better and reviews faster, the roster returns better work. Your team sets the creative standard, and the agencies inherit it."
+      }
+    ],
+    "modules": [
+      {
+        "id": "AI-1",
+        "name": "AI Basics",
+        "track": "ai",
+        "focus": false,
+        "why": "A fast, technical read on model capability and limits, pitched at people who already ship."
+      },
+      {
+        "id": "AI-3",
+        "name": "Prompting and Tools",
+        "track": "ai",
+        "focus": false,
+        "why": "Prompts treated as versioned team assets, so they survive the person who wrote them leaving."
+      },
+      {
+        "id": "AI-5",
+        "name": "Agentic AI and Claude Code",
+        "track": "ai",
+        "focus": true,
+        "why": "Agentic workflows for the tasks your team currently does by hand every week."
+      },
+      {
+        "id": "AX-1",
+        "name": "AI in Marketing",
+        "track": "ax",
+        "focus": false,
+        "why": "Map AI onto the planning, buying and reporting cycle you run with your roster today."
+      },
+      {
+        "id": "AX-2",
+        "name": "AI Content and Copy",
+        "track": "ax",
+        "focus": false,
+        "why": "Variant copy at volume with brand guardrails your team defines and enforces."
+      },
+      {
+        "id": "AX-3",
+        "name": "AI Creative and Visuals",
+        "track": "ax",
+        "focus": false,
+        "why": "A production line that can feed a consumer broadband push and an enterprise campaign in the same week."
+      },
+      {
+        "id": "AX-4",
+        "name": "AI Ads and Performance",
+        "track": "ax",
+        "focus": false,
+        "why": "Test structure and naming sized for an account running many campaigns across both sides of the business."
+      },
+      {
+        "id": "AX-5",
+        "name": "AI SEO and Discovery",
+        "track": "ax",
+        "focus": false,
+        "why": "Hold and grow discovery as search shifts toward AI generated answers."
+      },
+      {
+        "id": "AX-6",
+        "name": "AI Data and Reporting",
+        "track": "ax",
+        "focus": true,
+        "why": "Reporting and commentary generated from your own data, checked by your analysts."
+      },
+      {
+        "id": "AX-7",
+        "name": "AI CRM and Conversations",
+        "track": "ax",
+        "focus": false,
+        "why": "Service conversations for people who already have an account, where a wrong answer on coverage or billing costs more than a slow one."
+      },
+      {
+        "id": "AX-9",
+        "name": "AI Dashboards, Sites and Reports",
+        "track": "ax",
+        "focus": true,
+        "why": "Dashboards your team ships without raising a ticket, which matters when the martech queue is the bottleneck."
+      },
+      {
+        "id": "AX-8",
+        "name": "Build Your Workflow",
+        "track": "ax",
+        "focus": true,
+        "why": "The system written up as your operating process, so the roster is briefed against a standard you own."
+      }
+    ],
+    "outcomes": [
+      "Take a brief to a full trafficked variant set inside a day",
+      "Generate weekly reporting commentary from your own data",
+      "Build an internal dashboard without waiting on a development ticket",
+      "Brief external partners against a documented creative standard"
+    ],
+    "proof": {
+      "label": "CIMB Malaysia, process discipline at enterprise scale",
+      "body": "Organic impressions up 52.6% over twelve months at a bank, where the constraint was never talent or budget but how long it took work to get through the organisation. That is the enterprise version of the problem, and it was solved with process rather than spend."
+    }
+  },
+  {
+    "slug": "wild-rice-media",
+    "name": "Wild Rice Media",
+    "sector": "Media and production",
+    "headline": "Five pathways, one shared library. We map yours with you rather than guessing it.",
+    "situation": "Every Toggle Bespoke engagement runs off one library of 21 lessons and five pathways through it. Which one fits depends on where you are starting and what you need working by Monday, so we would rather scope it with you than assume it. The five modules below sit in three or more of the five pathways, so wherever you begin, you will do these.",
+    "pathway": {
+      "code": "P?",
+      "name": "We will map it with you",
+      "depth": "ELI 15 to 30, set per engagement",
+      "shape": "One-weekend intensive, scoped in a short conversation first",
+      "why": "We do not guess the pathway from a form. A short conversation about your team, your tools and what you need working by Monday decides it, and the depth is set separately on its own dial."
+    },
+    "pillars": [
+      {
+        "title": "Five ways in",
+        "body": "P1 starts with AI literacy and P2 with Marketing Fundamentals. P3 applies AI across a marketing function, P4 is the founder's route through everything at pace, and P5 puts AI inside your operations. Five different starting points, and none of them is a level."
+      },
+      {
+        "title": "One shared backbone",
+        "body": "The five modules below appear in three or more of the five pathways, so the core of the weekend is the same wherever you begin. What changes is what gets built around it."
+      },
+      {
+        "title": "The depth dial",
+        "body": "Every lesson runs on an ELI 15 to 30 setting, so the same module can be a plain introduction or a deep technical build. We set it to the people in the room."
+      },
+      {
+        "title": "A weekend, not a retainer",
+        "body": "The engagement is one intensive weekend where senior marketers build the thing with your team, document it, and support you for 30 days after. You own the accounts, the data and the system afterwards."
+      }
+    ],
+    "modules": [
+      {
+        "id": "AI-1",
+        "name": "AI Basics",
+        "track": "ai",
+        "focus": false,
+        "why": "The shared starting point in four of the five pathways, so everyone works from the same picture."
+      },
+      {
+        "id": "AI-3",
+        "name": "Prompting and Tools",
+        "track": "ai",
+        "focus": false,
+        "why": "The practical skill that makes every later module faster, whichever pathway you take."
+      },
+      {
+        "id": "AI-5",
+        "name": "Agentic AI and Claude Code",
+        "track": "ai",
+        "focus": false,
+        "why": "The one module in all five pathways, because handing whole tasks to an agent changes any job."
+      },
+      {
+        "id": "AX-7",
+        "name": "AI CRM and Conversations",
+        "track": "ax",
+        "focus": false,
+        "why": "Every organisation has enquiries and follow-ups, and this is where the quickest wins usually sit."
+      },
+      {
+        "id": "AX-8",
+        "name": "Build Your Workflow",
+        "track": "ax",
+        "focus": false,
+        "why": "The closing module in three pathways, where the weekend becomes a written workflow you keep using."
+      }
+    ],
+    "outcomes": [
+      "Name which of the five pathways fits you, and say why",
+      "List the three tasks in your week AI should take over first",
+      "Explain to your team what a one-weekend intensive would actually change",
+      "Come to a short scoping call with a specific goal instead of general interest"
+    ],
+    "proof": {
+      "label": "EduKids, e-commerce and education",
+      "body": "EduKids was stuck under a 4x return on TikTok and hit its 6x target by month two, alongside RM14,000 in monthly website revenue and a steady 5.5% conversion rate. It is relevant to anyone here because the gain came from method, testing and tightening rather than from a bigger budget."
+    }
+  },
+  {
+    "slug": "other",
+    "name": "My organisation is not listed",
+    "sector": "Any sector, mapped after a short conversation",
+    "headline": "Five pathways, one shared library. Tell us where you are and we map yours with you.",
+    "situation": "Every Toggle Bespoke engagement runs off one library of 21 lessons and five pathways through it. Which pathway you take depends on where you are starting, whether that is AI literacy from scratch, Marketing Fundamentals, applying AI across a marketing team, a founder who needs the whole picture quickly, or building AI into how your operations run. The five modules listed below sit in three or more of the five pathways, so wherever you start, you will do these.",
+    "pathway": {
+      "code": "P?",
+      "name": "We will map it with you",
+      "depth": "ELI 15 to 30, set per engagement",
+      "shape": "One-weekend intensive, scoped in a short conversation first",
+      "why": "We do not guess the pathway from a form. A short conversation about your team, your tools and what you need working by Monday decides it, and the depth is set separately on its own dial."
+    },
+    "pillars": [
+      {
+        "title": "Five ways in",
+        "body": "P1 starts with AI literacy and P2 with Marketing Fundamentals. P3 applies AI across a marketing function, P4 is the founder's route through everything at pace, and P5 puts AI inside your operations. Five different starting points, and none of them is a level."
+      },
+      {
+        "title": "One shared backbone",
+        "body": "The five modules below appear in three or more of the five pathways, so the core of the weekend is the same wherever you begin. What changes is what gets built around it."
+      },
+      {
+        "title": "The depth dial",
+        "body": "Every lesson runs on an ELI 15 to 30 setting, so the same module can be a plain introduction or a deep technical build. We set it to the people in the room."
+      },
+      {
+        "title": "A weekend, not a retainer",
+        "body": "The engagement is one intensive weekend where senior marketers build the thing with your team, document it, and support you for 30 days after. You own the accounts, the data and the system afterwards."
+      }
+    ],
+    "modules": [
+      {
+        "id": "AI-1",
+        "name": "AI Basics",
+        "track": "ai",
+        "focus": false,
+        "why": "The shared starting point in four of the five pathways, so everyone works from the same picture."
+      },
+      {
+        "id": "AI-3",
+        "name": "Prompting and Tools",
+        "track": "ai",
+        "focus": false,
+        "why": "The practical skill that makes every later module faster, whichever pathway you take."
+      },
+      {
+        "id": "AI-5",
+        "name": "Agentic AI and Claude Code",
+        "track": "ai",
+        "focus": false,
+        "why": "The one module in all five pathways, because handing whole tasks to an agent changes any job."
+      },
+      {
+        "id": "AX-7",
+        "name": "AI CRM and Conversations",
+        "track": "ax",
+        "focus": false,
+        "why": "Every organisation has enquiries and follow-ups, and this is where the quickest wins usually sit."
+      },
+      {
+        "id": "AX-8",
+        "name": "Build Your Workflow",
+        "track": "ax",
+        "focus": false,
+        "why": "The closing module in three pathways, where the weekend becomes a written workflow you keep using."
+      }
+    ],
+    "outcomes": [
+      "Name which of the five pathways fits you, and say why",
+      "List the three tasks in your week AI should take over first",
+      "Explain to your team what a one-weekend intensive would actually change",
+      "Come to a short scoping call with a specific goal instead of general interest"
+    ],
+    "proof": {
+      "label": "EduKids, e-commerce and education",
+      "body": "EduKids was stuck under a 4x return on TikTok and hit its 6x target by month two, alongside RM14,000 in monthly website revenue and a steady 5.5% conversion rate. It is relevant to anyone here because the gain came from method, testing and tightening rather than from a bigger budget."
+    }
+  }
+]

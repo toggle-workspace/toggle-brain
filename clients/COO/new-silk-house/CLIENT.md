@@ -89,6 +89,14 @@ designer, and one physical room. Those four replace the equity Arzu accumulated 
 - `01-strategy/_build/build-deck.js`: pptxgenjs build script. The .pptx is the master and is
   hand-editable. The script exists for regeneration only, and needs `pptxgenjs` available on
   `NODE_PATH`.
+- `01-strategy/new-silk-house-social-plan-2026-09-23.pptx`: 12 slide paid and organic social plan
+  for year one, requested by COO on 23 September 2026. It recommends RM108K in media (Meta 50%,
+  TikTok 30%, Google Search 20%) across 3 awareness, 3 consideration and 6 conversion months. The
+  client chose ongoing sales, so the plan replaces the research's single capped edition with
+  numbered batches for each print. Conversion campaigns send buyers to the website to buy online,
+  replacing the research's WhatsApp sales route. The master copy went to Jordan's Desktop. It is rebuilt by
+  `01-strategy/_build/build-social-plan.js`, which needs `pptxgenjs` and `@resvg/resvg-js` on
+  `NODE_PATH`.
 
 ## Open items
 
