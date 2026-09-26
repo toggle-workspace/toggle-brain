@@ -1,0 +1,292 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SignWell October Start</title>
+<meta name="description" content="What Toggle can run for SignWell, what starts in October, why in that order, and the timeline to March 2027.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* Same colorway and 1280x720 frame as signwell-audit-deck-2026-09.html.
+   Light theme only, locked. */
+:root{
+  --paper:#F4F8FD; --lift:#FFFFFF; --deep:#E6EFFA;
+  --ink:#0E1B33; --ink-2:#4A5A75; --ink-3:#8794AC;
+  --line:#D5E2F0; --line-soft:#E7EFF9;
+  --accent:#2A6BE0; --accent-deep:#1B4CB0; --wash:#E3EDFC;
+  --sky:#7FB3EE; --aqua:#8CE0EC; --navy:#0F2A47;
+  --teal:#1FA5B8;
+  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --sans:"Instrument Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#DCE6F2;color:var(--ink);font-family:var(--sans);padding:40px 16px 80px;-webkit-font-smoothing:antialiased}
+.deckwrap{overflow-x:auto;display:flex;flex-direction:column;gap:34px}
+.slide{width:1280px;height:720px;margin:0 auto;background:var(--paper);position:relative;overflow:hidden;flex:none;
+  padding:56px 64px 84px;display:flex;flex-direction:column;box-shadow:0 2px 22px rgba(14,27,51,.16)}
+.slide.dark{background:var(--ink);color:var(--paper)}
+
+/* chrome */
+.folio{position:absolute;left:64px;right:64px;bottom:28px;display:flex;justify-content:space-between;
+  font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.slide.dark .folio{color:#6F7F9C}
+
+/* type */
+.eyebrow{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 14px;display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.slide.dark .eyebrow{color:var(--aqua)}.slide.dark .eyebrow::before{background:var(--aqua)}
+.h1{font-family:var(--serif);font-weight:400;font-size:50px;line-height:1.02;letter-spacing:-.02em;margin:0 0 14px}
+.h1 em{font-style:italic;color:var(--accent)}
+.slide.dark .h1 em{color:var(--aqua)}
+.kicker{font-size:17px;line-height:1.5;color:var(--ink-2);margin:0 0 24px;max-width:none}
+.slide.dark .kicker{color:#B7C4DA}
+.mono{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.num{font-variant-numeric:tabular-nums}
+.small{font-size:14.5px;line-height:1.5;color:var(--ink-2);margin:0}
+
+/* layout */
+.grid{display:grid;gap:18px}
+.c2{grid-template-columns:1fr 1fr}
+.fill{flex:1 1 auto;min-height:0}
+.card{background:var(--lift);border:1px solid var(--line);border-radius:14px;padding:22px}
+.card.wash{background:var(--wash);border-color:transparent}
+.ct{font-size:19px;font-weight:600;letter-spacing:-.01em;margin:0 0 10px;line-height:1.25}
+.big{font-family:var(--serif);font-size:54px;line-height:.9;letter-spacing:-.03em;color:var(--ink)}
+.big.accent{color:var(--accent)}
+.band{margin-top:auto;background:var(--ink);color:var(--paper);border-radius:12px;padding:16px 22px;font-family:var(--serif);font-size:24px;line-height:1.2;letter-spacing:-.01em}
+.band em{font-style:italic;color:var(--aqua)}
+.tag{display:inline-block;font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  padding:4px 10px;border-radius:999px;border:1px solid var(--line);color:var(--ink-2);background:var(--lift);white-space:nowrap}
+.tag.go{background:var(--accent);border-color:var(--accent);color:#fff}
+
+/* slide 1 table */
+table.t{width:100%;border-collapse:collapse}
+table.t th{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);text-align:left;padding:0 14px 8px;border-bottom:2px solid var(--ink)}
+table.t td{font-size:15px;line-height:1.4;padding:11px 14px;border-bottom:1px solid var(--line);color:var(--ink-2);vertical-align:middle}
+table.t td.i{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--ink-3);width:44px}
+table.t td.k{color:var(--ink);font-weight:600;width:30%}
+table.t td.s{width:120px;text-align:right}
+table.t tr.now td{background:var(--wash)}
+table.t tr.now td.i{color:var(--accent-deep)}
+
+/* slide 2 tracks */
+.track{display:flex;flex-direction:column}
+.steps{margin:4px 0 0;padding:0;list-style:none}
+.steps li{display:grid;grid-template-columns:118px 1fr;gap:14px;padding:11px 0;border-top:1px solid var(--line);font-size:14.5px;line-height:1.45;color:var(--ink-2)}
+.steps li b{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent-deep);padding-top:3px}
+.stats{display:flex;gap:26px;margin-top:auto;padding-top:14px;border-top:2px solid var(--ink)}
+.stats div{display:flex;flex-direction:column;gap:4px}
+.stats .v{font-family:var(--serif);font-size:36px;line-height:.9;letter-spacing:-.02em;color:var(--ink)}
+.stats .l{font-size:12.5px;color:var(--ink-2)}
+
+/* slide 3 */
+.why .ct{font-size:21px}
+.why p.small{margin-bottom:12px}
+.why .hl{display:flex;align-items:baseline;gap:14px;margin:6px 0 14px;padding:14px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.why .hl .l{font-size:14px;line-height:1.4;color:var(--ink-2)}
+
+/* slide 4 gantt */
+.gantt{display:grid;grid-template-columns:236px 1fr;row-gap:5px}
+.gantt .lab{font-size:14px;font-weight:600;color:var(--ink);display:flex;align-items:center;height:30px}
+.gantt .lane{position:relative;height:30px;
+  background-image:linear-gradient(to right,var(--line) 1px,transparent 1px);background-size:calc(100% / 6) 100%}
+.gantt .lane::after{content:"";position:absolute;top:0;bottom:0;right:0;width:1px;background:var(--line)}
+.months{display:grid;grid-template-columns:repeat(6,1fr)}
+.months span{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);padding:0 0 6px 8px}
+.phases{display:grid;grid-template-columns:repeat(3,1fr);gap:6px;margin-bottom:6px}
+.phases span{font-size:12.5px;font-weight:600;color:#fff;border-radius:6px;padding:6px 10px}
+.bar{position:absolute;top:3px;bottom:3px;border-radius:5px;display:flex;align-items:center;padding:0 10px;
+  font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#fff;white-space:nowrap;overflow:hidden}
+.bar.p1{background:var(--accent)}
+.bar.p2{background:var(--teal)}
+.bar.p3{background:var(--navy)}
+.bar.learn{background:repeating-linear-gradient(135deg,#CFE0FA 0 7px,#E8F0FD 7px 14px);color:var(--accent-deep);border:1px solid #A9C6F4}
+.gwrap{position:relative}
+.checks{position:absolute;left:236px;right:0;top:62px;bottom:0;pointer-events:none}
+.checks i{position:absolute;top:-6px;bottom:0;border-left:2px dashed var(--ink)}
+.checks b{position:absolute;bottom:-22px;transform:translateX(-50%);font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);white-space:nowrap;background:var(--paper);padding:0 4px}
+.cp{display:grid;grid-template-columns:1fr 1fr;gap:14px;margin-top:34px}
+.cp .card{padding:14px 18px}
+.cp .small{font-size:13.5px}
+
+/* slide 5 */
+.asks{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.ask{background:#16264A;border-radius:14px;padding:22px 24px;display:flex;gap:18px}
+.ask .n{font-family:var(--serif);font-size:44px;line-height:.85;color:var(--aqua);flex:none;width:28px}
+.ask .ct{color:#fff;margin-bottom:6px}
+.ask p{font-size:14.5px;line-height:1.5;color:#B7C4DA;margin:0}
+.wave{position:absolute;left:0;right:0;bottom:0;height:46%;pointer-events:none;opacity:.28}
+.wave svg{width:100%;height:100%;display:block}
+.z{position:relative;z-index:1;display:flex;flex-direction:column;flex:1 1 auto}
+
+@page{size:1280px 720px;margin:0}
+@media print{
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff;padding:0}
+  .deckwrap{gap:0}
+  .slide{box-shadow:none;page-break-after:always;break-after:page}
+  .slide:last-of-type{page-break-after:auto}
+}
+</style>
+</head>
+<body>
+<div class="deckwrap">
+
+<!-- ═════════ 1 · WHAT TOGGLE CAN RUN ═════════ -->
+<section class="slide">
+  <p class="eyebrow">SignWell and Toggle · October 2026</p>
+  <h1 class="h1">Toggle can run <em>seven channels</em> for SignWell</h1>
+  <p class="kicker">Three of them start in October. The other four start in December and February.</p>
+  <table class="t">
+    <tr><th></th><th>Channel</th><th>What we do</th><th style="text-align:right">Starts</th></tr>
+    <tr class="now"><td class="i">01</td><td class="k">Google brand search</td><td>We run the ads people see when they type SignWell into Google.</td><td class="s"><span class="tag go">October</span></td></tr>
+    <tr class="now"><td class="i">02</td><td class="k">A Google Ads account SignWell owns</td><td>We rebuild your Google ads in a new account in SignWell's name, and SignWell owns the account and its data.</td><td class="s"><span class="tag go">October</span></td></tr>
+    <tr class="now"><td class="i">03</td><td class="k">Organic growth on Facebook, Instagram and LinkedIn</td><td>We post on your three pages and grow the audience on each one.</td><td class="s"><span class="tag go">October</span></td></tr>
+    <tr><td class="i">04</td><td class="k">Google non-brand search</td><td>We run ads for people who search for e-signature software without naming SignWell.</td><td class="s"><span class="tag">December</span></td></tr>
+    <tr><td class="i">05</td><td class="k">Meta ads</td><td>We run paid ads on Facebook and Instagram to reach buyers before they search.</td><td class="s"><span class="tag">December</span></td></tr>
+    <tr><td class="i">06</td><td class="k">Email nurturing</td><td>We send new sign-ups a series of emails that ask them to move from the free trial to a paid plan.</td><td class="s"><span class="tag">February</span></td></tr>
+    <tr><td class="i">07</td><td class="k">SEO and GEO</td><td>We help SignWell rank higher on Google and appear in the answers ChatGPT and other AI tools give.</td><td class="s"><span class="tag">February</span></td></tr>
+  </table>
+  <div class="folio"><span></span><span>01</span></div>
+</section>
+
+<!-- ═════════ 2 · OCTOBER ═════════ -->
+<section class="slide">
+  <p class="eyebrow">October</p>
+  <h2 class="h1">In October we start on <em>Google</em> and on <em>social</em> at the same time</h2>
+  <p class="kicker">Toggle runs two tracks side by side. On the Google track we move your ads into your own account and start with brand search. On the social track we grow your three pages with posts that cost nothing in ad spend.</p>
+  <div class="grid c2 fill">
+    <div class="card track">
+      <p class="mono" style="margin:0 0 8px">Track 1 · Google</p>
+      <p class="ct">Brand search in an account SignWell owns</p>
+      <ul class="steps">
+        <li><b>Week 1</b><span>We open a Google Ads account in SignWell's name and connect it to your sign-up tracking.</span></li>
+        <li><b>Week 2</b><span>We rebuild your brand search campaign in the new account and switch it on.</span></li>
+        <li><b>Weeks 3 to 8</b><span>Google learns who signs up, and we compare the cost of each qualified sign-up (a person who picks business use at sign-up) with August's $3.81.</span></li>
+      </ul>
+      <div class="stats">
+        <div><span class="v num">$3,981</span><span class="l">spent on brand search in August</span></div>
+        <div><span class="v num">$3.81</span><span class="l">per qualified sign-up</span></div>
+      </div>
+    </div>
+    <div class="card track">
+      <p class="mono" style="margin:0 0 8px">Track 2 · Social</p>
+      <p class="ct">Organic posts on Facebook, Instagram and LinkedIn</p>
+      <ul class="steps">
+        <li><b>Week 1</b><span>We agree on the topics with you: healthcare, switching from DocuSign, and Ruben's story.</span></li>
+        <li><b>Weeks 2 to 8</b><span>We post on all three pages and track which posts people like, share and click.</span></li>
+        <li><b>End of November</b><span>We pick the posts that did best, and those become the first Meta ads in December.</span></li>
+      </ul>
+      <div class="stats">
+        <div><span class="v num">330</span><span class="l">Facebook followers</span></div>
+        <div><span class="v num">19</span><span class="l">Instagram followers</span></div>
+        <div><span class="v num">594</span><span class="l">LinkedIn followers</span></div>
+      </div>
+    </div>
+  </div>
+  <div class="folio"><span>Source: August 2026 Prosomo report, public social pages in September 2026</span><span>02</span></div>
+</section>
+
+<!-- ═════════ 3 · WHY THIS ORDER ═════════ -->
+<section class="slide">
+  <p class="eyebrow">Why this order</p>
+  <h2 class="h1">Google learns from brand search while we find <em>the posts that work</em></h2>
+  <p class="kicker">We use the Google track to prepare non-brand search, and the social track to prepare Meta ads.</p>
+  <div class="grid c2 fill why">
+    <div class="card">
+      <p class="mono" style="margin:0 0 8px">Google</p>
+      <p class="ct">A new ad account starts with no history.</p>
+      <p class="small">Google sets your bids by learning which clicks turn into sign-ups. A new account has no data yet, so Google needs several weeks of sign-ups before it sets your bids well.</p>
+      <div class="hl"><span class="big accent num">1,044</span><span class="l">Brand search brought in 1,044 qualified sign-ups in August, so the new account gets about 1,000 a month to learn from.</span></div>
+      <p class="small">Non-brand search waits until December. In August it spent $9,088 and brought in 24 qualified sign-ups.</p>
+    </div>
+    <div class="card">
+      <p class="mono" style="margin:0 0 8px">Social</p>
+      <p class="ct">Paid social has not worked for SignWell yet.</p>
+      <p class="small">LinkedIn ads spent $2,342 in August and brought in no qualified sign-ups. You stopped a $400 Reddit test soon after it started.</p>
+      <div class="hl"><span class="big accent num">$0</span><span class="l">We test your messages in organic posts, with no ad spend. After eight weeks we know which topics your buyers respond to.</span></div>
+      <p class="small">In December we turn the posts that worked into Meta ads, and we show them first to the people who followed or engaged with your pages.</p>
+    </div>
+  </div>
+  <div class="band" style="margin-top:18px">In December we add non-brand search and Meta ads, <em>using what we learned in October and November.</em></div>
+  <div class="folio"><span>Source: August 2026 Prosomo report, discovery call on September 14, 2026</span><span>03</span></div>
+</section>
+
+<!-- ═════════ 4 · TIMELINE ═════════ -->
+<section class="slide">
+  <p class="eyebrow">Timeline · October 2026 to March 2027</p>
+  <h2 class="h1" style="font-size:44px">Three channels start in October, <em>two in December</em> and two in February</h2>
+  <p class="kicker" style="margin-bottom:18px">We add channels in three steps, and we review the numbers with you at the end of each step before the next one starts.</p>
+
+  <div class="gwrap">
+  <div class="gantt">
+    <div></div>
+    <div>
+      <div class="phases">
+        <span style="background:var(--accent)">Step 1 · Start and learn</span>
+        <span style="background:var(--teal)">Step 2 · Add paid growth</span>
+        <span style="background:var(--navy)">Step 3 · Build the channels you own</span>
+      </div>
+      <div class="months"><span>Oct</span><span>Nov</span><span>Dec</span><span>Jan</span><span>Feb</span><span>Mar</span></div>
+    </div>
+
+    <div class="lab">SignWell-owned account</div>
+    <div class="lane"><div class="bar p1" style="left:0;width:8.33%">Move</div></div>
+
+    <div class="lab">Google brand search</div>
+    <div class="lane"><div class="bar learn" style="left:8.33%;width:25%">Google learns</div><div class="bar p1" style="left:33.33%;width:66.67%">Running</div></div>
+
+    <div class="lab">Organic growth</div>
+    <div class="lane"><div class="bar learn" style="left:0;width:33.33%">Testing topics</div><div class="bar p1" style="left:33.33%;width:66.67%">Running</div></div>
+
+    <div class="lab">Google non-brand search</div>
+    <div class="lane"><div class="bar p2" style="left:33.33%;width:66.67%">Buyers who have not named SignWell</div></div>
+
+    <div class="lab">Meta ads</div>
+    <div class="lane"><div class="bar p2" style="left:33.33%;width:66.67%">Starts with the best organic posts</div></div>
+
+    <div class="lab">Email nurturing</div>
+    <div class="lane"><div class="bar p3" style="left:66.67%;width:33.33%">Free trial to paid plan</div></div>
+
+    <div class="lab">SEO and GEO</div>
+    <div class="lane"><div class="bar p3" style="left:66.67%;width:33.33%">Google rankings, AI answers</div></div>
+  </div>
+  <div class="checks">
+    <i style="left:33.33%"></i><b style="left:33.33%">Review 1</b>
+    <i style="left:66.67%"></i><b style="left:66.67%">Review 2</b>
+  </div>
+  </div>
+
+  <div class="cp">
+    <div class="card wash"><p class="mono" style="margin:0 0 6px;color:var(--accent-deep)">Review 1 · End of November</p><p class="small">We show you the cost per qualified sign-up in the new account and the posts that did best. Then we agree on the December budget for non-brand search and Meta ads.</p></div>
+    <div class="card"><p class="mono" style="margin:0 0 6px">Review 2 · End of January</p><p class="small">We show you what non-brand search and Meta ads cost per qualified sign-up. Then we agree on which of them keeps its budget in February.</p></div>
+  </div>
+  <div class="folio"><span></span><span>04</span></div>
+</section>
+
+<!-- ═════════ 5 · WHAT WE NEED ═════════ -->
+<section class="slide dark">
+  <div class="wave"><svg viewBox="0 0 1280 440" preserveAspectRatio="none" aria-hidden="true">
+    <path d="M0 250 C260 190 470 300 720 240 S1110 180 1280 230 L1280 440 L0 440Z" fill="#1B4CB0"/>
+    <path d="M0 330 C240 290 520 370 780 320 S1130 280 1280 310 L1280 440 L0 440Z" fill="#2A6BE0"/>
+  </svg></div>
+  <div class="z">
+    <p class="eyebrow">To start in October</p>
+    <h2 class="h1">We need <em>four things</em> from you before October 1</h2>
+    <p class="kicker">With these in place, we start both tracks in the first week of October.</p>
+    <div class="asks">
+      <div class="ask"><span class="n">1</span><div><p class="ct">A Google Ads account in your name</p><p>You open it, or you let us open it for you. SignWell owns it, and Toggle works inside it as your manager.</p></div></div>
+      <div class="ask"><span class="n">2</span><div><p class="ct">Access to GA4 and Google Tag Manager</p><p>These are the Google tools on your website that record each sign-up. We use them to count qualified sign-ups in the new account from its first day.</p></div></div>
+      <div class="ask"><span class="n">3</span><div><p class="ct">Admin access to your social pages</p><p>We need your Facebook page, your Instagram account and your LinkedIn page.</p></div></div>
+      <div class="ask"><span class="n">4</span><div><p class="ct">One person who approves posts</p><p>Someone on your team signs off on each post before it goes live.</p></div></div>
+    </div>
+  </div>
+  <div class="folio" style="z-index:1"><span></span><span>05</span></div>
+</section>
+
+</div>
+</body>
+</html>
