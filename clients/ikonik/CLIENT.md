@@ -41,7 +41,17 @@
 
 ## Report history
 
-> Reporting cadence is **weekly**. Deck master: `[Ikonik] Toggle Weekly Report (...).pptx` on Jordan's Desktop, hand-edited each week (nine slides, speaker notes carry the per-slide update checklist). Full write-ups live in `04-reports/`.
+> Reporting cadence is **weekly**. **Start every weekly report by reading `04-reports/weekly-log.md`**: the scorecard for every week, open threads, creative lineage and method notes. Each week, add the new week to that log and write `04-reports/2026-Www-weekly.md`.
+
+### Weekly reporting (how the deck and data work)
+- **Deck master:** `[Ikonik] 2026 - Toggle Weekly Report.pptx` on Jordan's Desktop. It is cumulative, newest week first: slides 1 to 16 are the latest week (cover, 14 content slides, thank you). A freelancer drafts slides 2 to 15; Toggle reviews them and delivers a revised copy of the latest 16 slides as a separate Desktop file.
+- **Clinic leads log:** `Ikonik x Toggle - Ad Platform Leads.xlsx`, one tab per month (`INCOMING DATA-SEPT 2026` etc.). Enquiries and appointments by source (call, email, WhatsApp, TikTok DM, TikTok LIVE, TikTok lead form, Meta lead form) and the LASIK / eye disease / consult / optical / open day mix. Re-pull it before trusting slides 2 to 7, since late entries arrive after the freelancer drafts.
+- **Slide order:** 2 status at a glance · 3 where appointments came from (week vs prior week) · 4 spend vs appointment growth · 5 month to date · 6 projection by platform · 7 enquiry to appointment projection · 8 TikTok · 9 Meta · 10 Google · 11 to 13 Meta creative (lead forms, WhatsApp, calls) · 14 optimizations done · 15 next steps.
+
+### 2026-W39: reporting period 21 to 27 September 2026
+- Full detail: `04-reports/2026-W39-weekly.md`. Revised deck delivered 28 Sep 2026.
+- **Headline:** RM4,017.73 spend, 99 platform enquiries a day (99% of target), 329 clinic enquiries, 174 appointments (best week of September), 52.9% booked, RM23.09 per appointment.
+- **Key finding:** Meta recorded about 70% more calls and chats than W38 but the clinic logged the same number, so only three in ten reach the log. Ikonik asked for the missed-call list and unanswered WhatsApp count.
 
 ### 2026-W31 — reporting period 27 July to 2 August 2026 (first week)
 - **Platforms reported:** TikTok, Meta, Google. Full detail: `04-reports/2026-W31-weekly.md`
