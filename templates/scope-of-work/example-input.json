@@ -1,0 +1,56 @@
+{
+  "_comment": "Reference input. It turns on all seven service modules so the blank .docx shows every one. A real client brief keeps only the services on their quotation. Format spec: README.md in this folder.",
+
+  "client": "[CLIENT LEGAL NAME]",
+  "client_short": "[CLIENT]",
+  "slug": "example",
+  "document_date": "2026-09-29",
+  "version": "1.0",
+  "prepared_by": "[YOUR NAME], Toggle Solutions",
+  "account_lead": "[YOUR NAME]",
+  "client_contact": "[NAME, TITLE]",
+
+  "start_date": "2026-10-06",
+  "term": "6 months from the start date",
+  "review_date": "[DATE]",
+  "quotation": { "number": "[QUOTATION NUMBER]", "date": "[DATE THE QUOTE WAS SENT]" },
+
+  "review_call": "60 minutes, once a month",
+  "written_update": "Once a week, by email",
+  "report_day": "By the 5th working day of each month",
+  "response_time": "One working day, on email",
+  "approval_window": "three working days",
+  "working_hours": "Monday to Friday, 9am to 6pm, Malaysia time",
+  "holidays": "Malaysian public holidays. We tell you in advance when one affects a date.",
+
+  "contacts": [
+    { "for": "Anything about the work, and anything urgent", "name": "[NAME], account lead", "email": "[EMAIL]" },
+    { "for": "Invoices and payment", "name": "[NAME]", "email": "hello@toggle.solutions" },
+    { "for": "Adding work that is not in this document", "name": "[NAME], account lead", "email": "[EMAIL]" }
+  ],
+
+  "services": [
+    {
+      "id": "performance-marketing",
+      "_amounts_note": "Keys must match the Deliverable column in brain/services/performance-marketing.md exactly. The script lists the valid keys if one does not match.",
+      "amounts": {},
+      "drop": [],
+      "add_rows": [],
+      "add_not_in_scope": [],
+      "drop_not_in_scope": [],
+      "needs_when": {},
+      "add_needs": []
+    },
+    { "id": "seo" },
+    { "id": "aeo" },
+    { "id": "geo" },
+    { "id": "web-development" },
+    { "id": "creative-production" },
+    { "id": "social-media-management" }
+  ],
+
+  "am_notes": [
+    "This is the reference copy built from example-input.json. It is not a client document.",
+    "Copy this file, fill the bracketed fields, delete the services the client did not buy, then rebuild."
+  ]
+}

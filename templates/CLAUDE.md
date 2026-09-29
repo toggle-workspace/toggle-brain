@@ -22,6 +22,7 @@ Templates are *unfilled skeletons*. Copy them into a client folder; never fill t
 | `briefs/creative.md` | Generic creative brief (channel-agnostic) |
 | `proposals/proposal.md` | Pitch-stage proposal |
 | `quotations/quotation.html` | Print-faithful quote shell — matches sent-quote PDFs; `/quote` fills it, export via Chrome → PDF |
+| `scope-of-work/` | Client-facing scope of work signed at close. Not a fill-by-hand shell: `/scope-of-work` writes a JSON brief and `build-scope-of-work.py` renders the .docx from `brain/services/`. See its `README.md` |
 | `reports/monthly-performance.md` | Recurring monthly client report |
 | `reports/campaign-recap.md` | Post-campaign recap |
 | `decks/pitch-deck.md` | Pitch deck markdown outline |
