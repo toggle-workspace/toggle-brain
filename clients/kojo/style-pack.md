@@ -1,6 +1,6 @@
 ---
-client: Kojo (UseKojo)
-slug: usekojo
+client: Kojo
+slug: kojo
 last_reviewed: 2026-09-25
 ---
 
