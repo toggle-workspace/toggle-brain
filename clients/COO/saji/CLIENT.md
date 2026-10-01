@@ -9,8 +9,8 @@ currency: MYR
 mrr: TBD
 credit_pending: 0
 account_lead: TBD
-last_reviewed: 2026-09-15
-revision: rev2
+last_reviewed: 2026-09-30
+revision: rev3
 ---
 
 # Saji, Ramadan Raya 2027 (via COO)
@@ -42,22 +42,34 @@ COO's working deck asked Toggle two questions directly on its slide 20, "Digital
 and "Viral Portal budget portion?", and left the Digital Amplification section (slides 27 to 31)
 empty apart from "KOL?" and "Thread?". The proposal in `01-strategy/` fills that gap.
 
-**The current proposal is rev2.** Three revisions so far. rev0 recommended changing the client's
+**The current proposal is rev3.** Four revisions so far. rev0 recommended changing the client's
 contest rules. rev1, after the Toggle internal on 14 September 2026, keeps them exactly as briefed
 and removes the friction with a Saji pop-up counter inside every Bulan Bintang boutique. rev2, after
 the COO sit-down on 15 September, fixes one budget at RM145,000 all in, adds a kitchen redesign as a
-prize idea, and closes the deck on a client access checklist. Earlier revisions stay in place as the
-record of the positions they replaced.
+prize idea, and closes the deck on a client access checklist.
 
-## Two separate RM145,000 figures
+**rev3 replaces the mechanic entirely.** The 22 September joint meeting priced Bulan Bintang's
+participation at a title sponsorship of at least RM1.5 million. The 24 September COO internal then
+recorded that Saji is unlikely to take even the Gold tier, that the collaboration will be minimal,
+and that the mechanic has to work with or without the partner. The pop-up was load bearing in rev2
+and could not survive that, so rev3 is a point system, **Mata Raya**, that runs on Saji alone and
+treats Bulan Bintang as a bonus rather than a gate. The prize pool then halved to RM70,000 on
+30 September. Earlier revisions stay in place as the record of the positions they replaced.
 
-They are not the same money, and every document and conversation has to say which one it means.
+## The two budget figures
+
+rev2 ran two separate RM145,000 figures and had to keep them apart in every sentence. The prize pool
+halved on 30 September, so that coincidence is gone.
 
 | | Amount | Who funds it |
 |---|---|---|
-| Contest prize pool | RM145,000 | The client, directly |
+| Contest prize pool | RM70,000 | The client, directly |
 | Campaign investment | RM145,000 | The client, to Toggle and COO |
-| **Total client outlay** | **RM290,000** | |
+| **Total client outlay** | **RM215,000** | |
+
+The campaign investment still splits internally into RM100,000 working media and a RM45,000 Toggle
+and COO service fee. That split appears in no deck and in no speaker note. See
+`01-strategy/media-plan-and-findings-rev3-2026-09-30.md`.
 
 - **Engagement model:** see `brain/process.md`
 - **Start date:** 2026-09-11 (first internal discussion with COO)
@@ -68,9 +80,11 @@ They are not the same money, and every document and conversation has to say whic
 |---|---|
 | 10 Sept 2026 | Project brief received |
 | 15 Sept 2026 | COO internal sit-down |
-| 21 Sept 2026 | Pitching session |
-| 24 Sept 2026 | Proposal submission |
-| 17 Oct 2026 | Project award expected |
+| 21 Sept 2026 | Pitching session (did not close, became a revision cycle) |
+| 22 Sept 2026 | Saji and Bulan Bintang joint meeting |
+| 24 Sept 2026 | COO internal, pivot to a point system |
+| 14 or 15 Oct 2026 | Presentation to Saji |
+| Late Oct 2026 | Project award expected |
 | 25 or 28 Jan 2027 | Campaign launch event at Wisma FGV (client's own slides disagree) |
 | 1 Feb 2027 | Digital launch and Buy and Win contest opens |
 | 6 Feb 2027 | Chinese New Year |
@@ -117,7 +131,43 @@ Digital ad buy KPIs: 40 million video views, 15 million reach, 3% engagement rat
 brand awareness and recall. The client also requires Kak Ji, the mascot introduced in 2026, to
 appear in the 2027 content plan.
 
-## What Toggle recommends (rev1)
+## What Toggle recommends (rev3)
+
+**Mata Raya.** One balance and four rules. Every RM1 of Saji earns 1 Mata. Every 25 Mata is one
+chance in that week's draw. The balance never resets across the ten weeks. Milestones at 50, 150 and
+300 Mata pay guaranteed rewards that need no luck.
+
+The rule that protects the commercial logic is **receipts qualify you, codes accelerate you**. No
+draw chance exists without at least one verified Saji receipt behind it.
+
+1. **The partner is a bonus, never a gate.** Config A runs on Saji alone and is what we build.
+   Config B switches on the day Bulan Bintang signs, adding capped bonus Mata on a boutique receipt
+   and a 50 Mata code in each of the 14 stores. The build can lock in December without their answer.
+2. **Four ways to earn.** A Saji receipt from any shop, a weekly featured product paying 2x or 3x, a
+   bonus QR code worth 25 to 50 Mata at roadshows and bazaars and on packs and shelves, and a streak
+   or referral. The featured product is the strongest part, because Saji can push a different SKU
+   every week without cutting price.
+3. **Registration is free and needs no purchase.** It widens the funnel and it lets the paid buy
+   optimize to sign-ups rather than receipts, which is what keeps ad sets out of the learning phase.
+4. **The leaderboard is national, not per state.** See below.
+5. **The prize pool is RM70,000 across 41 winners.** 40 weekly at RM1,400, four a week for ten weeks,
+   plus one RM14,000 grand draw on 9 April that counts every Mata earned since February.
+
+### Why the leaderboard is national
+
+rev3 as first built ran a board per state. At 12,000 sign-ups, Selangor has about 1,176 collectors
+earning Mata and Perlis about 38, so the same Campaign Pack was **31 times harder to win** in one
+state than another. Perlis has roughly five active collectors in week one, so one person buying RM60
+of Saji could take that state every week for ten weeks. Fourteen states across ten weeks also meant
+140 Campaign Packs to fulfil, against 10 for a national top ten.
+
+The design error underneath it: the state board existed to solve "top of Malaysia feels unwinnable",
+which the milestone ladder already solves. The same problem was solved twice and the second solution
+added cost and a fairness hole. One national board now shows the top five, the reader's rank and the
+exact Mata gap to the person above them. State is still captured at registration for reporting and
+prize delivery.
+
+## What Toggle recommended (rev1, superseded)
 
 1. **Keep the mechanic, move the shop.** RM25 of Saji plus RM150 of Bulan Bintang across two
    receipts stays exactly as briefed. A Saji pop-up counter inside every one of the 14 Bulan Bintang
@@ -178,7 +228,32 @@ the Golden Ticket packaging change sit with on-ground and with the client.
 
 ## Deliverables
 
-**Current, rev2:**
+**Current, rev3:**
+
+- `01-strategy/Saji x Bulan Bintang - Digital Advertising Proposal - rev3-cleaned.pptx`: 14 slides,
+  **internal**, written for the COO and Toggle team rather than the client. Plain language
+  throughout, measured at 239 sentences and 7.3 words average.
+- `01-strategy/media-plan-and-findings-rev3-2026-09-30.md`: **internal to Toggle and COO, do not send
+  to the client.** Carries the RM100,000 and RM45,000 split, the Mata Raya spec, the leaderboard
+  arithmetic and the forecast reconciliation problem in section 0.
+- `01-strategy/_build/build-deck-rev3-cleaned.py`: the build script. **Python and python-pptx**,
+  unlike the earlier `build-deck*.js` scripts which use pptxgenjs. Run with
+  `uv run --with python-pptx python build-deck-rev3-cleaned.py out.pptx`.
+- `01-strategy/_build/validate-layout.py`: geometry checker. Flags text overflowing its shape, any
+  two text boxes overlapping, and anything crossing the footer bar. Written after overlapping boxes
+  had to be moved by hand in the 28 September deck.
+- `02-creative/tersaji-raya-2027-contest-landing-page-rev3.html`: the contest page rebuilt around the
+  Mata balance, with the national leaderboard, the bonus code box and the milestone ladder.
+- `05-meetings/2026-09-22-saji-bulan-bintang.md`, `05-meetings/2026-09-24-coo-internal.md` and
+  `05-meetings/2026-09-30-rev3-cleaned-decisions.md`.
+
+**Superseded by rev3, do not send:**
+
+- `01-strategy/Saji x Bulan Bintang - Digital Advertising Proposal - rev3 (2026-09-28).pptx`:
+  34 slides, client-facing. Carries the **old RM145,000 prize pool and the per-state leaderboard**.
+  Never presented, because the 14 October session had not happened when it was superseded.
+
+**Superseded, rev2:**
 
 - `01-strategy/Saji x Bulan Bintang - Digital Advertising Proposal - rev2 (2026-09-15).pptx`:
   29 slide proposal for COO, built on the `bru-hwc` structure with the palette shifted to Saji.
@@ -234,6 +309,32 @@ the same pattern as the Colgate account. That folder holds the RARA 2025 and RAR
 - **The landing page form posts nowhere.** Validation, the receipt progress meter and the thank-you
   state all work client side, but the submit handler needs wiring to a real endpoint, along with
   receipt storage and the Meta and TikTok conversion events that the whole media argument depends on.
+
+### Opened by rev3
+
+- **The forecast does not reconcile to the working media model, and this is the one to settle before
+  14 October.** The rev3 decks derive contest traffic from 40% of the full RM145,000, which is
+  RM58,000 and about 160,000 clicks. rev2's model puts the contest line at 40% of the RM100,000
+  working media, which is RM40,000 and about 113,000 clicks. On the correct basis the plan lands at
+  8,500 sign-ups and 3,570 entrants rather than 12,000 and 5,040, and needs an 8.4% sign-up rate to
+  reach the 4,000 target. Section 0 of the rev3 findings doc carries the three options. The client
+  has just freed RM75,000 from the prize pool, so moving some of it into working media is the option
+  worth raising.
+- **The prize pool halved and nobody re-modelled the entry rate.** The 7.5% sign-up rate was set
+  against a RM2,900 weekly prize and now sits against RM1,400.
+- **Receipt verification is still unpriced.** 13,100 receipts is roughly three times the 2026
+  workload, and no headcount or cost sits behind it.
+- **"Saji sepanjang tahun" now means RM900**, about RM75 a month. Confirm that covers a year for the
+  target household or reword the claim to a named bundle. This is a Trade Descriptions exposure.
+- **Confirm the campaign investment is still RM145,000.** The 50k mentioned on 24 September reads as
+  the Bulan Bintang tier rather than our budget.
+- **One grand draw of RM14,000, or a smaller prize every week?** The 22 September note records one
+  golden ticket per week, which never fit the pool.
+- **Who owns the weekly featured product calendar**, and which SKUs get the first three weeks of
+  Ramadan when basket sizes are largest.
+- **The landing page leaderboard runs on simulated ranks.** The national positions are computed from
+  a fixed curve so the demo is stable. They must read from the live database before launch, alongside
+  the entry count, the winner count and the named winners that rev1 already flagged.
 
 ### Opened by rev2
 
