@@ -1,0 +1,25 @@
+#!/usr/bin/env bash
+# gads - launcher for gads.py, the read-only Google Ads API client.
+#
+# Resolves its own folder, so nothing is hardcoded and it runs from any working
+# directory. Runs on a uv managed CPython when uv is installed, otherwise on
+# python3 from PATH. No pip install is needed either way: gads.py is stdlib only.
+#
+# Every call names its login profile:
+#   tools/google-ads/gads --profile toggle auth status
+# Setup: installations/google-ads/install.md
+set -euo pipefail
+
+HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+UV="$(command -v uv || echo "$HOME/.local/bin/uv")"
+
+if [ -x "$UV" ]; then
+  exec "$UV" run --no-project --quiet --python 3.12 python "$HERE/gads.py" "$@"
+elif command -v python3 >/dev/null 2>&1 && python3 -c 'import sys; sys.exit(sys.version_info < (3, 9))' 2>/dev/null; then
+  exec python3 "$HERE/gads.py" "$@"
+else
+  echo "xx Need uv or Python 3.9+. Install uv:" >&2
+  echo "   macOS:   curl -LsSf https://astral.sh/uv/install.sh | sh" >&2
+  echo "   Windows: powershell -c \"irm https://astral.sh/uv/install.ps1 | iex\"" >&2
+  exit 1
+fi
