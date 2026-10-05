@@ -72,13 +72,21 @@ def die(msg, hint=None):
 
 
 def load_dotenv():
-    """Pull GOOGLE_* lines from the project .env without overriding the shell."""
+    """Pull GOOGLE_* lines from the project .env without overriding the shell.
+
+    A trailing `# comment` is dropped, so the documented
+    `GOOGLE_ADS_LOGIN_CUSTOMER_ID="6738385427"   # Toggle manager` reads as
+    `6738385427` rather than the whole rest of the line. Quote any value that
+    needs a literal `#` in it.
+    """
     path = os.path.join(PROJECT, ".env")
     if not os.path.exists(path):
         return
     with open(path, encoding="utf-8") as f:
         for line in f:
-            m = re.match(r'\s*(?:export\s+)?(GOOGLE_[A-Z0-9_]+)=(["\']?)(.*?)\2\s*$', line)
+            m = re.match(
+                r'\s*(?:export\s+)?(GOOGLE_[A-Z0-9_]+)=(["\']?)(.*?)\2\s*(?:#.*)?$',
+                line)
             if m and m.group(1) not in os.environ:
                 os.environ[m.group(1)] = m.group(3)
 

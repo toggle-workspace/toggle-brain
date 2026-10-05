@@ -106,7 +106,7 @@ export GOOGLE_PROJECT_ID="adroit-nuance-510512-k8"
 # export GOOGLE_ADS_DEVELOPER_TOKEN=""
 ```
 
-`gads` reads `GOOGLE_*` lines from `.env` by itself, so no `source .env` is needed.
+`gads` reads `GOOGLE_*` lines from `.env` by itself, so no `source .env` is needed. It drops a trailing `# comment`, so the inline note above is safe to keep. Quote any value that needs a literal `#` inside it.
 
 ### 5. Add a second login profile (optional, you + Claude, 2 minutes)
 
@@ -187,3 +187,4 @@ tools/google-ads/gads --profile toggle fields metrics.conversions          # fie
 | "Access blocked" on the sign-in page | The Google Auth Platform app slipped back to Testing. Publish it again under **Audience**. |
 | HTTP 404 on every call | API version `v25` was sunset. Set `GOOGLE_ADS_API_VERSION` in `.env` to the current version. |
 | HTTP 401 | The login expired or was revoked. Repeat the sign-in step for that profile. |
+| `auth status` prints `default login` with the quotes or the trailing comment still attached | Your `gads.py` predates the 2026-10-05 `.env` parser fix. Pull `main`. As a stopgap, move the comment onto its own line in `.env`. Left unfixed, the whole string goes into the route header and every manager-routed call fails. |

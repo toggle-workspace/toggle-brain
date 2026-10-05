@@ -13,7 +13,7 @@ The scope of record for this project's Google Ads connection. Update it whenever
 | OAuth app | Google Auth Platform app **Ads Reporting**: External, In production, unverified on purpose (100 user cap). Desktop client **Ads Reporting Dashboard**. |
 | Credentials | Per machine, never in the repo: `ads-oauth-client.json` plus one `application_default_credentials.json` per profile, in the gcloud folder (`%APPDATA%\gcloud` on Windows, `~/.config/gcloud` on macOS) |
 | Verify command | `tools/google-ads/gads --profile toggle auth status` |
-| Setup built | 2026-10-03 on Jordan's Windows desktop. MacBook pending. |
+| Setup built | 2026-10-03 on Jordan's Windows desktop. 2026-10-05 on Jordan's MacBook, both profiles verified. |
 
 ---
 
@@ -53,7 +53,7 @@ Verified 2026-10-03. Pass the route with `--login-cid`.
 | VoiceRun | `1162306091` | USD | Enabled |
 | DrinkELT | `4059441584` | MYR | Enabled |
 | ij-solutions | `3100610594` | EUR | Enabled. Also under Brighttail. |
-| (unknown) | `9172606846` | | `CUSTOMER_NOT_ENABLED`: deactivated or never set up |
+| (unknown) | `9172606846` | | Dead. The Windows desktop sees `CUSTOMER_NOT_ENABLED`, the MacBook sees `403 The caller does not have permission`. Either way no route reaches it. |
 
 **Through Brighttail Digital's manager account `7709261217`** (`--login-cid 7709261217`)
 
@@ -84,9 +84,11 @@ Verified 2026-10-03.
 | Wizu / Fusecon | `8834386656` | Enabled |
 | Giat Solutions | `5476647688` | Enabled |
 | Petsmore | `3253688833` | Suspended |
-| (unknown) | `9987700470`, `7209865052`, `4603783842` | `CUSTOMER_NOT_ENABLED` |
+| (unknown) | `9987700470`, `7209865052`, `4603783842` | Dead. `CUSTOMER_NOT_ENABLED` from the Windows desktop, `403 The caller does not have permission` from the MacBook. |
 
 The `personal` profile also reaches the Toggle manager account and its accounts. Use `toggle` for those.
+
+Verified again on the MacBook on 2026-10-05: `accounts` returns the 13 rows above, UNITAR Degree `9059202225` returns live campaign data through the Audaura route, and KM Animal Clinic `3709465491` is reachable direct with one paused campaign.
 
 ---
 
