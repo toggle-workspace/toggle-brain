@@ -1,0 +1,356 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Middlesex Open Day Proposal</title>
+<meta name="description" content="Toggle proposal to Middlesex University: five messages between an open day booking and the event, to raise show-up rate.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@400;500;600;700&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+/* Rebuilt 2026-09-26 from the printed lean proposal (the source HTML was not
+   in the repo). Same 1280x720 frame, Geist type and colors as the PDF.
+   Light theme only, locked. */
+:root{
+  --paper:#FFFFFF; --ink:#141414; --ink-2:#6B6B70; --ink-3:#A3A3AA;
+  --line:#E6E6E9; --grey:#F3F3F4; --wash:#EEF3FD; --wash-line:#D5E1F8;
+  --blue:#4A7FE8; --sky:#7EC3F0; --stone:#CFCFD3; --rust:#C8401A;
+  --sans:"Geist",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --mono:"Geist Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#E9EBF1;color:var(--ink);font-family:var(--sans);padding:40px 16px 80px;-webkit-font-smoothing:antialiased}
+.deck{display:flex;flex-direction:column;gap:34px;overflow-x:auto}
+.slide{width:1280px;height:720px;flex:none;margin:0 auto;background:var(--paper);position:relative;overflow:hidden;
+  padding:56px 64px 0;box-shadow:0 2px 22px rgba(20,20,20,.12)}
+
+/* chrome */
+.eyebrow{display:flex;align-items:center;gap:10px;margin:0 0 14px;font-size:11.5px;font-weight:600;letter-spacing:.16em;text-transform:uppercase;color:var(--blue)}
+.eyebrow::before{content:"";width:5px;height:5px;border-radius:50%;background:var(--blue)}
+.h1{font-size:34px;font-weight:600;letter-spacing:-.025em;line-height:1.12;margin:0 0 12px}
+.kicker{font-size:14.5px;line-height:1.55;color:var(--ink-2);margin:0 0 24px;max-width:none}
+.src{position:absolute;left:64px;right:150px;bottom:18px;font-size:9.5px;line-height:1.5;color:var(--ink-3);margin:0}
+.folio{position:absolute;right:64px;bottom:18px;font-size:11px;color:var(--ink-3);font-variant-numeric:tabular-nums}
+.band{position:absolute;left:64px;right:64px;bottom:62px;background:var(--blue);color:#fff;border-radius:12px;padding:15px 24px;font-size:14.5px;line-height:1.45}
+.band b{font-weight:600}
+
+/* cards */
+.grid{display:grid;gap:18px}
+.c2{grid-template-columns:1fr 1fr}.c3{grid-template-columns:repeat(3,1fr)}.c4{grid-template-columns:repeat(4,1fr)}.c5{grid-template-columns:repeat(5,1fr)}
+.card{background:var(--paper);border:1px solid var(--line);border-radius:12px;padding:22px 24px}
+.card.grey{background:var(--grey);border-color:var(--grey)}
+.card.wash{background:var(--wash);border-color:var(--wash-line)}
+.card.top{border-top:4px solid var(--blue)}
+.card.top.sky{border-top-color:var(--sky)}
+.card.top.stone{border-top-color:var(--stone)}
+.card.top.ink{border-top-color:var(--ink)}
+.ct{font-size:16px;font-weight:600;letter-spacing:-.01em;margin:0 0 10px;line-height:1.3}
+.p{font-size:13.5px;line-height:1.6;color:var(--ink-2);margin:0 0 10px}
+.p:last-child{margin-bottom:0}
+.p b{color:var(--ink);font-weight:600}
+ul.b{list-style:none;margin:12px 0 0;padding:0}
+ul.b li{position:relative;padding:0 0 0 17px;margin:0 0 9px;font-size:13.5px;line-height:1.55;color:var(--ink-2)}
+ul.b li::before{content:"";position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--blue)}
+ul.b.sky li::before{background:var(--sky)}
+ul.b.stone li::before{background:var(--ink-3)}
+ul.b li b{color:var(--ink);font-weight:600}
+.stat{font-size:42px;font-weight:600;letter-spacing:-.035em;line-height:1;margin:0 0 16px}
+.stat.blue{color:var(--blue)}.stat.rust{color:var(--rust)}
+.sl{font-size:14px;font-weight:600;margin:0 0 6px;line-height:1.3}
+.sc{font-size:12.5px;line-height:1.5;color:var(--ink-2);margin:0}
+.pill{display:inline-block;font-size:11px;font-weight:600;letter-spacing:.06em;text-transform:uppercase;color:#fff;background:var(--blue);border-radius:999px;padding:4px 11px}
+.pill.sky{background:var(--sky);color:var(--ink)}.pill.ink{background:var(--ink)}
+.chip{display:inline-block;font-size:12px;color:var(--ink-2);background:#fff;border:1px solid var(--line);border-radius:999px;padding:6px 12px;margin:0 6px 8px 0}
+.chip b{color:var(--ink);font-weight:600}
+.tiny{margin:14px 0 6px;font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);line-height:1.4}
+.mono{font-family:var(--mono);font-size:12.5px}
+
+/* tables */
+table.t{width:100%;border-collapse:collapse}
+table.t th{background:var(--grey);text-align:left;font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);padding:13px 16px}
+table.t td{font-size:13.5px;line-height:1.5;color:var(--ink-2);padding:12px 16px;border-bottom:1px solid var(--line);vertical-align:top}
+table.t.tight td{padding:9px 16px}
+table.t.tight th{padding:11px 16px}
+table.t td.k{color:var(--ink);font-weight:600}
+table.t td.k span{display:block;font-weight:400;font-size:12px;color:var(--ink-2)}
+table.t td.blue{color:var(--blue);font-weight:600}
+table.t tr.hot td{background:var(--wash)}
+table.t tr.hot td.last{color:var(--ink);font-weight:600}
+
+/* iteration plan */
+.iter{display:grid;grid-template-columns:minmax(0,1fr) 64px minmax(0,1fr) 64px minmax(0,1fr);row-gap:16px}
+.od{background:var(--ink);color:#fff;border-radius:12px;padding:20px 22px;margin-bottom:6px}
+.od b{display:block;font-size:17px;font-weight:600;letter-spacing:-.01em}
+.od span{display:block;margin-top:4px;font-size:10.5px;font-weight:600;letter-spacing:.12em;text-transform:uppercase;color:#B9C8EE}
+.arrow{display:flex;align-items:center;justify-content:center}
+.arrow svg{width:44px;height:14px;display:block}
+.stack{display:flex;flex-direction:column;gap:12px}
+.cell{border-radius:10px;padding:16px 18px;display:flex;justify-content:space-between;align-items:center;gap:12px;border:1px solid var(--line);background:var(--paper)}
+.cell b{font-size:15px;font-weight:600;color:var(--ink)}
+.cell span{font-size:10.5px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-2);white-space:nowrap}
+.cell.base{background:var(--grey);border-color:var(--grey)}
+.cell.base b{color:var(--ink-2);font-weight:500}
+.cell.opt{background:var(--wash);border-color:var(--wash-line)}
+.cell.opt span{color:var(--blue)}
+.cell.win{background:var(--blue);border-color:var(--blue)}
+.cell.win b,.cell.win span{color:#fff}
+
+/* numbered steps */
+.nb{display:inline-flex;align-items:center;justify-content:center;width:26px;height:26px;border-radius:7px;background:var(--ink);color:#fff;font-size:12px;font-weight:600;flex:none}
+
+@page{size:1280px 720px;margin:0}
+@media print{
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff;padding:0}
+  .deck{gap:0;overflow:visible}
+  .slide{box-shadow:none;break-after:page;page-break-after:always}
+  .slide:last-child{break-after:auto;page-break-after:auto}
+}
+</style>
+</head>
+<body>
+<div class="deck">
+
+<!-- ═════════ 1 · COVER ═════════ -->
+<section class="slide" style="padding-top:52px">
+  <img src="../../../assets/logos/toggle-wordmark-black.png" alt="Toggle" style="height:28px;width:auto;display:block;margin-bottom:76px">
+  <p class="eyebrow">Proposal · Middlesex University · September 2026</p>
+  <h1 style="font-size:56px;font-weight:600;letter-spacing:-.035em;line-height:1.06;margin:0 0 38px"><span style="color:#777">They booked.</span><br>Now make sure they turn up.</h1>
+  <div class="card wash" style="padding:26px 28px">
+    <p class="eyebrow" style="margin-bottom:12px;font-size:11px"><span style="display:contents">What we are proposing, in one sentence</span></p>
+    <p style="margin:0;font-size:21px;font-weight:500;line-height:1.45;letter-spacing:-.01em">Five messages in the five weeks between a student booking your open day and the morning of the event. Four emails and one text.</p>
+  </div>
+</section>
+
+<!-- ═════════ 2 · AUDIENCE ═════════ -->
+<section class="slide">
+  <p class="eyebrow">Where you are · 01 of 04</p>
+  <h2 class="h1">You have a big audience, and none of it points at the open day.</h2>
+  <p class="kicker">Views on the nineteen videos showing on your TikTok profile, read against the views on the open day film you made for this exact job.</p>
+  <div class="grid c4" style="margin-bottom:18px">
+    <div class="card"><p class="stat blue">2.51m</p><p class="sl">Views on 19 TikTok videos</p><p class="sc">Four videos carry 96% of that total.</p></div>
+    <div class="card"><p class="stat">1.2m</p><p class="sl">Views on your biggest one</p><p class="sc">The largest audience Middlesex gathers all year.</p></div>
+    <div class="card"><p class="stat">4,569</p><p class="sl">TikTok followers</p><p class="sc">About 549 views for every follower you have.</p></div>
+    <div class="card grey"><p class="stat rust">185</p><p class="sl">Views on "Open Day: What to Expect"</p><p class="sc">On YouTube, where your last 12 uploads averaged 694.</p></div>
+  </div>
+  <div class="card top sky">
+    <p class="ct">Your social content is good</p>
+    <p class="p">These captions come off your own grid. They read as fluent and native, written by people who understand the platform:</p>
+    <ul class="b sky" style="columns:3;column-gap:28px">
+      <li>"Slay king ✨ #MiddlesexUni #CampusTour #GenZ #UniTok"</li>
+      <li>"Rate the gym outfit 💪 The student off peak pass is only £60 a year?"</li>
+      <li>"Brand new term loading 📚 ⏳"</li>
+    </ul>
+  </div>
+  <div class="band"><b>The audience is already yours.</b> No video on that grid links to the open day booking page, and the link in your bio does not go there either.</div>
+  <p class="src">Source: tiktok.com/@middlesexuniversity profile grid and youtube.com/@middlesexuniversity, captured 11 and 12 September 2026. The three highest-view videos may be pinned, which would flatter their position in the grid. The totals do not depend on the order.</p>
+  <span class="folio">2 / 10</span>
+</section>
+
+<!-- ═════════ 3 · CONFIRMATION PAGE ═════════ -->
+<section class="slide">
+  <p class="eyebrow">Where you are · 02 of 04</p>
+  <h2 class="h1">The open day is well built. The confirmation page passes on one sentence.</h2>
+  <p class="kicker">Your schedule page for Sunday 18 October publishes real, useful detail. This is how much of that detail reaches the person who has just booked a place.</p>
+  <div class="grid c2" style="height:384px">
+    <div class="card top sky">
+      <p class="ct">What your schedule page says</p>
+      <ul class="b sky">
+        <li>Welcome talks at 10am and 12pm, in rooms CG77 and CG76</li>
+        <li>UCAS and personal statements at 12.30pm</li>
+        <li>Accommodation at 1pm, student finance at 1.30pm</li>
+        <li>Library tours at 12, 12.30, 1 and 1.30</li>
+        <li>Doors open 9.30am, parking on site, ten minutes from the Northern Line</li>
+      </ul>
+      <p class="p" style="margin-top:14px">Each subject session carries a hands-on element, one to one time with lecturers, faculty zones and student-led tours of the halls. Somebody at Middlesex did careful work here.</p>
+    </div>
+    <div class="card wash">
+      <p class="ct">What the person who booked gets instead</p>
+      <p style="font-size:19px;font-weight:500;line-height:1.45;margin:0 0 10px">"We will be in touch with further information on the event nearer the time, keep an eye out in your inbox."</p>
+      <p class="mono" style="color:var(--ink-2);margin:0 0 18px">mdx.ac.uk/about-us/events/undergraduate-open-day/thank-you/</p>
+      <p class="p">That page also offers a virtual tour, a campus film and a chat with a current student, all of it good. It all arrives in the ten seconds after they hit submit, when the day is five weeks away and they are not planning anything yet.</p>
+      <p class="p">They still need a schedule for their subject, an arrival time, a calendar file and something written to whoever is driving them. The page carries none of that.</p>
+    </div>
+  </div>
+  <div class="band"><b>The day itself is strong.</b> The person who booked it will not meet any of that careful work until they are standing on campus.</div>
+  <p class="src">Source: rendered captures of mdx.ac.uk/study/open-days/programme/ and the undergraduate open day thank-you page, 12 September 2026. Undergraduate Open Day, Sunday 18 October 2026, 9.30am to 3pm. That page promises emails that follow. Those are sent from inside your systems and are invisible from outside, so we have assumed nothing about them.</p>
+  <span class="folio">3 / 10</span>
+</section>
+
+<!-- ═════════ 4 · THREE PEOPLE ═════════ -->
+<section class="slide">
+  <p class="eyebrow">Where you are · 03 of 04</p>
+  <h2 class="h1">Three people decide whether one booking turns into one visit.</h2>
+  <p class="kicker">Only one of them filled in your form. We have sorted them by the part each one plays in the decision. Age and postcode tell you nothing useful here.</p>
+  <div class="grid c3" style="margin-bottom:18px">
+    <div class="card top">
+      <p class="ct">The student who booked</p>
+      <p class="p"><b>They decide by</b> picturing themselves there. They booked in a burst of motivation weeks ago, often several universities in one sitting.</p>
+      <ul class="b"><li><b>What loses them:</b> they can no longer picture the day, and another university's day is easier to picture</li><li><b>What wins them:</b> their subject, their session and their time, written down for them</li></ul>
+    </div>
+    <div class="card top sky">
+      <p class="ct">The person driving them</p>
+      <p class="p"><b>They decide by</b> cost and effort. A parent, a carer or an older sibling gives up a Sunday and pays for the fuel or the train fares.</p>
+      <ul class="b sky"><li><b>What loses them:</b> you have never asked them anything or sent them anything</li><li><b>What wins them:</b> their own reason to come, and their own thing to do while they are on campus</li></ul>
+    </div>
+    <div class="card top stone">
+      <p class="ct">The one who went quiet</p>
+      <p class="p"><b>They decide by</b> drift. They are still interested and no longer sure. They left your last two emails unopened and will leave a third unopened if it looks the same.</p>
+      <ul class="b stone"><li><b>What loses them:</b> a reminder that repeats the booking confirmation back at them</li><li><b>What wins them:</b> a different format, plus an easy way to say "I cannot make this one, book me the next"</li></ul>
+    </div>
+  </div>
+  <div class="card wash" style="padding:18px 24px"><p class="p"><b>One detail decides this:</b> the undergraduate open day runs on a <b>Sunday, 9.30am to 3pm</b>. A family has to negotiate that between them. We could not find a single piece of content on your site or in your live ads that speaks to the second person in that negotiation.</p></div>
+  <div class="band"><b>A booking is one name in a form.</b> An attendance needs a lift, a Sunday morning and somebody else's agreement, and two of those three people have never heard from you.</div>
+  <p class="src">Source: event timings from mdx.ac.uk. The audience roles are our reading of how this decision gets made, and not a research finding. We would test them against your own booking form data, which records who is coming with whom.</p>
+  <span class="folio">4 / 10</span>
+</section>
+
+<!-- ═════════ 5 · SEARCH AND AI ═════════ -->
+<section class="slide">
+  <p class="eyebrow">Where you are · 04 of 04</p>
+  <h2 class="h1">Google and AI assistants cannot read your open day pages.</h2>
+  <p class="kicker" style="margin-bottom:18px">Event markup is the hidden code on a page that lets Google and an AI assistant state your date, your address and your booking link with confidence. These are the four open day pages on your site.</p>
+  <div class="grid c2" style="gap:18px">
+    <div>
+      <table class="t tight" style="margin-bottom:14px">
+        <tr><th>Middlesex page</th><th>Event markup</th></tr>
+        <tr><td class="mono" style="color:var(--ink)">/study/open-days/ <span style="font-family:var(--sans);font-size:12px;color:var(--ink-2)">(where every ad lands)</span></td><td class="k">None</td></tr>
+        <tr><td class="mono" style="color:var(--ink)">/study/open-days/programme/</td><td class="k">None</td></tr>
+        <tr><td class="mono" style="color:var(--ink)">/about-us/events/undergraduate-open-day/</td><td>Event, but broken</td></tr>
+        <tr><td class="mono" style="color:var(--ink)">/about-us/events/postgraduate-open-event/</td><td>Event, but broken</td></tr>
+      </table>
+      <div class="card grey" style="padding:16px 20px">
+        <p class="ct">What "broken" means here</p>
+        <p class="p" style="font-size:13px;line-height:1.5">The code gives your location as the words <b>"On campus"</b> instead of a real street address, and a partial page link instead of a full one. Google asks for a proper address, so your event cannot show up in the event results you want it in. A developer fixes this in an afternoon.</p>
+      </div>
+    </div>
+    <div class="grid" style="gap:14px;align-content:start">
+      <div class="card wash" style="padding:16px 20px">
+        <p class="ct">Nobody you compete with has fixed it either</p>
+        <p class="p" style="font-size:13px;line-height:1.5">We checked the open day landing pages of five universities you compete with directly. Four of them carry no event markup at all, and the fifth carries page markup only.</p>
+        <div><span class="chip"><b>Kingston</b> · none</span><span class="chip"><b>Greenwich</b> · none</span><span class="chip"><b>Hertfordshire</b> · none</span><span class="chip"><b>Westminster</b> · none</span><span class="chip"><b>Brunel</b> · page markup only</span></div>
+      </div>
+      <div class="card" style="padding:16px 20px">
+        <p class="ct">Your written answers have the same problem</p>
+        <p class="p" style="font-size:13px;line-height:1.5">Your hub already answers "What happens at a university open day?", "What should I bring?" and "What's the best way to get to campus?" in plain English, and it answers them well. None of it is marked up as questions and answers. An assistant asked those same questions finds no Middlesex answer it can use, so it quotes forum threads instead.</p>
+      </div>
+    </div>
+  </div>
+  <div class="band" style="bottom:50px;padding:12px 22px;font-size:13.5px"><b>A student or a parent asking an assistant "is the Middlesex open day worth going to" gets an answer built from forums.</b> You can take that ground this term, before any of them do.</div>
+  <p class="src">Source: rendered captures checking for schema.org JSON-LD on mdx.ac.uk and on kingston.ac.uk, gre.ac.uk, herts.ac.uk, brunel.ac.uk and westminster.ac.uk open day pages, 12 September 2026. The competitor check covers those landing pages only; individual event pages on those sites were not audited.</p>
+  <span class="folio">5 / 10</span>
+</section>
+
+<!-- ═════════ 6 · THE RULE ═════════ -->
+<section class="slide">
+  <p class="eyebrow">What we suggest · The rule all five follow</p>
+  <h2 class="h1">Every message tells them exactly how their Sunday is going to go.</h2>
+  <p class="kicker">Every university in this set promises an experience, and none of them promises a plan. No one has claimed the last row on this table, and Middlesex already publishes the schedule that backs it up.</p>
+  <table class="t tight" style="margin-bottom:16px">
+    <tr><th style="width:25%">What the category says</th><th style="width:27%">Who owns it</th><th>What it sounds like</th></tr>
+    <tr><td class="k">Come and see for yourself</td><td>Every university, Middlesex included</td><td>"Discover for yourself what it's like to be part of our community."</td></tr>
+    <tr><td class="k">The rankings proof</td><td>Middlesex, heavily</td><td>"London's No.1 for Career Prospects", used word for word on postgraduate, Clearing and open day ads.</td></tr>
+    <tr><td class="k">The facilities number</td><td>Middlesex and most rivals</td><td>"Experience £200m world-class facilities."</td></tr>
+    <tr><td class="k">The campus film</td><td>Everyone</td><td>Drone shot, students walking, sunlight.</td></tr>
+    <tr class="hot"><td class="k">Knowing how your day will go</td><td class="blue">Open. Nobody.</td><td class="last">"Your Sunday, in order: your session, your room, your time, the person you will meet, and how to get here."</td></tr>
+  </table>
+  <div class="grid c2">
+    <div class="card grey" style="padding:18px 22px"><p class="ct">Why this one holds</p><p class="p" style="font-size:13px;line-height:1.55">A rival cannot copy it in a week, because it is a schedule, a room list and a set of named people rather than a line of copy. They would have to build the operational detail first, and Middlesex has published all three of those already. It is also the only claim on this slide that speaks to the person driving.</p></div>
+    <div class="card wash" style="padding:18px 22px"><p class="ct">How the rule decides what goes in each message</p><p class="p" style="font-size:13px;line-height:1.55">Every message has to answer one question: does this help them picture the day? A campus beauty shot does not. A station map with a walking time does. We would stop sending rankings claims recycled from Clearing, and stop sending "book now" to a person who has already booked.</p></div>
+  </div>
+  <p class="src">Source: ad copy from the Meta Ad Library (GB, active, 11 September 2026); open day landing pages of Kingston, Greenwich, Hertfordshire, Brunel and Westminster, 12 September 2026. Our recommendation. The claim depends on subject session times being confirmed early enough to publish, which we would confirm with your events team before committing to it.</p>
+  <span class="folio">6 / 10</span>
+</section>
+
+<!-- ═════════ 7 · THE FIVE MESSAGES ═════════ -->
+<section class="slide">
+  <p class="eyebrow">What we suggest · The five messages</p>
+  <h2 class="h1">Four emails and one text, sent one a week for five weeks.</h2>
+  <p class="kicker">We write all five. Each has one job, one format and one recipient, and each goes out on a set day counted back from the event. Email 2 is addressed to the parent, not to the student.</p>
+  <div class="grid c5" style="gap:14px;margin-bottom:14px">
+    <div class="card top" style="padding:20px"><span class="pill">Email 1</span><p class="tiny">On booking · 5 weeks out</p><p class="ct" style="font-size:15px">Make it real right away</p><p class="sc">A calendar file with the address already inside it, their subject session named, and one line on what they will be doing that day. This replaces "we will be in touch".</p></div>
+    <div class="card top sky" style="padding:20px"><span class="pill sky">Email 2</span><p class="tiny">3 weeks out · To the parent</p><p class="ct" style="font-size:15px">Ask the driver</p><p class="sc">A short note written to whoever is bringing them: parking, travel time, what there is for them between 10 and 3, and the two talks worth sitting in on.</p></div>
+    <div class="card top" style="padding:20px"><span class="pill">Email 3</span><p class="tiny">2 weeks out</p><p class="ct" style="font-size:15px">Put a face on it</p><p class="sc">Ninety seconds from the academic running their subject session, saying what they will be doing in that room. One person speaks to them from inside the building.</p></div>
+    <div class="card top" style="padding:20px"><span class="pill">Email 4</span><p class="tiny">1 week out</p><p class="ct" style="font-size:15px">Hand over the running order</p><p class="sc">Their personal schedule: arrival, session, tour, the gap in the middle and what to do with it. Your schedule page, rewritten as one person's Sunday.</p></div>
+    <div class="card top ink" style="padding:20px"><span class="pill ink">Text</span><p class="tiny">The day before</p><p class="ct" style="font-size:15px">Clear the last excuses</p><p class="sc">Weather, trains, which door to walk in and who to look for. Plus a one-tap "I cannot make it, book me the next one" that keeps the relationship alive.</p></div>
+  </div>
+  <div class="grid c3" style="gap:14px">
+    <div class="card grey" style="padding:18px 20px"><p class="ct" style="font-size:15px">Who sends them</p><p class="sc">Your team does, out of GeckoEngage. We write the copy, build the calendar file and the running order, and specify the send triggers.</p></div>
+    <div class="card grey" style="padding:18px 20px"><p class="ct" style="font-size:15px">The mistake we avoid</p><p class="sc">Sending five versions of the same reminder. If two of the five could swap places without anyone noticing, we delete one of them.</p></div>
+    <div class="card wash" style="padding:18px 20px"><p class="ct" style="font-size:15px">Email 2 is the one nobody sends</p><p class="sc">Across the five universities we checked, we found no message written to the parent giving up their Sunday. They are the person who cancels the trip.</p></div>
+  </div>
+  <p class="src">Our recommendation. The five-week shape is our starting assumption and it is the first thing your booking data would correct. If most bookings land ten days out, this becomes three messages and we rebuild it that way before you spend anything. The day-before text assumes you hold mobile numbers and permission to text them. If you do not, it becomes a fifth email.</p>
+  <span class="folio">7 / 10</span>
+</section>
+
+<!-- ═════════ 8 · HOW YOU JUDGE IT ═════════ -->
+<section class="slide">
+  <p class="eyebrow">What we suggest · How you judge it</p>
+  <h2 class="h1">Judge this on show-up rate, or it gets cut in month two.</h2>
+  <p class="kicker">Booked against attended, event by event, against the same event last cycle. Every other number on this slide supports that one.</p>
+  <table class="t" style="margin-bottom:22px">
+    <tr><th style="width:25%">What we measure</th><th>What it tells you</th><th style="width:20%">How soon</th></tr>
+    <tr><td class="k">Show-up rate by event<span>booked against attended</span></td><td>This is the one number that says whether the work paid off. Split it by undergraduate, postgraduate and campus tour.</td><td class="blue">One event cycle</td></tr>
+    <tr><td class="k">Opens and clicks per message</td><td>This shows which of the five is working, so we can drop the ones that are not.</td><td class="blue">Weekly, in cycle</td></tr>
+    <tr><td class="k">Attendees bringing someone</td><td>This tells you whether email 2, the one written to the driver, is working.</td><td class="blue">One event cycle</td></tr>
+    <tr><td class="k">Attendee to application</td><td>This shows whether the extra attendees went on to apply.</td><td class="blue">One admissions cycle</td></tr>
+    <tr><td class="k">Event markup validating</td><td>A yes or a no, and you can check it the day after it ships.</td><td class="blue">Within days</td></tr>
+  </table>
+  <div class="grid c2">
+    <div class="card grey"><p class="ct">Why we ask for this number</p><p class="p">Judge this work on reach and it looks like a failure sitting next to a TikTok that did 1.2 million views. Somebody would then cut the five messages that fill the room. The comparison that counts is your own show-up rate, event against event, across the same period last cycle.</p></div>
+    <div class="card wash"><p class="ct">Where the numbers come from</p><p class="p">All five come out of systems you already run: GeckoEngage bookings, your attendance scans and your admissions CRM. We would agree the baseline from your last three cycles before anything launches, so we settle the starting line before anything begins.</p></div>
+  </div>
+  <p class="src">All five measures come out of systems you already run. We would agree the baseline from your last three event cycles before anything launches.</p>
+  <span class="folio">8 / 10</span>
+</section>
+
+<!-- ═════════ 9 · ITERATION PLAN ═════════ -->
+<section class="slide">
+  <p class="eyebrow">What we suggest · Iteration plan</p>
+  <h2 class="h1">Email/CRM improvement iteration plan</h2>
+  <p class="kicker">We test one thing at each open day and keep the winner for the next one. Cadence goes first, then the visual, then the content.</p>
+  <div class="iter">
+    <div class="od"><b>Open day 1</b><span>We test the cadence</span></div><div class="arrow"><svg viewBox="0 0 44 14" aria-hidden="true"><path d="M0 7H38" stroke="#A3A3AA" stroke-width="2"/><path d="M34 1.5L41 7L34 12.5" fill="none" stroke="#A3A3AA" stroke-width="2"/></svg></div><div class="od"><b>Open day 2</b><span>We test the visual</span></div><div class="arrow"><svg viewBox="0 0 44 14" aria-hidden="true"><path d="M0 7H38" stroke="#A3A3AA" stroke-width="2"/><path d="M34 1.5L41 7L34 12.5" fill="none" stroke="#A3A3AA" stroke-width="2"/></svg></div><div class="od"><b>Open day 3</b><span>We test the content</span></div>
+    <div class="stack"><div class="cell base"><b>Email visual</b></div><div class="cell base"><b>Email content</b></div><div class="cell opt"><b>Email cadence</b><span>Option 1</span></div><div class="cell opt"><b>Email cadence</b><span>Option 2</span></div><div class="cell opt"><b>Email cadence</b><span>Option 3</span></div></div><div></div><div class="stack"><div class="cell win"><b>Email cadence</b><span>Winner</span></div><div class="cell base"><b>Email content</b></div><div class="cell opt"><b>Email visual</b><span>Option 1</span></div><div class="cell opt"><b>Email visual</b><span>Option 2</span></div><div class="cell opt"><b>Email visual</b><span>Option 3</span></div></div><div></div><div class="stack"><div class="cell win"><b>Email cadence</b><span>Winner</span></div><div class="cell win"><b>Email visual</b><span>Winner</span></div><div class="cell opt"><b>Email content</b><span>Option 1</span></div><div class="cell opt"><b>Email content</b><span>Option 2</span></div><div class="cell opt"><b>Email content</b><span>Option 3</span></div></div>
+  </div>
+  <span class="folio">9 / 10</span>
+</section>
+
+<!-- ═════════ 10 · SCOPE ═════════ -->
+<section class="slide">
+  <p class="eyebrow">What we suggest · Scope</p>
+  <h2 class="h1">What sits with us, and what stays with you.</h2>
+  <p class="kicker">We have set this out as inclusions and exclusions so there is no argument later about who owns what. We have left prices out on purpose. Fees follow once you agree the shape below.</p>
+  <div class="grid c2" style="height:378px">
+    <div class="card top">
+      <p class="ct" style="color:var(--blue)">In scope</p>
+      <ul class="b">
+        <li>The four emails and the day-before text: concept, copy, art direction and production</li>
+        <li>The calendar file and the one-page personal running order</li>
+        <li>Moving the work you already own into the right message</li>
+        <li>Filming on the day at the undergraduate and postgraduate events</li>
+        <li>Content for attendees and for the people who booked and did not come</li>
+        <li>The search and AI specification, plus a check that it shipped correctly</li>
+        <li>Show-up reporting against your baseline, event by event</li>
+      </ul>
+    </div>
+    <div class="card top stone">
+      <p class="ct">Not in scope</p>
+      <ul class="b stone">
+        <li><b>Media buying and paid social.</b> Your performance team keeps it. We do not touch the buy, the budget or the platforms.</li>
+        <li><b>Building the sends.</b> We write and specify all five. Your team or your vendor builds them in GeckoEngage.</li>
+        <li><b>Website development.</b> We write the markup specification. Your web team ships it.</li>
+        <li><b>The open day operation itself:</b> scheduling, staffing and rooms.</li>
+        <li><b>Ongoing organic social management.</b> We would propose that separately if you want it.</li>
+      </ul>
+    </div>
+  </div>
+  <div class="band"><b>Your performance team gets the booking.</b> We make sure the person who booked walks through the door on the day.</div>
+  <p class="src">We have left prices out deliberately. Fees, payment terms and total cost of the engagement go in a separate document once scope is settled. We would rather agree what the work is before either of us argues about what it costs. Filming on campus would run through your existing consent and safeguarding process, to whatever standard your events team already uses.</p>
+  <span class="folio">10 / 10</span>
+</section>
+
+</div>
+</body>
+</html>
