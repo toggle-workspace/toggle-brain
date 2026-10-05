@@ -484,6 +484,7 @@ body.modal-on #modal .mcard{transform:none;opacity:1}
 .contact .rl{font-size:14.5px;color:rgba(244,248,253,.62)}
 .contact a{font-family:var(--mono);font-size:15px;letter-spacing:.02em;text-decoration:none;color:var(--aqua);border-bottom:1px solid rgba(140,224,236,.4);padding-bottom:2px;width:fit-content;transition:.2s}
 .contact a:hover{border-bottom-color:var(--aqua)}
+.contact a.btn{display:inline-flex;align-items:center;margin-top:22px;padding:16px 28px;font-size:13px;letter-spacing:.12em;color:#fff}
 .foot{margin-top:clamp(56px,7vw,110px);padding-top:26px;border-top:1px solid rgba(244,248,253,.18);display:flex;flex-wrap:wrap;gap:16px;justify-content:space-between;align-items:center}
 .foot .mark{height:17px}
 .foot .mark svg{fill:var(--paper);height:100%;width:auto}
@@ -537,6 +538,7 @@ body.setup #setup{transform:none}
   .measures{border-color:#ccc!important}
   #close .mono,.contact .rl,.foot .fm{color:#555!important}
   .contact a{color:#B8341C!important}
+  .contact a.btn{display:none!important}
   .foot .mark svg{fill:#000!important}
   .chip-c.dup{display:none}
   .mrow{overflow:visible;-webkit-mask-image:none;mask-image:none}
@@ -1025,6 +1027,7 @@ body.setup #setup{transform:none}
         <span class="rl">Sales and Partnership Director</span>
         <a href="tel:+60125688681">(+60) 12 568 8681</a>
         <a href="mailto:hello@toggle.solutions">hello@toggle.solutions</a>
+        <a class="btn solid" href="https://toggle.solutions/contact" target="_blank" rel="noopener">Book a call</a>
       </div>
     </div>
     <div class="foot">
@@ -1244,29 +1247,42 @@ function openPerson(i){
    not of the section, because object-fit:cover crops it. r is the hover
    radius, also a percentage of the photograph's width.
 
-   Names mapped by Zaid on 2026-09-19. `role` is practice membership, taken
-   from the practice cards in #who, because no job titles exist yet: every
-   brain/team/bios/*.md still carries `role: TBD`. `creds` is empty for the
-   same reason. Fill both in and the card grows to fit. Nothing is guessed. */
+   Names mapped by Zaid on 2026-09-19. Titles and creds summarized from the
+   team bio slides Zaid supplied on 2026-09-24. Julian had no bio slide, so
+   his card still shows practice membership and no creds. */
 const FACES = [
   { x:26.0, y:39.1, where:"Back row, pale blue shirt, holding a laptop overhead",
-    name:"Lau", role:"Conversion practice", creds:[] },
+    name:"Kin Xian Lau", role:"Creative Lead", creds:[
+      "Four years leading creative for lifestyle, skincare and mother-care brands.",
+      "Takes campaigns, ads, branding and content strategy from first idea to rollout."] },
   { x:42.0, y:41.8, where:"Back row, black shirt, pointing up",
     name:"Julian", role:"Acquisition practice", creds:[] },
   { x:53.8, y:42.4, where:"Back row, cream sweater, holding a camera",
-    name:"Shaun", role:"Acquisition practice", creds:[] },
+    name:"Shaun Boey", role:"Performance Lead", creds:[
+      "Six years in media buying, adtech growth, UI/UX and brand strategy.",
+      "RM5m managed across end-to-end digital marketing and expansion in Southeast Asia."] },
   { x:74.0, y:50.7, where:"Back row, far right, navy shirt",
-    name:"Aizad", role:"Conversion practice", creds:[] },
+    name:"Aizad Ridzo", role:"Web Developer", creds:[
+      "Four years building high-performance booking engines and travel portals.",
+      "Builds in React and Node.js, and in Shopify and Elementor, for sites that convert."] },
   /* this one sits on the shoulder rather than mid chest: the credentials
      card opens over the bottom left corner and would hide a lower dot. */
   { x:6.7, y:68.1, where:"Front row, far left, black shirt and glasses",
-    name:"Jordan", role:"Acquisition practice", creds:[] },
+    name:"Jordan Pinto", role:"Performance Director", creds:[
+      "Four years in performance marketing strategy for B2B and B2C brands.",
+      "RM10m managed on regional expansion across Southeast Asia, Europe and the US."] },
   { x:36.0, y:70.2, where:"Front row, white t-shirt, reading a notebook",
-    name:"Viknesh", role:"Retention practice", creds:[] },
+    name:"Viknesh Sivanandan", role:"Sales Director", creds:[
+      "Five years in B2B and B2C sales and client management.",
+      "Clients include Kualesa, UNA Brands, Antidote Lifestyle and F&B brands."] },
   { x:56.5, y:76.4, where:"Front row, centre, navy shirt, holding a flask",
-    name:"Yi Yang", role:"Acquisition and Retention practices", creds:[] },
+    name:"Yi Yang", role:"Strategy Director", creds:[
+      "Six years in performance marketing for ecommerce growth and fintech user acquisition.",
+      "RM60m managed across Southeast Asia, the US, Europe and the Middle East."] },
   { x:89.0, y:76.4, where:"Front row, far right, blue striped shirt",
-    name:"Zaid", role:"Conversion and Retention practices", creds:[] }
+    name:"Zaid Saad", role:"Head of Digital Strategy", creds:[
+      "Nine years in media buying, generative AI, growth planning and content.",
+      "RM45m managed across Southeast Asia, the US, Australia and Europe in education, ecommerce and SaaS."] }
 ];
 
 const pimg = $("#pimg"), faceLayer = $("#faces"), faceCard = $("#facecard");
@@ -1450,7 +1466,9 @@ function buildRows(){
     const reps = Math.max(1, Math.ceil(2800 / (idxs.length * 240)));
     const pass = [];
     for (let k = 0; k < reps; k++) pass.push(...idxs);
-    const inner = pass.map(i => chipHTML(BOOK[i], i, false)).join("");
+    /* only the first pass is real; the repeats are dups so print and
+       reduced motion show each client once */
+    const inner = pass.map((i, n) => chipHTML(BOOK[i], i, n >= idxs.length)).join("");
     const copy  = pass.map(i => chipHTML(BOOK[i], i, true)).join("");
     return '<div class="mrow' + (r % 2 ? " rev" : "") + '">' +
            '<div class="mtrack" style="--dur:' + (pass.length * 7) + 's">' +
@@ -1502,8 +1520,6 @@ function openModal(i){
     (b.challenge ? '<h5>What we walked into</h5><p class="body">' + b.challenge + "</p>" : "") +
     (b.method ? "<h5>What we did</h5><ul>" + b.method.map(m => "<li>" + m + "</li>").join("") + "</ul>" : "") +
     (b.transfer ? '<div class="transfer" style="margin-top:24px"><b>The part that transfers to you</b>' + b.transfer + "</div>" : "") +
-    (b.unpublished ? '<div class="unpub"><b>No published result</b>' + b.unpublished + "</div>" : "") +
-    (!b.proved && !b.unpublished ? '<div class="unpub"><b>We have worked with them</b>We have worked with this company, and we have not written up a public account of it, so there is no result to show you here. Ask us on the call and we will tell you what we did, including the parts that did not work.</div>' : "") +
     '<div class="mfoot"><span class="mono">' + (SHOWN.indexOf(mIndex) + 1) + " of " + SHOWN.length + "</span>" +
     '<span class="mnav"><button class="btn ghost" data-m="prev">Previous</button>' +
     '<button class="btn ghost" data-m="next">Next</button></span></div>';
