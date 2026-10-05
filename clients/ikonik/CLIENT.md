@@ -39,14 +39,38 @@
 - **CONFIRMED in pre-proposal meeting:** rebranded from Prof Muhaya's centre, est. 2021. Three segments: eye surgery (LASIK focus) · eye wellness "iSpa" · aesthetics. Eye segment first; others deferred.
 - Scope agreed direction: 6-month, RM3K/month ex ad spend, content creation NOT included; target = double online patient volume (client promise-averse after prior agency's failed 100K-traffic pledge). TikTok contact: Marcus (LIVE-ads whitelisting = key unlock). No KOL strategy.
 
+## Q4 2026 content calendar
+- Week-by-week TikTok and FB/IG plan for 1 Oct to 31 Dec, plus six open confirmations from Ikonik: `01-strategy/2026-q4-content-calendar.md`. Deck on Jordan's Desktop: `Ikonik-Q4-2026-Content-Calendar.pptx`.
+
 ## Report history
 
-> Reporting cadence is **weekly**. **Start every weekly report by reading `04-reports/weekly-log.md`**: the scorecard for every week, open threads, creative lineage and method notes. Each week, add the new week to that log and write `04-reports/2026-Www-weekly.md`.
+> Reporting cadence is **weekly**, plus a **monthly** deck (see "Monthly reporting" below). **Start every weekly report by reading `04-reports/weekly-log.md`**: the scorecard for every week, open threads, creative lineage and method notes. Each week, add the new week to that log and write `04-reports/2026-Www-weekly.md`.
 
 ### Weekly reporting (how the deck and data work)
 - **Deck master:** `[Ikonik] 2026 - Toggle Weekly Report.pptx` on Jordan's Desktop. It is cumulative, newest week first: slides 1 to 16 are the latest week (cover, 14 content slides, thank you). A freelancer drafts slides 2 to 15; Toggle reviews them and delivers a revised copy of the latest 16 slides as a separate Desktop file.
 - **Clinic leads log:** `Ikonik x Toggle - Ad Platform Leads.xlsx`, one tab per month (`INCOMING DATA-SEPT 2026` etc.). Enquiries and appointments by source (call, email, WhatsApp, TikTok DM, TikTok LIVE, TikTok lead form, Meta lead form) and the LASIK / eye disease / consult / optical / open day mix. Re-pull it before trusting slides 2 to 7, since late entries arrive after the freelancer drafts.
 - **Slide order:** 2 status at a glance · 3 where appointments came from (week vs prior week) · 4 spend vs appointment growth · 5 month to date · 6 projection by platform · 7 enquiry to appointment projection · 8 TikTok · 9 Meta · 10 Google · 11 to 13 Meta creative (lead forms, WhatsApp, calls) · 14 optimizations done · 15 next steps.
+
+### Monthly reporting (how the deck and data work)
+- **Start every monthly report by reading the previous `04-reports/YYYY-MM-monthly.md`**, then `weekly-log.md` for the month's weeks. The monthly file records the counting method, the previous month's baseline by source, what the deck told the client, and a "check these next month" list.
+- **Template:** Jordan copies last month's deck, leaves the old text in, and puts the new platform and ad-level screenshots on slides 8 to 13. Toggle fills slides 2 to 14 and saves the result as a separate `-filled.pptx` next to the template. Do not change his screenshots or the slide structure. Do pull the Meta ad previews into the empty creative slots on slides 11 to 13.
+- **Slide order (15):** 1 cover · 2 status at a glance · 3 how to structure next month's spend · 4 where appointments came from (month vs previous month) · 5 spend vs appointment growth · 6 next month's projection by platform · 7 enquiry to appointment projection · 8 TikTok · 9 Meta · 10 Google · 11 to 13 Meta creative (lead forms, WhatsApp, calls) · 14 next steps · 15 thank you.
+- **Readers:** the Ikonik CEO and Ann (LA), who are not marketers. They care most about **slides 3 to 7**: enquiries, appointments, booking rate, projection and cost per patient.
+- **Writing rules (Jordan, Oct 2026):**
+  - Plain, short and direct. The client asks "so what's the summary?", so lead with the meaning, not the numbers.
+  - Slides 2 to 10 can be technical but must use no jargon, and they should not repeat the screenshot numbers.
+  - Slides 11 to 13 are a creative read. Say which angles worked and which did not, and why, then give scale-up, scale-down and experiment ideas framed as creative angles and messaging. No technical suggestions such as "shift budget to the best ad".
+  - Slide 14 is a summary that adds value.
+  - Run stop-slop on all the text, with no em dashes.
+- **Ad previews:** fetch them from the Meta Graph API with Node, render the `/previews` iframe in Playwright, and crop below the CTA bar, at about 178pt tall. `bin/meta` does not run on the Windows desktop. Before reading ad names, check the Meta activity log for renamed ads whose video was swapped.
+
+### September 2026 monthly report
+- Full detail: `04-reports/2026-09-monthly.md`. Draft deck `2. [Ikonik] Toggle Monthly Report (September 2026)-filled.pptx` delivered 2 Oct 2026.
+- **Headline:** RM18,180.20 spend (19% below August), 720 appointments against 750, 45.3% booked against 31.8%, RM25.25 per appointment against RM29.79. The clinic never logged 30 Sep.
+- **October plan:** RM18,000 (Meta RM11,500, TikTok RM5,000, Google RM1,500), with a target of 100 enquiries a day; about 90 a day at September's costs.
+- **Six-month plan (5 Oct 2026):** `01-strategy/2026-10-six-month-plan.md`, with monthly targets from October 2026 to March 2027. The working plan is the RM18K version (about 4,810 appointments on RM108,000). An RM23,000 version (about 5,750) was built but shelved after the 5 Oct call, since Toggle will not ask for more budget. The RM18K plan still needs the post-call changes (calls first, a campaign every month, clean source labels).
+- **5 Oct 2026 call:** notes in `05-meetings/2026-10-05-weekly-meeting.md` (calls first, a campaign every month, source labels being cleaned up, and the deck going to Mr. Adam via Zaid). The revised summary deck, `3. [Ikonik] Toggle Summary Report (September 2026) - Revised.pptx`, leads with 50 appointments a working day on RM18,000 by December.
+- **Summary deck for the CEO call (5 Oct 2026):** `3. [Ikonik] Toggle Summary Report (September 2026).pptx`, 10 slides after the strategy pass, built because Ikonik asked (via Yang) for a new forecast and for Toggle to be more proactive. It forecasts 750 to 800 October appointments and commits to a daily check with a set rule for when Toggle changes the ads. Detail under "Summary deck" in `04-reports/2026-09-monthly.md`.
 
 ### 2026-W39: reporting period 21 to 27 September 2026
 - Full detail: `04-reports/2026-W39-weekly.md`. Revised deck delivered 28 Sep 2026.
