@@ -5,7 +5,7 @@
 ## Summary
 
 1. **Prosomo controls the ad account, and the history sits elsewhere.** All 23 live SignWell ads first appeared between 7 and 24 May 2026 under a new advertiser ID. Round 1 read "Prosomo Inc." as the payer on every one; round 2 could not re-check this because Google rate-limited the lookup. The older "Docsketch LLC (DBA SignWell)" account, which served Canada, India, Mexico, Brazil, the UK, and Australia, stopped on 2026-05-06 (its oldest ad ran from 2021 to December 2025). The new ads found so far all target the US.
-2. **Non-brand search wastes most of the budget.** It takes 52% of spend and returned 24 qualified sign-ups in August at $379 each. At the 7% conversion baseline, one paying customer costs about $5,400, which is about seven times ACV. The ad copy ("No account needed", "Sign your document for free and move on with your day") attracts one-off personal signers, the exact users SignWell wants to serve for free.
+2. **Non-brand search wastes most of the budget.** It takes 52% of spend and returned 24 qualified sign-ups in August at $379 each. At the confirmed 9.4% trial-to-paid rate, one paying customer costs about $4,000, which is more than five times ACV. The ad copy ("No account needed", "Sign your document for free and move on with your day") attracts one-off personal signers, the exact users SignWell wants to serve for free.
 3. **The ads never say what SignWell says.** The positioning is "paying too much for DocuSign" plus HIPAA and BAA compliance. No live ad names DocuSign, leads with HIPAA, targets healthcare, or runs in Spanish. HIPAA and SOC 2 appear only as trailing tags.
 4. **The tracking needs a rebuild, which is what Lawrence asked for.** The site runs two GTM containers and two GA4 properties. The Meta pixel fires from three places. One container still runs a dead Universal Analytics tag and carries Bing tags labeled `uetqProsomo` with Canadian dollar currency, which look copied from another Prosomo client. The container has no Google Ads conversion tag.
 5. **Prosomo's 1.43x ROAS is a ceiling, not a fact.** The homepage sign-up runs through Google sign-in, so `accounts.google.com` shows up as a referrer on sign-ups from every channel. Prosomo credited all 481 of those sign-ups to paid search. The true blended ROAS sits between 1.04x and 1.43x.
@@ -15,20 +15,20 @@
 
 ## 1. Unit economics
 
-All figures use the August one-pager and client benchmarks. ACV is $775 (midpoint of $750 to $800).
+All figures use the August one-pager and the benchmarks Lawrence confirmed by email on 2026-09-18: qualified sign-ups and trial sign-ups are one population (qualified users enter a 7-day reverse trial with full paid features and no card), self-serve trials convert to paid at about 9.4% over the last two months, and ACV is about $750. Those figures replace the 1.7%, 4%, 6.3% and 7% rates used in the first draft of this audit, and they settle the population question round 2 raised.
 
-| Campaign | Spend | Qualified sign-ups | Cost per sign-up | Cost per customer at 7% | Cost per customer at 1.7% |
+| Campaign | Spend | Qualified sign-ups | Cost per sign-up | Cost per customer at 9.4% | Multiple of $750 ACV |
 |---|---|---|---|---|---|
-| Brand Search | $3,981 | 1,044 | $3.81 | $54 | $224 |
-| PMax | $1,930 | 222 | $8.69 | $124 | $511 |
-| Non-Brand Search | $9,088 | 24 | $378.68 | $5,410 | $22,275 |
+| Brand Search | $3,981 | 1,044 | $3.81 | $41 | 0.05x |
+| PMax | $1,930 | 222 | $8.69 | $92 | 0.12x |
+| Non-Brand Search | $9,088 | 24 | $378.68 | $4,029 | 5.4x |
 | LinkedIn | $2,342 | 0 | n/a | n/a | n/a |
-| Blended (1,290 platform) | $17,342 | 1,290 | $13.44 | $192 | $791 |
+| Blended (1,290 platform) | $17,342 | 1,290 | $13.44 | $143 | 0.19x |
 
-- **Break-even cost per qualified sign-up** is $52.50 to $56 (7% of ACV, 12-month payback). At today's 24 sign-ups, non-brand search justifies about $1,300 a month, against $9,088 spent. Break-even on its current budget needs 168 sign-ups a month.
-- **The conversion value is set too low.** Every qualified sign-up is valued at a flat $14. At 7% of ACV it is worth $52 to $56, so Google may under-bid on the best traffic. Raising values without raising tROAS targets by the same factor (about 3.9x) would cause overspend. The better fix is value rules keyed to the onboarding questionnaire plus offline import of purchases.
-- **Caveats from round 2.** The 7% benchmark describes "non-trial qualified" users, and nobody has confirmed that the paid sign-ups belong to that group. Brand sign-ups likely convert above average and non-brand below it. ACV of $775 is lifted by API and multi-seat accounts, while list prices run $120 to $432 a year per seat. The true value of a paid qualified sign-up sits somewhere between $10 and $56. Use ranges in the proposal until SignWell splits conversion rate and ACV by channel and plan.
-- **The conversion curve.** 57% of eventual conversions happen on day 0, 33% between day 1 and 14, and 10% after day 14. Nurture and retargeting work on the last 43%.
+- **Break-even cost per qualified sign-up** is $70.50 (9.4% of $750, 12-month payback). At today's 24 sign-ups, non-brand search justifies about $1,700 a month, against $9,088 spent. Break-even on its current budget needs 129 sign-ups a month.
+- **The conversion value is set too low.** Every qualified sign-up is valued at a flat $14, against a true $70.50. Google therefore bids on a fifth of what a sign-up earns. Raising values without raising tROAS targets by the same factor (about 5x) would cause overspend. The better fix is value rules keyed to the onboarding questionnaire plus offline import of purchases.
+- **What remains uncertain.** The 9.4% rate is an account-wide average over two months. Brand sign-ups probably convert above it and non-brand below it, and ACV of $750 is lifted by API and multi-seat accounts against list prices of $120 to $432 a year per seat. Ask SignWell to split conversion rate and ACV by channel and plan before any single campaign is judged on $70.50.
+- **The decision window.** Every qualified sign-up holds full paid features for 7 days, so the upgrade decision lands inside that week and shortly after it. Ask for the day-by-day curve across those 7 days, because it sets the email and retargeting cadence.
 
 ### Data conflicts to resolve with the client
 
@@ -37,7 +37,7 @@ All figures use the August one-pager and client benchmarks. ACV is $775 (midpoin
 | Spend | Henry quoted $20,000 to $25,000 a month; August shows $17,342. |
 | Sign-ups | The headline total is 1,771; campaign rows add to 1,290. The 481 are unassigned. |
 | Brand share | Henry said under 20% of spend; August shows 23%. Brand is 81% of 1,290 but 59% of 1,771. |
-| Trial vs free plan | The client says "free trial"; the site sells a free plan and never uses the word trial. |
+| Trial vs free plan | Settled on 2026-09-18: the public site sells a free plan, and qualified sign-ups are placed in a 7-day reverse trial inside the app. |
 | ACV vs list price | $750 to $800 ACV against $144 to $432 a year per seat implies multi-seat or API revenue. |
 | LinkedIn | Described as a small test; it spent $2,342 in August with zero sign-ups. |
 | Social proof | "81,000+ businesses" on the homepage; "65,000+" on the healthcare and Spanish pages. |
@@ -133,7 +133,7 @@ For comparison, Signeasy has 124,244 LinkedIn followers, DocuSign has 607,540, a
 
 ## 6. Growth levers for the proposal (on top of paid ads)
 
-Upside ranges use the 1,290 platform-reported sign-ups and $775 ACV. One extra customer a month is worth about $9,300 in new ARR a year. Every range is a scenario, not a forecast, and vendor benchmarks were not used as proof.
+Upside ranges use the 1,290 platform-reported sign-ups and $750 ACV. One extra customer a month is worth about $9,000 in new ARR a year. Every range is a scenario, not a forecast, and vendor benchmarks were not used as proof.
 
 ### 6.1 Email nurturing and in-app upgrades
 - **Today:** one email after sign-up and a top-bar banner. Userlist and HubSpot are already installed, so the gap is content and product events, not tooling.
@@ -189,7 +189,7 @@ Upside ranges use the 1,290 platform-reported sign-ups and $775 ACV. One extra c
 - **Compliance caveat:** the IRS allows e-signing of Form 8879 only with identity verification such as knowledge-based authentication. We found no sign that SignWell offers it. Lead with "audit-ready engagement letters inside QuickBooks and Xero" and confirm with Ruben before any tax-form claim.
 - **Test (about $3,000 a month, 15% of spend):** $1,400 on non-brand search ("QuickBooks e-signature", "Xero e-signature", "engagement letter e-signature", "DocuSign alternative for accountants"), $1,000 on LinkedIn, and $600 on retargeting accounting and integration page visitors. Add a paid variant of the accounting page, a four-email accounting track, and two LinkedIn posts a week.
 - **KPI:** cost per paid customer at or below $140 (break-even at a $2,000 ACV), qualified sign-up cost at or below $56, multi-seat share, and integration connection rate.
-- **Kill or scale:** at day 30, cut LinkedIn if cost per lead exceeds $150 with fewer than 5 qualified sign-ups. At day 60, cut to $1,000 a month if accounting sign-ups convert below 4% or show no ACV lift. At day 90, scale to 25% of spend if cost per paid customer is at or below $140 and ACV is at or above $1,000; otherwise switch to LatAm.
+- **Kill or scale:** at day 30, cut LinkedIn if cost per lead exceeds $150 with fewer than 5 qualified sign-ups. At day 60, cut to $1,000 a month if accounting sign-ups convert below 7% against the 9.4% baseline, or show no ACV lift. At day 90, scale to 25% of spend if cost per qualified sign-up is at or below $188 and ACV is at or above $2,000; otherwise switch to LatAm.
 - **Runner-up:** Mexico (NOM-151) in Q1, after a localization sprint adds a Spanish self-serve page, geo-targeted ads, and rep capacity.
 
 ## 8. Ninety-day plan
@@ -205,7 +205,7 @@ Upside ranges use the 1,290 platform-reported sign-ups and $775 ACV. One extra c
 ## 9. Open questions for SignWell
 
 1. What is true monthly ad spend, and does the $20,000 to $25,000 figure include Prosomo's fee?
-2. What does "trial" mean, and which population do the 1.7%, 4%, 6.3%, and 7% rates describe? What window does "overall" cover?
+2. Answered on 2026-09-18: qualified and trial sign-ups are one population, the reverse trial runs 7 days with no card, self-serve trials convert at about 9.4%, and ACV is about $750. Still open: the day-by-day upgrade curve across those 7 days.
 3. What are conversion rate, ACV, and churn by channel, plan, API vs non-API, healthcare, and Spanish-language users?
 4. How do conversions reach Google Ads, with what values, windows, and bid strategies?
 5. Who owns the Meta and LinkedIn ad accounts, and can we get into the old Docsketch Google Ads account?
