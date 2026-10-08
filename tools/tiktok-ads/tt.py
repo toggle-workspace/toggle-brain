@@ -209,6 +209,39 @@ def cmd_auth_url():
     print('   tools/tiktok-ads/tt auth exchange "<paste the whole URL here>" --save')
 
 
+def save_token(path, token):
+    """Write TIKTOK_ACCESS_TOKEN into .env, replacing any line already there.
+
+    load_dotenv keeps the first match, so appending after an old token (or an
+    empty placeholder) would leave the old value in force. Re-consenting for a
+    new client must replace the token, not shadow it. Returns True if a line
+    was replaced, False if the token was appended.
+    """
+    line = f'export TIKTOK_ACCESS_TOKEN="{token}"\n'
+    pattern = re.compile(r'\s*(?:export\s+)?TIKTOK_ACCESS_TOKEN=')
+    lines = []
+    if os.path.exists(path):
+        with open(path, encoding="utf-8") as f:
+            lines = f.readlines()
+    out, replaced = [], False
+    for existing in lines:
+        if pattern.match(existing):
+            if not replaced:
+                out.append(line)
+                replaced = True
+            continue
+        out.append(existing)
+    if not replaced:
+        if out and not out[-1].endswith("\n"):
+            out[-1] += "\n"
+        out.append("\n# TikTok Ads (tools/tiktok-ads/tt). Long-lived; rotate, never delete.\n")
+        out.append(line)
+    with open(path, "w", encoding="utf-8") as f:
+        f.writelines(out)
+    os.chmod(path, 0o600)
+    return replaced
+
+
 def cmd_auth_exchange(raw_input, save):
     app_id = need("TIKTOK_APP_ID", "add it to .env")
     secret = need("TIKTOK_APP_SECRET", "add it to .env")
@@ -232,11 +265,9 @@ def cmd_auth_exchange(raw_input, save):
         print(f"  {a}")
     if save:
         path = os.path.join(PROJECT, ".env")
-        with open(path, "a", encoding="utf-8") as f:
-            f.write("\n# TikTok Ads (tools/tiktok-ads/tt). Long-lived; rotate, never delete.\n")
-            f.write(f'export TIKTOK_ACCESS_TOKEN="{token}"\n')
-        os.chmod(path, 0o600)
-        print(f"\nsaved to {path} as TIKTOK_ACCESS_TOKEN (chmod 600)")
+        replaced = save_token(path, token)
+        how = "replaced the existing line" if replaced else "appended"
+        print(f"\nsaved to {path} as TIKTOK_ACCESS_TOKEN ({how}, chmod 600)")
     else:
         print("\nNot saved. Re-run with --save, or add this line to .env yourself:")
         print('  export TIKTOK_ACCESS_TOKEN="<the token above>"')
