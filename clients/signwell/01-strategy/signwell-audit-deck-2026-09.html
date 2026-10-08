@@ -1,0 +1,387 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>SignWell · Timeline and Plan</title>
+<meta name="description" content="A chronologic timeline and plan for SignWell across paid search, email nurture, retargeting, organic growth, measurement and budget.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Instrument+Sans:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+<style>
+/* Toggle sales surface colorway (clients/toggle/sales-page) on the Toggle
+   1280x720 pitch deck frame. Light theme only, locked. */
+:root{
+  --paper:#F4F8FD; --lift:#FFFFFF; --deep:#E6EFFA;
+  --ink:#0E1B33; --ink-2:#4A5A75; --ink-3:#8794AC;
+  --line:#D5E2F0; --line-soft:#E7EFF9;
+  --accent:#2A6BE0; --accent-deep:#1B4CB0; --wash:#E3EDFC;
+  --sky:#7FB3EE; --aqua:#8CE0EC; --navy:#0F2A47;
+  --teal:#1FA5B8; --alert:#DB4A45; --amber:#D2971E;
+  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --sans:"Instrument Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#DCE6F2;color:var(--ink);font-family:var(--sans);padding:40px 16px 80px;-webkit-font-smoothing:antialiased}
+.dochead,.note{max-width:1280px;margin:0 auto 12px;font-size:13px;color:var(--ink-2)}
+.note{margin:34px auto 10px;font-family:var(--mono);font-size:11px;letter-spacing:.06em}
+.note b{color:var(--accent-deep)}
+.deckwrap{overflow-x:auto}
+.slide{width:1280px;height:720px;margin:0 auto;background:var(--paper);position:relative;overflow:hidden;
+  padding:56px 64px 84px;display:flex;flex-direction:column;box-shadow:0 2px 22px rgba(14,27,51,.16)}
+.slide.dark{background:var(--ink);color:var(--paper)}
+.slide.lift{background:var(--lift)}
+
+/* chrome */
+.mark{position:absolute;top:30px;right:64px;height:18px;width:auto}
+.slide.dark .mark{filter:invert(1)}
+.folio{position:absolute;left:64px;right:64px;bottom:28px;display:flex;justify-content:space-between;
+  font-family:var(--mono);font-size:10px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.slide.dark .folio{color:#6F7F9C}
+
+/* type */
+.eyebrow{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin:0 0 14px;display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--accent)}
+.slide.dark .eyebrow{color:var(--aqua)}.slide.dark .eyebrow::before{background:var(--aqua)}
+.h1{font-family:var(--serif);font-weight:400;font-size:52px;line-height:1.0;letter-spacing:-.02em;margin:0 0 14px}
+.h1 em,.display em{font-style:italic;color:var(--accent)}
+.slide.dark .h1 em,.slide.dark .display em{color:var(--aqua)}
+.display{font-family:var(--serif);font-weight:400;font-size:88px;line-height:.94;letter-spacing:-.03em;margin:0}
+.kicker{font-size:17px;line-height:1.5;color:var(--ink-2);margin:0 0 26px;max-width:none}
+.slide.dark .kicker{color:#B7C4DA}
+.mono{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.num{font-variant-numeric:tabular-nums}
+.small{font-size:13.5px;line-height:1.5;color:var(--ink-2);margin:0}
+.slide.dark .small{color:#B7C4DA}
+
+/* layout */
+.grid{display:grid;gap:18px}
+.c2{grid-template-columns:1fr 1fr}.c3{grid-template-columns:repeat(3,1fr)}.c4{grid-template-columns:repeat(4,1fr)}
+.c5{grid-template-columns:repeat(5,1fr)}
+.fill{flex:1 1 auto;min-height:0}
+.card{background:var(--lift);border:1px solid var(--line);border-radius:14px;padding:22px}
+.slide.lift .card{background:var(--paper)}
+.card.wash{background:var(--wash);border-color:transparent}
+.card.ink{background:var(--ink);color:var(--paper);border-color:transparent}
+.card.ink .small{color:#B7C4DA}
+.ct{font-size:17px;font-weight:600;letter-spacing:-.01em;margin:0 0 8px;line-height:1.25}
+.big{font-family:var(--serif);font-size:58px;line-height:.9;letter-spacing:-.03em;color:var(--ink)}
+.big.accent{color:var(--accent)}
+.big.sm{font-size:44px}
+.cap{font-size:13px;line-height:1.45;color:var(--ink-2);margin-top:10px}
+.card.ink .cap{color:#B7C4DA}
+.idx{font-family:var(--serif);font-size:40px;line-height:.8;color:var(--line)}
+ul.b{margin:8px 0 0;padding:0;list-style:none}
+ul.b li{font-size:13.5px;line-height:1.45;color:var(--ink-2);padding:4px 0 4px 16px;position:relative}
+ul.b li::before{content:"";position:absolute;left:0;top:11px;width:6px;height:6px;border-radius:2px;background:var(--accent)}
+.card.ink ul.b li{color:#B7C4DA}.card.ink ul.b li::before{background:var(--aqua)}
+.sev{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2)}
+.sev i{width:7px;height:7px;border-radius:2px;background:var(--alert)}
+.sev.b i{background:var(--amber)}.sev.c i{background:var(--accent)}
+.tag{display:inline-block;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;
+  padding:4px 9px;border-radius:999px;border:1px solid var(--line);color:var(--ink-2);background:var(--lift)}
+.tag.s{border-color:var(--amber);color:#8A6212}
+.band{margin-top:auto;background:var(--ink);color:var(--paper);border-radius:12px;padding:16px 22px;font-family:var(--serif);font-size:24px;line-height:1.2;letter-spacing:-.01em}
+.band em{font-style:italic;color:var(--aqua)}
+
+/* tables */
+table.t{width:100%;border-collapse:collapse;font-size:13.5px}
+table.t th{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);text-align:left;padding:8px 12px;border-bottom:2px solid var(--ink)}
+table.t td{font-size:14px;padding:10px 12px;border-bottom:1px solid var(--line);color:var(--ink-2);vertical-align:top}
+table.t td.r,table.t th.r{text-align:right}
+table.t td.k{color:var(--ink);font-weight:600}
+table.t tr.hot td{background:#FDECEB}
+table.t tr.hot td.k{color:#A3302C}
+table.t tr.tot td{border-bottom:2px solid var(--ink);color:var(--ink);font-weight:600}
+
+/* chart */
+.chart{display:flex;flex-direction:column;gap:16px}
+.crow{display:grid;grid-template-columns:170px 1fr;gap:14px;align-items:center}
+.crow .lab{font-size:13.5px;font-weight:600;line-height:1.25}
+.crow .lab span{display:block;font-weight:400;font-size:12.5px;color:var(--ink-3)}
+.bars{display:flex;flex-direction:column;gap:2px}
+.bar{height:18px;border-radius:0 4px 4px 0;position:relative}
+.track{background:var(--line-soft);border-radius:0 4px 4px 0}
+.crow.hot{background:#FBEAEA;border-radius:8px;padding:6px 0 6px 8px;margin-left:-8px}
+.bar.sp{background:#2A6BE0}.bar.su{background:#1FA5B8}
+.bar b{position:absolute;left:calc(100% + 8px);top:50%;transform:translateY(-50%);font-family:var(--mono);font-size:11px;font-weight:700;color:var(--ink);white-space:nowrap}
+.bar:hover{filter:brightness(1.12)}
+.legend{display:flex;gap:18px;font-size:12px;color:var(--ink-2)}
+.legend span{display:inline-flex;align-items:center;gap:7px}
+.legend i{width:12px;height:12px;border-radius:3px}
+
+/* strikethrough rewrite (one per artifact) */
+.strike{position:relative;color:var(--ink-3);white-space:nowrap}
+.strike::after{content:"";position:absolute;left:-2%;right:-2%;top:54%;height:5px;background:var(--alert);transform:rotate(-2deg)}
+
+/* seal */
+.seal{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.slide.dark .seal{color:var(--aqua)}
+
+/* ad mock */
+.ad{background:var(--lift);border:1px solid var(--line);border-radius:12px;padding:14px 16px}
+.ad .sp{font-size:12.5px;font-weight:700;color:var(--ink)}
+.ad .u{font-size:12.5px;color:var(--ink-3);margin-bottom:4px}
+.ad .hd{font-size:16px;color:#1A0DAB;line-height:1.3;margin-bottom:3px}
+.ad .ds{font-size:12.5px;color:var(--ink-2);line-height:1.4}
+
+/* wave + iso */
+.wave{position:absolute;left:0;right:0;bottom:0;height:62%;pointer-events:none;
+  -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 30%);mask-image:linear-gradient(180deg,transparent 0%,#000 30%)}
+.wave svg{width:100%;height:100%;display:block}
+.iso polygon{fill:none;stroke:var(--accent);stroke-width:2;stroke-linecap:butt;stroke-linejoin:miter}
+.iso polygon.f{fill:var(--accent)}
+.flist{display:grid;grid-template-columns:1fr 1fr;gap:0 44px;margin-top:auto}
+.flist p{font-size:17px;line-height:1.4;color:#D5DEEC;margin:0;padding:13px 0;border-top:1px solid #243457;display:flex;gap:14px}
+.flist b{font-family:var(--mono);font-size:12px;color:var(--aqua);padding-top:4px}
+.z{position:relative;z-index:1}
+.folio.z{position:absolute}
+.roomy ul.b li{font-size:15.5px;padding:7px 0 7px 18px}.roomy ul.b li::before{top:15px}
+.roomy .ct{font-size:20px}
+
+@page{size:1280px 720px;margin:0}
+@media print{
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff;padding:0}
+  .note,.dochead{display:none}
+  .slide{box-shadow:none;page-break-after:always;break-after:page}
+  .slide:last-of-type{page-break-after:auto}
+}
+</style>
+</head>
+<body>
+
+<div class="deckwrap">
+
+<!-- ═════════ 1 · COVER ═════════ -->
+<section class="slide">
+  <div class="wave"><svg viewBox="0 0 1280 440" preserveAspectRatio="none" aria-hidden="true">
+    <defs><linearGradient id="wg" x1="0" x2="1" y1="0" y2="0"><stop offset="0" stop-color="#7FB3EE"/><stop offset="1" stop-color="#8CE0EC"/></linearGradient></defs>
+    <path d="M0 230 C220 170 420 290 660 230 S1080 150 1280 210 L1280 440 L0 440Z" fill="url(#wg)" opacity=".35"/>
+    <path d="M0 250 C260 190 470 300 720 240 S1110 180 1280 230 L1280 440 L0 440Z" fill="url(#wg)" opacity=".5"/>
+    <path d="M0 330 C240 290 520 370 780 320 S1130 280 1280 310 L1280 440 L0 440Z" fill="url(#wg)" opacity=".75"/>
+  </svg></div>
+  <div class="z" style="margin-top:48px">
+    <img src="../../../assets/logos/toggle-wordmark-black.png" alt="Toggle Solutions" style="display:block;height:64px;width:auto;margin:0 0 44px">
+    <h1 class="display" style="font-size:80px">Acquisition plan<br>for <em>SignWell</em></h1>
+  </div>
+  
+</section>
+
+<!-- ═════════ EXECUTIVE SUMMARY ═════════ -->
+<section class="slide">
+  <p class="eyebrow">Executive summary</p>
+  <h2 class="h1"><em>Plan</em></h2>
+  <p class="kicker">SignWell spends most of its budget on searches that do not convert, and runs no retargeting, almost no email, and little organic. We fix the measurement, move the money to buyers who raise ACV, and open three channels that cost less than search.</p>
+  <div class="grid c4" style="margin-bottom:18px">
+    <div class="card topbar"><p class="mono" style="margin:0 0 10px">Where you are</p><ul class="b" style="margin:0"><li>52% of spend returns 1.9% of sign-ups.</li><li>Prosomo holds the ad account.</li><li>Seven pixels collect visitors that nobody targets.</li><li>One email follows a sign-up.</li></ul></div>
+    <div class="card"><p class="mono" style="margin:0 0 10px">What we change</p><ul class="b" style="margin:0"><li>One tracking spec, then a SignWell-owned Google Ads account.</li><li>Search rebuilt around API, team, healthcare and switcher buyers.</li><li>Paid social on Meta, LinkedIn and Reddit.</li><li>Email, in-app prompts, retargeting and founder-led organic.</li></ul></div>
+    <div class="card wash"><p class="mono" style="margin:0 0 10px;color:var(--accent-deep)">What it costs</p><div class="big accent num" style="font-size:44px">$20–25k</div><p class="cap">A month in media, the budget you run today. October starts at $20,000 on search, and social opens in November once the pixels are clean.</p></div>
+    <div class="card ink"><p class="mono" style="margin:0 0 10px;color:var(--aqua)">What you get by January</p><ul class="b" style="margin:0"><li>Accounts and data in SignWell's name.</li><li>Every sign-up valued by what it earns.</li><li>Three channels feeding the top of the funnel.</li><li>A weekly dashboard in place of the monthly PDF.</li></ul></div>
+  </div>
+  <div class="band" style="margin-top:0">Same budget, <em>rebuilt around the buyers who pay for seats, volume and compliance.</em></div>
+  <div class="folio"><span></span><span>02</span></div>
+</section>
+
+<!-- ═════════ FULL FUNNEL ═════════ -->
+<section class="slide">
+  <p class="eyebrow">The funnel</p>
+  <h2 class="h1">Search closes demand. <em>Social creates it.</em></h2>
+  <p class="kicker">Today every paid dollar sits at the bottom of the funnel, where the audience is finite. We keep that engine and add the stages above and below it.</p>
+  <div class="grid c5" style="margin-bottom:18px">
+    <div class="card topbar"><p class="mono" style="margin:0 0 8px">Stage 01</p><p class="ct">Create demand</p><p class="small">Meta, LinkedIn and Reddit prospecting, YouTube and Demand Gen, founder and developer organic.</p><p class="tag" style="margin-top:12px">From November</p></div>
+    <div class="card topbar t-teal"><p class="mono" style="margin:0 0 8px">Stage 02</p><p class="ct">Win the comparison</p><p class="small">Non-brand search by buyer, competitor and switcher terms, your six alternative pages, free tools.</p><p class="tag" style="margin-top:12px">October</p></div>
+    <div class="card topbar t-purple"><p class="mono" style="margin:0 0 8px">Stage 03</p><p class="ct">Capture the sign-up</p><p class="small">Brand search without login terms, Performance Max, retargeting of pricing and comparison visitors.</p><p class="tag" style="margin-top:12px">October</p></div>
+    <div class="card topbar t-orange"><p class="mono" style="margin:0 0 8px">Stage 04</p><p class="ct">Turn free into paid</p><p class="small">The 7-day reverse trial, worked by email and in-app prompts, plus retargeting of trials that have not bought.</p><p class="tag" style="margin-top:12px">October</p></div>
+    <div class="card topbar t-slate"><p class="mono" style="margin:0 0 8px">Stage 05</p><p class="ct">Raise contract value</p><p class="small">Seat and API expansion tracks, healthcare and accounting proof, Customer Match on paying accounts.</p><p class="tag" style="margin-top:12px">November</p></div>
+  </div>
+  <div class="grid c2" style="gap:18px">
+    <div class="card wash"><p class="ct">Why social waits for the spec</p><p class="small">Your Meta pixel fires from three places and LinkedIn reported no conversions on $2,342 in August. We fix the tags in October, so the first social dollar buys data we can trust.</p></div>
+    <div class="card"><p class="ct">The free tools sit above all of this</p><p class="small">The signature and template tools draw search traffic that nobody measures. We ask Ruben the question directly: do they bring paying customers, or take sign-ups that paid search would have won?</p></div>
+  </div>
+  <div class="folio"><span></span><span>03</span></div>
+</section>
+
+<!-- ═════════ 14 · LEVER 1 PAID ═════════ -->
+<section class="slide">
+  <p class="eyebrow">Lever 01 · Paid search</p>
+  <h2 class="h1">Say what <em>only SignWell</em> can say</h2>
+  <p class="kicker">We rebuild non-brand search around the buyers who raise ACV, cap it at what it earns until it proves more, and write ads competitors cannot copy.</p>
+  <div class="grid c5" style="gap:12px;margin-bottom:18px">
+    <div class="ad"><div class="sp">API builders</div><div class="hd" style="margin-top:6px">25 Live API Docs Free Monthly</div><div class="ds">Send legally binding API documents with a card on file. Then from $0.85 each.</div></div>
+    <div class="ad"><div class="sp">Growing teams</div><div class="hd" style="margin-top:6px">3 Senders From $30 a Month</div><div class="ds">Unlimited templates for your team. $30 billed yearly, or $36 monthly with no contract.</div></div>
+    <div class="ad"><div class="sp">Healthcare</div><div class="hd" style="margin-top:6px">Signed BAA, Month to Month</div><div class="ds">HIPAA eSignatures with a signed BAA and SOC 2 Type II. Built for home care teams.</div></div>
+    <div class="ad"><div class="sp">DocuSign switchers</div><div class="hd" style="margin-top:6px">Unlimited Documents From $12</div><div class="ds">Leaving DocuSign? Send unlimited documents from $12 a month. Cancel anytime.</div></div>
+    <div class="ad"><div class="sp">Mexico</div><div class="hd" style="margin-top:6px">Firma Electrónica NOM-151</div><div class="ds">Firma contratos con validez legal en México. Empieza gratis, sin tarjeta.</div></div>
+  </div>
+  <div class="grid c3 fill">
+    <div class="card"><p class="ct">Rebuild</p><ul class="b"><li>We open a Google Ads account in SignWell's name.</li><li>We split non-brand by buyer: API, teams, healthcare and switchers.</li><li>We exclude login searches from paid brand.</li></ul></div>
+    <div class="card"><p class="ct">Reallocate</p><ul class="b"><li>We hold the current non-brand keywords near $1,700 a month and fund buyer-led campaigns beside them.</li><li>The rest of the $20,000 to $25,000 funds switcher, vertical, retargeting and social tests.</li><li>We pause LinkedIn until its tracking reports.</li></ul></div>
+    <div class="card wash"><p class="ct">Measure</p><ul class="b"><li>We track cost per qualified sign-up against the $70 line.</li><li>We report paying customers and ACV by campaign.</li><li>You get a live dashboard every week in place of the PDF.</li></ul></div>
+  </div>
+  <div class="folio"><span></span><span>04</span></div>
+</section>
+
+<!-- ═════════ 15 · LEVER 2 EMAIL ═════════ -->
+<section class="slide">
+  <p class="eyebrow">Lever 02 · Email nurture and in-app</p>
+  <h2 class="h1">Every sign-up gets <em>seven days of paid features</em></h2>
+  <p class="kicker">Qualified sign-ups drop into a 7-day reverse trial with no card, and 9.4% of them buy. Those seven days carry one email today.</p>
+  <div class="grid fill" style="grid-template-columns:1.3fr 1fr;gap:24px">
+    <div class="card">
+      <p class="mono" style="margin:0 0 14px">The track we build in Userlist, which your site runs</p>
+      <div class="grid c5" style="gap:8px;margin-bottom:16px">
+        <div class="card wash" style="padding:12px"><p class="mono" style="margin:0;color:var(--accent-deep)">Day 0</p><p class="small" style="margin-top:6px">Send your first document</p></div>
+        <div class="card wash" style="padding:12px"><p class="mono" style="margin:0;color:var(--accent-deep)">Day 1</p><p class="small" style="margin-top:6px">Templates for your use case</p></div>
+        <div class="card wash" style="padding:12px"><p class="mono" style="margin:0;color:var(--accent-deep)">Day 3</p><p class="small" style="margin-top:6px">Add your team</p></div>
+        <div class="card wash" style="padding:12px"><p class="mono" style="margin:0;color:var(--accent-deep)">Day 5</p><p class="small" style="margin-top:6px">Proof from your segment</p></div>
+        <div class="card wash" style="padding:12px"><p class="mono" style="margin:0;color:var(--accent-deep)">Day 7</p><p class="small" style="margin-top:6px">Trial ends: the plan that fits your volume</p></div>
+      </div>
+      <ul class="b">
+        <li><b>Limit prompts:</b> SignWell sends an in-app message and an email when a user hits three documents, one template or one sender.</li>
+        <li><b>Segment tracks</b> follow your onboarding questionnaire: API developers, healthcare, high-volume teams, and switchers named in your template form.</li>
+        <li><b>Win-back on days 10 and 14</b> for trials that lapse without buying, which no email reaches today.</li>
+        <li><b>A Spanish track</b> launches, with a slot for the Q4 vertical.</li>
+        <li><b>A 10% holdout</b> gets no emails, and we measure the lift against it.</li>
+      </ul>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div class="card ink"><span class="tag s" style="background:transparent;color:#F1C66B;border-color:#F1C66B">Scenario</span><div class="big num" style="color:#fff;margin-top:12px">+6.5 to 12.9</div><p class="cap">Paying customers a month from the combined email and in-app gain</p></div>
+      <div class="card wash"><div class="big accent sm num">$58k–116k</div><p class="cap">New annual recurring revenue at $750 ACV</p></div>
+    </div>
+  </div>
+  <div class="folio"><span>Scenario on 1,290 qualified sign-ups a month, measured against a 10% holdout</span><span>05</span></div>
+</section>
+
+<!-- ═════════ 16 · LEVER 3 RETARGETING ═════════ -->
+<section class="slide">
+  <p class="eyebrow">Lever 03 · Retargeting</p>
+  <h2 class="h1" style="font-size:44px">Seven platforms' pixels load on your site, and <em>no retargeting</em> runs on them</h2>
+  <p class="kicker">Google Ads, Meta, LinkedIn, Reddit, X, Bing and OpenAI tags load on signwell.com today. We clean them up and put the audiences to work.</p>
+  <div class="grid fill" style="grid-template-columns:1.4fr 1fr;gap:24px">
+    <table class="t">
+      <tr><th style="width:6%">#</th><th>Audience</th><th style="width:40%">Message</th></tr>
+      <tr><td class="num">1</td><td class="k">Signed up, not yet paid</td><td>The segment's next step, by questionnaire answer</td></tr>
+      <tr><td class="num">2</td><td class="k">Pricing and API pricing visitors</td><td>Higher bids when they search again</td></tr>
+      <tr><td class="num">3</td><td class="k">DocuSign, HelloSign and Adobe Sign comparison visitors</td><td>Switching proof and the price gap</td></tr>
+      <tr><td class="num">4</td><td class="k">Free-tool users who did not sign up</td><td>Send your own documents for free, with a frequency cap</td></tr>
+      <tr><td class="num">×</td><td class="k">Paying customers and personal-use sign-ups</td><td>We exclude them everywhere</td></tr>
+    </table>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <div class="card"><p class="ct">Launch order</p><ul class="b"><li>We start on Reddit, in the account SignWell owns.</li><li>Meta and LinkedIn follow once we fix the duplicate pixels, if SignWell owns those accounts.</li><li>Google follows once your own Ads account is live, using GA4 audiences we start building in week one.</li></ul></div>
+      <div class="card ink"><span class="tag s" style="background:transparent;color:#F1C66B;border-color:#F1C66B">Scenario · first 90 days</span><div class="big sm num" style="color:#fff;margin-top:12px">10 to 30</div><p class="cap">Extra qualified sign-ups a month on $1,000 to $1,500 of spend, measured against a holdout, which is 1 to 3 paying customers at 9.4%. We keep pixels out of the logged-in app and patient-facing healthcare flows.</p></div>
+    </div>
+  </div>
+  <div class="folio"><span>Scenario, measured against an audience holdout</span><span>06</span></div>
+</section>
+
+<!-- ═════════ 17 · LEVER 4 ORGANIC ═════════ -->
+<section class="slide">
+  <p class="eyebrow">Lever 04 · Organic growth</p>
+  <h2 class="h1">Each document you send puts SignWell in front of <em>a new signer</em></h2>
+  <p class="kicker">Most SignWell documents land in a signer's inbox. We turn those signers, your founder and your developers into sources of sign-ups that cost nothing in ad spend.</p>
+  <div class="grid c3 fill" style="margin-bottom:16px">
+    <div class="card wash"><p class="mono" style="margin:0 0 10px;color:var(--accent-deep)">Signer to sender</p><p class="ct">"Send your own for free"</p><p class="small">We audit what signers see today, then test a sender prompt with tracked links inside the product and its emails.</p></div>
+    <div class="card"><p class="mono" style="margin:0 0 10px">Founder-led LinkedIn</p><p class="ct">Ruben, plus two or three team voices</p><p class="small">Ruben posts the bootstrapped story, his pricing philosophy and the case against overpaying for e-signature, and the team reshares it.</p></div>
+    <div class="card"><p class="mono" style="margin:0 0 10px">Developer video</p><p class="ct">API and MCP in two minutes</p><p class="small">We publish short tutorials on YouTube and X that link to docs and pricing.</p></div>
+    <div class="card"><p class="mono" style="margin:0 0 10px">Vertical series</p><p class="ct">Healthcare and the Q4 vertical</p><p class="small">We publish BAA workflows, home care stories and team-size proof that point buyers to multi-seat plans.</p></div>
+    <div class="card"><p class="mono" style="margin:0 0 10px">Spanish</p><p class="ct">Voiced by your LatAm reps</p><p class="small">Your reps explain legal validity in Mexico on LinkedIn and point readers to self-serve sign-up.</p></div>
+    <div class="card"><p class="mono" style="margin:0 0 10px">Partners</p><p class="ct">Bookkeepers and agencies</p><p class="small">We recruit them into your Rewardful affiliate program.</p></div>
+  </div>
+  <div class="card ink" style="padding:14px 20px"><p class="small"><b style="color:#fff">Your SEO agency keeps its lane.</b> We leave blog posts, free-tool pages, comparison pages, schema and AI-answer content to them, and we agree one set of tracking tags for every link.</p></div>
+  <div class="folio"><span></span><span>07</span></div>
+</section>
+
+<!-- ═════════ 18 · Q4 VERTICAL ═════════ -->
+<section class="slide">
+  <p class="eyebrow">Your next vertical</p>
+  <h2 class="h1">Q4: <em>accounting and bookkeeping firms</em></h2>
+  <p class="kicker">SignWell has native QuickBooks Online and Xero integrations, an accounting page, accounting templates and a QuickBooks ad. Firms send an engagement letter for every client they sign.</p>
+  <div class="grid fill" style="grid-template-columns:1fr 1.45fr;gap:24px">
+    <div class="card">
+      <p class="mono" style="margin:0 0 10px">How six verticals scored, out of 30</p>
+      <div class="chart" style="gap:9px" role="img" aria-label="Vertical scores">
+        <div class="crow" style="grid-template-columns:150px 1fr"><div class="lab" style="font-size:12.5px">Accounting</div><div class="track"><div class="bar sp" style="width:83%;height:16px" title="Accounting: 25"><b>25</b></div></div></div>
+        <div class="crow" style="grid-template-columns:150px 1fr"><div class="lab" style="font-size:12.5px;font-weight:400">Mexico (NOM-151)</div><div class="track"><div class="bar sp" style="width:70%;height:16px;opacity:.55" title="Mexico: 21"><b>21</b></div></div></div>
+        <div class="crow" style="grid-template-columns:150px 1fr"><div class="lab" style="font-size:12.5px;font-weight:400">Staffing and HR</div><div class="track"><div class="bar sp" style="width:63%;height:16px;opacity:.55" title="Staffing and HR: 19"><b>19</b></div></div></div>
+        <div class="crow" style="grid-template-columns:150px 1fr"><div class="lab" style="font-size:12.5px;font-weight:400">Home services</div><div class="track"><div class="bar sp" style="width:60%;height:16px;opacity:.55" title="Home services: 18"><b>18</b></div></div></div>
+        <div class="crow" style="grid-template-columns:150px 1fr"><div class="lab" style="font-size:12.5px;font-weight:400">Insurance agencies</div><div class="track"><div class="bar sp" style="width:53%;height:16px;opacity:.55" title="Insurance: 16"><b>16</b></div></div></div>
+        <div class="crow" style="grid-template-columns:150px 1fr"><div class="lab" style="font-size:12.5px;font-weight:400">Real estate</div><div class="track"><div class="bar sp" style="width:50%;height:16px;opacity:.55" title="Real estate: 15"><b>15</b></div></div></div>
+      </div>
+      <p class="small" style="margin-top:14px">We scored each on product fit, seats per account, compliance hook, search competition, reach and speed to test. Mexico follows in Q1.</p>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:14px">
+      <table class="t">
+        <tr><th>90-day test</th><th class="r">Per month</th><th>Focus</th></tr>
+        <tr><td class="k">Google non-brand</td><td class="r num">$1,400</td><td>QuickBooks and Xero e-signature, engagement letters, DocuSign alternatives for accountants</td></tr>
+        <tr><td class="k">LinkedIn</td><td class="r num">$1,000</td><td>Owners and partners at firms of 2 to 50 people</td></tr>
+        <tr><td class="k">Retargeting</td><td class="r num">$600</td><td>Visitors to accounting and integration pages</td></tr>
+        <tr class="tot"><td>Total</td><td class="r num">$3,000</td><td>About 15 to 17% of monthly ad spend</td></tr>
+      </table>
+      <div class="grid c3" style="gap:10px">
+        <div class="card wash" style="padding:14px"><p class="mono" style="margin:0 0 6px;color:var(--accent-deep)">Day 30</p><p class="small">Cut LinkedIn above $150 per lead with fewer than 5 qualified sign-ups.</p></div>
+        <div class="card wash" style="padding:14px"><p class="mono" style="margin:0 0 6px;color:var(--accent-deep)">Day 60</p><p class="small">Drop to $1,000 if firms convert below 7% against the 9.4% baseline, or show no ACV lift.</p></div>
+        <div class="card wash" style="padding:14px"><p class="mono" style="margin:0 0 6px;color:var(--accent-deep)">Day 90</p><p class="small">Scale to 25% of spend at $188 or less per qualified sign-up and ACV of $2,000 or more.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="folio"><span>Sources: signwell.com/quickbooks, /xero, /industries/accounting</span><span>08</span></div>
+</section>
+
+<!-- ═════════ 19 · MEASUREMENT ═════════ -->
+<section class="slide">
+  <p class="eyebrow">Measurement and reporting</p>
+  <h2 class="h1">You get one tracking spec and <em>one live dashboard</em></h2>
+  <p class="kicker">We write the specification with your engineers, remove what does not belong, and replace the monthly PDF with a dashboard you open any day.</p>
+  <div class="grid c3 roomy" style="margin-bottom:20px">
+    <div class="card"><p class="mono" style="margin:0 0 10px">The spec</p><p class="ct">Six events every channel shares</p><ul class="b"><li>Sign-up and qualified sign-up, with questionnaire answers.</li><li>Document sent and limit hit.</li><li>Plan changed and purchase, with real value.</li><li>One GA4 property and one container.</li></ul></div>
+    <div class="card"><p class="mono" style="margin:0 0 10px">The cleanup</p><p class="ct">Everything that distorts bidding</p><ul class="b"><li>Meta fires once per event.</li><li>We remove the Universal Analytics tag and the foreign Bing tags.</li><li>We exclude accounts.google.com as a referrer.</li><li>We import purchases into Google Ads.</li></ul></div>
+    <div class="card wash"><p class="mono" style="margin:0 0 10px;color:var(--accent-deep)">The dashboard</p><p class="ct">What Lawrence and Henry see weekly</p><ul class="b"><li>Spend, qualified sign-ups and paying customers by campaign.</li><li>Cost per qualified sign-up against the $70 line.</li><li>Nurture and retargeting lift against their holdouts.</li><li>ACV by channel and by vertical.</li></ul></div>
+  </div>
+  <div class="band">The monthly PDF <em>retires in October.</em></div>
+  <div class="folio"><span></span><span>09</span></div>
+</section>
+
+<!-- ═════════ BUDGET ═════════ -->
+<section class="slide">
+  <p class="eyebrow">Budget</p>
+  <h2 class="h1">Where the <em>$20,000 to $25,000</em> goes each month</h2>
+  <p class="kicker">Search keeps the majority of the budget. Social opens in November, once the tracking spec lands, and grows only on what it returns.</p>
+  <table class="t" style="margin-bottom:16px">
+    <tr><th style="width:30%">Line</th><th class="r">October</th><th class="r">November</th><th class="r">December</th><th style="width:34%">Rule that governs it</th></tr>
+    <tr><td class="k">Brand search</td><td class="r num">$4,000</td><td class="r num">$4,000</td><td class="r num">$4,000</td><td>Login terms excluded, so it buys new users</td></tr>
+    <tr><td class="k">Non-brand, current keywords</td><td class="r num">$1,700</td><td class="r num">$1,700</td><td class="r num">$0</td><td>Capped at what its 24 sign-ups earn, then retired</td></tr>
+    <tr><td class="k">Buyer-led search: API, teams, healthcare, switchers</td><td class="r num">$6,300</td><td class="r num">$5,800</td><td class="r num">$7,000</td><td>Each campaign holds $70 per qualified sign-up or closes</td></tr>
+    <tr><td class="k">Performance Max</td><td class="r num">$2,000</td><td class="r num">$2,000</td><td class="r num">$2,000</td><td>Brand terms excluded, so its sign-ups are its own</td></tr>
+    <tr><td class="k">Retargeting: Google, Meta, LinkedIn, Reddit</td><td class="r num">$3,000</td><td class="r num">$3,000</td><td class="r num">$3,500</td><td>Reddit first, others as the pixels come clean</td></tr>
+    <tr><td class="k">Paid social prospecting: Meta, LinkedIn, Reddit</td><td class="r num">$0</td><td class="r num">$3,000</td><td class="r num">$5,500</td><td>Starts after the tracking spec, one fixed 8-week test</td></tr>
+    <tr><td class="k">Accounting vertical test</td><td class="r num">$3,000</td><td class="r num">$3,000</td><td class="r num">$3,000</td><td>Own search, LinkedIn and retargeting money</td></tr>
+    <tr class="tot"><td>Total</td><td class="r num">$20,000</td><td class="r num">$22,500</td><td class="r num">$25,000</td><td>By December: search 52%, social 22%, retargeting 14%, vertical test 12%</td></tr>
+  </table>
+  <div class="grid c3" style="gap:14px">
+    <div class="card wash" style="padding:16px"><p class="small">Every new line carries a kill date. Nothing keeps budget because it was in the plan.</p></div>
+    <div class="card" style="padding:16px"><p class="small">Paid social runs as one committed test with fixed creative and a fixed window, unlike the $400 Reddit attempt.</p></div>
+    <div class="card" style="padding:16px"><p class="small">August billed $17,342. Tell us what the gap to $20,000 covers, and we bill media at the figure you approve.</p></div>
+  </div>
+  <div class="folio"><span></span><span>10</span></div>
+</section>
+
+<!-- ═════════ 20 · 90 DAYS ═════════ -->
+<section class="slide">
+  <p class="eyebrow">The first 90 days</p>
+  <h2 class="h1">What ships, <em>month by month</em></h2>
+  <p class="kicker">Measurement and account ownership ship in October, and every other lever builds on them.</p>
+  <table class="t">
+    <tr><th style="width:13%">Month</th><th>Paid search</th><th>Email and in-app</th><th>Retargeting</th><th>Organic</th><th>Measurement</th></tr>
+    <tr><td class="k">October</td><td>Open the SignWell-owned account; restructure non-brand; exclude login terms</td><td>Replace the single email with the day 0 to 14 track and a holdout</td><td>Reddit: sign-ups not yet paid, and pricing visitors</td><td>Founder posts begin on LinkedIn</td><td>Write the tracking spec; remove duplicate and stale tags; build GA4 audiences; launch the dashboard</td></tr>
+    <tr><td class="k">November</td><td>Switcher, healthcare and accounting campaigns; paid social prospecting opens</td><td>Limit-hit prompts; healthcare, API and switcher tracks</td><td>Meta and LinkedIn if SignWell owns them; Google retargeting and Customer Match</td><td>Signer prompt test; developer videos</td><td>Set values by segment; import purchases</td></tr>
+    <tr><td class="k">December</td><td>Move budget to what beats $70 per qualified sign-up; test ChatGPT ads</td><td>Add Spanish and accounting tracks; read the holdout</td><td>Free-tool visitors, once Ruben confirms the tools do not take paid sign-ups</td><td>Spanish LinkedIn content</td><td>Conversion rate and ACV by channel and plan</td></tr>
+  </table>
+  <div class="band">By January, SignWell owns its accounts, trusts its numbers, and <em>knows which lever to fund next.</em></div>
+  <div class="folio"><span></span><span>11</span></div>
+</section>
+
+</div>
+</body>
+</html>

@@ -1,0 +1,3 @@
+# Keep Unix line endings: bash on Windows fails on CRLF in the launcher.
+tt text eol=lf
+*.py text eol=lf

@@ -9,7 +9,7 @@ currency: USD
 mrr: TBD            # monthly recurring revenue in `currency`; TBD until set, 0 if none
 credit_pending: 0   # outstanding receivables in `currency`; 0 if none
 account_lead: Jordan
-last_reviewed: 2026-09-16
+last_reviewed: 2026-09-18
 ---
 
 # SignWell
@@ -32,10 +32,11 @@ SignWell sells e-signature software through a product-led, free-trial funnel. Th
 - **Engagement model:** see `brain/process.md`
 
 ## Key numbers (from the client, 2026-09-14)
-- **ACV:** $750 to $800 a year. Plans list at $12 and $30 a month. Deals range from $600 to a couple thousand dollars a year.
-- **Qualified sign-up:** the user selected business use (not personal) at sign-up.
-- **Trial to paid, same day:** about 1.7%.
-- **Non-trial qualified to paid:** about 4% same day, 6.3% at 14 days, 7% overall baseline.
+- **ACV:** about $750 a year (Lawrence, 2026-09-18). Plans list at $12 and $30 a month. Deals range from $600 to a couple thousand dollars a year.
+- **Qualified sign-up:** the user selected business use (not personal) at sign-up. Qualified sign-ups and trial sign-ups are the same population.
+- **Reverse trial:** every qualified user gets 7 days of full paid features during onboarding, with no card.
+- **Trial to paid:** about 9.4%, on self-serve automatically granted trials over the last two months (Lawrence, 2026-09-18). This supersedes the earlier 1.7%, 4%, 6.3% and 7% figures.
+- **Value of one qualified sign-up:** about $70.50 (9.4% of $750), against the $14 Google receives today.
 - **Monthly ad spend:** $20,000 to $25,000 per Henry. The August report shows $17,341.55.
 - **Largest market:** United States, then organic international, with a Latin America push (Spanish-speaking reps).
 - **Focus vertical this quarter:** healthcare.

@@ -33,6 +33,8 @@ Platform enquiries = messages + form leads + calls as counted by the ad platform
 
 **August month (1 to 31 Aug):** RM22,355.96 spend, 3,094 platform enquiries at RM7.23, 750 clinic appointments, RM29.81 per appointment, 33.3% of logged enquiries booked (1 to 29 Aug logged).
 
+**September month (monthly report, `2026-09-monthly.md`):** RM18,180.20 spend from the platforms, 1,588 clinic enquiries and 720 appointments for 1 to 29 Sep (the clinic never logged 30 Sep), 45.3% booked, RM25.25 per appointment, 93 platform enquiries a day. October target is 100 a day on RM18,000.
+
 **September to date (1 to 27 Sep):** RM15,638 spend, 1,484 clinic enquiries, 660 appointments, 44.5% booked, RM23.69 per appointment. Projected month: about 747 appointments on RM17,375, roughly August's patients on a fifth less spend.
 
 ### Spend split by week
