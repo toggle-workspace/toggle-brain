@@ -2,7 +2,7 @@
 
 > **Paste this file into Claude Code and it will connect this machine to TikTok Ads, read only, through `tools/tiktok-ads/tt`.** Works on macOS and Windows. One access token per TikTok login, obtained once through a browser consent screen.
 
-Written after the first connection on 2026-10-08, so every step below is one that was actually run rather than one copied from TikTok's documentation.
+Written after the first connection on 2026-10-08, so every step below is one that was actually run rather than one copied from TikTok's documentation. The same day, the recipe was run a second time on Windows 11 through uv, so both platforms are proven.
 
 ---
 
@@ -19,6 +19,7 @@ Written after the first connection on 2026-10-08, so every step below is one tha
 2. **Your TikTok login decides which ad accounts the token can read.** Authorization happens at the user level, so there is no account picker on the consent screen. The token simply covers every advertiser account the approving login can reach, and the list comes back in the token response. Toggle's current token was approved by `jordan420` (pinto.jordan@gmail.com), which holds Business Center admin plus partner links into client accounts.
 3. **A new client account appears only after a fresh consent.** Unlike Google Ads, the account list is fixed at the moment the token is issued. When Toggle takes on a TikTok client, repeat steps 4 and 5 to mint a replacement token.
 4. **The token is the whole credential.** There is no refresh cycle to maintain for Marketing API reporting. Treat the token like a password: it lives in `.env`, never in a chat window, never in this repo.
+5. **The portal never shows a token.** The app page lists the App ID, the Secret and the redirect URL, but an access token only exists after a consent and an exchange. Each machine can mint its own, and tokens minted from the same Secret work side by side, so connecting a second machine does not disconnect the first.
 
 ---
 
@@ -47,7 +48,7 @@ Stop and report any failure before continuing.
 
 1. Open <https://business-api.tiktok.com/portal> and sign in with the TikTok account that owns the app.
 2. On **My Apps**, confirm **Toggle Solutions TikTok Brain Ads** shows **Approved** and the **Online** toggle is on.
-3. Click **Edit**. Copy the **Secret** using the copy icon, or click the eye icon to reveal it. It is 40 characters long.
+3. Click **Edit**. Copy the **Secret** using the copy icon, or click the eye icon to reveal it. It is 40 characters long. **Never click Reset** beside it: a new Secret invalidates every token minted from the old one, on every machine.
 4. On the same page, note **Advertiser redirect URLs**. It is currently `https://toggle.solutions`, with **no trailing slash**.
 
 ### 2. Add the TikTok lines to `.env` (Claude)
@@ -88,7 +89,9 @@ The browser lands on `https://toggle.solutions/?auth_code=...&state=toggle`. Cop
 tools/tiktok-ads/tt auth exchange "<the whole redirected URL>" --save
 ```
 
-That prints how many advertiser accounts the token covers and writes `TIKTOK_ACCESS_TOKEN` into `.env` at mode 600. Without `--save` it prints the token instead, for manual placement.
+That prints how many advertiser accounts the token covers and writes `TIKTOK_ACCESS_TOKEN` into `.env` at mode 600. If a `TIKTOK_ACCESS_TOKEN` line already exists, including an empty placeholder, `--save` replaces it in place, so a re-consent for a new client takes effect immediately. Without `--save` it prints the token instead, for manual placement.
+
+The auth code in the redirected URL is single use and dies within minutes, so pasting that URL into a chat with Claude is safe. The token that comes back is not, and it should go straight into `.env` through `--save`.
 
 ### 6. Verify (Claude)
 
@@ -157,3 +160,5 @@ The fix is a toggle.solutions TikTok login added to Business Center with the sam
 | `STATUS_SELF_SERVICE_UNAUDITED` on an account | That account was never fully verified with TikTok. Reporting on it may return nothing. |
 | Report returns rows but every metric is zero | The date range predates the campaign, or the account genuinely did not run. Widen the range to confirm. |
 | `TIKTOK_APP_ID is not set` | `.env` is missing the TikTok block. Redo step 2. |
+| `TIKTOK_ACCESS_TOKEN is not set` straight after a successful `--save` | `.env` holds two token lines and the first is empty. `tt` reads the first match. Delete the empty line. Versions of `tt` from 2026-10-08 onward replace the line instead of appending, so this only bites an older copy. |
+| Every machine stopped working at once | Someone clicked **Reset** on the Secret. Put the new Secret in each machine's `.env`, then redo steps 3 to 5 on each one. |

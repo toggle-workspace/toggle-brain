@@ -15,6 +15,7 @@ Which advertiser ID belongs to which client, and what reaches them. Setup lives 
 | **Approving login** | `jordan420` (pinto.jordan@gmail.com) |
 | **Accounts covered** | 16 |
 | **Redirect URL** | `https://toggle.solutions` (no trailing slash) |
+| **Machines connected** | Jordan's MacBook and Windows desktop, each with its own token from the same login (2026-10-08) |
 
 Authorization is user level, so the token covers whatever this login reaches. There is no per-account toggle. Adding a client means re-consenting, not editing this file.
 
