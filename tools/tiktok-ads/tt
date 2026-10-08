@@ -1,0 +1,24 @@
+#!/usr/bin/env bash
+# tt - launcher for tt.py, the read-only TikTok Ads (Marketing API) client.
+#
+# Resolves its own folder, so nothing is hardcoded and it runs from any working
+# directory. Runs on a uv managed CPython when uv is installed, otherwise on
+# python3 from PATH. No pip install is needed either way: tt.py is stdlib only.
+#
+#   tools/tiktok-ads/tt auth status
+# Setup: installations/tiktok-ads/install.md
+set -euo pipefail
+
+HERE="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
+UV="$(command -v uv || echo "$HOME/.local/bin/uv")"
+
+if [ -x "$UV" ]; then
+  exec "$UV" run --no-project --quiet --python 3.12 python "$HERE/tt.py" "$@"
+elif command -v python3 >/dev/null 2>&1 && python3 -c 'import sys; sys.exit(sys.version_info < (3, 9))' 2>/dev/null; then
+  exec python3 "$HERE/tt.py" "$@"
+else
+  echo "xx Need uv or Python 3.9+. Install uv:" >&2
+  echo "   macOS:   curl -LsSf https://astral.sh/uv/install.sh | sh" >&2
+  echo "   Windows: powershell -c \"irm https://astral.sh/uv/install.ps1 | iex\"" >&2
+  exit 1
+fi

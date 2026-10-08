@@ -20,3 +20,4 @@ One sub-directory per integration. One recipe per integration.
 - `toggle-mcp/install.md` — installs and connects the toggle-brain MCP server to Claude Code, Cursor, or Windsurf
 - `google-drive/install.md` — connects Google Drive as an MCP resource in Claude Code via OAuth
 - `google-ads/install.md`: connects this machine to Google Ads for read-only reporting through `tools/google-ads/gads`, one profile per Google login; `connection-card.md` records which login and route reaches each account
+- `tiktok-ads/install.md`: connects this machine to TikTok Ads for read-only reporting through `tools/tiktok-ads/tt`, one access token per TikTok login; `connection-card.md` maps each advertiser ID to its client slug
