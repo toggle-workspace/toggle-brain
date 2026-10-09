@@ -1,0 +1,244 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ikonik TikTok Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600;700&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;700&display=swap" rel="stylesheet">
+<style>
+:root{
+  --paper:#F4F8FD; --lift:#FFFFFF; --ink:#0E1B33; --ink-2:#4A5A75; --ink-3:#8794AC;
+  --line:#D5E2F0; --line-soft:#E7EFF9; --accent:#2A6BE0; --accent-deep:#1B4CB0; --wash:#E3EDFC;
+  --sky:#7FB3EE; --aqua:#8CE0EC; --teal:#1FA5B8; --alert:#DB4A45;
+  --serif:"Instrument Serif",Georgia,serif; --sans:"Instrument Sans",Arial,sans-serif; --mono:"JetBrains Mono",Consolas,monospace;
+}
+@page{ size:A4; margin:0; }
+*{ box-sizing:border-box; margin:0; padding:0; }
+body{ background:var(--paper); color:var(--ink); font-family:var(--sans); -webkit-print-color-adjust:exact; print-color-adjust:exact; font-variant-numeric:tabular-nums; }
+.page{ width:210mm; height:297mm; padding:14mm 15mm 12mm; position:relative; overflow:hidden; background:var(--paper); display:flex; flex-direction:column; break-after:page; }
+.page:last-child{ break-after:auto; }
+
+.top{ display:flex; justify-content:space-between; align-items:center; margin-bottom:9mm; }
+.top img{ height:19px; }
+.top .m{ font-family:var(--mono); font-size:7.5pt; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-3); }
+
+.eyebrow{ font-family:var(--mono); font-size:7.6pt; font-weight:700; letter-spacing:.16em; text-transform:uppercase; color:var(--accent); display:flex; align-items:center; gap:7px; margin-bottom:6px; }
+.eyebrow::before{ content:""; width:5px; height:5px; border-radius:50%; background:var(--accent); }
+h1{ font-family:var(--serif); font-weight:400; font-size:34pt; line-height:1; letter-spacing:-.02em; margin-bottom:8px; }
+h2{ font-family:var(--serif); font-weight:400; font-size:21pt; line-height:1.05; letter-spacing:-.02em; margin-bottom:5px; }
+h1 em, h2 em, .band em{ font-style:italic; color:var(--accent); }
+.kicker{ font-size:10.5pt; line-height:1.5; color:var(--ink-2); margin-bottom:12px; }
+section + section{ margin-top:8mm; }
+
+.grid{ display:grid; gap:10px; }
+.c3{ grid-template-columns:1fr 1fr 1fr; } .c2{ grid-template-columns:1fr 1fr; }
+.card{ background:var(--lift); border:1px solid var(--line); border-radius:10px; padding:13px 14px; }
+.card.wash{ background:var(--wash); border-color:transparent; }
+.lab{ font-family:var(--mono); font-size:6.8pt; font-weight:700; letter-spacing:.14em; text-transform:uppercase; color:var(--ink-3); margin-bottom:8px; }
+ul.b{ list-style:none; }
+ul.b li{ font-size:8.6pt; line-height:1.45; color:var(--ink-2); padding:3px 0 3px 12px; position:relative; }
+ul.b li::before{ content:""; position:absolute; left:0; top:8px; width:5px; height:5px; border-radius:1.5px; background:var(--accent); }
+ul.b li b{ color:var(--ink); font-weight:600; }
+.split{ display:flex; height:8px; border-radius:4px; overflow:hidden; margin:4px 0 9px; }
+.split i{ display:block; height:8px; }
+.leg{ font-size:8.2pt; color:var(--ink-2); line-height:1.75; }
+.leg > span{ display:flex; justify-content:space-between; }
+.leg i{ display:inline-block; width:7px; height:7px; border-radius:2px; margin-right:6px; }
+.leg b{ color:var(--ink); font-weight:600; }
+.res{ border-top:1px solid #C9D9F2; margin-top:8px; padding-top:7px; font-size:8.4pt; color:var(--ink-2); }
+.res b{ color:var(--ink); }
+
+/* rail */
+.rail{ position:relative; height:12px; margin:6px 0 8px; }
+.rail .ln{ position:absolute; left:6px; right:6px; top:5px; height:2px; background:linear-gradient(90deg,var(--accent),var(--aqua)); }
+.rail i{ position:absolute; top:0; width:12px; height:12px; border-radius:50%; background:var(--paper); border:2.2px solid var(--accent); }
+.rail i.on{ background:var(--accent); }
+.steps{ display:grid; grid-template-columns:repeat(4,1fr); gap:10px; }
+.steps .n{ font-family:var(--mono); font-size:6.8pt; font-weight:700; letter-spacing:.12em; color:var(--accent); }
+.steps .t{ font-size:9pt; font-weight:600; line-height:1.3; margin-top:2px; }
+.note{ font-size:8.4pt; color:var(--ink-2); margin-top:9px; }
+
+/* charts */
+.chart{ background:var(--lift); border:1px solid var(--line); border-radius:10px; padding:11px 12px 8px; }
+.chart .ct{ font-size:9.5pt; font-weight:600; }
+.chart svg{ width:100%; height:auto; display:block; margin-top:6px; }
+.keys{ display:flex; gap:16px; font-size:7.8pt; color:var(--ink-2); margin-top:7px; }
+.keys i{ display:inline-block; width:8px; height:8px; border-radius:2px; margin-right:5px; vertical-align:-.5px; }
+
+/* tables */
+table.t{ width:100%; border-collapse:collapse; }
+table.t th{ font-family:var(--mono); font-size:6.8pt; font-weight:700; letter-spacing:.12em; text-transform:uppercase; color:var(--ink-3); text-align:left; padding:6px 8px; border-bottom:1.5px solid var(--ink); }
+table.t td{ font-size:8.6pt; line-height:1.35; padding:5px 8px; border-bottom:1px solid var(--line); color:var(--ink-2); vertical-align:top; }
+table.t td.k{ color:var(--ink); font-weight:600; }
+table.t td.r, table.t th.r{ text-align:right; white-space:nowrap; }
+table.t td.when{ font-family:var(--mono); font-size:7.8pt; font-weight:700; color:var(--accent-deep); }
+.who{ font-family:var(--mono); font-size:6.8pt; font-weight:700; letter-spacing:.06em; padding:3px 7px; border-radius:5px; border:1px solid var(--line); background:var(--paper); color:var(--ink-2); white-space:nowrap; }
+.who.ik{ border-color:#F0C9A6; background:#FDF3EA; color:#9A5418; }
+
+/* calendar */
+.mh{ font-family:var(--serif); font-size:16pt; line-height:1; letter-spacing:-.02em; margin-bottom:8px; }
+.row{ display:grid; grid-template-columns:52px 1fr; gap:8px; padding:5px 0; border-top:1px solid var(--line-soft); }
+.mh + .row{ border-top:0; padding-top:0; }
+.row .k{ font-family:var(--mono); font-size:6.8pt; font-weight:700; letter-spacing:.06em; text-transform:uppercase; color:var(--ink-3); padding-top:2px; white-space:nowrap; }
+.row .v{ font-size:8.6pt; line-height:1.35; color:var(--ink); font-weight:600; }
+.row .v span{ display:block; font-weight:400; color:var(--ink-2); font-size:8.2pt; }
+.chip{ display:inline-block; font-family:var(--mono); font-size:7pt; font-weight:700; letter-spacing:.06em; padding:4px 9px; border-radius:6px; border:1px dashed var(--ink-3); color:var(--ink-2); margin-top:8px; }
+
+.band{ background:var(--ink); color:var(--paper); border-radius:10px; padding:13px 18px; font-family:var(--serif); font-size:15pt; line-height:1.25; letter-spacing:-.01em; }
+.band em{ color:var(--aqua); }
+.foot{ font-family:var(--mono); font-size:6.4pt; letter-spacing:.04em; color:var(--ink-3); margin-top:8px; display:flex; justify-content:space-between; gap:12px; line-height:1.5; }
+.p2 section + section{ margin-top:6mm; }
+.p2 .top{ margin-bottom:6mm; }
+.gap td.k{ width:36%; white-space:nowrap; } .gap td.w{ width:12%; }
+</style>
+</head>
+<body>
+
+<!-- PAGE 1 -->
+<div class="page">
+  <div class="top"><img src="../../../assets/logos/toggle-wordmark-black.png" alt="Toggle Solutions"><span class="m">For Ikonik · 9 October 2026</span></div>
+
+  <section>
+    <div class="eyebrow">TikTok from November 2026</div>
+    <h1>TikTok plan for <em>Ikonik</em></h1>
+    <p class="kicker">From November, Toggle runs TikTok on RM10,000 a month and keeps Google. Your CSE tracker is the final count, and we report every week.</p>
+
+    <div class="grid c3">
+      <div class="card">
+        <div class="lab">Where TikTok is today</div>
+        <ul class="b">
+          <li><b>19 enquiries and 4 appointments</b> a working day in September, on RM5,317.</li>
+          <li>In August, 71 of 414 TikTok DMs reached the clinic. No one watches the TikTok inbox.</li>
+          <li>LIVE enquiries book 23 in 100. Your team books about half of WhatsApp chats.</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="lab">What we change</div>
+        <ul class="b">
+          <li>TikTok ads open a chat on a <b>new WhatsApp number</b>, and Cekat AI replies first.</li>
+          <li>Each LIVE gets its own budget, with the most on the week's key LIVE.</li>
+          <li>Lead forms restart for Klang Valley only.</li>
+          <li>TikTok DMs switch off.</li>
+        </ul>
+      </div>
+      <div class="card wash">
+        <div class="lab">The RM10,000 a month</div>
+        <div class="split"><i style="width:45%;background:#2A6BE0"></i><i style="width:40%;background:#7FB3EE"></i><i style="width:10%;background:#1FA5B8"></i><i style="width:5%;background:#8794AC"></i></div>
+        <div class="leg">
+          <span><span><i style="background:#2A6BE0"></i>Click to WhatsApp</span><b>RM4,500</b></span>
+          <span><span><i style="background:#7FB3EE"></i>LIVE boosting</span><b>RM4,000</b></span>
+          <span><span><i style="background:#1FA5B8"></i>Lead forms</span><b>RM1,000</b></span>
+          <span><span><i style="background:#8794AC"></i>Tests</span><b>RM500</b></span>
+        </div>
+        <div class="res">Expected: <b>255 to 320 appointments</b> a month</div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="eyebrow">Click to WhatsApp</div>
+    <h2>How a viewer becomes <em>a patient</em></h2>
+    <div class="rail"><div class="ln"></div><i style="left:0"></i><i style="left:calc(25% + 2px)"></i><i style="left:calc(50% + 4px)"></i><i class="on" style="left:calc(75% + 7px)"></i></div>
+    <div class="steps">
+      <div><div class="n">01</div><div class="t">Watches a TikTok video or LIVE</div></div>
+      <div><div class="n">02</div><div class="t">Taps the WhatsApp button</div></div>
+      <div><div class="n">03</div><div class="t">Cekat AI asks for the procedure and phone number</div></div>
+      <div><div class="n">04</div><div class="t">Your CSE team books the visit</div></div>
+    </div>
+    <p class="note">Every chat on the TikTok number counts as TikTok, so you and Toggle see the same count.</p>
+  </section>
+
+  <section>
+    <div class="eyebrow">Daily trend</div>
+    <h2>What we expect <em>each working day</em></h2>
+    <p class="kicker" style="margin-bottom:9px">Numbers climb through November while click to WhatsApp ramps up, then hold in December. On RM10,000, both stay below 70 and 25.</p>
+    <div class="grid c2">
+      <div class="chart"><div class="ct">Enquiries a working day</div><svg id="c1" viewBox="0 0 330 140"></svg></div>
+      <div class="chart"><div class="ct">Appointments a working day</div><svg id="c2" viewBox="0 0 330 140"></svg></div>
+    </div>
+    <div class="keys"><span><i style="background:#8794AC"></i>September actual</span><span><i style="background:#7FB3EE"></i>November weeks</span><span><i style="background:#2A6BE0"></i>December weeks</span><span><i style="background:none;border-top:1.5px dashed #0E1B33;height:0;width:12px;vertical-align:2px"></i>Ikonik target</span></div>
+  </section>
+
+  <div class="foot" style="margin-top:auto"><span>A working day is the month's total divided by 25. September comes from the Ikonik x Toggle leads sheet. November and December are Toggle estimates.</span><span>01</span></div>
+</div>
+
+<!-- PAGE 2 -->
+<div class="page p2">
+  <div class="top"><img src="../../../assets/logos/toggle-wordmark-black.png" alt="Toggle Solutions"><span class="m">TikTok plan for Ikonik</span></div>
+
+  <section>
+    <div class="eyebrow">Driving to target</div>
+    <h2>Closing the gap to <em>70 and 25</em></h2>
+    <table class="t gap" style="margin-top:6px">
+      <tr><th>What</th><th>Who</th><th>Effect</th></tr>
+      <tr><td class="k">Reply fast on the TikTok number</td><td class="w"><span class="who ik">Ikonik CSE</span></td><td>Booking 45 in 100 chats, up from 35, adds about 2 appointments a day.</td></tr>
+      <tr><td class="k">A doctor on one key LIVE a week</td><td class="w"><span class="who">Both</span></td><td>In the week of 21 September, LIVE booked 30 patients on RM669.</td></tr>
+      <tr><td class="k">Run a campaign every month</td><td class="w"><span class="who">Toggle</span></td><td>11.11, 12.12 and the open house.</td></tr>
+      <tr><td class="k">Add budget once cost holds</td><td class="w"><span class="who ik">Ikonik</span></td><td>Each RM1,000 adds 1 to 2 appointments a day. Reaching 25 a day needs about RM18,000 to RM21,000.</td></tr>
+    </table>
+  </section>
+
+  <section>
+    <div class="eyebrow">Creative</div>
+    <h2>Content follows <em>the Q4 calendar</em></h2>
+    <p class="kicker" style="margin-bottom:8px">Each week has 2 TikTok videos and one LIVE topic. Every video asks viewers to WhatsApp the clinic in the first three seconds.</p>
+    <div class="grid c2">
+      <div class="card">
+        <div class="mh">November</div>
+        <div class="row"><div class="k">2 to 8</div><div class="v">11.11 opens<span>Mula dengan pemeriksaan mata RM660</span></div></div>
+        <div class="row"><div class="k">9 to 15</div><div class="v">Diabetes doctor LIVE, Sat 14 Nov<span>Diabetes boleh rosakkan mata tanpa tanda awal</span></div></div>
+        <div class="row"><div class="k">16 to 22</div><div class="v">Diabetes follow-up, dry eye<span>Siapa perlu imbasan mata diabetes?</span></div></div>
+        <div class="row"><div class="k">23 to 29</div><div class="v">Wedding season<span>Kahwin Disember? Rancang LASIK dari sekarang</span></div></div>
+      </div>
+      <div class="card">
+        <div class="mh">December</div>
+        <div class="row"><div class="k">1 to 6</div><div class="v">12.12 opens, bonus season<span>Bonus dah masuk? Guna untuk LASIK</span></div></div>
+        <div class="row"><div class="k">7 to 13</div><div class="v">12.12 LIVE, Sat 12 Dec<span>Cuti Jumaat, klinik tetap buka</span></div></div>
+        <div class="row"><div class="k">14 to 20</div><div class="v">Tax relief, school break<span>Pelepasan cukai tamat 31 Dis</span></div></div>
+        <div class="row"><div class="k">21 to 31</div><div class="v">Christmas and last call<span>Cuti panjang? Datang buat pemeriksaan</span></div></div>
+      </div>
+    </div>
+    <span class="chip">Open house: date to confirm, content starts two weeks before</span>
+  </section>
+
+  <section>
+    <div class="eyebrow">Checklist</div>
+    <h2>What we need <em>from Ikonik</em></h2>
+    <table class="t" style="margin-top:6px">
+      <tr><th>Item</th><th class="r">By</th></tr>
+      <tr><td class="k">Approve Cekat AI and a new WhatsApp Business number for TikTok only</td><td class="r when">Tue 13 Oct</td></tr>
+      <tr><td class="k">November LIVE dates and time slots</td><td class="r when">Fri 23 Oct</td></tr>
+      <tr><td class="k">The key LIVE each week, with its topic and doctor</td><td class="r when">2 weeks ahead</td></tr>
+      <tr><td class="k">CSE cover on the TikTok number, with each enquiry tagged TikTok</td><td class="r when">From 2 Nov</td></tr>
+      <tr><td class="k">Filming for 2 TikTok videos a week, with patient consent</td><td class="r when">Every week</td></tr>
+    </table>
+  </section>
+
+  <div class="band" style="margin-top:auto">Setup takes three to four weeks. Approve Cekat AI by Tue 13 Oct, and click to WhatsApp goes live in <em>the first week of November.</em></div>
+  <div class="foot"><span>Toggle Solutions · toggle.solutions · hello@toggle.solutions</span><span>02</span></div>
+</div>
+
+<script>
+  function chart(id, vals, max, target, step){
+    const svg = document.getElementById(id), W=330, H=140, L=22, R=4, T=12, B=18;
+    const labels = ['Sep','N1','N2','N3','N4','D1','D2','D3','D4'];
+    const cols = ['#8794AC','#7FB3EE','#7FB3EE','#7FB3EE','#7FB3EE','#2A6BE0','#2A6BE0','#2A6BE0','#2A6BE0'];
+    const ih = H-T-B, iw = W-L-R, bw = iw/vals.length, y = v => T + ih - v/max*ih;
+    const mono = 'font-family="JetBrains Mono, Consolas, monospace"';
+    let s = '';
+    for(let g=0; g<=max; g+=step){ s += `<line x1="${L}" x2="${W-R}" y1="${y(g)}" y2="${y(g)}" stroke="#E7EFF9" stroke-width="0.8"/>`+
+      `<text x="${L-5}" y="${y(g)+2.5}" font-size="6.5" ${mono} fill="#8794AC" text-anchor="end">${g}</text>`; }
+    vals.forEach((v,i)=>{ const x = L + i*bw + bw*0.2, w = bw*0.6;
+      s += `<rect x="${x}" y="${y(v)}" width="${w}" height="${y(0)-y(v)}" rx="1.5" fill="${cols[i]}"/>`+
+           `<text x="${x+w/2}" y="${y(v)-3}" font-size="7.5" ${mono} font-weight="700" fill="#0E1B33" text-anchor="middle">${v}</text>`+
+           `<text x="${x+w/2}" y="${H-5}" font-size="6.5" ${mono} fill="#8794AC" text-anchor="middle">${labels[i]}</text>`; });
+    s += `<line x1="${L}" x2="${W-R}" y1="${y(target)}" y2="${y(target)}" stroke="#0E1B33" stroke-width="1.2" stroke-dasharray="4 3"/>`+
+         `<text x="${W-R}" y="${y(target)-4}" font-size="7" ${mono} font-weight="700" fill="#0E1B33" text-anchor="end">TARGET ${target}</text>`;
+    svg.innerHTML = s;
+  }
+  chart('c1', [19,25,32,37,40,42,46,42,38], 80, 70, 20);
+  chart('c2', [4,6,8,10,11,12,13,12,11], 30, 25, 10);
+</script>
+</body>
+</html>

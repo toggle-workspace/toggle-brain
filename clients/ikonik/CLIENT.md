@@ -42,6 +42,12 @@
 ## Q4 2026 content calendar
 - Week-by-week TikTok and FB/IG plan for 1 Oct to 31 Dec, plus six open confirmations from Ikonik: `01-strategy/2026-q4-content-calendar.md`. Deck on Jordan's Desktop: `Ikonik-Q4-2026-Content-Calendar.pptx`.
 
+## From November 2026: TikTok and Google only
+- **Agency split (agreed early October 2026):** Toggle runs TikTok on RM10,000 a month of ad spend and keeps Google. RA Marketing takes Meta. Toggle's internal 7 Oct analysis recommended taking Meta instead (Desktop: `Ikonik - Meta vs TikTok Decision (7 Oct 2026).pdf`).
+- **Fee:** RM3,000 base a month, plus a monthly bonus from Ikonik's terms sheet (Desktop: `Toggle – Deliverables & Incentives.pdf`). Both daily averages must clear a tier, and the lower one decides: 70 enquiries and 25 appointments earn +RM1,500, 80 and 30 earn +RM2,000, 100 and 40 earn +RM3,000. Averages are the month's total divided by 25 working days, counted from Ikonik's CSE tracker. The bonus is void if spend runs over the agreed budget.
+- **Plan for the client call:** `01-strategy/2026-10-tiktok-plan-from-november.pdf` (HTML source beside it). It covers click to WhatsApp through Cekat AI on a second WhatsApp number, LIVE boosting per session, Klang Valley lead forms, and DMs switched off. It expects about 42 enquiries and 12 appointments a working day by December on RM10,000, against Ikonik's 70 and 25.
+- **Open as of 9 Oct 2026:** Cekat AI approval and its cost, the November LIVE schedule, the tier thresholds at RM10,000, and keeping the setup weeks out of the count.
+
 ## Report history
 
 > Reporting cadence is **weekly**, plus a **monthly** deck (see "Monthly reporting" below). **Start every weekly report by reading `04-reports/weekly-log.md`**: the scorecard for every week, open threads, creative lineage and method notes. Each week, add the new week to that log and write `04-reports/2026-Www-weekly.md`.
