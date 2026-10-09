@@ -1,0 +1,459 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>VoiceRun Plan Review</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #f6f7fa;
+    --paper: #ffffff;
+    --ink: #15171c;
+    --ink-2: #474c57;
+    --ink-3: #7a808c;
+    --line: #e3e6ec;
+    --blue: #3057c9;
+    --blue-2: #4a7cf7;
+    --blue-soft: #e4ebfd;
+    --green: #177a54;
+    --green-soft: #def3ea;
+    --amber: #95650a;
+    --amber-soft: #fbefd5;
+    --red: #b3342f;
+    --red-soft: #fbe3e1;
+    --grey-soft: #eceef2;
+  }
+  * { box-sizing: border-box; }
+  html { -webkit-text-size-adjust: 100%; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Inter Tight", "Segoe UI", system-ui, sans-serif;
+    font-size: 16px;
+    line-height: 1.55;
+  }
+  .wrap { max-width: 980px; margin: 0 auto; padding: 32px 16px 80px; }
+  header.top { margin-bottom: 28px; }
+  .eyebrow {
+    font-size: 12px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase;
+    color: var(--blue);
+  }
+  h1 { font-size: clamp(28px, 5vw, 40px); line-height: 1.1; margin: 8px 0 10px; letter-spacing: -.02em; }
+  h2 { font-size: 24px; line-height: 1.2; margin: 0 0 6px; letter-spacing: -.01em; }
+  h3 { font-size: 17px; margin: 0 0 6px; }
+  p { margin: 0 0 12px; }
+  .meta { color: var(--ink-3); font-size: 14px; }
+  .sub { color: var(--ink-2); margin-bottom: 18px; }
+  nav.toc {
+    display: flex; flex-wrap: wrap; gap: 8px; margin: 18px 0 0;
+  }
+  nav.toc a {
+    font-size: 13px; font-weight: 600; color: var(--blue); text-decoration: none;
+    background: var(--blue-soft); padding: 6px 12px; border-radius: 999px;
+  }
+  nav.toc a:hover { background: #d3defb; }
+  section {
+    background: var(--paper); border: 1px solid var(--line); border-radius: 14px;
+    padding: 26px 24px; margin-bottom: 20px;
+  }
+  .tldr { border-left: 6px solid var(--blue); }
+  .tldr ul { margin: 0; padding-left: 20px; }
+  .tldr li { margin-bottom: 10px; }
+  .flag {
+    background: var(--red-soft); border: 1px solid #f1c3bf; border-radius: 10px;
+    padding: 14px 16px; margin-top: 16px; color: #5a1a17;
+  }
+  .flag strong { color: var(--red); }
+  .analogy {
+    background: var(--blue-soft); border-radius: 10px; padding: 16px 18px; margin: 14px 0 20px;
+  }
+  /* flow diagram */
+  .flow { display: grid; grid-template-columns: 1fr auto 1fr auto 1.2fr auto 1.2fr auto 1fr; align-items: center; gap: 8px; margin: 10px 0 22px; }
+  .node {
+    background: var(--paper); border: 1.5px solid var(--line); border-radius: 10px;
+    padding: 10px 12px; font-size: 13px; line-height: 1.35;
+  }
+  .node b { display: block; font-size: 14px; margin-bottom: 2px; }
+  .node.lp { border-color: var(--blue-2); background: var(--blue-soft); }
+  .node.win { border-color: var(--green); background: var(--green-soft); }
+  .node.ours { border-color: var(--blue); box-shadow: 0 0 0 2px var(--blue-soft); }
+  .stack { display: grid; gap: 8px; }
+  .arrow { color: var(--ink-3); font-weight: 700; text-align: center; }
+  .tag-ours {
+    display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase;
+    background: var(--blue); color: #fff; border-radius: 4px; padding: 1px 6px; margin-left: 4px; vertical-align: 1px;
+  }
+  @media (max-width: 760px) {
+    .flow { grid-template-columns: 1fr; }
+    .arrow { transform: rotate(90deg); line-height: 1; }
+  }
+  .grid2 { display: grid; grid-template-columns: 1fr 1fr; gap: 14px; }
+  .grid3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+  @media (max-width: 760px) { .grid2, .grid3 { grid-template-columns: 1fr; } }
+  .card { background: var(--bg); border: 1px solid var(--line); border-radius: 10px; padding: 16px; }
+  .card ul { margin: 6px 0 0; padding-left: 18px; }
+  .card li { margin-bottom: 6px; font-size: 15px; }
+  .quote {
+    font-style: italic; color: var(--ink-2); border-left: 3px solid var(--blue-2); padding-left: 12px; margin: 10px 0 0; font-size: 15px;
+  }
+  /* tables */
+  .tbl-wrap { overflow-x: auto; -webkit-overflow-scrolling: touch; margin: 8px 0 4px; }
+  table { width: 100%; border-collapse: collapse; font-size: 14px; }
+  th, td { text-align: left; vertical-align: top; padding: 10px 10px; border-bottom: 1px solid var(--line); }
+  th { font-size: 12px; text-transform: uppercase; letter-spacing: .05em; color: var(--ink-3); font-weight: 700; background: var(--bg); }
+  td:first-child { font-weight: 600; white-space: nowrap; }
+  table.compare td:nth-child(2), table.compare td:nth-child(3) { min-width: 220px; }
+  table.money td:not(:first-child), table.money th:not(:first-child) { text-align: right; white-space: nowrap; }
+  tr.total td { font-weight: 700; background: var(--bg); }
+  .chip {
+    display: inline-block; font-size: 12px; font-weight: 700; padding: 3px 9px; border-radius: 999px; white-space: nowrap;
+  }
+  .chip.ok { background: var(--green-soft); color: var(--green); }
+  .chip.shift { background: var(--amber-soft); color: var(--amber); }
+  .chip.bad { background: var(--red-soft); color: var(--red); }
+  .chip.q { background: var(--grey-soft); color: var(--ink-2); }
+  .legend { display: flex; flex-wrap: wrap; gap: 10px; font-size: 13px; color: var(--ink-2); margin-bottom: 10px; }
+  /* numbered list */
+  ol.impact { margin: 0; padding: 0; list-style: none; counter-reset: n; }
+  ol.impact > li {
+    counter-increment: n; position: relative; padding: 14px 0 14px 46px; border-bottom: 1px solid var(--line);
+  }
+  ol.impact > li:last-child { border-bottom: 0; }
+  ol.impact > li::before {
+    content: counter(n); position: absolute; left: 0; top: 14px; width: 30px; height: 30px; border-radius: 50%;
+    background: var(--blue); color: #fff; font-weight: 700; font-size: 14px; display: grid; place-items: center;
+  }
+  ol.impact h3 { margin-bottom: 4px; }
+  ol.impact p { margin: 0; color: var(--ink-2); font-size: 15px; }
+  /* questions */
+  .qgroup { margin-top: 22px; }
+  .qgroup:first-of-type { margin-top: 8px; }
+  .qgroup-title {
+    font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--blue);
+    margin-bottom: 8px;
+  }
+  .q {
+    border: 1px solid var(--line); border-radius: 10px; padding: 14px 16px; margin-bottom: 10px; background: var(--paper);
+  }
+  .q .num { font-weight: 800; color: var(--blue); margin-right: 6px; }
+  .q .ask { font-weight: 600; font-size: 16px; }
+  .q .why { margin: 6px 0 0; color: var(--ink-2); font-size: 14.5px; }
+  .q .why b { color: var(--ink); }
+  .q.top { border-color: #f1c3bf; background: #fffafa; }
+  ul.plain { margin: 0; padding-left: 20px; }
+  ul.plain li { margin-bottom: 8px; }
+  footer { color: var(--ink-3); font-size: 13px; margin-top: 24px; }
+  code { font-size: 13px; background: var(--grey-soft); padding: 1px 5px; border-radius: 4px; }
+</style>
+</head>
+<body>
+<div class="wrap">
+
+<header class="top">
+  <div class="eyebrow">Internal · for Jordan · not for sending</div>
+  <h1>VoiceRun: Lawrence's Q4 plan against our proposal</h1>
+  <p class="meta">Prepared 26 September 2026. Sources: Lawrence's Notion page "VoiceRun Q4 CX Insurance Leader GTM Strategy (30-Day Focus)" and its five subpages; our Growth Partnership Proposal (8 September); our SOW and quotation (24 September).</p>
+  <nav class="toc">
+    <a href="#short">The short version</a>
+    <a href="#plain">His plan in plain English</a>
+    <a href="#compare">Side by side</a>
+    <a href="#agree">Where he backs us</a>
+    <a href="#impact">What it changes for us</a>
+    <a href="#questions">10 questions for Lawrence</a>
+    <a href="#next">Next steps to propose</a>
+  </nav>
+</header>
+
+<section id="short" class="tldr">
+  <h2>The short version</h2>
+  <ul>
+    <li>Lawrence has narrowed VoiceRun's marketing to one product (VoiceScore), one industry (insurance) and one buyer (the contact center or QA leader) for the next 30 days.</li>
+    <li>Paid media is one of six parts of his plan. Kuota writes the strategy, messaging, creative and landing page. The agency, which is us, builds, runs, optimizes and reports on the Google and LinkedIn campaigns. That split matches the scope you described: performance marketing, tracking, reporting and the dashboard.</li>
+    <li>He agrees with our diagnosis that the landing page and the offer are the real problem. He changes our focus: our proposal put 35% of media on developers, and his plan takes developers out of this campaign entirely.</li>
+    <li>Media goes up. His plan budgets $10,000 a month for this campaign plus $1,800 of other Google spend, against the $5,000 to $7,500 we planned around. LinkedIn now takes the bigger share, which flips our 60/40 split.</li>
+  </ul>
+  <div class="flag">
+    <strong>Settle this first.</strong> His budget lists the agency at <b>$1,000 a month</b>. Our quotation TG-2026-001 from 24 September is <b>$2,000 a month</b>, with the $1,500 tracking setup waived. Either he wrote a placeholder, or Nick has seen a number half of ours. Ask before anything else (question 9).
+  </div>
+</section>
+
+<section id="plain">
+  <h2>His plan in plain English</h2>
+  <p class="sub">What Lawrence is trying to do, without the GTM vocabulary.</p>
+
+  <div class="analogy">
+    <p><b>Our proposal fished with a wide net.</b> It bought Google clicks from anyone searching for voice AI tools, and LinkedIn impressions for operations leaders in general, then tried to fix the page they landed on.</p>
+    <p style="margin:0"><b>Lawrence's plan works more like a door-to-door campaign.</b> He picks a named list of insurance companies that run large call centers. He finds the three or four people in each company who would sign off on a QA tool. Then he reaches those same people three ways at once: an email sequence, LinkedIn ads, and Google ads for anyone who searches. Every touch sends them to one new page built for insurance, with one offer. Sales picks it up from there.</p>
+  </div>
+
+  <p>The logic, as I read it: a six-person startup cannot outspend Vapi, Retell and ElevenLabs on "voice AI" in general. It can win a narrow corner where it has something specific to say, and VoiceScore for insurance call centers is that corner. The trade-off is volume. A narrow list gives fewer, better conversations, and it depends on the list being big enough to run ads against.</p>
+
+  <h3 style="margin-top:18px">How the machine fits together</h3>
+  <p class="meta" style="margin-bottom:6px">Redrawn from his "GTM Architecture (MVP)" diagram. The boxes marked <span class="tag-ours">Toggle</span> are where we sit.</p>
+  <div class="flow" role="img" aria-label="Contact list feeds the CRM, which feeds email, LinkedIn and Google Search. All three send people to a new Insurance plus VoiceScore landing page, then sales follow-up, a demo, and an opportunity.">
+    <div class="stack">
+      <div class="node"><b>Contact list</b>Bought through a third-party tool, filtered to the target account list</div>
+      <div class="node"><b>CRM (HubSpot)</b>Holds the target accounts and contacts</div>
+    </div>
+    <div class="arrow">→</div>
+    <div class="stack">
+      <div class="node"><b>Email</b>Outbound sequence (Reply.io)</div>
+      <div class="node ours"><b>LinkedIn <span class="tag-ours">Toggle</span></b>Awareness and engagement across the listed accounts and roles</div>
+      <div class="node ours"><b>Google Search <span class="tag-ours">Toggle</span></b>Catches people already searching for contact center QA, call scoring, AI monitoring</div>
+    </div>
+    <div class="arrow">→</div>
+    <div class="node lp"><b>New Insurance + VoiceScore page</b>One page that ties the buyer's pain, the product demo, proof and enterprise trust together</div>
+    <div class="arrow">→</div>
+    <div class="node"><b>Sales follow-up</b>Named owner responds to qualified hand-raisers</div>
+    <div class="arrow">→</div>
+    <div class="stack">
+      <div class="node"><b>Demo</b></div>
+      <div class="node win"><b>Opportunity</b>Deal created in HubSpot</div>
+    </div>
+  </div>
+
+  <div class="grid2">
+    <div class="card">
+      <h3>Who he is going after</h3>
+      <ul>
+        <li>Insurance carriers, MGAs (agencies that underwrite on an insurer's behalf), brokers, and BPOs (outsourced call centers) that serve insurance.</li>
+        <li>US headquarters or a large US operation, and at least 201 employees. His list searches also cover South America.</li>
+        <li>The trigger he looks for: the company is rolling out AI agents and cannot prove they work, is under pressure to cut QA cost, or finds its QA scores disagreeing with what supervisors see.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>Who inside the company</h3>
+      <ul>
+        <li><b>Champion:</b> the CX or contact center leader.</li>
+        <li><b>Day-to-day evaluator:</b> the QA director and call center operations.</li>
+        <li><b>Technical check:</b> the CIO, IT or AI lead, when integration comes up.</li>
+        <li><b>Money:</b> finance or an executive sponsor, when the case rests on savings or risk.</li>
+      </ul>
+    </div>
+    <div class="card">
+      <h3>The two messages</h3>
+      <ul>
+        <li>Proof and control of AI agent performance.</li>
+        <li>A more efficient QA operation that people trust.</li>
+      </ul>
+      <p class="quote">His note on the buyer: QA leaders feel AI graders are unreliable. They want a system they understand, one that holds AI agents accountable the way they hold their human team accountable. There is tension between call center leaders and the executives pushing AI on them.</p>
+    </div>
+    <div class="card">
+      <h3>What he found on the website</h3>
+      <ul>
+        <li>No live insurance page. The old <code>/industries/insurance/</code> page still loads but is missing from the navigation and talks about voice agents, not QA.</li>
+        <li>No named customer logos, case studies or quantified VoiceScore proof anywhere on the site.</li>
+        <li>"Up to 70% of QA costs saved" sits on the homepage with no case study behind it.</li>
+      </ul>
+    </div>
+  </div>
+
+  <h3 style="margin-top:22px">The money</h3>
+  <div class="tbl-wrap">
+    <table class="money">
+      <thead><tr><th>Line</th><th>Per month</th><th>Share of campaign</th></tr></thead>
+      <tbody>
+        <tr><td>LinkedIn prospecting</td><td>$4,000</td><td>40%</td></tr>
+        <tr><td>LinkedIn remarketing</td><td>$3,000</td><td>30%</td></tr>
+        <tr><td>Google Search (VoiceScore)</td><td>$3,000</td><td>30%</td></tr>
+        <tr class="total"><td>Insurance + VoiceScore campaign</td><td>$10,000</td><td>100%</td></tr>
+        <tr><td>Google brand (outside the campaign)</td><td>$300</td><td></td></tr>
+        <tr><td>Google non-brand, not VoiceScore (outside)</td><td>$1,500</td><td></td></tr>
+        <tr class="total"><td>All media</td><td>$11,800</td><td></td></tr>
+        <tr><td>Agency fee</td><td>$1,000</td><td></td></tr>
+        <tr><td>ITC (one-time)</td><td>$2,000</td><td></td></tr>
+      </tbody>
+    </table>
+  </div>
+  <p class="meta">ITC is most likely the InsureTech Connect conference in Las Vegas. His target list already includes attendees saved from the ITC Vegas 2026 directory.</p>
+
+  <div class="grid2" style="margin-top:14px">
+    <div class="card">
+      <h3>How he will judge it (his KPIs)</h3>
+      <ul>
+        <li>Traffic to the VoiceScore page (GA4).</li>
+        <li>Traffic to the demo request page (GA4).</li>
+        <li>Traffic to the VoiceScore evaluation page (GA4).</li>
+        <li>VoiceScore demo requests (GA4 and HubSpot).</li>
+        <li>VoiceScore deals created (HubSpot).</li>
+      </ul>
+      <p class="meta" style="margin-top:8px">No cost targets. The dashboard link reads "TBD".</p>
+    </div>
+    <div class="card">
+      <h3>Who does what in his plan</h3>
+      <ul>
+        <li><b>Kuota:</b> media plan, LinkedIn strategy, campaign brief, ad creative and copy, messaging, landing page copy and design, outbound strategy and copy, target list template, and "tracking" in the main table.</li>
+        <li><b>Agency (us):</b> campaign structure, setup and execution, monitoring and optimization, reporting, the insurer audience build, and the VoiceScore search cleanup.</li>
+        <li><b>VoiceRun:</b> list criteria and data pull (Nick has started), approvals, outbound setup (Doug), sales follow-up, and the offer decision.</li>
+      </ul>
+    </div>
+  </div>
+
+  <p class="meta" style="margin-top:14px"><b>Parked until after launch:</b> thought leadership, webinars, case studies, a site-wide rewrite, sales collateral, and complex ICP scoring.</p>
+</section>
+
+<section id="compare">
+  <h2>Side by side</h2>
+  <p class="sub">Our proposal and SOW on the left, Lawrence's plan in the middle, my read on the right.</p>
+  <div class="legend">
+    <span><span class="chip ok">Aligned</span> same direction</span>
+    <span><span class="chip shift">Shifted</span> different, workable</span>
+    <span><span class="chip bad">Conflict</span> needs a decision</span>
+    <span><span class="chip q">Unclear</span> his doc is ambiguous</span>
+  </div>
+  <div class="tbl-wrap">
+    <table class="compare">
+      <thead><tr><th>Topic</th><th>Our proposal and SOW</th><th>Lawrence's plan</th><th>Read</th></tr></thead>
+      <tbody>
+        <tr><td>What we sell</td><td>The whole platform. We asked VoiceRun to decide "that VoiceScore stays a test rather than a second campaign."</td><td>VoiceScore only, for this campaign.</td><td><span class="chip bad">Conflict</span><br><span class="meta">He answered our decision the other way.</span></td></tr>
+        <tr><td>Who we target</td><td>Two buyers: developers on Google, operations leaders on LinkedIn.</td><td>One buying committee in insurance contact centers. Code-First Builder and TechBuyer are "explicitly out of scope."</td><td><span class="chip shift">Shifted</span></td></tr>
+        <tr><td>Industry</td><td>None. Insurance and banking appear as an untested angle.</td><td>Insurance only.</td><td><span class="chip shift">Shifted</span></td></tr>
+        <tr><td>LinkedIn targeting</td><td>Job titles and seniority, US only, entry level excluded, engineers in their own ad set.</td><td>A named account list uploaded as a matched audience. Falls back to the existing Ops-NA ad set if the list is too small.</td><td><span class="chip shift">Shifted</span><br><span class="meta">Compatible.</span></td></tr>
+        <tr><td>LinkedIn's job</td><td>Top and middle funnel first, Lead Gen Forms once there is an offer.</td><td>$4,000 prospecting and $3,000 remarketing. Lead Gen Forms are not mentioned.</td><td><span class="chip shift">Shifted</span></td></tr>
+        <tr><td>Google's job</td><td>Bottom of funnel: developer intent 35%, competitor 15%, brand 10%.</td><td>Refocus the VoiceScore search campaign on contact center QA, call scoring and monitoring. Brand and other non-brand sit outside.</td><td><span class="chip shift">Shifted</span></td></tr>
+        <tr><td>Media budget</td><td>$5,000 to $7,500 a month. Google 60%, LinkedIn 40%.</td><td>$11,800 a month in total. LinkedIn about 59%, Google about 41%.</td><td><span class="chip shift">Shifted</span><br><span class="meta">Split flipped, total up.</span></td></tr>
+        <tr><td>Agency fee</td><td>$2,000 a month for 3 months, tracking setup ($1,500) waived.</td><td>$1,000 a month.</td><td><span class="chip bad">Conflict</span></td></tr>
+        <tr><td>Ad copy and creative</td><td>SOW: Toggle owns ad copy drafting and briefs creative for VoiceRun's designer.</td><td>Kuota owns the campaign brief, creative and copy.</td><td><span class="chip bad">Conflict</span><br><span class="meta">With the SOW wording. Fits your stated scope.</span></td></tr>
+        <tr><td>Landing page</td><td>Toggle briefs, VoiceRun engineers build. SOW puts the build out of scope.</td><td>Subpage: Kuota writes, designs and builds. Main table: VoiceRun builds.</td><td><span class="chip q">Unclear</span><br><span class="meta">Not ours either way.</span></td></tr>
+        <tr><td>Tracking</td><td>SOW: Toggle owns GTM, GA4, conversions, Insight Tag and the UTM convention.</td><td>Main table: Kuota owns tracking. Paid subpage: "Agency + VoiceRun" own conversion and routing QA.</td><td><span class="chip q">Unclear</span></td></tr>
+        <tr><td>Success metric</td><td>Cost per booked meeting (ceiling $500) and under $10 a click on intent traffic by day 90.</td><td>Page traffic, demo requests and deals created. No cost targets.</td><td><span class="chip shift">Shifted</span></td></tr>
+        <tr><td>Dashboard</td><td>Google Ads, LinkedIn Ads and GA4. CRM configuration out of scope.</td><td>Two of five KPIs come from HubSpot.</td><td><span class="chip bad">Conflict</span><br><span class="meta">HubSpot is missing from our spec.</span></td></tr>
+        <tr><td>Timeline</td><td>90 days in three phases. SOW launch in weeks 3 to 4.</td><td>30-day readiness. Paid campaigns "will build once aligned with VoiceRun."</td><td><span class="chip ok">Aligned</span><br><span class="meta">If the page lands on time.</span></td></tr>
+        <tr><td>Geography</td><td>US only until Q4.</td><td>List searches cover the US and South America.</td><td><span class="chip q">Unclear</span></td></tr>
+        <tr><td>Outbound</td><td>Out of scope.</td><td>Reply.io sequence to the same list, run by Kuota and Doug.</td><td><span class="chip ok">Aligned</span><br><span class="meta">Not ours, but it affects attribution.</span></td></tr>
+      </tbody>
+    </table>
+  </div>
+</section>
+
+<section id="agree">
+  <h2>Where he backs our read</h2>
+  <p class="sub">Useful in the meeting: these points are already agreed, so the conversation can start from them.</p>
+  <ul class="plain">
+    <li><b>The destination is the problem.</b> We showed Google rates the landing page Below average on 69 of 73 keywords. His website audit reaches the same place from the other side: no insurance page and no proof on the site.</li>
+    <li><b>Ops-NA is the right LinkedIn audience.</b> Our audit had Directors and VPs of Operations clicking best. He marks Ops-NA as relevant and notes the media buy runs 1.5 to 2 times above LinkedIn's own forecast, which matches our $28.67 per site visit.</li>
+    <li><b>TechBuyer is weak.</b> He notes the ad set loses 75% to 80% of viewers before the 25% mark of the video.</li>
+    <li><b>The offer has to be worth the form.</b> We made bottom-of-funnel lead gen conditional on an offer. His plan leaves "Offer and CTA" as a decision VoiceRun still owes.</li>
+    <li><b>Tracking has to follow the lead into sales.</b> His checklist asks for UTMs, key events, CRM source capture, lead routing and a named follow-up owner. That is our slide 14 loop.</li>
+  </ul>
+</section>
+
+<section id="impact">
+  <h2>What it changes for our paid media plan</h2>
+  <ol class="impact">
+    <li>
+      <h3>The media plan on slide 11 needs a rewrite</h3>
+      <p>The 35% developer-intent line and the 15% competitor line mostly leave this campaign. The new shape is $3,000 of VoiceScore search, $7,000 of LinkedIn against a named list, and $1,800 of other Google spend we may or may not run. At $7,000 a month, his LinkedIn budget alone is more than twice the $3,000 we planned for LinkedIn at the top of our range.</p>
+    </li>
+    <li>
+      <h3>He is building on campaigns we never audited</h3>
+      <p>His audit covers a "VoiceScore (Search)" campaign and an "Enterprise Executives (Search)" campaign. Neither appeared in the 15 July to 27 August export we audited, which held Bundled Tool, Code-First Builder and Campaign #1. He also found a quick win we can take on day one: in the Automated Call Scoring ad group, "automated QA scoring" matches software test-automation searches (LambdaTest, QA Wolf, Mabl), and those searches take 54% of that ad group's spend. About 29% of VoiceScore impressions come from real QA-buyer searches such as NICE CXone, Klaus, Scorebuddy, Gong and Calabrio.</p>
+    </li>
+    <li>
+      <h3>LinkedIn becomes an account-based account</h3>
+      <p>Results now depend on list size. LinkedIn needs at least 300 matched members before a matched audience will serve. If the list lands at 1,000 people, $4,000 a month works out to $4 per person per month, and frequency will climb fast. We should agree the fallback threshold to Ops-NA before launch rather than after.</p>
+    </li>
+    <li>
+      <h3>The $3,000 remarketing line has no pool yet</h3>
+      <p>Our audit found no LinkedIn Insight Tag on the site, so no website audience exists to remarket to. The pool will come from site visitors, video viewers and people who open a form. Installing the tag in week one starts that clock before the new page goes live.</p>
+    </li>
+    <li>
+      <h3>The tracking plan moves with the offer</h3>
+      <p>If VoiceRun picks "scored calls" over a demo, the primary conversion becomes the VoiceScore evaluation form on <code>/voicescore/evaluation/</code> rather than <code>demo_request</code>. His KPIs also need page-view tracking on three pages and a HubSpot source field that survives from click to deal.</p>
+    </li>
+    <li>
+      <h3>The dashboard needs HubSpot and an account view</h3>
+      <p>Our SOW dashboard covers Google Ads, LinkedIn Ads and GA4. His KPIs need HubSpot demo requests and deals created. Because the plan is account-based, a useful dashboard also shows which listed accounts engaged, and it has to separate what outbound produced from what ads produced.</p>
+    </li>
+    <li>
+      <h3>Our role gets narrower and cleaner</h3>
+      <p>Kuota takes strategy, messaging, creative, copy and the page. That leaves us execution, optimization, tracking, reporting and the dashboard, which is the scope you described. Two lines in our paperwork overlap Kuota and should be cleaned up: the SOW's "Toggle owns ad copy drafting," and the proposal's creative strategy card on slide 6.</p>
+    </li>
+  </ol>
+</section>
+
+<section id="questions">
+  <h2>10 questions for Lawrence</h2>
+  <p class="sub">Grouped by topic. Each has the reason behind it so you can explain the ask in one breath.</p>
+
+  <div class="qgroup">
+    <div class="qgroup-title">Paid media</div>
+    <div class="q">
+      <div class="ask"><span class="num">1</span>Which campaigns are ours to run: only the $10,000 Insurance and VoiceScore campaign, or also the $300 brand and $1,500 non-brand Google spend? Does Code-First Builder keep running inside that $1,500?</div>
+      <p class="why"><b>Why:</b> Our proposal put 35% of media on developer intent. We need to know whether that work still exists, who optimizes it, and whether it shows up in our reporting.</p>
+    </div>
+    <div class="q">
+      <div class="ask"><span class="num">2</span>How many accounts and contacts will the target list hold, when will it be final, and is it US only or US plus South America?</div>
+      <p class="why"><b>Why:</b> LinkedIn needs 300 matched members to serve, and a small list at $4,000 a month burns out on frequency. Your notes already name Ops-NA as the fallback, so let's agree the size that triggers it. South America would also need its own campaign, budget and probably a Spanish or Portuguese page. Can we add the ITC Vegas attendee list as its own audience?</p>
+    </div>
+    <div class="q">
+      <div class="ask"><span class="num">3</span>Where does the $3,000 LinkedIn remarketing audience come from in month one?</div>
+      <p class="why"><b>Why:</b> The Insight Tag is not installed yet, so there is no website pool. I would start remarketing smaller, move the difference to prospecting, and raise remarketing as the pool fills. Is that acceptable, and should Lead Gen Forms be part of it?</p>
+    </div>
+    <div class="q">
+      <div class="ask"><span class="num">4</span>Can we get access to the VoiceScore Search and Enterprise Executives campaigns now, and start the keyword cleanup before the new page is ready?</div>
+      <p class="why"><b>Why:</b> We never saw these two campaigns in our audit. The test-automation leak in Automated Call Scoring (54% of that ad group's spend) is a fix we can make in week one without waiting on anyone.</p>
+    </div>
+  </div>
+
+  <div class="qgroup">
+    <div class="qgroup-title">Landing page</div>
+    <div class="q">
+      <div class="ask"><span class="num">5</span>Who builds the Insurance and VoiceScore page, what is the go-live date, and does paid wait for it?</div>
+      <p class="why"><b>Why:</b> Your main table lists VoiceRun for the build, and the landing page subpage lists Kuota. Our SOW has us recommending, not building. If the page slips, do we run Google to the existing <code>/voicescore/</code> page in the meantime and hold LinkedIn until the page is live?</p>
+    </div>
+    <div class="q">
+      <div class="ask"><span class="num">6</span>What is the offer, a demo or a scored-calls evaluation, and when will VoiceRun decide?</div>
+      <p class="why"><b>Why:</b> The offer sets our primary conversion event, the form fields, the LinkedIn campaign objective and what the page asks for. Your plan marks it "Decision needed," and tracking cannot be finished until it is made.</p>
+    </div>
+  </div>
+
+  <div class="qgroup">
+    <div class="qgroup-title">Tracking and dashboard</div>
+    <div class="q">
+      <div class="ask"><span class="num">7</span>Your plan lists Kuota under tracking. Which parts do you want Toggle to own?</div>
+      <p class="why"><b>Why:</b> Our SOW has Toggle owning GTM, GA4 key events, Google and LinkedIn conversions, the Insight Tag and the UTM convention. Two owners on one tag container is how things break. My suggestion: Toggle owns tags and conversions, VoiceRun owns HubSpot routing, and Kuota signs off on the event list.</p>
+    </div>
+    <div class="q">
+      <div class="ask"><span class="num">8</span>Can we connect HubSpot to the dashboard, and how should a demo be credited when outbound and ads both touched the same person?</div>
+      <p class="why"><b>Why:</b> Two of your five KPIs come from HubSpot, and cost per meeting depends on it. Our dashboard spec covers Google, LinkedIn and GA4 only. We also need one agreed rule for credit between Reply.io and paid, or the numbers will be argued every month.</p>
+    </div>
+  </div>
+
+  <div class="qgroup">
+    <div class="qgroup-title">Next steps</div>
+    <div class="q top">
+      <div class="ask"><span class="num">9</span>Your budget shows $1,000 a month for the agency. Our 24 September quotation is $2,000 a month with the $1,500 tracking setup waived. Which number has Nick seen and approved?</div>
+      <p class="why"><b>Why:</b> This has to be settled before kickoff. Media at $11,800 a month is more than three times the roughly $3,480 both accounts spend today, across two platforms plus an account-based list, and the dashboard now needs HubSpot on top.</p>
+    </div>
+    <div class="q">
+      <div class="ask"><span class="num">10</span>What single number tells us the 30 days worked, and what start date goes on the SOW?</div>
+      <p class="why"><b>Why:</b> Your KPIs are traffic, demos and deals, with no cost targets. Our proposal commits to a cost per meeting under $500 and under $10 a click by day 90. Let's agree one number, and place our 90-day plan against your 30-day readiness window.</p>
+    </div>
+  </div>
+</section>
+
+<section id="next">
+  <h2>Next steps to propose in the meeting</h2>
+  <ul class="plain">
+    <li><b>Confirm fee and scope in writing.</b> Either the $2,000 quotation stands, or we issue a change order against a narrower scope. Remove "Toggle owns ad copy drafting" from the SOW if Kuota writes the copy.</li>
+    <li><b>Get full access this week.</b> Google Ads (including the VoiceScore campaigns), LinkedIn Campaign Manager, GA4, GTM and HubSpot.</li>
+    <li><b>Take the Google quick win on day one.</b> Add the test-automation negatives to Automated Call Scoring and refocus VoiceScore search on contact center QA terms.</li>
+    <li><b>Install the Insight Tag now</b> so the remarketing pool starts filling before the new page launches.</li>
+    <li><b>Send back a re-cut media plan</b> built on his $10,000 split, with remarketing phased in and the Ops-NA fallback threshold written down.</li>
+    <li><b>Write the tracking spec</b> once the offer is chosen: the page, the evaluation or demo form, and a HubSpot source field that carries the campaign through to the deal.</li>
+    <li><b>Draft the dashboard spec</b> around his five KPIs, plus cost per demo, cost per deal, and an account engagement view for the target list.</li>
+  </ul>
+  <p class="meta" style="margin-top:14px">Watch for two contradictions inside his own doc: the landing page build owner (VoiceRun in the main table, Kuota in the subpage) and the tracking owner (Kuota in the main table, "Agency + VoiceRun" in the paid subpage). Raise them as questions, since they may be drafting slips rather than decisions.</p>
+</section>
+
+<footer>
+  Internal working note. Lawrence's pages were read from PDF screenshots of Notion, exported 26 September 2026, so figures are as written in his draft. Our figures come from the proposal dated 8 September 2026 and the SOW and quotation dated 24 September 2026.
+</footer>
+
+</div>
+</body>
+</html>
