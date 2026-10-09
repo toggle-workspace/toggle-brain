@@ -13,7 +13,7 @@
 
 // Repo root, derived from this file's location so the build runs on any machine.
 const path = require('path');
-const REPO = path.resolve(__dirname, '..', '..', '..', '..').split(path.sep).join('/');
+const REPO = path.resolve(__dirname, '..', '..', '..').split(path.sep).join('/');
 
 // Palette, verbatim from deck-master.html :root
 const C = {

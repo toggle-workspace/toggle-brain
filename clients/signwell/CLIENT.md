@@ -16,8 +16,12 @@ last_reviewed: 2026-09-18
 
 SignWell sells e-signature software through a product-led, free-trial funnel. The company started bootstrapped and competes with DocuSign on price and on compliance (HIPAA, BAAs). They are replacing their current paid media agency, Prosomo, and want a partner in place by the start of Q4 2026.
 
+The company is based in Portland, Oregon, and operates as Docsketch LLC after renaming from Docsketch. Ruben Gamez founded it in 2019. It had 17 employees and was growing 36.4% year over year as of March 2026, per Crustdata. A third-party snapshot put revenue near $5M ARR in 2024; that figure is unconfirmed and must not be repeated to the client as fact. Toggle came in through Lawrence Quan as one of three agencies on a shortlist.
+
+> **History:** `README.md` is the 13 September 2026 brand audit write-up from before the first call. It covers the pre-call findings, the competitor ad library counts, the mistakes made during the audit and how to rebuild that deck from `_deck-build/`. Where it disagrees with this file, this file is newer and wins.
+
 ## Contacts
-- **Primary:** Lawrence Quan · marketing lead (runs the agency evaluation) · lawrence@signwell.com
+- **Primary:** Lawrence Quan · marketing lead (runs the agency evaluation) · lawrence@signwell.com. He also referred VoiceRun through Kuota (`clients/voicerun-lawrence-client/CLIENT.md`) and Kojo (`clients/kojo/CLIENT.md`).
 - **Paid media:** Henry Brown · henry@signwell.com
 - **Founder:** Ruben Gamez (also founded Bidsketch). Henry is asking him whether the free tools convert to paid or take sign-ups from it.
 - **Decision-maker:** TBD, confirm whether Lawrence signs off alone
@@ -41,6 +45,14 @@ SignWell sells e-signature software through a product-led, free-trial funnel. Th
 - **Largest market:** United States, then organic international, with a Latin America push (Spanish-speaking reps).
 - **Focus vertical this quarter:** healthcare.
 
+## What SignWell sells (published pricing, read 2026-09-13)
+- **Free:** 3 documents a month, 1 sender, 1 template.
+- **Light:** $12 per user monthly, or $10 billed annually.
+- **Business:** $36 per user monthly, or $30 billed annually.
+- **API:** $275 a month base, then $0.85 falling to $0.20 per document.
+- **Enterprise:** custom pricing, gated behind sales.
+- **Claimed proof:** 65,000 plus businesses, 20 million plus documents signed, 4.9 on Capterra and 4.8 on G2. SOC 2 Type II, HIPAA, GDPR, eIDAS, ESIGN, UETA and Mexican NOM 151 compliance are included on every plan, including free. That is their stated wedge against competitors who keep compliance for higher tiers.
+
 ## Competitors
 - **Tier 2 SMB set (same audience):** BoldSign, SignEasy, Signable, SignRequest, Signaturely, Eversign
 - **Closest big-name overlap:** Dropbox Sign
@@ -57,6 +69,7 @@ SignWell sells e-signature software through a product-led, free-trial funnel. Th
 - **Credentials location:** TBD (never paste credentials here)
 
 ## Timeline
+- 2026-09-13: pre-call brand audit and the 35-slide brand audit deck (`README.md`, `01-strategy/2026-09-13-*.md`)
 - 2026-09-14: discovery call (`05-meetings/2026-09-14-discovery-call.md`)
 - Week of 2026-09-21: Toggle sends the proposal after internal review
 - Start of Q4 2026: SignWell picks a partner
@@ -69,6 +82,10 @@ SignWell sells e-signature software through a product-led, free-trial funnel. Th
 - The next vertical after healthcare (Q4) is undecided. Our audit recommends accounting and bookkeeping firms.
 - Lawrence and Henry inherited Prosomo and dislike its one-page monthly PDF. They are meeting several agencies this week and next.
 - Audit: `01-strategy/2026-09-marketing-audit.md`
+- Pre-call evidence file: `01-strategy/2026-09-13-brand-audit-verified-data.md`. Nothing in a deck may assert a number that does not trace to a line in that file or the audit above.
+- Eleven industry pages are live on the site with no visible tiering.
+- They are further along on answer engine optimization than most companies their size. They have Perplexity and Google AI Mode deep links on the page, an `/mcp/` page for signing inside AI chat, and `ai-train=yes` in robots.txt.
+- They have no TikTok or YouTube presence. LinkedIn, X, Instagram and Facebook accounts exist.
 - Prosomo runs the ads out of its own accounts. SignWell sees dashboards but does not own the accounts or the data. Account ownership is a selling point for us.
 - Prosomo has trouble running a change review process in GTM.
 - Technical and API buyers want clear pricing and docs, and do not want a sales call. Outbound that pushed prospects to a trial beat outbound that pushed them to sales.

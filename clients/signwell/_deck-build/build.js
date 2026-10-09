@@ -1,5 +1,5 @@
 // SignWell brand audit deck.
-// Every figure traces to clients/lawrence-clients/signwell/01-strategy/
+// Every figure traces to clients/signwell/01-strategy/
 //   2026-09-13-brand-audit-verified-data.md
 // House rules: brain/voice/writing-standards.md (no em dash, no double hyphen,
 // full sentences), stop-slop, and clients/toggle/design-system/.

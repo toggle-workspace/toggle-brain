@@ -2,7 +2,8 @@
 
 Everything Toggle knows about this account, in one file, so work can resume on any
 machine without rebuilding context. Written 13 September 2026, the night before the
-first call.
+first call. It is a snapshot from that date: `CLIENT.md` holds the current state of
+the account and wins wherever the two disagree.
 
 **Read order for a cold start:** this file, then
 `01-strategy/2026-09-13-brand-audit-verified-data.md` for the evidence behind every
@@ -217,7 +218,7 @@ budget lands. It is a question for Henry, not a finding.
 ## 8. Rebuilding the deck on another machine
 
 ```bash
-cd clients/lawrence-clients/signwell/_deck-build
+cd clients/signwell/_deck-build
 npm install
 npm run build          # writes the .pptx to your Desktop
 npm run check          # layout check: overflow, table collisions, painted-over text, edge bleed
@@ -275,5 +276,6 @@ npm run dom            # rendered-DOM signup control sweep across the key pages
    signup, API paid, demo request, each with a value.
 
 **Repo hygiene:** work sits on branch `client/signwell/brand-audit`, unpushed at the
-time of writing. Run `/git-contribute` to open the PR. VoiceRun moved under
-`clients/lawrence-clients/` in the same change and its contents were not edited.
+time of writing. Run `/git-contribute` to open the PR. On 9 October 2026 this file
+and `_deck-build/` moved from `clients/lawrence-clients/signwell/` into this folder,
+and VoiceRun moved to its own folder at `clients/voicerun-lawrence-client/`.
