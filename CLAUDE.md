@@ -36,6 +36,7 @@ Plus supporting zones: **`playbooks/`** (how-we-do-things runbooks), **`assets/`
 | Prep the sales conversation | `playbooks/sales-play.md` | the call script: 90 minutes of pre-call research, the 30 minute structure, objections, and what never to say |
 | Check what our case studies can and cannot prove | `brain/case-studies/PROOF-GAPS.md` | the internal record of what each case can and cannot prove; the sales pages no longer mirror it |
 | Draft a proposal | `generators/proposal.md` | reads `brain/services/`, `brain/positioning/`, `brain/case-studies/` |
+| Lock the scope on a close (what we deliver, by when, what is excluded) | `generators/scope-of-work.md` (`/scope-of-work`) | reads the proposal + quotation + `brain/services/`; renders a signed-off Word document via `templates/scope-of-work/`. The client-facing safety document |
 | Write TikTok hooks | `generators/tiktok-hooks.md` | reads `brain/voice/`, `prompts/platforms/tiktok.md`, client `style-pack.md` |
 | Write a TikTok One creator brief | `/tiktok-brief-writer` global skill | enforces `brain/tiktok-one-rules.md`; writes `clients/<slug>/00-brief/` |
 | Validate a draft brief against TikTok rules | `brief-validator` subagent | reads `brain/tiktok-one-rules.md` |
