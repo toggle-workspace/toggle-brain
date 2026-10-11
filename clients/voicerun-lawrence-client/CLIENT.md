@@ -9,7 +9,7 @@ currency: USD
 mrr: TBD            # USD 2,000 on the quotation vs USD 1,000 in Lawrence's plan; set once settled
 credit_pending: 0
 account_lead: Jordan
-last_reviewed: 2026-10-09
+last_reviewed: 2026-10-11
 ---
 
 # VoiceRun
@@ -39,6 +39,37 @@ SignWell (`clients/signwell/`) and Kojo (`clients/kojo/`).
 - Jordan's internal next steps deck, 12 October to 13 November 2026 (tracking, Google
   Search, LinkedIn, weekly timeline, open questions):
   `01-strategy/2026-10-09-next-steps-plan-12oct-to-13nov.pptx`
+
+## Tracking (Google Tag Manager)
+- **Build guide:** `01-strategy/2026-10-10-gtm-tracking-setup-guide.docx`, a step-by-step
+  Word guide in five parts. Part 0 splits and renames demo_request. Part 1 covers the
+  VoiceScore leads, CTA clicks, form starts and audiences. Part 2 covers the nice to have
+  events, Part 3 fixes the existing tags, and Part 4 builds the shared GA4 exploration.
+  Jordan's audit of the existing tags, which the guide builds on, is on the Desktop as
+  `Voicerun Tracking Findings (10-10-2026).docx`.
+- **Container:** GTM-NT2B5VRZ. It loads only on voicerun.com and www.voicerun.com.
+  GA4 is G-CY1WV9Z7WC, the Google Ads tag is AW-18326377293, and the LinkedIn
+  Insight Tag is 9394978.
+- **How the forms report a lead:** the forms are custom code, not HubSpot embeds. Every
+  form sends the visitor to `/contact/thank-you/?topic=<topic>`, and that page pushes
+  `generate_lead` with `source` set to the topic, once per topic per browser session.
+  The VoiceScore topics are `voicescore-evaluation` and `voicescore-demo`. Every lead
+  conversion in the guide is built on this event, so no developer ticket is needed.
+- **Event names:**
+
+  | Event | GA4 | Google Ads | LinkedIn |
+  |---|---|---|---|
+  | `voicescore_evaluation_request` | Key event | Primary, the VoiceScore campaign goal | Conversion |
+  | `voicescore_demo_request` | Key event | Primary | Conversion |
+  | `contact_request` (was demo_request), split by `form_topic` | Event | Contact Request | Contact Request |
+  | `voicescore_cta_click` (`cta_name`), `voicescore_form_start` (`form_name`) | Event | No | No |
+  | `site_link_click` (`link_name`), `scroll_depth`, `video_start` / `video_progress` / `video_complete` | Event | No | No |
+
+- **Known quirk:** the site's event helper pushes each custom event twice (as a data
+  layer event and through gtag). Confirmed in Preview on 11 October 2026. Custom Event
+  triggers on those events need **Once per page**. `generate_lead` is a single push.
+- **Enhanced Conversions:** email only. Google needs country and postal code before it
+  accepts first and last name, and the forms collect neither.
 
 ## Scope
 - **Services:** performance marketing (Google Ads, LinkedIn Ads), website tracking,
