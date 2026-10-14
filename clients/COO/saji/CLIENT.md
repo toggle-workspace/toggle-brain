@@ -3,14 +3,14 @@ client: Saji (via COO)
 slug: coo-saji
 geo: my
 status: prospect
-stage: proposal-sent
+stage: presented
 practice: acquisition
 currency: MYR
 mrr: TBD
 credit_pending: 0
 account_lead: TBD
-last_reviewed: 2026-09-30
-revision: rev3
+last_reviewed: 2026-10-14
+revision: hybrid-mechanic-rev4
 ---
 
 # Saji, Ramadan Raya 2027 (via COO)
@@ -21,9 +21,38 @@ brand.
 
 Saji is Malaysia's number one refined cooking oil at roughly 45.6% market share. Delima also owns
 Seri Pelangi, Premeo, Adela and Gula Prai, and all of them ride along in the Ramadan Raya campaign.
-The 2027 campaign runs with a collaboration partner, **Bulan Bintang**, a baju Melayu and baju
-kurung brand founded in 2016 by Azzim Zahid Azmi, selling through 14 boutiques at roughly RM289 a
-piece and skewing suburban rather than urban.
+
+**The primary collaboration partner is now Khatam.** Bulan Bintang was the partner in the brief. It is
+a baju Melayu and baju kurung brand founded in 2016 by Azzim Zahid Azmi, selling through 14 boutiques
+at roughly RM289 a piece and skewing suburban rather than urban. It is now the secondary option and
+only offers a paid sponsorship tier.
+
+## Current state, 14 October 2026
+
+- **Presented 13 October.**
+  - COO presented its final 95-slide proposal. Toggle presented digital amplification (slides 67 to 74).
+  - The deck is on the Desktop at `C:\Users\Jordan\Desktop\COO (Saji)\SAJI RAYA CAMPAIGN PROPOSAL.pptx`.
+  - The notes are in `05-meetings/2026-10-13-saji-presentation.md`.
+- **Campaign line:** Saji leaned toward *Tersaji Raya*. The brand film tagline is *Nilai diwarisi, tersaji dari hati*.
+- **Contest dates:** 30 January to 11 April 2027. The landing page goes live by 15 January.
+- **Prizes in the final deck:** RM55,000 in total.
+  - Main prizes: RM10,000, RM5,000 x 3 and RM3,000 x 5.
+  - Weekly prizes: RM100 x 10 winners each week.
+  - Vouchers: 100 RM50 brand vouchers.
+  - A year of SAJI products for first place, on top.
+  - The RM70,000 pool below was an earlier figure.
+- **Mechanic:** Saji asked for a hybrid of the two options. It is designed in `01-strategy/hybrid-contest-mechanic-2026-10-14.md`, and the 3-slide deck is `01-strategy/Saji Raya - Hybrid Contest Mechanic rev4.pptx`.
+  - Option 2 (buy RM25, answer once, register, upload) is the entry.
+  - Option 1 (RM1 = 1 Mata, 25 Mata = 1 entry) keeps shoppers buying.
+  - The weekly draw counts only that week's entries. The grand prize draw (the top 3 prizes) counts everything.
+- **Media:** RM100,000, split TikTok RM49,000, Facebook and Instagram RM41,000, YouTube RM10,000.
+- **Next steps from Saji:**
+  - A revised cost proposal with a full budget breakdown.
+  - Key visual Option 1 with stronger SAJI branding and Kak Ji.
+  - Khatam's terms (owner: Amin).
+  - The brand film treatment with an internal conflict and a father figure.
+
+The sections below record the pitch as it developed through rev3. Read them as history.
 
 ## Contacts
 - **Primary:** COO · agency partner
@@ -228,7 +257,17 @@ the Golden Ticket packaging change sit with on-ground and with the client.
 
 ## Deliverables
 
-**Current, rev3:**
+**Current, hybrid contest mechanic, 14 October 2026:**
+
+- `01-strategy/Saji Raya - Hybrid Contest Mechanic rev4.pptx`: 3 slides that replace slides 63 to 65 of COO's final deck, in COO's design, with speaker notes.
+  - Slide 1 is the hybrid, entry plus commitment, with the goal.
+  - Slide 2 is how Mata turns into entries, with the two draws.
+  - Slide 3 is the 5 steps to join, with the "My Mata" balance on the contest page.
+  - Three oversized images were downscaled to keep the file under 5 MB. The full-size working copy, and rev1 to rev3, are on the Desktop in `COO (Saji)\Saji mechanics revision\`.
+- `01-strategy/hybrid-contest-mechanic-2026-10-14.md`: the rules, Jordan's decisions, the internal audience reasoning and the open items.
+- `05-meetings/2026-10-13-saji-presentation.md`: the presentation notes, plus the inconsistencies found in COO's final deck.
+
+**Superseded, rev3:**
 
 - `01-strategy/Saji x Bulan Bintang - Digital Advertising Proposal - rev3-cleaned.pptx`: 14 slides,
   **internal**, written for the COO and Toggle team rather than the client. Plain language
@@ -246,6 +285,31 @@ the Golden Ticket packaging change sit with on-ground and with the client.
   Mata balance, with the national leaderboard, the bonus code box and the milestone ladder.
 - `05-meetings/2026-09-22-saji-bulan-bintang.md`, `05-meetings/2026-09-24-coo-internal.md` and
   `05-meetings/2026-09-30-rev3-cleaned-decisions.md`.
+
+**Landing page rev6, 13 October 2026:**
+
+- `02-creative/tersaji-raya-2027-contest-landing-page-rev6.html`: rev5 with the contest window moved
+  to **30 January to 11 April 2027**, in the eyebrow, the receipt date rule and the opening date in
+  the prize terms, in both BM and EN. Nothing else changed. The timeline table above still shows the
+  older 1 February to 5 April window.
+
+**Landing page rev2, 8 October 2026:**
+
+- `02-creative/tersaji-raya-2027-contest-landing-page-rev2.html`: built on request after rev3. It
+  carries the rev2 proposal's two receipt mechanic (RM25 of SAJI plus RM150 of the partner's baju
+  raya, 1 February to 5 April 2027) with the RM70,000 pool, and drops the pop-up counter, the Golden
+  Ticket, the mystery gift, the countdown, the winner wall and the "where to enter" block, because
+  none of them is confirmed. The winner count, the prize split and the draw dates stay unannounced
+  on the page. The partner is open between Bulan Bintang and Khatam: every mention fills from
+  `PARTNER` at the top of the script, so naming the partner is a one line change. The masthead uses
+  the client's own key visual (`RARA_LANDING_002`) and the "Raya Kita Sama" lettering from
+  `C:\Users\Jordan\Desktop\Saji Designs\`, and the brand name is written SAJI throughout. Images
+  are embedded, so the file stands alone. Verified in Chrome at 360, 390 and 1280 pixels.
+- **The page and the rev3 deck now disagree on the mechanic.** rev3 proposes Mata Raya points,
+  while this page asks for two receipts. Settle which one goes to Saji on 14 October.
+- **The key visuals carry points copy.** The receipts printed in `RARA_LANDING_001` and `002` read
+  "Lagi banyak mata! Lagi banyak ganjaran!", and `RARA_LANDING_004` adds "Kumpul mata & menang
+  ganjaran". That matches rev3, not a two receipt contest.
 
 **Superseded by rev3, do not send:**
 
