@@ -9,8 +9,9 @@ Two HTML pages and one shared data file. No build step, no dependencies beyond G
 
 | File | Use it for | Prospect-specific? |
 |---|---|---|
-| `index.html` | **The company profile.** The first call, the intro meeting, the link you send to someone who asked what Toggle does. Ends in a BANT qualification the prospect answers on screen. | No, fully generic |
+| `toggle-company-profile.html` | **The company profile.** The first call, the intro meeting, the link you send to someone who asked what Toggle does. Ends in a BANT qualification the prospect answers on screen. | No, fully generic |
 | `diagnosis.html` | **The post-audit page.** A second conversation, after you have researched one named prospect. Carries their name, three findings you pulled before the call, and their arithmetic. | Yes, one prospect at a time |
+| `toggle-company-profile-standalone.html` | **The copy you send.** The profile with its data, team photo and logos inlined, so it opens on its own. Rebuild with `node clients/toggle/sales-page/build-standalone.mjs` after any edit. Never edit it by hand. | No |
 | `sales-data.js` | The client roster and the nine published cases, shared by both pages. | Edit here once |
 
 They cross-link in the header, so you can move between them mid-call.
@@ -19,7 +20,7 @@ The call script that goes with both is `playbooks/sales-play.md`. Read that befo
 
 ## Running them
 
-**Company profile.** Open `index.html`. Nothing to fill in. On a call, scroll it and let them react. The arithmetic section is live, so you can type their numbers in while they watch.
+**Company profile.** Open `toggle-company-profile.html`. Nothing to fill in. On a call, scroll it and let them react. The arithmetic section is live, so you can type their numbers in while they watch.
 
 **Diagnosis page.** Open `diagnosis.html`, click **Set up**, enter the company, market, date and the three pre-call findings. Then type their four numbers into the arithmetic section on the call.
 
@@ -79,9 +80,9 @@ It doubles as the rep's BANT capture. Answers persist in that browser, so a pres
 
 ## The team grid (hidden)
 
-**This section is switched off.** `<section id="team" hidden>` in `index.html`, hidden on 2026-08-29 at Zaid's request while the names are still unmapped. Delete the `hidden` attribute to bring it back; `buildTeam()` checks for it and skips building, the nav never linked to it, and nothing else on the page depends on it. The rest of this section describes what returns when you do.
+**This section is switched off.** `<section id="team" hidden>` in `toggle-company-profile.html`, hidden on 2026-08-29 at Zaid's request while the names are still unmapped. Delete the `hidden` attribute to bring it back; `buildTeam()` checks for it and skips building, the nav never linked to it, and nothing else on the page depends on it. The rest of this section describes what returns when you do.
 
-`index.html` opens its second section on a 4 across, 2 down grid of the individual head cutouts, over the wave field. Each tile rests at 55 percent grayscale; hovering brings that one head back to full color, scales it up and lifts the tile. Clicking opens the sitter's profile in the shared modal, which carries Previous and Next through all 8.
+`toggle-company-profile.html` opens its second section on a 4 across, 2 down grid of the individual head cutouts, over the wave field. Each tile rests at 55 percent grayscale; hovering brings that one head back to full color, scales it up and lifts the tile. Clicking opens the sitter's profile in the shared modal, which carries Previous and Next through all 8.
 
 **Assets.** `heads/h1.webp` through `h8.webp` are the 8 individual cutouts, numbered left to right in the order the sitters appear in the `TEAM` array (339KB in total). `team.webp` is the full group shot with the studio background knocked out (217KB). The grid does not load it, and it is kept as the source the cutouts came from.
 

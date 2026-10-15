@@ -124,7 +124,7 @@ Then stop. The pause does more work than the sentence.
 
 ## Reads
 
-- `clients/toggle/sales-page/index.html`, the company profile
+- `clients/toggle/sales-page/toggle-company-profile.html`, the company profile
 - `clients/toggle/sales-page/diagnosis.html`, the post-audit page
 - `clients/toggle/sales-page/README.md`, how to run and edit it
 - `brain/voice/writing-standards.md`, binding for anything written
