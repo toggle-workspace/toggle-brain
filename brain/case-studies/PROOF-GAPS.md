@@ -7,7 +7,7 @@ owner: Zaid
 
 What our case evidence can and cannot carry, written after the deck rebuild on 2026-08-26. Yi Yang's read was that the case studies are weak. Half of that is true and half of it was a presentation problem.
 
-**The presentation problem, now fixed.** We had nine documented cases and the old deck used five, without the method behind any number and without the two strongest arguments we own. Mindvalley (business lead cost from $100 to $10 on $500,000 managed) and Kith and Kin (lead volume up 392% at RM35) were both missing. The sales page at `clients/toggle/sales-page/index.html` carries all nine, each opening to the method and a transfer line, filterable by vertical.
+**The presentation problem, now fixed.** We had nine documented cases and the old deck used five, without the method behind any number and without the two strongest arguments we own. Mindvalley (business lead cost from $100 to $10 on $500,000 managed) and Kith and Kin (lead volume up 392% at RM35) were both missing. The sales page at `clients/toggle/sales-page/toggle-company-profile.html` carries all nine, each opening to the method and a transfer line, filterable by vertical.
 
 **The real problem.** Nine cases of outcomes, and almost no third-party evidence that any of it happened. That is what costs us the accounts we lose to larger agencies.
 
