@@ -1,0 +1,21 @@
+#!/usr/bin/env bash
+# meta - launcher for bin/meta-ads.py.
+#
+# Resolves the project as the parent of this script's bin/ directory, so nothing
+# is hardcoded. Runs the CLI on a uv managed CPython, which means no system
+# Python, no virtualenv, and no pip install are required on this machine.
+#
+# Credentials are NOT sourced here on purpose: you source .env yourself once per
+# shell, so the token's lifetime in the environment stays visible to you.
+#   source .env && meta auth status
+set -euo pipefail
+
+PROJECT="$(cd "$(dirname "${BASH_SOURCE[0]}")/.." && pwd)"
+UV="$(command -v uv || echo "$HOME/.local/bin/uv")"
+
+if [ ! -x "$UV" ]; then
+  echo "xx uv not found. Install it: powershell -c \"irm https://astral.sh/uv/install.ps1 | iex\"" >&2
+  exit 1
+fi
+
+exec "$UV" run --no-project --quiet --python 3.13 "$PROJECT/bin/meta-ads.py" "$@"

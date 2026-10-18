@@ -21,3 +21,5 @@ One sub-directory per integration. One recipe per integration.
 - `google-drive/install.md` — connects Google Drive as an MCP resource in Claude Code via OAuth
 - `google-ads/install.md`: connects this machine to Google Ads for read-only reporting through `tools/google-ads/gads`, one profile per Google login; `connection-card.md` records which login and route reaches each account
 - `tiktok-ads/install.md`: connects this machine to TikTok Ads for read-only reporting through `tools/tiktok-ads/tt`, one access token per TikTok login; `connection-card.md` maps each advertiser ID to its client slug
+- `linkedin-ads/install.md`: connects this machine to LinkedIn Ads for read-only reporting through `tools/linkedin-ads/li`, one access token plus refresh token per LinkedIn login (scopes `r_ads` and `r_ads_reporting` only); `connection-card.md` maps each ad account ID to its client slug
+- `meta-ads/install.md` — connects this project to a Meta ad account for read-only reporting via `bin/meta`, scoped by an allowlist; `connection-card.md` is the account scope of record
