@@ -1,5 +1,12 @@
 # Meta Ads CLI (`meta`)
 
+> ⚠️ **On Windows, use `installations/meta-ads/install.md` instead.** The official
+> `meta-ads` package ships no `win_amd64` wheel and no source distribution, so
+> `install.sh` cannot work on a Windows machine. This repo therefore ships
+> `bin/meta`, a read-only Graph API client, with credentials in **`.env` at the
+> repo root** (not `tools/meta-ads-cli/.env`). Keep one credential file, not two.
+> This folder stays accurate for macOS and Linux.
+
 Meta's **official** command-line tool for the Marketing API — list/create campaigns,
 ad sets, ads, creatives, and pull insights from the terminal. This folder vendors a
 one-shot installer + auth setup so the whole team installs the same version the same way.
