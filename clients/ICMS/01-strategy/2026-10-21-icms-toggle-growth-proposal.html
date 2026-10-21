@@ -1,0 +1,843 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ICMS Growth Proposal</title>
+<meta name="description" content="Code Of Origin proposal to ICMS: paid media, tracking and content in one monthly plan, with SEO and GEO and a full website rebuild priced on their own, for the 2027 intakes.">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* Sales surface identity. Light theme, locked. */
+:root{
+  --paper:#F4F8FD; --paper-lift:#FFFFFF; --paper-deep:#E6EFFA;
+  --ink:#0E1B33; --ink-2:#4A5A75; --ink-3:#8794AC;
+  --line:#D5E2F0; --line-soft:#E7EFF9;
+  --accent:#2A6BE0; --accent-deep:#1B4CB0; --accent-wash:#E3EDFC;
+  --sky:#7FB3EE; --aqua:#8CE0EC; --deep:#0F2A47; --alert:#DB4A45; --amber:#D2971E;
+  --serif:"Instrument Serif",Georgia,"Times New Roman",serif;
+  --sans:"Instrument Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+}
+*{box-sizing:border-box}
+body{margin:0;background:#DCE5F0;color:var(--ink);font-family:var(--sans);padding:40px 16px 80px;-webkit-font-smoothing:antialiased}
+.deck{display:flex;flex-direction:column;gap:34px;overflow-x:auto}
+.slide{width:1280px;height:720px;flex:none;margin:0 auto;background:var(--paper);position:relative;overflow:hidden;
+  padding:40px 72px 26px;display:flex;flex-direction:column;box-shadow:0 2px 22px rgba(14,27,51,.14)}
+.slide::before{content:"";position:absolute;inset:0;pointer-events:none;opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.055'/%3E%3C/svg%3E")}
+.slide>*{position:relative;z-index:1}
+svg,img{display:block}
+
+/* chrome */
+.top{display:flex;align-items:center;justify-content:space-between;margin:0 0 18px}
+.eyebrow{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3);display:flex;align-items:center;gap:10px;margin:0}
+.eyebrow b{color:var(--accent);font-weight:700}
+.marks{display:flex;align-items:center;gap:12px}
+.marks .coo{height:16px;width:auto}
+.marks .x{font-family:var(--mono);font-size:10px;color:var(--ink-3)}
+.marks img{height:26px;width:26px}
+.h2{font-family:var(--serif);font-weight:400;font-size:47px;line-height:1.0;letter-spacing:-.02em;margin:0 0 12px}
+.h2 em{font-style:italic;color:var(--accent)}
+.kicker{font-size:16px;line-height:1.5;color:var(--ink-2);margin:0 0 20px;max-width:none;text-wrap:pretty}
+.h2,.display{text-wrap:balance}
+.stage{flex:1;min-height:0;display:flex;flex-direction:column;gap:16px}
+.stage>.grow{flex:1;min-height:0}
+.grow.grid.fit{align-items:start}
+table.t tr.tot:not(:last-child) td{border-bottom:1px solid var(--line)}
+.note{margin-top:14px;background:var(--ink);color:var(--paper);border-radius:14px;padding:15px 22px;font-size:15.5px;line-height:1.45}
+.note b{color:var(--aqua);font-weight:600}
+.foot{display:flex;justify-content:space-between;align-items:flex-end;gap:24px;margin-top:12px}
+.src{font-family:var(--mono);font-size:10.5px;line-height:1.5;letter-spacing:.02em;color:var(--ink-3);margin:0;max-width:1040px}
+.folio{font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--ink-3);white-space:nowrap}
+
+/* layout */
+.grid{display:grid;gap:16px}
+.c2{grid-template-columns:1fr 1fr}.c3{grid-template-columns:repeat(3,1fr)}.c4{grid-template-columns:repeat(4,1fr)}
+.card{background:var(--paper-lift);border:1px solid var(--line);border-radius:16px;padding:18px 20px}
+.card.wash{background:var(--accent-wash);border-color:#C9DBF6}
+.card.deep{background:var(--paper-deep);border-color:var(--paper-deep)}
+.card.ink{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.card.ink .p,.card.ink li{color:rgba(244,248,253,.78)}
+.card.ink .ct{color:var(--paper)}
+.card.blue{background:var(--accent);border-color:var(--accent);color:#fff}
+.card.blue .p{color:rgba(255,255,255,.86)}.card.blue .ct{color:#fff}.card.blue .lbl{color:rgba(255,255,255,.7)}
+.lbl{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin:0 0 10px;display:flex;align-items:center;gap:8px}
+.lbl.muted{color:var(--ink-3)}
+.lbl .sq{width:7px;height:7px;border-radius:2px;background:var(--accent)}
+.lbl .sq.r{background:var(--alert)}.lbl .sq.a{background:var(--amber)}.lbl .sq.aq{background:var(--aqua)}
+.ct{font-size:18px;font-weight:600;letter-spacing:-.015em;line-height:1.25;margin:0 0 8px;color:var(--ink)}
+.p{font-size:14px;line-height:1.5;color:var(--ink-2);margin:0 0 8px}
+.p:last-child{margin-bottom:0}
+.p b{color:var(--ink);font-weight:600}
+ul.b{list-style:none;margin:6px 0 0;padding:0}
+ul.b li{position:relative;padding:0 0 0 16px;margin:0 0 6px;font-size:14px;line-height:1.45;color:var(--ink-2)}
+ul.b li::before{content:"";position:absolute;left:0;top:8px;width:5px;height:5px;border-radius:50%;background:var(--accent)}
+ul.b li b{color:var(--ink);font-weight:600}
+.card.ink ul.b li::before{background:var(--aqua)}
+.big{font-family:var(--serif);font-size:60px;line-height:.9;letter-spacing:-.03em;margin:0;color:var(--ink);font-variant-numeric:tabular-nums}
+.big.acc{color:var(--accent)}
+.big.md{font-size:46px}
+.big.sm{font-size:38px}
+.sl{font-size:15px;font-weight:600;line-height:1.3;margin:10px 0 4px;color:var(--ink)}
+.sc{font-size:13.4px;line-height:1.5;color:var(--ink-2);margin:0}
+.tag{display:inline-block;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;background:var(--ink);color:var(--paper);padding:5px 10px;border-radius:999px}
+.tag.acc{background:var(--accent)}
+.tag.line{background:transparent;color:var(--ink-2);border:1px solid var(--line)}
+.q{display:inline-block;background:var(--paper-lift);border:1px solid var(--line);border-radius:999px;padding:5px 13px;margin:0 6px 7px 0;font-size:13.5px;color:var(--ink)}
+
+/* tables */
+table.t{width:100%;border-collapse:collapse;font-size:14px}
+table.t th{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);text-align:left;padding:10px 14px;border-bottom:1.5px solid var(--ink)}
+table.t td{padding:9px 14px;border-bottom:1px solid var(--line);color:var(--ink-2);vertical-align:middle;line-height:1.45}
+table.t td.k{color:var(--ink);font-weight:600}
+table.t td.m{font-family:var(--mono);font-size:14px;color:var(--ink);font-variant-numeric:tabular-nums;white-space:nowrap}
+table.t .rec{background:var(--accent-wash)}
+table.t th.rec{color:var(--accent);background:var(--accent-wash);border-radius:10px 10px 0 0}
+table.t tr.tot td{border-top:1.5px solid var(--ink);border-bottom:0;font-weight:700;color:var(--ink)}
+table.t tr.tot td.m{font-size:16px}
+table.t.fill{height:100%}
+
+/* bars */
+.bars{display:flex;flex-direction:column;gap:12px}
+.bar{display:grid;grid-template-columns:120px 1fr 90px;align-items:center;gap:12px;font-size:13.5px;color:var(--ink-2)}
+.bar .tr{height:12px;background:var(--line-soft);border-radius:6px;overflow:hidden}
+.bar .fl{display:block;height:100%;background:var(--sky);border-radius:6px}
+.bar .fl.acc{background:var(--accent)}
+.bar .v{font-family:var(--mono);font-size:13px;color:var(--ink);text-align:right}
+
+/* cover + close */
+.wave{position:absolute;left:0;right:0;bottom:0;height:62%;z-index:0;pointer-events:none;
+  -webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 30%);mask-image:linear-gradient(180deg,transparent 0%,#000 30%)}
+.wave svg{width:100%;height:100%}
+.display{font-family:var(--serif);font-weight:400;font-size:96px;line-height:.92;letter-spacing:-.025em;margin:0}
+.display em{font-style:italic;color:var(--accent)}
+.slide.close{background:var(--ink);color:var(--paper)}
+.slide.close::before{opacity:.25}
+.slide.close .display em{color:var(--aqua)}
+
+@page{size:1280px 720px;margin:0}
+@media print{
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+  body{background:#fff;padding:0}
+  .deck{gap:0;overflow:visible}
+  .slide{box-shadow:none;break-after:page;page-break-after:always}
+  .slide:last-child{break-after:auto;page-break-after:auto}
+}
+</style>
+</head>
+<body>
+
+<div class="deck">
+
+<!-- ═════════ COVER ═════════ -->
+<section class="slide" style="padding:56px 72px 40px">
+  <div class="wave" aria-hidden="true">
+    <svg viewBox="0 0 1440 620" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="wv1" x1="0" y1="0" x2=".7" y2="1"><stop offset="0" stop-color="#CFE2FA"/><stop offset="1" stop-color="#AFD3F5"/></linearGradient>
+        <linearGradient id="wv2" x1=".1" y1="0" x2=".9" y2="1"><stop offset="0" stop-color="#A9CFF3"/><stop offset="1" stop-color="#8FC9EF"/></linearGradient>
+        <linearGradient id="wv3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9AD5EE"/><stop offset="1" stop-color="#8CE0EC"/></linearGradient>
+      </defs>
+      <path fill="url(#wv1)" opacity=".72" d="M0,168 C240,86 430,214 730,176 C1010,141 1190,54 1440,110 L1440,620 L0,620 Z"/>
+      <path fill="url(#wv2)" opacity=".74" d="M0,296 C300,224 496,362 796,314 C1074,270 1252,186 1440,244 L1440,620 L0,620 Z"/>
+      <path fill="url(#wv3)" opacity=".8" d="M0,438 C268,378 512,506 812,448 C1090,394 1272,340 1440,388 L1440,620 L0,620 Z"/>
+    </svg>
+  </div>
+  <div style="display:flex;align-items:center;gap:22px">
+    <img src="../assets/coo-logo.png" alt="Code Of Origin" style="height:34px;width:auto">
+    <span style="font-family:var(--mono);font-size:16px;color:var(--ink-2)">×</span>
+    <img src="../assets/icms-emblem.webp" alt="ICMS" style="height:52px;width:52px">
+  </div>
+  <h1 class="display" style="margin:auto 0 150px;font-size:84px;white-space:nowrap">A growth plan for the <em>2027 intakes.</em></h1>
+  </section>
+
+<!-- ═════════ SECTION DIVIDER ═════════ -->
+<section class="slide close" style="padding:56px 72px 40px">
+  <div class="wave" aria-hidden="true" style="height:40%;opacity:.5">
+    <svg viewBox="0 0 1440 480" preserveAspectRatio="none">
+      <path fill="url(#wvd1)" opacity=".85" d="M0,150 C280,74 500,208 800,158 C1080,112 1260,44 1440,96 L1440,480 L0,480 Z"/>
+      <path fill="url(#wvd2)" opacity=".7" d="M0,290 C300,224 540,348 840,296 C1110,250 1280,196 1440,238 L1440,480 L0,480 Z"/>
+    </svg>
+  </div>
+  <div style="display:flex;align-items:center;gap:22px">
+    <img src="../assets/coo-logo.png" alt="Code Of Origin" style="height:34px;width:auto">
+    <span style="font-family:var(--mono);font-size:16px;color:rgba(244,248,253,.6)">×</span>
+    <img src="../assets/icms-emblem.webp" alt="ICMS" style="height:52px;width:52px">
+  </div>
+  <div style="margin:auto 0">
+    <p style="font-family:var(--serif);font-size:44px;line-height:1;color:var(--aqua);margin:0 0 18px">01</p>
+    <h2 class="display" style="font-size:104px;letter-spacing:-.01em">WHERE ICMS <em>STANDS</em></h2>
+    <p style="font-size:19px;line-height:1.5;color:rgba(244,248,253,.72);margin:26px 0 0">We reviewed your ads, your website and your Google results in August and October 2026.</p>
+  </div>
+  <div class="foot"><p class="src" style="color:rgba(244,248,253,.62)">ICMS Growth Plan · 2027 intakes</p><span class="folio" style="color:rgba(244,248,253,.62)">02 / 29</span></div>
+</section>
+
+<!-- ═════════ WHERE ICMS STANDS 1 ═════════ -->
+<section class="slide">
+  <div class="top"><span></span><div class="marks"><img class="coo" src="../assets/coo-logo.png" alt="Code Of Origin"><span class="x">×</span><img src="../assets/icms-emblem.webp" alt="ICMS"></div></div>
+  <h2 class="h2">Your website cannot count <em>the students who enquire.</em></h2>
+  <p class="kicker">We reviewed your Google Ads account, the code behind icms.edu.my and all 264 pages in its site map.</p>
+  <div class="stage">
+    <div class="grow grid c4">
+      <div class="card ink"><p class="lbl" style="color:var(--aqua)"><span class="sq aq"></span>Google Ads</p><p class="big" style="color:var(--aqua)">0</p><p class="sl" style="color:var(--paper)">leads recorded from RM3,137 of spend</p><p class="sc" style="color:rgba(244,248,253,.7)">Your enquiry form never tells Google when a student sends it. Google recorded no leads between 23 July and 21 August 2026.</p></div>
+      <div class="card"><p class="lbl"><span class="sq r"></span>Ad coverage</p><p class="big">1 of 8</p><p class="sl">priority programs have ads running</p><p class="sc">Only Enforcement Management runs ads today. A paused keyword and a blocked keyword stop Football Studies from showing.</p></div>
+      <div class="card"><p class="lbl"><span class="sq a"></span>Search reach</p><p class="big">3,700</p><p class="sl">searches a month find no ICMS page</p><p class="sc">Uniti shows up on these searches and ICMS does not. SPM leavers asking what to study make up 1,160 of them.</p></div>
+      <div class="card"><p class="lbl"><span class="sq a"></span>Google visits</p><p class="big">64%</p><p class="sl">of your Google visits come from people who typed ICMS</p><p class="sc">Students who know ICMS find you. Students who search by subject find other colleges.</p></div>
+    </div>
+    <div class="grid c2">
+      <div class="card deep"><p class="ct">After a student clicks</p><p class="p">Your Apply Now page shows a career seminar from 28 February 2026 and a March 2026 intake. The site has no WhatsApp button, and no program page shows a fee.</p></div>
+      <div class="card deep"><p class="ct">The cost to every channel</p><p class="p">Meta, TikTok and Google learn from the leads your site reports. Your site reports none, and all three platforms spend your budget without knowing which ads work.</p></div>
+    </div>
+  </div>
+  <div class="note"><b>We fix the tracking in week 1,</b> before we scale any spend.</div>
+  <div class="foot"><p class="src">Sources: Google Ads account 255-593-6693, 23 July to 21 August 2026. icms.edu.my checked live on 21 October 2026. Search figures from SE Ranking, Malaysian data, October 2026.</p><span class="folio">03 / 29</span></div>
+</section>
+
+<!-- ═════════ WHERE ICMS STANDS 2 ═════════ -->
+<section class="slide">
+  <div class="top"><span></span><div class="marks"><img class="coo" src="../assets/coo-logo.png" alt="Code Of Origin"><span class="x">×</span><img src="../assets/icms-emblem.webp" alt="ICMS"></div></div>
+  <h2 class="h2">Unienrol ranks for your football diploma, <em>and ICMS does not.</em></h2>
+  <p class="kicker">Your homepage says ICMS is "the only college in Southeast Asia to offer our signature Diploma in Football Studies". We searched for that diploma on&nbsp;21&nbsp;October&nbsp;2026.</p>
+  <div class="stage">
+    <div class="grow grid c2">
+      <div class="card wash"><p class="lbl">Search results</p><p class="ct">Unienrol holds the top three results</p><p class="p">A search for "diploma football studies Malaysia" returned three Unienrol listings for your diploma, and icms.edu.my did not appear.</p><p class="p">Those listings call your diploma "one of the first in Southeast Asia", which undersells your own claim.</p></div>
+      <div class="card"><p class="lbl">Paid search</p><p class="ct">No college advertises on football searches</p><p class="p">We found no college bidding on football diploma searches in August 2026. All of your current Google spend goes to enforcement searches, where UNIKOP competes with you for the same students.</p></div>
+    </div>
+    <div class="card deep"><p class="ct">What AI tools say about ICMS</p><p class="p">ChatGPT, Gemini and Google's AI answers quote pages they can read. Your program pages state no fee and carry no labels that tell these tools what each course is. The tools find little from ICMS to quote on fees, intakes or your University of Bedfordshire link.</p></div>
+  </div>
+  <div class="note"><b>Football searches cost the least to win,</b> and Enforcement and Business bring the volume. Every plan funds all three from the first month.</div>
+  <div class="foot"><p class="src">Sources: icms.edu.my homepage and web search results, 21 October 2026. Competitors from ICMS management and our own search review.</p><span class="folio">04 / 29</span></div>
+</section>
+
+<!-- ═════════ SECTION DIVIDER ═════════ -->
+<section class="slide close" style="padding:56px 72px 40px">
+  <div class="wave" aria-hidden="true" style="height:40%;opacity:.5">
+    <svg viewBox="0 0 1440 480" preserveAspectRatio="none">
+      <path fill="url(#wvd1)" opacity=".85" d="M0,150 C280,74 500,208 800,158 C1080,112 1260,44 1440,96 L1440,480 L0,480 Z"/>
+      <path fill="url(#wvd2)" opacity=".7" d="M0,290 C300,224 540,348 840,296 C1110,250 1280,196 1440,238 L1440,480 L0,480 Z"/>
+    </svg>
+  </div>
+  <div style="display:flex;align-items:center;gap:22px">
+    <img src="../assets/coo-logo.png" alt="Code Of Origin" style="height:34px;width:auto">
+    <span style="font-family:var(--mono);font-size:16px;color:rgba(244,248,253,.6)">×</span>
+    <img src="../assets/icms-emblem.webp" alt="ICMS" style="height:52px;width:52px">
+  </div>
+  <div style="margin:auto 0">
+    <p style="font-family:var(--serif);font-size:44px;line-height:1;color:var(--aqua);margin:0 0 18px">02</p>
+    <h2 class="display" style="font-size:104px;letter-spacing:-.01em">PAID MEDIA <em>AND CONTENT</em></h2>
+    <p style="font-size:19px;line-height:1.5;color:rgba(244,248,253,.72);margin:26px 0 0">The monthly plan covers ads on Meta, TikTok and Google, tracking and reporting, and 8 images and 2 to 3 videos a month.</p>
+  </div>
+  <div class="foot"><p class="src" style="color:rgba(244,248,253,.62)">ICMS Growth Plan · 2027 intakes</p><span class="folio" style="color:rgba(244,248,253,.62)">05 / 29</span></div>
+</section>
+
+<!-- ═════════ WHAT WE PROPOSE ═════════ -->
+<section class="slide">
+  <div class="top"><span></span><div class="marks"><img class="coo" src="../assets/coo-logo.png" alt="Code Of Origin"><span class="x">×</span><img src="../assets/icms-emblem.webp" alt="ICMS"></div></div>
+  <h2 class="h2">You choose one monthly plan, <em>then add what you need.</em></h2>
+  <p class="kicker">The monthly plan runs your ads, tracks your leads and makes your content. SEO with GEO, website management and filmed video each have their own price.</p>
+  <div class="stage">
+    <div class="grow grid c3">
+      <div class="card wash" style="display:flex;flex-direction:column">
+        <p class="lbl">The plan · monthly</p>
+        <p class="ct">Ads, tracking and content</p>
+        <ul class="b"><li>We run your ads on Meta, TikTok and Google Search, with one campaign per program.</li><li>We track every enquiry and report your leads by program each month.</li><li>We make 8 images and 2 to 3 videos a month, and TikTok creators make some of the videos.</li></ul>
+        <p class="big md acc" style="margin-top:auto">RM5,000 <span style="font-family:var(--sans);font-size:16px;color:var(--ink-3)">to RM8,000 a month</span></p>
+      </div>
+      <div class="card" style="display:flex;flex-direction:column">
+        <p class="lbl">Add-on · monthly</p>
+        <p class="ct">SEO and GEO</p>
+        <ul class="b"><li>We give each of your 45 course pages a clear title, heading and description.</li><li>We write guides for SPM leavers and sports students, with 12 articles over six months.</li><li>We label your pages so AI tools can read and quote them.</li></ul>
+        <p class="big md acc" style="margin-top:auto">RM4,000 <span style="font-family:var(--sans);font-size:16px;color:var(--ink-3)">a month</span></p>
+      </div>
+      <div class="card" style="display:flex;flex-direction:column">
+        <p class="lbl">Add-on · monthly</p>
+        <p class="ct">Website management</p>
+        <ul class="b"><li>We add new program pages and update intakes when your calendar changes.</li><li>We update plugins, security and backups, and we check that the site stays online.</li><li>We test speed and forms every month and put the results in your report.</li></ul>
+        <p class="big md acc" style="margin-top:auto">RM2,000 <span style="font-family:var(--sans);font-size:16px;color:var(--ink-3)">a month</span></p>
+      </div>
+    </div>
+  </div>
+  <div class="note"><b>Filmed video costs RM3,000 a month</b> on top of any plan. The plan fee already covers videos we edit from your own footage.</div>
+  <div class="foot"><p class="src">Fees exclude SST and ad spend. You pay ad money to the platforms at cost.</p><span class="folio">06 / 29</span></div>
+</section>
+
+<!-- ═════════ MONTH 1 ═════════ -->
+<section class="slide">
+  <div class="top"><span></span><div class="marks"><img class="coo" src="../assets/coo-logo.png" alt="Code Of Origin"><span class="x">×</span><img src="../assets/icms-emblem.webp" alt="ICMS"></div></div>
+  <h2 class="h2">In the first month we fix your tracking <em>and launch your&nbsp;ads.</em></h2>
+  <p class="kicker">We start your ads in week 2 at a quarter of the budget. We release the full budget once we see a real enquiry arrive in your inbox.</p>
+  <div class="stage">
+    <div class="grow grid c4 fit">
+      <div class="card"><p class="lbl">Week 1</p><p class="ct">Make the tracking work</p><ul class="b"><li>We connect Google Ads and Meta to your enquiry form on every page.</li><li>We remove the settings that count page views as leads.</li></ul></div>
+      <div class="card"><p class="lbl">Week 2</p><p class="ct">Launch the campaigns</p><ul class="b"><li>We launch ads on Meta, TikTok and Google at a quarter of your budget.</li><li>We write Malay ads for Football Studies and Enforcement Management, with lead forms and a WhatsApp button.</li></ul></div>
+      <div class="card"><p class="lbl">Week 3</p><p class="ct">Deliver the first content</p><ul class="b"><li>We deliver the first 8 images and the first videos.</li><li>We brief TikTok creators on two of your programs.</li></ul></div>
+      <div class="card wash"><p class="lbl">Week 4</p><p class="ct">Measure and report</p><ul class="b"><li>We send your first weekly report with the real cost per lead.</li><li>We agree one list of intake dates with your team for every ad.</li></ul></div>
+    </div>
+    <div class="grid c2">
+      <div class="card deep"><p class="lbl muted">If you add SEO and GEO</p><p class="p">In the same four weeks, we put ICMS in every page title, add headings to the pages that already rank and speed up your homepage.</p></div>
+      <div class="card deep"><p class="lbl muted">If you add the website</p><p class="p">In the same four weeks, we agree the sitemap, design the pages and build an Apply Now page with the form at the top.</p></div>
+    </div>
+  </div>
+  <div class="foot"><p class="src">Your form already sends a signal when a student submits it. No tag on your site records that signal today, and we connect one in week 1.</p><span class="folio">07 / 29</span></div>
+</section>
+
+<!-- ═════════ MEDIA PLAN ═════════ -->
+<section class="slide">
+  <div class="top"><span></span><div class="marks"><img class="coo" src="../assets/coo-logo.png" alt="Code Of Origin"><span class="x">×</span><img src="../assets/icms-emblem.webp" alt="ICMS"></div></div>
+  <h2 class="h2">Each program gets its own budget, <em>and each platform has one job.</em></h2>
+  <p class="kicker">We spend your budget on the programs you named as priorities. Business, postgraduate and international recruitment join as the budget grows.</p>
+  <div class="stage">
+    <div class="grow grid" style="grid-template-columns:1fr 1.3fr;gap:20px">
+      <div style="display:flex;flex-direction:column;gap:10px">
+        <div class="card" style="flex:1;padding:14px 20px"><p class="lbl">Every plan</p><p class="ct">Enforcement and Policing</p><p class="p">Every plan advertises Enforcement Management, Policing and Investigation, and the Bachelor in Law Enforcement.</p></div>
+        <div class="card" style="flex:1;padding:14px 20px"><p class="lbl">Every plan</p><p class="ct">Football and Sports</p><p class="p">Every plan advertises Football Studies, Sports Science and Exercise Science, where few colleges compete on Google.</p></div>
+        <div class="card deep" style="flex:1;padding:14px 20px"><p class="lbl muted">Every plan, then Plan C</p><p class="ct">Business, postgraduate and international</p><p class="p">Every plan advertises Business Administration. Plan C adds the MBA, Master in Management, DBA and a test in your top international markets.</p></div>
+      </div>
+      <table class="t fill">
+        <tr><th style="width:18%">Platform</th><th>Its job</th><th style="width:38%">How it runs</th></tr>
+        <tr><td class="k">Meta</td><td>Meta brings a steady flow of enquiries and shows ads again to students who visited a program page.</td><td>Students fill in a short form inside Facebook or Instagram, or tap to message you on WhatsApp.</td></tr>
+        <tr><td class="k">TikTok</td><td>TikTok reaches school leavers and football fans before they start searching.</td><td>We run creator videos and your own posts as ads, with a lead form attached.</td></tr>
+        <tr><td class="k">Google Search</td><td>Google catches students who type a program name, and it protects searches for ICMS.</td><td>Each program gets its own campaign, with extra links and a call button under each ad.</td></tr>
+        <tr><td class="k">Language</td><td colspan="2">We write Malay ads for Malaysian students and English ads for international students. Each Malay ad opens a Malay form.</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="note"><b>Each ad set targets one audience and each ad group sells one program,</b> and your report shows what each program costs.</div>
+  <div class="foot"><p class="src">Programs from the ICMS discovery call, August 2026, and the icms.edu.my program menu, 21 October 2026.</p><span class="folio">08 / 29</span></div>
+</section>
+
+<!-- ═════════ CONTENT ═════════ -->
+<section class="slide">
+  <div class="top"><span></span><div class="marks"><img class="coo" src="../assets/coo-logo.png" alt="Code Of Origin"><span class="x">×</span><img src="../assets/icms-emblem.webp" alt="ICMS"></div></div>
+  <h2 class="h2">You get 8 images and 2 to 3 videos a month, <em>made one of two ways.</em></h2>
+  <p class="kicker">Every plan includes the monthly content. You choose whether we edit your footage or film new videos, and TikTok creators make some of the videos.</p>
+  <div class="stage">
+    <div class="grow grid c3">
+      <div class="card" style="display:flex;flex-direction:column">
+        <p class="lbl">Quotation 1 · in the plan fee</p>
+        <p class="ct">Edited from your footage</p>
+        <ul class="b"><li>We edit footage you already have, such as Titans FC training, match days and campus events.</li><li>We add Malay and English captions and on-screen text to every video.</li><li>You get 8 images and 2 to 3 videos a month.</li></ul>
+        <p class="big md acc" style="margin-top:auto">Included</p>
+      </div>
+      <div class="card" style="display:flex;flex-direction:column">
+        <p class="lbl">Quotation 2 · add-on</p>
+        <p class="ct">Filmed on campus</p>
+        <ul class="b"><li>Our crew films on your campus for one day each month.</li><li>Students, lecturers and Titans FC players appear on camera, with one program per video.</li><li>You get 8 images and 2 to 3 filmed videos a month.</li></ul>
+        <p class="big md" style="margin-top:auto">+RM3,000 <span style="font-family:var(--sans);font-size:16px;color:var(--ink-3)">a month</span></p>
+      </div>
+      <div class="card ink" style="display:flex;flex-direction:column">
+        <p class="lbl" style="color:var(--aqua)">TikTok ONE</p>
+        <p class="ct">Creators make some of the videos</p>
+        <ul class="b"><li>We hire creators through TikTok ONE, TikTok's official creator marketplace, to explain a program in their own words.</li><li>We run their videos as ads with a lead form attached.</li><li>UNITAR's TikTok ONE campaign brought 1,135 leads at RM84.33 each.</li></ul>
+        <p class="p" style="margin-top:auto">We agree each creator's fee with you before we book them.</p>
+      </div>
+    </div>
+  </div>
+  <div class="note"><b>We review every video after one week.</b> We stop any video under one click per 100 views after 5,000 views and move its budget to the videos that work.</div>
+  <div class="foot"><p class="src">Fees exclude SST. Creator fees sit outside the plan fee. The UNITAR figure counts TikTok-reported leads from its TikTok ONE creator campaign in 2026.</p><span class="folio">09 / 29</span></div>
+</section>
+
+<!-- ═════════ PLANS ═════════ -->
+<section class="slide">
+  <div class="top"><span></span><div class="marks"><img class="coo" src="../assets/coo-logo.png" alt="Code Of Origin"><span class="x">×</span><img src="../assets/icms-emblem.webp" alt="ICMS"></div></div>
+  <h2 class="h2">All three plans cover <em>ads, tracking and content.</em></h2>
+  <p class="kicker">You pay the ad money to the platforms at cost, and we share every platform invoice with you. Our fee is separate.</p>
+  <div class="stage">
+    <table class="t grow fill">
+      <tr><th style="width:31%"></th><th style="width:23%">Plan A · Start it</th><th class="rec" style="width:23%">Plan B · Recommended</th><th style="width:23%">Plan C · Scale it</th></tr>
+      <tr><td class="k">Ad budget a month<span style="display:block;font-weight:400;font-size:12.5px;color:var(--ink-3)">Paid to Meta, TikTok and Google at cost</span></td><td class="m">RM8,000</td><td class="m rec">RM12,000</td><td class="m">RM20,000</td></tr>
+      <tr><td class="k">Split: Meta / TikTok / Google</td><td class="m">40 / 40 / 20</td><td class="m rec">40 / 35 / 25</td><td class="m">40 / 30 / 30</td></tr>
+      <tr><td class="k">Code Of Origin fee a month</td><td class="m">RM5,000</td><td class="m rec">RM6,000</td><td class="m">RM8,000</td></tr>
+      <tr><td class="k">Content a month</td><td class="">8 images, 2 to 3 videos</td><td class=" rec">8 images, 2 to 3 videos</td><td class="">8 images, 2 to 3 videos</td></tr>
+      <tr class="tot"><td>Total per month</td><td class="m">RM13,000</td><td class="m rec">RM18,000</td><td class="m">RM28,000</td></tr>
+    </table>
+  </div>
+  <div class="note"><b>Each plan fee covers ads, tracking and reporting, and content.</b> Slide 24 prices SEO with GEO, the website and filmed video.</div>
+  <div class="foot"><p class="src">Fees exclude SST. In month 1, we spend a quarter of the ad budget while we check tracking.</p><span class="folio">10 / 29</span></div>
+</section>
+
+<!-- ═════════ LEADS ═════════ -->
+<section class="slide">
+  <div class="top"><span></span><div class="marks"><img class="coo" src="../assets/coo-logo.png" alt="Code Of Origin"><span class="x">×</span><img src="../assets/icms-emblem.webp" alt="ICMS"></div></div>
+  <h2 class="h2">Results <em>expectations.</em></h2>
+  <p class="kicker">We set a cost per lead limit for each platform, and the limits rise as the budget grows. We pause any platform that runs 50% over its limit for two weeks.</p>
+  <div class="stage">
+    <table class="t">
+      <tr><th style="width:31%">Leads a month</th><th style="width:23%">Plan A · Start it</th><th class="rec" style="width:23%">Plan B · Recommended</th><th style="width:23%">Plan C · Scale it</th></tr>
+      <tr><td class="k">Meta<span style="display:block;font-weight:400;font-size:12.5px;color:var(--ink-3)">Cost per lead limit RM9 / RM11 / RM14</span></td><td class="m">355</td><td class="m rec">436</td><td class="m">571</td></tr>
+      <tr><td class="k">TikTok<span style="display:block;font-weight:400;font-size:12.5px;color:var(--ink-3)">Cost per lead limit RM7 / RM9 / RM12</span></td><td class="m">457</td><td class="m rec">467</td><td class="m">500</td></tr>
+      <tr><td class="k">Google Search<span style="display:block;font-weight:400;font-size:12.5px;color:var(--ink-3)">Cost per lead limit RM45 / RM48 / RM55</span></td><td class="m">35</td><td class="m rec">63</td><td class="m">109</td></tr>
+      <tr><td class="k">Average cost per lead</td><td class="m">RM9.45</td><td class="m rec">RM12.42</td><td class="m">RM16.95</td></tr>
+      <tr><td class="k">Students a month at your 2 to 3%</td><td class="m">17 to 25</td><td class="m rec">19 to 29</td><td class="m">24 to 35</td></tr>
+      <tr class="tot"><td>Leads a month</td><td class="m">847</td><td class="m rec">966</td><td class="m">1,180</td></tr>
+    </table>
+    <div class="grow grid c3">
+      <div class="card deep"><p class="lbl muted">Meta limit</p><p class="p">Your team reported RM2.13 and RM7.00 per lead on small budgets, and we plan for RM9 to RM14.</p></div>
+      <div class="card deep"><p class="lbl muted">TikTok limit</p><p class="p">We plan for RM7 to RM12, based on the Malaysian education average, until your own TikTok results arrive.</p></div>
+      <div class="card deep"><p class="lbl muted">Google limit</p><p class="p">Your average Google click costs RM3.96, and we plan for RM45 to RM55 per lead.</p></div>
+    </div>
+  </div>
+  <div class="foot"><p class="src">Leads equal each budget line divided by its cost per lead limit. Students use the 2 to 3% enquiry to enrollment rate ICMS management gave us.</p><span class="folio">11 / 29</span></div>
+</section>
+
+<!-- ═════════ 2027 ARITHMETIC ═════════ -->
+<section class="slide">
+  <div class="top"><span></span><div class="marks"><img class="coo" src="../assets/coo-logo.png" alt="Code Of Origin"><span class="x">×</span><img src="../assets/icms-emblem.webp" alt="ICMS"></div></div>
+  <h2 class="h2">Doubling your enrollment rate <em>halves the ad cost</em> per student.</h2>
+  <p class="kicker">Your counselors decide how many leads become students. Your team can raise that number with three changes to how it handles leads.</p>
+  <div class="stage" style="justify-content:center;gap:36px">
+    <div class="grid c3">
+      <div class="card"><p class="lbl">01</p><p class="ct">A named owner for every lead</p><p class="p">Today your leads land in a shared spreadsheet with no owner. We tag each lead by program so your team can pass it to a named counselor.</p></div>
+      <div class="card"><p class="lbl">02</p><p class="ct">A call back time</p><p class="p">Your team sets a target time from enquiry to first call, and we report it next to cost per lead every week.</p></div>
+      <div class="card"><p class="lbl">03</p><p class="ct">WhatsApp as a full channel</p><p class="p">Your team told us the site has no WhatsApp button. We add one to every ad, and the website add-on adds one to every page.</p></div>
+    </div>
+    <table class="t">
+      <tr><th style="width:31%">Students a year</th><th style="width:23%">Plan A · Start it</th><th class="rec" style="width:23%">Plan B · Recommended</th><th style="width:23%">Plan C · Scale it</th></tr>
+      <tr><td class="k">At your 2 to 3% today</td><td class="m">203 to 305</td><td class="m rec">228 to 348</td><td class="m">288 to 420</td></tr>
+      <tr class="tot"><td>At 4%</td><td class="m" style="font-size:20px">407</td><td class="m rec" style="font-size:20px">464</td><td class="m" style="font-size:20px;color:var(--accent)">566</td></tr>
+    </table>
+  </div>
+  <div class="note"><b>Plan C brings 288 to 420 students a year at your current rate,</b> against the 300 or so you told us marketing needs to bring in.</div>
+  <div class="foot"><p class="src">Students a year equal the monthly leads on slide 11, times 12, at the rates shown.</p><span class="folio">12 / 29</span></div>
+</section>
+
+<!-- ═════════ SECTION DIVIDER ═════════ -->
+<section class="slide close" style="padding:56px 72px 40px">
+  <div class="wave" aria-hidden="true" style="height:40%;opacity:.5">
+    <svg viewBox="0 0 1440 480" preserveAspectRatio="none">
+      <path fill="url(#wvd1)" opacity=".85" d="M0,150 C280,74 500,208 800,158 C1080,112 1260,44 1440,96 L1440,480 L0,480 Z"/>
+      <path fill="url(#wvd2)" opacity=".7" d="M0,290 C300,224 540,348 840,296 C1110,250 1280,196 1440,238 L1440,480 L0,480 Z"/>
+    </svg>
+  </div>
+  <div style="display:flex;align-items:center;gap:22px">
+    <img src="../assets/coo-logo.png" alt="Code Of Origin" style="height:34px;width:auto">
+    <span style="font-family:var(--mono);font-size:16px;color:rgba(244,248,253,.6)">×</span>
+    <img src="../assets/icms-emblem.webp" alt="ICMS" style="height:52px;width:52px">
+  </div>
+  <div style="margin:auto 0">
+    <p style="font-family:var(--serif);font-size:44px;line-height:1;color:var(--aqua);margin:0 0 18px">03</p>
+    <h2 class="display" style="font-size:104px;letter-spacing:-.01em">WEB <em>DEVELOPMENT</em></h2>
+    <p style="font-size:19px;line-height:1.5;color:rgba(244,248,253,.72);margin:26px 0 0">We revamp icms.edu.my and then manage it for you every month.</p>
+  </div>
+  <div class="foot"><p class="src" style="color:rgba(244,248,253,.62)">ICMS Growth Plan · 2027 intakes</p><span class="folio" style="color:rgba(244,248,253,.62)">13 / 29</span></div>
+</section>
+
+<!-- ═════════ WEBSITE ═════════ -->
+<section class="slide">
+  <div class="top"><span></span><div class="marks"><img class="coo" src="../assets/coo-logo.png" alt="Code Of Origin"><span class="x">×</span><img src="../assets/icms-emblem.webp" alt="ICMS"></div></div>
+  <h2 class="h2">We revamp icms.edu.my, <em>then run it for you every month.</em></h2>
+  <p class="kicker">Your homepage has no main heading and takes 16.8 seconds to load on a phone, and your Apply Now page shows an event from February. One revamp fixes all three problems.</p>
+  <div class="stage">
+    <div class="grow grid c3">
+      <div class="card" style="display:flex;flex-direction:column">
+        <p class="lbl">One-off · revamp</p>
+        <p class="ct">Core revamp</p>
+        <ul class="b"><li>We design a new homepage, Apply Now page and program page, and apply that design to every program.</li><li>We put the form at the top of Apply Now and add a thank you page that Google and Meta can count.</li><li>We add WhatsApp to every page and use one list of intake dates across the site.</li><li>We write Malay versions of your priority program pages.</li></ul>
+        <p class="big md" style="margin-top:auto">RM10,000</p>
+      </div>
+      <div class="card wash" style="display:flex;flex-direction:column">
+        <p class="lbl">One-off · revamp</p>
+        <p class="ct">Full revamp</p>
+        <ul class="b"><li>You get everything in the core revamp.</li><li>We build the whole site in Malay and English.</li><li>We rewrite every program page with fees, intakes, PTPTN and entry requirements.</li><li>We make the main content load within 2.5 seconds on a phone, the target Google sets.</li></ul>
+        <p class="big md acc" style="margin-top:auto">RM15,000</p>
+      </div>
+      <div class="card ink" style="display:flex;flex-direction:column">
+        <p class="lbl" style="color:var(--aqua)">Monthly · web management</p>
+        <ul class="b"><li>We add new program pages and update intakes when your calendar changes.</li><li>We update plugins, security and backups, and we check that the site stays online.</li><li>We change landing pages for each campaign.</li><li>We test speed and forms every month and put the results in your report.</li></ul>
+        <p class="big md" style="margin-top:auto;color:var(--paper)">RM2,000 <span style="font-family:var(--sans);font-size:16px;color:rgba(244,248,253,.6)">a month</span></p>
+      </div>
+    </div>
+  </div>
+  <div class="note"><b>ICMS owns the site, the domain and every file.</b> The revamp takes about eight weeks after you approve the sitemap.</div>
+  <div class="foot"><p class="src">Site findings come from a live check of icms.edu.my and a Lighthouse phone test on 21 October 2026.</p><span class="folio">14 / 29</span></div>
+</section>
+
+<!-- ═════════ SECTION DIVIDER ═════════ -->
+<section class="slide close" style="padding:56px 72px 40px">
+  <div class="wave" aria-hidden="true" style="height:40%;opacity:.5">
+    <svg viewBox="0 0 1440 480" preserveAspectRatio="none">
+      <path fill="url(#wvd1)" opacity=".85" d="M0,150 C280,74 500,208 800,158 C1080,112 1260,44 1440,96 L1440,480 L0,480 Z"/>
+      <path fill="url(#wvd2)" opacity=".7" d="M0,290 C300,224 540,348 840,296 C1110,250 1280,196 1440,238 L1440,480 L0,480 Z"/>
+    </svg>
+  </div>
+  <div style="display:flex;align-items:center;gap:22px">
+    <img src="../assets/coo-logo.png" alt="Code Of Origin" style="height:34px;width:auto">
+    <span style="font-family:var(--mono);font-size:16px;color:rgba(244,248,253,.6)">×</span>
+    <img src="../assets/icms-emblem.webp" alt="ICMS" style="height:52px;width:52px">
+  </div>
+  <div style="margin:auto 0">
+    <p style="font-family:var(--serif);font-size:44px;line-height:1;color:var(--aqua);margin:0 0 18px">04</p>
+    <h2 class="display" style="font-size:104px;letter-spacing:-.01em">SEO <em>AND GEO</em></h2>
+    <p style="font-size:19px;line-height:1.5;color:rgba(244,248,253,.72);margin:26px 0 0">We help ICMS rank on Google and get quoted in AI answers.</p>
+  </div>
+  <div class="foot"><p class="src" style="color:rgba(244,248,253,.62)">ICMS Growth Plan · 2027 intakes</p><span class="folio" style="color:rgba(244,248,253,.62)">15 / 29</span></div>
+</section>
+
+<!-- ═════════ SEO 1 ═════════ -->
+<section class="slide">
+  <div class="top"><span></span><div class="marks"><img class="coo" src="../assets/coo-logo.png" alt="Code Of Origin"><span class="x">×</span><img src="../assets/icms-emblem.webp" alt="ICMS"></div></div>
+  <h2 class="h2">Students who know ICMS find you. <em>Students who don't find other colleges.</em></h2>
+  <p class="kicker">ICMS ranks first for its own name. Students who have not heard of ICMS search by subject, and ICMS appears on few of those searches.</p>
+  <div class="stage">
+    <div class="grow grid c3">
+      <div class="card ink"><p class="lbl" style="color:var(--aqua)">Google visits</p><p class="big" style="color:var(--aqua)">64%</p><p class="sl" style="color:var(--paper)">of your Google visits come from people who typed ICMS</p><p class="sc" style="color:rgba(244,248,253,.7)">That is 64% of your 447 visits a month from Google.</p></div>
+      <div class="card"><p class="lbl"><span class="sq r"></span>Missing searches</p><p class="big">3,700</p><p class="sl">searches a month show Uniti and not ICMS</p><p class="sc">SPM leavers asking what to study make up 1,160 of them.</p></div>
+      <div class="card"><p class="lbl"><span class="sq a"></span>Course pages</p><p class="big">45 of 45</p><p class="sl">course pages have no main heading</p><p class="sc">Google cannot tell what each course page is about, and 38 of the pages also have no description.</p></div>
+    </div>
+    <div class="grid c2">
+      <div class="card deep"><p class="lbl">SEO</p><p class="ct">Showing up on Google</p><p class="p">SEO decides whether your course page appears on the first page of Google.</p></div>
+      <div class="card deep"><p class="lbl">GEO</p><p class="ct">Being quoted by AI</p><p class="p">GEO decides whether AI tools mention and link to ICMS when they answer a student's question. One in five Google searches starts with an AI answer, and 58.5% of searches end without a click.</p></div>
+    </div>
+  </div>
+  <div class="note"><b>SEO and GEO both depend on the same thing:</b> pages that answer what students ask.</div>
+  <div class="foot"><p class="src">SE Ranking, Malaysian data, October 2026.</p><span class="folio">16 / 29</span></div>
+</section>
+
+<!-- ═════════ SEO 2 ═════════ -->
+<section class="slide">
+  <div class="top"><span></span><div class="marks"><img class="coo" src="../assets/coo-logo.png" alt="Code Of Origin"><span class="x">×</span><img src="../assets/icms-emblem.webp" alt="ICMS"></div></div>
+  <h2 class="h2">Students search 3,700 times a month <em>and find no ICMS page.</em></h2>
+  <p class="kicker">Uniti answers these searches today. ICMS has no page for SPM leavers choosing a college, and its only post for them dates from 2023.</p>
+  <div class="stage">
+    <div class="grow grid" style="grid-template-columns:1.35fr 1fr;gap:20px">
+      <table class="t fill">
+        <tr><th>What students type</th><th>What it means</th><th style="width:16%">Searches a month</th><th style="width:20%">Who shows up</th></tr>
+        <tr><td class="k">teknologi maklumat</td><td>Information technology</td><td class="m">1,000</td><td>Uniti</td></tr>
+        <tr><td class="k">bidang pengajian</td><td>Fields of study</td><td class="m">590</td><td>Uniti</td></tr>
+        <tr><td class="k">lepasan spm</td><td>After SPM</td><td class="m">480</td><td>Uniti, 1st</td></tr>
+        <tr><td class="k">gaya pengurusan perniagaan</td><td>Business management styles</td><td class="m">480</td><td>Uniti</td></tr>
+        <tr><td class="k">sambung belajar lepasan spm</td><td>Continue studying after SPM</td><td class="m">260</td><td>Uniti, 1st</td></tr>
+        <tr><td class="k">kerjaya lepasan spm</td><td>Careers after SPM</td><td class="m">210</td><td>Uniti, 13th</td></tr>
+        <tr><td class="k">kredit spm</td><td>SPM credits</td><td class="m">210</td><td>Uniti, 12th</td></tr>
+      </table>
+      <div class="card wash" style="display:flex;flex-direction:column">
+        <p class="lbl">What we build</p>
+        <p class="ct">An SPM leaver guide that leads students to your course pages</p>
+        <ul class="b"><li>We write one guide on entry rules, SPM credits, and the choice between a diploma and Form 6.</li><li>We link the guide to each of your 45 course pages.</li><li>We write subject guides for IT, business, sports science and law enforcement.</li></ul>
+        <p class="big md acc" style="margin-top:auto">1,160</p>
+        <p class="sc">searches a month come from SPM leavers, and one guide targets all of them.</p>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><p class="src">SE Ranking, Malaysian data, October 2026. Uniti pages checked on 21 October 2026. The table shows 7 of the 9 missing searches.</p><span class="folio">17 / 29</span></div>
+</section>
+
+<!-- ═════════ SEO 3 ═════════ -->
+<section class="slide">
+  <div class="top"><span></span><div class="marks"><img class="coo" src="../assets/coo-logo.png" alt="Code Of Origin"><span class="x">×</span><img src="../assets/icms-emblem.webp" alt="ICMS"></div></div>
+  <h2 class="h2">ICMS ranks for 128 sports searches <em>and gets 29 visits from them.</em></h2>
+  <p class="kicker">We plan one sports science guide and six articles that target 5,210 searches a month. Each article links to the guide and to its diploma page.</p>
+  <div class="stage">
+    <div class="grow grid" style="grid-template-columns:1fr 1.2fr;gap:20px">
+      <table class="t fill">
+        <tr><th>Search</th><th style="width:26%">Searches a month</th><th style="width:24%">ICMS today</th></tr>
+        <tr><td class="k">sains sukan</td><td class="m">1,600</td><td class="m">12th</td></tr>
+        <tr><td class="k">diploma in sports management</td><td class="m">210</td><td class="m">29th</td></tr>
+        <tr><td class="k">diploma pengajian sukan uitm</td><td class="m">170</td><td class="m">30th</td></tr>
+        <tr><td class="k">maksud sains sukan</td><td class="m">110</td><td class="m">15th</td></tr>
+      </table>
+      <div class="card" style="display:flex;flex-direction:column">
+        <p class="lbl">Main guide</p>
+        <p class="ct">Sports Science in Malaysia: Courses, Careers and Where to Study</p>
+        <p class="p">The guide targets "sains sukan", which students search 1,600 times a month, and links to your three sports diplomas.</p>
+        <div style="margin-top:auto;display:grid;grid-template-columns:1fr 1fr;gap:8px 18px">
+          <p class="sc"><b style="color:var(--accent)">New</b> · What the Sports Science Subject Leads To, 3,100</p>
+          <p class="sc"><b style="color:var(--accent)">New</b> · Which Sports Diploma Should You Choose?, 170</p>
+          <p class="sc"><b style="color:var(--accent)">New</b> · What Is Sports Science?, 110</p>
+          <p class="sc"><b style="color:var(--accent)">New</b> · Careers in Sports Science, 70</p>
+          <p class="sc"><b style="color:var(--ink-3)">Update</b> · Why Sports Science Matters, 110</p>
+          <p class="sc"><b style="color:var(--ink-3)">Update</b> · How to Become a Football Coach, 50</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="note"><b>ICMS ranks 12th or lower on the four searches in the table,</b> which students make 2,090 times a month. ICMS can climb on all four.</div>
+  <div class="foot"><p class="src">SE Ranking, Malaysian data, October 2026. Google results for sports searches in Malaysia, 21 October 2026. Visits exclude searches that contain the name ICMS. The number beside each article shows its monthly searches.</p><span class="folio">18 / 29</span></div>
+</section>
+
+<!-- ═════════ SEO 4 ═════════ -->
+<section class="slide">
+  <div class="top"><span></span><div class="marks"><img class="coo" src="../assets/coo-logo.png" alt="Code Of Origin"><span class="x">×</span><img src="../assets/icms-emblem.webp" alt="ICMS"></div></div>
+  <h2 class="h2">Seven of the eight problems on your site <em>are settings we can change.</em></h2>
+  <p class="kicker">We checked all 264 pages in your site map. One new title format alone fixes 246 of them.</p>
+  <div class="stage">
+    <table class="t grow fill">
+      <tr><th style="width:15%">Area</th><th style="width:47%">Today</th><th>What we change</th></tr>
+      <tr><td class="k">Brand name</td><td>The homepage title leaves out ICMS, and the page has no main heading.</td><td>We start the title and main heading with ICMS.</td></tr>
+      <tr><td class="k">Main headings</td><td>155 of 264 pages have no main heading, and the homepage has 77 small headings and no large one.</td><td>We use each page title as its main heading.</td></tr>
+      <tr><td class="k">Page titles</td><td>249 of 264 titles run past 60 characters, and 246 end with the 57-character college name.</td><td>We put the program name first and ICMS second.</td></tr>
+      <tr><td class="k">Descriptions</td><td>139 of 264 pages have no description, including 38 of 45 course pages.</td><td>We write 140 to 155 characters, starting with course pages.</td></tr>
+      <tr><td class="k">AI labels</td><td>Only the college and the page type carry labels for Google and AI tools.</td><td>We label each course page as a course and the homepage as a college.</td></tr>
+      <tr><td class="k">Phone speed</td><td>The speed score is 49 of 100, and the main content takes 16.8 seconds to appear.</td><td>We turn on caching, replace the slider and load fewer fonts.</td></tr>
+      <tr><td class="k">Web addresses</td><td>18 addresses end in a raw number, such as 27821 for the exercise science diploma.</td><td>We rename them and redirect the old addresses.</td></tr>
+      <tr><td class="k">Basics</td><td>213 pages use the wrong language code, and ClaudeBot, an AI crawler, gets an error.</td><td>We set the language to Malaysian English and let ClaudeBot in.</td></tr>
+    </table>
+  </div>
+  <div class="foot"><p class="src">SE Ranking, Malaysian data, October 2026. Live check of all 264 page and post addresses in the icms.edu.my site map, 21 October 2026. Your robots file, site map and AI guide file already work.</p><span class="folio">19 / 29</span></div>
+</section>
+
+<!-- ═════════ SEO 5 ═════════ -->
+<section class="slide">
+  <div class="top"><span></span><div class="marks"><img class="coo" src="../assets/coo-logo.png" alt="Code Of Origin"><span class="x">×</span><img src="../assets/icms-emblem.webp" alt="ICMS"></div></div>
+  <h2 class="h2">We start with the pages <em>ICMS already has.</em></h2>
+  <p class="kicker">Four course pages already rank without a main heading, and your homepage takes 16.8 seconds to show its main content on a phone.</p>
+  <div class="stage">
+    <div class="grow grid c2">
+      <div class="card" style="display:flex;flex-direction:column">
+        <p class="lbl">Course pages that already rank</p>
+        <table class="t">
+          <tr><th>Search</th><th>Searches a month</th><th>Position</th><th>Main heading</th></tr>
+          <tr><td class="k">sains sukan</td><td class="m">1,600</td><td class="m">12th</td><td>None</td></tr>
+          <tr><td class="k">penguatkuasaan undang undang</td><td class="m">590</td><td class="m">3rd</td><td>None</td></tr>
+          <tr><td class="k">diploma pemasaran</td><td class="m">480</td><td class="m">6th</td><td>None</td></tr>
+          <tr><td class="k">kejuruteraan perisian</td><td class="m">480</td><td class="m">9th</td><td>None</td></tr>
+        </table>
+        <p class="p" style="margin-top:auto"><b>We give all 45 course pages</b> a clear title, main heading and description, and we put ICMS in every title.</p>
+      </div>
+      <div class="card" style="display:flex;flex-direction:column">
+        <p class="lbl">Your homepage on a phone</p>
+        <table class="t">
+          <tr><th>What we measured</th><th>ICMS</th><th>Google's target</th></tr>
+          <tr><td class="k">Speed score</td><td class="m">49</td><td class="m">90 or more</td></tr>
+          <tr><td class="k">Main content shown</td><td class="m" style="color:var(--alert)">16.8s</td><td class="m">2.5s</td></tr>
+          <tr><td class="k">Server reply</td><td class="m">1.1 to 2.8s</td><td class="m">0.8s</td></tr>
+        </table>
+        <p class="p" style="margin-top:auto"><b>We turn on caching,</b> replace the slider with one image and load only the fonts your pages use.</p>
+      </div>
+    </div>
+  </div>
+  <div class="note"><b>Caching and fonts are settings,</b> and the first speed gain needs no redesign.</div>
+  <div class="foot"><p class="src">SE Ranking, Malaysian data, October 2026. Lighthouse phone test and live check of icms.edu.my, 21 October 2026. Your homepage loads 84 style and script files.</p><span class="folio">20 / 29</span></div>
+</section>
+
+<!-- ═════════ SEO 6 ═════════ -->
+<section class="slide">
+  <div class="top"><span></span><div class="marks"><img class="coo" src="../assets/coo-logo.png" alt="Code Of Origin"><span class="x">×</span><img src="../assets/icms-emblem.webp" alt="ICMS"></div></div>
+  <h2 class="h2">In six months you get <em>2 main guides and 12 articles.</em></h2>
+  <p class="kicker">In the first two months we fix pages ICMS already has, and the guides follow. We report the results to you every month.</p>
+  <div class="stage">
+    <div class="grow grid" style="grid-template-columns:1fr 1fr 1fr 0.9fr">
+      <div class="card wash"><p class="lbl">Months 1 to 2</p><p class="ct">Fix what exists</p><ul class="b"><li>We add ICMS to every title, including the homepage.</li><li>We add a heading and description to the 5 pages that rank.</li><li>We speed up the homepage.</li><li>We publish 4 articles.</li></ul></div>
+      <div class="card"><p class="lbl">Months 3 to 4</p><p class="ct">The SPM leaver guide</p><ul class="b"><li>We publish the SPM leaver guide and 4 articles.</li><li>We add headings and descriptions to 40 more course pages.</li><li>We label all 45 course pages for Google and AI.</li><li>We update 2 posts and 4 course pages.</li></ul></div>
+      <div class="card"><p class="lbl">Months 5 to 6</p><p class="ct">The sports guide</p><ul class="b"><li>We publish the sports guide and 4 articles.</li><li>We add titles and fees to the sports pages.</li><li>We add question labels to the guides.</li><li>We measure how often AI tools mention and link to ICMS.</li></ul></div>
+      <div class="card ink" style="display:flex;flex-direction:column">
+        <p class="lbl" style="color:var(--aqua)">What you pay</p>
+        <p class="big md" style="color:var(--aqua)">RM4,000</p><p class="sc" style="color:rgba(244,248,253,.7);margin-top:6px">a month, for six months</p>
+      </div>
+    </div>
+  </div>
+  <div class="note"><b>The price covers the fixes, the guides, the AI labels and the ClaudeBot fix,</b> plus a monthly report and call.</div>
+  <div class="foot"><p class="src">We run a technical audit with recommendations in months 3 to 4 and again in months 5 to 6. Fees exclude SST.</p><span class="folio">21 / 29</span></div>
+</section>
+
+<!-- ═════════ SEO 7 ═════════ -->
+<section class="slide">
+  <div class="top"><span></span><div class="marks"><img class="coo" src="../assets/coo-logo.png" alt="Code Of Origin"><span class="x">×</span><img src="../assets/icms-emblem.webp" alt="ICMS"></div></div>
+  <h2 class="h2">We grew City University on Google <em>and in AI answers.</em></h2>
+  <p class="kicker">We bring the same method to ICMS: clear course pages, and guides that answer what students search.</p>
+  <div class="stage">
+    <div class="grow grid c2">
+      <div class="card ink" style="display:flex;flex-direction:column;justify-content:space-between">
+        <p class="lbl" style="color:var(--aqua)">City University Malaysia</p>
+        <div><p class="big" style="color:var(--aqua);font-size:110px">+80%</p><p class="sl" style="color:var(--paper);font-size:18px">more keywords that do not include the university's name</p></div>
+      </div>
+      <div class="card" style="display:flex;flex-direction:column">
+        <p class="lbl">What changed</p>
+        <p class="big md">500,000+</p>
+        <p class="sc" style="margin:6px 0 18px">times Google showed City University to students on searches that did not name it.</p>
+        <ul class="b" style="margin-top:auto"><li>Google's AI answers mention City University for questions that do not name it.</li><li>City University gets more of its leads from Google search.</li></ul>
+      </div>
+    </div>
+  </div>
+  <div class="foot"><p class="src">Code Of Origin client results. Keywords without the university's name are searches by students who did not type it.</p><span class="folio">22 / 29</span></div>
+</section>
+
+<!-- ═════════ SECTION DIVIDER ═════════ -->
+<section class="slide close" style="padding:56px 72px 40px">
+  <div class="wave" aria-hidden="true" style="height:40%;opacity:.5">
+    <svg viewBox="0 0 1440 480" preserveAspectRatio="none">
+      <path fill="url(#wvd1)" opacity=".85" d="M0,150 C280,74 500,208 800,158 C1080,112 1260,44 1440,96 L1440,480 L0,480 Z"/>
+      <path fill="url(#wvd2)" opacity=".7" d="M0,290 C300,224 540,348 840,296 C1110,250 1280,196 1440,238 L1440,480 L0,480 Z"/>
+    </svg>
+  </div>
+  <div style="display:flex;align-items:center;gap:22px">
+    <img src="../assets/coo-logo.png" alt="Code Of Origin" style="height:34px;width:auto">
+    <span style="font-family:var(--mono);font-size:16px;color:rgba(244,248,253,.6)">×</span>
+    <img src="../assets/icms-emblem.webp" alt="ICMS" style="height:52px;width:52px">
+  </div>
+  <div style="margin:auto 0">
+    <p style="font-family:var(--serif);font-size:44px;line-height:1;color:var(--aqua);margin:0 0 18px">05</p>
+    <h2 class="display" style="font-size:104px;letter-spacing:-.01em">THE <em>INVESTMENT</em></h2>
+    <p style="font-size:19px;line-height:1.5;color:rgba(244,248,253,.72);margin:26px 0 0">The next slide shows your monthly plan and the price of every add-on.</p>
+  </div>
+  <div class="foot"><p class="src" style="color:rgba(244,248,253,.62)">ICMS Growth Plan · 2027 intakes</p><span class="folio" style="color:rgba(244,248,253,.62)">23 / 29</span></div>
+</section>
+
+<!-- ═════════ TOTAL ═════════ -->
+<section class="slide">
+  <div class="top"><span></span><div class="marks"><img class="coo" src="../assets/coo-logo.png" alt="Code Of Origin"><span class="x">×</span><img src="../assets/icms-emblem.webp" alt="ICMS"></div></div>
+  <h2 class="h2">Costing</h2>
+  <p class="kicker">The plan fee and ad budget make up your monthly total. Each add-on below has its own price, and you can add any of them at any time.</p>
+  <div class="stage">
+    <table class="t grow fill">
+      <tr><th style="width:31%">Your monthly plan</th><th style="width:23%">Plan A · Start it</th><th class="rec" style="width:23%">Plan B · Recommended</th><th style="width:23%">Plan C · Scale it</th></tr>
+      <tr><td class="k">Code Of Origin fee for ads, tracking and content</td><td class="m">RM5,000</td><td class="m rec">RM6,000</td><td class="m">RM8,000</td></tr>
+      <tr><td class="k">Ad budget, paid to the platforms</td><td class="m">RM8,000</td><td class="m rec">RM12,000</td><td class="m">RM20,000</td></tr>
+      <tr class="tot"><td>Total per month</td><td class="m">RM13,000</td><td class="m rec">RM18,000</td><td class="m">RM28,000</td></tr>
+      <tr><th>Add-ons</th><th colspan="3">Price</th></tr>
+      <tr><td class="k">SEO and GEO</td><td class="m" colspan="3">RM4,000 a month, for six months: RM24,000 in total</td></tr>
+      <tr><td class="k">Website management</td><td class="m" colspan="3">RM2,000 a month</td></tr>
+      <tr><td class="k">Filmed video</td><td class="m" colspan="3">RM3,000 a month, with one shoot day on campus</td></tr>
+      <tr><td class="k">Website revamp</td><td class="m" colspan="3">RM10,000 core, or RM15,000 full, one-off</td></tr>
+    </table>
+  </div>
+  <div class="note"><b>The plan and SEO with GEO each run for at least 6 months.</b> In month 1, we spend a quarter of the plan's ad budget.</div>
+  <div class="foot"><p class="src">All fees exclude SST. TikTok ONE creator fees sit outside every line above.</p><span class="folio">24 / 29</span></div>
+</section>
+
+<!-- ═════════ SECTION DIVIDER ═════════ -->
+<section class="slide close" style="padding:56px 72px 40px">
+  <div class="wave" aria-hidden="true" style="height:40%;opacity:.5">
+    <svg viewBox="0 0 1440 480" preserveAspectRatio="none">
+      <path fill="url(#wvd1)" opacity=".85" d="M0,150 C280,74 500,208 800,158 C1080,112 1260,44 1440,96 L1440,480 L0,480 Z"/>
+      <path fill="url(#wvd2)" opacity=".7" d="M0,290 C300,224 540,348 840,296 C1110,250 1280,196 1440,238 L1440,480 L0,480 Z"/>
+    </svg>
+  </div>
+  <div style="display:flex;align-items:center;gap:22px">
+    <img src="../assets/coo-logo.png" alt="Code Of Origin" style="height:34px;width:auto">
+    <span style="font-family:var(--mono);font-size:16px;color:rgba(244,248,253,.6)">×</span>
+    <img src="../assets/icms-emblem.webp" alt="ICMS" style="height:52px;width:52px">
+  </div>
+  <div style="margin:auto 0">
+    <p style="font-family:var(--serif);font-size:44px;line-height:1;color:var(--aqua);margin:0 0 18px">06</p>
+    <h2 class="display" style="font-size:104px;letter-spacing:-.01em">CASE <em>STUDIES</em></h2>
+    <p style="font-size:19px;line-height:1.5;color:rgba(244,248,253,.72);margin:26px 0 0">We grow student leads for IOTA, City University Malaysia and IJN University College.</p>
+  </div>
+  <div class="foot"><p class="src" style="color:rgba(244,248,253,.62)">ICMS Growth Plan · 2027 intakes</p><span class="folio" style="color:rgba(244,248,253,.62)">25 / 29</span></div>
+</section>
+
+<!-- ═════════ CASE IOTA ═════════ -->
+<section class="slide">
+  <div class="top"><span></span><div class="marks"><img class="coo" src="../assets/coo-logo.png" alt="Code Of Origin"><span class="x">×</span><img src="../assets/icms-emblem.webp" alt="ICMS"></div></div>
+  <h2 class="h2">IOTA drew <em>1,533 enquiries</em> across four programs in one month.</h2>
+  <p class="kicker">IOTA runs education programs in Malaysia and Singapore, including the K-Start Korea degree pathway and Rivermore Academy courses. Each program needed its own flow of leads and WhatsApp enquiries from one Meta account.</p>
+  <div class="stage">
+    <div class="grow grid c3">
+      <div class="card" style="display:flex;flex-direction:column">
+        <p class="lbl"><span class="sq"></span>What we did</p>
+        <ul class="b"><li>We built campaigns around each audience and course, instead of around each salesperson.</li><li>We rewrote the WhatsApp greeting so it asks qualifying questions before a chat reaches the sales team.</li><li>We set up a monthly plan for producing and scaling video ads.</li></ul>
+      </div>
+      <div class="card" style="display:flex;flex-direction:column">
+        <p class="lbl">WhatsApp chats by campaign, March 2026</p>
+        <div class="bars" style="margin:10px 0 0;gap:16px">
+          <div class="bar" style="grid-template-columns:150px 1fr 44px"><span>K-Start</span><span class="tr"><span class="fl acc" style="width:100%"></span></span><span class="v">466</span></div>
+          <div class="bar" style="grid-template-columns:150px 1fr 44px"><span>Rivermore A</span><span class="tr"><span class="fl" style="width:86%"></span></span><span class="v">401</span></div>
+          <div class="bar" style="grid-template-columns:150px 1fr 44px"><span>Rivermore B</span><span class="tr"><span class="fl" style="width:77%"></span></span><span class="v">359</span></div>
+          <div class="bar" style="grid-template-columns:150px 1fr 44px"><span>Rivermore part-time</span><span class="tr"><span class="fl" style="width:39%"></span></span><span class="v">182</span></div>
+        </div>
+        <p class="sc" style="margin-top:auto">Each program runs its own campaign, and IOTA can see which program each ringgit fills.</p>
+      </div>
+      <div class="card ink" style="display:flex;flex-direction:column;justify-content:space-between">
+        <div><p class="big" style="color:var(--aqua);font-size:84px">1,533</p><p class="sl" style="color:var(--paper)">leads and WhatsApp chats across four programs in March 2026</p></div>
+        <div><p class="big md" style="color:var(--paper)">+48%</p><p class="sc" style="color:rgba(244,248,253,.7)">more K-Start form leads in March than in February, reaching 125.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="note"><b>Splitting campaigns by course showed what each program cost,</b> and one Rivermore Academy campaign cut its cost per chat by 15% to RM28.32.</div>
+  <div class="foot"><p class="src">We count Meta leads and WhatsApp chats from 1 to 31 March 2026: 125 K-Start leads and 1,408 chats on RM36,709.90 of spend across K-Start and three Rivermore Academy campaigns.</p><span class="folio">26 / 29</span></div>
+</section>
+
+<!-- ═════════ CASE CITY U ═════════ -->
+<section class="slide">
+  <div class="top"><span></span><div class="marks"><img class="coo" src="../assets/coo-logo.png" alt="Code Of Origin"><span class="x">×</span><img src="../assets/icms-emblem.webp" alt="ICMS"></div></div>
+  <h2 class="h2">City University drew <em>2,539 student leads</em> in four months.</h2>
+  <p class="kicker">City University Malaysia recruits students from the Klang Valley and other states for each intake. It needed a steady flow of enquiries from English and Chinese speakers on Meta.</p>
+  <div class="stage">
+    <div class="grow grid c3">
+      <div class="card" style="display:flex;flex-direction:column">
+        <p class="lbl"><span class="sq"></span>What we did</p>
+        <ul class="b"><li>We built each ad around the first doubt a student has about the program.</li><li>We paused the chat campaign on 14 May and moved its budget into lead forms, where 12.67% of clicks became leads.</li><li>We merged three Chinese-language ad sets and suggested form questions and phone checks to improve lead quality.</li></ul>
+      </div>
+      <div class="card" style="display:flex;flex-direction:column">
+        <p class="lbl">Cost per lead, March to June 2026</p>
+        <div class="bars" style="margin:10px 0 0;gap:16px">
+          <div class="bar" style="grid-template-columns:150px 1fr 66px"><span>Fashion Design, other states</span><span class="tr"><span class="fl acc" style="width:59%"></span></span><span class="v">RM11.64</span></div>
+          <div class="bar" style="grid-template-columns:150px 1fr 66px"><span>"What you'll learn" ad</span><span class="tr"><span class="fl acc" style="width:63%"></span></span><span class="v">RM12.42</span></div>
+          <div class="bar" style="grid-template-columns:150px 1fr 66px"><span>Best month, April</span><span class="tr"><span class="fl" style="width:79%"></span></span><span class="v">RM15.68</span></div>
+          <div class="bar" style="grid-template-columns:150px 1fr 66px"><span>Whole account</span><span class="tr"><span class="fl" style="width:100%"></span></span><span class="v">RM19.85</span></div>
+        </div>
+        <p class="sc" style="margin-top:auto">The "What you'll learn" ad brought 424 leads, and the Fashion Design ad for students outside the Klang Valley brought 237.</p>
+      </div>
+      <div class="card ink" style="display:flex;flex-direction:column;justify-content:space-between">
+        <div><p class="big" style="color:var(--aqua);font-size:84px">2,539</p><p class="sl" style="color:var(--paper)">Meta form leads at RM19.85 each</p></div>
+        <div><p class="big md" style="color:var(--paper)">320</p><p class="sc" style="color:rgba(244,248,253,.7)">WhatsApp chats came in on top of the form leads.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="note"><b>Ads that answered a student's first doubt</b> brought leads well below the account average.</div>
+  <div class="foot"><p class="src">We count Meta lead form leads and WhatsApp chats from 1 March to 30 June 2026. City University spent RM50,397.09 on lead forms and RM56,532.21 including chat ads.</p><span class="folio">27 / 29</span></div>
+</section>
+
+<!-- ═════════ CASE IJN ═════════ -->
+<section class="slide">
+  <div class="top"><span></span><div class="marks"><img class="coo" src="../assets/coo-logo.png" alt="Code Of Origin"><span class="x">×</span><img src="../assets/icms-emblem.webp" alt="ICMS"></div></div>
+  <h2 class="h2">IJN University College drew <em>869 TikTok leads</em> in four months.</h2>
+  <p class="kicker">IJN University College trains nurses and allied health professionals and recruits SPM and STPM leavers. We launched its TikTok campaigns on 21 June 2026 for school leavers and their parents.</p>
+  <div class="stage">
+    <div class="grow grid c3">
+      <div class="card" style="display:flex;flex-direction:column">
+        <p class="lbl"><span class="sq"></span>What we did</p>
+        <ul class="b"><li>We replaced TikTok's standard lead form with one that asks more questions, to improve lead quality.</li><li>We ran Open Day videos with a clear offer, which brought 178 leads at RM33.29 each in July.</li><li>We added program videos, and the Pharmaceutical Technology video brought 84 leads at RM31.93 each in August.</li></ul>
+      </div>
+      <div class="card" style="display:flex;flex-direction:column">
+        <p class="lbl">TikTok form leads a month</p>
+        <div class="bars" style="margin:10px 0 0;gap:16px">
+          <div class="bar" style="grid-template-columns:80px 1fr 44px"><span>June</span><span class="tr"><span class="fl acc" style="width:100%"></span></span><span class="v">303</span></div>
+          <div class="bar" style="grid-template-columns:80px 1fr 44px"><span>July</span><span class="tr"><span class="fl" style="width:74%"></span></span><span class="v">224</span></div>
+          <div class="bar" style="grid-template-columns:80px 1fr 44px"><span>August</span><span class="tr"><span class="fl" style="width:64%"></span></span><span class="v">195</span></div>
+          <div class="bar" style="grid-template-columns:80px 1fr 44px"><span>September</span><span class="tr"><span class="fl" style="width:49%"></span></span><span class="v">147</span></div>
+        </div>
+        <p class="sc" style="margin-top:auto">The June figure counts leads from the 21 June launch.</p>
+      </div>
+      <div class="card ink" style="display:flex;flex-direction:column;justify-content:space-between">
+        <div><p class="big" style="color:var(--aqua);font-size:84px">RM30.09</p><p class="sl" style="color:var(--paper)">was the average cost per lead over four months</p></div>
+        <div><p class="big md" style="color:var(--paper)">RM31.93</p><p class="sc" style="color:rgba(244,248,253,.7)">per lead came from the Pharmaceutical Technology video, against RM39.21 for the Open Day video in August.</p></div>
+      </div>
+    </div>
+  </div>
+  <div class="note"><b>A video about one program</b> brought leads at a lower cost than a general Open Day message.</div>
+  <div class="foot"><p class="src">We count TikTok lead form leads from 21 June to 30 September 2026: 869 leads on RM26,150.62 of spend.</p><span class="folio">28 / 29</span></div>
+</section>
+
+
+<!-- ═════════ THANK YOU ═════════ -->
+<section class="slide close" style="padding:56px 72px 40px">
+  <div class="wave" aria-hidden="true" style="height:40%;opacity:.5">
+    <svg viewBox="0 0 1440 480" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="wvd1" x1="0" y1="0" x2=".8" y2="1"><stop offset="0" stop-color="#16406E"/><stop offset="1" stop-color="#0F2A47"/></linearGradient>
+        <linearGradient id="wvd2" x1=".2" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#1D5488"/><stop offset="1" stop-color="#14355C"/></linearGradient>
+      </defs>
+      <path fill="url(#wvd1)" opacity=".85" d="M0,150 C280,74 500,208 800,158 C1080,112 1260,44 1440,96 L1440,480 L0,480 Z"/>
+      <path fill="url(#wvd2)" opacity=".7" d="M0,290 C300,224 540,348 840,296 C1110,250 1280,196 1440,238 L1440,480 L0,480 Z"/>
+    </svg>
+  </div>
+  <div style="display:flex;align-items:center;gap:22px">
+    <img src="../assets/coo-logo.png" alt="Code Of Origin" style="height:34px;width:auto">
+    <span style="font-family:var(--mono);font-size:13px;color:rgba(244,248,253,.5)">×</span>
+    <img src="../assets/icms-emblem.webp" alt="ICMS" style="height:52px;width:52px">
+  </div>
+  <h2 class="display" style="margin-top:auto">Thank you.</h2>
+  <div style="height:40px"></div>
+  <div style="display:flex;flex-direction:column;gap:6px;margin-bottom:auto">
+    <span style="font-size:19px;font-weight:600">Viknesh · Sales and Partnerships Director</span>
+    <span style="font-family:var(--mono);font-size:15px;color:var(--aqua)">+60 12-568 8681 · codeoforigin.com</span>
+  </div>
+  <div class="foot"><p class="src" style="color:rgba(244,248,253,.62)">Code Of Origin</p><span class="folio" style="color:rgba(244,248,253,.62)">29 / 29</span></div>
+</section>
+
+</div>
+</body>
+</html>
