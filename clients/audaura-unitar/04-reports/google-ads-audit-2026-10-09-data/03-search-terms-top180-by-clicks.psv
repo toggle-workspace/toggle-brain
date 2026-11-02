@@ -1,0 +1,194 @@
+# UNITAR - MY - Degree. Search terms report, last 30 days (9 Sep to 8 Oct 2026), account level, all campaigns.
+# 167,444 search terms in total; these are the top ~180 rows in the UI's default order (clicks descending). Pipe separated. Money in MYR.
+# Campaign prefix "Aud_Unitar_MY_SEM_" and suffix "_Max_Conversion_TCPA" stripped. "added" = whether the term is an added keyword.
+term|match|added|campaign|adgroup|avgCPM|clicks|impr|ctr|cpc|cost|type|cvr|conv|cpa
+unitar|Exact match|Added|Brand_T2_Test|T2_Brand - EN|444.14|2,409|16,701|14.42%|3.08|7,417.64|Search|3.46%|83.25|89.10
+unitar|Exact match|Added|Brand_T1a|T1a_Brand - EN|1,140.22|2,074|7,043|29.45%|3.87|8,030.59|Search|3.26%|67.63|118.74
+unitar|Exact match|Added|Brand_T2|T2_Brand - EN|972.33|1,829|7,526|24.30%|4.00|7,317.78|Search|4.36%|79.73|91.78
+unitar|Exact match|Added|SPM_T1a_EN|t1a_en_spm|447.30|1,566|8,416|18.61%|2.40|3,764.52|Search|4.97%|77.86|48.35
+unitar|Exact match|Added|Brand_T1b|T1b_Brand - EN|604.70|1,171|6,407|18.28%|3.31|3,874.32|Search|4.22%|49.46|78.33
+upu online|Exact match|Added|SPM_T2_BM|t2_bm_spm|408.69|692|4,561|15.17%|2.69|1,864.03|Search|2.59%|17.92|104.04
+upu online|Exact match|Added|SPM_T1a_BM|t1a_bm_spm|386.64|680|5,184|13.12%|2.95|2,004.35|Search|2.67%|18.17|110.33
+unitar kuching|Exact match|Added|Brand_T1b|T1b_Brand - EN|521.89|585|3,928|14.89%|3.50|2,049.97|Search|2.58%|15.10|135.76
+unitar|Broad match|None|Level of study_Low intent_T1a+T2_EN+BM|Online Pre-U Foundation EN|468.60|547|2,517|21.73%|2.16|1,179.46|Search|4.33%|23.70|49.77
+unitar sabah|Exact match|Added|Brand_T1b|T1b_Brand - EN|571.27|464|2,702|17.17%|3.33|1,543.56|Search|4.50%|20.89|73.88
+upu online|Exact match|Added|SPM_T1b_BM|t1b_bm_spm|487.29|452|3,126|14.46%|3.37|1,523.27|Search|3.50%|15.83|96.21
+full scholarships for international students|Broad match|None|Psychology_T1a+T2_EN|T1a+T2_EN_Online_Diploma_in_Psychology|2,715.08|421|897|46.93%|5.78|2,435.43|Search|5.23%|22.00|110.70
+unitar international university|Broad match|None|Level of study_Low intent_T1a+T2_EN+BM|Online Pre-U Foundation EN|573.43|408|1,770|23.05%|2.49|1,014.97|Search|3.72%|15.17|66.92
+upu|Broad match|None|Area of study_Low intent_T1a+T2_EN+BM|t1a_Unitar_Online_PostGraduate_SEM_Diploma in Education_(PGDE)_BM_Broad Match|222.63|323|4,221|7.65%|2.91|939.72|Search|1.08%|3.50|268.49
+unitar international university|Exact match|Added|Brand_T1a|T1a_Brand - EN|1,273.96|276|1,089|25.34%|5.03|1,387.34|Search|1.54%|4.25|326.43
+unitar international university|Exact match|Added|Brand_T2_Test|T2_Brand - EN|485.92|227|1,800|12.61%|3.85|874.65|Search|3.54%|8.04|108.75
+upu online|Broad match|None|Area of study_Low intent_T1a+T2_EN+BM|t1a_Unitar_Online_PostGraduate_SEM_Diploma in Education_(PGDE)_BM_Broad Match|277.23|223|2,112|10.56%|2.63|585.51|Search|2.02%|4.50|130.11
+unitar|Broad match|None|Level of study_Low intent_T1a+T2_EN+BM|Conventional Pre-U Foundation EN|286.97|216|1,327|16.28%|1.76|380.81|Search|4.20%|9.07|42.00
+politeknik|Broad match|None|SPM_T1a_BM|t1a_bm_spm|270.25|180|2,047|8.79%|3.07|553.19|Search|4.37%|7.86|70.36
+unitar international university|Exact match|Added|Brand_T2|T2_Brand - EN|1,144.12|176|752|23.40%|4.89|860.38|Search|1.70%|3.00|286.79
+dpli oum|Broad match|None|postgrad_T2_BM|t2_Unitar_Online_PostGraduate_SEM_Diploma in Education_(PGDE)_BM|358.91|168|1,296|12.96%|2.77|465.15|Search|1.79%|3.00|155.05
+unitar sungai petani|Exact match|Added|Brand_T2|T2_Brand - EN|802.21|129|903|14.29%|5.62|724.39|Search|1.16%|1.50|482.93
+unitar ipoh|Exact match|Added|Brand_T2|T2_Brand - EN|840.56|119|793|15.01%|5.60|666.56|Search|2.52%|3.00|222.19
+kolej komuniti|Broad match|None|business_T2_BM|T2_BM_Conventional_certificate_in_business_studies|250.00|119|2,052|5.80%|4.31|513.01|Search|0.84%|1.00|513.01
+politeknik|Broad match|None|SPM_T2_BM|t2_bm_spm|354.77|118|1,088|10.85%|3.27|385.99|Search|0.85%|1.00|385.99
+oum dpli|Broad match|None|Area of study_Low intent_T1a+T2_EN+BM|t1a_Unitar_Online_PostGraduate_SEM_Diploma in Education_(PGDE)_BM_Broad Match|404.67|116|1,008|11.51%|3.52|407.90|Search|3.45%|4.00|101.98
+unikl|Exact match|Added|Competitor_T2|T2_Competitors - BM|198.62|114|1,412|8.07%|2.46|280.45|Search|2.63%|3.00|93.48
+city university malaysia|Phrase match (close variant)|None|Level of study_Low intent_T1a+T2_EN+BM|Online Bachelors EN|349.76|108|1,839|5.87%|5.96|643.21|Search|3.24%|3.50|183.77
+unitar sungai petani|Exact match|Added|Brand_T2_Test|T2_Brand - EN|300.64|107|1,546|6.92%|4.34|464.80|Search|0.93%|1.00|464.80
+unikl|Exact match|Added|Competitor_T1a|T1a_Competitors - BM|147.20|106|1,560|6.79%|2.17|229.63|Search|5.66%|6.00|38.27
+scholarships for international students|Broad match|None|Psychology_T1a+T2_EN|T1a+T2_EN_Online_Diploma_in_Psychology|2,498.87|105|230|45.65%|5.47|574.74|Search|2.86%|3.00|191.58
+upu|Exact match|Added|SPM_T1a_BM|t1a_bm_spm|302.80|103|950|10.84%|2.79|287.66|Search|3.48%|3.58|80.28
+unitar penang|Exact match|Added|Brand_T2|T2_Brand - EN|973.74|98|495|19.80%|4.92|482.00|Search|2.21%|2.17|222.46
+dpli|Broad match|None|postgrad_T2_BM|t2_Unitar_Online_PostGraduate_SEM_Diploma in Education_(PGDE)_BM_Broad Match|285.09|93|1,247|7.46%|3.82|355.51|Search|9.68%|9.00|39.50
+unitar ipoh|Exact match|Added|Brand_T2_Test|T2_Brand - EN|337.78|92|1,248|7.37%|4.58|421.55|Search|2.72%|2.50|168.62
+dpli|Broad match|None|postgrad_T2_BM|t2_Unitar_Online_PostGraduate_SEM_Diploma in Education_(PGDE)_BM|238.24|91|1,303|6.98%|3.41|310.43|Search|4.40%|4.00|77.61
+unitar kota bharu|Exact match|Added|Brand_T2|T2_Brand - EN|924.17|91|580|15.69%|5.89|536.02|Search|3.30%|3.00|178.67
+part time degree|Exact match|Added|Conventional Degree_T1a+T2_EN+BM|Conventional Degree EN|343.87|91|1,047|8.69%|3.96|360.04|Search|7.14%|6.50|55.39
+unitar melaka|Exact match|Added|Brand_T2_Test|T2_Brand - EN|411.49|88|1,057|8.33%|4.94|434.95|Search|4.17%|3.67|118.62
+unitar penang|Exact match|Added|Brand_T2_Test|T2_Brand - EN|315.52|87|956|9.10%|3.47|301.64|Search|2.30%|2.00|150.82
+upu|Exact match|Added|SPM_T2_BM|t2_bm_spm|291.61|86|731|11.76%|2.48|213.17|Search|4.94%|4.25|50.16
+dpli ukm|Broad match|None|postgrad_T2_BM|t2_Unitar_Online_PostGraduate_SEM_Diploma in Education_(PGDE)_BM|221.58|83|1,076|7.71%|2.87|238.42|Search|4.22%|3.50|68.12
+unitar kuantan|Exact match|Added|Brand_T2|T2_Brand - EN|885.40|83|517|16.05%|5.52|457.75|Search|2.41%|2.00|228.88
+upu|Exact match|Added|SPM_T1b_BM|t1b_bm_spm|286.60|82|878|9.34%|3.07|251.64|Search|0.41%|0.33|754.90
+upu online|Phrase match (close variant)|None|Level of study_Low intent_T1a+T2_EN+BM|Conventional Pre-U BM|236.48|82|1,017|8.06%|2.93|240.50|Search|0.30%|0.25|961.99
+upu pocket|Broad match|None|SPM_T1a_EN|t1a_en_spm|360.10|82|615|13.33%|2.70|221.46|Search|4.88%|4.00|55.37
+unirazak kuching|Phrase match|None|SPM_T1b_BM|t1b_bm_spm|239.11|81|762|10.63%|2.25|182.20|Search|4.32%|3.50|52.06
+dpli oum|Broad match|None|diploma_T1a_BM|t1a_BM_Conventional_postgrad_pgde_diploma_in_education|394.24|81|672|12.05%|3.27|264.93|Search|2.88%|2.33|113.54
+unitar kota bharu|Exact match|Added|Brand_T2_Test|T2_Brand - EN|372.68|81|1,046|7.74%|4.81|389.82|Search|0.00%|0.00|0.00
+kolej komuniti|Broad match|None|business_T1a_BM|T1a_BM_Conventional_certificate_in_business_studies|232.46|80|1,651|4.85%|4.80|383.78|Search|5.63%|4.50|85.29
+unitar melaka|Exact match|Added|Brand_T2|T2_Brand - EN|749.18|76|553|13.74%|5.45|414.30|Search|3.29%|2.50|165.72
+dpli oum|Broad match|None|postgrad_T2_BM|t2_Unitar_Online_PostGraduate_SEM_Diploma in Education_(PGDE)_BM_Broad Match|259.69|75|924|8.12%|3.20|239.96|Search|1.78%|1.33|179.97
+unitar courses|Exact match|Added|Brand_T2_Test|T2_Brand - EN|571.35|75|285|26.32%|2.17|162.83|Search|0.67%|0.50|325.67
+utar|Exact match|Added|SPM_T1a_BM|t1a_bm_spm|263.38|73|821|8.89%|2.96|216.24|Search|3.42%|2.50|86.49
+unitar courses|Exact match|Added|Brand_T2|T2_Brand - EN|2,011.52|71|123|57.72%|3.48|247.42|Search|1.41%|1.00|247.42
+upu pocket|Broad match|None|SPM_T2_EN|t2_en_spm|240.24|70|615|11.38%|2.11|147.75|Search|0.00%|0.00|0.00
+unitar kelana jaya|Exact match|Added|Brand_T1a|T1a_Brand - EN|829.25|69|498|13.86%|5.99|412.97|Search|1.93%|1.33|309.73
+dpli ukm|Broad match|None|postgrad_T2_BM|t2_Unitar_Online_PostGraduate_SEM_Diploma in Education_(PGDE)_BM_Broad Match|203.84|68|920|7.39%|2.76|187.53|Search|0.00%|0.00|0.00
+lincoln university malaysia|Broad match|None|Level of study_Low intent_T1a+T2_EN+BM|Online Bachelors EN|215.76|66|1,727|3.82%|5.65|372.61|Search|4.55%|3.00|124.20
+unitar courses|Exact match|Added|SPM_T1a_EN|t1a_en_spm|389.83|66|214|30.84%|1.26|83.42|Search|3.03%|2.00|41.71
+politeknik|Broad match|None|SPM_T1b_BM|t1b_bm_spm|257.75|65|863|7.53%|3.42|222.44|Search|3.08%|2.00|111.22
+unitar kuala terengganu|Exact match|Added|Brand_T2|T2_Brand - EN|1,009.23|64|357|17.93%|5.63|360.29|Search|0.31%|0.20|1,801.47
+unitar international university|Broad match|None|Level of study_Low intent_T1a+T2_EN+BM|Conventional Pre-U Foundation EN|302.40|64|414|15.46%|1.96|125.19|Search|3.91%|2.50|50.08
+unitar international university|Phrase match (close variant)|None|SPM_T1a_EN|t1a_en_spm|241.83|62|558|11.11%|2.18|134.94|Search|2.07%|1.28|105.40
+unitar kota kinabalu|Phrase match (close variant)|None|Brand_T1b|T1b_Brand - BM|708.71|61|345|17.68%|4.01|244.50|Search|6.56%|4.00|61.13
+unitar kota kinabalu|Phrase match (close variant)|None|Brand_T1b|T1b_Brand - BM ENG - Open Day|443.47|61|403|15.14%|2.93|178.72|Search|0.00%|0.00|0.00
+universities with scholarships for international students|Broad match|None|Psychology_T1a+T2_EN|T1a+T2_EN_Online_Diploma_in_Psychology|1,982.54|60|143|41.96%|4.73|283.50|Search|5.00%|3.00|94.50
+university near me|Exact match|Added|Conventional Degree_T1a+T2_EN+BM|Conventional Degree EN|58.09|60|1,113|5.39%|1.08|64.65|Search|0.00%|0.00|0.00
+upu|Broad match|None|SPM_T1b_EN|t1b_en_spm|174.27|56|968|5.79%|3.01|168.69|Search|4.46%|2.50|67.48
+unisel|Exact match|Added|Competitor_T1a|T1a_Competitors - BM|131.84|56|919|6.09%|2.16|121.16|Search|3.57%|2.00|60.58
+unitar courses|Exact match|Added|Brand_T1a|T1a_Brand - EN|2,261.58|55|98|56.12%|4.03|221.63|Search|3.94%|2.17|102.29
+malaysia international scholarship|Broad match|None|Psychology_T1a+T2_EN|T1a+T2_EN_Online_Diploma_in_Psychology|3,112.46|54|114|47.37%|6.57|354.82|Search|1.85%|1.00|354.82
+politeknik|Broad match|None|diploma_T2_BM|t2_BM_Conventional_diploma_in_early_childhood_education|238.47|53|767|6.91%|3.45|182.91|Search|1.89%|1.00|182.91
+part time degree malaysia|Exact match (close variant)|None|Conventional Degree_T1a+T2_EN+BM|Conventional Degree EN|414.87|53|481|11.02%|3.77|199.55|Search|8.76%|4.64|42.98
+permohonan upu|Exact match|Added|SPM_T2_BM|t2_bm_spm|540.46|53|310|17.10%|3.16|167.54|Search|3.77%|2.00|83.77
+utar|Exact match|Added|SPM_T2_BM|t2_bm_spm|286.97|53|579|9.15%|3.13|166.15|Search|3.62%|1.92|86.69
+unitar kuantan|Exact match|Added|Brand_T2_Test|T2_Brand - EN|252.04|52|819|6.35%|3.97|206.42|Search|0.64%|0.33|619.26
+permohonan upu|Exact match|Added|SPM_T1a_BM|t1a_bm_spm|407.30|49|393|12.47%|3.27|160.07|Search|0.68%|0.33|480.21
+unitar master|Exact match|Added|postgrad_T1a_EN|T1a_EN_Online_masters_mba_updated|985.54|48|104|46.15%|2.14|102.50|Search|0.26%|0.13|819.97
+unitar international university|Exact match|Added|Brand_T1b|T1b_Brand - EN|388.61|48|448|10.71%|3.63|174.10|Search|1.04%|0.50|348.19
+unirazak|Exact match|Added|Competitor_T1a|T1a_Competitors - BM|100.85|48|997|4.81%|2.09|100.55|Search|0.00%|0.00|0.00
+part time diploma|Broad match|None|Psychology_T1a+T2_EN|T1a+T2_EN_Online_Diploma_in_Psychology|656.69|46|303|15.18%|4.33|198.98|Search|4.30%|1.98|100.69
+dpli oum|Broad match|None|postgrad_T1b_BM|t1b_Unitar_Online_PostGraduate_SEM_Diploma in Education_(PGDE)_BM|347.82|46|423|10.87%|3.20|147.13|Search|6.52%|3.00|49.04
+apel q|Exact match|Added|postgrad_T2_BM|t2_BM_Online_masters_mba_apel|373.89|46|266|17.29%|2.16|99.46|Search|2.17%|1.00|99.46
+unitar diploma courses|Exact match|Added|Level of study_Low intent_T1a+T2_EN+BM|Conventional Pre-U Foundation EN|714.77|45|121|37.19%|1.92|86.49|Search|4.07%|1.83|47.18
+unitar|Broad match|None|Education_T1a|t1a_en_Diploma_in_Education|625.71|45|223|20.18%|3.10|139.53|Search|6.67%|3.00|46.51
+unitar kelana jaya|Exact match|Added|Brand_T2_Test|T2_Brand - EN|364.03|45|570|7.89%|4.61|207.50|Search|0.74%|0.33|622.48
+oum|Exact match|Added|Competitor_T2|T2_Competitors - EN|61.73|44|1,283|3.43%|1.80|79.20|Search|6.82%|3.00|26.40
+up_tvet|Broad match|None|diploma_T1a_BM|t1a_BM_Online_diploma_in_early_childhood_education|677.06|43|239|17.99%|3.76|161.82|Search|2.33%|1.00|161.82
+monash university malaysia|Phrase match (close variant)|None|Level of study_Low intent_T1a+T2_EN+BM|Online Award Recognition BM|293.80|43|1,052|4.09%|7.19|309.07|Search|6.98%|3.00|103.02
+sunway university malaysia|Phrase match (close variant)|None|Level of study_Low intent_T1a+T2_EN+BM|Online Award Recognition BM|365.38|43|626|6.87%|5.32|228.73|Search|2.33%|1.00|228.73
+dpli upsi|Broad match|None|postgrad_T2_BM|t2_Unitar_Online_PostGraduate_SEM_Diploma in Education_(PGDE)_BM|296.47|42|509|8.25%|3.59|150.90|Search|0.00%|0.00|0.00
+unirazak|Exact match|Added|SPM_T1a_BM|t1a_bm_spm|249.79|40|613|6.53%|3.83|153.12|Search|2.50%|1.00|153.12
+diploma part time|Exact match|Added|Level of study_Low intent_T1a+T2_EN+BM|Conventional Pre-U EN|465.30|40|373|10.72%|4.34|173.56|Search|2.50%|1.00|173.56
+unitar kuala terengganu|Exact match|Added|Brand_T2_Test|T2_Brand - EN|354.95|40|521|7.68%|4.62|184.93|Search|2.50%|1.00|184.93
+degree part time|Exact match (close variant)|None|Conventional Degree_T1a+T2_EN+BM|Conventional Degree EN|248.53|39|513|7.60%|3.27|127.49|Search|2.56%|1.00|127.49
+scholarship|Broad match|None|SPM_T1a_EN|t1a_en_spm|201.80|38|1,140|3.33%|6.05|230.05|Search|0.00%|0.00|0.00
+cn unitar|Exact match (close variant)|None|Brand_T2|T2_Brand - EN|1,678.25|37|156|23.72%|7.08|261.81|Search|0.00%|0.00|0.00
+auth unitar my login|Phrase match (close variant)|None|Brand_T2|T2_Brand - EN|1,269.20|37|157|23.57%|5.39|199.27|Search|0.00%|0.00|0.00
+unitar online courses|Exact match (close variant)|None|Brand_T2_Test|T2_Brand - EN|858.93|37|102|36.27%|2.37|87.61|Search|5.41%|2.00|43.81
+open university malaysia|Exact match (close variant)|None|Competitor_T1a|T1a_Competitors - EN|46.28|36|1,412|2.55%|1.82|65.35|Search|0.00%|0.00|0.00
+uitm shah alam|Broad match|None|Area of study_Low intent_T1a+T2_EN+BM|t1a_Unitar_Online_PostGraduate_SEM_Diploma in Education_(PGDE)_BM_Broad Match|175.17|36|668|5.39%|3.25|117.02|Search|0.00%|0.00|0.00
+selangkah uitm|Broad match|None|business_T1a_BM|T1a_BM_Conventional_certificate_in_business_studies|244.37|35|393|8.91%|2.74|96.04|Search|0.00%|0.00|0.00
+unitar kelana jaya|Exact match|Added|Brand_T2|T2_Brand - EN|874.72|35|243|14.40%|6.07|212.56|Search|0.95%|0.33|637.67
+tvet madani|Broad match|None|SPM_T1a_BM|t1a_bm_spm|236.03|35|391|8.95%|2.64|92.29|Search|0.00%|0.00|0.00
+unitar mba|Exact match|Added|postgrad_T1a_EN|T1a_EN_Online_masters_mba|1,850.23|35|86|40.70%|4.55|159.12|Search|14.29%|5.00|31.82
+unitar master programme|Exact match|Added|postgrad_T1a_EN|T1a_EN_Online_masters_mba_updated|1,128.85|34|69|49.28%|2.29|77.89|Search|3.79%|1.29|60.44
+unitar courses|Exact match|Added|Brand_T1b|T1b_Brand - EN|952.28|34|89|38.20%|2.49|84.75|Search|0.00%|0.00|0.00
+unitar university|Broad match|None|Level of study_Low intent_T1a+T2_EN+BM|Online Pre-U Foundation EN|683.37|33|153|21.57%|3.17|104.56|Search|3.03%|1.00|104.56
+uitm permohonan|Broad match|None|SPM_T1b_BM|t1b_bm_spm|408.37|33|271|12.18%|3.35|110.67|Search|5.05%|1.67|66.40
+unitar mba|Exact match|Added|postgrad_T1a_EN|T1a_EN_Online_masters_mba_updated|1,960.09|33|87|37.93%|5.17|170.53|Search|1.52%|0.50|341.06
+unitar johor bahru|Exact match|Added|Brand_T2_Test|T2_Brand - EN|693.64|33|354|9.32%|7.44|245.55|Search|0.00%|0.00|0.00
+unitar part time degree|Exact match|Added|Brand_T1a|T1a_Brand - EN|4,420.15|32|45|71.11%|6.22|198.91|Search|11.82%|3.78|52.57
+dpli oum intake 2026|Broad match|None|postgrad_T2_BM|t2_Unitar_Online_PostGraduate_SEM_Diploma in Education_(PGDE)_BM|427.17|32|274|11.68%|3.66|117.05|Search|0.00%|0.00|0.00
+unitar course|Exact match|Added|Brand_T1b|T1b_Brand - EN|927.54|32|84|38.10%|2.43|77.91|Search|0.52%|0.17|467.47
+unitar kk|Exact match|Added|Brand_T1b|T1b_Brand - EN|648.25|32|309|10.36%|6.26|200.31|Search|0.00%|0.00|0.00
+unitar sarawak|Exact match|Added|Brand_T1b|T1b_Brand - EN|677.21|32|218|14.68%|4.61|147.63|Search|0.00%|0.00|0.00
+unirazak|Exact match|Added|Competitor_T1a|T1a_Competitors - EN|80.01|32|520|6.15%|1.30|41.60|Search|0.00%|0.00|0.00
+diploma pendidikan lepasan ijazah|Exact match|Added|Area of study_Low intent_T1a+T2_EN+BM|t1a_Unitar_Online_PostGraduate_SEM_Diploma in Education_(PGDE)_BM_Broad Match|267.50|32|409|7.82%|3.42|109.41|Search|12.50%|4.00|27.35
+kolej komuniti|Broad match|None|business_T1b_BM|T1b_BM_Conventional_certificate_in_business_studies|208.75|31|660|4.70%|4.44|137.77|Search|8.60%|2.67|51.67
+mohon tvet gov my|Broad match|None|SPM_T1b_BM|t1b_bm_spm|572.37|31|150|20.67%|2.77|85.86|Search|0.00%|0.00|0.00
+unikl|Exact match|Added|Competitor_T1a|T1a_Competitors - EN|60.57|31|1,180|2.63%|2.31|71.47|Search|1.61%|0.50|142.95
+unitar part time degree|Exact match|Added|Brand_T2_Test|T2_Brand - EN|1,905.67|31|94|32.98%|5.78|179.13|Search|9.35%|2.90|61.77
+uts sibu|Phrase match (close variant)|None|SPM_T1b_EN|t1b_en_spm|146.58|30|590|5.08%|2.88|86.48|Search|3.33%|1.00|86.48
+ukm dpli|Broad match|None|postgrad_T2_BM|t2_Unitar_Online_PostGraduate_SEM_Diploma in Education_(PGDE)_BM|410.64|30|255|11.76%|3.49|104.71|Search|3.33%|1.00|104.71
+uitm permohonan|Broad match|None|SPM_T1a_BM|t1a_bm_spm|219.40|30|420|7.14%|3.07|92.15|Search|3.33%|1.00|92.15
+oum|Exact match|Added|Competitor_T1a|T1a_Competitors - EN|36.60|30|1,499|2.00%|1.83|54.87|Search|10.00%|3.00|18.29
+scholarship for international students|Broad match|None|Psychology_T1a+T2_EN|T1a+T2_EN_Online_Diploma_in_Psychology|1,999.27|30|85|35.29%|5.66|169.94|Search|6.67%|2.00|84.97
+training and certification|Broad match|None|Psychology_T1a+T2_EN|T1a+T2_EN_Online_Diploma_in_Psychology|2,271.42|30|44|68.18%|3.33|99.94|Search|6.67%|2.00|49.97
+online psychology degrees|Exact match (close variant)|None|Psychology_T1a+T2_EN|T1a+T2_EN_Online_Diploma_in_Psychology|1,666.22|30|45|66.67%|2.50|74.98|Search|0.00%|0.00|0.00
+dpli|Broad match|None|postgrad_T1b_BM|t1b_Unitar_Online_PostGraduate_SEM_Diploma in Education_(PGDE)_BM_Broad Match|326.42|30|452|6.64%|4.92|147.54|Search|4.17%|1.25|118.03
+oum|Exact match|Added|Competitor_T2|T2_Competitors - BM|74.35|29|855|3.39%|2.19|63.57|Search|3.45%|1.00|63.57
+unirazak|Exact match|Added|Competitor_T2|T2_Competitors - BM|110.63|29|552|5.25%|2.11|61.07|Search|0.86%|0.25|244.26
+ukm dpli|Broad match|None|postgrad_T2_BM|t2_Unitar_Online_PostGraduate_SEM_Diploma in Education_(PGDE)_BM_Broad Match|429.24|29|222|13.06%|3.29|95.29|Search|3.45%|1.00|95.29
+pendidikan awal kanak kanak|Exact match|Added|diploma_T1a_BM|t1a_BM_Conventional_diploma_in_early_childhood_education|264.89|29|371|7.82%|3.39|98.27|Search|1.15%|0.33|294.82
+scholarships for women over 50|Broad match|None|Psychology_T1a+T2_EN|T1a+T2_EN_Online_Diploma_in_Psychology|2,041.80|29|50|58.00%|3.52|102.09|Search|3.45%|1.00|102.09
+diploma in psychology|Exact match|Added|Level of study_Low intent_T1a+T2_EN+BM|Conventional Pre-U EN|227.77|29|350|8.29%|2.75|79.72|Search|0.00%|0.00|0.00
+oum|Exact match|Added|Competitor_T1b|T1b_Competitors - BM|91.01|29|631|4.60%|1.98|57.43|Search|0.00%|0.00|0.00
+unikl|Exact match|Added|Competitor_T2|T2_Competitors - EN|67.08|28|789|3.55%|1.89|52.92|Search|3.57%|1.00|52.92
+unitar johor bahru|Exact match|Added|Brand_T2|T2_Brand - EN|1,085.49|28|180|15.56%|6.98|195.39|Search|0.00%|0.00|0.00
+degree online|Exact match (close variant)|None|Area of study_Low intent_T1a+T2_EN+BM|T1a+T2_EN+BM_Online_generic_english|984.62|28|162|17.28%|5.70|159.51|Search|14.29%|4.00|39.88
+early childhood education|Exact match|Added|diploma_T1a_EN|t1a_en_conventional_diploma_in_early_childhood_education|182.77|28|558|5.02%|3.64|101.99|Search|0.00%|0.00|0.00
+politeknik|Broad match|None|diploma_T1b_BM|t1b_BM_Conventional_diploma_in_early_childhood_education|258.86|28|440|6.36%|4.07|113.90|Search|1.79%|0.50|227.80
+permohonan politeknik|Exact match|Added|SPM_T1a_BM|t1a_bm_spm|416.22|27|241|11.20%|3.72|100.31|Search|5.05%|1.36|73.60
+unikl intake 2026|Broad match|None|Psychology_T1a+T2_EN|T1a+T2_EN_Online_Diploma_in_Psychology|574.63|27|202|13.37%|4.30|116.07|Search|0.00%|0.00|0.00
+unitar degree courses|Broad match|None|Conventional Degree_T1a+T2_EN+BM|Conventional Degree EN|492.57|27|55|49.09%|1.00|27.09|Search|3.70%|1.00|27.09
+dpli oum|Broad match|None|postgrad_T1b_BM|t1b_Unitar_Online_PostGraduate_SEM_Diploma in Education_(PGDE)_BM_Broad Match|248.84|27|319|8.46%|2.94|79.38|Search|1.85%|0.50|158.76
+mba unitar|Exact match|Added|postgrad_T1a_EN|T1a_EN_Online_masters_mba|1,768.77|27|73|36.99%|4.78|129.12|Search|11.11%|3.00|43.04
+uitm permohonan|Broad match|None|SPM_T2_BM|t2_bm_spm|260.45|27|324|8.33%|3.13|84.38|Search|7.41%|2.00|42.19
+politeknik kota kinabalu|Broad match|None|SPM_T1b_EN|t1b_en_spm|289.10|26|158|16.46%|1.76|45.68|Search|0.00%|0.00|0.00
+open university malaysia|Exact match (close variant)|None|Competitor_T2|T2_Competitors - EN|60.51|26|668|3.89%|1.55|40.42|Search|0.00%|0.00|0.00
+https mohon tvet gov my|Broad match|None|SPM_T1a_BM|t1a_bm_spm|658.23|26|110|23.64%|2.78|72.41|Search|3.85%|1.00|72.41
+mohon tvet gov my|Broad match|None|SPM_T1a_BM|t1a_bm_spm|438.04|26|166|15.66%|2.80|72.71|Search|0.00%|0.00|0.00
+oum|Exact match|Added|Competitor_T1a|T1a_Competitors - BM|46.10|26|834|3.12%|1.48|38.45|Search|0.00%|0.00|0.00
+phd program|Broad match|None|Psychology_T1a+T2_EN|T1a+T2_EN_Online_Diploma_in_Psychology|1,186.03|26|68|38.24%|3.10|80.65|Search|7.69%|2.00|40.33
+unikl part time degree|Broad match|None|Psychology_T1a+T2_EN|T1a+T2_EN_Online_Diploma_in_Psychology|377.94|26|262|9.92%|3.81|99.02|Search|3.85%|1.00|99.02
+sambung belajar|Broad match|None|business_T2_BM|T2_BM_Conventional_certificate_in_business_studies|794.11|26|153|16.99%|4.67|121.50|Search|3.85%|1.00|121.50
+https mohon tvet gov my|Broad match|None|SPM_T2_BM|t2_bm_spm|505.48|26|129|20.16%|2.51|65.21|Search|3.85%|1.00|65.21
+mohon tvet gov my|Broad match|None|SPM_T2_BM|t2_bm_spm|503.55|26|127|20.47%|2.46|63.95|Search|0.00%|0.00|0.00
+diploma pendidikan awal kanak kanak|Exact match|Added|diploma_T1a_BM|t1a_BM_Online_diploma_in_early_childhood_education|242.53|25|314|7.96%|3.05|76.15|Search|0.00%|0.00|0.00
+unitar online courses|Exact match (close variant)|None|Brand_T2|T2_Brand - EN|1,622.23|25|47|53.19%|3.05|76.24|Search|2.67%|0.67|114.37
+tvet|Broad match|None|SPM_T1a_BM|t1a_bm_spm|236.36|25|361|6.93%|3.41|85.33|Search|0.00%|0.00|0.00
+universiti tunku abdul rahman|Broad match|None|SPM_T1a_BM|t1a_bm_spm|204.73|25|219|11.42%|1.79|44.84|Search|0.00%|0.00|0.00
+upu 2026|Broad match|None|SPM_T1b_BM|t1b_bm_spm|615.21|25|132|18.94%|3.25|81.21|Search|0.00%|0.00|0.00
+diploma separuh masa|Exact match|Added|Level of study_Low intent_T1a+T2_EN+BM|Conventional Pre-U BM|214.25|25|217|11.52%|1.86|46.49|Search|2.67%|0.67|69.74
+upu|Broad match|None|Psychology_T1a+T2_EN|T1a+T2_EN_Online_Diploma_in_Psychology|296.50|25|439|5.69%|5.21|130.17|Search|6.00%|1.50|86.78
+selangkah uitm|Broad match|None|business_T2_BM|T2_BM_Conventional_certificate_in_business_studies|196.57|25|295|8.47%|2.32|57.99|Search|8.00%|2.00|28.99
+dpli|Broad match|None|postgrad_T1b_BM|t1b_Unitar_Online_PostGraduate_SEM_Diploma in Education_(PGDE)_BM|170.78|25|476|5.25%|3.25|81.29|Search|10.00%|2.50|32.52
+dpli oum intake 2026|Broad match|None|Area of study_Low intent_T1a+T2_EN+BM|t1a_Unitar_Online_PostGraduate_SEM_Diploma in Education_(PGDE)_BM_Broad Match|236.04|25|284|8.80%|2.68|67.03|Search|0.00%|0.00|0.00
+unirazak|Exact match|Added|Competitor_T1b|T1b_Competitors - BM|144.15|25|413|6.05%|2.38|59.54|Search|0.00%|0.00|0.00
+permohonan politeknik|Exact match|Added|SPM_T2_BM|t2_bm_spm|445.31|25|216|11.57%|3.85|96.19|Search|4.00%|1.00|96.19
+senarai ipta dan kursus yang ditawarkan|Broad match|None|business_T1a_BM|T1a_BM_Conventional_certificate_in_business_studies|266.04|24|47|51.06%|0.52|12.50|Search|0.00%|0.00|0.00
+asia pacific university|Broad match|None|Level of study_Low intent_T1a+T2_EN+BM|Online Bachelors EN|238.65|24|729|3.29%|7.25|173.98|Search|8.33%|2.00|86.99
+unitar course|Exact match|Added|Brand_T2|T2_Brand - EN|1,395.71|24|41|58.54%|2.38|57.22|Search|0.00%|0.00|0.00
+oum online courses|Broad match|None|Psychology_T1a+T2_EN|T1a+T2_EN_Online_Diploma_in_Psychology|376.28|24|217|11.06%|3.40|81.65|Search|1.39%|0.33|244.96
+unitar application|Exact match|Added|Brand_T2_Test|T2_Brand - EN|2,421.41|24|50|48.00%|5.04|121.07|Search|18.16%|4.36|27.78
+up_tvet|Broad match|None|business_T1b_BM|T1b_BM_Conventional_preu_diploma_in_business_admin|288.67|23|201|11.44%|2.52|58.02|Search|0.00%|0.00|0.00
+up_tvet|Broad match|None|diploma_T1a_BM|t1a_BM_Conventional_UG_Diploma_in_Logistics_Management|289.86|23|258|8.91%|3.25|74.78|Search|0.00%|0.00|0.00
+al bukhari international university|Broad match|None|Level of study_Low intent_T1a+T2_EN+BM|Online Bachelors EN|324.17|23|268|8.58%|3.78|86.88|Search|0.00%|0.00|0.00
+schola|Broad match|None|SPM_T1a_EN|t1a_en_spm|71.70|23|816|2.82%|2.54|58.51|Search|0.00%|0.00|0.00
+available scholarships for international students|Broad match|None|Psychology_T1a+T2_EN|T1a+T2_EN_Online_Diploma_in_Psychology|2,656.16|23|43|53.49%|4.97|114.21|Search|4.35%|1.00|114.21
+online courses|Broad match|None|Psychology_T1a+T2_EN|T1a+T2_EN_Online_Diploma_in_Psychology|358.21|23|126|18.25%|1.96|45.13|Search|4.35%|1.00|45.13
+city university malaysia|Broad match|None|Conventional Degree_T1a+T2_EN+BM|Conventional Degree EN|167.53|23|488|4.71%|3.55|81.75|Search|0.00%|0.00|0.00
+lincoln university malaysia|Broad match|None|Conventional Degree_T1a+T2_EN+BM|Conventional Degree EN|144.73|23|608|3.78%|3.83|87.99|Search|4.35%|1.00|87.99
+oum part time degree|Broad match|None|Conventional Degree_T1a+T2_EN+BM|Conventional Degree EN|248.73|23|280|8.21%|3.03|69.64|Search|0.00%|0.00|0.00
+university of kuala lumpur|Exact match (close variant)|None|Conventional Degree_T1a+T2_EN+BM|Conventional Degree EN|291.07|23|274|8.39%|3.47|79.75|Search|4.35%|1.00|79.75
+dpli ums|Broad match|None|postgrad_T1b_BM|t1b_Unitar_Online_PostGraduate_SEM_Diploma in Education_(PGDE)_BM_Broad Match|266.47|23|300|7.67%|3.48|79.94|Search|4.35%|1.00|79.94
+unitar mba online|Exact match|Added|postgrad_T1a_EN|T1a_EN_Online_masters_mba|2,601.15|23|57|40.35%|6.45|148.27|Search|10.14%|2.33|63.54
+unirazak|Exact match|Added|SPM_T2_BM|t2_bm_spm|168.54|23|247|9.31%|1.81|41.63|Search|4.35%|1.00|41.63
+polycc|Broad match|None|business_T1b_BM|T1b_BM_Conventional_certificate_in_business_studies|243.08|22|274|8.03%|3.03|66.60|Search|0.00%|0.00|0.00
