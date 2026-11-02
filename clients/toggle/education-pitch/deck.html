@@ -1,0 +1,1992 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Education Growth Deck</title>
+<meta name="description" content="Toggle and iWisers education pitch: what three university ad accounts proved about creative, and the parent-first system that carries a lead to an enrolment.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* =========================================================================
+   Education growth deck, Toggle x iWisers. Same identity as
+   clients/toggle/sales-page/index.html and the idea lab. Every slide is a
+   1600x900 stage scaled to the window. The exhibit styles and scripts were
+   lifted from idea-lab.html with the window-width rules flattened to the
+   desktop layout, because the stage is always 1600 wide.
+   Truth: every number in the proof section comes from the Education Creative
+   Deck (October 2026), which is the published record for these findings.
+   ========================================================================= */
+:root{
+  --paper:#F4F8FD;--paper-lift:#FFFFFF;--paper-deep:#E6EFFA;
+  --ink:#0E1B33;--ink-2:#4A5A75;--ink-3:#5F6B82;
+  --line:#D5E2F0;--line-soft:#E7EFF9;
+  --accent:#2A6BE0;--accent-deep:#1B4CB0;--accent-wash:#E3EDFC;
+  --sky:#7FB3EE;--aqua:#8CE0EC;--deep:#0F2A47;
+  --alert:#DB4A45;--amber:#D2971E;--amber-wash:#FBF0DA;
+  --iw:#0E8C9C;--iw-wash:#DDF3F5;
+  --gutter:80.0px;--maxw:1440px;
+  --serif:"Instrument Serif",Georgia,serif;
+  --sans:"Instrument Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.055'/%3E%3C/svg%3E")}
+img,svg{max-width:100%;display:block}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* ---------- type ---------- */
+.display{font-family:var(--serif);font-weight:400;line-height:.98;letter-spacing:-.025em;font-size:96.0px;margin:0}
+.display em,.h2 em{font-style:italic;color:var(--accent)}
+.h2{font-family:var(--serif);font-weight:400;line-height:1.02;letter-spacing:-.02em;font-size:62.0px;margin:0}
+.h3{font-family:var(--sans);font-weight:600;font-size:23.0px;line-height:1.22;letter-spacing:-.02em;margin:0}
+.lede{font-size:20.0px;line-height:1.5;color:var(--ink-2);margin:0}
+.small{font-size:14.5px;line-height:1.55;color:var(--ink-2);margin:0}
+.mono{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3)}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter);position:relative;z-index:1}
+section{position:relative;z-index:1}
+
+/* ---------- badges ---------- */
+.badge{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;padding:5px 10px;border-radius:999px;border:1px solid var(--line);color:var(--ink-2);background:var(--paper-lift);white-space:nowrap}
+.badge i{width:7px;height:7px;border-radius:2px;background:var(--ink-3)}
+.badge.v i{background:var(--accent)}
+.badge.ill i{background:var(--amber)}
+.badge.mock i{background:var(--iw)}
+
+/* ---------- exhibit frame ---------- */
+.exhibit{padding:104.0px 0;border-top:1px solid var(--line);scroll-margin-top:70px}
+.exhibit.alt{background:var(--paper-deep)}
+.exhibit.white{background:var(--paper-lift)}
+.exhead{display:grid;grid-template-columns:1fr;gap:18px;margin-bottom:48.0px}
+.exhead{grid-template-columns:minmax(0,1fr) minmax(300px,400px);gap:56px;align-items:end}
+.exnum{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.exnum .n{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--accent)}
+.exside{display:flex;flex-direction:column;gap:14px}
+.star{display:inline-flex;align-items:center;gap:8px;width:fit-content;font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;padding:9px 14px;border-radius:999px;border:1px dashed var(--ink-3);background:transparent;color:var(--ink-2);transition:.2s}
+.star:hover{border-style:solid;border-color:var(--accent);color:var(--accent)}
+.star[aria-pressed="true"]{background:var(--accent);border:1px solid var(--accent);color:#fff}
+.star svg{width:13px;height:13px;fill:currentColor}
+.slot{font-size:13.5px;color:var(--ink-3);line-height:1.5;margin:0}
+.slot b{color:var(--ink-2);font-weight:600}
+.src{margin-top:18px;font-size:12.5px;color:var(--ink-3);line-height:1.5}
+.src code{font-family:var(--mono);font-size:11.5px;color:var(--ink-2)}
+
+.card{background:var(--paper-lift);border:1px solid var(--line);border-radius:16px;padding:30.0px}
+.seg{display:inline-flex;flex-wrap:wrap;gap:3px;padding:3px;border-radius:999px;background:var(--paper-deep);border:1px solid var(--line)}
+.seg button{border:0;background:transparent;padding:8px 14px;border-radius:999px;font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-2);transition:.2s}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.ctrlrow{display:flex;flex-wrap:wrap;gap:14px 26px;align-items:center;margin-bottom:22px}
+.ctrl{display:flex;flex-direction:column;gap:8px}
+.ctrl .mono{font-size:10px}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:2px;background:var(--ink-3);outline:none;border-radius:2px;margin:12px 0}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--accent);cursor:grab;border:4px solid var(--paper-lift);box-shadow:0 0 0 1px var(--accent)}
+input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--accent);cursor:grab;border:4px solid var(--paper-lift)}
+.note{padding:14px 18px;border-left:2px solid var(--ink);background:var(--paper-deep);font-size:13.5px;line-height:1.5;color:var(--ink);border-radius:0 10px 10px 0}
+.note.blue{border-left-color:var(--accent);background:var(--accent-wash)}
+.note.teal{border-left-color:var(--iw);background:var(--iw-wash)}
+.note b{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:5px}
+.sw{display:inline-flex;gap:7px;align-items:center}.sw i{width:12px;height:12px;border-radius:3px}
+.own{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.06em;padding:4px 9px;border-radius:999px;background:var(--accent-wash);color:var(--accent-deep);white-space:nowrap}
+.own.iw{background:var(--iw-wash);color:#08636F}
+.own.jt{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink-3)}
+
+.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;background:var(--line);border:1px solid var(--line);margin-top:18px}
+.kpis div{background:var(--paper-lift);padding:14px 16px}
+.kpis .v{font-family:var(--serif);font-size:30px;line-height:1;letter-spacing:-.02em}
+.kpis .l{font-size:12px;color:var(--ink-2);margin-top:6px;line-height:1.3}
+/* ---------- 05 platform jobs ---------- */
+.jobs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.job{text-align:left;background:var(--paper-lift);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform .4s var(--ease),border-color .3s,box-shadow .3s}
+.job:hover{transform:translateY(-4px);border-color:var(--ink-3)}
+.job[aria-pressed="true"]{border-color:var(--ink);box-shadow:0 22px 40px -24px rgba(14,27,51,.4)}
+.job .jn{font-weight:600;font-size:17px;letter-spacing:-.01em}
+.job .jj{font-family:var(--serif);font-size:23px;line-height:1.1;letter-spacing:-.01em}
+.jobpanel{margin-top:18px;display:grid;gap:22px;grid-template-columns:1fr}
+.jobpanel{grid-template-columns:1fr 1fr}
+.cplrow{display:grid;grid-template-columns:90px 1fr 70px;gap:12px;align-items:center;margin:10px 0}
+.cplrow .t{height:12px;border-radius:6px;background:var(--line);position:relative;overflow:hidden}
+.cplrow .t i{position:absolute;inset:0 auto 0 0;background:var(--accent);border-radius:6px;transition:width 1s var(--ease)}
+.cplrow .t i.old{background:var(--ink-3)}
+
+/* ---------- 06 proof ---------- */
+.proof{display:grid;grid-template-columns:1fr;gap:2px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.proof{grid-template-columns:repeat(3,1fr)}
+.proof>div{background:var(--paper-lift);padding:40.0px}
+.proof .big{font-family:var(--serif);font-size:104.0px;line-height:.9;letter-spacing:-.035em;color:var(--accent);font-variant-numeric:tabular-nums}
+.proof .cap{margin-top:14px;font-size:15px;color:var(--ink-2);max-width:28ch}
+.sov{margin-top:22px;display:flex;align-items:center;gap:16px}
+.sov svg{width:150px;height:150px;transform:rotate(-90deg)}
+.sov .w{transition:stroke-dasharray 1.4s var(--ease)}
+.sov .lg{display:flex;flex-direction:column;gap:6px;font-size:13px;color:var(--ink-2)}
+.sov .lg i{display:inline-block;width:10px;height:10px;border-radius:2px;margin-right:7px;vertical-align:-1px}
+.logos{display:flex;gap:26px;align-items:center;flex-wrap:wrap;margin-top:24px}
+.logos img{height:34px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.75}
+
+/* ---------- 07 pivot ---------- */
+.pivgrid{display:grid;grid-template-columns:1fr;gap:28px}
+.pivgrid{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)}
+.prow{display:grid;grid-template-columns:minmax(120px,1.1fr) minmax(0,2fr) 92px;gap:14px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.prow .pn{font-weight:600;font-size:15px}
+.prow .pc{font-family:var(--mono);font-size:11px;color:var(--ink-3)}
+.prow .ps{font-family:var(--mono);font-size:14px;text-align:right;font-variant-numeric:tabular-nums}
+.bignum{font-family:var(--serif);font-size:112.0px;line-height:.9;letter-spacing:-.035em;color:var(--accent);font-variant-numeric:tabular-nums}
+.delta{font-family:var(--mono);font-size:15px;font-weight:700;margin-top:10px}
+.delta.up{color:#0F8A5F}.delta.down{color:var(--alert)}
+
+/* ---------- 08 calendar ---------- */
+.cal{overflow-x:auto}
+.calgrid{display:grid;grid-template-columns:150px repeat(12,minmax(48px,1fr));gap:3px;min-width:780px}
+.calgrid .mh{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-align:center;color:var(--ink-3);padding:6px 0}
+.calgrid button.mh{border:1px dashed var(--line);border-radius:8px;background:var(--paper-lift);color:var(--ink-2)}
+.calgrid button.mh[aria-pressed="true"]{background:var(--ink);color:var(--paper);border:1px solid var(--ink)}
+.calgrid .rl{font-size:13px;font-weight:600;display:flex;align-items:center;gap:8px;padding-right:8px}
+.calgrid .cell{height:34px;border-radius:6px;background:var(--line-soft);transition:background .5s,opacity .5s}
+.calgrid .cell.lab{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:9px;font-weight:700;color:#fff;letter-spacing:.06em}
+
+/* ---------- 09 open day ---------- */
+.odgrid{display:grid;grid-template-columns:1fr;gap:28px}
+.odgrid{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}
+.odscale{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10px;color:var(--ink-3)}
+.odday{font-family:var(--serif);font-size:80.0px;line-height:.9;letter-spacing:-.03em}
+.odphase{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-top:6px}
+.odlanes{margin-top:18px;display:flex;flex-direction:column;gap:5px}
+.odlane{display:grid;grid-template-columns:minmax(150px,210px) 1fr;gap:12px;align-items:center}
+/* the range thumb travels inset by half its width, so the track lines up with the lane tracks */
+.odscrub input{margin:14px 0 6px}
+.odlane:not(.odscrub) .tr{margin:0 11px}
+.odscale{padding:0 2px}
+
+.odlane .ln{font-size:13px;color:var(--ink-2);line-height:1.25;transition:color .3s}
+.odlane .tr{position:relative;height:16px;background:var(--line-soft);border-radius:4px}
+.odlane .tr i{position:absolute;top:0;bottom:0;border-radius:4px;background:var(--sky);transition:background .3s}
+.odlane.on .ln{color:var(--ink);font-weight:600}
+.odlane.on .tr i{background:var(--accent)}
+.odlane.on.iw .tr i{background:var(--iw)}
+.odlane .tr b{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--ink);transition:left .2s}
+.rules{display:flex;flex-direction:column;gap:10px}
+.rule{padding:16px 18px;border-radius:12px;background:var(--paper-lift);border:1px solid var(--line);color:var(--ink)}
+.rule b{display:block;font-family:var(--serif);font-weight:400;font-size:22px;line-height:1.1;color:var(--ink);margin-bottom:6px}
+.rule p{margin:0;font-size:14px;line-height:1.5;color:var(--ink-2)}
+.rule.hot{background:var(--accent);border-color:var(--accent)}.rule.hot b{color:#fff}.rule.hot p{color:rgba(255,255,255,.86)}
+.odgrid>.card{align-self:start}
+.odnow{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.odnow div{font-size:14.5px;line-height:1.45;padding:10px 14px;border-radius:10px;background:var(--paper-lift);border:1px solid var(--line)}
+
+/* ---------- 10 GEO mockup ---------- */
+.mockgrid{display:grid;grid-template-columns:1fr;gap:28px;align-items:start}
+.mockgrid{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)}
+.ai{background:#FBFBFA;border:1px solid #E4E4E0;border-radius:18px;box-shadow:0 30px 60px -36px rgba(14,27,51,.35);overflow:hidden}
+.aibar{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid #EAEAE6;font-family:var(--mono);font-size:10.5px;color:#8B8B85;letter-spacing:.06em}
+.aibar i{width:9px;height:9px;border-radius:50%;background:#E2E2DD}
+.aibody{padding:22px;display:flex;flex-direction:column;gap:16px;min-height:380px}
+.qbub{align-self:flex-end;max-width:82%;background:#EFEFEC;border-radius:18px;padding:12px 16px;font-size:15px;line-height:1.45}
+.abub{font-size:15px;line-height:1.6;color:#2B2B28}
+.abub ol{margin:8px 0;padding-left:20px}
+.abub li{margin-bottom:8px}
+.abub .us{background:linear-gradient(transparent 55%,rgba(42,107,224,.2) 55%);font-weight:600}
+.cite{display:inline-flex;align-items:center;gap:4px;font-family:var(--mono);font-size:10px;padding:2px 7px;border-radius:999px;background:#E9E9E5;color:#55554F;margin-left:4px;vertical-align:1px}
+.cite.us{background:var(--accent-wash);color:var(--accent-deep)}
+.caret::after{content:"";display:inline-block;width:8px;height:16px;background:#2B2B28;margin-left:2px;vertical-align:-3px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.geoscore{display:flex;align-items:baseline;gap:10px}
+
+/* ---------- 11 community thread ---------- */
+.fb{background:#fff;border:1px solid #DADDE1;border-radius:14px;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:#1C1E21;box-shadow:0 30px 60px -36px rgba(14,27,51,.3)}
+.fbhead{padding:12px 16px;background:#F0F2F5;font-size:13px;font-weight:600;color:#65676B;display:flex;justify-content:space-between}
+.post{padding:16px;display:flex;gap:10px;position:relative}
+.post+.post{border-top:1px solid #EEF0F2}
+.post.reply{padding-left:52px}
+.av{width:36px;height:36px;border-radius:50%;flex:0 0 auto;display:grid;place-items:center;font-size:13px;font-weight:700;color:#fff}
+.pname{font-weight:600;font-size:14px}
+.pmeta{font-size:12px;color:#65676B}
+.ptext{font-size:14.5px;line-height:1.45;margin-top:4px}
+.ptag{display:inline-block;font-size:11px;font-weight:600;padding:2px 7px;border-radius:5px;background:#E7F3FF;color:#0B5FCC;margin-left:6px}
+.react{font-size:12px;color:#65676B;margin-top:8px;display:flex;gap:14px}
+.pin{position:absolute;right:12px;top:12px;width:24px;height:24px;border-radius:50%;background:var(--iw);color:#fff;display:grid;place-items:center;font-family:var(--mono);font-size:11px;font-weight:700;box-shadow:0 0 0 4px rgba(14,140,156,.18);cursor:pointer;border:0}
+.pin[aria-pressed="true"]{background:var(--ink)}
+.pinnote{display:flex;flex-direction:column;gap:10px}
+.pinnote button{text-align:left;border:1px solid var(--line);background:var(--paper-lift);border-radius:12px;padding:14px 16px;display:grid;grid-template-columns:28px 1fr;gap:12px;transition:.25s}
+.pinnote button[aria-pressed="true"]{border-color:var(--iw);background:var(--iw-wash)}
+.pinnote .pk{width:24px;height:24px;border-radius:50%;background:var(--iw);color:#fff;display:grid;place-items:center;font-family:var(--mono);font-size:11px;font-weight:700}
+.pinnote b{display:block;font-size:15px;margin-bottom:3px}
+.pinnote span{font-size:13.5px;color:var(--ink-2);line-height:1.45}
+
+/* ---------- 12 dashboard ---------- */
+.dash{background:var(--deep);border-radius:18px;padding:26.0px;color:#E8F0F9;box-shadow:0 40px 80px -40px rgba(14,27,51,.55)}
+.dtop{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.dtop .t{font-weight:600;font-size:16px}
+.live{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--aqua)}
+.live i{width:7px;height:7px;border-radius:50%;background:#3ED598;animation:livepulse 1.6s infinite}
+@keyframes livepulse{0%{box-shadow:0 0 0 0 rgba(62,213,152,.6)}100%{box-shadow:0 0 0 9px rgba(62,213,152,0)}}
+.dtiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.dtile{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px}
+.dtile .l{font-family:var(--mono);font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;color:rgba(232,240,249,.55)}
+.dtile .v{font-family:var(--mono);font-size:26px;font-weight:500;margin-top:8px;font-variant-numeric:tabular-nums;color:#fff}
+.dtile .d{font-family:var(--mono);font-size:11px;margin-top:4px;color:#3ED598}
+.dtile .d.bad{color:#FF8A84}
+.dpanels{display:grid;grid-template-columns:1fr;gap:10px;margin-top:10px}
+.dpanels{grid-template-columns:1.2fr 1fr}
+.dpanel{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px}
+.dpanel .mono{color:rgba(232,240,249,.55)}
+.dbar{display:grid;grid-template-columns:110px 1fr 46px;gap:10px;align-items:center;margin:9px 0;font-size:12.5px}
+.dbar .t{height:9px;border-radius:5px;background:rgba(255,255,255,.08);overflow:hidden}
+.dbar .t i{display:block;height:100%;background:var(--aqua);border-radius:5px;transition:width .9s var(--ease)}
+.dbar .n{font-family:var(--mono);text-align:right;font-size:11.5px}
+.dalert{margin-top:10px;padding:12px 14px;border-radius:10px;background:rgba(210,151,30,.14);border:1px solid rgba(210,151,30,.4);font-size:13px;line-height:1.45;color:#F7E2B5}
+
+/* ---------- 13 loop ---------- */
+.lpctl{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;margin-bottom:22px}
+.lpctl .ctrl{flex:1 1 260px}
+.lpwk{font-family:var(--serif);font-size:38px;line-height:1;letter-spacing:-.02em;min-width:5ch}
+.lpwk small{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:4px}
+.lpgrid{display:grid;grid-template-columns:1fr;gap:24px;align-items:start}
+.lpgrid{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}
+.lpgrid>*{min-width:0}
+.lpstage{background:var(--deep);border-radius:18px;padding:24.0px;color:#E8F0F9;box-shadow:0 40px 80px -40px rgba(14,27,51,.55)}
+.lpscroll{overflow-x:auto}
+.lpsvg{min-width:560px;width:100%;height:auto}
+.lpsvg text{font-family:var(--sans);fill:#E8F0F9}
+.lpsvg .lb{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;fill:#9FB3CC}
+.lpsvg .ct{font-family:var(--serif);font-size:30px}
+.lpsvg circle{transition:fill .45s,opacity .45s}
+.lpsvg .mt{transition:width .6s var(--ease)}
+.lpflow{animation:lpflow .9s linear infinite}
+@keyframes lpflow{to{stroke-dashoffset:-22}}
+.offscreen .lpflow,.offscreen .live i{animation-play-state:paused}
+.lplog{margin-top:12px;border-top:1px solid rgba(255,255,255,.12);padding-top:12px}
+.lplog .hd{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:#9FB3CC;margin-bottom:6px}
+.lprow{display:grid;grid-template-columns:44px 58px minmax(0,1fr) auto;gap:10px;align-items:center;padding:7px 0;border-bottom:1px dashed rgba(255,255,255,.1);font-family:var(--mono);font-size:11.5px;color:#C9D6E6}
+.lprow.nw{animation:pop .4s var(--ease)}
+.lprow .st{justify-self:start;padding:3px 9px;border-radius:999px;font-weight:700;font-size:10px;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.st.e{background:rgba(140,224,236,.18);color:var(--aqua)}
+.st.c{background:rgba(127,179,238,.2);color:var(--sky)}
+.st.n{background:rgba(255,255,255,.08);color:#9FB3CC}
+.lprow .to{color:#7D90AB;white-space:nowrap}
+.lprow .to.ok{color:var(--aqua)}
+.lpfine{font-size:12px;color:#9FB3CC;margin:10px 0 0;line-height:1.45}
+.lpside{display:flex;flex-direction:column;gap:18px}
+.lpside .kpis{margin-top:0}
+.lpside .kpis .d{font-family:var(--mono);font-size:11px;margin-top:6px}
+.lpside .kpis .d.up{color:var(--alert)}.lpside .kpis .d.dn{color:var(--accent)}
+.lpchart text{font-family:var(--mono);font-size:10px;fill:var(--ink-3)}
+
+
+/* ---------- 14 nurture phone ---------- */
+.phone{width:min(340px,100%);margin:0 auto;border-radius:38px;background:#0B141A;padding:12px;box-shadow:0 40px 70px -36px rgba(14,27,51,.6)}
+.screen{border-radius:28px;overflow:hidden;background:#EFE7DE;height:560px;display:flex;flex-direction:column}
+.wahead{background:#075E54;color:#fff;padding:14px 16px;display:flex;align-items:center;gap:10px}
+.wahead .av{width:32px;height:32px;background:#25D366;font-size:12px}
+.wahead b{font-size:14.5px;display:block}
+.wahead span{font-size:11.5px;opacity:.8}
+.wabody{flex:1;overflow-y:auto;padding:20px 12px 14px;display:flex;flex-direction:column;gap:8px}
+.wamsg{max-width:84%;background:#fff;border-radius:10px;padding:8px 11px;font-size:13.5px;line-height:1.42;color:#111B21;box-shadow:0 1px 1px rgba(0,0,0,.08);animation:pop .4s var(--ease)}
+.wamsg.me{align-self:flex-end;background:#D9FDD3}
+.wamsg .tm{font-size:10px;color:#56636C;text-align:right;margin-top:3px}
+.waday{align-self:center;font-size:11px;background:#E1F2FB;color:#54656F;padding:4px 10px;border-radius:7px}
+.wabtn{display:block;margin-top:6px;text-align:center;color:#027EB5;font-weight:600;font-size:13px;border-top:1px solid #E9EDEF;padding-top:6px}
+@keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.daysteps{display:flex;flex-direction:column;gap:8px}
+.daysteps button{display:grid;grid-template-columns:62px 1fr;gap:12px;text-align:left;border:1px solid var(--line);background:var(--paper-lift);border-radius:12px;padding:12px 14px;align-items:baseline;transition:.25s}
+.daysteps button[aria-pressed="true"]{border-color:var(--ink);background:var(--paper)}
+.daysteps .dk{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--accent);letter-spacing:.08em}
+.daysteps .dt{font-size:14px;line-height:1.4}
+
+/* ---------- 15 capability ---------- */
+.ladtop{display:flex;justify-content:space-between;align-items:flex-end;gap:16px 24px;flex-wrap:wrap}
+.ladbig{font-family:var(--serif);font-size:92.0px;line-height:.88;letter-spacing:-.03em;margin:8px 0 0;color:var(--accent)}
+.ladmini{display:flex;gap:26px}
+.ladmini .v{font-family:var(--serif);font-size:32px;line-height:1;letter-spacing:-.02em}
+.ladmini .l{font-size:12px;color:var(--ink-2);margin-top:4px}
+.ladder{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;align-items:end;height:240px;margin-top:22px}
+.rung{display:flex;flex-direction:column;justify-content:flex-end;height:100%;gap:8px;border:0;background:transparent;padding:0;color:inherit}
+.rung .stack{display:flex;flex-direction:column-reverse;flex:1;border-radius:10px;overflow:hidden;transition:box-shadow .3s}
+.rung .stack span{display:block;transition:flex-grow .9s var(--ease),background .4s}
+.rung .stack .f{background:var(--accent)}
+.rung .stack .r{background:var(--line-soft)}
+.rung.fut .stack .f{background:repeating-linear-gradient(135deg,var(--accent-wash) 0 6px,#fff 6px 10px);box-shadow:inset 0 2px 0 var(--sky)}
+.rung.fut .pct,.rung.fut .q{color:var(--ink-3)}
+.rung[aria-pressed="true"] .stack{box-shadow:0 0 0 3px var(--paper-lift),0 0 0 5px var(--ink)}
+.rung[aria-pressed="true"] .q{color:var(--ink);font-weight:700}
+.rung .q{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;color:var(--ink-3);text-align:center}
+.rung .pct,.rung .q{display:block}
+.rung .pct{font-family:var(--serif);font-size:26px;text-align:center;line-height:1;transition:color .3s}
+.ladctl{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:18px}
+.lsteps{display:flex;flex-direction:column;gap:8px}
+.lstep{display:grid;grid-template-columns:40px 1fr;gap:12px;text-align:left;border:1px solid var(--line);background:var(--paper-lift);border-radius:12px;padding:14px 16px;align-items:start;transition:opacity .35s,border-color .35s,background .35s}
+.lstep .qk{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--accent);padding-top:3px;display:flex;align-items:center;gap:5px}
+.lstep b{display:block;font-size:15.5px;line-height:1.3}
+.lstep .ds{display:block;font-size:13.5px;color:var(--ink-2);line-height:1.45;margin-top:2px}
+.lstep .hand{display:inline-flex;gap:7px;align-items:center;margin-top:9px;font-size:12.5px;padding:4px 10px;border-radius:999px;background:var(--paper-deep);color:var(--ink-2)}
+.lstep .hand i{font-style:normal;font-family:var(--mono);font-size:11.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.lstep.next{opacity:.72}
+.lstep.done .qk::after{content:"";width:9px;height:5px;border:2px solid var(--accent);border-top:0;border-right:0;transform:rotate(-45deg) translateY(-2px)}
+.lstep.done .hand{background:var(--accent-wash);color:var(--accent-deep)}
+.lstep[aria-pressed="true"]{border-color:var(--ink);background:var(--paper);opacity:1}
+.lstep[aria-pressed="true"] .hand{background:var(--accent);color:#fff}
+.lstep[aria-pressed="true"] .hand i{color:rgba(255,255,255,.75)}
+
+.trainlist{display:flex;flex-direction:column;gap:10px}
+.trainlist div{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:start;padding:14px 0;border-bottom:1px solid var(--line)}
+.trainlist .qk{white-space:nowrap;font-family:var(--mono);font-size:11px;font-weight:700;color:var(--accent);padding-top:3px}
+.trainlist p{margin:0}
+.trainlist b{display:block;font-size:15.5px}
+.trainlist span{font-size:13.5px;color:var(--ink-2);line-height:1.45}
+
+/* ---------- 16 split ---------- */
+.split2{display:grid;grid-template-columns:1fr;gap:2px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.splitrow{display:grid;grid-template-columns:1fr;background:var(--paper-lift)}
+.splitrow{grid-template-columns:200px 1fr 1fr}
+.splitrow>div{padding:16px 18px}
+.splitrow .sk{font-family:var(--serif);font-size:22px;line-height:1.1}
+.splitrow .sk small{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;color:var(--ink-3);text-transform:uppercase;margin-bottom:4px}
+.splitrow .tg{border-left:3px solid var(--accent);background:linear-gradient(90deg,var(--accent-wash),transparent 70%)}
+.splitrow .iwc{border-left:3px solid var(--iw);background:linear-gradient(90deg,var(--iw-wash),transparent 70%)}
+.splitrow .muted{opacity:.45}
+.splithead{display:none}
+.splithead{display:grid;background:var(--paper)}
+.splithead div{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+
+
+.mockgrid>*,.odgrid>*,.pivgrid>*,.jobpanel>*{min-width:0}
+
+
+/* ---------- deck engine ---------- */
+html,body{height:100%}
+body{background:#0B1424;overflow:hidden;font-size:17px}
+body::before{display:none}
+:root{--rail:56px}
+#stage{position:absolute;left:calc(var(--rail) + (100% - var(--rail)) / 2);top:50%;width:1600px;height:900px;transform:translate(-50%,-50%) scale(var(--s,1));transform-origin:center}
+.slide{position:absolute;inset:0;background:var(--paper);color:var(--ink);overflow:hidden;display:flex;flex-direction:column;padding:60px 72px 0;opacity:0;visibility:hidden;transition:opacity .45s var(--ease),visibility 0s linear .45s}
+.slide.on{opacity:1;visibility:visible;transition:opacity .45s var(--ease)}
+.slide.white{background:var(--paper-lift)}
+.slide.alt{background:var(--paper-deep)}
+.slide.dark{background:var(--ink);color:#EAF1FA}
+.slide.dark .kick{color:var(--aqua)}
+.sf{position:absolute;left:72px;right:72px;bottom:26px;display:flex;align-items:center;gap:16px;font-family:var(--mono);font-size:11px;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);pointer-events:none}
+.sf svg{height:15px;width:auto;fill:var(--ink)}
+.sf .pn{margin-left:auto;font-variant-numeric:tabular-nums}
+.dark .sf{color:rgba(234,241,250,.5)}.dark .sf svg{fill:#EAF1FA}
+.kick{font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);display:flex;align-items:center;gap:14px;flex-wrap:wrap}
+.sttl{font-family:var(--serif);font-weight:400;font-size:72px;line-height:1;letter-spacing:-.025em;margin:16px 0 0}
+.sttl em,.xt em,.big2 em{font-style:italic;color:var(--accent)}
+.dark .sttl em,.dark .big2 em{color:var(--aqua)}
+.body{font-size:19px;line-height:1.55;color:var(--ink-2);margin:0}
+.dark .body{color:rgba(234,241,250,.75)}
+.body b{color:var(--ink);font-weight:600}.dark .body b{color:#fff}
+
+/* buttons, from the lab's top chrome */
+.btn{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:10px 16px;border-radius:999px;border:1px solid var(--ink);background:transparent;color:var(--ink);transition:.2s;white-space:nowrap}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn.solid{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.solid:hover{background:var(--accent-deep);border-color:var(--accent-deep)}
+.btn.ghost{border-color:var(--line);color:var(--ink-2);background:var(--paper-lift)}
+.btn.ghost:hover{border-color:var(--ink);color:var(--ink)}
+.btn .ct{display:inline-grid;place-items:center;min-width:18px;height:18px;margin-left:6px;border-radius:9px;background:var(--paper);color:var(--accent);font-size:10px;padding:0 5px}
+/* exhibit slides */
+.xh{display:block}
+.xt{font-family:var(--serif);font-weight:400;font-size:52px;line-height:1.02;letter-spacing:-.02em;margin:14px 0 0}
+.xk{font-size:17px;line-height:1.5;color:var(--ink-2);margin:12px 0 0}
+.xb{flex:1;min-height:0;margin-top:26px;position:relative;overflow:hidden}
+.fit{transform-origin:0 0;transform:scale(var(--z,1));width:calc(100% / var(--z,1))}
+.xs{font-size:13.5px;line-height:1.45;color:var(--ink-2);margin:10px 0 58px;max-width:1200px}
+.xs code{font-family:var(--mono);font-size:11px;color:var(--ink-2)}
+.ex .sf{bottom:22px}
+.slide.mid{justify-content:center;padding-bottom:90px}
+#ex-proof .proof{grid-template-columns:repeat(3,1fr)}
+/* jobs tiles: smaller, with room above for the hover lift */
+#ex-jobs .jobs{padding-top:10px}
+#ex-jobs .job{padding:14px 16px;gap:7px}
+#ex-jobs .job .jn{font-size:16px}
+#ex-jobs .job .jj{font-size:20px}
+/* the 77% gets its own row so the pie can carry it */
+#ex-proof .proof>div:last-child{grid-column:1/-1;display:grid;grid-template-columns:auto 1fr;column-gap:48px;align-items:center;align-content:center}
+#ex-proof .proof>div:last-child .sov{grid-column:1;grid-row:1/3;margin:0;gap:28px}
+#ex-proof .proof>div:last-child .big,#ex-proof .proof>div:last-child .cap{grid-column:2}
+#ex-proof .proof>div:last-child .cap{max-width:none;align-self:start;font-size:17px}
+#ex-proof .proof>div:last-child .big{align-self:end}
+#ex-proof .sov svg{width:230px;height:230px}
+#ex-proof .sov .lg{font-size:15px}
+#ex-loop .lpchart text{font-size:12px}
+.splitrow .muted{opacity:.75}
+.cb .t i{min-width:48px}
+/* deck layouts for exhibits that were built for a scrolling page */
+#ex-thread .mockgrid{grid-template-columns:minmax(0,1fr) minmax(0,1.15fr)}
+#ex-thread .mockgrid>div:last-child{display:grid;grid-template-columns:1fr 1fr;column-gap:22px;align-content:start}
+#ex-thread #pinNote{grid-row:1/3}
+#ex-thread .mockgrid>div:last-child>.mono{grid-column:2;margin-top:0!important}
+#ex-thread .mockgrid>div:last-child>.trainlist{grid-column:2}
+#ex-loop .lprow:nth-child(n+3){display:none}
+#ex-loop .lpside .note{display:none}
+#ex-loop .lpctl{margin-bottom:14px}
+.braidhint{display:none}
+#ex-loop .lpgrid{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}
+#ex-loop .lpsvg{min-width:0;width:100%;height:330px}
+#ex-loop .lpchart{width:100%;height:170px}
+#ex-loop .lpside{gap:14px}
+
+/* cover */
+.wavewrap{position:absolute;left:0;right:0;bottom:0;height:62%;z-index:0;pointer-events:none;-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 30%);mask-image:linear-gradient(180deg,transparent 0%,#000 30%)}
+.wavewrap svg{width:100%;height:100%}
+.dot{width:7px;height:7px;border-radius:50%;background:var(--accent);flex:0 0 auto}
+.setup{display:flex;flex-wrap:wrap;gap:12px;align-items:center;background:rgba(255,255,255,.78);border:1px solid var(--line);border-radius:14px;padding:14px 18px;width:fit-content;backdrop-filter:blur(6px)}
+.setup label{font-size:15px;color:var(--ink-2)}
+.setup input{border:0;border-bottom:1.5px dashed var(--ink-3);background:transparent;font-family:var(--mono);font-size:17px;padding:3px 2px;width:320px;outline:none}
+.setup input:focus{border-bottom:1.5px solid var(--accent)}
+.cover{justify-content:center;padding-bottom:120px}
+.cover .wavewrap{height:58%}
+.cover h1{font-family:var(--serif);font-weight:400;font-size:132px;line-height:.95;letter-spacing:-.03em;margin:56px 0 0;position:relative}
+.lockup{display:flex;align-items:center;gap:26px;position:relative}
+.lockup svg{height:46px;width:auto;fill:var(--ink)}
+.lockup .x{font-family:var(--serif);font-size:44px;color:var(--ink-3);line-height:1}
+.lockup .iw{font-family:var(--sans);font-weight:700;font-size:44px;letter-spacing:-.02em;color:var(--iw);line-height:1}
+.cover .setup{background:transparent;border:0;padding:0;backdrop-filter:none;margin-top:28px}
+.cover .setup label{font-family:var(--mono);font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.cover .setup input{font-size:22px;width:420px}
+.cover .sf{display:none}
+.cover h1 em{font-style:italic;color:var(--accent)}
+.cover .body{max-width:760px;margin-top:30px;position:relative}
+.cover .setup{position:relative;margin-top:34px}
+.cover .kick,.cover .sf{position:relative;z-index:1}
+.cover .sf{position:absolute}
+
+/* the work */
+.wall{display:flex;flex-direction:column;gap:16px;margin-top:34px}
+.wrow{display:flex;gap:14px;align-items:flex-end;height:290px}
+.wrow img{height:100%;width:auto;border-radius:10px;box-shadow:0 18px 40px -26px rgba(14,27,51,.55);background:#fff}
+.wrow.r2{height:270px}
+.wgrp{display:flex;gap:14px;height:100%;align-items:flex-end}
+.wcap{display:flex;justify-content:space-between;gap:30px;margin-top:22px;padding-top:16px;border-top:1px solid var(--line)}
+
+/* evidence table */
+.etab{margin-top:36px;width:100%;border-collapse:collapse}
+.etab th{font-family:var(--mono);font-size:11.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);text-align:right;padding:0 0 14px;border-bottom:1.5px solid var(--ink)}
+.etab th:first-child,.etab td:first-child{text-align:left}
+.etab td{padding:24px 0;border-bottom:1px solid var(--line);text-align:right;vertical-align:middle;font-size:21px}
+.etab td b{display:block;font-size:24px;font-weight:600;letter-spacing:-.01em}
+.etab td small{display:block;font-size:14px;color:var(--ink-3);margin-top:4px;max-width:420px}
+.etab .n{font-family:var(--serif);font-size:44px;line-height:1;letter-spacing:-.02em}
+.etab .n small{font-family:var(--sans);margin-left:auto}
+
+/* findings list */
+.fl{display:grid;grid-template-columns:420px 1fr;gap:64px;flex:1;min-height:0;margin-bottom:70px}
+.flist{display:flex;flex-direction:column;border-top:1px solid var(--line)}
+.fi{display:grid;grid-template-columns:76px 1fr;gap:20px;padding:20px 0;border-bottom:1px solid var(--line)}
+.fi .fn{font-family:var(--serif);font-size:52px;line-height:.9;color:var(--accent)}
+.fi h3{margin:0;font-size:22px;font-weight:600;letter-spacing:-.01em}
+.fi p{margin:5px 0 0;font-size:16px;color:var(--ink-2);line-height:1.45}
+.fi .tg{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-top:8px;display:block}
+
+/* finding slides: copy left, evidence right */
+.fs{display:grid;grid-template-columns:430px 1fr;gap:64px;flex:1;min-height:0;margin-bottom:70px}
+.fs .lft{display:flex;flex-direction:column}
+.fs .lft .body{margin-top:36px;font-size:17.5px}
+.fs .lft .body+.body{margin-top:18px}
+.vs{display:flex;gap:44px;justify-content:center;align-items:flex-end;height:100%}
+.vc{display:flex;flex-direction:column;gap:0;width:340px}
+.vc .im{height:460px;display:flex;align-items:flex-end;justify-content:flex-start}
+.vc img{max-height:100%;max-width:100%;border-radius:12px;box-shadow:0 26px 50px -30px rgba(14,27,51,.6)}
+.vc .cpl{font-family:var(--serif);font-size:58px;line-height:1;letter-spacing:-.02em;margin-top:22px}
+.vc .ds{font-size:14.5px;color:var(--ink-2);margin-top:6px}
+.vc .bar{height:8px;border-radius:4px;background:var(--line);margin-top:14px;overflow:hidden}
+.vc .bar i{display:block;height:100%;border-radius:4px;background:var(--ink-3);width:0;transition:width 1s var(--ease) .3s}
+.vc .tag{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.16em;text-transform:uppercase;color:var(--ink-3);margin-top:12px}
+.vc.win .cpl,.vc.win .tag{color:var(--accent)}
+.vc.win .bar i{background:var(--accent)}
+.dark .vc .ds{color:rgba(234,241,250,.7)}
+.dark .vc .bar{background:rgba(255,255,255,.12)}
+.dark .vc.win .cpl,.dark .vc.win .tag{color:var(--aqua)}.dark .vc.win .bar i{background:var(--aqua)}
+.dark .vc .tag{color:rgba(234,241,250,.5)}
+
+/* finding 02 split */
+.half{position:absolute;top:0;bottom:0;right:0;width:50%;background:var(--ink);color:#EAF1FA;padding:110px 72px 0}
+.big2{font-family:var(--serif);font-size:200px;line-height:.85;letter-spacing:-.04em;margin:0}
+.hbars{margin-top:34px;display:flex;flex-direction:column;gap:14px}
+.hb{display:grid;grid-template-columns:200px 1fr 80px;gap:14px;align-items:center;font-size:14.5px}
+.hb .t{height:22px;border-radius:6px;background:rgba(255,255,255,.08);overflow:hidden}
+.hb .t i{display:block;height:100%;border-radius:6px;width:0;transition:width 1.1s var(--ease) .3s}
+.hb .v{font-family:var(--mono);text-align:right;font-size:15px}
+
+/* bar charts on finding 03, 04, 05 */
+.cbars{display:flex;flex-direction:column;gap:26px}
+.cb .lb{display:flex;justify-content:space-between;align-items:baseline;gap:16px}
+.cb .lb b{font-size:18px;font-weight:600}
+.cb .lb span{font-size:14px;color:var(--ink-2)}
+.cb .t{position:relative;height:30px;margin-top:10px;border-radius:7px;background:var(--line-soft)}
+.cb .t i{position:absolute;top:0;bottom:0;left:0;border-radius:7px;width:0;transition:width 1s var(--ease) .3s,left 1s var(--ease) .3s}
+.cb .v{font-family:var(--serif);font-size:40px;line-height:1;letter-spacing:-.02em;margin-top:10px}
+.cb .v small{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin-left:12px;color:var(--ink-3);vertical-align:middle}
+.cb.win .v,.cb.win .v small{color:var(--accent)}
+.lang{width:100%;border-collapse:collapse;margin-top:30px}
+.lang th{font-family:var(--mono);font-size:11.5px;font-weight:700;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3);text-align:left;padding:0 0 12px;border-bottom:1.5px solid var(--ink)}
+.lang td{padding:18px 0;border-bottom:1px solid var(--line);vertical-align:middle}
+.lang td b{display:block;font-size:22px;font-weight:600}
+.lang td small{font-size:13.5px;color:var(--ink-3)}
+.lpair{display:flex;flex-direction:column;gap:7px;width:100%}
+.lpair div{display:grid;grid-template-columns:70px 1fr 90px;gap:12px;align-items:center;font-family:var(--mono);font-size:13px}
+.lpair .t{height:14px;border-radius:5px;background:var(--line-soft);overflow:hidden}
+.lpair .t i{display:block;height:100%;border-radius:5px;width:0;transition:width 1s var(--ease) .3s}
+.gap{font-family:var(--serif);font-size:54px;color:var(--accent);text-align:right;line-height:1}
+.mchart text{font-family:var(--mono);font-size:13px;fill:rgba(234,241,250,.6)}
+.mchart .bv{font-family:var(--serif);font-size:30px;fill:#EAF1FA}
+.mchart rect.b{transition:height 1s var(--ease),y 1s var(--ease)}
+
+/* new work */
+.newwork{display:grid;grid-template-columns:repeat(3,1fr);gap:40px;margin-top:40px}
+.newwork .im{height:440px;display:flex;align-items:flex-end}
+.newwork img{max-height:100%;border-radius:12px;box-shadow:0 26px 50px -30px rgba(14,27,51,.6)}
+.newwork h3{font-family:var(--mono);font-size:14px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;margin:24px 0 8px}
+.newwork p{margin:0;font-size:16.5px;color:var(--ink-2);line-height:1.5;max-width:400px}
+
+/* bridge */
+.agenda{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:44px}
+.agenda a{display:flex;flex-direction:column;gap:6px;padding:16px 18px;border-radius:14px;border:1px solid var(--line);background:var(--paper-lift);text-decoration:none;color:var(--ink);transition:.2s}
+.agenda a:hover{border-color:var(--accent);background:var(--accent-wash)}
+.agenda .an{font-family:var(--mono);font-size:11px;color:var(--accent);letter-spacing:.1em}
+.agenda .at{font-weight:600;font-size:16px;line-height:1.25}
+
+/* close */
+.contact{display:grid;grid-template-columns:repeat(3,1fr);gap:2px;background:rgba(255,255,255,.14);margin-top:60px;border-radius:14px;overflow:hidden}
+.contact div{background:var(--ink);padding:24px 26px}
+.contact .mono{color:rgba(234,241,250,.55)}
+.contact p{margin:8px 0 0;font-size:19px;color:#EAF1FA}
+
+
+/* open day turnout and five messages (from the September 2026 open day proposal) */
+.who3{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+.whoc{background:var(--paper-lift);border:1px solid var(--line);border-radius:16px;padding:24px 26px;border-top:4px solid var(--accent)}
+.whoc.par{border-top-color:var(--amber)}.whoc.qt{border-top-color:var(--ink-3)}
+.whoc h3{font-family:var(--serif);font-weight:400;font-size:34px;line-height:1.05;margin:8px 0 14px;letter-spacing:-.015em}
+.whoc .mono{font-size:11px}
+.whoc dl{margin:0;display:flex;flex-direction:column;gap:12px}
+.whoc dt{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.whoc dd{margin:3px 0 0;font-size:16px;line-height:1.45}
+.whoc .tagp{display:inline-block;font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--amber-wash);color:#8A5A00}
+.rule1{margin-top:26px;display:grid;grid-template-columns:auto 1fr;gap:22px;align-items:center;padding:20px 24px;border-radius:14px;background:var(--ink);color:#EAF1FA}
+.rule1 .mono{color:var(--aqua)}
+.rule1 p{margin:0;font-family:var(--serif);font-size:30px;line-height:1.15;letter-spacing:-.01em}
+.f5grid{display:grid;grid-template-columns:minmax(0,1.35fr) minmax(0,1fr);gap:28px;margin-top:30px;flex:1;min-height:0;margin-bottom:64px}
+.f5line{position:relative;display:grid;grid-template-columns:repeat(5,1fr);gap:8px}
+.f5line::before{content:"";position:absolute;left:10%;right:10%;top:23px;height:2px;background:var(--line)}
+.f5n{position:relative;border:0;background:transparent;padding:0;text-align:center;display:flex;flex-direction:column;align-items:center;gap:8px;color:var(--ink)}
+.f5n .d{width:48px;height:48px;border-radius:50%;display:grid;place-items:center;background:var(--paper-lift);border:2px solid var(--line);font-family:var(--mono);font-size:13px;font-weight:700;transition:.25s}
+.f5n.par .d{border-color:var(--amber)}
+.f5n[aria-pressed="true"] .d{background:var(--accent);border-color:var(--accent);color:#fff}
+.f5n.par[aria-pressed="true"] .d{background:var(--amber);border-color:var(--amber)}
+.f5n .w{font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.f5n .j{font-size:14.5px;font-weight:600;line-height:1.25;max-width:150px}
+.f5card{margin-top:22px;background:var(--paper-lift);border:1px solid var(--line);border-radius:16px;padding:24px 28px;min-height:212px}
+.f5card h3{font-family:var(--serif);font-weight:400;font-size:36px;line-height:1.05;margin:8px 0 12px}
+.f5card p{margin:0;font-size:17px;line-height:1.5;color:var(--ink-2)}
+.f5card .to{margin-top:14px;display:flex;gap:8px;flex-wrap:wrap}
+.f5side{display:flex;flex-direction:column;gap:16px}
+.f5side .card{padding:20px 22px}
+.msr{display:flex;flex-direction:column;gap:9px;margin-top:10px}
+.msr div{display:grid;grid-template-columns:1fr auto;gap:12px;font-size:14.5px;padding-bottom:9px;border-bottom:1px solid var(--line-soft)}
+.msr div:first-child b{color:var(--accent)}
+.msr span{font-family:var(--mono);font-size:11.5px;color:var(--ink-3);white-space:nowrap}
+.itr{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-top:12px}
+.itr div{border-radius:10px;background:var(--paper-deep);padding:12px 14px;font-size:14px;line-height:1.35}
+.itr b{display:block;font-family:var(--mono);font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--accent);margin-bottom:4px}
+
+
+/* the work: a horizontal card deck of ads */
+.adeck{position:relative;height:500px;margin-top:22px;overflow:hidden;touch-action:pan-y;cursor:grab;
+  -webkit-mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%);mask-image:linear-gradient(90deg,transparent 0,#000 7%,#000 93%,transparent 100%)}
+.adeck.drag{cursor:grabbing}
+.adcard{position:absolute;top:30px;left:0;width:420px;height:420px;margin-left:-210px;border-radius:18px;overflow:hidden;background:#fff;border:0;padding:0;
+  box-shadow:0 30px 60px -28px rgba(14,27,51,.55),0 0 0 1px rgba(14,27,51,.06);transition:transform .55s var(--ease),opacity .4s,filter .4s;will-change:transform}
+.adcard img{width:100%;height:100%;object-fit:contain;display:block;pointer-events:none;user-select:none}
+.adcard.on{box-shadow:0 40px 70px -26px rgba(14,27,51,.6),0 0 0 3px var(--accent)}
+.adbar{display:flex;align-items:center;justify-content:center;gap:22px;margin-top:6px}
+.adnav{width:48px;height:48px;border-radius:50%;border:1px solid var(--line);background:var(--paper-lift);font-size:22px;color:var(--ink);display:grid;place-items:center;transition:.2s}
+.adnav:hover{border-color:var(--ink)}
+.adinfo{display:flex;align-items:baseline;gap:16px;min-width:620px;justify-content:center}
+.adn{font-size:14px;color:var(--ink-3);letter-spacing:.08em}
+.adc{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--accent)}
+.adp{font-family:var(--serif);font-size:30px;line-height:1;letter-spacing:-.01em}
+
+
+/* campus creative workshops: a slide that flips from the problem to the fix */
+.flipwrap{flex:1;min-height:0;margin:18px 0 64px;perspective:2400px}
+.flipper{position:relative;width:100%;height:100%;transform-style:preserve-3d;transition:transform .9s var(--ease)}
+.flipwrap.on .flipper{transform:rotateY(180deg)}
+.face{position:absolute;inset:0;backface-visibility:hidden;-webkit-backface-visibility:hidden;border-radius:22px;padding:34px 40px;display:flex;flex-direction:column}
+.face.front{background:var(--ink);color:#EAF1FA}
+.face.back{background:var(--paper-lift);border:1px solid var(--line);transform:rotateY(180deg)}
+.face h2{font-family:var(--serif);font-weight:400;font-size:54px;line-height:1.02;letter-spacing:-.02em;margin:0}
+.face.front h2 em{font-style:italic;color:var(--aqua)}.face.back h2 em{font-style:italic;color:var(--accent)}
+.fhead{display:flex;justify-content:space-between;align-items:flex-start;gap:30px}
+.flipbtn{flex:0 0 auto;font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:13px 20px;border-radius:999px;border:0;display:inline-flex;gap:10px;align-items:center}
+.front .flipbtn{background:var(--aqua);color:var(--ink)}.back .flipbtn{background:var(--ink);color:#fff}
+.flipbtn span{font-size:16px;line-height:1}
+.prob{display:grid;grid-template-columns:400px 1fr;gap:40px;margin-top:30px;flex:1;min-height:0}
+.stale .v{font-family:var(--serif);font-size:190px;line-height:.85;letter-spacing:-.04em;color:var(--aqua)}
+.stale p{margin:14px 0 0;font-size:17px;line-height:1.45;color:rgba(234,241,250,.78)}
+.sbars{margin-top:26px;display:flex;flex-direction:column;gap:12px}
+.sbar{display:grid;grid-template-columns:150px 1fr 76px;gap:12px;align-items:center;font-size:14px;color:rgba(234,241,250,.8)}
+.sbar .t{height:20px;border-radius:6px;background:rgba(255,255,255,.08);overflow:hidden}
+.sbar .t i{display:block;height:100%;border-radius:6px;width:0;transition:width 1.1s var(--ease) .3s}
+.sbar .n{font-family:var(--mono);text-align:right}
+.tried{display:flex;flex-direction:column;gap:16px}
+.tried .mono{color:rgba(234,241,250,.55)}
+.try{display:grid;grid-template-columns:44px 1fr;gap:16px;align-items:start;padding:24px 24px;border-radius:14px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1)}
+.try .x{width:36px;height:36px;border-radius:50%;display:grid;place-items:center;background:rgba(219,74,69,.18);color:#FF8A84;font-family:var(--mono);font-weight:700;font-size:15px}
+.try b{display:block;font-size:22px;font-weight:600;color:#fff}
+.try span{font-size:17px;line-height:1.45;color:rgba(234,241,250,.72)}
+.need{margin-top:auto;padding-top:16px;font-family:var(--serif);font-size:30px;line-height:1.2;color:#fff}
+.fix{display:grid;grid-template-columns:1.25fr 1fr;gap:34px;margin-top:24px;flex:1;min-height:0}
+.wsph{display:grid;grid-template-columns:1.4fr 1fr;grid-template-rows:1fr 1fr;gap:12px;min-height:0}
+.wsph div{border-radius:14px;overflow:hidden;background:var(--paper-deep);border:1.5px dashed var(--sky);display:grid;place-items:center;font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3);text-align:center;padding:10px}
+.wsph div:first-child{grid-row:1/3}
+.wsph div.has{border:0;padding:0}
+.wsph img{width:100%;height:100%;object-fit:cover;display:block}
+.wsr{display:flex;flex-direction:column;gap:16px;min-height:0}
+.wsr .mono{font-size:11px}
+.cov4{display:flex;flex-wrap:wrap;gap:8px;margin-top:8px}
+.cov4 span{font-size:14.5px;padding:7px 13px;border-radius:999px;background:var(--accent-wash);color:var(--accent-deep)}
+.res{display:grid;grid-template-columns:1fr 1fr;gap:2px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:8px}
+.res div{background:var(--paper-lift);padding:16px 18px}
+.res .v{font-family:var(--serif);font-size:40px;line-height:1;letter-spacing:-.02em;color:var(--accent)}
+.res .l{font-size:13.5px;color:var(--ink-2);margin-top:6px;line-height:1.35}
+.tbc{display:inline-block;font-family:var(--mono);font-size:13px;font-weight:700;letter-spacing:.06em;color:#8A5A00;background:var(--amber-wash);border:1.5px dashed var(--amber);border-radius:8px;padding:6px 10px}
+
+
+/* bad, okay, best: one slide, three layers on a slider */
+.tierbar{display:flex;align-items:center;gap:18px;margin-top:16px}
+.ttrack{position:relative;flex:1;height:56px;border-radius:999px;background:var(--paper-lift);border:1px solid var(--line);display:grid;grid-template-columns:repeat(3,1fr)}
+.tknob{position:absolute;top:4px;bottom:4px;left:4px;width:calc((100% - 8px)/3);border-radius:999px;background:var(--ink);transition:transform .55s var(--ease),background .4s}
+.ttrack[data-t="2"] .tknob{background:var(--accent)}
+.ttrack button{position:relative;z-index:1;border:0;background:transparent;font-family:var(--mono);font-size:12.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-2);display:flex;align-items:center;justify-content:center;gap:10px;transition:color .3s}
+.ttrack button[aria-pressed="true"]{color:#fff}
+.ttrack button small{font-family:var(--sans);font-size:13px;font-weight:500;letter-spacing:0;text-transform:none;opacity:.8}
+.tstep{width:52px;height:52px;border-radius:50%;border:1px solid var(--line);background:var(--paper-lift);font-size:22px;display:grid;place-items:center;color:var(--ink)}
+.tview{flex:1;min-height:0;margin:16px 0 60px;overflow:hidden;border-radius:22px}
+.tstrip{display:flex;height:100%;width:300%;transition:transform .7s var(--ease)}
+.tlayer{width:calc(100% / 3);height:100%;padding:26px 36px;display:flex;flex-direction:column;border-radius:22px}
+.tlayer.l0{background:#E9EDF3}.tlayer.l1{background:var(--paper-lift);border:1px solid var(--line)}.tlayer.l2{background:var(--ink);color:#EAF1FA}
+.tlayer .who{font-family:var(--mono);font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--ink-3)}
+.tlayer.l2 .who{color:var(--aqua)}
+.tlayer h3{font-family:var(--serif);font-weight:400;font-size:44px;line-height:1.02;letter-spacing:-.02em;margin:10px 0 0}
+.tlayer h3 em{font-style:italic;color:var(--accent)}.tlayer.l2 h3 em{color:var(--aqua)}
+.tlayer .say{font-size:17px;line-height:1.45;color:var(--ink-2);margin:8px 0 0;max-width:1100px}
+.tlayer.l2 .say{color:rgba(234,241,250,.75)}
+.vfun{display:flex;align-items:center;gap:22px;margin-top:auto}
+.vfun>div{flex:1;border-radius:16px;background:var(--paper-lift);padding:26px 28px;border:1px solid var(--line)}
+.vfun .v{font-family:var(--serif);font-size:72px;line-height:1;letter-spacing:-.03em}
+.vfun .v.q{color:#B3BDCC}
+.vfun .l{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-top:8px}
+.vfun span.ar{font-size:28px;color:#B3BDCC;flex:0 0 auto}
+.gbar{display:flex;height:84px;border-radius:14px;overflow:hidden;margin-top:auto}
+.gbar div{display:flex;flex-direction:column;justify-content:center;padding:0 24px;color:#fff;transition:flex-grow 1s var(--ease)}
+.gbar b{font-family:var(--serif);font-size:38px;font-weight:400;line-height:1}
+.gbar span{font-size:14px;opacity:.85}
+.whyq{margin-top:18px;display:flex;align-items:center;gap:16px;padding:18px 22px;border-radius:14px;border:1.5px dashed #C9D3E0}
+.whyq b{font-family:var(--serif);font-weight:400;font-size:30px}
+.whyq span{font-family:var(--mono);font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-left:auto}
+.bk3{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:14px;flex:1;min-height:0}
+.bk{border-radius:16px;background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.1);padding:12px 18px 14px;display:flex;flex-direction:column}
+.bk .bh{display:flex;justify-content:space-between;align-items:baseline;gap:10px;padding-bottom:6px;border-bottom:1px solid rgba(255,255,255,.12)}
+.bk .bh b{font-size:19px;font-weight:600;color:#fff}
+.bk .bh span{font-family:var(--serif);font-size:30px;color:var(--aqua)}
+.bk ul{list-style:none;margin:8px 0 0;padding:0;display:flex;flex-direction:column;gap:4px}
+.bk li{display:grid;grid-template-columns:1fr 40px;gap:2px 10px;align-items:center;font-size:13.5px;color:rgba(234,241,250,.82)}
+.bk li .t{grid-column:1/-1;height:4px;border-radius:3px;background:rgba(255,255,255,.08);overflow:hidden}
+.bk li .t i{display:block;height:100%;background:var(--aqua);border-radius:3px;width:0;transition:width 1s var(--ease) .2s}
+.bk li .n{font-family:var(--mono);font-size:12px;text-align:right}
+.bk .fx{margin:auto 0 0;padding-top:8px;font-size:13.5px;line-height:1.45;color:#fff}
+.bk .fx em{font-style:normal;font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--aqua);display:block;margin-bottom:3px}
+
+
+/* live ads dashboard, rebuilt from a client dashboard with the sensitive figures hidden */
+.md{flex:1;min-height:0;margin:12px 0 60px;background:#F6F7FB;border:1px solid var(--line);border-radius:20px;padding:18px 22px;display:flex;flex-direction:column;gap:10px;font-family:var(--sans);box-shadow:0 30px 60px -40px rgba(14,27,51,.45)}
+.mdh{display:flex;justify-content:space-between;align-items:flex-start;gap:20px}
+.mdh b{font-size:21px;font-weight:600;letter-spacing:-.01em}
+.mdh p{margin:3px 0 0;font-size:12.5px;color:var(--ink-2);max-width:none;line-height:1.4}
+.mdh .live{font-size:12px;color:#137A3F;display:flex;align-items:center;gap:6px;justify-content:flex-end}
+.mdh .live i{width:8px;height:8px;border-radius:50%;background:#1DA25A;box-shadow:0 0 0 3px rgba(29,162,90,.18);animation:blink 1.6s infinite}
+@keyframes blink{50%{opacity:.35}}
+.mdh .when{font-size:12px;color:var(--ink-3);text-align:right;margin-top:3px}
+.mdk{display:grid;grid-template-columns:repeat(5,1fr);gap:10px}
+.mdk>div{background:#fff;border:1px solid #E3E7EF;border-radius:12px;padding:10px 14px}
+.mdk .l{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.mdk .v{font-size:23px;font-weight:600;letter-spacing:-.02em;margin-top:2px}
+.mdk .s{font-size:11.5px;color:var(--ink-3)}
+.mdr{display:grid;grid-template-columns:1.4fr 1fr;gap:10px}
+.mdr>div{background:#fff;border:1px solid #E3E7EF;border-radius:12px;padding:10px 14px}
+.mdr .l{font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.mdr svg{width:100%;height:46px;display:block;margin-top:4px}
+.mddel{height:10px;border-radius:5px;background:#E3E7EF;overflow:hidden;margin:8px 0 6px}
+.mddel i{display:block;height:100%;width:77%;background:#137A3F}
+.mddel+div,.mddel+div+div{font-size:12.5px;color:var(--ink-2);display:flex;gap:8px;align-items:center;margin-top:2px}
+.mdf{display:flex;gap:10px;align-items:center}
+.mdf .seg button{padding:6px 12px;font-size:10px}
+.mdf input{flex:1;border:1px solid #E3E7EF;border-radius:999px;padding:8px 14px;font-size:13px;background:#fff;outline:none}
+.mdf input:focus{border-color:var(--accent)}
+.mdf .cnt{font-size:12px;color:var(--ink-3);white-space:nowrap}
+.mdt{flex:1;min-height:0;overflow-y:auto;background:#fff;border:1px solid #E3E7EF;border-radius:12px}
+.mdt table{width:100%;border-collapse:collapse;font-size:13px}
+.mdt th{position:sticky;top:0;background:#EEF1F7;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);text-align:right;padding:8px 12px;z-index:1}
+.mdt th:nth-child(-n+3){text-align:left}
+.mdt th[data-k]{cursor:pointer}.mdt th[data-k]:hover{color:var(--ink)}
+.mdt th[aria-sort] ::after{content:""}
+.mdt th[aria-sort="descending"]::after{content:" ↓"}.mdt th[aria-sort="ascending"]::after{content:" ↑"}
+.mdt td{padding:6px 12px;border-top:1px solid #EEF1F5;text-align:right;white-space:nowrap}
+.mdt td:nth-child(-n+3){text-align:left}
+.mdt tr:hover td{background:#F7F9FD}
+.mdt .rk{color:var(--ink-3);font-size:12px;width:28px}
+.mdt .th{width:48px}.mdt .th img{width:32px;min-width:32px;height:32px;max-width:none;border-radius:6px;object-fit:cover;display:block}
+.mdt .nm b{display:block;font-weight:600;font-size:13px}
+.mdt .tg{display:flex;gap:4px;margin-top:3px}
+.mdt .tg span{font-size:10px;padding:1px 7px;border-radius:999px;border:1px solid #E3E7EF;color:var(--ink-2)}
+.mst{font-size:11px;font-weight:600;padding:2px 9px;border-radius:999px}
+.mst.a{background:#DDF5E6;color:#137A3F}.mst.p{background:#EEF1F5;color:var(--ink-2)}
+.cpl.g{color:#137A3F;font-weight:600}.cpl.m{color:#9A6B00;font-weight:600}.cpl.r{color:#C2382F;font-weight:600}
+.sp{position:relative}.sp i{position:absolute;left:6px;top:5px;bottom:5px;border-radius:4px;background:rgba(42,107,224,.12)}
+.sp span{position:relative}
+.rd{filter:blur(5px);user-select:none;-webkit-user-select:none}
+.mdpop{position:absolute;z-index:5;width:150px;right:24px;border-radius:12px;overflow:hidden;box-shadow:0 20px 40px -12px rgba(14,27,51,.45);pointer-events:none;opacity:0;transition:opacity .15s;background:#fff}
+.mdpop img{width:100%;display:block}
+
+/* chrome outside the stage */
+/* slide rail: always on the left; hover or focus opens the titles */
+#rail{position:fixed;left:0;top:0;bottom:0;width:var(--rail);z-index:20;background:#0B1424;border-right:1px solid rgba(255,255,255,.08);overflow:hidden;transition:width .3s var(--ease),box-shadow .3s}
+#rail:hover,#rail:focus-within{width:330px;box-shadow:20px 0 50px -20px rgba(0,0,0,.6)}
+#rail ol{list-style:none;margin:0;padding:10px 0;height:100%;overflow-y:auto;scrollbar-width:none}
+#rail ol::-webkit-scrollbar{display:none}
+#rail .sec{font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:rgba(234,241,250,.35);padding:12px 0 6px 18px;white-space:nowrap}
+#rail button{width:100%;display:flex;align-items:center;gap:14px;border:0;background:transparent;color:rgba(234,241,250,.62);padding:6px 10px 6px 12px;text-align:left;white-space:nowrap;font-family:var(--sans);font-size:13.5px;border-left:3px solid transparent}
+#rail button:hover{background:rgba(255,255,255,.06);color:#fff}
+#rail button .rn{flex:0 0 26px;font-family:var(--mono);font-size:11px;font-weight:700;text-align:center;letter-spacing:.04em}
+#rail button .rt{overflow:hidden;text-overflow:ellipsis;opacity:0;transition:opacity .2s}
+#rail:hover .rt,#rail:focus-within .rt{opacity:1}
+#rail button[aria-current="true"]{color:#fff;border-left-color:var(--aqua);background:rgba(140,224,236,.1)}
+#rail button[aria-current="true"] .rn{color:var(--aqua)}
+#nav{left:calc(var(--rail) + (100% - var(--rail)) / 2)}
+@media(max-width:700px){:root{--rail:0px}#rail{display:none}}
+
+#nav{position:fixed;left:50%;bottom:18px;transform:translateX(-50%);display:flex;align-items:center;gap:6px;padding:6px;border-radius:999px;background:rgba(11,20,36,.82);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);color:#EAF1FA;z-index:10;transition:opacity .4s;font-family:var(--mono);font-size:12px}
+#nav.idle{opacity:0}
+#nav button{border:0;background:transparent;color:inherit;width:36px;height:36px;border-radius:50%;display:grid;place-items:center;font-size:16px}
+#nav button:hover{background:rgba(255,255,255,.12)}
+#nav .pg{padding:0 10px;letter-spacing:.1em;font-variant-numeric:tabular-nums;white-space:nowrap}
+#nav .tt{max-width:280px;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;color:rgba(234,241,250,.65);padding-right:10px}
+#prog{position:fixed;left:0;top:0;height:3px;background:var(--aqua);z-index:10;transition:width .4s var(--ease)}
+@media(max-width:700px){#nav .tt{display:none}}
+
+@media (prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation:none!important;transition:none!important}
+}
+@media print{
+  @page{size:1600px 900px;margin:0}
+  html,body{height:auto;overflow:visible;background:none}
+  #stage{position:static;transform:none;width:1600px;height:auto}
+  .slide{position:relative;inset:auto;width:1600px;height:900px;opacity:1;visibility:visible;break-after:page;transition:none}
+  #nav,#prog,#rail{display:none!important}
+  *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+
+/* =========================================================================
+   Theme layer, round 1. One surprise accent on a blue and white base, after
+   the "one accent that catches you off guard" brief: hot pink is the pop,
+   midnight and electric blue carry the dark slides, and every dark surface
+   gets a soft glow behind ribbed glass. This block only overrides; delete it
+   to get the previous look back.
+   ========================================================================= */
+:root{
+  --pop:#FF4F9A;--pop-deep:#D0246C;--pop-soft:#FFC2DC;--pop-wash:#FFF0F6;
+  --electric:#2563FF;--midnight:#070B1A;--midnight-2:#0C1430;
+  --glow-dark:radial-gradient(70% 80% at 92% 115%,rgba(37,99,255,.55),transparent 62%),radial-gradient(38% 46% at 104% -6%,rgba(255,79,154,.30),transparent 65%),radial-gradient(50% 60% at -8% 0%,rgba(140,224,236,.10),transparent 60%),linear-gradient(180deg,#0B1229 0%,#070B1A 100%);
+  --ribs:repeating-linear-gradient(90deg,rgba(255,255,255,.035) 0 1px,transparent 1px 7px);
+  --grad-text:linear-gradient(100deg,#8CE0EC 0%,#7FA8FF 45%,#FF4F9A 100%);
+  --grad-text-light:linear-gradient(100deg,#2563FF 0%,#7A5CFF 50%,#D0246C 100%);
+}
+
+/* light slides: a soft sky glow and a faint pink one, never both strong */
+.slide{isolation:isolate}
+.slide:not(.dark):not(.cover){background-image:radial-gradient(55% 60% at 0% 100%,rgba(127,179,238,.22),transparent 65%),radial-gradient(35% 40% at 100% 0%,rgba(255,79,154,.07),transparent 70%)}
+
+/* dark slides: midnight, electric blue glow, ribbed glass */
+.slide.dark,.half,.face.front,.tlayer.l2,.lpstage,.dash{background:var(--glow-dark)}
+.slide.dark::before,.half::before,.face.front::before,.tlayer.l2::before{content:"";position:absolute;inset:0;background:var(--ribs);pointer-events:none;z-index:0;-webkit-mask-image:radial-gradient(80% 90% at 90% 100%,#000 20%,transparent 75%);mask-image:radial-gradient(80% 90% at 90% 100%,#000 20%,transparent 75%)}
+.slide.dark::before{z-index:-1}
+.half>*,.face.front>*,.tlayer.l2>*{position:relative;z-index:1}
+.face.front,.tlayer.l2{position:relative;overflow:hidden}
+.tlayer.l2{position:relative}
+
+/* the pop: one standout per slide */
+.kick::before{content:"";width:7px;height:7px;border-radius:50%;background:var(--pop);box-shadow:0 0 0 4px rgba(255,79,154,.16);flex:0 0 auto}
+.cover .kick::before{display:none}
+.cover h1 em,.slide.dark .sttl em,.big2,.stale .v,.face.front h2 em,.tlayer.l2 h3 em{background:var(--grad-text);-webkit-background-clip:text;background-clip:text;color:transparent}
+.cover h1 em{background:var(--grad-text-light);-webkit-background-clip:text;background-clip:text;color:transparent;padding-right:.06em}
+
+/* winners on the finding slides */
+.vc.win .cpl,.vc.win .tag{color:var(--pop-deep)}
+.dark .vc.win .cpl,.dark .vc.win .tag{color:var(--pop)}
+.vc.win .bar i,.dark .vc.win .bar i{background:linear-gradient(90deg,var(--electric),var(--pop))}
+.vc.win img{box-shadow:0 30px 60px -28px rgba(208,36,108,.55),0 0 0 2px rgba(255,79,154,.55)}
+.cb.win .v,.cb.win .v small{color:var(--pop-deep)}
+.cb.win .t i{background:linear-gradient(90deg,var(--electric),var(--pop))!important}
+
+/* chrome */
+#prog{background:linear-gradient(90deg,var(--aqua),var(--electric),var(--pop))}
+#rail{background:var(--midnight)}
+#rail button[aria-current="true"]{border-left-color:var(--pop);background:linear-gradient(90deg,rgba(255,79,154,.16),transparent)}
+#rail button[aria-current="true"] .rn{color:var(--pop)}
+#nav{background:rgba(7,11,26,.84)}
+
+/* ad deck: the active card wears the pop */
+.adcard.on{box-shadow:0 40px 70px -26px rgba(14,27,51,.6),0 0 0 3px var(--pop)}
+.adc{color:var(--pop-deep)}
+
+/* bad, okay, best: the best stop glows */
+.ttrack[data-t="2"] .tknob{background:linear-gradient(90deg,var(--electric),var(--pop))}
+
+/* buttons and the flip */
+.btn.solid{background:linear-gradient(100deg,var(--electric),#4F7BFF);border-color:transparent}
+.rule1{background:var(--glow-dark)}
+.rule1 .mono{color:var(--pop)}
+
+/* proof and close */
+.contact div{background:rgba(255,255,255,.04);backdrop-filter:blur(4px)}
+.contact{background:rgba(255,255,255,.10)}
+
+/* round 2: pink means the winner or the best option, nothing else */
+:root{--pop-deep:#C0186E}
+.kick::before{background:var(--electric);box-shadow:0 0 0 4px rgba(37,99,255,.16)}
+.face.front h2 em,.tlayer.l2 h3 em{background:none;color:var(--aqua)}
+.ttrack[data-t="2"] .tknob{background:linear-gradient(90deg,var(--electric),var(--pop-deep))}
+.ttrack button[aria-pressed="true"] small{opacity:1}
+.btn.solid{background:linear-gradient(100deg,#1D4FE0,var(--electric))}
+.dark .sf .pn,.slide:has(.half) .sf .pn{color:rgba(234,241,250,.72)}
+.slide:not(.dark) .sf{color:var(--ink-2)}
+.slide.alt .kick,.slide.alt .itr b{color:var(--accent-deep)}
+.lstep[aria-pressed="true"] .hand i,.rule.hot p{color:#fff}
+.splithead div:last-child{color:#08636F!important}
+.pin,.pk{background:#0B7A88}
+.vfun .v.q,.vfun .ar{color:#8592A6}
+.wahead .av{color:#0B3B2E}
+.aibar span{color:#6B6B66}
+#rail button[aria-current="true"]{border-left-color:var(--aqua);background:linear-gradient(90deg,rgba(140,224,236,.14),transparent)}
+#rail button[aria-current="true"] .rn{color:var(--aqua)}
+#prog{background:linear-gradient(90deg,var(--aqua),var(--electric))}
+.adc{color:var(--accent-deep)}
+/* cover: a soft pink glow rising out of the waves, seen through ribbed glass */
+.cover::after{content:"";position:absolute;right:-6%;bottom:-18%;width:62%;height:78%;border-radius:50%;background:radial-gradient(closest-side,rgba(255,79,154,.30),rgba(122,92,255,.16) 55%,transparent);filter:blur(30px);pointer-events:none;z-index:0}
+.cover .wavewrap{z-index:1}
+.cover::before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(90deg,rgba(255,255,255,.22) 0 1px,transparent 1px 8px);-webkit-mask-image:linear-gradient(180deg,transparent 45%,#000 100%);mask-image:linear-gradient(180deg,transparent 45%,#000 100%);pointer-events:none;z-index:2}
+.cover>.kick,.cover>.lockup,.cover>h1{position:relative;z-index:3}
+/* the masked ribbing makes Chrome shrink printed pages, so print without it */
+@media print{.slide.dark::before,.half::before,.face.front::before,.tlayer.l2::before,.cover::before{display:none!important}}
+
+/* round 3 polish (art director pass): pink stays a single object per slide */
+.face.front{position:absolute;inset:0}
+.cover::after{right:5%;bottom:2%;width:440px;height:440px;background:radial-gradient(closest-side,rgba(255,79,154,.85),rgba(255,79,154,.40) 45%,rgba(127,168,255,.12) 75%,transparent);filter:blur(36px);z-index:1}
+.cover::before{inset:auto 3% 7% auto;width:340px;height:470px;border-radius:28px;background:repeating-linear-gradient(90deg,rgba(255,255,255,.30) 0 2px,rgba(255,255,255,.04) 5px 12px,rgba(14,27,51,.05) 13px 15px),rgba(255,255,255,.10);-webkit-backdrop-filter:blur(14px) saturate(1.2);backdrop-filter:blur(14px) saturate(1.2);border:1px solid rgba(255,255,255,.55);box-shadow:0 30px 60px -30px rgba(14,27,51,.35);-webkit-mask-image:none;mask-image:none}
+.cover h1 em{background:linear-gradient(100deg,#2563FF 0%,#7A5CFF 100%);-webkit-background-clip:text;background-clip:text;color:transparent}
+:root{--grad-text:linear-gradient(100deg,#8CE0EC 0%,#7FA8FF 60%,#A9BDFF 100%)}
+.rule1 .mono{color:var(--aqua)}
+.cb.win .t i{background:var(--pop)!important}
+.slide.ex,.slide.alt:not(.mid){background-image:radial-gradient(42% 55% at 102% 104%,rgba(37,99,255,.16),transparent 70%),radial-gradient(38% 46% at -4% -8%,rgba(140,224,236,.30),transparent 70%)}
+.slide.ex .card,.slide.ex .job,.slide.ex .splitrow{background:rgba(255,255,255,.78);-webkit-backdrop-filter:blur(8px);backdrop-filter:blur(8px);box-shadow:inset 0 1px 0 rgba(255,255,255,.9),0 24px 48px -32px rgba(14,27,51,.28)}
+.slide.white:not(.ex){background-image:radial-gradient(45% 60% at 0% 105%,rgba(127,179,238,.26),transparent 68%),radial-gradient(30% 40% at 104% -6%,rgba(140,224,236,.22),transparent 70%)}
+.slide.dark{background-image:radial-gradient(70% 80% at 92% 115%,rgba(37,99,255,.55),transparent 62%),radial-gradient(50% 60% at -8% 0%,rgba(140,224,236,.10),transparent 60%),linear-gradient(180deg,#0B1229,#070B1A)}
+.slide.dark::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;opacity:.35;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.5'/%3E%3C/svg%3E")}
+@media print{.slide.dark::after{display:none}}
+.tlayer.l0{background:radial-gradient(60% 70% at 50% 110%,rgba(127,179,238,.28),transparent 70%),#E9EDF3}
+.vc.win img{box-shadow:0 30px 60px -28px rgba(37,99,255,.45),0 0 0 2px rgba(127,168,255,.6)}
+.vc.win .bar i,.dark .vc.win .bar i{background:var(--pop)}
+</style>
+</head>
+<body>
+<div id="prog" aria-hidden="true"></div>
+<main id="stage" aria-live="off"></main>
+<nav id="rail" aria-label="All slides"><ol id="railList"></ol></nav>
+<nav id="nav" aria-label="Slide navigation">
+  <button type="button" id="prev" aria-label="Previous slide">&#8249;</button>
+  <span class="pg" id="pg">01 / 01</span>
+  <span class="tt" id="tt"></span>
+  <button type="button" id="next" aria-label="Next slide">&#8250;</button>
+</nav>
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg"><symbol id="wm" viewBox="0 0 1432 392"><path d="M1166.39 1.57487C1166.39 2.43389 1157.45 54.1188 1146.44 116.398C1135.43 178.678 1126.5 232.081 1126.5 234.944C1126.5 238.667 1127.77 241.244 1130.64 243.964C1134.47 247.4 1136.07 247.686 1147.4 247.686C1154.42 247.686 1160 247.973 1160 248.545C1160 249.261 1152.82 290.351 1151.23 298.799C1150.43 302.807 1149.63 303.523 1142.77 304.812C1120.27 309.107 1090.59 307.818 1072.88 301.948C1061.55 298.083 1049.75 288.347 1044.96 278.898C1041.61 272.169 1041.13 269.162 1041.29 254.129C1041.29 239.239 1044.16 221.486 1062.35 119.119C1074 54.4051 1083.41 1.00218 1083.41 0.715838C1083.41 0.286342 1102.08 0 1124.9 0C1154.26 0 1166.39 0.429496 1166.39 1.57487Z"/>
+<path d="M140.413 21.6189C140.413 22.9074 133.871 60.8478 131.637 72.5879L130.68 77.3125H155.571C171.527 77.3125 180.303 77.8852 180.303 78.7442C180.303 80.6054 172.485 125.418 171.527 129.856C170.73 133.006 170.091 133.149 145.678 133.436L120.787 133.865L111.533 186.123C101.321 243.821 101.002 246.971 104.672 248.259C106.108 248.689 116.798 249.118 128.606 249.118C148.391 249.118 150.146 249.261 149.349 251.552C148.87 252.984 146.636 265.583 144.243 279.614L139.775 305.241L100.523 304.669C66.058 304.096 60.1543 303.666 50.8998 300.946C30.7951 295.076 20.7428 285.054 17.7113 268.017C15.7965 256.849 16.4348 250.693 27.7636 187.411C32.7099 160.209 36.6989 136.872 36.6989 135.44C36.6989 133.436 34.3055 133.149 18.3495 133.149C6.86114 133.149 0 132.577 0 131.718C0 129.856 7.81846 85.0438 8.93536 80.4623C9.57368 77.4557 10.2118 77.3125 28.5613 77.3125H47.3895L51.0594 56.839C52.974 45.6716 55.2078 32.7862 56.1653 28.2047L57.7609 20.044H99.087C127.01 20.044 140.413 20.4735 140.413 21.6189Z"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M644.145 113.964C646.698 121.409 647.177 121.839 651.644 121.409L656.59 120.98L660.42 99.0745L664.09 77.3125H746.742L745.944 80.4623C745.475 82.2857 737.196 129.18 727.258 185.472L727.255 185.487L726.637 188.986C716.585 246.827 707.49 297.367 706.692 301.376C696.321 347.19 666.643 375.109 614.945 387.565C600.585 391.001 596.596 391.287 568.832 391.43C535.803 391.43 524.475 389.856 504.53 382.697C476.287 372.675 457.619 354.779 450.758 331.155C449.481 326.717 448.364 321.42 448.364 319.702V316.409H530.697L533.57 322.135C538.995 333.16 551.44 338.457 572.023 338.457C594.841 338.457 609.042 331.298 618.136 315.12C622.923 306.816 624.678 300.517 628.827 277.036C632.656 254.988 632.656 254.845 628.029 254.845C625.157 254.845 622.764 256.993 617.658 264.008C598.032 291.21 566.599 302.521 529.421 295.649C488.414 288.061 463.363 258.711 459.693 213.612C456.023 167.654 470.862 127.136 501.657 99.3609C512.029 90.0547 517.294 86.6186 528.145 81.894C552.078 71.5856 578.246 69.5813 600.585 76.1671C621.009 82.1803 638.241 97.2133 644.145 113.964ZM546.813 171.09C552.078 155.627 566.598 141.596 582.235 137.015C586.224 135.726 593.564 134.724 598.51 134.724C624.519 134.438 641.911 149.041 644.145 173.094C646.538 198.865 632.656 223.204 610.318 232.081C599.308 236.519 579.842 236.662 569.63 232.367C560.535 228.644 553.355 222.202 548.568 213.611C545.377 207.885 544.898 204.592 544.898 191.849C544.898 183.545 545.855 174.239 546.813 171.09Z"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M936.619 113.535C939.172 120.121 940.129 120.98 944.437 121.409C947.15 121.696 949.384 121.409 949.384 120.693C949.384 118.975 955.606 84.3279 956.564 80.4623L957.361 77.3125H998.049C1022.14 77.3125 1038.74 77.8852 1038.74 78.6011C1038.74 83.612 999.805 300.803 997.252 309.966C981.934 364.944 930.077 394.294 852.849 391.86C824.448 390.858 808.013 387.565 788.866 379.261C762.06 367.521 746.423 348.622 741.317 321.706L740.2 316.409H823.331L825.086 320.417C827.16 325.142 833.862 331.728 839.447 334.448C846.946 337.884 863.859 339.459 875.347 337.884C902.154 334.019 913.004 321.276 919.865 285.913L920.913 280.423C924.752 260.328 925.594 255.922 923.993 255.023C923.544 254.771 922.904 254.794 922.084 254.823C921.792 254.834 921.478 254.845 921.141 254.845C917.471 254.845 915.876 256.277 911.887 262.29C909.334 266.299 903.111 273.171 898.165 277.609C861.785 310.539 794.61 301.805 767.485 260.715C749.454 233.369 746.582 189.416 760.464 150.044C770.198 122.555 788.547 99.7904 812.64 85.7596C833.383 73.5901 864.816 69.1518 889.548 74.7354C910.451 79.46 929.439 95.0658 936.619 113.535ZM853.807 149.614C830.99 171.805 830.83 211.607 853.169 227.213C862.423 233.655 869.125 235.517 882.368 235.517C902.632 235.373 918.908 226.64 928.321 210.891C934.863 199.724 936.778 192.565 936.778 178.821C936.778 163.358 933.427 154.482 924.013 146.035C912.206 135.44 893.697 131.717 876.784 136.585C866.412 139.592 860.987 142.598 853.807 149.614Z"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M1352.75 76.883C1402.69 89.7684 1431.42 126.563 1431.26 177.246C1431.1 184.977 1430.3 194.999 1429.18 199.724L1427.11 208.314L1341.26 208.744L1255.26 209.03L1256.38 218.05C1257.65 228.931 1263.72 240.814 1270.74 245.539C1288.61 257.708 1324.99 254.272 1336.64 239.239L1341.1 233.512L1381.47 233.369C1406.52 233.369 1421.68 233.942 1421.68 234.801C1421.68 235.517 1419.93 240.385 1417.85 245.396C1401.1 285.197 1356.26 309.107 1298.34 309.25C1233.4 309.25 1190.32 279.327 1179.15 226.211C1176.92 215.759 1176.92 188.7 1179.31 176.53C1187.13 133.579 1212.82 101.508 1253.03 84.3279C1278.56 73.4469 1301.53 70.5835 1336 73.8764C1340.47 74.3059 1348.12 75.5944 1352.75 76.883ZM1263.08 161.354C1269.14 143.601 1284.14 129.999 1301.53 125.991C1311.59 123.843 1325.79 125.561 1333.92 129.999C1342.38 134.581 1349.08 145.319 1350.68 157.059L1351.79 164.647H1261.96L1263.08 161.354Z"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M345.927 75.3081C409.751 87.0481 448.364 137.301 440.706 199.008C439.588 207.598 437.195 219.052 435.44 224.349C420.441 267.873 379.594 299.944 328.854 307.818C314.653 310.109 285.134 309.823 271.731 307.246C222.746 298.083 187.962 267.587 177.91 224.922C174.878 211.894 174.878 185.407 177.75 171.519C188.281 121.982 231.043 83.7552 286.411 74.5923C299.814 72.4447 332.364 72.731 345.927 75.3081ZM297.42 137.158C281.624 142.169 269.976 153.766 262.955 171.376C258.328 182.973 257.211 207.026 260.721 217.907C266.944 237.092 281.305 247.686 301.409 247.686C315.929 247.686 325.503 244.393 335.555 236.232C350.873 223.777 358.053 207.026 357.894 184.691C357.894 161.64 350.714 147.323 335.715 139.449C325.982 134.295 309.387 133.292 297.42 137.158Z"/></symbol></svg>
+<script>
+"use strict";
+const $ = (s,el=document)=>el.querySelector(s);
+const $$ = (s,el=document)=>[...el.querySelectorAll(s)];
+const fmt = n=>Math.round(n).toLocaleString("en-US");
+const fmtR = n=>{n=Math.round(n);if(n<1000)return fmt(n);const m=Math.pow(10,Math.floor(Math.log10(n))-1);return "about "+fmt(Math.round(n/m)*m)};
+const RM = n=>"RM"+fmt(n);
+const REDUCED = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const store = {get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const BADGE = {v:'<span class="badge v"><i></i>Verified</span>',ill:'<span class="badge ill"><i></i>Illustrative model</span>',mock:'<span class="badge mock"><i></i>Mockup</span>'};
+const TYPE = {interactive:"Interactive",viz:"Visualization",mock:"Mockup"};
+function keepFocus(root,fn){const a=document.activeElement;let key=null;
+  if(a&&root&&root.contains(a)&&a.dataset){for(const k of ["k","m","i","p"])if(a.dataset[k]!=null){key=`[data-${k}="${a.dataset[k]}"]`;break}}
+  fn();if(key){const el=$(key,root);if(el)el.focus()}}
+function pctLR(arr){const raw=arr.map(x=>x*100),fl=raw.map(Math.floor);let left=100-fl.reduce((a,b)=>a+b,0);
+  raw.map((x,i)=>[x-fl[i],i]).sort((a,b)=>b[0]-a[0]).forEach(([,i])=>{if(left>0){fl[i]++;left--}});return fl}
+const ownCls=o=>({iWisers:"own iw",Joint:"own jt"}[o]||"own");
+const STAR_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.5L12 17.3l-5.9 3.2 1.3-6.5L2.5 9.4l6.6-.8z"/></svg>';
+
+/* segmented control: exactly one pressed button per group */
+const seg=(id,fn)=>$(id).addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;$$("button",$(id)).forEach(x=>x.setAttribute("aria-pressed",x===b));fn(b)});
+
+
+
+/* Slides are stacked in one stage, so real IntersectionObserver would see
+   every slide as on screen. This stand-in reports an element as visible
+   only while its slide is the current one, so the lab code runs unchanged. */
+const IOS=[];let PRINTING=false;
+window.IntersectionObserver=class{
+  constructor(cb){this.cb=cb;this.els=new Map();IOS.push(this)}
+  observe(el){this.els.set(el,null);setTimeout(()=>this.ping(),0)}
+  unobserve(el){this.els.delete(el)}
+  disconnect(){this.els.clear()}
+  ping(){const es=[];this.els.forEach((last,el)=>{const s=el.closest(".slide"),on=PRINTING||!!(s&&s.classList.contains("on"));if(on!==last){this.els.set(el,on);es.push({target:el,isIntersecting:on})}});if(es.length)this.cb(es,this)}
+};
+const pingIO=()=>IOS.forEach(o=>o.ping());
+
+const BODY = {};   // id -> {title html, kicker, body html, src}
+/* =========================================================================
+   05 PLATFORM JOBS
+   ========================================================================= */
+BODY.jobs = {
+  title:'Every platform gets <em>one job</em>, so your ads stop competing with each other.',
+  kicker:'From June to September 2025, UNITAR\'s cost per enquiry fell 47% year on year after Toggle rebuilt the account and gave each platform one job. In mid 2024 it paid RM154 per enquiry on Google, RM291 on Meta and RM525 on TikTok. Click a platform to see its job.',
+  body:`<div class="jobs" id="jobs"></div><div class="jobpanel" id="jobPanel"></div>`,
+  src:'Source: Toggle case study, UNITAR 2026. The 47% is the account-wide figure, so the bars show the starting point only. The SEO and GEO and seeder roles are proposed.'
+};
+const JOBS=[
+  {n:"Google",j:"Catch people already searching",who:"Students and parents who typed a course name, a fee question or your brand.",m:"Enquiries and applications from search",cpl:154,o:"Toggle"},
+  {n:"Meta",j:"Persuade people still deciding",who:"People who watched, clicked or visited, plus lookalikes of enrolled students.",m:"Lead form enquiries and open day registrations",cpl:291,o:"Toggle"},
+  {n:"TikTok",j:"Reach people who have not started looking",who:"Form 5 and pre-university students months before results.",m:"Video views, profile visits and low cost enquiries",cpl:525,o:"Toggle"},
+  {n:"SEO and GEO",j:"Be the answer when a parent asks AI",who:"Parents and students asking Google, ChatGPT or Gemini to compare universities.",m:"Organic enquiries and how often AI names you",o:"Toggle"},
+  {n:"Seeders",j:"Start the conversations parents trust",who:"Parent groups, forums and school chats where families ask each other.",m:"Mentions, branded search lift and assisted enquiries",o:"iWisers"}
+];
+function initJobs(){
+  $("#jobs").innerHTML = JOBS.map((j,i)=>`<button class="job" type="button" data-i="${i}" aria-pressed="${i===0}"><span class="${ownCls(j.o)}" style="width:fit-content">${j.o}</span><span class="jn">${j.n}</span><span class="jj">${j.j}</span></button>`).join("");
+  const show=i=>{const j=JOBS[i];$$(".job").forEach(b=>b.setAttribute("aria-pressed",+b.dataset.i===i));
+    const bars = JOBS.filter(x=>x.cpl).map(x=>`<div class="cplrow"><span class="small" style="font-weight:${x===j?700:400};color:var(--ink)">${x.n}</span><span class="t"><i class="${x===j?"":"old"}" style="width:${x.cpl/525*100}%"></i></span><span class="num small" style="text-align:right">RM${x.cpl}</span></div>`).join("");
+    $("#jobPanel").innerHTML=`<div class="card"><p class="mono">Who it reaches</p><p style="margin:8px 0 18px">${j.who}</p><p class="mono">Measured on</p><p style="margin:8px 0 0">${j.m}</p></div>
+      <div class="card"><p class="mono">UNITAR cost per enquiry, mid 2024, before the change</p>${bars}<p class="small" style="margin-top:14px">After the restructure, the cost per enquiry across the account fell <b style="color:var(--accent)">47%</b>.</p></div>`};
+  $("#jobs").addEventListener("click",e=>{const b=e.target.closest(".job");if(b)show(+b.dataset.i)});
+  show(0);
+}
+
+/* =========================================================================
+   06 PROOF
+   ========================================================================= */
+BODY.proof = {
+  title:'UNITAR at full scale: <em>78,000+ leads in ten months</em>.',
+  kicker:'UNITAR International University, June 2025 to May 2026, across Google, Meta and TikTok.',
+  body:`<div class="proof">
+    <div><div class="big" data-count="78000" data-suf="+">0</div><p class="cap">leads in the ten reported months</p></div>
+    <div><div class="big" data-count="7" data-pre="RM" data-suf="m+">0</div><p class="cap">ad spend managed across Google, Meta and TikTok</p></div>
+    <div><div class="big" data-count="14958" data-suf="">0</div><p class="cap">leads in April 2026, the best month, at RM59.52 each</p></div>
+    <div><div class="big" data-count="77" data-suf="%">0</div><p class="cap">of total impressions in Malaysia\'s education and training category, June to September 2025</p><div class="sov" id="sov"></div></div>
+  </div>
+  <div class="logos"><img src="../../../assets/logos/clients/unitar-international-university.png" alt="UNITAR International University"><img src="../../../assets/logos/clients/city-university-malaysia.png" alt="City University Malaysia"><img src="../../../assets/logos/clients/ijn-university-college.png" alt="IJN University"></div>`,
+  src:'Source: UNITAR account reports, Toggle. Share of impressions: Toggle case study, UNITAR 2026.'
+};
+function initProof(){
+  /* a stroke as wide as the radius draws a solid pie wedge; dasharray sets its share */
+  $("#sov").innerHTML = `<svg viewBox="0 0 100 100" role="img" aria-label="77% of impressions"><circle cx="50" cy="50" r="25" fill="none" stroke="var(--line)" stroke-width="50"/><circle class="w" cx="50" cy="50" r="25" fill="none" stroke="var(--accent)" stroke-width="50" stroke-dasharray="0 157.08"/></svg><div class="lg"><span><i style="background:var(--accent)"></i>UNITAR</span><span><i style="background:var(--line)"></i>Every other university</span></div>`;
+  const io = new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;io.disconnect();
+    $$("[data-count]",$("#ex-proof")).forEach(el=>countUp(el,+el.dataset.count,el.dataset.suf||"",el.dataset.pre||""));
+    $("#sov .w").setAttribute("stroke-dasharray",`${.77*157.08} 157.08`);
+  }),{threshold:.35});
+  io.observe($("#ex-proof .proof"));
+}
+function countUp(el,to,suf,pre=""){
+  if(REDUCED){el.textContent=pre+fmt(to)+suf;return}
+  const t0=performance.now(),d=1400;
+  const tick=t=>{const p=Math.min(1,(t-t0)/d),e=1-Math.pow(1-p,3);el.textContent=pre+fmt(to*e)+suf;if(p<1)requestAnimationFrame(tick)};
+  requestAnimationFrame(tick);
+}
+
+/* =========================================================================
+   07 PIVOT SIMULATOR
+   ========================================================================= */
+BODY.pivot = {
+  title:'Move the budget to the programme that needs students <em>this week</em>.',
+  kicker:'Real cost per enquiry by programme from City University Malaysia, on Meta from March to July 2026. Drag the sliders and the model shows what the same total buys. Costs rise as a programme takes more money, so piling everything onto the cheapest line stops paying off.',
+  body:`<div class="pivgrid">
+    <div class="card">
+      <div class="ctrlrow"><div class="seg" id="pvPreset"><button type="button" data-v="asrun" aria-pressed="true">As it ran</button><button type="button" data-v="cheap" aria-pressed="false">Tilt to cheapest</button><button type="button" data-v="even" aria-pressed="false">Even split</button></div></div>
+      <div id="pvRows"></div>
+    </div>
+    <div>
+      <p class="mono">Same total budget</p>
+      <p class="num" style="font-size:22px;margin:6px 0 22px" id="pvTotal"></p>
+      <p class="mono">Enquiries this mix buys</p>
+      <div class="bignum" id="pvLeads">0</div>
+      <div class="delta" id="pvDelta"></div>
+      <p class="small" style="margin-top:14px" id="pvCpl"></p>
+      <div class="note" style="margin-top:22px"><b>The catch</b>The cheapest programme is rarely the one you most need to fill, so your admissions team sets a minimum budget for each programme.</div>
+    </div>
+  </div>`,
+  src:'Source: City University Malaysia, Meta lead generation, March to July 2026. Programme names are grouped. The scaling curve is an illustrative assumption.'
+};
+const PV=[{n:"Postgraduate",cpl:12.61,s:7918},{n:"Creative arts",cpl:12.76,s:8256},{n:"Early childhood",cpl:19.25,s:3965},{n:"Business",cpl:26.39,s:17420},{n:"Engineering",cpl:26.58,s:8082},{n:"Chinese-language ads",cpl:50.61,s:4757}];
+const PV_TOTAL = PV.reduce((a,b)=>a+b.s,0);
+const PV_BASE = PV.reduce((a,b)=>a+b.s/b.cpl,0);
+let pvShare = PV.map(p=>p.s/PV_TOTAL);
+function pvLeads(sh){return PV.reduce((a,p,i)=>{const s=sh[i]*PV_TOTAL;if(s<=0)return a;const eff=p.cpl*Math.pow(s/p.s,.35);return a+s/eff},0)}
+const psHtml=(PP,i)=>`${PP[i]}%<br><span style="color:var(--ink-3);font-size:11px">${RM(pvShare[i]*PV_TOTAL)}</span>`;
+function renderPivot(){
+  const PP=pctLR(pvShare);
+  $("#pvRows").innerHTML = PV.map((p,i)=>`<div class="prow"><div><div class="pn">${p.n}</div><div class="pc">RM${p.cpl.toFixed(2)} per enquiry as run</div></div>
+    <input type="range" min="0" max="100" step="1" value="${PP[i]}" data-i="${i}" aria-label="${p.n} share of budget">
+    <div class="ps">${psHtml(PP,i)}</div></div>`).join("");
+  updPivot();
+}
+function updPivot(){
+  const L=pvLeads(pvShare), d=(L/PV_BASE-1)*100;
+  $("#pvTotal").textContent = RM(PV_TOTAL)+" as run";
+  $("#pvLeads").textContent = fmt(L);
+  const el=$("#pvDelta");el.textContent=(d>=0?"+":"")+d.toFixed(1)+"% against the mix as it ran ("+fmt(PV_BASE)+")";el.className="delta "+(d>=0.05?"up":d<=-0.05?"down":"");
+  $("#pvCpl").textContent = "Blended cost per enquiry: RM"+(PV_TOTAL/L).toFixed(2);
+}
+function normShares(fixed,val){
+  pvShare[fixed]=val;const rest=pvShare.reduce((a,b,i)=>i===fixed?a:a+b,0),target=1-val;
+  pvShare=pvShare.map((s,i)=>i===fixed?s:(rest>0?s/rest*target:target/(PV.length-1)));
+}
+function initPivot(){
+  renderPivot();
+  $("#pvRows").addEventListener("input",e=>{if(e.target.type!=="range")return;normShares(+e.target.dataset.i,+e.target.value/100);const PP=pctLR(pvShare);
+    $$("#pvRows .prow").forEach((r,i)=>{if(i!==+e.target.dataset.i)$("input",r).value=PP[i];$(".ps",r).innerHTML=psHtml(PP,i)});
+    $$("#pvPreset button").forEach(x=>x.setAttribute("aria-pressed","false"));updPivot()});
+  seg("#pvPreset",b=>{
+    if(b.dataset.v==="asrun")pvShare=PV.map(p=>p.s/PV_TOTAL);
+    if(b.dataset.v==="even")pvShare=PV.map(()=>1/PV.length);
+    if(b.dataset.v==="cheap"){const w=PV.map(p=>1/Math.pow(p.cpl,1.6)),t=w.reduce((a,b)=>a+b,0);pvShare=w.map(x=>x/t)}
+    renderPivot()});
+}
+
+/* =========================================================================
+   08 INTAKE PLANNER
+   ========================================================================= */
+BODY.calendar = {
+  title:'Click your intake months and <em>the year plans itself</em>.',
+  kicker:'UNITAR runs three intake cycles a year. Toggle the intake months below. Seeding starts ten weeks ahead, search peaks around results, the open day lands three weeks before intake, and the final call closes it.',
+  body:`<div class="card"><div class="cal"><div class="calgrid" id="cal"></div></div>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:16px" class="small" id="calKey"></div></div>
+    <div class="note blue" style="margin-top:18px"><b>What our accounts show</b>The SPM results window was the cheapest month of the year for enquiries on UNITAR, so the plan front-loads budget into results week. Many April enquiries only convert in September, so the nurture lane runs all year.</div>`,
+  src:'Source: UNITAR account reports, Toggle. Cycle structure: C1 January, C2 March to May, C3 July to October.'
+};
+const MONTHS=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+let intakes = new Set([0,2,8]);
+const CAL_ROWS=[
+  {n:"Community seeding",c:"#0E8C9C",o:"iWisers",f:(m)=>[...intakes].some(i=>[(i+10)%12,(i+11)%12,(i+9)%12].includes(m))?1:0},
+  {n:"Always-on awareness",c:"#0F2A47",o:"Toggle",f:()=>.45},
+  {n:"Search and lead forms",c:"#2A6BE0",o:"Toggle",f:(m)=>m===3?1:[...intakes].some(i=>[(i+11)%12,(i+10)%12].includes(m))?.85:.35},
+  {n:"Open day",c:"#D2971E",o:"Joint",f:(m)=>[...intakes].some(i=>(i+11)%12===m)?1:0,lab:"OPEN DAY"},
+  {n:"Final call",c:"#0E1B33",o:"Toggle",f:(m)=>intakes.has(m)?1:0,lab:"INTAKE"},
+  {n:"Nurture",c:"#7FB3EE",o:"Toggle",f:()=>.6}
+];
+function renderCal(){
+  let h=`<div></div>`+MONTHS.map((m,i)=>`<button class="mh" type="button" data-m="${i}" aria-pressed="${intakes.has(i)}" aria-label="${m} intake">${m.toUpperCase()}</button>`).join("");
+  CAL_ROWS.forEach(r=>{h+=`<div class="rl"><i style="width:10px;height:10px;border-radius:3px;background:${r.c}"></i>${r.n}</div>`;
+    MONTHS.forEach((m,i)=>{const v=r.f(i);h+=`<div class="cell ${v&&r.lab?"lab":""}" style="background:${v?r.c:"var(--line-soft)"};opacity:${v?Math.max(.25,v):1};${r.c==="#D2971E"?"color:#0E1B33":""}">${v&&r.lab?r.lab:""}</div>`})});
+  $("#cal").innerHTML=h;
+  if(!intakes.size){$("#calKey").innerHTML="<span>Pick at least one intake month in the header row.</span>";$$("#cal .cell").forEach(c=>c.style.opacity=.25);return}
+  $("#calKey").innerHTML = `<span>${intakes.size} intake${intakes.size===1?"":"s"} selected: ${[...intakes].sort((a,b)=>a-b).map(i=>MONTHS[i]).join(", ")||"none"}.</span><span>Darker cells carry more budget.</span>`;
+}
+function initCal(){renderCal();$("#cal").addEventListener("click",e=>{const b=e.target.closest("button.mh");if(!b)return;const m=+b.dataset.m;intakes.has(m)?intakes.delete(m):intakes.add(m);keepFocus($("#cal"),renderCal)})}
+
+/* =========================================================================
+   09 OPEN DAY COMMAND CENTER
+   ========================================================================= */
+BODY.openday = {
+  title:'The open day is <em>a three week campaign</em>, with a Saturday in the middle.',
+  kicker:'Drag the day. Each lane lights up when it should be running, and the panel lists what the team does that day. The rules on the right come from the September 2026 open day we ran for UNITAR.',
+  body:`<div class="odgrid">
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:14px;flex-wrap:wrap">
+        <div><div class="odday num" id="odDay">T minus 21</div><div class="odphase" id="odPhase"></div></div>
+        <button class="btn ghost" id="odPlay" type="button">Play the campaign</button>
+      </div>
+      <div class="odlane odscrub"><span class="ln"></span><div><input type="range" id="odR" min="-21" max="14" value="-21" aria-label="Day relative to open day">
+      <div class="odscale"><span>3 weeks out</span><span>Open day</span><span>2 weeks after</span></div></div></div>
+      <div class="odlanes" id="odLanes"></div>
+      <div class="odnow" id="odNow" aria-live="polite"></div>
+    </div>
+    <div class="rules">
+      <p class="mono">Rules from the September open day</p>
+      <div class="rule"><b>Scale 20 to 30 percent a day.</b><p>Budgets that jump overnight reset the platform's learning. Grow the ad sets that already convert.</p></div>
+      <div class="rule"><b>One offer value everywhere.</b><p>If one ad says RM1,000 and another says RM3,000 in the same week, families trust neither.</p></div>
+      <div class="rule"><b>Spend reach money on reach goals.</b><p>A reach burst fills the feed and leaves the form empty. Sign-up promos run on lead and retargeting campaigns.</p></div>
+      <div class="rule"><b>Scarcity has to be real.</b><p>A deadline that gets extended once costs credibility with everyone who saw the first ad.</p></div>
+      <div class="rule hot"><b>TikTok's open day line cost RM58.60 per conversion.</b><p>The always-on open day campaign on TikTok was the cheapest TikTok line in the account.</p></div>
+    </div>
+  </div>`,
+  src:'Source: UNITAR September 2026 open day report, Toggle. The lanes are a proposed plan.'
+};
+const OD=[
+  {n:"Parent group answers",a:-21,b:-5,o:"iw",d:"iWisers parents answer open day questions already asked in their groups: what to ask, what to bring."},
+  {n:"Meta registration ads",a:-18,b:-1,o:"t",d:"Lead and registration ads run to warm audiences, with one offer and one deadline."},
+  {n:"TikTok always-on",a:-21,b:0,o:"t",d:"The always-on open day campaign keeps running with an end card for the date."},
+  {n:"Google countdown",a:-10,b:0,o:"t",d:"Search ads carry a countdown to the open day in the headline on brand and course keywords."},
+  {n:"WhatsApp reminders",a:-3,b:0,o:"t",d:"Registered families get a reminder with parking, the schedule and the parent briefing time."},
+  {n:"On-site capture",a:0,b:1,o:"j",d:"Every attendee is scanned in at registration, so the counsellors know who came."},
+  {n:"Counsellor call blitz",a:1,b:7,o:"j",d:"Counsellors call attendees who did not register, and enquiries who never came."},
+  {n:"Deadline retargeting",a:1,b:14,o:"t",d:"Retargeting to attendees and site visitors carries the real enrolment deadline."}
+];
+function renderOD(d){
+  $("#odDay").textContent = d===0?"Open day":d<0?`T minus ${-d}`:`T plus ${d}`;
+  $("#odPhase").textContent = d<-14?"Build the list":d<-3?"Fill the registrations":d<0?"Get them in the car":d<=1?"Run the day":d<=7?"Convert the room":"Close the deadline";
+  $("#odLanes").innerHTML = OD.map(l=>{const on=d>=l.a&&d<=l.b;const L=(l.a+21)/35*100,W=Math.max(2,Math.min((l.b-l.a)/35*100,100-L));
+    return `<div class="odlane ${on?"on":""} ${l.o==="iw"?"iw":""}"><span class="ln">${l.n}</span><span class="tr"><i style="left:${L}%;width:${W}%"></i><b style="left:${(d+21)/35*100}%"></b></span></div>`}).join("");
+  const act=OD.filter(l=>d>=l.a&&d<=l.b);
+  $("#odNow").innerHTML = act.length?act.map(l=>`<div><span class="${l.o==="iw"?"own iw":l.o==="j"?"own jt":"own"}">${l.o==="iw"?"iWisers":l.o==="j"?"Joint":"Toggle"}</span> ${l.d}</div>`).join(""):`<div>Every day in this window has at least one lane running.</div>`;
+}
+let odAnim=null;
+function initOD(){
+  const r=$("#odR");renderOD(-21);
+  r.addEventListener("input",()=>{cancelAnimationFrame(odAnim);renderOD(+r.value)});
+  $("#odPlay").addEventListener("click",()=>{cancelAnimationFrame(odAnim);if(REDUCED){r.value=14;renderOD(14);return}let d=-21,last=0;
+    const step=t=>{if(t-last>180/*ms per day*/){last=t;r.value=d;renderOD(d);d++}if(d<=14)odAnim=requestAnimationFrame(step)};odAnim=requestAnimationFrame(step)});
+}
+
+/* =========================================================================
+   10 GEO MOCKUP
+   ========================================================================= */
+BODY.geo = {
+  title:'Parents now ask AI <em>before they ask you</em>.',
+  kicker:'A mock answer from an AI assistant to the question a parent types at 11pm. Flip between before and after a GEO programme, and your university\'s name from the first slide drops into the answer.',
+  body:`<div class="mockgrid">
+    <div class="ai" aria-label="Mock AI assistant">
+      <div class="aibar"><i></i><i></i><i></i><span style="margin-left:8px">AI assistant · mockup</span></div>
+      <div class="aibody" id="aiBody"></div>
+    </div>
+    <div>
+      <div class="ctrlrow"><div class="seg" id="geoMode"><button type="button" data-v="before" aria-pressed="true">Before GEO</button><button type="button" data-v="after" aria-pressed="false">After GEO</button></div><button class="btn ghost" id="geoReplay" type="button">Replay</button></div>
+      <p class="mono">Times the university is named, across 50 parent questions</p>
+      <div class="geoscore"><span class="bignum" id="geoScore" style="font-size:96.0px">4</span><span class="num" style="font-size:18px;color:var(--ink-2)">of 50</span></div>
+      <div class="trainlist" style="margin-top:18px">
+        <div><span class="qk">01</span><p><b>Answer pages for parent questions</b><span>Fees, scholarships, safety, graduate jobs, written as plain answers the AI can quote.</span></p></div>
+        <div><span class="qk">02</span><p><b>Structured programme data</b><span>Every programme page states fees, intake months, duration and accreditation in the same format.</span></p></div>
+        <div><span class="qk">03</span><p><b>Mentions in places AI reads</b><span>Forum threads and parent discussions, which is where iWisers and GEO meet.</span></p></div>
+      </div>
+    </div>
+  </div>`,
+  src:'Mockup. Competitor names are placeholders. The 4 and 31 of 50 scores are illustrative; a real GEO audit measures them for your university before we start.'
+};
+let uni = "Your University";
+function geoAnswer(mode){
+  const u=`<span class="us">${esc(uni)}</span>`;
+  return mode==="before"
+   ?`<p style="margin:0">Here are three private universities in the Klang Valley that parents often consider for a business degree:</p><ol><li><b>University A</b>, known for its business school and industry links. <span class="cite">forum</span></li><li><b>University B</b>, with a large campus and strong scholarships. <span class="cite">news</span></li><li><b>University C</b>, popular for its twinning programmes. <span class="cite">blog</span></li></ol><p style="margin:0">Fees typically range from RM40,000 to RM90,000 for the full degree. I would suggest checking each university's site for current fees.</p>`
+   :`<p style="margin:0">Here are three private universities in the Klang Valley that parents often consider for a business degree:</p><ol><li>${u}, which publishes its full fees and a scholarship calculator, and publishes its graduate tracer study results. <span class="cite us">${esc(uni.toLowerCase().replace(/[^a-z0-9]+/g,"")||"university")}.edu.my</span> <span class="cite us">parent forum</span></li><li><b>University A</b>, known for its business school and industry links. <span class="cite">forum</span></li><li><b>University B</b>, with a large campus and strong scholarships. <span class="cite">news</span></li></ol><p style="margin:0">${u} also runs a separate briefing for parents at each open day.</p>`;
+}
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+let geoTimer;
+function renderGeo(){
+  const mode=$("#geoMode [aria-pressed=true]").dataset.v;clearTimeout(geoTimer);
+  $("#aiBody").innerHTML=`<div class="qbub">My daughter wants to do business. Which private university in KL is worth the fees, and which one helps graduates get jobs?</div><div class="abub caret" id="aiAns"></div>`;
+  const ans=$("#aiAns");ans.innerHTML=geoAnswer(mode);
+  if(!REDUCED){ans.style.opacity=0;geoTimer=setTimeout(()=>{ans.style.transition="opacity .8s";ans.style.opacity=1;setTimeout(()=>ans.classList.remove("caret"),900)},500)}else ans.classList.remove("caret");
+  countUp($("#geoScore"),mode==="before"?4:31,"");
+}
+function initGeo(){
+  seg("#geoMode",b=>{renderGeo()});
+  $("#geoReplay").addEventListener("click",renderGeo);renderGeo();
+}
+
+/* =========================================================================
+   11 PARENT GROUP THREAD
+   ========================================================================= */
+BODY.thread = {
+  title:'What a seeded reply <em>reads like</em> from the inside.',
+  kicker:'A mock thread in a generic parents group. Click the numbered pins to see the four rules iWisers seeders follow, and why each one protects the university.',
+  body:`<div class="mockgrid">
+    <div class="fb" aria-label="Mock parent group thread">
+      <div class="fbhead"><span>Parents of SPM leavers, Klang Valley · mockup</span><span>Private group</span></div>
+      <div class="post"><div class="av" style="background:#8E6BBF">NA</div><div><div class="pname">Nur Aisyah</div><div class="pmeta">2h · Petaling Jaya</div>
+        <div class="ptext">My son got his SPM results. He wants business but I am worried about the fees and whether private uni graduates get hired. Any parents with experience? Tak nak buat keputusan salah.</div>
+        <div class="react"><span>👍 46</span><span>38 comments</span></div></div></div>
+      <div class="post reply"><button class="pin" type="button" data-p="0" aria-label="Rule 1">1</button><div class="av" style="background:#0E8C9C">LK</div><div><div class="pname">Lim Kar Wai <span class="ptag">Paid partner · <span class="uni-n">Your University</span></span></div><div class="pmeta">1h</div>
+        <div class="ptext">My daughter finished the business degree at <span class="uni-n">Your University</span> last year, so I went through the same worry. <button class="pin" type="button" data-p="1" aria-label="Rule 2" style="position:static;display:inline-grid;margin:0 4px;vertical-align:middle">2</button> What helped me: ask for the full fee sheet with the payment plan, and ask how many from the last intake found jobs. <button class="pin" type="button" data-p="2" aria-label="Rule 3" style="position:static;display:inline-grid;margin:0 4px;vertical-align:middle">3</button> They have a parents' session at the open day this Saturday if you want to ask them yourself. <button class="pin" type="button" data-p="3" aria-label="Rule 4" style="position:static;display:inline-grid;margin:0 4px;vertical-align:middle">4</button></div>
+        <div class="react"><span>👍 21</span><span>Reply</span></div></div></div>
+      <div class="post reply"><div class="av" style="background:#C2703D">RS</div><div><div class="pname">Ravi S.</div><div class="pmeta">40m</div>
+        <div class="ptext">Agree on asking for the job numbers. We compared three places that way.</div></div></div>
+    </div>
+    <div><div class="pinnote" id="pinNote"></div>
+      <p class="mono" style="margin-top:24px">What if</p>
+      <div class="trainlist">
+        <div><span class="qk">01</span><p><b>A seeder is called out</b><span>The disclosure is already on the post, so there is nothing hidden to expose. iWisers replies in the thread and names the partnership again.</span></p></div>
+        <div><span class="qk">02</span><p><b>A group bans paid posts</b><span>Seeders follow each group\'s rules. In those groups they post nothing paid.</span></p></div>
+        <div><span class="qk">03</span><p><b>A competitor asks iWisers too</b><span>Exclusivity by category and intake is agreed in the contract.</span></p></div>
+        <div><span class="qk">04</span><p><b>A parent asks about their data</b><span>Listening is reported in aggregate, and no parent\'s name or post leaves the group.</span></p></div>
+      </div></div>
+  </div>`,
+  src:'Mockup. Names and the group are fictional. Paid partnerships are disclosed in the post, in line with how we describe seeding throughout this deck.'
+};
+const PINS=[
+  ["A real parent with a real story","Seeders are parents and graduates whose own experience fits the question. Nobody plays an invented persona, and seeders answer questions rather than start them."],
+  ["The partnership is disclosed on each post","The partner tag sits on the post."],
+  ["Answer the parent's worry first","The reply gives advice that helps the parent with any university. The brand earns the mention by being the example."],
+  ["Hand off to a real next step","The reply points to the parent briefing at the open day, which Toggle tracks as a registration."]
+];
+function initThread(){
+  const show=i=>{$$(".pin").forEach(p=>p.setAttribute("aria-pressed",+p.dataset.p===i));
+    $("#pinNote").innerHTML=`<p class="mono">The four rules</p>`+PINS.map((p,k)=>`<button type="button" data-p="${k}" aria-pressed="${k===i}"><span class="pk">${k+1}</span><span><b>${p[0]}</b><span>${p[1]}</span></span></button>`).join("")};
+  document.addEventListener("click",e=>{const p=e.target.closest("#ex-thread [data-p]");if(p)keepFocus($("#pinNote"),()=>show(+p.dataset.p))});
+  show(0);
+}
+
+/* =========================================================================
+   12 DASHBOARD
+   ========================================================================= */
+BODY.dash = {
+  title:'One screen the admissions team <em>opens every morning</em>.',
+  kicker:'A mockup of the live dashboard we build for university clients. The numbers tick so the slide feels live; the layout, the alert and the campus view are what we would ship.',
+  body:`<div class="dash" aria-label="Mock dashboard">
+    <div class="dtop"><span class="t"><span class="uni-n">Your University</span> · Enrolment pulse</span><span class="live"><i></i>MOCKUP · SAMPLE DATA</span></div>
+    <div class="dtiles">
+      <div class="dtile"><div class="l">Enquiries today</div><div class="v" id="dEnq">212</div><div class="d">+14% vs last Thu</div></div>
+      <div class="dtile"><div class="l">Cost per enquiry</div><div class="v" id="dCpl">RM24</div><div class="d">−6% this week</div></div>
+      <div class="dtile"><div class="l">Called within 24h</div><div class="v" id="dSla">87%</div><div class="d bad">Target 95%</div></div>
+      <div class="dtile"><div class="l">Applications MTD</div><div class="v" id="dApp">418</div><div class="d">On pace for 1,050</div></div>
+    </div>
+    <div class="dpanels">
+      <div class="dpanel"><p class="mono">Enquiries by programme, this week</p><div id="dCampus"></div></div>
+      <div class="dpanel"><p class="mono">Enquiry to application, by source</p><div id="dSrc"></div>
+        <div class="dalert"><b style="font-family:var(--mono);font-size:10px;letter-spacing:.1em">PIVOT SUGGESTED</b><br>Engineering cost per enquiry is up 18% this week while applications are flat. Move RM4,000 to Postgraduate until Friday.</div></div>
+    </div>
+  </div>`,
+  src:'Mockup with sample data. The 24 hour call target is the first-response standard we run on UNITAR.'
+};
+const D_CAMPUS=[["Business",420],["Computing",310],["Design",180],["Engineering",150],["Hospitality",90],["Foundation",260]];
+const D_SRC=[["Google search",18],["Meta lead form",9],["TikTok",5],["Referral",24],["iWisers assisted",15]];
+function initDash(){
+  const bars=(rows,max,suf)=>rows.map(r=>`<div class="dbar"><span>${r[0]}</span><span class="t"><i style="width:${r[1]/max*100}%"></i></span><span class="n">${r[1]}${suf}</span></div>`).join("");
+  const draw=()=>{$("#dCampus").innerHTML=bars(D_CAMPUS,Math.max(460,...D_CAMPUS.map(r=>r[1]))*1.05,"");$("#dSrc").innerHTML=bars(D_SRC,30,"%")};draw();
+  if(REDUCED)return;
+  let enq=212,app=418,vis=false;
+  new IntersectionObserver(es=>{vis=es[0].isIntersecting}).observe($("#ex-dash"));
+  setInterval(()=>{if(document.hidden||!vis)return;
+    if(Math.random()<.6){enq++;$("#dEnq").textContent=enq;const i=Math.floor(Math.random()*D_CAMPUS.length);D_CAMPUS[i][1]++;}
+    if(Math.random()<.12){app++;$("#dApp").textContent=fmt(app)}
+    $("#dCpl").textContent="RM"+(23+Math.round(Math.random()*2));draw()},1600);
+}
+
+/* =========================================================================
+   13 LOOP
+   ========================================================================= */
+BODY.loop = {
+  title:'When enrolments flow back, the ad platforms <em>learn who becomes a student</em>.',
+  kicker:'Press play, or drag the weeks. Each day the CRM tells Google and Meta which enquiries booked a counsellor call and which ones enrolled. The platforms stop buying the cheapest form fills and start finding people who look like students.',
+  body:`<div class="lpctl">
+    <button class="btn solid" id="lpPlay" type="button">Play 12 weeks</button>
+    <div class="ctrl"><label class="mono" for="lpWk">Weeks since enrolment data started flowing back</label><input type="range" id="lpWk" min="0" max="12" step="1" value="0"></div>
+    <div class="lpwk num" aria-live="polite"><small>Now at</small><span id="lpWkOut">Week 0</span></div>
+  </div>
+  <div class="lpgrid">
+    <div class="lpstage">
+      <div class="lpscroll"><svg class="lpsvg" id="lpSvg" viewBox="0 0 640 330" role="img" aria-label="Out of every 100 enquiries, how many book a counsellor call and enrol, and what flows back to the ad platforms"></svg></div>
+      <p class="braidhint" style="color:#9FB3CC">Swipe to see the full loop</p><div class="lplog"><div class="hd"><span>Today's CRM updates</span><span id="lpLogSt">Kept inside the CRM</span></div><div id="lpLog"></div></div>
+      <p class="lpfine">Only the status leaves the CRM, hashed, and only for people who agreed on the form.</p>
+    </div>
+    <div class="lpside">
+      <div class="kpis" aria-live="polite">
+        <div><div class="v num" id="lpCpe">RM24</div><div class="l">Cost per enquiry</div><div class="d" id="lpCpeD">Week 0 baseline</div></div>
+        <div><div class="v num" id="lpCps">RM457</div><div class="l">Cost per enrolled student</div><div class="d" id="lpCpsD">Week 0 baseline</div></div>
+        <div><div class="v num" id="lpFit">22%</div><div class="l">Enquiries that fit</div><div class="d" id="lpFitD">Week 0 baseline</div></div>
+      </div>
+      <div class="card"><p class="mono">Change since week 0</p><svg class="lpchart" id="lpChart" viewBox="0 0 360 180" role="img" aria-label="Cost per enquiry rises slightly while cost per enrolled student falls"></svg>
+        <p class="small" id="lpTxt" style="margin-top:8px"></p></div>
+      <div class="note blue"><b>Where UNITAR is today</b>For UNITAR we send conversion signals to Meta through the Conversions API. Feeding counsellor and enrolment status back from the CRM is the next step, and for a new client we build it in from the first month.</div>
+    </div>
+  </div>`,
+  src:'Conversions API on UNITAR: Toggle case study, UNITAR 2026. The full CRM loop and every number in this exhibit are an illustrative model on RM10,000 a month of spend: the share of enquiries that fit grows from 22% to about 45%, fits book a call 70% of the time and enrol 30% of the time after a call.'
+};
+/* illustrative model: learning L climbs toward 1 as weeks of signal accumulate */
+const lpModel=w=>{const L=1-Math.exp(-w/3.5),fit=.22+.23*L,enq=420-70*L,enr=fit*.21+(1-fit)*.0075;
+  return {L,fit,enq,cpe:10000/enq,cps:10000/(enq*enr),fitN:Math.round(fit*100),callF:Math.round(fit*70),callU:Math.round((1-fit)*15),enrF:Math.round(fit*21),enrU:Math.round((1-fit)*.75)}};
+const LP0=lpModel(0);
+const LP_EV=[["Enrolled","e"],["Call booked","c"],["Not a fit","n"],["Call booked","c"],["Enrolled","e"],["Applied","c"],["Not a fit","n"],["Call booked","c"]];
+let lpLast=-1;
+function lpWaffle(x,y,cells){return cells.map((c,i)=>`<circle cx="${x+(i%10)*11+5}" cy="${y+Math.floor(i/10)*11+5}" r="4" fill="${c}"/>`).join("")}
+function renderLoop(w){
+  const m=lpModel(w),on=w>0,AQ="#8CE0EC",DIM="rgba(255,255,255,.26)",EMP="rgba(255,255,255,.06)";
+  const enqC=Array.from({length:100},(_,i)=>i<m.fitN?AQ:DIM);
+  const callC=Array.from({length:100},(_,i)=>i<m.callF?AQ:i<m.callF+m.callU?DIM:EMP);
+  const enrC=Array.from({length:100},(_,i)=>i<m.enrF?AQ:i<m.enrF+m.enrU?DIM:EMP);
+  const cols=[[170,"ENQUIRIES",100,enqC],[315,"COUNSELLOR CALLS",m.callF+m.callU,callC],[460,"ENROLLED",m.enrF+m.enrU,enrC]];
+  const ret="M515,200 C515,300 80,300 80,200";
+  $("#lpSvg").innerHTML=`<defs><marker id="lpah" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="${on?AQ:"#4E6585"}"/></marker></defs>
+    <rect x="16" y="52" width="128" height="148" rx="14" fill="rgba(255,255,255,.05)" stroke="${on?"rgba(140,224,236,.55)":"rgba(255,255,255,.16)"}" stroke-width="1.5"/>
+    <text x="80" y="76" text-anchor="middle" class="lb">AD PLATFORMS</text>
+    <rect x="30" y="88" width="48" height="24" rx="12" fill="rgba(255,255,255,.1)"/><text x="54" y="104" text-anchor="middle" style="font-size:11.5px;font-weight:600">Google</text>
+    <rect x="84" y="88" width="46" height="24" rx="12" fill="rgba(255,255,255,.1)"/><text x="107" y="104" text-anchor="middle" style="font-size:11.5px;font-weight:600">Meta</text>
+    <text x="80" y="134" text-anchor="middle" class="lb">BIDDING CHASES</text>
+    <text x="80" y="156" text-anchor="middle" style="font-family:var(--serif);font-size:20px;fill:${m.L>.5?AQ:"#E8F0F9"}">${m.L>.5?"Students":"Form fills"}</text>
+    <rect x="30" y="172" width="100" height="6" rx="3" fill="rgba(255,255,255,.1)"/><rect class="mt" x="30" y="172" width="${(m.L*100).toFixed(1)}" height="6" rx="3" fill="${AQ}"/>
+    <text x="80" y="192" text-anchor="middle" class="lb">LEARNING ${Math.round(m.L*100)}%</text>
+    ${[[144,170],[280,315],[425,460]].map(([a,b])=>`<path d="M${a+4},126 L${b-8},126" stroke="#4E6585" stroke-width="2" marker-end="url(#lpah)"/>`).join("")}
+    ${cols.map(([x,l,n,c])=>`<text x="${x}" y="40" class="lb">${l}</text><text x="${x}" y="70" class="ct num">${n}</text>${lpWaffle(x,82,c)}`).join("")}
+    <path d="${ret}" fill="none" stroke="${on?"rgba(140,224,236,.25)":"rgba(255,255,255,.16)"}" stroke-width="2" ${on?"":'stroke-dasharray="4 6"'} marker-end="url(#lpah)"/>
+    ${on?`<path class="${REDUCED?"":"lpflow"}" d="${ret}" fill="none" stroke="${AQ}" stroke-width="7" stroke-linecap="round" stroke-dasharray="0 22"/>`:""}
+    <rect x="${on?192:212}" y="262" width="${on?216:176}" height="30" rx="15" fill="${on?"#8CE0EC":"#0F2A47"}" stroke="${on?"#8CE0EC":"rgba(255,255,255,.2)"}"/>
+    <text x="300" y="282" text-anchor="middle" style="font-size:12.5px;font-weight:600;fill:${on?"#0F2A47":"#9FB3CC"}">${on?"Enrolments flow back each day":"Nothing flows back"}</text>
+    <text x="600" y="314" text-anchor="end" class="lb">EACH DOT IS ONE ENQUIRY · BRIGHT DOTS FIT</text>`;
+  $("#lpWkOut").textContent="Week "+w;
+  $("#lpCpe").textContent="RM"+Math.round(m.cpe);$("#lpCps").textContent="RM"+Math.round(m.cps);$("#lpFit").textContent=Math.round(m.fit*100)+"%";
+  const dl=(el,a,b,goodDown)=>{const p=Math.round((a/b-1)*100);el.textContent=w?(p>0?"+":p<0?"−":"")+Math.abs(p)+"% vs week 0":"Week 0 baseline";el.className="d"+(w&&p?((p>0)===goodDown?" up":" dn"):"")};
+  dl($("#lpCpeD"),m.cpe,LP0.cpe,true);dl($("#lpCpsD"),m.cps,LP0.cps,true);dl($("#lpFitD"),m.fit,LP0.fit,false);
+  /* change chart: both lines indexed to week 0 = 100 */
+  const X=v=>30+v*25,Y=v=>150-(v-50)/80*130,pts=k=>Array.from({length:13},(_,i)=>{const q=lpModel(i);return [X(i),Y(q[k]/LP0[k]*100)]});
+  const line=(p,n)=>p.slice(0,n+1).map((q,i)=>(i?"L":"M")+q[0].toFixed(1)+","+q[1].toFixed(1)).join(" ");
+  const pe=pts("cpe"),ps=pts("cps");
+  $("#lpChart").innerHTML=`<line x1="30" x2="330" y1="${Y(100)}" y2="${Y(100)}" stroke="#D5E2F0" stroke-dasharray="3 4"/>
+    <text x="330" y="${Y(100)+14}" text-anchor="end">Week 0 level</text>
+    <text x="30" y="174">Week 0</text><text x="330" y="174" text-anchor="end">Week 12</text>
+    <path d="${line(pe,12)}" fill="none" stroke="#8794AC" stroke-width="2" opacity=".22"/><path d="${line(ps,12)}" fill="none" stroke="#2A6BE0" stroke-width="2.5" opacity=".18"/>
+    <path d="${line(pe,w)}" fill="none" stroke="#8794AC" stroke-width="2"/><path d="${line(ps,w)}" fill="none" stroke="#2A6BE0" stroke-width="3"/>
+    <line x1="${X(w)}" x2="${X(w)}" y1="14" y2="158" stroke="#0E1B33" stroke-width="1" opacity=".25"/>
+    <circle cx="${pe[w][0]}" cy="${pe[w][1]}" r="4.5" fill="#8794AC"/><circle cx="${ps[w][0]}" cy="${ps[w][1]}" r="5.5" fill="#2A6BE0"/>
+    <text x="${Math.min(X(w)+8,250)}" y="${pe[w][1]-9}" style="fill:#4A5A75">Per enquiry</text>
+    <text x="${Math.min(X(w)+8,250)}" y="${ps[w][1]+17}" style="fill:#2A6BE0;font-weight:700">Per student</text>`;
+  const pE=Math.round((m.cpe/LP0.cpe-1)*100),pS=Math.round((1-m.cps/LP0.cps)*100);
+  $("#lpTxt").textContent=w?`Cost per enquiry is up ${pE}%, because the platforms now chase harder-to-reach people. Cost per enrolled student is down ${pS}%. That second number is the one a university pays for.`:"Without the signal, the cheapest form fills win the budget, including people who were never going to enrol. Cost per enquiry can look good while cost per student climbs.";
+  /* event log: four rows, new rows animate in when the week changes */
+  const rows=[0,1,2,3].map(i=>{const k=(w*3+i)%LP_EV.length,id=((w+1)*7919+i*104729).toString(16).slice(-4),t=`${String(9+Math.floor((i*13+w*7)/60)).padStart(2,"0")}:${String((i*13+w*7)%60).padStart(2,"0")}`;
+    return `<div class="lprow${w!==lpLast?" nw":""}"><span>${t}</span><span>#${id}</span><span class="st ${LP_EV[k][1]}">${LP_EV[k][0]}</span><span class="to${on?" ok":""}">${on?"Sent to Google, Meta ✓":"Not sent"}</span></div>`});
+  $("#lpLog").innerHTML=rows.join("");$("#lpLogSt").textContent=on?"Sent daily, hashed":"Kept inside the CRM";
+  lpLast=w;
+}
+let lpAnim=null;
+function initLoop(){
+  const r=$("#lpWk"),btn=$("#lpPlay"),stop=()=>{clearInterval(lpAnim);lpAnim=null;btn.textContent="Play 12 weeks"};
+  renderLoop(0);
+  r.addEventListener("input",()=>{stop();renderLoop(+r.value)});
+  btn.addEventListener("click",()=>{if(lpAnim){stop();return}
+    if(REDUCED){r.value=12;renderLoop(12);return}
+    let w=+r.value>=12?0:+r.value;r.value=w;renderLoop(w);btn.textContent="Pause";
+    lpAnim=setInterval(()=>{w++;r.value=w;renderLoop(w);if(w>=12)stop()},650)});
+}
+
+/* =========================================================================
+   14 NURTURE
+   ========================================================================= */
+BODY.nurture = {
+  title:'A student track and a <em>parent track</em>, on the app both of them already use.',
+  kicker:'Pick a track and step through the days. The parent track answers money and safety. The student track answers what life on campus looks like.',
+  body:`<div class="mockgrid">
+    <div class="phone" aria-label="Mock WhatsApp nurture sequence"><div class="screen">
+      <div class="wahead"><div class="av">AD</div><div><b><span class="uni-n">Your University</span> Admissions</b><span>Business account · mockup</span></div></div>
+      <div class="wabody" id="waBody"></div></div></div>
+    <div>
+      <div class="ctrlrow"><div class="seg" id="waTrack"><button type="button" data-v="student" aria-pressed="false">Student track</button><button type="button" data-v="parent" aria-pressed="true">Parent track</button></div></div>
+      <div class="daysteps" id="waDays"></div>
+      <div class="note" style="margin-top:16px"><b>Rules</b>Messages go only to people who opted in, using approved templates. Every message carries a way to stop.</div>
+    </div>
+  </div>`,
+  src:'Mockup. Messages go only to people who opted in, using approved templates, under PDPA.'
+};
+const WA={
+  parent:[["Day 0","Thanks for your enquiry. Here is the full fee sheet for the business degree, with the payment plan on page 2.","Open the fee sheet"],
+          ["Day 1","Most parents ask us about scholarships first. This two minute check shows what your child qualifies for.","Check scholarships"],
+          ["Day 3","Graduates from last year's business intake: where they work now, from the Graduate Tracer Study.","See graduate outcomes"],
+          ["Day 7","Our open day is this Saturday. There is a 30 minute briefing for parents only at 10am, covering fees, safety and accommodation.","Save my seat"],
+          ["Day 14","Your counsellor, Farah, can call you and your child together this week. Pick a time that suits both of you.","Book a call"]],
+  student:[["Day 0","Hey! Here is what your first week in the business degree looks like, timetable included.","See week one"],
+          ["Day 1","Three students from your course filmed a day on campus. The video runs 90 seconds, with no brochure voice.","Watch"],
+          ["Day 3","Not sure about your results? Send them here and we will tell you which entry routes are open.","Check my routes"],
+          ["Day 7","Open day is Saturday. Bring a friend and sit in on a real lecture at 11am.","Register"],
+          ["Day 14","Applications for the September intake close on the 30th. It takes about 10 minutes.","Apply now"]]
+};
+let waTrack="parent",waDay=0;
+function renderWA(){
+  const msgs=WA[waTrack];
+  $("#waDays").innerHTML=msgs.map((m,i)=>`<button type="button" data-i="${i}" aria-pressed="${i===waDay}"><span class="dk">${m[0].toUpperCase()}</span><span class="dt">${m[1]}</span></button>`).join("");
+  $("#waBody").innerHTML=msgs.slice(0,waDay+1).map((m,i)=>`<span class="waday">${m[0]}</span>${i===0?`<div class="wamsg me">Hi, I want to know more about the business degree.<div class="tm">9:41</div></div>`:""}<div class="wamsg">${m[1].replace(/<[^>]*>/g,"")}<span class="wabtn">${m[2]}</span><div class="tm">${i===0?"9:42":(9+i)+":"+String(10+i*7).padStart(2,"0")}</div></div>`).join("");
+  const b=$("#waBody");b.scrollTop=b.scrollHeight;
+}
+function initWA(){
+  renderWA();
+  seg("#waTrack",b=>{waTrack=b.dataset.v;waDay=0;renderWA()});
+  $("#waDays").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;waDay=+b.dataset.i;keepFocus($("#waDays"),renderWA)});
+}
+
+/* =========================================================================
+   15 LADDER
+   ========================================================================= */
+BODY.ladder = {
+  title:'By the fourth quarter, <em>the campus team makes most of its own content</em>.',
+  kicker:'Each quarter adds one training and hands one more kind of content back to the campus. The bars show a target share of content made in house. Press play, or pick a quarter.',
+  body:`<div class="mockgrid">
+    <div class="card">
+      <div class="ladtop">
+        <div><p class="mono" id="ladLbl">Made by the campus team in Q1</p><p class="ladbig num" id="ladBig" aria-live="polite">15%</p></div>
+        <div class="ladmini"><div><div class="v num" id="ladPosts">24</div><div class="l">Posts a month</div></div><div><div class="v num" id="ladStaff">8</div><div class="l">Staff trained</div></div></div>
+      </div>
+      <div class="ladder" id="ladder"></div>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:16px" class="small"><span class="sw"><i style="background:var(--accent)"></i>Made by the campus team</span><span class="sw"><i style="background:repeating-linear-gradient(135deg,var(--accent-wash) 0 3px,#fff 3px 5px);box-shadow:inset 0 0 0 1px var(--sky)"></i>Target still ahead</span><span class="sw"><i style="background:var(--line-soft);box-shadow:inset 0 0 0 1px var(--line)"></i>Made by the agency</span></div>
+    </div>
+    <div>
+      <div class="ladctl"><button class="btn solid" id="ladPlay" type="button">Play the year</button><span class="small">Click any quarter to jump to it.</span></div>
+      <div class="lsteps" id="ladSteps"></div>
+      <div class="note" style="margin-top:14px"><b>Every quarter</b>A half-day funnel optimization session with marketing and admissions to review each stage and reset targets.</div>
+    </div>
+  </div>`,
+  src:'The trainings are proposed scope. The in-house percentages, posts a month and staff trained are an illustrative target.'
+};
+const LADQ=[
+  {p:15,posts:24,staff:8,t:"AI competency training",d:"Every marketing and admissions staff member learns to brief, draft and check with AI tools.",h:"Captions and first drafts"},
+  {p:35,posts:30,staff:16,t:"Campus content training",d:"Phone filming, hooks and editing for the people who see student life every day.",h:"Stories, short videos and event coverage"},
+  {p:55,posts:38,staff:22,t:"GEO training",d:"The web team learns to write pages that AI assistants quote.",h:"Course pages and FAQ answers"},
+  {p:70,posts:46,staff:28,t:"Planning handover",d:"The campus team plans the monthly calendar. We review it and keep running paid media.",h:"The monthly content calendar"}];
+let ladQ=0,ladTimer=null;
+function tween(el,from,to,suf){if(REDUCED||from===to){el.textContent=to+suf;return}
+  const t0=performance.now(),d=700,tick=t=>{const p=Math.min(1,(t-t0)/d),e=1-Math.pow(1-p,3);el.textContent=Math.round(from+(to-from)*e)+suf;if(p<1)requestAnimationFrame(tick)};requestAnimationFrame(tick)}
+function setLadder(q){
+  const prev=LADQ[ladQ],cur=LADQ[q];ladQ=q;
+  $$("#ladder .rung").forEach((b,i)=>{b.classList.toggle("fut",i>q);b.setAttribute("aria-pressed",i===q)});
+  $$("#ladSteps .lstep").forEach((b,i)=>{b.className="lstep"+(i<q?" done":i>q?" next":"");b.setAttribute("aria-pressed",i===q)});
+  $("#ladLbl").textContent=`Made by the campus team in Q${q+1}`;
+  tween($("#ladBig"),prev.p,cur.p,"%");tween($("#ladPosts"),prev.posts,cur.posts,"");tween($("#ladStaff"),prev.staff,cur.staff,"");
+}
+function initLadder(){
+  $("#ladder").innerHTML=LADQ.map((x,i)=>`<button type="button" class="rung fut" data-q="${i}" aria-label="Q${i+1}: ${x.p}% made in house"><span class="pct num">${x.p}%</span><span class="stack"><span class="f" style="flex-grow:0" data-g="${x.p}"></span><span class="r" style="flex-grow:100" data-r="${100-x.p}"></span></span><span class="q">Q${i+1}</span></button>`).join("");
+  $("#ladSteps").innerHTML=LADQ.map((x,i)=>`<button type="button" class="lstep next" data-q="${i}"><span class="qk">Q${i+1}</span><span><b>${x.t}</b><span class="ds">${x.d}</span><span class="hand"><i>Campus now makes</i>${x.h}</span></span></button>`).join("");
+  const grow=()=>$$("#ladder [data-g]").forEach(g=>{g.style.flexGrow=g.dataset.g;g.nextElementSibling.style.flexGrow=g.nextElementSibling.dataset.r});
+  const btn=$("#ladPlay"),stop=()=>{clearInterval(ladTimer);ladTimer=null;btn.textContent="Play the year"};
+  const play=()=>{stop();if(REDUCED){setLadder(3);return}let q=0;setLadder(0);btn.textContent="Pause";
+    ladTimer=setInterval(()=>{q++;setLadder(q);if(q>=3)stop()},1500)};
+  const pick=e=>{const b=e.target.closest("[data-q]");if(!b)return;stop();setLadder(+b.dataset.q)};
+  $("#ladder").addEventListener("click",pick);$("#ladSteps").addEventListener("click",pick);
+  btn.addEventListener("click",()=>ladTimer?stop():play());
+  setLadder(0);
+  const io=new IntersectionObserver(es=>{if(!es[0].isIntersecting)return;io.disconnect();grow();setTimeout(play,REDUCED?0:500)},{threshold:.4});
+  io.observe($("#ladder"));
+  window.ladderPrint=()=>{stop();grow();setLadder(3)};
+}
+
+/* =========================================================================
+   16 SPLIT
+   ========================================================================= */
+BODY.split = {
+  title:'Two teams run one funnel, with <em>one lead at every stage</em>.',
+  kicker:'Toggle runs paid media, search, GEO, data and the follow-up. iWisers runs the seeders who carry the conversation inside parent communities. Each stage has one lead and one support.',
+  body:`<div class="split2">
+    <div class="splitrow splithead"><div class="mono">Stage</div><div style="color:var(--accent-deep)">Toggle</div><div style="color:var(--iw)">iWisers</div></div>
+    ${[["Awareness","Hears of you","TikTok, Meta and YouTube reach to students and parents, built on one message per stage.","Leads the parent side: disclosed partners answer questions parents ask in groups and school chats.","both"],
+       ["Consideration","Shortlists you","Search, retargeting and GEO, so the parent finds the same answer on Google and in AI tools.","Leads: alumni parents answer in forums and groups, disclosed as partners.","both"],
+       ["Conversion","Enquires and visits","Lead forms, open day registration, WhatsApp nurture and the counsellor handoff.","Supports: disclosed partners answer open day questions that parents raise in the groups.","tg"],
+       ["Enrolment","Applies and pays","CRM signal back to the ad platforms, the dashboard and the deadline campaign.","Supports: parents of enrolled students share their own stories, with the partnership disclosed.","tg"]].map(r=>`<div class="splitrow"><div><span class="sk"><small>${r[0]}</small>${r[1]}</span></div><div class="tg">${r[2]}</div><div class="iwc ${r[4]==="tg"?"muted":""}">${r[3]}</div></div>`).join("")}
+  </div>`,
+  src:'Role split from the Toggle and iWisers meeting notes, October 2026: iWisers brings seeder networks in parenting forums and Facebook groups, Toggle brings performance and the audit.'
+};
+
+
+
+/* =========================================================================
+   DECK CONTENT
+   ========================================================================= */
+const A="assets/ads/";
+const img=(f,alt)=>`<img src="${A}${f}.jpg" alt="${alt}" loading="eager">`;
+const vcard=(f,alt,cpl,max,ds,tag,win)=>`<div class="vc${win?" win":""}"><div class="im">${img(f,alt)}</div><div class="cpl num">RM${cpl.toFixed(2)}</div><div class="ds">${ds}</div><div class="bar"><i data-w="${cpl/max*100}"></i></div><div class="tag">${tag}</div></div>`;
+const finding=(kick,title,copy,right,cls="")=>`<section class="slide ${cls}" data-title="${kick.split(" · ")[0]}: ${title.replace(/<[^>]+>/g,"").replace(/\.$/,"")}"><div class="fs"><div class="lft"><div class="kick">${kick}</div><h2 class="sttl" style="font-size:60px">${title}</h2>${copy}</div><div>${right}</div></div></section>`;
+
+const XS={ /* section label and badge for each exhibit slide */
+  split:["Partnership","ill"],jobs:["Channels","v"],proof:["Proof at scale","v"],geo:["Search and AI","mock"],thread:["Parent communities","mock"],
+  calendar:["Intake planning","ill"],openday:["Open days","ill"],pivot:["On-demand pivots","ill"],nurture:["Lead nurturing","mock"],
+  loop:["Sales and marketing","ill"],dash:["Reporting","mock"],ladder:["Training","ill"]};
+const xslide=id=>{const b=BODY[id],[sec,bd]=XS[id];
+  return `<section class="slide ex ${id==="proof"?"white":""}" id="ex-${id}" data-id="${id}" data-title="${sec}"><header class="xh"><div><div class="kick">${id==="proof"?"The proof":"The system"} · ${sec} ${BADGE[bd]}</div><h2 class="xt">${b.title}</h2></div><p class="xk">${b.kicker}</p></header><div class="xb"><div class="fit">${b.body}</div></div>${b.src?`<p class="xs">${b.src}</p>`:`<p class="xs"></p>`}</section>`};
+
+const MDX_SRC="From our September 2026 open day proposal for a London university.";
+const EXTRA={
+turnout:`<section class="slide white mid" id="ex-turnout" data-title="Open day turnout"><div class="kick">The system · Open day turnout</div>
+  <h2 class="sttl" style="font-size:58px">A booking is one name in a form. <em>A visit needs three people to agree.</em></h2>
+  <p class="body" style="margin-top:18px;font-size:18px">An open day falls on a weekend, so a family negotiates it. In our last audit of five universities' open day messages, none of them wrote a single line to the parent giving up the day.</p>
+  <div class="who3">
+    <div class="whoc"><span class="mono">The student who booked</span><h3>Decides by picturing themselves there</h3><dl><dt>What loses them</dt><dd>They can no longer picture the day, and another university's day is easier to picture.</dd><dt>What wins them</dt><dd>Their subject, their session and their time, written down for them.</dd></dl></div>
+    <div class="whoc par"><span class="tagp">The parent</span><h3>Decides by cost and effort</h3><dl><dt>What loses them</dt><dd>Nobody has ever asked them anything or sent them anything.</dd><dt>What wins them</dt><dd>Their own reason to come, and their own thing to do while they are on campus.</dd></dl></div>
+    <div class="whoc qt"><span class="mono">The one who went quiet</span><h3>Decides by drift</h3><dl><dt>What loses them</dt><dd>A reminder that repeats the booking confirmation back at them.</dd><dt>What wins them</dt><dd>A different format, and one tap to say "I cannot make this one, book me the next."</dd></dl></div>
+  </div>
+  <div class="rule1"><span class="mono">The rule</span><p>Every message tells them exactly how their open day is going to go.</p></div>
+  <p class="xs" style="margin-bottom:0">${MDX_SRC}</p></section>`,
+fivemsg:`<section class="slide alt" id="ex-fivemsg" data-title="Open day nurture"><div class="kick">The system · Open day nurture</div>
+  <h2 class="sttl" style="font-size:58px">Five messages between the booking <em>and the morning of the open day</em>.</h2>
+  <div class="f5grid">
+    <div><div class="f5line" id="f5line"></div><div class="f5card" id="f5card" aria-live="polite"></div>
+      <p class="small" style="margin-top:14px">If two of the five could swap places without anyone noticing, we delete one of them.</p></div>
+    <div class="f5side">
+      <div class="card"><p class="mono">Judge it on show-up rate</p><div class="msr">
+        <div><b>Booked against attended, by event</b><span>One cycle</span></div>
+        <div>Opens and clicks for each message<span>Weekly</span></div>
+        <div>Attendees bringing a parent<span>One cycle</span></div>
+        <div>Attendee to application<span>One intake</span></div></div>
+        <p class="small" style="margin-top:10px">We compare each open day with the same event last cycle, using your booking list, the attendance scans and the CRM.</p></div>
+      <div class="card"><p class="mono">One test per open day</p><div class="itr">
+        <div><b>Open day 1</b>Test the timing, keep the winner</div><div><b>Open day 2</b>Test the visuals, keep the winner</div><div><b>Open day 3</b>Test the content, keep the winner</div></div></div>
+    </div>
+  </div>
+  <p class="xs" style="margin:-50px 0 58px">${MDX_SRC}</p></section>`
+};
+const F5=[
+  ["On booking","5 weeks","Make it real right away","A calendar file with the address already inside, their subject session named, and one line on what they will do that day. It replaces \"we will be in touch\".","Student","Email"],
+  ["3 weeks out","3 weeks","Ask the driver","A short note written to whoever is bringing them: parking, travel time, what there is for them during the day, and the two talks worth sitting in on.","Parent","Email",1],
+  ["2 weeks out","2 weeks","Put a face on it","Ninety seconds from the lecturer running their subject session, saying what they will do in that room.","Student","Email with video"],
+  ["1 week out","1 week","Hand over the running order","Their personal schedule: arrival, session, tour, the gap in the middle and what to do with it. The open day programme, rewritten as one person's day.","Student and parent","Email"],
+  ["Day before","1 day","Clear the last excuses","Weather, traffic, parking, which door to walk in and who to look for. Plus one tap for \"I cannot make it, book me the next one\".","Student and parent","WhatsApp"]
+];
+
+/* the work: ads fan out from the active card, like a deck spread on a table */
+/* thirty ads across three universities, dealt so no two from one client sit side by side for long */
+const ADS=[
+  ["unitar-mba-iphone","UNITAR","Master of Business Administration"],
+  ["ijn-fee-waiver-1","IJN University","RM5,000 fee waiver, November intake"],
+  ["cityu-fashion-winner","City University","Diploma in Fashion Design"],
+  ["unitar-med-ece","UNITAR","Master of Education, Early Childhood"],
+  ["ijn-nursing","IJN University","Faculty of Nursing"],
+  ["cityu-mba","City University","Master of Business Administration"],
+  ["unitar-aug-diploma-in-occupational-safety-and-health-1","UNITAR","Diploma in Occupational Safety and Health"],
+  ["ijn-openday-comment","IJN University","Open day, replying to a comment"],
+  ["unitar-teachers-day","UNITAR","Teachers' Day, Master of Education"],
+  ["cityu-business-course","City University","Which business course to choose"],
+  ["ijn-psychology","IJN University","Diploma in Psychology"],
+  ["unitar-aug-post-graduate-diploma-in-education-2","UNITAR","Postgraduate Diploma in Education"],
+  ["unitar-dbm-bm","UNITAR","Diploma Pengurusan Perniagaan"],
+  ["ijn-fee-waiver-2","IJN University","RM5,000 fee waiver, November intake"],
+  ["cityu-accounting-finance","City University","Accounting and Finance"],
+  ["unitar-med-tesl","UNITAR","Master of Education in TESL"],
+  ["ijn-unlock-future","IJN University","Open day, three fee waivers"],
+  ["unitar-aug-bachelor-of-information-technology-1","UNITAR","Bachelor of Information Technology"],
+  ["cityu-civil","City University","Diploma in Civil Engineering"],
+  ["ijn-managerial-sciences","IJN University","Faculty of Managerial Sciences"],
+  ["unitar-aug-doctor-of-education-2","UNITAR","Doctor of Education"],
+  ["unitar-asasi-pengurusan","UNITAR","Program Asasi Pengurusan"],
+  ["ijn-infection-control","IJN University","Post Basic Infection Control"],
+  ["cityu-fashion-benchmark","City University","Fashion Design, Chinese-language ad"],
+  ["unitar-aug-bachelor-of-business-management-2","UNITAR","Bachelor of Business Management"],
+  ["ijn-nov-intake","IJN University","November 2026 intake"],
+  ["unitar-aug-foundation-in-arts-2","UNITAR","Foundation in Arts"],
+  ["ijn-dhrm","IJN University","Diploma in Human Resource Management"],
+  ["unitar-aug-mba-17-1","UNITAR","Master of Business Administration"],
+  ["ijn-nurses","IJN University","Nursing and allied health"]];
+function initAds(){
+  const el=$("#adeck");let a=3,t=null;
+  el.innerHTML=ADS.map((x,i)=>`<button type="button" class="adcard" data-i="${i}" aria-label="${x[1]}: ${x[2]}"><img src="${A}${x[0]}.jpg" alt="${x[1]} ad: ${x[2]}" loading="eager"></button>`).join("");
+  /* each card takes its ad's own shape: 1:1, 4:5 or 9:16 */
+  $$(".adcard img",el).forEach(im=>{const fit=()=>{const w=Math.round(420*im.naturalWidth/im.naturalHeight),c=im.parentNode;c.style.width=w+"px";c.style.marginLeft=(-w/2)+"px";c._w=w;lay()};im.complete&&im.naturalWidth?fit():im.addEventListener("load",fit)});
+  const cards=$$(".adcard",el),C=728;
+  const W=c=>c._w||420,SC=d=>1-Math.min(d,7)*.075;
+  const lay=()=>{const wa=W(cards[a]);cards.forEach((c,i)=>{const k=i-a,d=Math.abs(k),sg=Math.sign(k);
+      /* the first neighbour tucks 70px under the active card whatever its shape; the rest step out evenly */
+      const x=C+sg*(d?wa/2+W(cards[a+sg]||c)*SC(1)/2-70+(d-1)*78:0),sc=SC(d),rot=sg*Math.min(d,4)*1.6;
+      c.style.transform=`translateX(${x}px) scale(${sc}) rotate(${rot}deg)`;c.style.zIndex=100-d;c.style.opacity=d>7?0:1;c.style.filter=d?`saturate(${1-Math.min(d,5)*.12})`:"none";
+      c.classList.toggle("on",!d);c.tabIndex=d?-1:0});
+    const x=ADS[a];$("#adN").textContent=`${String(a+1).padStart(2,"0")} / ${ADS.length}`;$("#adC").textContent=x[1];$("#adP").textContent=x[2]};
+  const set=n=>{a=(n+ADS.length)%ADS.length;lay()};
+  const stop=()=>{clearInterval(t);t=null};
+  $("#adPrev").addEventListener("click",()=>{stop();set(a-1)});$("#adNext").addEventListener("click",()=>{stop();set(a+1)});
+  el.addEventListener("click",e=>{const c=e.target.closest(".adcard");if(c&&!el._moved){stop();set(+c.dataset.i)}});
+  /* drag or swipe sideways to riffle through the deck */
+  let x0=null,a0=0;el.addEventListener("pointerdown",e=>{x0=e.clientX;a0=a;el._moved=false;el.classList.add("drag")});
+  addEventListener("pointermove",e=>{if(x0==null)return;const s=+getComputedStyle(document.documentElement).getPropertyValue("--s")||1,dx=(e.clientX-x0)/s;if(Math.abs(dx)>6){el._moved=true;stop()}const n=a0-Math.round(dx/90);if(n!==a&&n>=0&&n<ADS.length){a=n;lay()}});
+  addEventListener("pointerup",()=>{x0=null;el.classList.remove("drag");setTimeout(()=>el._moved=false,0)});
+  el.addEventListener("wheel",e=>{if(Math.abs(e.deltaX)<Math.abs(e.deltaY))return;e.preventDefault();stop();if(!el._w){el._w=1;set(a+(e.deltaX>0?1:-1));setTimeout(()=>el._w=0,180)}},{passive:false});
+  lay();
+  /* deal through the deck slowly while the slide is up */
+  new IntersectionObserver(es=>{stop();if(es[0].isIntersecting&&!REDUCED&&!PRINTING)t=setInterval(()=>set(a+1),2600)}).observe(el);
+}
+
+/* campus workshops: drop photos into assets/workshop/ and fill the numbers here */
+const WS={
+  photos:["assets/workshop/1.jpg","assets/workshop/2.jpg","assets/workshop/3.jpg"],
+  results:[["campuses","7","Campuses trained"],["videos","6 → 28","New videos a month, before and after"],["volume","+38%","Change in lead volume"],["quality","+21%","Change in leads the sales team could reach"]]  /* sample figures until the real ones are in */
+};
+
+/* lead loss tiers: sample counts for 1,000 leads, 820 of them lost */
+const LOSS=[
+  ["Lead quality",[["Invalid contact details",92],["Refused to talk when contacted",38],["Does not recall signing up",71],["Does not know the university",29],["Not looking to study",54],["Did not pick up the call",92]],"Verify phone numbers on the form, name the university on the thank-you page, and call within five minutes."],
+  ["Fit with the university",[["Looking for another programme",64],["Cannot afford the fees",58],["Lives too far from a campus",31],["Grades below the entry standard",19]],"Move budget to the programmes and states that fit, and put the fee in the ad."],
+  ["Missed opportunity",[["Cannot make a decision",61],["Enrolled elsewhere before we met",47],["No response after booking an appointment",58],["No response after first contact",79],["Unreachable after the meeting",27]],"Follow up on WhatsApp, remind before every appointment, and bring the parent in."]];
+EXTRA.tiers=`<section class="slide alt" id="ex-tiers" data-title="Why leads are lost"><div class="kick">The system · Sales and marketing sync <span class="badge mock"><i></i>Sample data</span></div>
+  <h2 class="sttl" style="font-size:50px">Three ways to read <em>the same 1,000 leads</em>.</h2>
+  <div class="tierbar"><button type="button" class="tstep" data-d="-1" aria-label="Previous tier">&#8249;</button>
+    <div class="ttrack" id="tTrack" data-t="0"><span class="tknob"></span>
+      <button type="button" data-t="0" aria-pressed="true">Bad <small>University + marketing</small></button>
+      <button type="button" data-t="1" aria-pressed="false">Okay <small>University + another agency</small></button>
+      <button type="button" data-t="2" aria-pressed="false">Best <small>University + Toggle</small></button></div>
+    <button type="button" class="tstep" data-d="1" aria-label="Next tier">&#8250;</button></div>
+  <div class="tview"><div class="tstrip" id="tStrip">
+    <div class="tlayer l0"><span class="who">Bad · University + marketing</span><h3>1,000 leads this month.</h3>
+      <p class="say">Marketing buys volume and hands it over. Nobody can say which leads became students, so next month buys the same mix again.</p>
+      <div class="vfun"><div><div class="v">1,000</div><div class="l">Leads</div></div><span class="ar">&#8594;</span><div><div class="v q">?</div><div class="l">Applications</div></div><span class="ar">&#8594;</span><div><div class="v q">?</div><div class="l">Enrolled</div></div></div></div>
+    <div class="tlayer l1"><span class="who">Okay · University + another agency</span><h3>180 good leads, <em>820 lost</em>.</h3>
+      <p class="say">The agency reports volume and a verdict: leads are good or bad, and we are winning or losing them. The report stops before the reason.</p>
+      <div class="gbar"><div data-g="18" style="flex-grow:0;background:var(--accent)"><b>180</b><span>Good leads</span></div><div data-g="82" style="flex-grow:0;background:#A7B4C8"><b>820</b><span>Lost leads</span></div></div>
+      <div class="whyq"><b>Why were 820 lost?</b><span>No answer in the report</span></div></div>
+    <div class="tlayer l2"><span class="who">Best · University + Toggle</span><h3>Every lost lead, <em>and why it was lost</em>.</h3>
+      <p class="say">Your admissions team tags each lost lead in the CRM, and we review the tags with sales every week. Each bucket has its own fix.</p>
+      <div class="bk3">${LOSS.map(([b,tags,fx])=>{const tot=tags.reduce((a,t)=>a+t[1],0);return `<div class="bk"><div class="bh"><b>${b}</b><span class="num">${tot}</span></div><ul>${tags.map(([t,n])=>`<li><span>${t}</span><span class="n">${n}</span><span class="t"><i data-w="${n/92*100}"></i></span></li>`).join("")}</ul><p class="fx"><em>What we change</em>${fx}</p></div>`}).join("")}</div></div>
+  </div></div></section>`;
+function initTiers(){
+  const tr=$("#tTrack"),st=$("#tStrip");let t=0;
+  const set=n=>{t=Math.max(0,Math.min(2,n));tr.dataset.t=t;$(".tknob",tr).style.transform=`translateX(${t*100}%)`;st.style.transform=`translateX(${-t*100/3}%)`;
+    $$("button",tr).forEach(b=>b.setAttribute("aria-pressed",+b.dataset.t===t));
+    $$(".tlayer",st).forEach((l,i)=>l.inert=i!==t);
+    $$("[data-g]",st).forEach(g=>g.style.flexGrow=t>=1?g.dataset.g:0);
+    $$(".bk [data-w]",st).forEach(i=>i.style.width=t===2?i.dataset.w+"%":"0")};
+  tr.addEventListener("click",e=>{const b=e.target.closest("button");if(b)set(+b.dataset.t)});
+  $$("#ex-tiers .tstep").forEach(b=>b.addEventListener("click",()=>set(t+ +b.dataset.d)));
+  /* swipe the layers sideways */
+  let x0=null;st.addEventListener("pointerdown",e=>{x0=e.clientX});addEventListener("pointerup",e=>{if(x0==null)return;const dx=e.clientX-x0;x0=null;if(Math.abs(dx)>60)set(t+(dx<0?1:-1))});
+  new IntersectionObserver(es=>{if(!es[0].isIntersecting)set(0)}).observe(st);
+  window.tiersPrint=()=>set(2);
+  set(0);
+}
+
+/* client ads dashboard: real account shape, sensitive figures partly hidden */
+const MD=[
+  ["Brand","English,Brand,Generic","a",27113,324,.59,"unitar-mba-iphone"],
+  ["Master of Education","English,Postgrad","a",18260,202,.58,"unitar-med-ece"],
+  ["Bachelor of Human Resource Management, online","Static,English","a",18077,137,.70,"unitar-aug-bachelor-of-human-resource-management-1"],
+  ["Diploma in Business Management","Static,Malay","a",13644,80,.95,"unitar-dbm-bm"],
+  ["Psychology, affordability angle","Static,English","a",13514,118,.56,"unitar-aug-foundation-in-arts-2"],
+  ["MBA, accredited","MBA,Neo","a",13395,91,.58,"unitar-aug-mba-17-1"],
+  ["MBA, location angle","MBA,Location","a",13124,159,.91,"unitar-aug-master-of-business-administration-2"],
+  ["New experiences","IG post","a",12239,4,4.89,"unitar-teachers-day"],
+  ["Master of Education, video","Video,English","a",11983,76,1.50,"unitar-med-tesl"],
+  ["Dream","IG post","a",8601,9,3.18,"unitar-asasi-sastera"],
+  ["Postgraduate Masters, MBA offer","Static,English","a",8413,59,1.72,"unitar-aug-master-of-business-administration-1"],
+  ["Master of Education, offer led","Static,English","a",7403,84,.83,"unitar-med-ece"],
+  ["Psychology, career focus","Static,English","p",7014,123,1.16,"unitar-aug-bachelor-of-business-management-2"],
+  ["Doctor of Education","English,Postgrad","a",3835,1,1.17,"unitar-aug-doctor-of-education-2"],
+  ["Master of Business Administration, creator","Creator,English","a",1485,51,1.95,"unitar-aug-mba-17-2"],
+  ["Foundation in Arts, creator","Creator,English","a",573,56,3.14,"unitar-aug-foundation-in-arts-1"],
+  ["Diploma in Occupational Safety and Health, creator","Creator,English","a",415,23,2.42,"unitar-aug-diploma-in-occupational-safety-and-health-1"],
+  ["Program Asasi Sastera, creator","Creator,Malay","a",295,12,2.42,"unitar-asasi-pengurusan"],
+  ["Diploma Pengurusan Perniagaan, creator","Creator,Malay","a",197,5,2.59,"unitar-dbm-bm"],
+  ["Diploma in Human Resource Management, creator","Creator,English","a",10,2,3.35,"unitar-aug-diploma-in-human-resource-management-2"]];
+/* keep the first digit, blur the rest */
+const red=t=>{const m=String(t).match(/^(\D*\d)(.*)$/);return m?`${m[1]}<span class="rd">${m[2]}</span>`:t};
+EXTRA.metadash=`<section class="slide white" id="ex-metadash" data-title="Live ads dashboard"><div class="kick">The system · Reporting <span class="badge v"><i></i>Real account, figures hidden</span></div>
+  <h2 class="sttl" style="font-size:50px">Every ad you run, <em>ranked by what it costs</em>.</h2>
+  <div class="md" id="md">
+    <div class="mdh"><div><b><span class="uni-n">Your University</span> · Meta ads performance</b><p>Every creative on Facebook and Instagram, ranked by spend. Cost per lead: green under RM60, amber RM60 to RM150, red above RM150.</p></div>
+      <div><div class="live"><i></i>Live data</div><div class="when">1 to 30 Oct 2026 · refreshes daily</div></div></div>
+    <div class="mdk"><div><div class="l">Total spend</div><div class="v">${red("RM 371,468")}</div><div class="s">256 creatives · 339 ad sets</div></div>
+      <div><div class="l">Leads</div><div class="v">${red("2,492")}</div><div class="s">Standard lead action</div></div>
+      <div><div class="l">Cost per lead</div><div class="v">${red("RM 149.06")}</div><div class="s">Blended</div></div>
+      <div><div class="l">Reach</div><div class="v">${red("5.7M")}</div><div class="s">Meta accounts</div></div>
+      <div><div class="l">Impressions</div><div class="v">${red("27.3M")}</div><div class="s">CTR 1.00%</div></div></div>
+    <div class="mdr"><div><span class="l">Daily spend and leads</span><svg id="mdSpark" viewBox="0 0 600 64" preserveAspectRatio="none"></svg></div>
+      <div><span class="l">Delivery status</span><div class="mddel"><i></i></div><div><b>198</b> active creatives · ${red("RM 250,358")}</div><div><b>58</b> paused or off · ${red("RM 121,110")}</div></div></div>
+    <div class="mdf"><div class="seg" id="mdSeg"><button type="button" data-v="all" aria-pressed="true">All</button><button type="button" data-v="a" aria-pressed="false">Active</button><button type="button" data-v="p" aria-pressed="false">Paused</button></div>
+      <input type="search" id="mdQ" placeholder="Search creatives by name, programme or tag" aria-label="Search creatives"><span class="cnt" id="mdN"></span></div>
+    <div class="mdt" id="mdT"><table><thead><tr><th>#</th><th></th><th>Creative</th><th>Status</th><th data-k="3" aria-sort="descending">Spend</th><th data-k="4">Leads</th><th data-k="7">CPL</th><th data-k="5">CTR</th></tr></thead><tbody></tbody></table></div>
+    <div class="mdpop" id="mdPop"></div>
+  </div></section>`;
+function initMD(){
+  let f="all",q="",k=3,dir=-1;
+  const rows=MD.map(x=>[...x,x[4]?x[3]/x[4]:Infinity]);
+  /* the shape of 30 days of spend and leads, with no axis values */
+  const pts=n=>Array.from({length:30},(_,i)=>{const y=32+Math.sin(i*.7+n)*9+Math.sin(i*1.9+n*2)*6;return `${(i/29*600).toFixed(1)},${y.toFixed(1)}`}).join(" ");
+  $("#mdSpark").innerHTML=`<polygon points="0,64 ${pts(0)} 600,64" fill="rgba(42,107,224,.08)"/><polyline points="${pts(0)}" fill="none" stroke="#137A3F" stroke-width="2"/><polyline points="${pts(1.3)}" fill="none" stroke="#2A6BE0" stroke-width="2"/>`;
+  const draw=()=>{const max=Math.max(...rows.map(r=>r[3]));
+    const list=rows.filter(r=>(f==="all"||r[2]===f)&&(!q||(r[0]+" "+r[1]).toLowerCase().includes(q))).sort((a,b)=>(a[k]-b[k])*dir);
+    $("#mdT tbody").innerHTML=list.map((r,i)=>{const c=r[7],cc=c<60?"g":c<=150?"m":"r";
+      return `<tr data-im="${r[6]}"><td class="rk">${i+1}</td><td class="th">${img(r[6],"")}</td><td class="nm"><b>${r[0]}</b><span class="tg">${r[1].split(",").map(t=>`<span>${t}</span>`).join("")}</span></td>
+        <td><span class="mst ${r[2]}">${r[2]==="a"?"Active":"Paused"}</span></td>
+        <td class="sp"><i style="width:${Math.max(4,r[3]/max*86)}%"></i><span>${red("RM "+fmt(r[3]))}</span></td><td>${red(String(r[4]))}</td>
+        <td class="cpl ${cc}">${isFinite(c)?red("RM "+c.toFixed(2)):"n/a"}</td><td>${r[5].toFixed(2)}%</td></tr>`}).join("");
+    $("#mdN").textContent=`${list.length} of 256 shown`};
+  seg("#mdSeg",b=>{f=b.dataset.v;draw()});
+  $("#mdQ").addEventListener("input",e=>{q=e.target.value.trim().toLowerCase();draw()});
+  $("#mdT thead").addEventListener("click",e=>{const h=e.target.closest("th[data-k]");if(!h)return;const nk=+h.dataset.k;dir=nk===k?-dir:-1;k=nk;
+    $$("#mdT th[data-k]").forEach(t=>t.removeAttribute("aria-sort"));h.setAttribute("aria-sort",dir<0?"descending":"ascending");draw()});
+  /* hover a row to preview the creative */
+  const pop=$("#mdPop"),md=$("#md");
+  $("#mdT").addEventListener("mouseover",e=>{const tr=e.target.closest("tr[data-im]");if(!tr){pop.style.opacity=0;return}
+    pop.innerHTML=img(tr.dataset.im,"");const s=+getComputedStyle(document.documentElement).getPropertyValue("--s")||1,mb=md.getBoundingClientRect(),rb=tr.getBoundingClientRect();
+    const H=md.offsetHeight,ph=pop.offsetHeight||190;pop.style.top=Math.min(H-ph-14,Math.max(14,(rb.top-mb.top)/s-60))+"px";pop.style.opacity=1});
+  $("#mdT").addEventListener("mouseleave",()=>pop.style.opacity=0);
+  md.style.position="relative";draw();
+}
+function initWorkshops(){
+  $("#wsPhotos").innerHTML=WS.photos.map((p,i)=>`<div><img src="${p}" alt="Toggle and Audaura running a creative workshop at a UNITAR campus" onload="this.parentNode.classList.add('has')" onerror="this.remove()"><span>Workshop photo ${i+1}</span></div>`).join("");
+  $$("#wsPhotos img").forEach(im=>{im.addEventListener("load",()=>{const sp=im.nextElementSibling;if(sp)sp.remove()})});
+  $("#wsRes").innerHTML=WS.results.map(([k,v,l])=>`<div><div class="v">${v==null?'<span class="tbc">Add number</span>':v}</div><div class="l">${l}</div></div>`).join("");
+  const f=$("#wsFlip");f.addEventListener("click",e=>{if(e.target.closest("[data-flip]")){f.classList.toggle("on");$$(".face",f).forEach((x,i)=>x.inert=(i===0)===f.classList.contains("on"))}});
+  $(".face.back",f).inert=true;
+  /* always open on the problem side */
+  new IntersectionObserver(es=>{if(!es[0].isIntersecting){f.classList.remove("on");$(".face.front",f).inert=false;$(".face.back",f).inert=true}}).observe(f);
+}
+function initF5(){
+  $("#f5line").innerHTML=F5.map((m,i)=>`<button type="button" class="f5n${m[6]?" par":""}" data-i="${i}" aria-pressed="${i===0}"><span class="d">${i+1}</span><span class="w">${m[0]}</span><span class="j">${m[2]}</span></button>`).join("");
+  const show=i=>{const m=F5[i];$$("#f5line .f5n").forEach(b=>b.setAttribute("aria-pressed",+b.dataset.i===i));
+    $("#f5card").innerHTML=`<span class="mono">Message ${i+1} of 5 · ${m[0]}</span><h3>${m[2]}</h3><p>${m[3]}</p><div class="to"><span class="${m[6]?"own iw":"own"}" style="${m[6]?"background:var(--amber-wash);color:#8A5A00":""}">To: ${m[4]}</span><span class="own jt">${m[5]}</span></div>`};
+  $("#f5line").addEventListener("click",e=>{const b=e.target.closest(".f5n");if(b){clearInterval(f5T);show(+b.dataset.i)}});
+  let f5T=null;show(0);
+  /* walk through the five once when the slide opens */
+  const io=new IntersectionObserver(es=>{if(!es[0].isIntersecting){clearInterval(f5T);return}let i=0;show(0);clearInterval(f5T);if(REDUCED)return;f5T=setInterval(()=>{i++;if(i>4){clearInterval(f5T);return}show(i)},2200)});
+  io.observe($("#f5line"));
+}
+const SYSTEM=["split","jobs","geo","thread","calendar","nurture","openday","turnout","fivemsg","pivot","tiers","loop","dash","metadash"];
+
+const SLIDES=[
+/* 1 cover */
+`<section class="slide cover" data-title="Cover"><div class="wavewrap" aria-hidden="true">
+    <svg viewBox="0 0 1440 620" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="wv1" x1="0" y1="0" x2=".7" y2="1"><stop offset="0" stop-color="#CFE2FA"/><stop offset="1" stop-color="#AFD3F5"/></linearGradient>
+        <linearGradient id="wv2" x1=".1" y1="0" x2=".9" y2="1"><stop offset="0" stop-color="#A9CFF3"/><stop offset="1" stop-color="#8FC9EF"/></linearGradient>
+        <linearGradient id="wv3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9AD5EE"/><stop offset="1" stop-color="#8CE0EC"/></linearGradient>
+      </defs>
+      <path fill="url(#wv1)" opacity=".72" d="M0,168 C240,86 430,214 730,176 C1010,141 1190,54 1440,110 L1440,620 L0,620 Z"><animate attributeName="d" dur="9s" repeatCount="indefinite" calcMode="spline" keyTimes="0;.33;.66;1" keySplines=".45 0 .55 1;.45 0 .55 1;.45 0 .55 1" values="M0,168 C240,86 430,214 730,176 C1010,141 1190,54 1440,110 L1440,620 L0,620 Z;M0,132 C260,190 470,96 760,140 C1030,182 1210,150 1440,82 L1440,620 L0,620 Z;M0,196 C220,120 400,160 700,210 C980,250 1170,96 1440,138 L1440,620 L0,620 Z;M0,168 C240,86 430,214 730,176 C1010,141 1190,54 1440,110 L1440,620 L0,620 Z"/></path>
+      <path fill="url(#wv2)" opacity=".74" d="M0,296 C300,224 496,362 796,314 C1074,270 1252,186 1440,244 L1440,620 L0,620 Z"><animate attributeName="d" dur="12s" repeatCount="indefinite" calcMode="spline" keyTimes="0;.33;.66;1" keySplines=".45 0 .55 1;.45 0 .55 1;.45 0 .55 1" values="M0,296 C300,224 496,362 796,314 C1074,270 1252,186 1440,244 L1440,620 L0,620 Z;M0,262 C280,330 520,250 820,282 C1100,312 1270,262 1440,208 L1440,620 L0,620 Z;M0,318 C320,262 470,318 770,352 C1050,382 1230,230 1440,276 L1440,620 L0,620 Z;M0,296 C300,224 496,362 796,314 C1074,270 1252,186 1440,244 L1440,620 L0,620 Z"/></path>
+      <path fill="url(#wv3)" opacity=".8" d="M0,438 C268,378 512,506 812,448 C1090,394 1272,340 1440,388 L1440,620 L0,620 Z"><animate attributeName="d" dur="15s" repeatCount="indefinite" calcMode="spline" keyTimes="0;.33;.66;1" keySplines=".45 0 .55 1;.45 0 .55 1;.45 0 .55 1" values="M0,438 C268,378 512,506 812,448 C1090,394 1272,340 1440,388 L1440,620 L0,620 Z;M0,410 C250,470 540,420 840,404 C1110,390 1290,430 1440,360 L1440,620 L0,620 Z;M0,462 C290,410 490,452 790,486 C1070,516 1250,372 1440,414 L1440,620 L0,620 Z;M0,438 C268,378 512,506 812,448 C1090,394 1272,340 1440,388 L1440,620 L0,620 Z"/></path>
+    </svg>
+  </div>
+  <div class="lockup"><svg viewBox="0 0 1432 392" aria-label="Toggle"><use href="#wm"/></svg><span class="x">×</span><span class="iw">iWisers</span></div>
+  <h1>Industry Focus: <em>Education</em></h1>
+  <div class="setup" style="display:none"><label for="uniName">Prepared for</label><input id="uniName" type="text" placeholder="Your University" autocomplete="off" maxlength="60"></div></section>`,
+
+/* 2 the work */
+`<section class="slide white" id="ex-work" data-title="Our top performing ads"><div class="kick">The work</div><h2 class="sttl" style="font-size:64px">Our top performing ads.</h2>
+  <div class="adeck" id="adeck" aria-roledescription="carousel" aria-label="Ads"></div>
+  <div class="adbar"><button type="button" class="adnav" id="adPrev" aria-label="Previous ad">&#8249;</button>
+    <div class="adinfo" aria-live="polite"><span class="adn num" id="adN">01 / 31</span><span class="adc" id="adC"></span><span class="adp" id="adP"></span></div>
+    <button type="button" class="adnav" id="adNext" aria-label="Next ad">&#8250;</button></div></section>`,
+
+/* 3 evidence base */
+`<section class="slide mid" data-title="The evidence base"><div class="kick">The evidence base</div><h2 class="sttl">Three accounts across <em>two and a half years</em>.</h2>
+  <table class="etab"><thead><tr><th>Account</th><th>Platforms</th><th>Spend</th><th>Leads</th><th>Period</th></tr></thead><tbody>
+  <tr><td><b>UNITAR International University</b><small>Private university, Malaysia. Multiple campuses and an online arm.</small></td><td>Google · Meta · TikTok</td><td class="n">RM7m+</td><td class="n">78,000+</td><td>Jun 2025 to May 2026</td></tr>
+  <tr><td><b>City University Malaysia</b><small>Private university, Kuala Lumpur. Four campuses, 10,000 students.</small></td><td>Meta</td><td class="n">RM57,000</td><td class="n">2,500+<small>plus 320 conversations</small></td><td>Mar to Jul 2026</td></tr>
+  <tr><td><b>IJN University</b><small>Allied health college inside Malaysia's national heart hospital, Kuala Lumpur.</small></td><td>TikTok · Meta</td><td class="n">RM59,000</td><td class="n">1,250+</td><td>Mar 2024 to Oct 2026</td></tr>
+  </tbody></table></section>`,
+
+/* 4 proof exhibit */
+"@ex:proof",
+
+/* 5 five findings */
+`<section class="slide white" data-title="Five findings"><div class="fl"><div><div class="kick">What the accounts taught us</div><h2 class="sttl" style="font-size:76px">Five findings <em>from three accounts</em>.</h2></div>
+  <div class="flist">${[
+   ["The course is not the hook","In all three tests, the losing ad led with the programme and the winner led with a person or a place.","IJN University · City University · UNITAR"],
+   ["Ask, or reach is worth nothing","Six million impressions produced 38 contactable people. Adding a lead form produced 1,106 on the same account.","UNITAR · IJN University"],
+   ["Put a number on the frame","A card carrying three fee waiver amounts beat every other static in its account.","UNITAR · IJN University"],
+   ["Write it in the language, don't translate it","Translated copy cost up to 5.9 times more than copy written in the language.","City University · UNITAR"],
+   ["Creative supply sets the cost","Cost per lead rose by a third when new creative ran out on a flat budget, and fell 29% when it returned.","IJN University"]
+  ].map((f,i)=>`<div class="fi"><span class="fn">0${i+1}</span><div><h3>${f[0]}</h3><p>${f[1]}</p><span class="tg">${f[2]}</span></div></div>`).join("")}</div></div></section>`,
+
+/* 6 finding 01, IJN */
+finding("Finding 01 · IJN University · TikTok","The course is <em>not the hook</em>.",
+  `<p class="body">Both videos open on the same frame. One then spends 48 seconds on the programme. The other replies to a comment somebody left on the account.</p><p class="body">UNITAR reached the same conclusion: ads that list modules and accreditations <b>convert fine once somebody clicks, and almost nobody clicks.</b></p>`,
+  `<div class="vs">${vcard("ijn-pharm-benchmark","IJN video opening on the Bachelor in Pharmaceutical Technology",35.68,35.68,"per lead · 121 leads · then 48 seconds of syllabus","Benchmark")}${vcard("ijn-comment-winner","IJN video replying to a comment about registering without visiting open day",10.24,35.68,"per lead · 35 leads · then a creator walks you in","Winner · 3.5x",1)}</div>`,"dark"),
+
+/* 7 finding 01, City U */
+finding("Finding 01 · City University · Meta","One idea <em>beats five</em>.",
+  `<p class="body">Both ads sold the same Fashion Design diploma, on the same account, in the same period. One listed five modules on a single frame. The other carried one handwritten line.</p>`,
+  `<div class="vs">${vcard("cityu-fashion-benchmark","City University Chinese-language Fashion Design static listing five modules",72.94,72.94,"per lead · 7 leads · five modules on one frame","Benchmark")}${vcard("cityu-fashion-winner","City University Fashion Design video with one handwritten line",12.42,72.94,"per lead · 424 leads · one line, in a video","Winner · 5.9x",1)}</div>`,"white"),
+
+/* 8 finding 01, third proof */
+finding("Finding 01 · IJN University · TikTok","Name a hometown <em>before a course</em>.",
+  `<p class="body">We filmed both cuts on the same day, in the same room, with the same lower third and lighting. <b>Only the first caption differs.</b></p><p class="body">A girl watching in Ipoh sees someone from her own kampung who moved to KL and got in. The other cut tells her about the college instead.</p>`,
+  `<div class="vs">${vcard("ijn-diploma-benchmark","IJN student video opening with I'm studying a Diploma in",57.06,57.06,"Opens: \"I'm studying a Diploma in\"","Benchmark")}${vcard("ijn-perak-winner","IJN student video opening with I am from Perak",21.31,57.06,"Opens: \"I am from Perak\"","Winner · 2.7x",1)}</div>`,"dark"),
+
+/* 9 finding 02 */
+`<section class="slide white" data-title="Finding 02: Ask, or reach is worth nothing"><div style="width:44%"><div class="kick">Finding 02 · UNITAR · IJN University</div><h2 class="sttl" style="font-size:64px">Ask, or reach is <em>worth nothing</em>.</h2>
+  <p class="body" style="margin-top:34px">Instant forms beat website conversion in every week we measured. We took click-to-website off UNITAR entirely in November 2025, and the 2026 plan budgets it at zero.</p>
+  <p class="body" style="margin-top:18px">IJN University had already learned this the expensive way.</p></div>
+  <div class="half"><p class="big2">29x</p><p style="font-family:var(--serif);font-size:46px;line-height:1.05;margin:18px 0 0">more leads, on 1.73x the spend</p>
+    <div class="hbars"><div class="hb"><span>2024: 29 of 31 ads bought traffic to a page</span><span class="t"><i data-w="${38/1106*100}" style="background:rgba(234,241,250,.5)"></i></span><span class="v">38</span></div>
+      <div class="hb"><span>2026: five of seven campaigns bought a lead form</span><span class="t"><i data-w="100" style="background:var(--aqua)"></i></span><span class="v">1,106</span></div></div>
+    
+    <p class="kick" style="color:rgba(234,241,250,.55);margin-top:28px;font-size:11.5px">IJN University · TikTok</p></div></section>`,
+
+/* 10 finding 03 */
+finding("Finding 03 · UNITAR · IJN University","Put a number <em>on the frame</em>.",
+  `<p class="body">The card names three amounts a parent can check against a fee schedule. The account's own programme card names no amount and ran at RM36.53.</p><p class="body"><b>We quote a fee only when the ad names the campus.</b></p>`,
+  `<div style="display:grid;grid-template-columns:1fr 300px;gap:44px;align-items:end;height:100%"><div class="cbars">
+    <div class="cb"><div class="lb"><b>UNITAR broad institutional ads</b><span>No programme, no price</span></div><div class="t"><i data-l="${149/367*100}" data-w="${(367-149)/367*100}" style="background:repeating-linear-gradient(135deg,#B9C6D8 0 6px,#D5E2F0 6px 11px)"></i></div><div class="v num">RM149 to RM367<small>Benchmark</small></div></div>
+    <div class="cb win"><div class="lb"><b>UNITAR postgraduate MBA ad</b><span>Programme named, fee in frame</span></div><div class="t"><i data-w="${21.9/367*100}" style="background:var(--accent);min-width:8px"></i></div><div class="v num">RM21.90<small>Winner · 7x to 17x</small></div></div>
+    <div class="cb win"><div class="lb"><b>IJN University open day card</b><span>Three fee waiver amounts, 4.13% click rate</span></div><div class="t"><i data-w="${14.09/367*100}" style="background:var(--accent);min-width:8px"></i></div><div class="v num">RM14.09<small>Winner</small></div></div>
+    <p class="small">Cost per lead on Meta. The IJN card had the highest click rate of any static in its account.</p></div>
+    <div class="vc win" style="width:300px"><div class="im" style="height:520px">${img("ijn-unlock-future","IJN University open day card listing three fee waiver amounts")}</div></div></div>`,"alt"),
+
+/* 11 finding 04 */
+`<section class="slide white mid" data-title="Finding 04: Write it in the language"><div class="kick">Finding 04 · City University · Meta</div><h2 class="sttl" style="font-size:64px">Write it in the language. <em>Don't translate it.</em></h2>
+  <div style="display:grid;grid-template-columns:1fr 440px;gap:64px;margin-top:10px">
+  <table class="lang"><thead><tr><th style="width:290px">Same programme, same city, March to June</th><th>Cost per lead</th><th style="text-align:right;width:110px">Gap</th></tr></thead><tbody>
+  ${[["Fashion Design",13.41,79.76,"5.9x"],["Early Childhood",18.46,73.69,"4.0x"],["Business Programmes",24.35,59.25,"2.4x"]].map(r=>`<tr><td><b>${r[0]}</b><small>Klang Valley</small></td><td><div class="lpair"><div><span style="color:var(--accent);font-weight:700">English</span><span class="t"><i data-w="${r[1]/79.76*100}" style="background:var(--accent)"></i></span><span style="color:var(--accent);font-weight:700">RM${r[1].toFixed(2)}</span></div><div><span style="color:var(--ink-3)">Chinese</span><span class="t"><i data-w="${r[2]/79.76*100}" style="background:#A7B4C8"></i></span><span style="color:var(--ink-3)">RM${r[2].toFixed(2)}</span></div></div></td><td class="gap">${r[3]}</td></tr>`).join("")}
+  </tbody></table>
+  <div style="display:flex;flex-direction:column;gap:22px;padding-top:34px">
+    <p class="body" style="font-size:17px">In all three, the Chinese version was translated from the English original. <b>The one Chinese ad we wrote as its own angle came in at RM16.23</b>, in the same range as the English winners, though on only RM49 of spend.</p>
+    <div class="note blue"><b>UNITAR, from the other direction</b>On Google Performance Max, Bahasa creative written for a Bahasa audience ran at RM74 to RM92 per lead, against RM131 to RM141 in English.</div></div></div></section>`,
+
+/* 12 finding 05 */
+`<section class="slide dark" data-title="Finding 05: Creative supply sets the cost"><div style="display:grid;grid-template-columns:430px 1fr;gap:64px;flex:1;min-height:0;margin-bottom:70px"><div style="display:flex;flex-direction:column"><div class="kick">Finding 05 · IJN University · TikTok</div><h2 class="sttl" style="font-size:64px">Creative supply <em>sets the cost</em>.</h2>
+  <p class="body" style="margin-top:auto;font-size:17.5px">Spend rose by about 80% between June and October. <b>Cost per lead rose faster</b>, then came back down once the creators returned.</p>
+  <p class="body" style="margin-top:18px;font-size:17.5px">In September the budget held flat, the creators ran out, and cost per lead rose by a third. In October new creative arrived and cost per lead fell 29%, on a bigger budget.</p></div>
+  <div><svg class="mchart" id="f5chart" viewBox="0 0 980 640" role="img" aria-label="IJN University TikTok cost per lead by month, June to October 2026"></svg></div></div></section>`,
+
+"@ex:ladder",
+/* 12b campus creative workshops (flip) */
+`<section class="slide alt" id="ex-workshops" data-title="Campus creative workshops"><div class="kick">UNITAR · TikTok lead forms</div>
+  <div class="flipwrap" id="wsFlip"><div class="flipper">
+    <div class="face front"><div class="fhead"><h2>TikTok stopped paying <em>when the videos ran out</em>.</h2><button type="button" class="flipbtn" data-flip>See the fix <span>&#8635;</span></button></div>
+      <div class="prob">
+        <div class="stale"><div class="v">2x</div><p>TikTok's cost per lead more than doubled in May 2026 as the same videos kept running.</p>
+          <div class="sbars"><div class="sbar"><span>Tired videos</span><span class="t"><i data-w="100" style="background:#FF8A84"></i></span><span class="n">RM171</span></div>
+            <div class="sbar"><span>Fresh creative</span><span class="t"><i data-w="${84/171*100}" style="background:var(--aqua)"></i></span><span class="n">RM84</span></div></div>
+          <p style="font-size:13.5px;margin-top:10px;color:rgba(234,241,250,.55)">Cost per lead on the TikTok One ad group, August against September 2026.</p></div>
+        <div class="tried"><span class="mono">Three ways we tried to keep up</span>
+          <div class="try"><span class="x">1</span><p style="margin:0"><b>UNITAR's central team</b><span>One team could not make enough videos for every programme.</span></p></div>
+          <div class="try"><span class="x">2</span><p style="margin:0"><b>Studio shoots</b><span>Polished videos drew 20 times fewer form submissions than native ones.</span></p></div>
+          <div class="try"><span class="x">3</span><p style="margin:0"><b>TikTok One creators</b><span>The best cost per lead, until the creators ran out of new angles.</span></p></div>
+          <p class="need">The account needs a new video for every programme, every two weeks.</p></div>
+      </div></div>
+    <div class="face back"><div class="fhead"><h2>So every campus <em>now makes its own</em>.</h2><button type="button" class="flipbtn" data-flip>Back to the problem <span>&#8635;</span></button></div>
+      <div class="fix">
+        <div class="wsph" id="wsPhotos"></div>
+        <div class="wsr">
+          <p class="body" style="font-size:17px">Toggle and Audaura ran creative workshops at each UNITAR campus. The people who see student life every day learned to make the ads themselves.</p>
+          <div><span class="mono">What each workshop covers</span><div class="cov4"><span>Hooks that open on a person or a place</span><span>Filming on a phone</span><span>Editing and captions</span><span>What a lead form ad needs</span></div></div>
+          <div><span class="mono">What changed</span> <span class="badge mock" style="margin-left:8px"><i></i>Sample data</span><div class="res" id="wsRes"></div></div>
+        </div>
+      </div></div>
+  </div></div></section>`,
+
+/* 13 new work */
+`<section class="slide white" data-title="New work in market"><div class="kick">New work in market</div><h2 class="sttl" style="font-size:60px">New work, <em>built on these findings</em>.</h2>
+  <div class="newwork">
+    <div><div class="im">${img("qosmo-hand-up","Qosmo International School ad: A confident child puts their hand up")}</div><h3>Qosmo International School</h3><p>Cambridge primary and secondary school, Kuala Lumpur. Opens on the objection a parent is already holding.</p></div>
+    <div><div class="im">${img("qosmo-january","Qosmo International School ad: Your child can start in January")}</div><h3>Qosmo International School</h3><p>Launched October 2026. Names a date, so the parent knows what to do next.</p></div>
+    <div><div class="im">${img("mabecs-uk","MABECS ad: So your child wants to study in the UK. Now what?")}</div><h3>MABECS</h3><p>UK university placement consultancy, 40 years in Malaysia. Opens on the parent's own question.</p></div>
+  </div>
+  <p class="body" style="margin-top:30px;font-size:16px;padding-top:18px;border-top:1px solid var(--line)">Qosmo and MABECS both launched this month, so there is nothing to measure yet. <b>All three ads were built on the findings above, and each one opens on the parent.</b></p></section>`,
+
+/* 14 through-line */
+`<section class="slide dark" data-title="The through-line" style="justify-content:center;padding-bottom:110px"><div class="kick">The through-line</div>
+  <h2 class="sttl" style="font-size:86px;max-width:1250px;margin-top:26px">The cheapest lead in every account came from <em>a creative decision</em>.</h2>
+  <p class="body" style="max-width:860px;margin-top:36px">The ads that won showed a person or named a price instead of listing a syllabus, and they were written in the language rather than translated into it. The accounts that stayed cheap never ran out of new creative to run.</p>
+  <p class="body" style="margin-top:18px;max-width:900px">The next intake is decided as much by the parent who pays as by the student who applies.</p></section>`,
+
+/* 15 bridge */
+`<section class="slide alt mid" data-title="The honest limit"><div class="kick">The honest limit</div><h2 class="sttl" style="font-size:80px;max-width:1100px">Every number so far <em>stops at the lead</em>.</h2>
+  <p class="body" style="max-width:980px;margin-top:28px">Open day attendance, applications and enrolments sit with each institution's admissions team, and no ad account reaches them. Tag the registration list by source and we can tell you which ad produced which enrolment. <b>The rest of this deck is the system that carries a lead to an enrolment, with the parent who pays the fees inside it.</b></p>
+  <div class="agenda" id="agenda"></div></section>`,
+
+...SYSTEM.map(id=>EXTRA[id]||"@ex:"+id),
+
+/* close */
+`<section class="slide dark" data-title="Next step" style="justify-content:center;padding-bottom:110px"><div class="kick">Next step</div>
+  <h2 class="sttl" style="font-size:92px;max-width:1300px;margin-top:24px">One working session <em>to plan your next intake</em>.</h2>
+  <p class="body" style="max-width:900px;margin-top:30px">Bring the intake targets and the admissions data you can share. Toggle brings an audit of your ads and of what AI assistants say about <span class="uni-n">Your University</span>. iWisers brings what parents are asking in the groups. The session ends with a one-intake pilot plan, a budget range and the three numbers we will be judged on. After that, we meet every quarter to review the funnel with marketing and admissions.</p>
+  <div class="contact"><div><span class="mono">Toggle Solutions</span><p>hello@toggle.solutions</p></div><div><span class="mono">Viknesh</span><p>+60 12 568 8681</p></div><div><span class="mono">On the web</span><p>toggle.solutions</p></div></div></section>`
+];
+
+/* =========================================================================
+   DECK ENGINE
+   ========================================================================= */
+const stage=$("#stage");
+const WM='<svg viewBox="0 0 1432 392" aria-hidden="true"><use href="#wm"/></svg>';
+stage.innerHTML=SLIDES.map(s=>s.startsWith("@ex:")?xslide(s.slice(4)):s).join("");
+const SL=$$(".slide",stage);
+SL.forEach((s,i)=>s.insertAdjacentHTML("beforeend",`<div class="sf">${WM}<span>Education growth · Toggle × iWisers</span><span class="pn">${String(i+1).padStart(2,"0")} / ${SL.length}</span></div>`));
+$("#agenda").innerHTML=SYSTEM.map(id=>{const i=SL.findIndex(s=>s.id==="ex-"+id);return `<a href="#${i+1}"><span class="an">${String(i+1).padStart(2,"0")}</span><span class="at">${XS[id]?XS[id][0]:SL[i].dataset.title}</span></a>`}).join("");
+
+[initMD,initTiers,initWorkshops,initAds,initF5,initJobs,initProof,initPivot,initCal,initOD,initGeo,initThread,initDash,initLoop,initWA,initLadder].forEach(f=>{try{f()}catch(err){console.error(f.name+": "+err.message)}});
+
+/* finding 05 chart */
+(function(){
+  const M=[["June",303,14.54,"1.24%","Eleven creator cuts, in market"],["July",224,34.95,"0.61%"],["August",195,35.51,"0.43%"],["September",147,47.56,"0.82%","Creators ran dry, back to programme cards"],["October",237,33.92,"2.68%"]];
+  const H=400,base=520,bw=120,gap=70,x0=40;
+  $("#f5chart").innerHTML=M.map((m,i)=>{const x=x0+i*(bw+gap),h=m[2]/50*H,hl=i===0?"#8CE0EC":i===3?"#DB4A45":"rgba(234,241,250,.32)";
+    return `<rect class="b" x="${x}" y="${base}" width="${bw}" height="0" rx="8" fill="${hl}" data-h="${h}"/>
+      <text class="bv" x="${x+bw/2}" y="${base-h-14}" text-anchor="middle" data-y="${base-h-14}">RM${m[2].toFixed(2)}</text>
+      <text x="${x+bw/2}" y="${base+30}" text-anchor="middle" style="fill:#EAF1FA;font-family:var(--sans);font-size:17px;font-weight:600">${m[0]}</text>
+      <text x="${x+bw/2}" y="${base+54}" text-anchor="middle">${m[1]} leads</text>
+      <text x="${x+bw/2}" y="${base+76}" text-anchor="middle">${m[3]} click rate</text>
+      ${m[4]?`<text x="${x+bw/2}" y="${base-h-(i===0?96:78)}" text-anchor="middle" style="fill:${hl};font-family:var(--sans);font-size:14px;font-weight:600">${m[4].split(", ").map((t,k)=>`<tspan x="${x+bw/2}" dy="${k?18:0}">${t}</tspan>`).join("")}</text>`:""}`}).join("")+
+    `<text x="${x0}" y="${base+112}" style="font-size:14px">Cost per lead, IJN University on TikTok, 2026</text>`;
+})();
+
+/* bars and charts grow when their slide opens */
+function grow(s,on){
+  $$("[data-w]",s).forEach(i=>{i.style.width=on?i.dataset.w+"%":"0"});
+  $$("[data-l]",s).forEach(i=>{i.style.left=on?i.dataset.l+"%":"0"});
+  $$("#f5chart rect.b",s).forEach(r=>{const h=on?+r.dataset.h:0;r.setAttribute("height",h);r.setAttribute("y",520-h)});
+}
+
+/* fit each exhibit body into the space under its header */
+/* scale is solved per slide: wider layout at small z changes the height, so iterate */
+function fitOne(s){const xb=$(".xb",s),f=$(".fit",s);let z=+s.dataset.z||1;
+  for(let k=0;k<4;k++){f.style.setProperty("--z",z);const h=f.scrollHeight,H=xb.clientHeight,nz=Math.min(1.2,Math.max(.6,H/h*.98));if(Math.abs(nz-z)<.01)break;z=nz}
+  f.style.setProperty("--z",z);s.dataset.z=z.toFixed(2)}
+function fitAll(){$$(".ex").forEach(fitOne)}
+/* refit when an interaction changes an exhibit's height, for example a longer day list */
+const fitRO=new ResizeObserver(es=>es.forEach(e=>{const s=e.target.closest(".slide");clearTimeout(s._ft);s._ft=setTimeout(()=>{const H=$(".xb",s).clientHeight,h=e.target.scrollHeight*(+s.dataset.z||1);if(h>H+2||h<H*.9)fitOne(s)},120)}));
+$$(".ex .fit").forEach(f=>fitRO.observe(f));
+
+let cur=-1;
+function go(n){
+  n=Math.max(0,Math.min(SL.length-1,n));if(n===cur)return;
+  if(cur>=0){const o=SL[cur];o.classList.remove("on");o.classList.add("offscreen");o.inert=true;grow(o,false)}
+  cur=n;const s=SL[n];s.classList.add("on");s.classList.remove("offscreen");s.inert=false;
+  requestAnimationFrame(()=>grow(s,true));
+  $$("#railList button").forEach(b=>{const on=+b.dataset.n===n;b.setAttribute("aria-current",on);if(on)b.scrollIntoView({block:"nearest"})});
+  $("#pg").textContent=`${String(n+1).padStart(2,"0")} / ${SL.length}`;$("#tt").textContent=s.dataset.title||"";
+  $("#prog").style.width=((n+1)/SL.length*100)+"%";
+  if(location.hash!=="#"+(n+1))history.replaceState(null,"","#"+(n+1));
+  pingIO();
+  const wv=$(".cover .wavewrap svg");if(wv&&wv.pauseAnimations){(n===0&&!REDUCED)?wv.unpauseAnimations():wv.pauseAnimations()}
+}
+SL.forEach(s=>{s.inert=true;s.classList.add("offscreen")});
+{const firstSys=SL.findIndex(s=>s.id==="ex-split"),last=SL.length-1;
+ $("#railList").innerHTML=SL.map((s,i)=>`${i===1?'<li class="sec">The proof</li>':i===firstSys?'<li class="sec">The system</li>':i===last?'<li class="sec">Close</li>':""}<li><button type="button" data-n="${i}" aria-label="Slide ${i+1}: ${s.dataset.title}"><span class="rn">${String(i+1).padStart(2,"0")}</span><span class="rt">${s.dataset.title}</span></button></li>`).join("");
+ $("#railList").addEventListener("click",e=>{const b=e.target.closest("button");if(b){go(+b.dataset.n);b.blur()}});}
+const scaleStage=()=>{const rail=parseFloat(getComputedStyle(document.documentElement).getPropertyValue("--rail"))||0;document.documentElement.style.setProperty("--s",Math.min((innerWidth-rail)/1600,innerHeight/900))};
+addEventListener("resize",scaleStage);scaleStage();
+const fromHash=()=>{const n=parseInt(location.hash.slice(1),10);return isNaN(n)?0:n-1};
+addEventListener("hashchange",()=>go(fromHash()));
+$("#prev").addEventListener("click",()=>go(cur-1));$("#next").addEventListener("click",()=>go(cur+1));
+document.addEventListener("keydown",e=>{
+  const t=e.target;if(t.matches&&t.matches("input,textarea,select"))return;
+  if(["ArrowRight","PageDown"].includes(e.key)||(e.key===" "&&t===document.body)){e.preventDefault();go(cur+1)}
+  else if(["ArrowLeft","PageUp"].includes(e.key)){e.preventDefault();go(cur-1)}
+  else if(e.key==="Home")go(0);else if(e.key==="End")go(SL.length-1);
+  else if(e.key==="f"&&document.fullscreenEnabled){document.fullscreenElement?document.exitFullscreen():document.documentElement.requestFullscreen()}});
+let idleT;const wake=()=>{$("#nav").classList.remove("idle");clearTimeout(idleT);idleT=setTimeout(()=>$("#nav").classList.add("idle"),2600)};
+addEventListener("mousemove",wake);addEventListener("keydown",wake);wake();
+
+/* prospect name, shared with the idea lab through the same storage key */
+const nameIn=$("#uniName");nameIn.value=store.get("edu-uni","");let nameT;
+const applyName=now=>{uni=nameIn.value.trim()||"Your University";store.set("edu-uni",nameIn.value.trim());$$(".uni-n").forEach(el=>el.textContent=uni);clearTimeout(nameT);if(now===true)renderGeo();else nameT=setTimeout(renderGeo,450)};
+nameIn.addEventListener("input",applyName);applyName(true);
+
+/* print: every slide shows its finished state */
+addEventListener("beforeprint",()=>{PRINTING=true;pingIO();SL.forEach(s=>grow(s,true));
+  $$("[data-count]").forEach(e=>e.textContent=(e.dataset.pre||"")+fmt(+e.dataset.count)+(e.dataset.suf||""));
+  $("#sov .w").setAttribute("stroke-dasharray",`${.77*157.08} 157.08`);
+  if(window.ladderPrint)ladderPrint();
+  if(window.tiersPrint)tiersPrint();
+  if($("#lpWk")){clearInterval(lpAnim);$("#lpWk").value=12;renderLoop(12)}
+  fitAll()});
+addEventListener("afterprint",()=>{PRINTING=false;SL.forEach((s,i)=>{if(i!==cur)grow(s,false)})});
+
+go(fromHash());
+(document.fonts?document.fonts.ready:Promise.resolve()).then(fitAll);
+</script>
+</body>
+</html>

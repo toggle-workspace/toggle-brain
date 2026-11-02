@@ -1,0 +1,1742 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Education Idea Lab</title>
+<meta name="description" content="Interactive exhibits, visualizations and mockups for the Toggle and iWisers education pitch deck.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital,wght@0,400;1,400&family=Instrument+Sans:ital,wght@0,400..700;1,400..700&family=JetBrains+Mono:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+/* =========================================================================
+   Education idea lab. Built on the sales surface identity in
+   clients/toggle/sales-page/index.html: Instrument Serif and Sans, JetBrains
+   Mono, navy ink, royal blue action, sky to aqua wave. Light theme, locked.
+   Teal marks iWisers work, amber marks the parent, blue marks Toggle.
+   ========================================================================= */
+:root{
+  --paper:#F4F8FD;--paper-lift:#FFFFFF;--paper-deep:#E6EFFA;
+  --ink:#0E1B33;--ink-2:#4A5A75;--ink-3:#5F6B82;
+  --line:#D5E2F0;--line-soft:#E7EFF9;
+  --accent:#2A6BE0;--accent-deep:#1B4CB0;--accent-wash:#E3EDFC;
+  --sky:#7FB3EE;--aqua:#8CE0EC;--deep:#0F2A47;
+  --alert:#DB4A45;--amber:#D2971E;--amber-wash:#FBF0DA;
+  --iw:#0E8C9C;--iw-wash:#DDF3F5;
+  --gutter:clamp(16px,5vw,84px);--maxw:1440px;
+  --serif:"Instrument Serif",Georgia,serif;
+  --sans:"Instrument Sans",-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;
+  --mono:"JetBrains Mono",ui-monospace,SFMono-Regular,Menlo,monospace;
+  --ease:cubic-bezier(.16,1,.3,1);
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;z-index:0;pointer-events:none;opacity:.5;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='180' height='180'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='3'/%3E%3CfeColorMatrix type='saturate' values='0'/%3E%3C/filter%3E%3Crect width='180' height='180' filter='url(%23n)' opacity='.055'/%3E%3C/svg%3E")}
+img,svg{max-width:100%;display:block}
+button,input,select{font:inherit;color:inherit}
+button{cursor:pointer}
+:focus-visible{outline:2px solid var(--accent);outline-offset:2px}
+
+/* ---------- type ---------- */
+.display{font-family:var(--serif);font-weight:400;line-height:.98;letter-spacing:-.025em;font-size:clamp(40px,6vw,96px);margin:0}
+.display em,.h2 em{font-style:italic;color:var(--accent)}
+.h2{font-family:var(--serif);font-weight:400;line-height:1.02;letter-spacing:-.02em;font-size:clamp(32px,4.4vw,62px);margin:0}
+.h3{font-family:var(--sans);font-weight:600;font-size:clamp(19px,1.8vw,23px);line-height:1.22;letter-spacing:-.02em;margin:0}
+.lede{font-size:clamp(17px,1.4vw,20px);line-height:1.5;color:var(--ink-2);margin:0}
+.small{font-size:14.5px;line-height:1.55;color:var(--ink-2);margin:0}
+.mono{font-family:var(--mono);font-size:11px;font-weight:500;letter-spacing:.13em;text-transform:uppercase;color:var(--ink-3)}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums}
+
+.wrap{max-width:var(--maxw);margin:0 auto;padding:0 var(--gutter);position:relative;z-index:1}
+section{position:relative;z-index:1}
+
+/* ---------- reveal ---------- */
+.rv{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.rv.in{opacity:1;transform:none}
+
+/* ---------- top chrome ---------- */
+#top{position:fixed;top:0;left:0;right:0;z-index:60;display:flex;align-items:center;gap:14px;padding:14px var(--gutter);transition:background .35s,border-color .35s;border-bottom:1px solid transparent}
+#top.stuck{background:rgba(244,248,253,.88);backdrop-filter:blur(14px) saturate(1.3);-webkit-backdrop-filter:blur(14px) saturate(1.3);border-bottom-color:var(--line)}
+#top .mark{height:18px;flex:0 0 auto}
+#top .mark svg{height:100%;width:auto;fill:var(--ink)}
+#top .crumb{font-family:var(--mono);font-size:10.5px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.grow{flex:1 1 auto;min-width:0}
+.btn{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:10px 16px;border-radius:999px;border:1px solid var(--ink);background:transparent;color:var(--ink);transition:.2s;white-space:nowrap}
+.btn:hover{background:var(--ink);color:var(--paper)}
+.btn.solid{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.solid:hover{background:var(--accent-deep);border-color:var(--accent-deep)}
+.btn.ghost{border-color:var(--line);color:var(--ink-2);background:var(--paper-lift)}
+.btn.ghost:hover{border-color:var(--ink);color:var(--ink)}
+.btn .ct{display:inline-grid;place-items:center;min-width:18px;height:18px;margin-left:6px;border-radius:9px;background:var(--paper);color:var(--accent);font-size:10px;padding:0 5px}
+@media(max-width:700px){#top .crumb{display:none}}
+
+/* ---------- hero ---------- */
+#hero{min-height:92svh;display:flex;flex-direction:column;justify-content:center;padding:110px 0 70px;overflow:hidden}
+.wavewrap{position:absolute;left:0;right:0;bottom:0;height:62%;z-index:0;pointer-events:none;-webkit-mask-image:linear-gradient(180deg,transparent 0%,#000 30%);mask-image:linear-gradient(180deg,transparent 0%,#000 30%)}
+.wavewrap svg{width:100%;height:100%}
+.herometa{display:flex;gap:10px 22px;flex-wrap:wrap;align-items:center;margin-bottom:28px}
+.herometa span{display:inline-flex;align-items:center;gap:9px}
+.dot{width:6px;height:6px;border-radius:50%;background:var(--accent);flex:0 0 auto}
+.dot.iw{background:var(--iw)}.dot.am{background:var(--amber)}
+#hero .lede{margin-top:28px;max-width:62ch}
+.setup{margin-top:34px;display:flex;flex-wrap:wrap;gap:12px;align-items:center;background:rgba(255,255,255,.78);border:1px solid var(--line);border-radius:14px;padding:14px 16px;width:fit-content;max-width:100%;backdrop-filter:blur(6px)}
+.setup label{font-size:14px;color:var(--ink-2)}
+.setup input{border:0;border-bottom:1.5px dashed var(--ink-3);background:transparent;font-family:var(--mono);font-size:16px;padding:3px 2px;width:min(260px,60vw);outline:none}
+.setup input:focus{border-bottom:1.5px solid var(--accent)}
+.legend{display:flex;gap:16px;flex-wrap:wrap;margin-top:22px}
+
+/* ---------- badges ---------- */
+.badge{display:inline-flex;align-items:center;gap:7px;font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;padding:5px 10px;border-radius:999px;border:1px solid var(--line);color:var(--ink-2);background:var(--paper-lift);white-space:nowrap}
+.badge i{width:7px;height:7px;border-radius:2px;background:var(--ink-3)}
+.badge.v i{background:var(--accent)}
+.badge.ill i{background:var(--amber)}
+.badge.mock i{background:var(--iw)}
+
+/* ---------- index ---------- */
+#index{padding:clamp(60px,8vw,110px) 0 20px}
+.filters{display:flex;gap:8px;flex-wrap:wrap;margin:26px 0}
+.chip{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;padding:8px 13px;border-radius:999px;border:1px solid var(--line);background:var(--paper-lift);color:var(--ink-2);transition:.2s}
+.chip:hover{border-color:var(--ink);color:var(--ink)}
+.chip.on{background:var(--ink);border-color:var(--ink);color:var(--paper)}
+.chip.on.iwc{background:var(--iw);border-color:var(--iw)}
+.chip.on.amc{background:var(--amber);border-color:var(--amber)}
+.toc{display:grid;grid-template-columns:repeat(auto-fill,minmax(230px,1fr));gap:2px;background:var(--line);border:1px solid var(--line)}
+.toc a{color:var(--ink);background:var(--paper-lift);padding:16px 18px;text-decoration:none;display:flex;flex-direction:column;gap:6px;transition:background .25s}
+.toc a:hover{background:var(--accent-wash);color:var(--accent-deep)}
+.tocempty{grid-column:1/-1;background:var(--paper-lift);padding:22px;font-size:15px;color:var(--ink-2)}
+.toc .tn{font-family:var(--mono);font-size:10.5px;color:var(--accent);letter-spacing:.1em}
+.toc .tt{font-weight:600;font-size:15.5px;line-height:1.25;letter-spacing:-.01em}
+.toc .ts{font-size:12.5px;color:var(--ink-3)}
+.toc a.hide,.exhibit.hide{display:none}
+
+/* ---------- exhibit frame ---------- */
+.exhibit{padding:clamp(56px,7vw,104px) 0;border-top:1px solid var(--line);scroll-margin-top:70px}
+.exhibit.alt{background:var(--paper-deep)}
+.exhibit.white{background:var(--paper-lift)}
+.exhead{display:grid;grid-template-columns:1fr;gap:18px;margin-bottom:clamp(28px,3.5vw,48px)}
+@media(min-width:960px){.exhead{grid-template-columns:minmax(0,1fr) minmax(300px,400px);gap:56px;align-items:end}}
+.exnum{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:16px}
+.exnum .n{font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.14em;color:var(--accent)}
+.exside{display:flex;flex-direction:column;gap:14px}
+.star{display:inline-flex;align-items:center;gap:8px;width:fit-content;font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.11em;text-transform:uppercase;padding:9px 14px;border-radius:999px;border:1px dashed var(--ink-3);background:transparent;color:var(--ink-2);transition:.2s}
+.star:hover{border-style:solid;border-color:var(--accent);color:var(--accent)}
+.star[aria-pressed="true"]{background:var(--accent);border:1px solid var(--accent);color:#fff}
+.star svg{width:13px;height:13px;fill:currentColor}
+.slot{font-size:13.5px;color:var(--ink-3);line-height:1.5;margin:0}
+.slot b{color:var(--ink-2);font-weight:600}
+.src{margin-top:18px;font-size:12.5px;color:var(--ink-3);line-height:1.5}
+.src code{font-family:var(--mono);font-size:11.5px;color:var(--ink-2)}
+
+.card{background:var(--paper-lift);border:1px solid var(--line);border-radius:16px;padding:clamp(18px,2.4vw,30px)}
+.seg{display:inline-flex;flex-wrap:wrap;gap:3px;padding:3px;border-radius:999px;background:var(--paper-deep);border:1px solid var(--line)}
+.seg button{border:0;background:transparent;padding:8px 14px;border-radius:999px;font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.09em;text-transform:uppercase;color:var(--ink-2);transition:.2s}
+.seg button[aria-pressed="true"]{background:var(--ink);color:var(--paper)}
+.ctrlrow{display:flex;flex-wrap:wrap;gap:14px 26px;align-items:center;margin-bottom:22px}
+.ctrl{display:flex;flex-direction:column;gap:8px}
+.ctrl .mono{font-size:10px}
+input[type=range]{-webkit-appearance:none;appearance:none;width:100%;height:2px;background:var(--ink-3);outline:none;border-radius:2px;margin:12px 0}
+input[type=range]::-webkit-slider-thumb{-webkit-appearance:none;width:22px;height:22px;border-radius:50%;background:var(--accent);cursor:grab;border:4px solid var(--paper-lift);box-shadow:0 0 0 1px var(--accent)}
+input[type=range]::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:var(--accent);cursor:grab;border:4px solid var(--paper-lift)}
+.note{padding:14px 18px;border-left:2px solid var(--ink);background:var(--paper-deep);font-size:13.5px;line-height:1.5;color:var(--ink);border-radius:0 10px 10px 0}
+.note.blue{border-left-color:var(--accent);background:var(--accent-wash)}
+.note.teal{border-left-color:var(--iw);background:var(--iw-wash)}
+.note b{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;display:block;margin-bottom:5px}
+.sw{display:inline-flex;gap:7px;align-items:center}.sw i{width:12px;height:12px;border-radius:3px}
+.own{display:inline-flex;align-items:center;gap:6px;font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.06em;padding:4px 9px;border-radius:999px;background:var(--accent-wash);color:var(--accent-deep);white-space:nowrap}
+.own.iw{background:var(--iw-wash);color:#08636F}
+.own.jt{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--ink-3)}
+
+/* ---------- 01 funnel ---------- */
+.fgrid{display:grid;grid-template-columns:1fr;gap:28px}
+@media(min-width:1080px){.fgrid{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}}
+.funnel{display:flex;flex-direction:column;gap:6px}
+.fst{display:grid;grid-template-columns:1fr;align-items:center;cursor:pointer}
+.fbar{position:relative;margin:0 auto;height:62px;border-radius:12px;display:flex;align-items:center;justify-content:space-between;gap:10px;padding:0 16px;color:#fff;transition:width .8s var(--ease),background .5s;overflow:hidden;min-width:220px;max-width:100%}
+.fbar .fl{min-width:0;font-weight:600;font-size:15px;letter-spacing:-.01em;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fbar .fv{font-family:var(--mono);font-size:14px;font-weight:500;font-variant-numeric:tabular-nums;white-space:nowrap}
+.fbar .split{position:absolute;left:0;bottom:0;height:7px;background:#14A6B8;box-shadow:0 -1px 0 rgba(255,255,255,.6);transition:width .8s var(--ease);z-index:0}
+.fbar>span{position:relative;z-index:1}
+.fst.sel .fbar{box-shadow:0 0 0 3px var(--paper-lift),0 0 0 5px var(--ink)}
+.fdetail h3{margin:6px 0 10px;font-family:var(--serif);font-weight:400;font-size:clamp(26px,2.6vw,34px);line-height:1.05;letter-spacing:-.015em}
+.fdetail .msg{font-family:var(--serif);font-style:italic;font-size:21px;line-height:1.3;color:var(--ink);margin:12px 0 16px;padding-left:14px;border-left:2px solid var(--accent)}
+.chlist{display:flex;flex-wrap:wrap;gap:6px;margin-top:10px}
+.mixbar{display:flex;height:34px;border-radius:9px;overflow:hidden;margin-top:8px;border:1px solid var(--line)}
+.mixbar div{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:10.5px;font-weight:700;color:#fff;transition:flex-grow .8s var(--ease);white-space:nowrap;overflow:hidden}
+.kpis{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:2px;background:var(--line);border:1px solid var(--line);margin-top:18px}
+.kpis div{background:var(--paper-lift);padding:14px 16px}
+.kpis .v{font-family:var(--serif);font-size:30px;line-height:1;letter-spacing:-.02em}
+.kpis .l{font-size:12px;color:var(--ink-2);margin-top:6px;line-height:1.3}
+
+/* ---------- 02 braid ---------- */
+.braid{overflow-x:auto;padding-bottom:6px}
+.tp{cursor:pointer}
+.tp circle{transition:r .3s var(--ease)}
+.tp:hover circle,.tp.on circle{r:13}
+.tp text{font-family:var(--sans);font-size:12.5px;fill:var(--ink);paint-order:stroke;stroke:#fff;stroke-width:5px;stroke-linejoin:round}
+.braid svg{min-width:900px}
+.braidinfo{margin-top:18px;display:grid;gap:12px;grid-template-columns:1fr}
+@media(min-width:860px){.braidinfo{grid-template-columns:1fr 1fr}}
+
+/* ---------- 03 ripple ---------- */
+.ripgrid{display:grid;grid-template-columns:1fr;gap:26px}
+@media(min-width:1000px){.ripgrid{grid-template-columns:minmax(0,1.3fr) minmax(0,1fr)}}
+.ripsvg{background:var(--paper);border:1px solid var(--line);border-radius:16px}
+.node circle.c{fill:var(--paper-lift);stroke:var(--line);stroke-width:1.5;transition:fill .5s,stroke .5s}
+.node.lit circle.c{fill:var(--iw-wash);stroke:var(--iw)}
+.node.paid circle.c{fill:var(--accent-wash);stroke:var(--accent)}
+.node text{font-family:var(--sans);font-size:11.5px;fill:var(--ink-2);text-anchor:middle}
+.edge{stroke:var(--line);stroke-width:1.2;transition:stroke .5s}
+.edge.lit{stroke:var(--iw);stroke-width:1.8}
+.pulse{fill:none;stroke:var(--iw);opacity:0}
+.counter{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--line);border:1px solid var(--line)}
+.counter div{background:var(--paper-lift);padding:16px}
+.counter .v{font-family:var(--serif);font-size:38px;line-height:1;letter-spacing:-.02em}
+.counter .l{font-size:12.5px;color:var(--ink-2);margin-top:6px}
+.spark{margin-top:16px}
+
+/* ---------- 04 matrix ---------- */
+.matrix{display:grid;grid-template-columns:1fr;gap:2px;background:var(--line);border:1px solid var(--line);border-radius:14px;overflow:hidden}
+@media(min-width:900px){.matrix{grid-template-columns:repeat(3,1fr)}}
+.mcell{background:var(--paper-lift);padding:22px;min-height:220px;display:flex;flex-direction:column;gap:12px}
+.mcell .q{font-family:var(--serif);font-size:clamp(23px,2.2vw,29px);line-height:1.12;letter-spacing:-.015em;transition:opacity .35s}
+.mcell .why{font-size:13.5px;color:var(--ink-2);line-height:1.5;margin-top:auto}
+.mcell .fmt{display:flex;gap:6px;flex-wrap:wrap}
+
+/* ---------- 05 platform jobs ---------- */
+.jobs{display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:12px}
+.job{text-align:left;background:var(--paper-lift);border:1px solid var(--line);border-radius:14px;padding:18px;display:flex;flex-direction:column;gap:10px;transition:transform .4s var(--ease),border-color .3s,box-shadow .3s}
+.job:hover{transform:translateY(-4px);border-color:var(--ink-3)}
+.job[aria-pressed="true"]{border-color:var(--ink);box-shadow:0 22px 40px -24px rgba(14,27,51,.4)}
+.job .jn{font-weight:600;font-size:17px;letter-spacing:-.01em}
+.job .jj{font-family:var(--serif);font-size:23px;line-height:1.1;letter-spacing:-.01em}
+.jobpanel{margin-top:18px;display:grid;gap:22px;grid-template-columns:1fr}
+@media(min-width:900px){.jobpanel{grid-template-columns:1fr 1fr}}
+.cplrow{display:grid;grid-template-columns:90px 1fr 70px;gap:12px;align-items:center;margin:10px 0}
+.cplrow .t{height:12px;border-radius:6px;background:var(--line);position:relative;overflow:hidden}
+.cplrow .t i{position:absolute;inset:0 auto 0 0;background:var(--accent);border-radius:6px;transition:width 1s var(--ease)}
+.cplrow .t i.old{background:var(--ink-3)}
+
+/* ---------- 06 proof ---------- */
+.proof{display:grid;grid-template-columns:1fr;gap:2px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+@media(min-width:820px){.proof{grid-template-columns:repeat(3,1fr)}}
+.proof>div{background:var(--paper-lift);padding:clamp(24px,3vw,40px)}
+.proof .big{font-family:var(--serif);font-size:clamp(56px,7vw,104px);line-height:.9;letter-spacing:-.035em;color:var(--accent);font-variant-numeric:tabular-nums}
+.proof .cap{margin-top:14px;font-size:15px;color:var(--ink-2);max-width:28ch}
+.sov{margin-top:22px;display:grid;grid-template-columns:repeat(20,1fr);gap:3px;max-width:280px}
+.sov i{aspect-ratio:1;border-radius:2px;background:var(--line);transition:background .4s}
+.sov i.on{background:var(--accent)}
+.logos{display:flex;gap:26px;align-items:center;flex-wrap:wrap;margin-top:24px}
+.logos img{height:34px;width:auto;object-fit:contain;filter:grayscale(1);opacity:.75}
+
+/* ---------- 07 pivot ---------- */
+.pivgrid{display:grid;grid-template-columns:1fr;gap:28px}
+@media(min-width:1000px){.pivgrid{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)}}
+.prow{display:grid;grid-template-columns:minmax(120px,1.1fr) minmax(0,2fr) 92px;gap:14px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.prow .pn{font-weight:600;font-size:15px}
+.prow .pc{font-family:var(--mono);font-size:11px;color:var(--ink-3)}
+.prow .ps{font-family:var(--mono);font-size:14px;text-align:right;font-variant-numeric:tabular-nums}
+.bignum{font-family:var(--serif);font-size:clamp(56px,8vw,112px);line-height:.9;letter-spacing:-.035em;color:var(--accent);font-variant-numeric:tabular-nums}
+.delta{font-family:var(--mono);font-size:15px;font-weight:700;margin-top:10px}
+.delta.up{color:#0F8A5F}.delta.down{color:var(--alert)}
+
+/* ---------- 08 calendar ---------- */
+.cal{overflow-x:auto}
+.calgrid{display:grid;grid-template-columns:150px repeat(12,minmax(48px,1fr));gap:3px;min-width:780px}
+.calgrid .mh{font-family:var(--mono);font-size:10.5px;letter-spacing:.08em;text-align:center;color:var(--ink-3);padding:6px 0}
+.calgrid button.mh{border:1px dashed var(--line);border-radius:8px;background:var(--paper-lift);color:var(--ink-2)}
+.calgrid button.mh[aria-pressed="true"]{background:var(--ink);color:var(--paper);border:1px solid var(--ink)}
+.calgrid .rl{font-size:13px;font-weight:600;display:flex;align-items:center;gap:8px;padding-right:8px}
+.calgrid .cell{height:34px;border-radius:6px;background:var(--line-soft);transition:background .5s,opacity .5s}
+.calgrid .cell.lab{display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:9px;font-weight:700;color:#fff;letter-spacing:.06em}
+
+/* ---------- 09 open day ---------- */
+.odgrid{display:grid;grid-template-columns:1fr;gap:28px}
+@media(min-width:1000px){.odgrid{grid-template-columns:minmax(0,1.25fr) minmax(0,1fr)}}
+.odscale{display:flex;justify-content:space-between;font-family:var(--mono);font-size:10px;color:var(--ink-3)}
+.odday{font-family:var(--serif);font-size:clamp(48px,6vw,80px);line-height:.9;letter-spacing:-.03em}
+.odphase{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--accent);margin-top:6px}
+.odlanes{margin-top:18px;display:flex;flex-direction:column;gap:5px}
+.odlane{display:grid;grid-template-columns:minmax(150px,210px) 1fr;gap:12px;align-items:center}
+/* the range thumb travels inset by half its width, so the track lines up with the lane tracks */
+.odscrub input{margin:14px 0 6px}
+.odlane:not(.odscrub) .tr{margin:0 11px}
+.odscale{padding:0 2px}
+@media(max-width:600px){.odlane{grid-template-columns:1fr;gap:4px}.odscrub .ln{display:none}}
+.odlane .ln{font-size:13px;color:var(--ink-2);line-height:1.25;transition:color .3s}
+.odlane .tr{position:relative;height:16px;background:var(--line-soft);border-radius:4px}
+.odlane .tr i{position:absolute;top:0;bottom:0;border-radius:4px;background:var(--sky);transition:background .3s}
+.odlane.on .ln{color:var(--ink);font-weight:600}
+.odlane.on .tr i{background:var(--accent)}
+.odlane.on.iw .tr i{background:var(--iw)}
+.odlane .tr b{position:absolute;top:-4px;bottom:-4px;width:2px;background:var(--ink);transition:left .2s}
+.rules{display:flex;flex-direction:column;gap:10px}
+.rule{padding:16px 18px;border-radius:12px;background:var(--paper-lift);border:1px solid var(--line);color:var(--ink)}
+.rule b{display:block;font-family:var(--serif);font-weight:400;font-size:22px;line-height:1.1;color:var(--ink);margin-bottom:6px}
+.rule p{margin:0;font-size:14px;line-height:1.5;color:var(--ink-2)}
+.rule.hot{background:var(--accent);border-color:var(--accent)}.rule.hot b{color:#fff}.rule.hot p{color:rgba(255,255,255,.86)}
+.odgrid>.card{align-self:start}
+.odnow{display:flex;flex-direction:column;gap:8px;margin-top:12px}
+.odnow div{font-size:14.5px;line-height:1.45;padding:10px 14px;border-radius:10px;background:var(--paper-lift);border:1px solid var(--line)}
+
+/* ---------- 10 GEO mockup ---------- */
+.mockgrid{display:grid;grid-template-columns:1fr;gap:28px;align-items:start}
+@media(min-width:1000px){.mockgrid{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)}}
+.ai{background:#FBFBFA;border:1px solid #E4E4E0;border-radius:18px;box-shadow:0 30px 60px -36px rgba(14,27,51,.35);overflow:hidden}
+.aibar{display:flex;align-items:center;gap:8px;padding:12px 16px;border-bottom:1px solid #EAEAE6;font-family:var(--mono);font-size:10.5px;color:#8B8B85;letter-spacing:.06em}
+.aibar i{width:9px;height:9px;border-radius:50%;background:#E2E2DD}
+.aibody{padding:22px;display:flex;flex-direction:column;gap:16px;min-height:380px}
+.qbub{align-self:flex-end;max-width:82%;background:#EFEFEC;border-radius:18px;padding:12px 16px;font-size:15px;line-height:1.45}
+.abub{font-size:15px;line-height:1.6;color:#2B2B28}
+.abub ol{margin:8px 0;padding-left:20px}
+.abub li{margin-bottom:8px}
+.abub .us{background:linear-gradient(transparent 55%,rgba(42,107,224,.2) 55%);font-weight:600}
+.cite{display:inline-flex;align-items:center;gap:4px;font-family:var(--mono);font-size:10px;padding:2px 7px;border-radius:999px;background:#E9E9E5;color:#55554F;margin-left:4px;vertical-align:1px}
+.cite.us{background:var(--accent-wash);color:var(--accent-deep)}
+.caret::after{content:"";display:inline-block;width:8px;height:16px;background:#2B2B28;margin-left:2px;vertical-align:-3px;animation:blink 1s steps(1) infinite}
+@keyframes blink{50%{opacity:0}}
+.geoscore{display:flex;align-items:baseline;gap:10px}
+
+/* ---------- 11 community thread ---------- */
+.fb{background:#fff;border:1px solid #DADDE1;border-radius:14px;overflow:hidden;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:#1C1E21;box-shadow:0 30px 60px -36px rgba(14,27,51,.3)}
+.fbhead{padding:12px 16px;background:#F0F2F5;font-size:13px;font-weight:600;color:#65676B;display:flex;justify-content:space-between}
+.post{padding:16px;display:flex;gap:10px;position:relative}
+.post+.post{border-top:1px solid #EEF0F2}
+.post.reply{padding-left:52px}
+.av{width:36px;height:36px;border-radius:50%;flex:0 0 auto;display:grid;place-items:center;font-size:13px;font-weight:700;color:#fff}
+.pname{font-weight:600;font-size:14px}
+.pmeta{font-size:12px;color:#65676B}
+.ptext{font-size:14.5px;line-height:1.45;margin-top:4px}
+.ptag{display:inline-block;font-size:11px;font-weight:600;padding:2px 7px;border-radius:5px;background:#E7F3FF;color:#0B5FCC;margin-left:6px}
+.react{font-size:12px;color:#65676B;margin-top:8px;display:flex;gap:14px}
+.pin{position:absolute;right:12px;top:12px;width:24px;height:24px;border-radius:50%;background:var(--iw);color:#fff;display:grid;place-items:center;font-family:var(--mono);font-size:11px;font-weight:700;box-shadow:0 0 0 4px rgba(14,140,156,.18);cursor:pointer;border:0}
+.pin[aria-pressed="true"]{background:var(--ink)}
+.pinnote{display:flex;flex-direction:column;gap:10px}
+.pinnote button{text-align:left;border:1px solid var(--line);background:var(--paper-lift);border-radius:12px;padding:14px 16px;display:grid;grid-template-columns:28px 1fr;gap:12px;transition:.25s}
+.pinnote button[aria-pressed="true"]{border-color:var(--iw);background:var(--iw-wash)}
+.pinnote .pk{width:24px;height:24px;border-radius:50%;background:var(--iw);color:#fff;display:grid;place-items:center;font-family:var(--mono);font-size:11px;font-weight:700}
+.pinnote b{display:block;font-size:15px;margin-bottom:3px}
+.pinnote span{font-size:13.5px;color:var(--ink-2);line-height:1.45}
+
+/* ---------- 12 dashboard ---------- */
+.dash{background:var(--deep);border-radius:18px;padding:clamp(16px,2.2vw,26px);color:#E8F0F9;box-shadow:0 40px 80px -40px rgba(14,27,51,.55)}
+.dtop{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;margin-bottom:16px}
+.dtop .t{font-weight:600;font-size:16px}
+.live{display:inline-flex;align-items:center;gap:8px;font-family:var(--mono);font-size:10px;letter-spacing:.12em;color:var(--aqua)}
+.live i{width:7px;height:7px;border-radius:50%;background:#3ED598;animation:livepulse 1.6s infinite}
+@keyframes livepulse{0%{box-shadow:0 0 0 0 rgba(62,213,152,.6)}100%{box-shadow:0 0 0 9px rgba(62,213,152,0)}}
+.dtiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:10px}
+.dtile{background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:14px}
+.dtile .l{font-family:var(--mono);font-size:9.5px;letter-spacing:.11em;text-transform:uppercase;color:rgba(232,240,249,.55)}
+.dtile .v{font-family:var(--mono);font-size:26px;font-weight:500;margin-top:8px;font-variant-numeric:tabular-nums;color:#fff}
+.dtile .d{font-family:var(--mono);font-size:11px;margin-top:4px;color:#3ED598}
+.dtile .d.bad{color:#FF8A84}
+.dpanels{display:grid;grid-template-columns:1fr;gap:10px;margin-top:10px}
+@media(min-width:900px){.dpanels{grid-template-columns:1.2fr 1fr}}
+.dpanel{background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);border-radius:12px;padding:16px}
+.dpanel .mono{color:rgba(232,240,249,.55)}
+.dbar{display:grid;grid-template-columns:110px 1fr 46px;gap:10px;align-items:center;margin:9px 0;font-size:12.5px}
+.dbar .t{height:9px;border-radius:5px;background:rgba(255,255,255,.08);overflow:hidden}
+.dbar .t i{display:block;height:100%;background:var(--aqua);border-radius:5px;transition:width .9s var(--ease)}
+.dbar .n{font-family:var(--mono);text-align:right;font-size:11.5px}
+.dalert{margin-top:10px;padding:12px 14px;border-radius:10px;background:rgba(210,151,30,.14);border:1px solid rgba(210,151,30,.4);font-size:13px;line-height:1.45;color:#F7E2B5}
+
+/* ---------- 13 loop ---------- */
+.lpctl{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;margin-bottom:22px}
+.lpctl .ctrl{flex:1 1 260px}
+.lpwk{font-family:var(--serif);font-size:38px;line-height:1;letter-spacing:-.02em;min-width:5ch}
+.lpwk small{display:block;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3);margin-bottom:4px}
+.lpgrid{display:grid;grid-template-columns:1fr;gap:24px;align-items:start}
+@media(min-width:1080px){.lpgrid{grid-template-columns:minmax(0,1.5fr) minmax(0,1fr)}}
+.lpgrid>*{min-width:0}
+.lpstage{background:var(--deep);border-radius:18px;padding:clamp(14px,2vw,24px);color:#E8F0F9;box-shadow:0 40px 80px -40px rgba(14,27,51,.55)}
+.lpscroll{overflow-x:auto}
+.lpsvg{min-width:560px;width:100%;height:auto}
+.lpsvg text{font-family:var(--sans);fill:#E8F0F9}
+.lpsvg .lb{font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;fill:#9FB3CC}
+.lpsvg .ct{font-family:var(--serif);font-size:30px}
+.lpsvg circle{transition:fill .45s,opacity .45s}
+.lpsvg .mt{transition:width .6s var(--ease)}
+.lpflow{animation:lpflow .9s linear infinite}
+@keyframes lpflow{to{stroke-dashoffset:-22}}
+.offscreen .lpflow,.offscreen .live i{animation-play-state:paused}
+.lplog{margin-top:12px;border-top:1px solid rgba(255,255,255,.12);padding-top:12px}
+.lplog .hd{display:flex;justify-content:space-between;gap:10px;flex-wrap:wrap;font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:#9FB3CC;margin-bottom:6px}
+.lprow{display:grid;grid-template-columns:44px 58px minmax(0,1fr) auto;gap:10px;align-items:center;padding:7px 0;border-bottom:1px dashed rgba(255,255,255,.1);font-family:var(--mono);font-size:11.5px;color:#C9D6E6}
+.lprow.nw{animation:pop .4s var(--ease)}
+.lprow .st{justify-self:start;padding:3px 9px;border-radius:999px;font-weight:700;font-size:10px;letter-spacing:.06em;text-transform:uppercase;white-space:nowrap}
+.st.e{background:rgba(140,224,236,.18);color:var(--aqua)}
+.st.c{background:rgba(127,179,238,.2);color:var(--sky)}
+.st.n{background:rgba(255,255,255,.08);color:#9FB3CC}
+.lprow .to{color:#7D90AB;white-space:nowrap}
+.lprow .to.ok{color:var(--aqua)}
+.lpfine{font-size:12px;color:#9FB3CC;margin:10px 0 0;line-height:1.45}
+.lpside{display:flex;flex-direction:column;gap:18px}
+.lpside .kpis{margin-top:0}
+.lpside .kpis .d{font-family:var(--mono);font-size:11px;margin-top:6px}
+.lpside .kpis .d.up{color:var(--alert)}.lpside .kpis .d.dn{color:var(--accent)}
+.lpchart text{font-family:var(--mono);font-size:10px;fill:var(--ink-3)}
+@media(max-width:600px){.lprow{grid-template-columns:40px 50px minmax(0,1fr)}.lprow .to{display:none}
+  .lpscroll{-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent)}
+  .lstep .hand{flex-direction:column;align-items:flex-start;gap:2px;border-radius:10px}}
+
+/* ---------- 14 nurture phone ---------- */
+.phone{width:min(340px,100%);margin:0 auto;border-radius:38px;background:#0B141A;padding:12px;box-shadow:0 40px 70px -36px rgba(14,27,51,.6)}
+.screen{border-radius:28px;overflow:hidden;background:#EFE7DE;height:560px;display:flex;flex-direction:column}
+.wahead{background:#075E54;color:#fff;padding:14px 16px;display:flex;align-items:center;gap:10px}
+.wahead .av{width:32px;height:32px;background:#25D366;font-size:12px}
+.wahead b{font-size:14.5px;display:block}
+.wahead span{font-size:11.5px;opacity:.8}
+.wabody{flex:1;overflow-y:auto;padding:20px 12px 14px;display:flex;flex-direction:column;gap:8px}
+.wamsg{max-width:84%;background:#fff;border-radius:10px;padding:8px 11px;font-size:13.5px;line-height:1.42;color:#111B21;box-shadow:0 1px 1px rgba(0,0,0,.08);animation:pop .4s var(--ease)}
+.wamsg.me{align-self:flex-end;background:#D9FDD3}
+.wamsg .tm{font-size:10px;color:#56636C;text-align:right;margin-top:3px}
+.waday{align-self:center;font-size:11px;background:#E1F2FB;color:#54656F;padding:4px 10px;border-radius:7px}
+.wabtn{display:block;margin-top:6px;text-align:center;color:#027EB5;font-weight:600;font-size:13px;border-top:1px solid #E9EDEF;padding-top:6px}
+@keyframes pop{from{opacity:0;transform:translateY(8px)}to{opacity:1;transform:none}}
+.daysteps{display:flex;flex-direction:column;gap:8px}
+.daysteps button{display:grid;grid-template-columns:62px 1fr;gap:12px;text-align:left;border:1px solid var(--line);background:var(--paper-lift);border-radius:12px;padding:12px 14px;align-items:baseline;transition:.25s}
+.daysteps button[aria-pressed="true"]{border-color:var(--ink);background:var(--paper)}
+.daysteps .dk{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--accent);letter-spacing:.08em}
+.daysteps .dt{font-size:14px;line-height:1.4}
+
+/* ---------- 15 capability ---------- */
+.ladtop{display:flex;justify-content:space-between;align-items:flex-end;gap:16px 24px;flex-wrap:wrap}
+.ladbig{font-family:var(--serif);font-size:clamp(60px,6.4vw,92px);line-height:.88;letter-spacing:-.03em;margin:8px 0 0;color:var(--accent)}
+.ladmini{display:flex;gap:26px}
+.ladmini .v{font-family:var(--serif);font-size:32px;line-height:1;letter-spacing:-.02em}
+.ladmini .l{font-size:12px;color:var(--ink-2);margin-top:4px}
+.ladder{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;align-items:end;height:240px;margin-top:22px}
+.rung{display:flex;flex-direction:column;justify-content:flex-end;height:100%;gap:8px;border:0;background:transparent;padding:0;color:inherit}
+.rung .stack{display:flex;flex-direction:column-reverse;flex:1;border-radius:10px;overflow:hidden;transition:box-shadow .3s}
+.rung .stack span{display:block;transition:flex-grow .9s var(--ease),background .4s}
+.rung .stack .f{background:var(--accent)}
+.rung .stack .r{background:var(--line-soft)}
+.rung.fut .stack .f{background:repeating-linear-gradient(135deg,var(--accent-wash) 0 6px,#fff 6px 10px);box-shadow:inset 0 2px 0 var(--sky)}
+.rung.fut .pct,.rung.fut .q{color:var(--ink-3)}
+.rung[aria-pressed="true"] .stack{box-shadow:0 0 0 3px var(--paper-lift),0 0 0 5px var(--ink)}
+.rung[aria-pressed="true"] .q{color:var(--ink);font-weight:700}
+.rung .q{font-family:var(--mono);font-size:10.5px;letter-spacing:.1em;color:var(--ink-3);text-align:center}
+.rung .pct,.rung .q{display:block}
+.rung .pct{font-family:var(--serif);font-size:26px;text-align:center;line-height:1;transition:color .3s}
+.ladctl{display:flex;gap:12px;align-items:center;flex-wrap:wrap;margin-bottom:18px}
+.lsteps{display:flex;flex-direction:column;gap:8px}
+.lstep{display:grid;grid-template-columns:40px 1fr;gap:12px;text-align:left;border:1px solid var(--line);background:var(--paper-lift);border-radius:12px;padding:14px 16px;align-items:start;transition:opacity .35s,border-color .35s,background .35s}
+.lstep .qk{font-family:var(--mono);font-size:11px;font-weight:700;color:var(--accent);padding-top:3px;display:flex;align-items:center;gap:5px}
+.lstep b{display:block;font-size:15.5px;line-height:1.3}
+.lstep .ds{display:block;font-size:13.5px;color:var(--ink-2);line-height:1.45;margin-top:2px}
+.lstep .hand{display:inline-flex;gap:7px;align-items:center;margin-top:9px;font-size:12.5px;padding:4px 10px;border-radius:999px;background:var(--paper-deep);color:var(--ink-2)}
+.lstep .hand i{font-style:normal;font-family:var(--mono);font-size:9.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-3)}
+.lstep.next{opacity:.5}
+.lstep.done .qk::after{content:"";width:9px;height:5px;border:2px solid var(--accent);border-top:0;border-right:0;transform:rotate(-45deg) translateY(-2px)}
+.lstep.done .hand{background:var(--accent-wash);color:var(--accent-deep)}
+.lstep[aria-pressed="true"]{border-color:var(--ink);background:var(--paper);opacity:1}
+.lstep[aria-pressed="true"] .hand{background:var(--accent);color:#fff}
+.lstep[aria-pressed="true"] .hand i{color:rgba(255,255,255,.75)}
+
+.trainlist{display:flex;flex-direction:column;gap:10px}
+.trainlist div{display:grid;grid-template-columns:44px 1fr;gap:12px;align-items:start;padding:14px 0;border-bottom:1px solid var(--line)}
+.trainlist .qk{white-space:nowrap;font-family:var(--mono);font-size:11px;font-weight:700;color:var(--accent);padding-top:3px}
+.trainlist p{margin:0}
+.trainlist b{display:block;font-size:15.5px}
+.trainlist span{font-size:13.5px;color:var(--ink-2);line-height:1.45}
+
+/* ---------- 16 split ---------- */
+.split2{display:grid;grid-template-columns:1fr;gap:2px;background:var(--line);border:1px solid var(--line);border-radius:16px;overflow:hidden}
+.splitrow{display:grid;grid-template-columns:1fr;background:var(--paper-lift)}
+@media(min-width:860px){.splitrow{grid-template-columns:200px 1fr 1fr}}
+.splitrow>div{padding:16px 18px}
+.splitrow .sk{font-family:var(--serif);font-size:22px;line-height:1.1}
+.splitrow .sk small{display:block;font-family:var(--mono);font-size:9.5px;letter-spacing:.12em;color:var(--ink-3);text-transform:uppercase;margin-bottom:4px}
+.splitrow .tg{border-left:3px solid var(--accent);background:linear-gradient(90deg,var(--accent-wash),transparent 70%)}
+.splitrow .iwc{border-left:3px solid var(--iw);background:linear-gradient(90deg,var(--iw-wash),transparent 70%)}
+.splitrow .muted{opacity:.45}
+.splithead{display:none}
+@media(min-width:860px){.splithead{display:grid;background:var(--paper)}}
+.splithead div{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.12em;text-transform:uppercase}
+
+/* ---------- 17 stack builder ---------- */
+.svcgrid{display:grid;grid-template-columns:1fr;gap:28px}
+@media(min-width:1000px){.svcgrid{grid-template-columns:minmax(0,1.2fr) minmax(0,1fr)}}
+.svcs{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:8px}
+.svc{text-align:left;border:1px solid var(--line);background:var(--paper-lift);border-radius:12px;padding:14px 16px;display:flex;gap:12px;align-items:flex-start;transition:.25s}
+.svc .bx{width:18px;height:18px;border-radius:5px;border:1.5px solid var(--ink-3);flex:0 0 auto;margin-top:2px;display:grid;place-items:center;transition:.2s}
+.svc[aria-pressed="true"]{border-color:var(--accent);background:var(--accent-wash)}
+.svc[aria-pressed="true"] .bx{background:var(--accent);border-color:var(--accent)}
+.svc[aria-pressed="true"] .bx::after{content:"";width:8px;height:4px;border:2px solid #fff;border-top:0;border-right:0;transform:rotate(-45deg) translate(1px,-1px)}
+.svc b{display:block;font-size:14.5px;line-height:1.3;color:var(--ink)}
+.svcgrid>.card{align-self:start;position:sticky;top:90px}
+.svc span{font-size:12px;color:var(--ink-3)}
+.cov{display:flex;flex-direction:column;gap:8px}
+.covrow{display:grid;grid-template-columns:150px 1fr 40px;gap:12px;align-items:center;font-size:14px}
+.covrow .t{height:14px;border-radius:7px;background:var(--line-soft);overflow:hidden}
+.covrow .t i{display:block;height:100%;background:var(--accent);border-radius:7px;transition:width .7s var(--ease)}
+.covrow .n{font-family:var(--mono);font-size:12px;text-align:right}
+
+
+/* grid children may hold wide scrollers, so they must be allowed to shrink */
+.mockgrid>*,.fgrid>*,.ripgrid>*,.pivgrid>*,.odgrid>*,.svcgrid>*,.jobpanel>*{min-width:0}
+
+/* ---------- worries heatmap ---------- */
+.heat{overflow-x:auto}
+.heatgrid{display:grid;grid-template-columns:minmax(170px,1.4fr) repeat(4,minmax(86px,1fr));gap:3px;min-width:600px}
+@media(max-width:600px){.heatgrid{min-width:0;grid-template-columns:minmax(92px,1.3fr) repeat(4,minmax(0,1fr))}.heatgrid .hr{font-size:12px}.heatgrid .hh{font-size:8.5px;letter-spacing:.02em}.heatgrid button.hc{height:38px;font-size:11px}}
+.heatgrid .hh{font-family:var(--mono);font-size:10px;letter-spacing:.08em;text-transform:uppercase;color:var(--ink-3);padding:6px 4px;text-align:center}
+.heatgrid .hr{font-size:14px;font-weight:600;display:flex;align-items:center;padding-right:8px}
+.heatgrid button.hc{height:44px;border:0;border-radius:7px;font-family:var(--mono);font-size:12px;font-weight:700;transition:transform .2s var(--ease),box-shadow .2s}
+.heatgrid button.hc:hover{transform:scale(1.05)}
+.heatgrid button.hc[aria-pressed="true"]{box-shadow:0 0 0 2px var(--paper-lift),0 0 0 4px var(--ink)}
+.quote{font-family:var(--serif);font-size:clamp(22px,2.2vw,28px);line-height:1.2;letter-spacing:-.01em;margin:10px 0 14px}
+.namebars{display:flex;flex-direction:column;gap:8px;margin-top:10px}
+/* ---------- lead form mock ---------- */
+.lform{width:min(360px,100%);margin:0 auto;background:#fff;border:1px solid #DADDE1;border-radius:18px;overflow:hidden;box-shadow:0 30px 60px -36px rgba(14,27,51,.35);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;color:#1C1E21}
+.lfhead{padding:16px 18px;border-bottom:1px solid #EEF0F2}
+.lfhead b{display:block;font-size:16px}.lfhead span{font-size:12.5px;color:#65676B}
+.lfbody{padding:16px 18px;display:flex;flex-direction:column;gap:12px}
+.lff label{display:block;font-size:12.5px;color:#65676B;margin-bottom:5px}
+.lff div{border:1px solid #CED0D4;border-radius:8px;padding:10px 12px;font-size:14.5px}
+.lfq{border:2px solid var(--accent);border-radius:12px;padding:12px;background:var(--accent-wash)}
+.lfq p{margin:0 0 8px;font-size:14px;font-weight:600}
+.lfopts{display:flex;flex-direction:column;gap:6px}
+.lfopts button{text-align:left;border:1px solid #CED0D4;background:#fff;border-radius:8px;padding:9px 12px;font-size:14px;display:flex;gap:10px;align-items:center}
+.lfopts button i{width:16px;height:16px;border-radius:50%;border:1.5px solid #8A8D91;flex:0 0 auto}
+.lfopts button[aria-pressed="true"]{border-color:var(--accent)}
+.lfopts button[aria-pressed="true"] i{border:5px solid var(--accent)}
+.lfsub{margin:4px 18px 18px;background:#0B5FCC;color:#fff;text-align:center;border-radius:8px;padding:11px;font-weight:600;font-size:14.5px}
+.route{display:flex;flex-direction:column;gap:10px}
+.route>div{display:grid;grid-template-columns:120px 1fr;gap:14px;padding:14px 0;border-bottom:1px solid var(--line);align-items:baseline}
+.route .rk{font-family:var(--mono);font-size:10px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-3)}
+.route .rv2{font-size:15px;line-height:1.45}
+
+
+/* ---------- 90 days ---------- */
+.phases{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.phase{text-align:left;border:1px solid var(--line);background:var(--paper-lift);border-radius:14px;padding:16px;display:flex;flex-direction:column;gap:6px;transition:.25s}
+.phase[aria-pressed="true"]{border-color:var(--ink);box-shadow:0 18px 34px -22px rgba(14,27,51,.4)}
+.phase .pk{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.1em;color:var(--accent)}
+.phase b{font-size:16px;line-height:1.25}
+.score{display:grid;grid-template-columns:1fr;gap:2px;background:var(--line);border:1px solid var(--line);border-radius:12px;overflow:hidden;margin-top:16px}
+.score>div{background:var(--paper-lift);padding:14px 16px;display:grid;grid-template-columns:1fr auto;gap:4px 16px;align-items:baseline}
+.score .sn{font-size:15px;font-weight:600}.score .st{font-family:var(--mono);font-size:15px;font-variant-numeric:tabular-nums}
+.score .sw2{grid-column:1/-1;font-size:13px;color:var(--ink-2)}
+@media(max-width:600px){.phases{grid-template-columns:1fr}}
+
+/* ---------- shortlist drawer ---------- */
+#scrim{position:fixed;inset:0;background:rgba(14,27,51,.34);backdrop-filter:blur(3px);z-index:70;opacity:0;pointer-events:none;transition:opacity .3s}
+body.drawer #scrim{opacity:1;pointer-events:auto}
+#drawer{position:fixed;top:0;right:0;bottom:0;width:min(420px,100vw);background:var(--paper-lift);border-left:1px solid var(--line);z-index:80;transform:translateX(101%);transition:transform .46s var(--ease);overflow-y:auto;padding:26px 24px 60px}
+body.drawer #drawer{transform:none}
+#drawer h3{margin:0 0 6px;font-family:var(--serif);font-size:32px;font-weight:400;letter-spacing:-.02em}
+#drawer ol{padding-left:20px;margin:18px 0}
+#drawer li{margin-bottom:10px;font-size:15px;line-height:1.4}
+#drawer li span{display:block;font-size:12.5px;color:var(--ink-3)}
+#toast{position:fixed;left:50%;bottom:26px;transform:translateX(-50%) translateY(12px);background:var(--ink);color:var(--paper);font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:12px 18px;border-radius:999px;opacity:0;pointer-events:none;transition:.3s;z-index:120}
+#toast.show{opacity:1;transform:translateX(-50%)}
+
+/* ---------- close ---------- */
+#close{background:var(--ink);color:var(--paper);padding:clamp(80px,11vw,160px) 0;overflow:hidden}
+#close .display em{color:var(--aqua)}
+#close .mono{color:rgba(244,248,253,.55)}
+#close p{color:rgba(244,248,253,.75);max-width:60ch}
+.foot{margin-top:clamp(50px,6vw,90px);padding-top:24px;border-top:1px solid rgba(244,248,253,.18);display:flex;flex-wrap:wrap;gap:14px;justify-content:space-between;align-items:center}
+.foot .mark{height:16px}.foot .mark svg{fill:var(--paper);height:100%;width:auto}
+.foot .fm{font-family:var(--mono);font-size:10.5px;letter-spacing:.11em;text-transform:uppercase;color:rgba(244,248,253,.5)}
+
+@media(max-width:600px){
+  #ex-nurture .mockgrid>div:last-child,#ex-form .mockgrid>div:last-child{order:-1}
+  .seg{border-radius:14px}
+  .seg button{padding:8px 11px}
+  .braid{-webkit-mask-image:linear-gradient(90deg,#000 85%,transparent);mask-image:linear-gradient(90deg,#000 85%,transparent)}
+  .ripsvg{overflow-x:auto}.ripsvg svg{min-width:560px}
+  .kpis .v{font-size:24px}
+  .prow{grid-template-columns:1fr 70px}.prow input{grid-column:1/-1;grid-row:2}
+}
+.braidhint{display:none;font-family:var(--mono);font-size:10px;letter-spacing:.1em;color:var(--ink-3);margin-top:8px}
+@media(max-width:860px){.braidhint{display:block}}
+@media (prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{animation:none!important;transition:none!important}
+  .rv{opacity:1;transform:none}
+}
+@media print{
+  #top,#drawer,#scrim,#toast,.star,.wavewrap,body::before{display:none!important}
+  .rv{opacity:1;transform:none}
+  #hero{min-height:0;padding:40px 0}
+  .exhibit{break-before:page;break-inside:auto}
+  .exhibit .card,.exhibit .exhead,.dash,.ai,.fb,.phone,.lform,.lpstage{break-inside:avoid}
+  .setup,.dash,.ai{backdrop-filter:none}
+}
+</style>
+</head>
+<body>
+
+<header id="top">
+  <a class="mark" href="#hero" aria-label="Toggle Solutions"><svg viewBox="0 0 1432 392" aria-hidden="true"><use href="#wm"/></svg></a>
+  <span class="crumb">Education deck · Idea lab · Toggle × iWisers</span>
+  <div class="grow"></div>
+  <button class="btn ghost" id="openDrawer" type="button">Deck shortlist<span class="ct" id="starCount">0</span></button>
+</header>
+
+<main>
+<!-- ==================== HERO ==================== -->
+<section id="hero">
+  <div class="wavewrap" aria-hidden="true">
+    <svg viewBox="0 0 1440 620" preserveAspectRatio="none">
+      <defs>
+        <linearGradient id="wv1" x1="0" y1="0" x2=".7" y2="1"><stop offset="0" stop-color="#CFE2FA"/><stop offset="1" stop-color="#AFD3F5"/></linearGradient>
+        <linearGradient id="wv2" x1=".1" y1="0" x2=".9" y2="1"><stop offset="0" stop-color="#A9CFF3"/><stop offset="1" stop-color="#8FC9EF"/></linearGradient>
+        <linearGradient id="wv3" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#9AD5EE"/><stop offset="1" stop-color="#8CE0EC"/></linearGradient>
+      </defs>
+      <path fill="url(#wv1)" opacity=".72" d="M0,168 C240,86 430,214 730,176 C1010,141 1190,54 1440,110 L1440,620 L0,620 Z"/>
+      <path fill="url(#wv2)" opacity=".74" d="M0,296 C300,224 496,362 796,314 C1074,270 1252,186 1440,244 L1440,620 L0,620 Z"/>
+      <path fill="url(#wv3)" opacity=".8" d="M0,438 C268,378 512,506 812,448 C1090,394 1272,340 1440,388 L1440,620 L0,620 Z"/>
+    </svg>
+  </div>
+  <div class="wrap">
+    <div class="herometa rv">
+      <span class="mono"><i class="dot"></i>Toggle runs the performance</span>
+      <span class="mono"><i class="dot iw"></i>iWisers runs the communities</span>
+      <span class="mono"><i class="dot am"></i>Parents pay the fees</span>
+    </div>
+    <h1 class="display rv">Twenty ways to show a university how <em>parents and students</em> decide together.</h1>
+    <p class="lede rv">This page is the parts bin for the general education deck. Most exhibits respond: change an input and the exhibit redraws. Star the ones that belong in the deck, and the shortlist builds itself in the top corner.</p>
+    <div class="setup rv">
+      <label for="uniName">Show the mockups for</label>
+      <input id="uniName" type="text" placeholder="Your University" autocomplete="off" maxlength="60">
+    </div>
+    <div class="legend rv">
+      <span class="badge v"><i></i>Verified, cited to the brain</span>
+      <span class="badge ill"><i></i>Illustrative model</span>
+      <span class="badge mock"><i></i>Mockup</span>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== INDEX ==================== -->
+<section id="index">
+  <div class="wrap">
+    <p class="mono">The exhibits</p>
+    <h2 class="h2" style="margin-top:12px">Pick by <em>what the slide needs</em> to do.</h2>
+    <div class="filters" role="group" aria-label="Filter exhibits">
+      <button class="chip on" data-f="all" type="button" aria-pressed="true">All 20</button>
+      <button class="chip" data-f="interactive" type="button" aria-pressed="false">Interactive</button>
+      <button class="chip" data-f="viz" type="button" aria-pressed="false">Visualization</button>
+      <button class="chip" data-f="mock" type="button" aria-pressed="false">Mockup</button>
+      <button class="chip amc" data-f="parent" type="button" aria-pressed="false">Parent angle</button>
+      <button class="chip iwc" data-f="iwisers" type="button" aria-pressed="false">iWisers angle</button>
+      <button class="chip" data-f="starred" type="button" aria-pressed="false">Starred</button>
+    </div>
+    <nav class="toc" id="toc" aria-label="Exhibit index"></nav>
+  </div>
+</section>
+
+<div id="exhibits"></div>
+
+<!-- ==================== CLOSE ==================== -->
+<section id="close">
+  <div class="wavewrap" aria-hidden="true" style="height:50%;opacity:.35">
+    <svg viewBox="0 0 1440 620" preserveAspectRatio="none"><path fill="#2A6BE0" opacity=".5" d="M0,296 C300,224 496,362 796,314 C1074,270 1252,186 1440,244 L1440,620 L0,620 Z"/><path fill="#8CE0EC" opacity=".35" d="M0,438 C268,378 512,506 812,448 C1090,394 1272,340 1440,388 L1440,620 L0,620 Z"/></svg>
+  </div>
+  <div class="wrap">
+    <p class="mono">Next step</p>
+    <h2 class="display" style="margin-top:16px;font-size:clamp(38px,5.4vw,84px)">Star the exhibits, and we build the deck <em>by Tuesday 3 November</em>.</h2>
+    <p style="margin-top:26px;font-size:18px;line-height:1.55">The shortlist feeds the general education deck that Shakthi takes into the next universities. Exhibits marked illustrative get their numbers swapped for the prospect's own data after the first meeting.</p>
+    <div class="foot">
+      <span class="mark"><svg viewBox="0 0 1432 392" aria-hidden="true"><use href="#wm"/></svg></span>
+      <span class="fm">Internal working page · Toggle Solutions × iWisers · October 2026</span>
+    </div>
+  </div>
+</section>
+
+</main>
+<div id="scrim"></div>
+<aside id="drawer" aria-label="Deck shortlist" aria-hidden="true" inert>
+  <button class="btn ghost" id="closeDrawer" type="button" style="float:right">Close</button>
+  <p class="mono" style="margin-top:8px">Deck shortlist</p>
+  <h3>Your starred exhibits</h3>
+  <p class="small">The order below follows the page. Copy it into the deck brief or paste it to the team.</p>
+  <ol id="starList"></ol>
+  <div style="display:flex;gap:8px;flex-wrap:wrap">
+    <button class="btn solid" id="copyList" type="button">Copy list</button>
+    <button class="btn ghost" id="clearList" type="button">Clear</button>
+  </div>
+</aside>
+<div id="toast" role="status" aria-live="polite"></div>
+
+<svg style="display:none" xmlns="http://www.w3.org/2000/svg"><symbol id="wm" viewBox="0 0 1432 392"><path d="M1166.39 1.57487C1166.39 2.43389 1157.45 54.1188 1146.44 116.398C1135.43 178.678 1126.5 232.081 1126.5 234.944C1126.5 238.667 1127.77 241.244 1130.64 243.964C1134.47 247.4 1136.07 247.686 1147.4 247.686C1154.42 247.686 1160 247.973 1160 248.545C1160 249.261 1152.82 290.351 1151.23 298.799C1150.43 302.807 1149.63 303.523 1142.77 304.812C1120.27 309.107 1090.59 307.818 1072.88 301.948C1061.55 298.083 1049.75 288.347 1044.96 278.898C1041.61 272.169 1041.13 269.162 1041.29 254.129C1041.29 239.239 1044.16 221.486 1062.35 119.119C1074 54.4051 1083.41 1.00218 1083.41 0.715838C1083.41 0.286342 1102.08 0 1124.9 0C1154.26 0 1166.39 0.429496 1166.39 1.57487Z"/>
+<path d="M140.413 21.6189C140.413 22.9074 133.871 60.8478 131.637 72.5879L130.68 77.3125H155.571C171.527 77.3125 180.303 77.8852 180.303 78.7442C180.303 80.6054 172.485 125.418 171.527 129.856C170.73 133.006 170.091 133.149 145.678 133.436L120.787 133.865L111.533 186.123C101.321 243.821 101.002 246.971 104.672 248.259C106.108 248.689 116.798 249.118 128.606 249.118C148.391 249.118 150.146 249.261 149.349 251.552C148.87 252.984 146.636 265.583 144.243 279.614L139.775 305.241L100.523 304.669C66.058 304.096 60.1543 303.666 50.8998 300.946C30.7951 295.076 20.7428 285.054 17.7113 268.017C15.7965 256.849 16.4348 250.693 27.7636 187.411C32.7099 160.209 36.6989 136.872 36.6989 135.44C36.6989 133.436 34.3055 133.149 18.3495 133.149C6.86114 133.149 0 132.577 0 131.718C0 129.856 7.81846 85.0438 8.93536 80.4623C9.57368 77.4557 10.2118 77.3125 28.5613 77.3125H47.3895L51.0594 56.839C52.974 45.6716 55.2078 32.7862 56.1653 28.2047L57.7609 20.044H99.087C127.01 20.044 140.413 20.4735 140.413 21.6189Z"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M644.145 113.964C646.698 121.409 647.177 121.839 651.644 121.409L656.59 120.98L660.42 99.0745L664.09 77.3125H746.742L745.944 80.4623C745.475 82.2857 737.196 129.18 727.258 185.472L727.255 185.487L726.637 188.986C716.585 246.827 707.49 297.367 706.692 301.376C696.321 347.19 666.643 375.109 614.945 387.565C600.585 391.001 596.596 391.287 568.832 391.43C535.803 391.43 524.475 389.856 504.53 382.697C476.287 372.675 457.619 354.779 450.758 331.155C449.481 326.717 448.364 321.42 448.364 319.702V316.409H530.697L533.57 322.135C538.995 333.16 551.44 338.457 572.023 338.457C594.841 338.457 609.042 331.298 618.136 315.12C622.923 306.816 624.678 300.517 628.827 277.036C632.656 254.988 632.656 254.845 628.029 254.845C625.157 254.845 622.764 256.993 617.658 264.008C598.032 291.21 566.599 302.521 529.421 295.649C488.414 288.061 463.363 258.711 459.693 213.612C456.023 167.654 470.862 127.136 501.657 99.3609C512.029 90.0547 517.294 86.6186 528.145 81.894C552.078 71.5856 578.246 69.5813 600.585 76.1671C621.009 82.1803 638.241 97.2133 644.145 113.964ZM546.813 171.09C552.078 155.627 566.598 141.596 582.235 137.015C586.224 135.726 593.564 134.724 598.51 134.724C624.519 134.438 641.911 149.041 644.145 173.094C646.538 198.865 632.656 223.204 610.318 232.081C599.308 236.519 579.842 236.662 569.63 232.367C560.535 228.644 553.355 222.202 548.568 213.611C545.377 207.885 544.898 204.592 544.898 191.849C544.898 183.545 545.855 174.239 546.813 171.09Z"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M936.619 113.535C939.172 120.121 940.129 120.98 944.437 121.409C947.15 121.696 949.384 121.409 949.384 120.693C949.384 118.975 955.606 84.3279 956.564 80.4623L957.361 77.3125H998.049C1022.14 77.3125 1038.74 77.8852 1038.74 78.6011C1038.74 83.612 999.805 300.803 997.252 309.966C981.934 364.944 930.077 394.294 852.849 391.86C824.448 390.858 808.013 387.565 788.866 379.261C762.06 367.521 746.423 348.622 741.317 321.706L740.2 316.409H823.331L825.086 320.417C827.16 325.142 833.862 331.728 839.447 334.448C846.946 337.884 863.859 339.459 875.347 337.884C902.154 334.019 913.004 321.276 919.865 285.913L920.913 280.423C924.752 260.328 925.594 255.922 923.993 255.023C923.544 254.771 922.904 254.794 922.084 254.823C921.792 254.834 921.478 254.845 921.141 254.845C917.471 254.845 915.876 256.277 911.887 262.29C909.334 266.299 903.111 273.171 898.165 277.609C861.785 310.539 794.61 301.805 767.485 260.715C749.454 233.369 746.582 189.416 760.464 150.044C770.198 122.555 788.547 99.7904 812.64 85.7596C833.383 73.5901 864.816 69.1518 889.548 74.7354C910.451 79.46 929.439 95.0658 936.619 113.535ZM853.807 149.614C830.99 171.805 830.83 211.607 853.169 227.213C862.423 233.655 869.125 235.517 882.368 235.517C902.632 235.373 918.908 226.64 928.321 210.891C934.863 199.724 936.778 192.565 936.778 178.821C936.778 163.358 933.427 154.482 924.013 146.035C912.206 135.44 893.697 131.717 876.784 136.585C866.412 139.592 860.987 142.598 853.807 149.614Z"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M1352.75 76.883C1402.69 89.7684 1431.42 126.563 1431.26 177.246C1431.1 184.977 1430.3 194.999 1429.18 199.724L1427.11 208.314L1341.26 208.744L1255.26 209.03L1256.38 218.05C1257.65 228.931 1263.72 240.814 1270.74 245.539C1288.61 257.708 1324.99 254.272 1336.64 239.239L1341.1 233.512L1381.47 233.369C1406.52 233.369 1421.68 233.942 1421.68 234.801C1421.68 235.517 1419.93 240.385 1417.85 245.396C1401.1 285.197 1356.26 309.107 1298.34 309.25C1233.4 309.25 1190.32 279.327 1179.15 226.211C1176.92 215.759 1176.92 188.7 1179.31 176.53C1187.13 133.579 1212.82 101.508 1253.03 84.3279C1278.56 73.4469 1301.53 70.5835 1336 73.8764C1340.47 74.3059 1348.12 75.5944 1352.75 76.883ZM1263.08 161.354C1269.14 143.601 1284.14 129.999 1301.53 125.991C1311.59 123.843 1325.79 125.561 1333.92 129.999C1342.38 134.581 1349.08 145.319 1350.68 157.059L1351.79 164.647H1261.96L1263.08 161.354Z"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M345.927 75.3081C409.751 87.0481 448.364 137.301 440.706 199.008C439.588 207.598 437.195 219.052 435.44 224.349C420.441 267.873 379.594 299.944 328.854 307.818C314.653 310.109 285.134 309.823 271.731 307.246C222.746 298.083 187.962 267.587 177.91 224.922C174.878 211.894 174.878 185.407 177.75 171.519C188.281 121.982 231.043 83.7552 286.411 74.5923C299.814 72.4447 332.364 72.731 345.927 75.3081ZM297.42 137.158C281.624 142.169 269.976 153.766 262.955 171.376C258.328 182.973 257.211 207.026 260.721 217.907C266.944 237.092 281.305 247.686 301.409 247.686C315.929 247.686 325.503 244.393 335.555 236.232C350.873 223.777 358.053 207.026 357.894 184.691C357.894 161.64 350.714 147.323 335.715 139.449C325.982 134.295 309.387 133.292 297.42 137.158Z"/></symbol></svg>
+
+<script>
+/* =========================================================================
+   Data. Verified numbers carry their source path. Everything else is an
+   illustrative model and says so on the exhibit.
+   ========================================================================= */
+const EXHIBITS = [
+  {id:"funnel",  t:"The adaptive funnel", s:"Changes shape by decider, intake phase and budget", tags:["interactive","parent","iwisers"], badge:"ill", slot:"Opening concept slide, or the centerpiece of the method section."},
+  {id:"braid",   t:"Two deciders, one decision", s:"Student and parent journeys, side by side", tags:["viz","parent","interactive"], badge:"ill", slot:"The insight slide: why parent-first changes the plan."},
+  {id:"worries", t:"What parents are asking this month", s:"A listening heatmap of parent worries, by community", tags:["viz","interactive","parent","iwisers"], badge:"mock", slot:"The insight slide on what parents ask, right after the braid."},
+  {id:"ripple",  t:"Seeding ripple", s:"One honest question, carried through parent communities", tags:["interactive","iwisers","parent"], badge:"ill", slot:"iWisers capability slide."},
+  {id:"matrix",  t:"Message matrix", s:"What each audience hears at each stage", tags:["interactive","parent"], badge:"v", slot:"Messaging framework slide."},
+  {id:"jobs",    t:"One job per platform", s:"Why each channel gets a single role", tags:["interactive","viz"], badge:"v", slot:"Channel strategy slide."},
+  {id:"proof",   t:"The UNITAR proof wall", s:"32,000+ enquiries, 47% cheaper, 77% share", tags:["viz"], badge:"v", slot:"Credentials slide, right after the method."},
+  {id:"pivot",   t:"Budget pivot simulator", s:"Move money between programmes, watch enquiries move", tags:["interactive"], badge:"ill", slot:"On-demand pivots slide."},
+  {id:"calendar",t:"Intake planner", s:"Click your intake months, the year plans itself", tags:["interactive","viz","iwisers"], badge:"ill", slot:"Timeline slide, and the leave-behind."},
+  {id:"openday", t:"Open day command center", s:"Scrub from three weeks out to a week after", tags:["interactive","viz"], badge:"ill", slot:"Open day activation slide. The point the client team asked for most."},
+  {id:"geo",     t:"What AI says about you", s:"A parent asks an AI assistant, before and after GEO", tags:["mock","parent"], badge:"mock", slot:"SEO and GEO slide."},
+  {id:"thread",  t:"Inside a parent group", s:"How a seeded reply reads, with the rules annotated", tags:["mock","iwisers","parent"], badge:"mock", slot:"iWisers method slide."},
+  {id:"dash",    t:"The live enrolment dashboard", s:"What the marketing and admissions team sees each morning", tags:["mock","viz"], badge:"mock", slot:"Reporting and dashboard slide."},
+  {id:"loop",    t:"The sales and marketing loop", s:"Enrolments flow back to the ad platforms", tags:["interactive","viz"], badge:"ill", slot:"Sales x marketing slide."},
+  {id:"nurture", t:"Nurture on WhatsApp", s:"A student track and a parent track", tags:["mock","parent","interactive"], badge:"mock", slot:"Lead nurturing slide."},
+  {id:"form",    t:"Ask who else is deciding", s:"One extra lead form question routes the parent", tags:["mock","interactive","parent"], badge:"mock", slot:"Lead nurturing slide, or the parent-first close."},
+  {id:"ladder",  t:"Campus teams, self sufficient", s:"Training that hands content back to the campus", tags:["viz"], badge:"ill", slot:"Training and enablement slide."},
+  {id:"split",   t:"Two teams, one funnel", s:"Where Toggle leads and where iWisers leads", tags:["viz","iwisers"], badge:"v", slot:"Partnership slide, near the start."},
+  {id:"ninety",  t:"The first 90 days", s:"Build demand before you harvest it", tags:["interactive","viz","iwisers"], badge:"ill", slot:"Engagement plan slide, right before scope."},
+  {id:"stack",   t:"Build the engagement", s:"Pick services, see which stages they cover", tags:["interactive"], badge:"v", slot:"Scope slide, before pricing."}
+];
+
+const $ = (s,el=document)=>el.querySelector(s);
+const $$ = (s,el=document)=>[...el.querySelectorAll(s)];
+const fmt = n=>Math.round(n).toLocaleString("en-US");
+const fmtR = n=>{n=Math.round(n);if(n<1000)return fmt(n);const m=Math.pow(10,Math.floor(Math.log10(n))-1);return "about "+fmt(Math.round(n/m)*m)};
+const RM = n=>"RM"+fmt(n);
+const REDUCED = matchMedia("(prefers-reduced-motion: reduce)").matches;
+const store = {get(k,d){try{const v=localStorage.getItem(k);return v==null?d:JSON.parse(v)}catch(e){return d}},set(k,v){try{localStorage.setItem(k,JSON.stringify(v))}catch(e){}}};
+const BADGE = {v:'<span class="badge v"><i></i>Verified</span>',ill:'<span class="badge ill"><i></i>Illustrative model</span>',mock:'<span class="badge mock"><i></i>Mockup</span>'};
+const TYPE = {interactive:"Interactive",viz:"Visualization",mock:"Mockup"};
+function keepFocus(root,fn){const a=document.activeElement;let key=null;
+  if(a&&root&&root.contains(a)&&a.dataset){for(const k of ["k","m","i","p"])if(a.dataset[k]!=null){key=`[data-${k}="${a.dataset[k]}"]`;break}}
+  fn();if(key){const el=$(key,root);if(el)el.focus()}}
+function pctLR(arr){const raw=arr.map(x=>x*100),fl=raw.map(Math.floor);let left=100-fl.reduce((a,b)=>a+b,0);
+  raw.map((x,i)=>[x-fl[i],i]).sort((a,b)=>b[0]-a[0]).forEach(([,i])=>{if(left>0){fl[i]++;left--}});return fl}
+const ownCls=o=>({iWisers:"own iw",Joint:"own jt"}[o]||"own");
+const STAR_SVG = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.5l2.9 6.1 6.6.8-4.9 4.6 1.3 6.5L12 17.3l-5.9 3.2 1.3-6.5L2.5 9.4l6.6-.8z"/></svg>';
+
+/* segmented control: exactly one pressed button per group */
+const seg=(id,fn)=>$(id).addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;$$("button",$(id)).forEach(x=>x.setAttribute("aria-pressed",x===b));fn(b)});
+
+/* ---------- exhibit shells ---------- */
+const BODY = {};   // id -> {title html, kicker, body html, src}
+const exhibitsEl = $("#exhibits");
+
+function shell(ex,i){
+  const b = BODY[ex.id];
+  const types = ex.tags.filter(t=>TYPE[t]&&!(t==="mock"&&ex.badge==="mock")).map(t=>`<span class="badge">${TYPE[t]}</span>`).join("");
+  const bg = ["","alt","white"][i%3];
+  return `<section class="exhibit ${bg}" id="ex-${ex.id}" data-id="${ex.id}" data-tags="${ex.tags.join(" ")}">
+  <div class="wrap">
+    <div class="exhead">
+      <div>
+        <div class="exnum"><span class="n">${String(i+1).padStart(2,"0")}</span>${types}${BADGE[ex.badge]}</div>
+        <h2 class="h2">${b.title}</h2>
+      </div>
+      <div class="exside">
+        <p class="lede" style="font-size:17px">${b.kicker}</p>
+        <p class="slot"><b>Deck slot.</b> ${ex.slot}</p>
+        <button class="star" type="button" data-star="${ex.id}" aria-pressed="false">${STAR_SVG}<span>Add to deck</span></button>
+      </div>
+    </div>
+    ${b.body}
+    ${b.src?`<p class="src">${b.src}</p>`:""}
+  </div>
+</section>`;
+}
+
+/* =========================================================================
+   01 ADAPTIVE FUNNEL
+   ========================================================================= */
+BODY.funnel = {
+  title:'A funnel that <em>changes shape</em> when the parent is the one deciding.',
+  kicker:'Choose who drives the decision, where you are in the intake, and the monthly budget. The stages resize, the channels swap, and the share carried by iWisers communities grows or shrinks.',
+  body:`<div class="card">
+    <div class="ctrlrow">
+      <div class="ctrl"><span class="mono">Who decides</span><div class="seg" id="fWho">
+        <button type="button" data-v="parent" aria-pressed="true">Parent led</button>
+        <button type="button" data-v="student" aria-pressed="false">Student led</button>
+        <button type="button" data-v="adult" aria-pressed="false">Working adult</button></div></div>
+      <div class="ctrl"><span class="mono">Intake phase</span><div class="seg" id="fPhase">
+        <button type="button" data-v="early" aria-pressed="true">12 weeks out</button>
+        <button type="button" data-v="results" aria-pressed="false">Results week</button>
+        <button type="button" data-v="openday" aria-pressed="false">Open day</button>
+        <button type="button" data-v="final" aria-pressed="false">Final call</button></div></div>
+      <div class="ctrl" style="flex:1 1 220px;min-width:200px"><span class="mono">Monthly media <b class="num" id="fBudgetV" style="color:var(--ink)">RM40,000</b></span>
+        <input type="range" id="fBudget" min="10000" max="120000" step="5000" value="40000" aria-label="Monthly media budget"></div>
+    </div>
+    <div class="fgrid">
+      <div>
+        <div class="funnel" id="funnel"></div>
+        <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:14px" class="small">
+          <span class="sw"><i style="background:var(--accent)"></i>Toggle paid and search</span>
+          <span class="sw"><i style="background:rgba(14,140,156,.85)"></i>iWisers community share</span>
+        </div>
+        <p class="mono" style="margin-top:22px">Where the money goes</p>
+        <div class="mixbar" id="fMix"></div>
+      </div>
+      <div class="fdetail" id="fDetail" aria-live="polite"></div>
+    </div>
+  </div>`,
+  src:'Stage rates are an illustrative model. The enquiry cost anchor of about RM20 comes from a 2026 Meta lead generation account we ran for a private university. We replace every rate with the prospect\'s own CRM data in the first month.'
+};
+const F_STAGES = [
+  {k:"aware",n:"Hears of you"},{k:"consider",n:"Shortlists you"},{k:"enquire",n:"Enquires"},
+  {k:"visit",n:"Attends open day"},{k:"apply",n:"Applies"},{k:"enrol",n:"Enrols"}
+];
+const F_WHO = {
+  student:{iw:[.05,.1,0,0,0,0],consider:6,visit:.2,apply:.11,enrol:.055,
+    ch:{aware:[["TikTok","t"],["Instagram Reels","t"],["YouTube Shorts","t"]],consider:[["Meta retargeting","t"],["Google search","t"],["Student creators","i"]],enquire:[["Meta lead forms","t"],["Google search","t"]],visit:[["Open day retargeting","t"],["WhatsApp reminders","t"]],apply:[["Counsellor call","j"],["Brand search","t"]],enrol:[["Fee deadline nurture","t"]]},
+    msg:{aware:"Is the course you picked in Form 5 still the one you want?",consider:"See what a week in this programme looks like.",enquire:"Get the fees and entry requirements in one message.",visit:"Come on Saturday and sit in on a real class.",apply:"Applications for this intake close on the 30th. Finish the form.",enrol:"Your student ID and timetable are ready."}},
+  parent:{iw:[.35,.45,.1,.05,0,0],consider:8,visit:.26,apply:.14,enrol:.075,
+    ch:{aware:[["Parent Facebook groups","i"],["YouTube","t"],["Meta video","t"]],consider:[["Forum and group threads","i"],["AI answers (GEO)","t"],["Google search","t"],["Fee and ROI guides","t"]],enquire:[["Google search","t"],["WhatsApp","t"],["Meta lead forms","t"]],visit:[["Parent briefing at open day","j"],["WhatsApp reminders","t"]],apply:[["Counsellor call with both","j"],["Scholarship calculator","t"]],enrol:[["Parent WhatsApp track","t"]]},
+    msg:{aware:"Three questions parents ask most about private university fees.",consider:"See where last year's graduates from this programme went to work, from the Graduate Tracer Study.",enquire:"Get the full fee breakdown, including what scholarships cover.",visit:"Bring your child on Saturday. There is a separate briefing for parents.",apply:"Your counsellor can walk both of you through the payment plan.",enrol:"Here is who to call on campus if your child needs anything."}},
+  adult:{iw:[.05,.1,0,0,0,0],consider:5,visit:.18,apply:.13,enrol:.07,
+    ch:{aware:[["Meta video","t"],["YouTube","t"],["LinkedIn","t"]],consider:[["Google search","t"],["SEO and GEO","t"],["Alumni stories","i"]],enquire:[["Meta lead forms","t"],["Google search","t"]],visit:[["Evening webinar","t"],["WhatsApp","t"]],apply:[["Counsellor call","j"],["APEL eligibility check","t"]],enrol:[["Employer letter nurture","t"]]},
+    msg:{aware:"Your experience may count toward the degree. Check in two minutes.",consider:"Classes after 7pm and on weekends, built around a full time job.",enquire:"Ask a counsellor whether your working years qualify.",visit:"Join Thursday's 8pm webinar from your phone.",apply:"Send your CV and we will map it to the entry route.",enrol:"Your employer letter template is attached."}}
+};
+const F_PHASE = {early:[55,32,13],results:[30,40,30],openday:[20,35,45],final:[10,30,60]};
+const F_PHASE_NOTE = {
+  early:"Twelve weeks out, most of the money builds familiarity. Parents start asking around early, so this is when community seeding does the most work.",
+  results:"Results week is when search volume jumps. Toggle shifts budget to Google and to lead forms while the communities answer the results-day questions.",
+  openday:"Around the open day, the plan pushes registrations and attendance. Retargeting carries most of the weight.",
+  final:"In the final call, almost everything goes to people who already enquired. The counsellor call and the deadline do the converting."
+};
+let fState = {who:"parent",phase:"early",budget:40000,sel:"consider"};
+function funnelCalc(){
+  const w = F_WHO[fState.who], mix = F_PHASE[fState.phase].slice();
+  if(fState.who==="parent"){mix[1]+=8;mix[0]-=4;mix[2]-=4}
+  const B = fState.budget, tof=B*mix[0]/100, mof=B*mix[1]/100, bof=B*mix[2]/100;
+  const cplByPhase = {early:24,results:18,openday:21,final:26}[fState.phase];
+  const enq = (bof + mof*.45)/cplByPhase;
+  const reach = tof/9*1000/2.4 + mof/9*1000/4;
+  return {mix,vals:{aware:reach,consider:enq*w.consider,enquire:enq,visit:enq*w.visit,apply:enq*w.apply,enrol:enq*w.enrol},w};
+}
+function renderFunnel(){
+  const {mix,vals,w} = funnelCalc();
+  const max = Math.log10(vals.aware+1), min = Math.log10(Math.max(vals.enrol,1));
+  $("#funnel").innerHTML = F_STAGES.map((s,i)=>{
+    const v = vals[s.k], lg = Math.log10(Math.max(v,1));
+    const pct = 34 + 54*((lg-min)/(max-min||1));
+    const col = ["#0F2A47","#163C6B","#1B4CB0","#1F5BC8","#A9CBF3","#CFE2FA"][i];
+    return `<div class="fst ${fState.sel===s.k?"sel":""}" data-k="${s.k}" role="button" tabindex="0" >
+      <div class="fbar" style="width:${pct}%;background:${col};color:${i>3?"#0E1B33":"#fff"}"><i class="split" style="width:${w.iw[i]*100}%"></i>
+      <span class="fl">${s.n}</span><span class="fv">${fmtR(v).replace("about ","~")}</span></div></div>`;
+  }).join("");
+  const labels = ["Awareness","Consideration","Conversion"], cols=["#0F2A47","#2A6BE0","#0E8C9C"];
+  $("#fMix").innerHTML = mix.map((m,i)=>`<div style="flex-grow:${m};background:${cols[i]}">${labels[i]} ${m}%</div>`).join("");
+  const s = F_STAGES.find(x=>x.k===fState.sel), i = F_STAGES.indexOf(s);
+  const ownLbl = {t:"own",i:"own iw",j:"own jt"}, ownWho={t:"Toggle",i:"iWisers",j:"Joint"};
+  $("#fDetail").innerHTML = `<p class="mono">Stage ${i+1} of 6 · ${fmtR(vals[s.k])} people a month</p>
+    <h3>${s.n}</h3>
+    <p class="msg">“${w.msg[s.k]}”</p>
+    <p class="mono">Channels doing the work</p>
+    <div class="chlist">${w.ch[s.k].map(c=>`<span class="${ownLbl[c[1]]}">${ownWho[c[1]]} · ${c[0]}</span>`).join("")}</div>
+    <div class="kpis"><div><div class="v num">${fmt(vals.enquire)}</div><div class="l">enquiries a month</div></div>
+      <div><div class="v num">${fmt(vals.enrol)}</div><div class="l">enrolments a month</div></div>
+      <div><div class="v num">${RM(fState.budget/Math.max(vals.enrol,1))}</div><div class="l">media cost per enrolment</div></div></div>
+    <div class="note blue" style="margin-top:16px"><b>What changed</b>${F_PHASE_NOTE[fState.phase]}${fState.who==="parent"?" With a parent deciding, the shortlist stage gets longer and wider, and iWisers carries close to half of it.":""}</div>`;
+}
+function initFunnel(){
+  const bindSeg=(id,key)=>seg(id,b=>{fState[key]=b.dataset.v;renderFunnel()});
+  bindSeg("#fWho","who");bindSeg("#fPhase","phase");
+  $("#fBudget").addEventListener("input",e=>{fState.budget=+e.target.value;$("#fBudgetV").textContent=RM(fState.budget);renderFunnel()});
+  const pick=e=>{const r=e.target.closest(".fst");if(!r)return;fState.sel=r.dataset.k;keepFocus($("#funnel"),renderFunnel)};
+  $("#funnel").addEventListener("click",pick);
+  $("#funnel").addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();pick(e)}});
+  renderFunnel();
+}
+
+/* =========================================================================
+   02 BRAID
+   ========================================================================= */
+BODY.braid = {
+  title:'The student scrolls while <em>the parent researches</em>, and both have to say yes.',
+  kicker:'Two lanes across the same six months. The points where they meet are where a university wins or loses the family. Click any point to see what happens there and who on our side owns it.',
+  body:`<div class="card"><div class="braid" id="braid"></div><p class="braidhint">Swipe sideways to follow both lanes</p><div class="braidinfo" id="braidInfo"></div></div>`,
+  src:'Sequence drawn from the intake cycles in our UNITAR account knowledge base and the parent-first shift Shakthi observed across Klang Valley universities. The timing is illustrative.'
+};
+const BRAID = [
+  {x:90, lane:"s",t:"Sees a campus TikTok",d:"The student meets the brand through a creator or a campus video, months before results.",o:"Toggle"},
+  {x:90, lane:"p",t:"Asks in a parent group",d:"A parent asks a Facebook group which private universities are worth the fees. iWisers parents whose experience fits the question reply, with the partnership disclosed.",o:"iWisers"},
+  {x:240,lane:"s",t:"Searches the course",d:"Results are out. The student searches the course name plus fees on Google.",o:"Toggle"},
+  {x:240,lane:"p",t:"Asks an AI assistant",d:"The parent asks ChatGPT or Gemini to compare three universities. GEO decides who gets named.",o:"Toggle"},
+  {x:390,lane:"m",t:"Enquiry, together",d:"One of them fills the form. The counsellor's first call should ask who else is deciding.",o:"Joint"},
+  {x:540,lane:"p",t:"Reads alumni parents",d:"The parent reads replies from parents whose children already studied there.",o:"iWisers"},
+  {x:540,lane:"s",t:"Gets retargeted",d:"The student sees programme proof: a day in class, graduate jobs, the campus.",o:"Toggle"},
+  {x:690,lane:"m",t:"Open day, both attend",d:"The family visits. The parent gets a fees and safety briefing while the student tours.",o:"Joint"},
+  {x:840,lane:"p",t:"Checks the payment plan",d:"The parent opens the scholarship calculator sent on WhatsApp.",o:"Toggle"},
+  {x:960,lane:"m",t:"Applies",d:"The application goes in with both names on the counsellor's record.",o:"Joint"}
+];
+function renderBraid(){
+  const Y={s:70,p:220,m:145}, OX=70;
+  const pts=BRAID.map(b=>({...b,X:b.x+OX}));
+  const lastM=Math.max(...pts.filter(b=>b.lane==="m").map(b=>b.X));
+  const path=(lane)=>{const ps=pts.filter(b=>b.lane===lane||b.lane==="m").sort((a,b)=>a.X-b.X);
+    let d=`M110,${Y[lane]}`,py=Y[lane],px=110;ps.forEach(p=>{const y=Y[p.lane],mx=(px+p.X)/2;d+=` C${mx},${py} ${mx},${y} ${p.X},${y}`;px=p.X;py=y});return d};
+  const col={s:"#2A6BE0",p:"#D2971E",m:"#0E1B33"};
+  const ly=b=>b.lane==="s"?Y.s-22:b.lane==="p"?Y.p+32:Y.m+34;
+  $("#braid").innerHTML = `<svg viewBox="0 0 1110 310" role="group" aria-label="Student and parent journeys">
+    <text x="16" y="${Y.s+4}" style="font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.12em;fill:#2A6BE0">STUDENT</text>
+    <text x="16" y="${Y.p+4}" style="font-family:var(--mono);font-size:10px;font-weight:700;letter-spacing:.12em;fill:#B07D12">PARENT</text>
+    <path d="${path("s")}" fill="none" stroke="#2A6BE0" stroke-width="3" opacity=".5"/>
+    <path d="${path("p")}" fill="none" stroke="#D2971E" stroke-width="3" opacity=".6"/>
+    <path d="M${lastM},${Y.m} L1095,${Y.m}" stroke="#0E1B33" stroke-width="3" opacity=".7"/>
+    ${["Before results","Results out","Shortlist","Open day","Decision"].map((m,i)=>`<text x="${190+i*205}" y="302" style="font-family:var(--mono);font-size:9.5px;letter-spacing:.1em;fill:#8794AC" text-anchor="middle">${m.toUpperCase()}</text>`).join("")}
+    ${pts.map((b,i)=>`<g class="tp" data-i="${i}" tabindex="0" role="button" aria-label="${b.t}"><circle cx="${b.X}" cy="${Y[b.lane]}" r="9" fill="${col[b.lane]}" stroke="#fff" stroke-width="3"/>
+      <text x="${b.X}" y="${ly(b)}" text-anchor="middle">${b.t}</text></g>`).join("")}
+  </svg>`;
+  const show=(i,scroll)=>{const b=BRAID[i];$$(".tp",$("#braid")).forEach(g=>g.classList.toggle("on",+g.dataset.i===i));
+    if(scroll){const g=$(`.tp[data-i="${i}"]`,$("#braid"));const box=$("#braid"),gr=g.getBoundingClientRect(),br=box.getBoundingClientRect();box.scrollLeft+=gr.left-br.left-br.width/2}
+    $("#braidInfo").innerHTML=`<div><p class="mono">${{s:"Student",p:"Parent",m:"Both"}[b.lane]} · touchpoint ${i+1} of ${BRAID.length}</p><p class="h3" style="margin-top:8px">${b.t}</p><p class="small" style="margin-top:8px">${b.d}</p></div>
+      <div><p class="mono">Owned by</p><p style="margin-top:8px"><span class="${ownCls(b.o)}">${b.o}</span></p></div>`};
+  $("#braid").addEventListener("click",e=>{const g=e.target.closest(".tp");if(g)show(+g.dataset.i,true)});
+  $("#braid").addEventListener("keydown",e=>{const g=e.target.closest(".tp");if(g&&(e.key==="Enter"||e.key===" ")){e.preventDefault();show(+g.dataset.i)}});
+  show(1);
+}
+
+/* =========================================================================
+   03 SEEDING RIPPLE
+   ========================================================================= */
+BODY.ripple = {
+  title:'One honest answer in the right group <em>travels further</em> than a boosted post.',
+  kicker:'A parent has already asked the question. An iWisers parent whose own experience fits answers it, and the answer gets shared through groups, forums and chats. Press replay to watch it spread, and watch the share of enquiries with a parent involved climb behind it.',
+  body:`<div class="ripgrid">
+    <div class="ripsvg" tabindex="0" role="region" aria-label="Community network, scrollable"><svg id="ripSvg" viewBox="-50 -10 740 450" role="img" aria-label="Community network"></svg></div>
+    <div>
+      <div class="ctrlrow">
+        <div class="seg" id="ripMode"><button type="button" data-v="paid" aria-pressed="false">Paid only</button><button type="button" data-v="seed" aria-pressed="true">Paid plus seeding</button></div>
+        <button class="btn solid" id="ripGo" type="button">Replay the answer</button>
+      </div>
+      <div class="counter">
+        <div><div class="v num" id="ripConv">0</div><div class="l">parent questions answered</div></div>
+        <div><div class="v num" id="ripMent">0</div><div class="l">times the answers were shared</div></div>
+      </div>
+      <p class="small" id="ripNote" style="margin-top:10px"></p>
+      <p class="mono" style="margin-top:20px">Enquiries with a parent involved, share</p>
+      <svg class="spark" id="ripSpark" viewBox="0 0 400 110" aria-label="Share of enquiries with a parent involved"></svg>
+      <div class="note teal" style="margin-top:14px"><b>The rule we sell on</b>Seeders answer questions parents have already asked. Each one is a real parent or graduate whose own experience fits the question, and every paid relationship is disclosed in the post, in line with Malaysian advertising disclosure rules and each group's own policy. Parents keep trusting a partner who discloses the relationship.</div>
+    </div>
+  </div>`,
+  src:'Network and counts are an illustrative simulation. Group names are generic categories. In a pilot we measure the effect three ways: regions with and without seeding, the "Who is helping you decide?" form answer, and tagged links to the parent briefing.'
+};
+const RIP_NODES=[
+  {id:0,x:320,y:210,n:"Parent's question",r:26},
+  {id:1,x:170,y:110,n:"Parent FB group",r:20},{id:2,x:470,y:105,n:"Tech forum thread",r:20},
+  {id:3,x:130,y:300,n:"School parents chat",r:18},{id:4,x:510,y:300,n:"Parenting blogger",r:18},
+  {id:5,x:320,y:60,n:"Public discussion forum",r:16},{id:6,x:320,y:370,n:"Tuition center group",r:16},
+  {id:7,x:60,y:190,n:"Community chat group",r:14},{id:8,x:590,y:200,n:"TikTok comments",r:14},
+  {id:9,x:230,y:30,n:"Alumni parent",r:12},{id:10,x:420,y:395,n:"Neighborhood group",r:12},
+  {id:11,x:600,y:60,n:"Google search",r:18,paid:1},{id:12,x:40,y:380,n:"Meta ads",r:18,paid:1}
+];
+const RIP_EDGES=[[0,1],[0,2],[0,3],[0,4],[1,5],[1,7],[1,9],[2,5],[2,8],[3,6],[3,7],[4,8],[4,10],[6,10],[2,11],[4,11],[3,12],[1,12]];
+let ripTimer=[];
+function renderRipple(){
+  const svg=$("#ripSvg");
+  svg.innerHTML = RIP_EDGES.map(([a,b],i)=>`<line class="edge" data-e="${i}" x1="${RIP_NODES[a].x}" y1="${RIP_NODES[a].y}" x2="${RIP_NODES[b].x}" y2="${RIP_NODES[b].y}"/>`).join("")
+   + RIP_NODES.map(n=>`<g class="node ${n.paid?"paid":""}" data-n="${n.id}"><circle class="pulse" cx="${n.x}" cy="${n.y}" r="${n.r}"/><circle class="c" cx="${n.x}" cy="${n.y}" r="${n.r}"/><text x="${n.x}" y="${n.y+n.r+15}">${n.n}</text></g>`).join("");
+  spark(Array(12).fill(18));
+}
+function spark(vals){
+  const max=40,pts=vals.map((v,i)=>`${10+i*34},${100-(v/max)*85}`).join(" ");
+  $("#ripSpark").innerHTML=`<polygon points="10,100 ${pts} 384,100" fill="#DDF3F5"/><polyline points="${pts}" fill="none" stroke="#0E8C9C" stroke-width="2.5" stroke-linejoin="round"/>
+   <circle cx="384" cy="${100-(vals[11]/max)*85}" r="4" fill="#0E8C9C"/>
+   <text x="390" y="${100-(vals[11]/max)*85-8}" text-anchor="end" style="font-family:var(--mono);font-size:11px;fill:#0E1B33">${Math.round(vals[11])}%</text>`;
+}
+function runRipple(instant){
+  ripTimer.forEach(clearTimeout);ripTimer=[];renderRipple();
+  const seed = $("#ripMode [aria-pressed=true]").dataset.v==="seed";
+  const order = seed?[0,1,2,3,4,5,6,7,8,9,10,11,12]:[11,12];
+  const conv = seed?46:0, ment = seed?310:0;
+  $("#ripNote").textContent = seed?"Answers from disclosed partners, shared onward by other parents.":"Paid ads answer no questions inside the groups, so both counters stay at zero.";
+  $$(".counter .v").forEach(v=>v.style.opacity=seed?1:.4);
+  const base = Array.from({length:12},(_,i)=>18+(seed?i*i*0.1:i*0.05));
+  const step = (REDUCED||instant===true)?0:260;
+  order.forEach((id,k)=>ripTimer.push(setTimeout(()=>{
+    const g=$(`[data-n="${id}"]`,$("#ripSvg"));if(!g)return;g.classList.add("lit");
+    const seen=x=>{const j=order.indexOf(x);return j>-1&&j<=k};RIP_EDGES.forEach(([a,b],i)=>{if((a===id||b===id)&&seen(a)&&seen(b))$(`[data-e="${i}"]`).classList.add("lit")});
+    const p=$(".pulse",g),r=RIP_NODES[id].r;if(p&&step&&p.animate)p.animate([{opacity:.8,r},{opacity:0,r:r+26}],{duration:900,easing:"ease-out"});
+    const f=(k+1)/order.length;$("#ripConv").textContent=fmt(conv*f);$("#ripMent").textContent=fmt(ment*f);
+    spark(base.map((v,i)=>18+(v-18)*Math.min(1,f*1.1)));
+  },k*step)));
+}
+function initRipple(){
+  runRipple(true);
+  $("#ripGo").addEventListener("click",()=>runRipple());
+  seg("#ripMode",b=>{runRipple()});
+}
+
+/* =========================================================================
+   04 MESSAGE MATRIX
+   ========================================================================= */
+BODY.matrix = {
+  title:'The same university, <em>three different conversations</em>.',
+  kicker:'The student lines are the ones that ran for UNITAR. The parent and working adult lines are first drafts in the same structure, written for this deck.',
+  body:`<div class="ctrlrow"><div class="seg" id="mxWho"><button type="button" data-v="student" aria-pressed="true">Student</button><button type="button" data-v="parent" aria-pressed="false">Parent</button><button type="button" data-v="adult" aria-pressed="false">Working adult</button></div></div>
+    <div class="matrix" id="matrix"></div>`,
+  src:'Student lines: <code>brain/case-studies/unitar-2026.md</code>, Marketing Messaging Framework. Parent and working adult lines are new drafts and have not run.'
+};
+const MX = {
+  student:[["Top of funnel","Is traditional education holding you back?","The ad questions the default path.",["TikTok","Reels"]],
+           ["Middle of funnel","Learn, apply, get hired.","The ad shows the degree leads to a job.",["Meta","YouTube"]],
+           ["Bottom of funnel","One click away. Complete your application.","The ad adds urgency when the student is ready.",["Lead forms","Search"]]],
+  parent:[["Top of funnel","Where did last year's graduates go to work?","Parents weigh fees against outcomes, so lead with a sourced outcome.",["Parent groups","YouTube"]],
+          ["Middle of funnel","See the full fees, the scholarships and the payment plan on one page.","Remove the fear of hidden costs before the first call.",["GEO","Search","Forums"]],
+          ["Bottom of funnel","Bring your child on Saturday. There is a briefing for parents only.","Give the parent a role at the open day.",["WhatsApp","Retargeting"]]],
+  adult:[["Top of funnel","Your eight years at work may count toward a degree.","APEL can count work experience toward entry, and in some programmes toward up to 30% of credits.",["Meta","LinkedIn"]],
+         ["Middle of funnel","Classes after 7pm, exams online, built around your job.","Answer the time objection before the buyer raises it.",["Search","SEO"]],
+         ["Bottom of funnel","Check your eligibility in two minutes.","This gives a tired, busy buyer a small first step.",["Lead forms","WhatsApp"]]]
+};
+function renderMatrix(who){
+  $("#matrix").innerHTML = MX[who].map(r=>`<div class="mcell"><span class="mono">${r[0]}</span><p class="q" style="margin:0">“${r[1]}”</p><div class="fmt">${r[3].map(c=>`<span class="badge">${c}</span>`).join("")}</div><p class="why">${r[2]}</p></div>`).join("");
+}
+function initMatrix(){renderMatrix("student");seg("#mxWho",b=>{renderMatrix(b.dataset.v)})}
+
+/* =========================================================================
+   05 PLATFORM JOBS
+   ========================================================================= */
+BODY.jobs = {
+  title:'Every platform gets <em>one job</em>, so your ads stop competing with each other.',
+  kicker:'UNITAR\'s cost per enquiry fell 47% year on year after a restructure that gave each platform a single job. Before the change, in mid 2024, it paid RM154 per enquiry on Google, RM291 on Facebook and RM525 on TikTok. Click a platform to see its job.',
+  body:`<div class="jobs" id="jobs"></div><div class="jobpanel" id="jobPanel"></div>`,
+  src:'Starting costs and channel roles: <code>brain/case-studies/unitar-2026.md</code>. The 47% reduction is the account-wide figure; the per-platform after costs are not published, so the bars show the starting point only.'
+};
+const JOBS=[
+  {n:"Google",j:"Catch people already searching",who:"Students and parents who typed a course name, a fee question or your brand.",m:"Enquiries and applications from search",cpl:154,o:"Toggle"},
+  {n:"Meta",j:"Persuade people still deciding",who:"People who watched, clicked or visited, plus lookalikes of enrolled students.",m:"Lead form enquiries and open day registrations",cpl:291,o:"Toggle"},
+  {n:"TikTok",j:"Reach people who have not started looking",who:"Form 5 and pre-university students months before results.",m:"Video views, profile visits and low cost enquiries",cpl:525,o:"Toggle"},
+  {n:"SEO and GEO",j:"Be the answer when a parent asks AI",who:"Parents and students asking Google, ChatGPT or Gemini to compare universities.",m:"Organic enquiries and how often AI names you",o:"Toggle"},
+  {n:"Seeders",j:"Start the conversations parents trust",who:"Parent groups, forums and school chats where families ask each other.",m:"Mentions, branded search lift and assisted enquiries",o:"iWisers"}
+];
+function initJobs(){
+  $("#jobs").innerHTML = JOBS.map((j,i)=>`<button class="job" type="button" data-i="${i}" aria-pressed="${i===0}"><span class="${ownCls(j.o)}" style="width:fit-content">${j.o}</span><span class="jn">${j.n}</span><span class="jj">${j.j}</span></button>`).join("");
+  const show=i=>{const j=JOBS[i];$$(".job").forEach(b=>b.setAttribute("aria-pressed",+b.dataset.i===i));
+    const bars = JOBS.filter(x=>x.cpl).map(x=>`<div class="cplrow"><span class="small" style="font-weight:${x===j?700:400};color:var(--ink)">${x.n}</span><span class="t"><i class="${x===j?"":"old"}" style="width:${x.cpl/525*100}%"></i></span><span class="num small" style="text-align:right">RM${x.cpl}</span></div>`).join("");
+    $("#jobPanel").innerHTML=`<div class="card"><p class="mono">Who it reaches</p><p style="margin:8px 0 18px">${j.who}</p><p class="mono">Measured on</p><p style="margin:8px 0 0">${j.m}</p></div>
+      <div class="card"><p class="mono">UNITAR cost per enquiry, mid 2024, before the change</p>${bars}<p class="small" style="margin-top:14px">After the restructure, the cost per enquiry across the account fell <b style="color:var(--accent)">47%</b>.</p></div>`};
+  $("#jobs").addEventListener("click",e=>{const b=e.target.closest(".job");if(b)show(+b.dataset.i)});
+  show(0);
+}
+
+/* =========================================================================
+   06 PROOF
+   ========================================================================= */
+BODY.proof = {
+  title:'UNITAR shows what the method does <em>when it works</em>.',
+  kicker:'UNITAR International University, June to September 2025. Each of the three numbers comes from the published case study.',
+  body:`<div class="proof">
+    <div><div class="big" data-count="32000" data-suf="+">0</div><p class="cap">qualified enquiries in four months</p></div>
+    <div><div class="big" data-count="47" data-suf="%">0</div><p class="cap">lower cost per enquiry, year on year</p></div>
+    <div><div class="big" data-count="77" data-suf="%">0</div><p class="cap">of total impressions in Malaysia\'s education and training category</p><div class="sov" id="sov"></div></div>
+  </div>
+  <div class="logos"><img src="../../../assets/logos/clients/unitar-international-university.png" alt="UNITAR International University"><img src="../../../assets/logos/clients/ijn-university-college.png" alt="IJN University College"><img src="../../../assets/logos/clients/icms.webp" alt="ICMS"></div>`,
+  src:'Numbers: <code>brain/case-studies/unitar-2026.md</code>. Logos are education clients listed in <code>clients/toggle/sales-page/sales-data.js</code>. Only UNITAR has a published case, so the other logos carry no numbers.'
+};
+function initProof(){
+  $("#sov").innerHTML = Array.from({length:100},(_,i)=>`<i data-i="${i}"></i>`).join("");
+  const io = new IntersectionObserver(es=>es.forEach(e=>{if(!e.isIntersecting)return;io.disconnect();
+    $$("[data-count]",$("#ex-proof")).forEach(el=>countUp(el,+el.dataset.count,el.dataset.suf||""));
+    $$("#sov i").forEach((c,i)=>setTimeout(()=>c.classList.toggle("on",i<77),REDUCED?0:i*14));
+  }),{threshold:.35});
+  io.observe($("#ex-proof .proof"));
+}
+function countUp(el,to,suf){
+  if(REDUCED){el.textContent=fmt(to)+suf;return}
+  const t0=performance.now(),d=1400;
+  const tick=t=>{const p=Math.min(1,(t-t0)/d),e=1-Math.pow(1-p,3);el.textContent=fmt(to*e)+suf;if(p<1)requestAnimationFrame(tick)};
+  requestAnimationFrame(tick);
+}
+
+/* =========================================================================
+   07 PIVOT SIMULATOR
+   ========================================================================= */
+BODY.pivot = {
+  title:'Move the budget to the programme that needs students <em>this week</em>.',
+  kicker:'Real cost per enquiry by programme from a private university we ran on Meta in the first half of 2026. Drag the sliders and the model shows what the same total buys. Costs rise as a programme takes more money, so piling everything onto the cheapest line stops paying off.',
+  body:`<div class="pivgrid">
+    <div class="card">
+      <div class="ctrlrow"><div class="seg" id="pvPreset"><button type="button" data-v="asrun" aria-pressed="true">As it ran</button><button type="button" data-v="cheap" aria-pressed="false">Tilt to cheapest</button><button type="button" data-v="even" aria-pressed="false">Even split</button></div></div>
+      <div id="pvRows"></div>
+    </div>
+    <div>
+      <p class="mono">Same total budget</p>
+      <p class="num" style="font-size:22px;margin:6px 0 22px" id="pvTotal"></p>
+      <p class="mono">Enquiries this mix buys</p>
+      <div class="bignum" id="pvLeads">0</div>
+      <div class="delta" id="pvDelta"></div>
+      <p class="small" style="margin-top:14px" id="pvCpl"></p>
+      <div class="note" style="margin-top:22px"><b>The catch we name in the pitch</b>The cheapest programme is rarely the one the university most needs to fill. In the deck, this slider is paired with a floor per programme that the admissions team sets.</div>
+    </div>
+  </div>`,
+  src:'Programme costs and spend as run come from an internal account record (Meta lead generation, first half of 2026). Programme names are generalized. The university stays unnamed because the work is not cleared for publication. The scaling curve is an illustrative assumption.'
+};
+const PV=[{n:"Postgraduate",cpl:12.61,s:7918},{n:"Creative arts",cpl:12.76,s:8256},{n:"Early childhood",cpl:19.25,s:3965},{n:"Business",cpl:26.39,s:17420},{n:"Engineering",cpl:26.58,s:8082},{n:"Chinese-language ads",cpl:50.61,s:4757}];
+const PV_TOTAL = PV.reduce((a,b)=>a+b.s,0);
+const PV_BASE = PV.reduce((a,b)=>a+b.s/b.cpl,0);
+let pvShare = PV.map(p=>p.s/PV_TOTAL);
+function pvLeads(sh){return PV.reduce((a,p,i)=>{const s=sh[i]*PV_TOTAL;if(s<=0)return a;const eff=p.cpl*Math.pow(s/p.s,.35);return a+s/eff},0)}
+const psHtml=(PP,i)=>`${PP[i]}%<br><span style="color:var(--ink-3);font-size:11px">${RM(pvShare[i]*PV_TOTAL)}</span>`;
+function renderPivot(){
+  const PP=pctLR(pvShare);
+  $("#pvRows").innerHTML = PV.map((p,i)=>`<div class="prow"><div><div class="pn">${p.n}</div><div class="pc">RM${p.cpl.toFixed(2)} per enquiry as run</div></div>
+    <input type="range" min="0" max="100" step="1" value="${PP[i]}" data-i="${i}" aria-label="${p.n} share of budget">
+    <div class="ps">${psHtml(PP,i)}</div></div>`).join("");
+  updPivot();
+}
+function updPivot(){
+  const L=pvLeads(pvShare), d=(L/PV_BASE-1)*100;
+  $("#pvTotal").textContent = RM(PV_TOTAL)+" as run";
+  $("#pvLeads").textContent = fmt(L);
+  const el=$("#pvDelta");el.textContent=(d>=0?"+":"")+d.toFixed(1)+"% against the mix as it ran ("+fmt(PV_BASE)+")";el.className="delta "+(d>=0.05?"up":d<=-0.05?"down":"");
+  $("#pvCpl").textContent = "Blended cost per enquiry: RM"+(PV_TOTAL/L).toFixed(2);
+}
+function normShares(fixed,val){
+  pvShare[fixed]=val;const rest=pvShare.reduce((a,b,i)=>i===fixed?a:a+b,0),target=1-val;
+  pvShare=pvShare.map((s,i)=>i===fixed?s:(rest>0?s/rest*target:target/(PV.length-1)));
+}
+function initPivot(){
+  renderPivot();
+  $("#pvRows").addEventListener("input",e=>{if(e.target.type!=="range")return;normShares(+e.target.dataset.i,+e.target.value/100);const PP=pctLR(pvShare);
+    $$("#pvRows .prow").forEach((r,i)=>{if(i!==+e.target.dataset.i)$("input",r).value=PP[i];$(".ps",r).innerHTML=psHtml(PP,i)});
+    $$("#pvPreset button").forEach(x=>x.setAttribute("aria-pressed","false"));updPivot()});
+  seg("#pvPreset",b=>{
+    if(b.dataset.v==="asrun")pvShare=PV.map(p=>p.s/PV_TOTAL);
+    if(b.dataset.v==="even")pvShare=PV.map(()=>1/PV.length);
+    if(b.dataset.v==="cheap"){const w=PV.map(p=>1/Math.pow(p.cpl,1.6)),t=w.reduce((a,b)=>a+b,0);pvShare=w.map(x=>x/t)}
+    renderPivot()});
+}
+
+/* =========================================================================
+   08 INTAKE PLANNER
+   ========================================================================= */
+BODY.calendar = {
+  title:'Click your intake months and <em>the year plans itself</em>.',
+  kicker:'UNITAR runs three intake cycles a year. Toggle the intake months below. Seeding starts ten weeks ahead, search peaks around results, the open day lands three weeks before intake, and the final call closes it.',
+  body:`<div class="card"><div class="cal"><div class="calgrid" id="cal"></div></div>
+    <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:16px" class="small" id="calKey"></div></div>
+    <div class="note blue" style="margin-top:18px"><b>What our accounts show</b>The SPM results window was the cheapest month of the year for enquiries on the university account we run, so the plan front-loads budget into results week. Roughly half of the enquiries that arrive in April only convert in September, so the nurture lane runs all year.</div>`,
+  src:'Cycle structure (C1 January, C2 March to May, C3 July to October) and the April and September pattern: <code>clients/audaura-unitar/01-strategy/account-knowledge-base.md</code> and <code>meetings/2026-04-25-wip.md</code>. Internal account data, not a published case, so the note carries no numbers.'
+};
+const MONTHS=["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"];
+let intakes = new Set([0,2,8]);
+const CAL_ROWS=[
+  {n:"Community seeding",c:"#0E8C9C",o:"iWisers",f:(m)=>[...intakes].some(i=>[(i+10)%12,(i+11)%12,(i+9)%12].includes(m))?1:0},
+  {n:"Always-on awareness",c:"#0F2A47",o:"Toggle",f:()=>.45},
+  {n:"Search and lead forms",c:"#2A6BE0",o:"Toggle",f:(m)=>m===3?1:[...intakes].some(i=>[(i+11)%12,(i+10)%12].includes(m))?.85:.35},
+  {n:"Open day",c:"#D2971E",o:"Joint",f:(m)=>[...intakes].some(i=>(i+11)%12===m)?1:0,lab:"OPEN DAY"},
+  {n:"Final call",c:"#0E1B33",o:"Toggle",f:(m)=>intakes.has(m)?1:0,lab:"INTAKE"},
+  {n:"Nurture",c:"#7FB3EE",o:"Toggle",f:()=>.6}
+];
+function renderCal(){
+  let h=`<div></div>`+MONTHS.map((m,i)=>`<button class="mh" type="button" data-m="${i}" aria-pressed="${intakes.has(i)}" aria-label="${m} intake">${m.toUpperCase()}</button>`).join("");
+  CAL_ROWS.forEach(r=>{h+=`<div class="rl"><i style="width:10px;height:10px;border-radius:3px;background:${r.c}"></i>${r.n}</div>`;
+    MONTHS.forEach((m,i)=>{const v=r.f(i);h+=`<div class="cell ${v&&r.lab?"lab":""}" style="background:${v?r.c:"var(--line-soft)"};opacity:${v?Math.max(.25,v):1};${r.c==="#D2971E"?"color:#0E1B33":""}">${v&&r.lab?r.lab:""}</div>`})});
+  $("#cal").innerHTML=h;
+  if(!intakes.size){$("#calKey").innerHTML="<span>Pick at least one intake month in the header row.</span>";$$("#cal .cell").forEach(c=>c.style.opacity=.25);return}
+  $("#calKey").innerHTML = `<span>${intakes.size} intake${intakes.size===1?"":"s"} selected: ${[...intakes].sort((a,b)=>a-b).map(i=>MONTHS[i]).join(", ")||"none"}.</span><span>Darker cells carry more budget.</span>`;
+}
+function initCal(){renderCal();$("#cal").addEventListener("click",e=>{const b=e.target.closest("button.mh");if(!b)return;const m=+b.dataset.m;intakes.has(m)?intakes.delete(m):intakes.add(m);keepFocus($("#cal"),renderCal)})}
+
+/* =========================================================================
+   09 OPEN DAY COMMAND CENTER
+   ========================================================================= */
+BODY.openday = {
+  title:'The open day is <em>a three week campaign</em>, with a Saturday in the middle.',
+  kicker:'Drag the day. Each lane lights up when it should be running, and the panel lists what the team does that day. The rules on the right come from the September 2026 open day we ran for UNITAR.',
+  body:`<div class="odgrid">
+    <div class="card">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:14px;flex-wrap:wrap">
+        <div><div class="odday num" id="odDay">T minus 21</div><div class="odphase" id="odPhase"></div></div>
+        <button class="btn ghost" id="odPlay" type="button">Play the campaign</button>
+      </div>
+      <div class="odlane odscrub"><span class="ln"></span><div><input type="range" id="odR" min="-21" max="14" value="-21" aria-label="Day relative to open day">
+      <div class="odscale"><span>3 weeks out</span><span>Open day</span><span>2 weeks after</span></div></div></div>
+      <div class="odlanes" id="odLanes"></div>
+      <div class="odnow" id="odNow" aria-live="polite"></div>
+    </div>
+    <div class="rules">
+      <p class="mono">Rules from the September open day</p>
+      <div class="rule"><b>Scale 20 to 30 percent a day.</b><p>Budgets that jump overnight reset the platform's learning. Grow the ad sets that already convert.</p></div>
+      <div class="rule"><b>One offer value everywhere.</b><p>If one ad says RM1,000 and another says RM3,000 in the same week, families trust neither.</p></div>
+      <div class="rule"><b>Spend reach money on reach goals.</b><p>A reach burst fills the feed and leaves the form empty. Sign-up promos run on lead and retargeting campaigns.</p></div>
+      <div class="rule"><b>Scarcity has to be real.</b><p>A deadline that gets extended once costs credibility with everyone who saw the first ad.</p></div>
+      <div class="rule hot"><b>TikTok's open day line cost RM58.60 per conversion.</b><p>The always-on open day campaign on TikTok was the cheapest TikTok line in the account.</p></div>
+    </div>
+  </div>`,
+  src:'The rules and the RM58.60 figure are verified against <code>clients/audaura-unitar/04-reports/open-day-c3-sept-2026-retro-and-promo-playbook.md</code> (internal account data). The lanes are a proposed plan.'
+};
+const OD=[
+  {n:"Parent group answers",a:-21,b:-5,o:"iw",d:"iWisers parents answer open day questions already asked in their groups: what to ask, what to bring."},
+  {n:"Meta registration ads",a:-18,b:-1,o:"t",d:"Lead and registration ads run to warm audiences, with one offer and one deadline."},
+  {n:"TikTok always-on",a:-21,b:0,o:"t",d:"The always-on open day campaign keeps running with an end card for the date."},
+  {n:"Google countdown",a:-10,b:0,o:"t",d:"Search ads carry a countdown to the open day in the headline on brand and course keywords."},
+  {n:"WhatsApp reminders",a:-3,b:0,o:"t",d:"Registered families get a reminder with parking, the schedule and the parent briefing time."},
+  {n:"On-site capture",a:0,b:1,o:"j",d:"Every attendee is scanned in at registration, so the counsellors know who came."},
+  {n:"Counsellor call blitz",a:1,b:7,o:"j",d:"Counsellors call attendees who did not register, and enquiries who never came."},
+  {n:"Deadline retargeting",a:1,b:14,o:"t",d:"Retargeting to attendees and site visitors carries the real enrolment deadline."}
+];
+function renderOD(d){
+  $("#odDay").textContent = d===0?"Open day":d<0?`T minus ${-d}`:`T plus ${d}`;
+  $("#odPhase").textContent = d<-14?"Build the list":d<-3?"Fill the registrations":d<0?"Get them in the car":d<=1?"Run the day":d<=7?"Convert the room":"Close the deadline";
+  $("#odLanes").innerHTML = OD.map(l=>{const on=d>=l.a&&d<=l.b;const L=(l.a+21)/35*100,W=Math.max(2,Math.min((l.b-l.a)/35*100,100-L));
+    return `<div class="odlane ${on?"on":""} ${l.o==="iw"?"iw":""}"><span class="ln">${l.n}</span><span class="tr"><i style="left:${L}%;width:${W}%"></i><b style="left:${(d+21)/35*100}%"></b></span></div>`}).join("");
+  const act=OD.filter(l=>d>=l.a&&d<=l.b);
+  $("#odNow").innerHTML = act.length?act.map(l=>`<div><span class="${l.o==="iw"?"own iw":l.o==="j"?"own jt":"own"}">${l.o==="iw"?"iWisers":l.o==="j"?"Joint":"Toggle"}</span> ${l.d}</div>`).join(""):`<div>Every day in this window has at least one lane running.</div>`;
+}
+let odAnim=null;
+function initOD(){
+  const r=$("#odR");renderOD(-21);
+  r.addEventListener("input",()=>{cancelAnimationFrame(odAnim);renderOD(+r.value)});
+  $("#odPlay").addEventListener("click",()=>{cancelAnimationFrame(odAnim);if(REDUCED){r.value=14;renderOD(14);return}let d=-21,last=0;
+    const step=t=>{if(t-last>180/*ms per day*/){last=t;r.value=d;renderOD(d);d++}if(d<=14)odAnim=requestAnimationFrame(step)};odAnim=requestAnimationFrame(step)});
+}
+
+/* =========================================================================
+   10 GEO MOCKUP
+   ========================================================================= */
+BODY.geo = {
+  title:'Parents now ask AI <em>before they ask you</em>.',
+  kicker:'A mock answer from an AI assistant to the question a parent types at 11pm. Flip between before and after a GEO programme, and the prospect\'s name from the top of the page drops into the answer.',
+  body:`<div class="mockgrid">
+    <div class="ai" aria-label="Mock AI assistant">
+      <div class="aibar"><i></i><i></i><i></i><span style="margin-left:8px">AI assistant · mockup</span></div>
+      <div class="aibody" id="aiBody"></div>
+    </div>
+    <div>
+      <div class="ctrlrow"><div class="seg" id="geoMode"><button type="button" data-v="before" aria-pressed="true">Before GEO</button><button type="button" data-v="after" aria-pressed="false">After GEO</button></div><button class="btn ghost" id="geoReplay" type="button">Replay</button></div>
+      <p class="mono">Times the university is named, across 50 parent questions</p>
+      <div class="geoscore"><span class="bignum" id="geoScore" style="font-size:clamp(56px,7vw,96px)">4</span><span class="num" style="font-size:18px;color:var(--ink-2)">of 50</span></div>
+      <div class="trainlist" style="margin-top:18px">
+        <div><span class="qk">01</span><p><b>Answer pages for parent questions</b><span>Fees, scholarships, safety, graduate jobs, written as plain answers the AI can quote.</span></p></div>
+        <div><span class="qk">02</span><p><b>Structured programme data</b><span>Every programme page states fees, intake months, duration and accreditation in the same format.</span></p></div>
+        <div><span class="qk">03</span><p><b>Mentions in places AI reads</b><span>Forum threads and parent discussions, which is where iWisers and GEO meet.</span></p></div>
+      </div>
+    </div>
+  </div>`,
+  src:'Mockup. Competitor names are placeholders. The 4 and 31 of 50 scores are illustrative; a real GEO audit measures them for the prospect before the pitch.'
+};
+let uni = "Your University";
+function geoAnswer(mode){
+  const u=`<span class="us">${esc(uni)}</span>`;
+  return mode==="before"
+   ?`<p style="margin:0">Here are three private universities in the Klang Valley that parents often consider for a business degree:</p><ol><li><b>University A</b>, known for its business school and industry links. <span class="cite">forum</span></li><li><b>University B</b>, with a large campus and strong scholarships. <span class="cite">news</span></li><li><b>University C</b>, popular for its twinning programmes. <span class="cite">blog</span></li></ol><p style="margin:0">Fees typically range from RM40,000 to RM90,000 for the full degree. I would suggest checking each university's site for current fees.</p>`
+   :`<p style="margin:0">Here are three private universities in the Klang Valley that parents often consider for a business degree:</p><ol><li>${u}, which publishes its full fees and a scholarship calculator, and publishes its graduate tracer study results. <span class="cite us">${esc(uni.toLowerCase().replace(/[^a-z0-9]+/g,"")||"university")}.edu.my</span> <span class="cite us">parent forum</span></li><li><b>University A</b>, known for its business school and industry links. <span class="cite">forum</span></li><li><b>University B</b>, with a large campus and strong scholarships. <span class="cite">news</span></li></ol><p style="margin:0">${u} also runs a separate briefing for parents at each open day.</p>`;
+}
+function esc(s){return String(s).replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]))}
+let geoTimer;
+function renderGeo(){
+  const mode=$("#geoMode [aria-pressed=true]").dataset.v;clearTimeout(geoTimer);
+  $("#aiBody").innerHTML=`<div class="qbub">My daughter wants to do business. Which private university in KL is worth the fees, and which one helps graduates get jobs?</div><div class="abub caret" id="aiAns"></div>`;
+  const ans=$("#aiAns");ans.innerHTML=geoAnswer(mode);
+  if(!REDUCED){ans.style.opacity=0;geoTimer=setTimeout(()=>{ans.style.transition="opacity .8s";ans.style.opacity=1;setTimeout(()=>ans.classList.remove("caret"),900)},500)}else ans.classList.remove("caret");
+  countUp($("#geoScore"),mode==="before"?4:31,"");
+}
+function initGeo(){
+  seg("#geoMode",b=>{renderGeo()});
+  $("#geoReplay").addEventListener("click",renderGeo);renderGeo();
+}
+
+/* =========================================================================
+   11 PARENT GROUP THREAD
+   ========================================================================= */
+BODY.thread = {
+  title:'What a seeded reply <em>reads like</em> from the inside.',
+  kicker:'A mock thread in a generic parents group. Click the numbered pins to see the four rules iWisers seeders follow, and why each one protects the university.',
+  body:`<div class="mockgrid">
+    <div class="fb" aria-label="Mock parent group thread">
+      <div class="fbhead"><span>Parents of SPM leavers, Klang Valley · mockup</span><span>Private group</span></div>
+      <div class="post"><div class="av" style="background:#8E6BBF">NA</div><div><div class="pname">Nur Aisyah</div><div class="pmeta">2h · Petaling Jaya</div>
+        <div class="ptext">My son got his SPM results. He wants business but I am worried about the fees and whether private uni graduates get hired. Any parents with experience? Tak nak buat keputusan salah.</div>
+        <div class="react"><span>👍 46</span><span>38 comments</span></div></div></div>
+      <div class="post reply"><button class="pin" type="button" data-p="0" aria-label="Rule 1">1</button><div class="av" style="background:#0E8C9C">LK</div><div><div class="pname">Lim Kar Wai <span class="ptag">Paid partner · <span class="uni-n">Your University</span></span></div><div class="pmeta">1h</div>
+        <div class="ptext">My daughter finished the business degree at <span class="uni-n">Your University</span> last year, so I went through the same worry. <button class="pin" type="button" data-p="1" aria-label="Rule 2" style="position:static;display:inline-grid;margin:0 4px;vertical-align:middle">2</button> What helped me: ask for the full fee sheet with the payment plan, and ask how many from the last intake found jobs. <button class="pin" type="button" data-p="2" aria-label="Rule 3" style="position:static;display:inline-grid;margin:0 4px;vertical-align:middle">3</button> They have a parents' session at the open day this Saturday if you want to ask them yourself. <button class="pin" type="button" data-p="3" aria-label="Rule 4" style="position:static;display:inline-grid;margin:0 4px;vertical-align:middle">4</button></div>
+        <div class="react"><span>👍 21</span><span>Reply</span></div></div></div>
+      <div class="post reply"><div class="av" style="background:#C2703D">RS</div><div><div class="pname">Ravi S.</div><div class="pmeta">40m</div>
+        <div class="ptext">Agree on asking for the job numbers. We compared three places that way.</div></div></div>
+    </div>
+    <div><div class="pinnote" id="pinNote"></div>
+      <p class="mono" style="margin-top:24px">What if</p>
+      <div class="trainlist">
+        <div><span class="qk">01</span><p><b>A seeder is called out</b><span>The disclosure is already on the post, so there is nothing hidden to expose. iWisers replies in the thread and names the partnership again.</span></p></div>
+        <div><span class="qk">02</span><p><b>A group bans paid posts</b><span>Seeders follow each group\'s rules. In those groups they post nothing paid.</span></p></div>
+        <div><span class="qk">03</span><p><b>A competitor asks iWisers too</b><span>Exclusivity by category and intake is agreed in the contract.</span></p></div>
+        <div><span class="qk">04</span><p><b>A parent asks about their data</b><span>Listening is reported in aggregate, and no parent\'s name or post leaves the group.</span></p></div>
+      </div></div>
+  </div>`,
+  src:'Mockup. Names and the group are fictional. Paid partnerships are disclosed in the post, in line with how we describe seeding throughout this page.'
+};
+const PINS=[
+  ["A real parent with a real story","Seeders are parents and graduates whose own experience fits the question. Nobody plays an invented persona, and seeders answer questions rather than start them."],
+  ["The partnership is disclosed on each post","The partner tag sits on the post. Parents keep trusting a partner who discloses the relationship."],
+  ["Answer the parent's worry first","The reply gives advice that helps the parent with any university. The brand earns the mention by being the example."],
+  ["Hand off to a real next step","The reply points to the parent briefing at the open day, which Toggle tracks as a registration."]
+];
+function initThread(){
+  const show=i=>{$$(".pin").forEach(p=>p.setAttribute("aria-pressed",+p.dataset.p===i));
+    $("#pinNote").innerHTML=`<p class="mono">The four rules</p>`+PINS.map((p,k)=>`<button type="button" data-p="${k}" aria-pressed="${k===i}"><span class="pk">${k+1}</span><span><b>${p[0]}</b><span>${p[1]}</span></span></button>`).join("")};
+  document.addEventListener("click",e=>{const p=e.target.closest("#ex-thread [data-p]");if(p)keepFocus($("#pinNote"),()=>show(+p.dataset.p))});
+  show(0);
+}
+
+/* =========================================================================
+   12 DASHBOARD
+   ========================================================================= */
+BODY.dash = {
+  title:'One screen the admissions team <em>opens every morning</em>.',
+  kicker:'A mockup of the live dashboard we build for university clients. The numbers tick so the slide feels live; the layout, the alert and the campus view are what we would ship.',
+  body:`<div class="dash" aria-label="Mock dashboard">
+    <div class="dtop"><span class="t"><span class="uni-n">Your University</span> · Enrolment pulse</span><span class="live"><i></i>MOCKUP · SAMPLE DATA</span></div>
+    <div class="dtiles">
+      <div class="dtile"><div class="l">Enquiries today</div><div class="v" id="dEnq">212</div><div class="d">+14% vs last Thu</div></div>
+      <div class="dtile"><div class="l">Cost per enquiry</div><div class="v" id="dCpl">RM24</div><div class="d">−6% this week</div></div>
+      <div class="dtile"><div class="l">Called within 24h</div><div class="v" id="dSla">87%</div><div class="d bad">Target 95%</div></div>
+      <div class="dtile"><div class="l">Applications MTD</div><div class="v" id="dApp">418</div><div class="d">On pace for 1,050</div></div>
+    </div>
+    <div class="dpanels">
+      <div class="dpanel"><p class="mono">Enquiries by campus, this week</p><div id="dCampus"></div></div>
+      <div class="dpanel"><p class="mono">Enquiry to application, by source</p><div id="dSrc"></div>
+        <div class="dalert"><b style="font-family:var(--mono);font-size:10px;letter-spacing:.1em">PIVOT SUGGESTED</b><br>Engineering cost per enquiry is up 18% this week while applications are flat. Move RM4,000 to Postgraduate until Friday.</div></div>
+    </div>
+  </div>`,
+  src:'Mockup with sample data. The 24 hour call target comes from the first-response standard in <code>clients/audaura-unitar/01-strategy/account-knowledge-base.md</code>. Real dashboards we run for UNITAR live in <code>clients/audaura-unitar/04-reports/</code>.'
+};
+const D_CAMPUS=[["Main campus",420],["Kuala Lumpur",310],["Penang",180],["Johor Bahru",150],["Kota Kinabalu",90],["Online",260]];
+const D_SRC=[["Google search",18],["Meta lead form",9],["TikTok",5],["Referral",24],["iWisers assisted",15]];
+function initDash(){
+  const bars=(rows,max,suf)=>rows.map(r=>`<div class="dbar"><span>${r[0]}</span><span class="t"><i style="width:${r[1]/max*100}%"></i></span><span class="n">${r[1]}${suf}</span></div>`).join("");
+  const draw=()=>{$("#dCampus").innerHTML=bars(D_CAMPUS,Math.max(460,...D_CAMPUS.map(r=>r[1]))*1.05,"");$("#dSrc").innerHTML=bars(D_SRC,30,"%")};draw();
+  if(REDUCED)return;
+  let enq=212,app=418,vis=false;
+  new IntersectionObserver(es=>{vis=es[0].isIntersecting}).observe($("#ex-dash"));
+  setInterval(()=>{if(document.hidden||!vis)return;
+    if(Math.random()<.6){enq++;$("#dEnq").textContent=enq;const i=Math.floor(Math.random()*D_CAMPUS.length);D_CAMPUS[i][1]++;}
+    if(Math.random()<.12){app++;$("#dApp").textContent=fmt(app)}
+    $("#dCpl").textContent="RM"+(23+Math.round(Math.random()*2));draw()},1600);
+}
+
+/* =========================================================================
+   13 LOOP
+   ========================================================================= */
+BODY.loop = {
+  title:'When enrolments flow back, the ad platforms <em>learn who becomes a student</em>.',
+  kicker:'Press play, or drag the weeks. Each day the CRM tells Google and Meta which enquiries booked a counsellor call and which ones enrolled. The platforms stop buying the cheapest form fills and start finding people who look like students.',
+  body:`<div class="lpctl">
+    <button class="btn solid" id="lpPlay" type="button">Play 12 weeks</button>
+    <div class="ctrl"><label class="mono" for="lpWk">Weeks since enrolment data started flowing back</label><input type="range" id="lpWk" min="0" max="12" step="1" value="0"></div>
+    <div class="lpwk num" aria-live="polite"><small>Now at</small><span id="lpWkOut">Week 0</span></div>
+  </div>
+  <div class="lpgrid">
+    <div class="lpstage">
+      <div class="lpscroll"><svg class="lpsvg" id="lpSvg" viewBox="0 0 640 330" role="img" aria-label="Out of every 100 enquiries, how many book a counsellor call and enrol, and what flows back to the ad platforms"></svg></div>
+      <p class="braidhint" style="color:#9FB3CC">Swipe to see the full loop</p><div class="lplog"><div class="hd"><span>Today's CRM updates</span><span id="lpLogSt">Kept inside the CRM</span></div><div id="lpLog"></div></div>
+      <p class="lpfine">Only the status leaves the CRM, hashed, and only for people who agreed on the form.</p>
+    </div>
+    <div class="lpside">
+      <div class="kpis" aria-live="polite">
+        <div><div class="v num" id="lpCpe">RM24</div><div class="l">Cost per enquiry</div><div class="d" id="lpCpeD">Week 0 baseline</div></div>
+        <div><div class="v num" id="lpCps">RM457</div><div class="l">Cost per enrolled student</div><div class="d" id="lpCpsD">Week 0 baseline</div></div>
+        <div><div class="v num" id="lpFit">22%</div><div class="l">Enquiries that fit</div><div class="d" id="lpFitD">Week 0 baseline</div></div>
+      </div>
+      <div class="card"><p class="mono">Change since week 0</p><svg class="lpchart" id="lpChart" viewBox="0 0 360 180" role="img" aria-label="Cost per enquiry rises slightly while cost per enrolled student falls"></svg>
+        <p class="small" id="lpTxt" style="margin-top:8px"></p></div>
+      <div class="note blue"><b>Where UNITAR is today</b>For UNITAR we send conversion signals to Meta through the Conversions API. Feeding counsellor and enrolment status back from the CRM is the next step, and for a new client we build it in from the first month.</div>
+    </div>
+  </div>`,
+  src:'Conversions API on UNITAR: <code>brain/case-studies/unitar-2026.md</code>. The full CRM loop and every number in this exhibit are an illustrative model on RM10,000 a month of spend: the share of enquiries that fit grows from 22% to about 45%, fits book a call 70% of the time and enrol 30% of the time after a call.'
+};
+/* illustrative model: learning L climbs toward 1 as weeks of signal accumulate */
+const lpModel=w=>{const L=1-Math.exp(-w/3.5),fit=.22+.23*L,enq=420-70*L,enr=fit*.21+(1-fit)*.0075;
+  return {L,fit,enq,cpe:10000/enq,cps:10000/(enq*enr),fitN:Math.round(fit*100),callF:Math.round(fit*70),callU:Math.round((1-fit)*15),enrF:Math.round(fit*21),enrU:Math.round((1-fit)*.75)}};
+const LP0=lpModel(0);
+const LP_EV=[["Enrolled","e"],["Call booked","c"],["Not a fit","n"],["Call booked","c"],["Enrolled","e"],["Applied","c"],["Not a fit","n"],["Call booked","c"]];
+let lpLast=-1;
+function lpWaffle(x,y,cells){return cells.map((c,i)=>`<circle cx="${x+(i%10)*11+5}" cy="${y+Math.floor(i/10)*11+5}" r="4" fill="${c}"/>`).join("")}
+function renderLoop(w){
+  const m=lpModel(w),on=w>0,AQ="#8CE0EC",DIM="rgba(255,255,255,.26)",EMP="rgba(255,255,255,.06)";
+  const enqC=Array.from({length:100},(_,i)=>i<m.fitN?AQ:DIM);
+  const callC=Array.from({length:100},(_,i)=>i<m.callF?AQ:i<m.callF+m.callU?DIM:EMP);
+  const enrC=Array.from({length:100},(_,i)=>i<m.enrF?AQ:i<m.enrF+m.enrU?DIM:EMP);
+  const cols=[[170,"ENQUIRIES",100,enqC],[315,"COUNSELLOR CALLS",m.callF+m.callU,callC],[460,"ENROLLED",m.enrF+m.enrU,enrC]];
+  const ret="M515,200 C515,300 80,300 80,200";
+  $("#lpSvg").innerHTML=`<defs><marker id="lpah" viewBox="0 0 10 10" refX="6" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0,0L10,5L0,10z" fill="${on?AQ:"#4E6585"}"/></marker></defs>
+    <rect x="16" y="52" width="128" height="148" rx="14" fill="rgba(255,255,255,.05)" stroke="${on?"rgba(140,224,236,.55)":"rgba(255,255,255,.16)"}" stroke-width="1.5"/>
+    <text x="80" y="76" text-anchor="middle" class="lb">AD PLATFORMS</text>
+    <rect x="30" y="88" width="48" height="24" rx="12" fill="rgba(255,255,255,.1)"/><text x="54" y="104" text-anchor="middle" style="font-size:11.5px;font-weight:600">Google</text>
+    <rect x="84" y="88" width="46" height="24" rx="12" fill="rgba(255,255,255,.1)"/><text x="107" y="104" text-anchor="middle" style="font-size:11.5px;font-weight:600">Meta</text>
+    <text x="80" y="134" text-anchor="middle" class="lb">BIDDING CHASES</text>
+    <text x="80" y="156" text-anchor="middle" style="font-family:var(--serif);font-size:20px;fill:${m.L>.5?AQ:"#E8F0F9"}">${m.L>.5?"Students":"Form fills"}</text>
+    <rect x="30" y="172" width="100" height="6" rx="3" fill="rgba(255,255,255,.1)"/><rect class="mt" x="30" y="172" width="${(m.L*100).toFixed(1)}" height="6" rx="3" fill="${AQ}"/>
+    <text x="80" y="192" text-anchor="middle" class="lb">LEARNING ${Math.round(m.L*100)}%</text>
+    ${[[144,170],[280,315],[425,460]].map(([a,b])=>`<path d="M${a+4},126 L${b-8},126" stroke="#4E6585" stroke-width="2" marker-end="url(#lpah)"/>`).join("")}
+    ${cols.map(([x,l,n,c])=>`<text x="${x}" y="40" class="lb">${l}</text><text x="${x}" y="70" class="ct num">${n}</text>${lpWaffle(x,82,c)}`).join("")}
+    <path d="${ret}" fill="none" stroke="${on?"rgba(140,224,236,.25)":"rgba(255,255,255,.16)"}" stroke-width="2" ${on?"":'stroke-dasharray="4 6"'} marker-end="url(#lpah)"/>
+    ${on?`<path class="${REDUCED?"":"lpflow"}" d="${ret}" fill="none" stroke="${AQ}" stroke-width="7" stroke-linecap="round" stroke-dasharray="0 22"/>`:""}
+    <rect x="${on?192:212}" y="262" width="${on?216:176}" height="30" rx="15" fill="${on?"#8CE0EC":"#0F2A47"}" stroke="${on?"#8CE0EC":"rgba(255,255,255,.2)"}"/>
+    <text x="300" y="282" text-anchor="middle" style="font-size:12.5px;font-weight:600;fill:${on?"#0F2A47":"#9FB3CC"}">${on?"Enrolments flow back each day":"Nothing flows back"}</text>
+    <text x="600" y="314" text-anchor="end" class="lb">EACH DOT IS ONE ENQUIRY · BRIGHT DOTS FIT</text>`;
+  $("#lpWkOut").textContent="Week "+w;
+  $("#lpCpe").textContent="RM"+Math.round(m.cpe);$("#lpCps").textContent="RM"+Math.round(m.cps);$("#lpFit").textContent=Math.round(m.fit*100)+"%";
+  const dl=(el,a,b,goodDown)=>{const p=Math.round((a/b-1)*100);el.textContent=w?(p>0?"+":p<0?"−":"")+Math.abs(p)+"% vs week 0":"Week 0 baseline";el.className="d"+(w&&p?((p>0)===goodDown?" up":" dn"):"")};
+  dl($("#lpCpeD"),m.cpe,LP0.cpe,true);dl($("#lpCpsD"),m.cps,LP0.cps,true);dl($("#lpFitD"),m.fit,LP0.fit,false);
+  /* change chart: both lines indexed to week 0 = 100 */
+  const X=v=>30+v*25,Y=v=>150-(v-50)/80*130,pts=k=>Array.from({length:13},(_,i)=>{const q=lpModel(i);return [X(i),Y(q[k]/LP0[k]*100)]});
+  const line=(p,n)=>p.slice(0,n+1).map((q,i)=>(i?"L":"M")+q[0].toFixed(1)+","+q[1].toFixed(1)).join(" ");
+  const pe=pts("cpe"),ps=pts("cps");
+  $("#lpChart").innerHTML=`<line x1="30" x2="330" y1="${Y(100)}" y2="${Y(100)}" stroke="#D5E2F0" stroke-dasharray="3 4"/>
+    <text x="330" y="${Y(100)+14}" text-anchor="end">Week 0 level</text>
+    <text x="30" y="174">Week 0</text><text x="330" y="174" text-anchor="end">Week 12</text>
+    <path d="${line(pe,12)}" fill="none" stroke="#8794AC" stroke-width="2" opacity=".22"/><path d="${line(ps,12)}" fill="none" stroke="#2A6BE0" stroke-width="2.5" opacity=".18"/>
+    <path d="${line(pe,w)}" fill="none" stroke="#8794AC" stroke-width="2"/><path d="${line(ps,w)}" fill="none" stroke="#2A6BE0" stroke-width="3"/>
+    <line x1="${X(w)}" x2="${X(w)}" y1="14" y2="158" stroke="#0E1B33" stroke-width="1" opacity=".25"/>
+    <circle cx="${pe[w][0]}" cy="${pe[w][1]}" r="4.5" fill="#8794AC"/><circle cx="${ps[w][0]}" cy="${ps[w][1]}" r="5.5" fill="#2A6BE0"/>
+    <text x="${Math.min(X(w)+8,250)}" y="${pe[w][1]-9}" style="fill:#4A5A75">Per enquiry</text>
+    <text x="${Math.min(X(w)+8,250)}" y="${ps[w][1]+17}" style="fill:#2A6BE0;font-weight:700">Per student</text>`;
+  const pE=Math.round((m.cpe/LP0.cpe-1)*100),pS=Math.round((1-m.cps/LP0.cps)*100);
+  $("#lpTxt").textContent=w?`Cost per enquiry is up ${pE}%, because the platforms now chase harder-to-reach people. Cost per enrolled student is down ${pS}%. That second number is the one a university pays for.`:"Without the signal, the cheapest form fills win the budget, including people who were never going to enrol. Cost per enquiry can look good while cost per student climbs.";
+  /* event log: four rows, new rows animate in when the week changes */
+  const rows=[0,1,2,3].map(i=>{const k=(w*3+i)%LP_EV.length,id=((w+1)*7919+i*104729).toString(16).slice(-4),t=`${String(9+Math.floor((i*13+w*7)/60)).padStart(2,"0")}:${String((i*13+w*7)%60).padStart(2,"0")}`;
+    return `<div class="lprow${w!==lpLast?" nw":""}"><span>${t}</span><span>#${id}</span><span class="st ${LP_EV[k][1]}">${LP_EV[k][0]}</span><span class="to${on?" ok":""}">${on?"Sent to Google, Meta ✓":"Not sent"}</span></div>`});
+  $("#lpLog").innerHTML=rows.join("");$("#lpLogSt").textContent=on?"Sent daily, hashed":"Kept inside the CRM";
+  lpLast=w;
+}
+let lpAnim=null;
+function initLoop(){
+  const r=$("#lpWk"),btn=$("#lpPlay"),stop=()=>{clearInterval(lpAnim);lpAnim=null;btn.textContent="Play 12 weeks"};
+  renderLoop(0);
+  r.addEventListener("input",()=>{stop();renderLoop(+r.value)});
+  btn.addEventListener("click",()=>{if(lpAnim){stop();return}
+    if(REDUCED){r.value=12;renderLoop(12);return}
+    let w=+r.value>=12?0:+r.value;r.value=w;renderLoop(w);btn.textContent="Pause";
+    lpAnim=setInterval(()=>{w++;r.value=w;renderLoop(w);if(w>=12)stop()},650)});
+}
+
+/* =========================================================================
+   14 NURTURE
+   ========================================================================= */
+BODY.nurture = {
+  title:'A student track and a <em>parent track</em>, on the app both of them already use.',
+  kicker:'Pick a track and step through the days. The parent track answers money and safety. The student track answers what life on campus looks like.',
+  body:`<div class="mockgrid">
+    <div class="phone" aria-label="Mock WhatsApp nurture sequence"><div class="screen">
+      <div class="wahead"><div class="av">AD</div><div><b><span class="uni-n">Your University</span> Admissions</b><span>Business account · mockup</span></div></div>
+      <div class="wabody" id="waBody"></div></div></div>
+    <div>
+      <div class="ctrlrow"><div class="seg" id="waTrack"><button type="button" data-v="student" aria-pressed="false">Student track</button><button type="button" data-v="parent" aria-pressed="true">Parent track</button></div></div>
+      <div class="daysteps" id="waDays"></div>
+      <div class="note" style="margin-top:16px"><b>Rules</b>Messages go only to people who opted in, using approved templates. Every message carries a way to stop.</div>
+    </div>
+  </div>`,
+  src:'Mockup. Opt-in and template requirements follow the PDPA notes in <code>clients/audaura-unitar/04-reports/open-day-c3-sept-2026-retro-and-promo-playbook.md</code>.'
+};
+const WA={
+  parent:[["Day 0","Thanks for your enquiry. Here is the full fee sheet for the business degree, with the payment plan on page 2.","Open the fee sheet"],
+          ["Day 1","Most parents ask us about scholarships first. This two minute check shows what your child qualifies for.","Check scholarships"],
+          ["Day 3","Graduates from last year's business intake: where they work now, from the Graduate Tracer Study.","See graduate outcomes"],
+          ["Day 7","Our open day is this Saturday. There is a 30 minute briefing for parents only at 10am, covering fees, safety and accommodation.","Save my seat"],
+          ["Day 14","Your counsellor, Farah, can call you and your child together this week. Pick a time that suits both of you.","Book a call"]],
+  student:[["Day 0","Hey! Here is what your first week in the business degree looks like, timetable included.","See week one"],
+          ["Day 1","Three students from your course filmed a day on campus. The video runs 90 seconds, with no brochure voice.","Watch"],
+          ["Day 3","Not sure about your results? Send them here and we will tell you which entry routes are open.","Check my routes"],
+          ["Day 7","Open day is Saturday. Bring a friend and sit in on a real lecture at 11am.","Register"],
+          ["Day 14","Applications for the September intake close on the 30th. It takes about 10 minutes.","Apply now"]]
+};
+let waTrack="parent",waDay=0;
+function renderWA(){
+  const msgs=WA[waTrack];
+  $("#waDays").innerHTML=msgs.map((m,i)=>`<button type="button" data-i="${i}" aria-pressed="${i===waDay}"><span class="dk">${m[0].toUpperCase()}</span><span class="dt">${m[1]}</span></button>`).join("");
+  $("#waBody").innerHTML=msgs.slice(0,waDay+1).map((m,i)=>`<span class="waday">${m[0]}</span>${i===0?`<div class="wamsg me">Hi, I want to know more about the business degree.<div class="tm">9:41</div></div>`:""}<div class="wamsg">${m[1].replace(/<[^>]*>/g,"")}<span class="wabtn">${m[2]}</span><div class="tm">${i===0?"9:42":(9+i)+":"+String(10+i*7).padStart(2,"0")}</div></div>`).join("");
+  const b=$("#waBody");b.scrollTop=b.scrollHeight;
+}
+function initWA(){
+  renderWA();
+  seg("#waTrack",b=>{waTrack=b.dataset.v;waDay=0;renderWA()});
+  $("#waDays").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;waDay=+b.dataset.i;keepFocus($("#waDays"),renderWA)});
+}
+
+/* =========================================================================
+   15 LADDER
+   ========================================================================= */
+BODY.ladder = {
+  title:'By the fourth quarter, <em>the campus team makes most of its own content</em>.',
+  kicker:'Each quarter adds one training and hands one more kind of content back to the campus. The bars show a target share of content made in house. Press play, or pick a quarter.',
+  body:`<div class="mockgrid">
+    <div class="card">
+      <div class="ladtop">
+        <div><p class="mono" id="ladLbl">Made by the campus team in Q1</p><p class="ladbig num" id="ladBig" aria-live="polite">15%</p></div>
+        <div class="ladmini"><div><div class="v num" id="ladPosts">24</div><div class="l">Posts a month</div></div><div><div class="v num" id="ladStaff">8</div><div class="l">Staff trained</div></div></div>
+      </div>
+      <div class="ladder" id="ladder"></div>
+      <div style="display:flex;gap:16px;flex-wrap:wrap;margin-top:16px" class="small"><span class="sw"><i style="background:var(--accent)"></i>Made by the campus team</span><span class="sw"><i style="background:repeating-linear-gradient(135deg,var(--accent-wash) 0 3px,#fff 3px 5px);box-shadow:inset 0 0 0 1px var(--sky)"></i>Target still ahead</span><span class="sw"><i style="background:var(--line-soft);box-shadow:inset 0 0 0 1px var(--line)"></i>Made by the agency</span></div>
+    </div>
+    <div>
+      <div class="ladctl"><button class="btn solid" id="ladPlay" type="button">Play the year</button><span class="small">Click any quarter to jump to it.</span></div>
+      <div class="lsteps" id="ladSteps"></div>
+      <div class="note" style="margin-top:14px"><b>Every quarter</b>A half-day funnel optimization session with marketing and admissions to review each stage and reset targets.</div>
+    </div>
+  </div>`,
+  src:'Training programs are proposed scope. The in-house percentages, posts a month and staff trained are an illustrative target.'
+};
+const LADQ=[
+  {p:15,posts:24,staff:8,t:"AI competency training",d:"Every marketing and admissions staff member learns to brief, draft and check with AI tools.",h:"Captions and first drafts"},
+  {p:35,posts:30,staff:16,t:"Campus content training",d:"Phone filming, hooks and editing for the people who see student life every day.",h:"Stories, short videos and event coverage"},
+  {p:55,posts:38,staff:22,t:"GEO training",d:"The web team learns to write pages that AI assistants quote.",h:"Course pages and FAQ answers"},
+  {p:70,posts:46,staff:28,t:"Planning handover",d:"The campus team plans the monthly calendar. We review it and keep running paid media.",h:"The monthly content calendar"}];
+let ladQ=0,ladTimer=null;
+function tween(el,from,to,suf){if(REDUCED||from===to){el.textContent=to+suf;return}
+  const t0=performance.now(),d=700,tick=t=>{const p=Math.min(1,(t-t0)/d),e=1-Math.pow(1-p,3);el.textContent=Math.round(from+(to-from)*e)+suf;if(p<1)requestAnimationFrame(tick)};requestAnimationFrame(tick)}
+function setLadder(q){
+  const prev=LADQ[ladQ],cur=LADQ[q];ladQ=q;
+  $$("#ladder .rung").forEach((b,i)=>{b.classList.toggle("fut",i>q);b.setAttribute("aria-pressed",i===q)});
+  $$("#ladSteps .lstep").forEach((b,i)=>{b.className="lstep"+(i<q?" done":i>q?" next":"");b.setAttribute("aria-pressed",i===q)});
+  $("#ladLbl").textContent=`Made by the campus team in Q${q+1}`;
+  tween($("#ladBig"),prev.p,cur.p,"%");tween($("#ladPosts"),prev.posts,cur.posts,"");tween($("#ladStaff"),prev.staff,cur.staff,"");
+}
+function initLadder(){
+  $("#ladder").innerHTML=LADQ.map((x,i)=>`<button type="button" class="rung fut" data-q="${i}" aria-label="Q${i+1}: ${x.p}% made in house"><span class="pct num">${x.p}%</span><span class="stack"><span class="f" style="flex-grow:0" data-g="${x.p}"></span><span class="r" style="flex-grow:100" data-r="${100-x.p}"></span></span><span class="q">Q${i+1}</span></button>`).join("");
+  $("#ladSteps").innerHTML=LADQ.map((x,i)=>`<button type="button" class="lstep next" data-q="${i}"><span class="qk">Q${i+1}</span><span><b>${x.t}</b><span class="ds">${x.d}</span><span class="hand"><i>Campus now makes</i>${x.h}</span></span></button>`).join("");
+  const grow=()=>$$("#ladder [data-g]").forEach(g=>{g.style.flexGrow=g.dataset.g;g.nextElementSibling.style.flexGrow=g.nextElementSibling.dataset.r});
+  const btn=$("#ladPlay"),stop=()=>{clearInterval(ladTimer);ladTimer=null;btn.textContent="Play the year"};
+  const play=()=>{stop();if(REDUCED){setLadder(3);return}let q=0;setLadder(0);btn.textContent="Pause";
+    ladTimer=setInterval(()=>{q++;setLadder(q);if(q>=3)stop()},1500)};
+  const pick=e=>{const b=e.target.closest("[data-q]");if(!b)return;stop();setLadder(+b.dataset.q)};
+  $("#ladder").addEventListener("click",pick);$("#ladSteps").addEventListener("click",pick);
+  btn.addEventListener("click",()=>ladTimer?stop():play());
+  setLadder(0);
+  const io=new IntersectionObserver(es=>{if(!es[0].isIntersecting)return;io.disconnect();grow();setTimeout(play,REDUCED?0:500)},{threshold:.4});
+  io.observe($("#ladder"));
+  window.ladderPrint=()=>{stop();grow();setLadder(3)};
+}
+
+/* =========================================================================
+   16 SPLIT
+   ========================================================================= */
+BODY.split = {
+  title:'Two teams run one funnel, with <em>one lead at every stage</em>.',
+  kicker:'Toggle runs paid media, search, GEO, data and the follow-up. iWisers runs the seeders who carry the conversation inside parent communities. Each stage has one lead and one support.',
+  body:`<div class="split2">
+    <div class="splitrow splithead"><div class="mono">Stage</div><div style="color:var(--accent-deep)">Toggle</div><div style="color:var(--iw)">iWisers</div></div>
+    ${[["Awareness","Hears of you","TikTok, Meta and YouTube reach to students and parents, built on one message per stage.","Leads the parent side: disclosed partners answer questions parents ask in groups and school chats.","both"],
+       ["Consideration","Shortlists you","Search, retargeting and GEO, so the parent finds the same answer on Google and in AI tools.","Leads: alumni parents answer in forums and groups, disclosed as partners.","both"],
+       ["Conversion","Enquires and visits","Lead forms, open day registration, WhatsApp nurture and the counsellor handoff.","Supports: disclosed partners answer open day questions that parents raise in the groups.","tg"],
+       ["Enrolment","Applies and pays","CRM signal back to the ad platforms, the dashboard and the deadline campaign.","Supports: parents of enrolled students share their own stories, with the partnership disclosed.","tg"]].map(r=>`<div class="splitrow"><div><span class="sk"><small>${r[0]}</small>${r[1]}</span></div><div class="tg">${r[2]}</div><div class="iwc ${r[4]==="tg"?"muted":""}">${r[3]}</div></div>`).join("")}
+  </div>`,
+  src:'Role split from the Toggle and iWisers meeting notes, October 2026: iWisers brings seeder networks in parenting forums and Facebook groups, Toggle brings performance and the audit. iWisers network size (partners, groups, alumni parents per university) is still to be confirmed by iWisers.'
+};
+
+/* =========================================================================
+   17 STACK BUILDER
+   ========================================================================= */
+BODY.stack = {
+  title:'Pick the services and <em>see which stages they cover</em>.',
+  kicker:'This list draws on Toggle\'s current and proposed UNITAR work. Tick the ones the prospect needs. The bars show how much of the funnel the engagement touches, so gaps are obvious before the price conversation.',
+  body:`<div class="svcgrid">
+    <div class="svcs" id="svcs"></div>
+    <div class="card">
+      <p class="mono">Funnel coverage</p>
+      <div class="cov" id="cov" style="margin-top:14px"></div>
+      <p class="small" style="margin-top:18px" id="covNote"></p>
+    </div>
+  </div>`,
+  src:'Service list: the account team\'s summary of current UNITAR scope, October 2026. Coverage weights are a planning aid.'
+};
+const SVCS=[
+  ["Paid media across Google, Meta and TikTok","Always on",[3,3,3,1]],
+  ["SEO and GEO","Search and AI answers",[1,3,1,0]],
+  ["GEO training","For the web team",[0,2,0,0]],
+  ["AI competency training","For marketing and admissions",[0,1,1,1]],
+  ["Live internal dashboard","Daily data for leadership",[0,0,1,2]],
+  ["Sales and marketing alignment","Counsellors and ads on one plan",[0,0,2,3]],
+  ["Lead nurturing funnels","WhatsApp and email",[0,1,2,3]],
+  ["Quarterly funnel optimization","Half day review each quarter",[1,1,1,1]],
+  ["Campus content training","Teams make their own content",[2,1,0,0]],
+  ["Open day activation","Three week campaign",[1,2,3,2]],
+  ["On-demand pivots","By campus, course or campaign",[1,1,2,1]],
+  ["Parent community seeding (iWisers)","Groups, forums and chats",[3,3,1,0]]
+];
+let svcOn=new Set([0,1,9,11]);
+function renderStack(){
+  $("#svcs").innerHTML=SVCS.map((s,i)=>`<button class="svc" type="button" data-i="${i}" aria-pressed="${svcOn.has(i)}"><span class="bx"></span><span><b>${s[0]}</b><span>${s[1]}</span></span></button>`).join("");
+  const st=["Awareness","Consideration","Conversion","Enrolment"],tot=[0,0,0,0];
+  svcOn.forEach(i=>SVCS[i][2].forEach((v,k)=>tot[k]+=v));
+  $("#cov").innerHTML=st.map((s,k)=>{const p=Math.min(100,tot[k]/8*100);return `<div class="covrow"><span>${s}</span><span class="t"><i style="width:${p}%"></i></span><span class="n">${Math.round(p)}%</span></div>`}).join("");
+  const weak=st.filter((s,k)=>tot[k]<3);
+  const list=a=>a.length<2?a.join(""):a.slice(0,-1).join(", ")+" and "+a[a.length-1];
+  $("#covNote").textContent = !svcOn.size?"Pick a service to see which stages it covers.":`${svcOn.size} of ${SVCS.length} services selected. `+(weak.length?`Coverage is thin at ${list(weak).toLowerCase()}.`:"The selection covers every stage.");
+}
+function initStack(){renderStack();$("#svcs").addEventListener("click",e=>{const b=e.target.closest(".svc");if(!b)return;const i=+b.dataset.i;svcOn.has(i)?svcOn.delete(i):svcOn.add(i);keepFocus($("#svcs"),renderStack)})}
+
+
+/* =========================================================================
+   WORRIES HEATMAP
+   ========================================================================= */
+BODY.worries = {
+  title:'Before you write a single ad, <em>read what parents are asking</em>.',
+  kicker:'iWisers partners take part in parent communities every week and report the recurring worries in aggregate, without names. The heatmap shows how often each worry came up, by place. Click a cell to read a typical question and the answer content that would meet it.',
+  body:`<div class="mockgrid">
+    <div class="card"><div class="heat"><div class="heatgrid" id="heat"></div></div>
+      <div style="display:flex;gap:10px;align-items:center;margin-top:14px" class="small"><span>Fewer mentions</span><span style="flex:0 0 120px;height:10px;border-radius:5px;background:linear-gradient(90deg,#EAF6F7,#0E8C9C)"></span><span>More mentions</span></div></div>
+    <div id="heatInfo" aria-live="polite"></div>
+  </div>`,
+  src:'Mockup with sample listening data for October 2026. Group names are generic categories. Counts are aggregated by iWisers partners from conversations they take part in, with no names or quotes kept. The quote is a paraphrase written for this mockup.'
+};
+const HEAT_COLS=["Parent FB groups","Forums","Public parent pages","TikTok comments"];
+const HEAT=[
+  ["Fees and hidden costs",[96,71,88,40],"Is RM60k the real total, or are there hostel and lab fees on top?","One page with every fee, the payment plan and what scholarships cover."],
+  ["Will my child get a job",[84,90,52,61],"Do private uni graduates get hired by the big firms, or only by small companies?","Graduate destinations by programme, with employer names."],
+  ["Safety and hostel",[70,28,77,22],"Is the hostel near campus safe for a girl from outstation?","A hostel video tour and a parent briefing at the open day."],
+  ["Scholarships",[66,55,61,47],"Which universities give scholarships for 5As and above?","A two minute scholarship checker sent on WhatsApp."],
+  ["Recognition of the degree",[41,68,30,18],"Is this degree recognized for government jobs and overseas?","Accreditation explained in plain language on every programme page."],
+  ["Course fit",[38,44,35,73],"My son likes gaming. Is a computing degree a waste of money?","Student creator videos: a day in the course."]
+];
+let heatSel=[0,0];
+function renderHeat(){
+  let h=`<div></div>`+HEAT_COLS.map(c=>`<div class="hh">${c}</div>`).join("");
+  HEAT.forEach((r,i)=>{h+=`<div class="hr">${r[0]}</div>`+r[1].map((v,j)=>{const a=v/100;return `<button class="hc" type="button" data-i="${i}-${j}" aria-pressed="${heatSel[0]===i&&heatSel[1]===j}" aria-label="${r[0]} in ${HEAT_COLS[j]}: ${v} mentions" style="background:rgba(10,111,124,${.08+a*.92});color:${a>.8?"#fff":"#0E1B33"}">${v}</button>`}).join("")});
+  $("#heat").innerHTML=h;
+  const r=HEAT[heatSel[0]],tot=r[1].reduce((a,b)=>a+b,0);
+  $("#heatInfo").innerHTML=`<p class="mono">${r[0]} · ${HEAT_COLS[heatSel[1]]} · ${r[1][heatSel[1]]} mentions</p>
+    <p class="quote">“${r[2]}”</p>
+    <div class="note teal"><b>The answer content</b>${r[3]}</div>
+    <p class="mono" style="margin-top:22px">Who gets named in these threads</p>
+    <div class="namebars">${[["University A",38],[uni,9],["University B",27],["University C",14]].map(([n,v])=>`<div class="covrow"><span class="${n===uni?"":"small"}" style="${n===uni?"font-weight:700":""}">${esc(n)}</span><span class="t"><i style="width:${v/40*100}%;background:${n===uni?"var(--accent)":"var(--ink-3)"}"></i></span><span class="n">${v}%</span></div>`).join("")}</div>
+    <p class="small" style="margin-top:12px">${fmt(tot)} mentions of this worry across the four places this month. University A is named four times as often as you in these threads.</p>`;
+}
+function initHeat(){renderHeat();$("#heat").addEventListener("click",e=>{const b=e.target.closest(".hc");if(!b)return;heatSel=b.dataset.i.split("-").map(Number);keepFocus($("#heat"),renderHeat)})}
+
+/* =========================================================================
+   LEAD FORM
+   ========================================================================= */
+BODY.form = {
+  title:'One question on the form tells you <em>whether a parent is in the room</em>.',
+  kicker:'Most enquiry forms ask for a name and a phone number. Adding "Who is helping you decide?" routes the parent into their own nurture track and briefs the counsellor before the first call. Pick an answer to see what happens next.',
+  body:`<div class="mockgrid">
+    <div class="lform" aria-label="Mock lead form">
+      <div class="lfhead"><b><span class="uni-n">Your University</span></b><span>Get the full fees and entry requirements · mockup</span></div>
+      <div class="lfbody">
+        <div class="lff"><label>Full name</label><div>Aiman Hakim</div></div>
+        <div class="lff"><label>Programme</label><div>Bachelor of Business</div></div>
+        <div class="lfq"><p>Who is helping you decide?</p><div class="lfopts" id="lfOpts"></div></div>
+        <div class="lff" id="lfParent"><label>Parent's WhatsApp number (we ask the parent to opt in)</label><div>+60 12 345 6789</div></div>
+      </div>
+      <div class="lfsub">Submit</div>
+    </div>
+    <div><div class="route" id="lfRoute" aria-live="polite"></div></div>
+  </div>`,
+  src:'Mockup. Field names are a proposal. The parent receives one opt-in request, and the parent track starts only after the parent replies yes. Enquirers under 18 need a parent or guardian\'s consent, and every form carries a PDPA notice.'
+};
+const LF=[
+  ["Only me","Student track","Opens with course and campus life content.","Talk about the course first. Ask whether a parent will pay the fees.","Counts as a student-only enquiry."],
+  ["A parent or guardian","Parent track plus student track","The parent gets one opt-in message. After a yes, the fee sheet and the scholarship checker follow on day 0.","Ask to call both of them together. Lead with fees and graduate jobs.","Counts as a parent-involved enquiry, the number this deck promises to grow."],
+  ["My employer","Working adult track","Opens with the APEL check and an employer letter template.","Ask about sponsorship and working hours.","Counts as a corporate enquiry."]
+];
+let lfSel=1;
+function renderLF(){
+  $("#lfOpts").innerHTML=LF.map((o,i)=>`<button type="button" data-i="${i}" aria-pressed="${i===lfSel}"><i></i>${o[0]}</button>`).join("");
+  $("#lfParent").style.display=lfSel===1?"":"none";
+  const o=LF[lfSel];
+  $("#lfRoute").innerHTML=`<p class="mono">What happens after submit</p>`+[["Nurture",o[1]],["Day 0 message",o[2]],["Counsellor brief",o[3]],["Dashboard",o[4]]].map(r=>`<div><span class="rk">${r[0]}</span><span class="rv2">${r[1]}</span></div>`).join("");
+}
+function initLF(){renderLF();$("#lfOpts").addEventListener("click",e=>{const b=e.target.closest("button");if(!b)return;lfSel=+b.dataset.i;keepFocus($("#lfOpts"),renderLF)})}
+
+
+/* =========================================================================
+   FIRST 90 DAYS
+   ========================================================================= */
+BODY.ninety = {
+  title:'The first two months build demand, and <em>month three harvests it</em>.',
+  kicker:'Awareness and consideration go first, because a parent who has never heard of you does not fill a form. Each phase has its own scorecard, so nobody judges month one on enquiries. Click a phase.',
+  body:`<div class="phases" id="phases"></div>
+    <div class="mockgrid" style="margin-top:22px">
+      <div class="card"><p class="mono">Where the money goes in this phase</p><div class="mixbar" id="nMix" style="margin-top:12px"></div>
+        <p class="small" style="margin-top:16px" id="nWhat"></p></div>
+      <div><p class="mono">What this phase is judged on</p><div class="score" id="nScore"></div></div>
+    </div>`,
+  src:'Phase mix and targets are an illustrative plan. On the university account we run, awareness grew to about an eighth of spend once it had its own job and its own scorecard. The real targets are set with the prospect in week one.'
+};
+const NINETY=[
+  {k:"Days 1 to 30",t:"Get heard by parents",mix:[60,30,10],what:"TikTok and YouTube reach students, Meta video reaches parents, and iWisers partners start answering fee and outcome questions in parent groups. GEO pages for the top 20 parent questions go live.",
+   sc:[["Parents reached","120,000","Meta and YouTube, parents of 16 to 19 year olds"],["Parent questions answered","40","by disclosed iWisers partners"],["AI answers naming you","8 of 50","GEO baseline, measured weekly"]]},
+  {k:"Days 31 to 60",t:"Get shortlisted",mix:[35,45,20],what:"Retargeting carries programme proof to everyone who watched or visited. Search ads cover fee and scholarship questions. The lead form starts asking who is helping the student decide.",
+   sc:[["Branded search","+15%","against the 30 days before the pilot"],["Enquiries with a parent involved","25%","from the form question"],["AI answers naming you","15 of 50","after the first GEO pages are indexed"]]},
+  {k:"Day 61 onward",t:"Convert the shortlist",mix:[15,35,50],what:"Lead forms, open day registration and the WhatsApp parent track take over. Counsellors call within 24 hours, and statuses flow back to the ad platforms.",
+   sc:[["Cost per application","set in week one","against the prospect's own baseline"],["Called within 24 hours","95%","from the CRM"],["Open day registrations","per intake target","with the parent briefing tracked separately"]]}
+];
+let nSel=0;
+function renderNinety(){
+  $("#phases").innerHTML=NINETY.map((p,i)=>`<button class="phase" type="button" data-i="${i}" aria-pressed="${i===nSel}"><span class="pk">${p.k.toUpperCase()}</span><b>${p.t}</b></button>`).join("");
+  const p=NINETY[nSel],labels=["Awareness","Consideration","Conversion"],cols=["#0F2A47","#2A6BE0","#0E8C9C"];
+  $("#nMix").innerHTML=p.mix.map((m,i)=>`<div style="flex-grow:${m};background:${cols[i]}">${labels[i]} ${m}%</div>`).join("");
+  $("#nWhat").textContent=p.what;
+  $("#nScore").innerHTML=p.sc.map(r=>`<div><span class="sn">${r[0]}</span><span class="st">${r[1]}</span><span class="sw2">${r[2]}</span></div>`).join("");
+}
+function initNinety(){renderNinety();$("#phases").addEventListener("click",e=>{const b=e.target.closest(".phase");if(!b)return;nSel=+b.dataset.i;keepFocus($("#phases"),renderNinety)})}
+
+/* =========================================================================
+   PAGE WIRING
+   ========================================================================= */
+exhibitsEl.innerHTML = EXHIBITS.map(shell).join("");
+$("#toc").innerHTML = EXHIBITS.map((e,i)=>`<a href="#ex-${e.id}" data-tags="${e.tags.join(" ")}" data-id="${e.id}"><span class="tn">${String(i+1).padStart(2,"0")}</span><span class="tt">${e.t}</span><span class="ts">${e.s}</span></a>`).join("");
+
+[initFunnel,renderBraid,initHeat,initRipple,initMatrix,initJobs,initProof,initPivot,initCal,initOD,initGeo,initThread,initDash,initLoop,initWA,initLF,initLadder,initNinety,initStack].forEach(f=>{try{f()}catch(err){console.error(f.name+": "+err.message)}});
+
+/* name setup */
+const nameIn=$("#uniName");
+nameIn.value=store.get("edu-uni","");
+let nameT;
+const applyName=(now)=>{uni=nameIn.value.trim()||"Your University";store.set("edu-uni",nameIn.value.trim());$$(".uni-n").forEach(el=>el.textContent=uni);clearTimeout(nameT);const re=()=>{try{renderHeat()}catch(e){}renderGeo()};if(now===true)re();else nameT=setTimeout(re,450)};
+nameIn.addEventListener("input",applyName);applyName(true);
+
+/* stars */
+let stars=new Set([].concat(store.get("edu-stars",[])).filter(x=>typeof x==="string"&&EXHIBITS.some(e=>e.id===x)));
+function syncStars(){
+  $$("[data-star]").forEach(b=>{const on=stars.has(b.dataset.star);b.setAttribute("aria-pressed",on);$("span",b).textContent=on?"In the deck":"Add to deck"});
+  $("#starCount").textContent=stars.size;
+  const list=EXHIBITS.filter(e=>stars.has(e.id));
+  $("#starList").innerHTML=list.length?list.map(e=>`<li>${e.t}<span>${e.slot}</span></li>`).join(""):`<li style="list-style:none;margin-left:-20px;color:var(--ink-3)">Nothing starred yet. Use "Add to deck" on any exhibit.</li>`;
+  store.set("edu-stars",[...stars]);
+  if($(".chip.on").dataset.f==="starred")applyFilter("starred");
+}
+document.addEventListener("click",e=>{const b=e.target.closest("[data-star]");if(!b)return;const id=b.dataset.star;stars.has(id)?stars.delete(id):stars.add(id);syncStars()});
+syncStars();
+
+/* filters */
+function applyFilter(f){
+  const ok=el=>{if(f==="all")return true;if(f==="starred")return stars.has(el.dataset.id);return (el.dataset.tags||"").split(" ").includes(f)};
+  $$("#toc a").forEach(a=>a.classList.toggle("hide",!ok(a)));
+  $$(".exhibit").forEach(s=>s.classList.toggle("hide",!ok(s)));
+  const em=$("#toc .tocempty");if(em)em.remove();
+  if(f==="starred"&&!stars.size)$("#toc").insertAdjacentHTML("beforeend",'<p class="tocempty">Nothing starred yet. Use "Add to deck" on any exhibit, then come back to this filter.</p>');
+}
+$(".filters").addEventListener("click",e=>{const b=e.target.closest(".chip");if(!b)return;$$(".filters .chip").forEach(c=>{c.classList.toggle("on",c===b);c.setAttribute("aria-pressed",c===b)});applyFilter(b.dataset.f)});
+
+/* drawer */
+const drawer=(on)=>{const d=$("#drawer");if(on===document.body.classList.contains("drawer"))return;
+  document.body.classList.toggle("drawer",on);d.setAttribute("aria-hidden",!on);d.inert=!on;
+  if(on)$("#closeDrawer").focus();else $("#openDrawer").focus()};
+$("#drawer").addEventListener("keydown",e=>{if(e.key!=="Tab")return;const f=$$("button",$("#drawer"));const first=f[0],last=f[f.length-1];
+  if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus()}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus()}});
+$("#openDrawer").addEventListener("click",()=>drawer(true));
+$("#closeDrawer").addEventListener("click",()=>drawer(false));
+$("#scrim").addEventListener("click",()=>drawer(false));
+document.addEventListener("keydown",e=>{if(e.key==="Escape")drawer(false)});
+const toast=m=>{const t=$("#toast");t.textContent=m;t.classList.add("show");setTimeout(()=>t.classList.remove("show"),1800)};
+$("#copyList").addEventListener("click",()=>{const txt=EXHIBITS.filter(e=>stars.has(e.id)).map((e,i)=>`${i+1}. ${e.t}: ${e.slot}`).join("\n");
+  if(!txt){toast("Nothing starred yet");return}
+  (navigator.clipboard?navigator.clipboard.writeText(txt):Promise.reject()).then(()=>toast("Shortlist copied"),()=>toast("Copy blocked, select the list instead"))});
+$("#clearList").addEventListener("click",()=>{stars.clear();syncStars()});
+
+/* chrome + reveal */
+const topBar=$("#top");addEventListener("scroll",()=>topBar.classList.toggle("stuck",scrollY>30),{passive:true});
+const rio=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add("in");rio.unobserve(e.target)}}),{threshold:.12});
+$$(".rv").forEach(el=>REDUCED?el.classList.add("in"):rio.observe(el));
+/* counters and the ladder fill on scroll, so printing first would show zeros; the loop prints at week 12 */
+addEventListener("beforeprint",()=>{$$("[data-count]").forEach(e=>e.textContent=fmt(+e.dataset.count)+(e.dataset.suf||""));
+  $$("#sov i").forEach((c,i)=>c.classList.toggle("on",i<77));
+  if(window.ladderPrint)ladderPrint();
+  if($("#lpWk")){clearInterval(lpAnim);$("#lpWk").value=12;renderLoop(12)}});
+const offIO=new IntersectionObserver(es=>es.forEach(e=>e.target.classList.toggle("offscreen",!e.isIntersecting)));
+$$(".exhibit").forEach(x=>offIO.observe(x));
+</script>
+</body>
+</html>
