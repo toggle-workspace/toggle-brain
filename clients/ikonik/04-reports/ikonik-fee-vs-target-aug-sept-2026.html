@@ -1,0 +1,180 @@
+<title>Ikonik Fee vs Target</title>
+<style>
+  :root{
+    --ink:#14201F; --grey:#5B6B6A; --pale:#A9B5B4;
+    --teal:#0295AD; --orange:#C07016;
+    --tint:#F2F6F5; --rule:#DDE5E3; --canvas:#FFFFFF;
+    --font:Arial,"Helvetica Neue",Helvetica,sans-serif;
+  }
+  *{box-sizing:border-box}
+  body{
+    background:var(--canvas); color:var(--ink); font-family:var(--font);
+    margin:0; padding-block:44px; padding-left:24px; padding-right:24px;
+    -webkit-font-smoothing:antialiased;
+  }
+  .sheet{max-width:860px; margin:0 auto; display:flex; flex-direction:column; gap:36px}
+
+  .eyebrow{font-size:10px; letter-spacing:.14em; text-transform:uppercase; color:var(--pale); margin:0}
+  h1{font-size:32px; line-height:1.15; font-weight:700; margin:10px 0 0; text-wrap:balance; max-width:24ch}
+  .stake{font-size:13px; line-height:1.55; color:var(--grey); margin:10px 0 0; max-width:64ch}
+  hr{border:0; border-top:1px solid var(--rule); margin:0}
+
+  h2{font-size:20px; line-height:1.25; font-weight:700; margin:0}
+  section{display:flex; flex-direction:column; gap:16px}
+
+  .scroll{overflow-x:auto}
+  table{border-collapse:collapse; width:100%; font-size:13px; font-variant-numeric:tabular-nums; min-width:520px}
+  th,td{text-align:right; padding:11px 14px; border-bottom:1px solid var(--rule); white-space:nowrap}
+  th:first-child,td:first-child{text-align:left; white-space:normal; min-width:170px}
+  thead th{background:var(--tint); font-size:10px; letter-spacing:.09em; text-transform:uppercase; color:var(--grey); font-weight:700; border-bottom:1px solid var(--pale)}
+  tbody th{font-weight:400; color:var(--ink)}
+  .teal{color:var(--teal); font-weight:700}
+  .orange{color:var(--orange); font-weight:700}
+  .dim{color:var(--pale)}
+  tr.total td,tr.total th{border-top:2px solid var(--ink); border-bottom:none; font-weight:700; font-size:15px; padding-top:13px}
+  tr.landed-a td:first-child,tr.landed-a th:first-child{box-shadow:inset 4px 0 0 var(--teal)}
+  tr.landed-b td:first-child,tr.landed-b th:first-child{box-shadow:inset 4px 0 0 var(--orange)}
+  tr.landed-a,tr.landed-b{background:var(--tint)}
+  .where{font-size:10px; letter-spacing:.08em; text-transform:uppercase; font-weight:700}
+
+  .notes{display:flex; flex-direction:column; gap:7px}
+  .notes p{font-size:11.5px; line-height:1.6; color:var(--grey); margin:0; max-width:74ch}
+  footer{font-size:9px; color:var(--pale); padding-top:4px}
+
+  @media (max-width:640px){
+    body{padding-block:30px}
+    h1{font-size:25px}
+  }
+</style>
+
+<div class="sheet">
+
+  <header>
+    <p class="eyebrow">Ikonik × Toggle · Actual against target</p>
+    <h1>August hit the target tier. September sits one tier below.</h1>
+    <p class="stake">The fee is set by average paid enquiries per day across the calendar month, organic excluded. The two months together pay RM10,500.</p>
+  </header>
+
+  <hr>
+
+  <section>
+    <h2>Actual against target</h2>
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col"></th>
+            <th scope="col">Target</th>
+            <th scope="col">August actual</th>
+            <th scope="col">September projected</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Paid enquiries</th>
+            <td>3,000+</td>
+            <td>3,737</td>
+            <td>2,583</td>
+          </tr>
+          <tr>
+            <th scope="row">Days in month</th>
+            <td class="dim">n/a</td>
+            <td>31</td>
+            <td>30</td>
+          </tr>
+          <tr>
+            <th scope="row">Avg paid enquiries / day</th>
+            <td>100.0</td>
+            <td class="teal">120.5</td>
+            <td class="orange">86.1</td>
+          </tr>
+          <tr>
+            <th scope="row">Against target</th>
+            <td class="dim">n/a</td>
+            <td class="teal">20.5% above</td>
+            <td class="orange">13.9% below</td>
+          </tr>
+          <tr>
+            <th scope="row">Tier hit</th>
+            <td>100 to 139</td>
+            <td class="teal">100 to 139</td>
+            <td class="orange">60 to 99</td>
+          </tr>
+          <tr>
+            <th scope="row">Base fee</th>
+            <td>RM3,000</td>
+            <td>RM3,000</td>
+            <td>RM3,000</td>
+          </tr>
+          <tr>
+            <th scope="row">Performance fee</th>
+            <td>+RM3,000</td>
+            <td class="teal">+RM3,000</td>
+            <td class="orange">+RM1,500</td>
+          </tr>
+          <tr class="total">
+            <th scope="row">Total monthly fee</th>
+            <td>RM6,000</td>
+            <td class="teal">RM6,000</td>
+            <td class="orange">RM4,500</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <hr>
+
+  <section>
+    <h2>Which tier each month hit</h2>
+    <div class="scroll">
+      <table>
+        <thead>
+          <tr>
+            <th scope="col">Avg paid enquiries / day</th>
+            <th scope="col">Performance fee</th>
+            <th scope="col">Total monthly fee</th>
+            <th scope="col">Month</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">Below 60</th>
+            <td class="dim">None</td>
+            <td>RM3,000</td>
+            <td class="dim">n/a</td>
+          </tr>
+          <tr class="landed-b">
+            <th scope="row">60 to 99</th>
+            <td>+RM1,500</td>
+            <td>RM4,500</td>
+            <td class="where orange">September, 86.1</td>
+          </tr>
+          <tr class="landed-a">
+            <th scope="row">100 to 139, the agreed target</th>
+            <td>+RM3,000</td>
+            <td>RM6,000</td>
+            <td class="where teal">August, 120.5</td>
+          </tr>
+          <tr>
+            <th scope="row">140 and above</th>
+            <td>+RM4,500</td>
+            <td>RM7,500 (cap)</td>
+            <td class="dim">n/a</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <hr>
+
+  <section class="notes">
+    <p>September covers 1 to 19 September as reported, projected to the full month at today's cost per enquiry. TikTok enquiries are not being attributed in September, so the September count carries Meta and Google only. August included 512 TikTok enquiries.</p>
+    <p>August cleared the target tier on Meta and Google alone, at 104.0 enquiries per day before any TikTok enquiry is counted.</p>
+    <p>The target tier also carries a quality bar of 75 or more quality enquiries per day. The August quality split still has to come from the shared lead tracker.</p>
+  </section>
+
+  <footer>Ikonik × Toggle · Figures as at 19 September 2026 · September is a projection</footer>
+
+</div>
