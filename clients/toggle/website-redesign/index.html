@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+</head>
+<body>
+<title>Toggle Website Concepts</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700&family=Instrument+Serif:ital@1&family=JetBrains+Mono:wght@400;500&display=swap">
+<style>
+/* Layout: a quiet review sheet. Two concept cards carry the visuals; everything else is type. */
+:root {
+  --bg: #FBFBFD; --surface: #FFFFFF; --fg: #111318; --muted: #5B6270; --faint: #8A919E;
+  --line: rgba(17,19,24,.10); --accent: #2A6BE0; --accent-ink: #1B4CB0;
+  --f-sans: "Inter Tight", "Inter", -apple-system, "Segoe UI", sans-serif;
+  --f-serif: "Instrument Serif", Georgia, serif;
+  --f-mono: "JetBrains Mono", ui-monospace, Menlo, monospace;
+}
+@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) { --bg: #08090C; --surface: #121419; --fg: #F2F4F8; --muted: #A1A8B5; --faint: #6E7684; --line: rgba(242,244,248,.10); --accent: #5B8CFF; --accent-ink: #8FB0FF; color-scheme: dark; } }
+:root[data-theme="dark"] { --bg: #08090C; --surface: #121419; --fg: #F2F4F8; --muted: #A1A8B5; --faint: #6E7684; --line: rgba(242,244,248,.10); --accent: #5B8CFF; --accent-ink: #8FB0FF; color-scheme: dark; }
+* { box-sizing: border-box; }
+body { margin: 0; background: var(--bg); color: var(--fg); font: 400 16px/1.55 var(--f-sans); -webkit-font-smoothing: antialiased; }
+.wrap { max-width: 1180px; margin: 0 auto; padding-inline: clamp(16px, 4vw, 40px); padding-block: clamp(48px, 8vw, 96px) 64px; }
+.mono { font: 400 12px/1.4 var(--f-mono); letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+h1 { font-size: clamp(40px, 7vw, 92px); line-height: .98; letter-spacing: -0.05em; font-weight: 600; margin: 18px 0 22px; max-width: 13ch; text-wrap: balance; }
+h1 em { font-family: var(--f-serif); font-style: italic; font-weight: 400; color: var(--accent); letter-spacing: -0.02em; }
+.lede { font-size: clamp(17px, 1.8vw, 20px); color: var(--muted); max-width: 58ch; margin: 0; }
+h2 { font-size: clamp(26px, 3vw, 36px); letter-spacing: -0.035em; font-weight: 600; margin: 0 0 22px; }
+section { margin-top: clamp(56px, 8vw, 96px); }
+.lens { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; border-top: 1px solid var(--line); }
+.lens div { padding-top: 20px; }
+.lens b { display: block; font-size: 19px; letter-spacing: -0.02em; line-height: 1.25; margin-bottom: 8px; font-weight: 600; }
+.lens p { margin: 0; color: var(--muted); font-size: 15px; }
+.cards { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 20px; }
+.card { background: var(--surface); border-radius: 24px; overflow: hidden; box-shadow: inset 0 0 0 1px var(--line); display: flex; flex-direction: column; }
+.shot { position: relative; aspect-ratio: 16 / 10; background: #E6E8ED; overflow: hidden; }
+.shot img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; transition: opacity .6s ease; }
+.shot img + img { opacity: 0; }
+.card:hover .shot img + img, .card:focus-within .shot img + img { opacity: 1; }
+.body { padding: clamp(22px, 3vw, 32px); display: flex; flex-direction: column; gap: 14px; flex: 1; }
+.body h3 { margin: 0; font-size: 28px; letter-spacing: -0.04em; line-height: 1.05; font-weight: 600; }
+.body > p { margin: 0; color: var(--muted); }
+.body ul { margin: 4px 0 8px; padding-left: 18px; color: var(--fg); font-size: 15px; display: grid; gap: 6px; }
+.links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: auto; padding-top: 8px; }
+.btn { display: inline-flex; align-items: center; gap: 8px; height: 44px; padding: 0 18px; border-radius: 999px; background: var(--fg); color: var(--bg); text-decoration: none; font-weight: 500; font-size: 15px; transition: transform .25s ease; }
+.btn:hover { transform: translateY(-1px); }
+.btn.ghost { background: transparent; color: var(--fg); box-shadow: inset 0 0 0 1px var(--line); }
+.btn:focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+.notes { list-style: none; padding: 0; margin: 0; border-top: 1px solid var(--line); }
+.notes li { display: grid; grid-template-columns: 40px minmax(0, 1fr); gap: 12px; padding: 16px 0; border-bottom: 1px solid var(--line); color: var(--muted); }
+.notes li span { color: var(--accent-ink); }
+footer { margin-top: 56px; color: var(--faint); font-size: 13px; }
+@media (max-width: 820px) { .lens, .cards { grid-template-columns: 1fr; } }
+</style>
+
+<div class="wrap">
+  <span class="mono">[ toggle.solutions · redesign · October 2026 ]</span>
+  <h1>Two ways to show a <em>growth partner</em>.</h1>
+  <p class="lede">Both concepts keep the approved copy from toggle.solutions, use the October founders shoot, and run in light and dark. Open either one and use the switch in the top bar to flip the theme.</p>
+
+  <section aria-labelledby="lens-h">
+    <h2 id="lens-h">How we read “growth partner”</h2>
+    <div class="lens">
+      <div><b>We find the bottleneck before we sell a channel.</b><p>Toggle checks the whole revenue system first: the site, the sales follow-up, the CRM and the tracking. Then it picks the fix, and the fix is not always more ads.</p></div>
+      <div><b>The people who plan it also run it.</b><p>Senior operators own both the strategy and the doing, so there is no junior layer between the client and the work.</p></div>
+      <div><b>One team answers for the numbers.</b><p>Acquisition, conversion and retention run on one team and one set of data. The engagement is earned month by month instead of locked in by contract.</p></div>
+    </div>
+  </section>
+
+  <section aria-labelledby="concepts-h">
+    <h2 id="concepts-h">The two concepts</h2>
+    <div class="cards">
+      <article class="card">
+        <div class="shot"><img src="assets/previews/concept-a-hero.webp" alt="Concept A home page hero in light mode"><img src="assets/previews/concept-a-lens.webp" alt="" aria-hidden="true"></div>
+        <div class="body">
+          <span class="mono">Concept A</span>
+          <h3>Clean Room</h3>
+          <p>Calm, light-first and close to an Apple product page. One idea per screen, big type, and the founders on white seamless.</p>
+          <ul>
+            <li>The hero strikes out “Your Marketing Agency” and sets the growth partner line in its place.</li>
+            <li>The founders photo opens from a framed card to full bleed as you scroll, and each co-founder gets a name tag.</li>
+            <li>Hover a portrait to play the shoot like stop-motion. On About, drag across a photo to scrub through the frames.</li>
+          </ul>
+          <div class="links"><a class="btn" href="concept-a/index.html">Open home</a><a class="btn ghost" href="concept-a/about.html">Open About</a></div>
+        </div>
+      </article>
+      <article class="card">
+        <div class="shot"><img src="assets/previews/concept-b-hero.webp" alt="Concept B home page hero in dark mode"><img src="assets/previews/concept-b-scan.webp" alt="" aria-hidden="true"></div>
+        <div class="body">
+          <span class="mono">Concept B</span>
+          <h3>Growth Console</h3>
+          <p>Dark-first and data-led. A blueprint grid, wide display type, and every number set in a mono readout.</p>
+          <ul>
+            <li>A scanner band moves across the duotone founders photo and shows each person in true color with their role.</li>
+            <li>Services sit in a periodic-table grid with a live readout panel, and the case studies read like a results table.</li>
+            <li>The call to action is a Free Brand Audit ticket that you tear off to book the call.</li>
+          </ul>
+          <div class="links"><a class="btn" href="concept-b/index.html">Open home</a><a class="btn ghost" href="concept-b/about.html">Open About</a></div>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section aria-labelledby="notes-h">
+    <h2 id="notes-h">Before you pick one</h2>
+    <ul class="notes">
+      <li><span class="mono">01</span>Three About sections are new layouts built only from approved FAQ answers: the results timeline, the team of three, and the full-funnel diagram. Concept A tags them as proposed.</li>
+      <li><span class="mono">02</span>The founder name tags were placed by eye on shoot frame 3 (Shaun, Zaid, Marcus, Viknesh, Jordan, Aizad from left). Please confirm them before launch.</li>
+      <li><span class="mono">03</span>Three case blurbs and one blog excerpt on the live site contain em dashes, which break the house writing standard. They are kept as approved for now.</li>
+      <li><span class="mono">04</span>Case study, service and blog links point to section anchors, because those pages sit outside this mockup.</li>
+    </ul>
+  </section>
+
+  <footer>Built from the approved site copy and the Toggle founders photoshoot. Concept A and B share one content file, so a copy change lands in both.</footer>
+</div>
+
+</body>
+</html>
