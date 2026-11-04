@@ -2,10 +2,10 @@
 client: Al-Hidayah Publication
 slug: al-hidayah-publication
 geo: my
-status: <prospect | active | paused | closed>
-stage: <lead | qualified | proposal-sent | negotiation | won | lost | n/a>
-practice: <acquisition | conversion | retention | mixed>
-currency: <MYR | SGD | …>
+status: active
+stage: won
+practice: acquisition
+currency: MYR
 mrr: TBD            # monthly recurring revenue in `currency`; TBD until set, 0 if none
 credit_pending: TBD # outstanding receivables in `currency`; 0 if none
 account_lead: TBD
