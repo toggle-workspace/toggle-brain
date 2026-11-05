@@ -1,0 +1,3490 @@
+[
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [BOFU] [IN: Professional Service]",
+  "spend": "0.060001",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "California"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [BOFU] [IN: Professional Service]",
+  "spend": "0",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Central Visayas"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [BOFU] [IN: Professional Service]",
+  "spend": "0.050001",
+  "impressions": "8",
+  "reach": "3",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Guangdong"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [BOFU] [IN: Professional Service]",
+  "spend": "0.01",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Hanoi"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [BOFU] [IN: Professional Service]",
+  "spend": "0",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Jakarta"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [BOFU] [IN: Professional Service]",
+  "spend": "0.01",
+  "impressions": "4",
+  "reach": "4",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Johor"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [BOFU] [IN: Professional Service]",
+  "spend": "0.01",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Kaafu Atoll"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [BOFU] [IN: Professional Service]",
+  "spend": "0.01",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Kiên Giang Province"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [BOFU] [IN: Professional Service]",
+  "spend": "0",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Kuala Lumpur"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [BOFU] [IN: Professional Service]",
+  "spend": "0",
+  "impressions": "2",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Massachusetts"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [BOFU] [IN: Professional Service]",
+  "spend": "0",
+  "impressions": "2",
+  "reach": "2",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "New South Wales"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [BOFU] [IN: Professional Service]",
+  "spend": "0.01",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Phangnga"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [BOFU] [IN: Professional Service]",
+  "spend": "0",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Seoul"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [BOFU] [IN: Professional Service]",
+  "spend": "0.01",
+  "impressions": "3",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Shanghai"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [BOFU] [IN: Professional Service]",
+  "spend": "0",
+  "impressions": "2",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Shizuoka Prefecture"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [BOFU] [IN: Professional Service]",
+  "spend": "1418.349984",
+  "impressions": "137364",
+  "reach": "28253",
+  "inline_link_clicks": "981",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "981"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "36"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "9"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "1505"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "57"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "1505"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "47"
+   },
+   {
+    "action_type": "post",
+    "value": "12"
+   },
+   {
+    "action_type": "onsite_conversion.post_unsave",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "9"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "8"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "27"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "46"
+   },
+   {
+    "action_type": "video_view",
+    "value": "467"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Singapore"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [BOFU] [IN: Professional Service]",
+  "spend": "0.01",
+  "impressions": "2",
+  "reach": "2",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "South Australia"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [BOFU] [IN: Professional Service]",
+  "spend": "0",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Surat Thani"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [BOFU] [IN: Professional Service]",
+  "spend": "0.540011",
+  "impressions": "17",
+  "reach": "16",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Unknown"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [BOFU] [IN: Professional Service]",
+  "spend": "0.02",
+  "impressions": "3",
+  "reach": "3",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Victoria"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [BOFU] [IN: Professional Service]",
+  "spend": "0",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Yangon"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [TOFU] [IN: Professional Service]",
+  "spend": "0.010001",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "actions": [
+   {
+    "action_type": "post_engagement",
+    "value": "1"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "1"
+   },
+   {
+    "action_type": "video_view",
+    "value": "1"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Attica (region)"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [TOFU] [IN: Professional Service]",
+  "spend": "0.010001",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "actions": [
+   {
+    "action_type": "post_engagement",
+    "value": "1"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "1"
+   },
+   {
+    "action_type": "video_view",
+    "value": "1"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Auckland Region"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [TOFU] [IN: Professional Service]",
+  "spend": "0",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Busan"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [TOFU] [IN: Professional Service]",
+  "spend": "0.010001",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Canterbury"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [TOFU] [IN: Professional Service]",
+  "spend": "0",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Dubai"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [TOFU] [IN: Professional Service]",
+  "spend": "0.010001",
+  "impressions": "3",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Guangdong"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [TOFU] [IN: Professional Service]",
+  "spend": "0.010001",
+  "impressions": "2",
+  "reach": "2",
+  "inline_link_clicks": "0",
+  "actions": [
+   {
+    "action_type": "post_engagement",
+    "value": "1"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "1"
+   },
+   {
+    "action_type": "video_view",
+    "value": "1"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Johor"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [TOFU] [IN: Professional Service]",
+  "spend": "0.010001",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Maharashtra"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [TOFU] [IN: Professional Service]",
+  "spend": "0.020001",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Selangor"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [TOFU] [IN: Professional Service]",
+  "spend": "0",
+  "impressions": "2",
+  "reach": "2",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Shanghai"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [TOFU] [IN: Professional Service]",
+  "spend": "1784.389991",
+  "impressions": "77419",
+  "reach": "19236",
+  "inline_link_clicks": "552",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "552"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "203"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "4"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "29"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "20728"
+   },
+   {
+    "action_type": "like",
+    "value": "13"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "282"
+   },
+   {
+    "action_type": "comment",
+    "value": "1"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "20741"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "248"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_2_message_send",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "3"
+   },
+   {
+    "action_type": "post",
+    "value": "48"
+   },
+   {
+    "action_type": "onsite_conversion.post_unsave",
+    "value": "5"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "30"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_comment",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_3_message_send",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "25"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "174"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "62"
+   },
+   {
+    "action_type": "video_view",
+    "value": "19894"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Singapore"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [TOFU] [IN: Professional Service]",
+  "spend": "0",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Taipei"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [TOFU] [IN: Professional Service]",
+  "spend": "0.050003",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "actions": [
+   {
+    "action_type": "post_engagement",
+    "value": "1"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "1"
+   },
+   {
+    "action_type": "video_view",
+    "value": "1"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Tokyo"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [TOFU] [IN: Professional Service]",
+  "spend": "0.020001",
+  "impressions": "2",
+  "reach": "2",
+  "inline_link_clicks": "0",
+  "actions": [
+   {
+    "action_type": "post_engagement",
+    "value": "2"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "2"
+   },
+   {
+    "action_type": "video_view",
+    "value": "2"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Unknown"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [TOFU] [IN: Professional Service]",
+  "spend": "0",
+  "impressions": "2",
+  "reach": "2",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Victoria"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [Speedy Prep] [IN: Professional Service]",
+  "spend": "336.079998",
+  "impressions": "18491",
+  "reach": "5237",
+  "inline_link_clicks": "69",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "69"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "5"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "2"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "653"
+   },
+   {
+    "action_type": "like",
+    "value": "1"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "5"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "654"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "3"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "3"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "4"
+   },
+   {
+    "action_type": "video_view",
+    "value": "579"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Singapore"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [Speedy Prep] [IN: Professional Service]",
+  "spend": "0.020002",
+  "impressions": "3",
+  "reach": "2",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Unknown"
+ },
+ {
+  "campaign_name": "Sedifly - MOFU_2026-01-12_New Year Event",
+  "spend": "0.010001",
+  "impressions": "2",
+  "reach": "2",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Central Region"
+ },
+ {
+  "campaign_name": "Sedifly - MOFU_2026-01-12_New Year Event",
+  "spend": "1141.339988",
+  "impressions": "59079",
+  "reach": "15399",
+  "inline_link_clicks": "234",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "234"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "15"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "4"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "261"
+   },
+   {
+    "action_type": "like",
+    "value": "4"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "23"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "265"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "19"
+   },
+   {
+    "action_type": "post",
+    "value": "6"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "11"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "24"
+   },
+   {
+    "action_type": "video_view",
+    "value": "4"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Singapore"
+ },
+ {
+  "campaign_name": "Sedifly - MOFU_2026-01-12_New Year Event",
+  "spend": "0.16001",
+  "impressions": "12",
+  "reach": "7",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Unknown"
+ },
+ {
+  "campaign_name": "Sedifly - MOFU_2026-01-12_New Year Event",
+  "spend": "0.020001",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "West Region"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [Awareness ] [IN: Professional Service]",
+  "spend": "0",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Banten"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [Awareness ] [IN: Professional Service]",
+  "spend": "0.01",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Central Region"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [Awareness ] [IN: Professional Service]",
+  "spend": "0",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Johor"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [Awareness ] [IN: Professional Service]",
+  "spend": "961.44",
+  "impressions": "40207",
+  "reach": "14410",
+  "inline_link_clicks": "162",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "162"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "4"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "5"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "166"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "4"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "166"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "0"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "0"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "13"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Singapore"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [Awareness ] [IN: Professional Service]",
+  "spend": "0.03",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Southern District"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [Awareness ] [IN: Professional Service]",
+  "spend": "0.01",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "São Paulo (state)"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [Awareness ] [IN: Professional Service]",
+  "spend": "0",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Tamil Nadu"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [Awareness ] [IN: Professional Service]",
+  "spend": "1.03",
+  "impressions": "81",
+  "reach": "59",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Unknown"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260315-Workshop_SG_Sedifly",
+  "spend": "0.240009",
+  "impressions": "3",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "actions": [
+   {
+    "action_type": "post_engagement",
+    "value": "1"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "1"
+   },
+   {
+    "action_type": "video_view",
+    "value": "1"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "California"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260315-Workshop_SG_Sedifly",
+  "spend": "0",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Graubünden"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260315-Workshop_SG_Sedifly",
+  "spend": "0.01",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Guangdong"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260315-Workshop_SG_Sedifly",
+  "spend": "0.01",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Hokkaido"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260315-Workshop_SG_Sedifly",
+  "spend": "0",
+  "impressions": "2",
+  "reach": "2",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Jakarta"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260315-Workshop_SG_Sedifly",
+  "spend": "0.020001",
+  "impressions": "2",
+  "reach": "2",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Johor"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260315-Workshop_SG_Sedifly",
+  "spend": "0",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Karnataka"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260315-Workshop_SG_Sedifly",
+  "spend": "0.01",
+  "impressions": "2",
+  "reach": "2",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Maharashtra"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260315-Workshop_SG_Sedifly",
+  "spend": "0.030001",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Malacca"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260315-Workshop_SG_Sedifly",
+  "spend": "0.01",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "actions": [
+   {
+    "action_type": "post_engagement",
+    "value": "1"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "1"
+   },
+   {
+    "action_type": "video_view",
+    "value": "1"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Massachusetts"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260315-Workshop_SG_Sedifly",
+  "spend": "0.01",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Schwyz"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260315-Workshop_SG_Sedifly",
+  "spend": "0.520019",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "actions": [
+   {
+    "action_type": "post_engagement",
+    "value": "1"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "1"
+   },
+   {
+    "action_type": "video_view",
+    "value": "1"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Selangor"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260315-Workshop_SG_Sedifly",
+  "spend": "1332.879964",
+  "impressions": "49908",
+  "reach": "13915",
+  "inline_link_clicks": "203",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "203"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "14"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "2"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "4378"
+   },
+   {
+    "action_type": "like",
+    "value": "1"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "35"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "4379"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "33"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_2_message_send",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "1"
+   },
+   {
+    "action_type": "post",
+    "value": "10"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "11"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "11"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "12"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "41"
+   },
+   {
+    "action_type": "video_view",
+    "value": "4140"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Singapore"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260315-Workshop_SG_Sedifly",
+  "spend": "0",
+  "impressions": "2",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Tamil Nadu"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260315-Workshop_SG_Sedifly",
+  "spend": "0.01",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Telangana"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260315-Workshop_SG_Sedifly",
+  "spend": "0",
+  "impressions": "2",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Thimphu District"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260315-Workshop_SG_Sedifly",
+  "spend": "0.01",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Tokyo"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260315-Workshop_SG_Sedifly",
+  "spend": "0.070003",
+  "impressions": "3",
+  "reach": "3",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Unknown"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260315-Workshop_SG_Sedifly-SVLGF",
+  "spend": "196.893895",
+  "impressions": "7480",
+  "reach": "3315",
+  "inline_link_clicks": "31",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "31"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_block",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "1"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "443"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "2"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "443"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "0"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "3"
+   },
+   {
+    "action_type": "video_view",
+    "value": "410"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Central Region"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260315-Workshop_SG_Sedifly-SVLGF",
+  "spend": "308.556104",
+  "impressions": "10186",
+  "reach": "4547",
+  "inline_link_clicks": "49",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "49"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "3"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "2"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "848"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "4"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "848"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "2"
+   },
+   {
+    "action_type": "post",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "9"
+   },
+   {
+    "action_type": "video_view",
+    "value": "795"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Singapore"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260315-Workshop_SG_Sedifly-SVLGF",
+  "spend": "0.02",
+  "impressions": "4",
+  "reach": "4",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Unknown"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260315-GH Dinner_SG_Sedifly",
+  "spend": "75.79",
+  "impressions": "1937",
+  "reach": "814",
+  "inline_link_clicks": "32",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "32"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "1"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "65"
+   },
+   {
+    "action_type": "like",
+    "value": "1"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "3"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "66"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "0"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "5"
+   },
+   {
+    "action_type": "video_view",
+    "value": "30"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Central Region"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260315-GH Dinner_SG_Sedifly",
+  "spend": "767.27",
+  "impressions": "25949",
+  "reach": "8566",
+  "inline_link_clicks": "299",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "299"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "17"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "6"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "654"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "35"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "654"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "28"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "2"
+   },
+   {
+    "action_type": "post",
+    "value": "5"
+   },
+   {
+    "action_type": "onsite_conversion.post_unsave",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "13"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "12"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "11"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "47"
+   },
+   {
+    "action_type": "video_view",
+    "value": "320"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Singapore"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260315-GH Dinner_SG_Sedifly – Radius",
+  "spend": "156.38",
+  "impressions": "4060",
+  "reach": "2701",
+  "inline_link_clicks": "41",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "41"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "3"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "1"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "68"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "6"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "68"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "5"
+   },
+   {
+    "action_type": "post",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "4"
+   },
+   {
+    "action_type": "video_view",
+    "value": "21"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Central Region"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260315-GH Dinner_SG_Sedifly – Radius",
+  "spend": "66.07",
+  "impressions": "1486",
+  "reach": "948",
+  "inline_link_clicks": "13",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "13"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "1"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "20"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "2"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "20"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "4"
+   },
+   {
+    "action_type": "video_view",
+    "value": "5"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Singapore"
+ },
+ {
+  "campaign_name": "TOFU_Sedifly_Awareness Video_Preseed",
+  "spend": "78.439149",
+  "impressions": "3099",
+  "reach": "1418",
+  "inline_link_clicks": "44",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "44"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "9"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "813"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "10"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "813"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "10"
+   },
+   {
+    "action_type": "post",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "9"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "10"
+   },
+   {
+    "action_type": "video_view",
+    "value": "759"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Central Region"
+ },
+ {
+  "campaign_name": "TOFU_Sedifly_Awareness Video_Preseed",
+  "spend": "1764.140852",
+  "impressions": "130466",
+  "reach": "37118",
+  "inline_link_clicks": "844",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "844"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "550"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "122"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "28562"
+   },
+   {
+    "action_type": "like",
+    "value": "1"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "649"
+   },
+   {
+    "action_type": "comment",
+    "value": "4"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "28563"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "525"
+   },
+   {
+    "action_type": "post_uncomment",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "1"
+   },
+   {
+    "action_type": "post",
+    "value": "65"
+   },
+   {
+    "action_type": "onsite_conversion.post_unsave",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "30"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_comment",
+    "value": "3"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "29"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "428"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "88"
+   },
+   {
+    "action_type": "video_view",
+    "value": "27069"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Singapore"
+ },
+ {
+  "campaign_name": "TOFU_Sedifly_Awareness Video_Preseed",
+  "spend": "0.03",
+  "impressions": "3",
+  "reach": "0",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Unknown"
+ },
+ {
+  "campaign_name": "MOFU_Webinar_20260616-US Top 10 Admissions Strategy-SG_Sedifly",
+  "spend": "0",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "actions": [
+   {
+    "action_type": "post_engagement",
+    "value": "1"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "1"
+   },
+   {
+    "action_type": "video_view",
+    "value": "1"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Aceh"
+ },
+ {
+  "campaign_name": "MOFU_Webinar_20260616-US Top 10 Admissions Strategy-SG_Sedifly",
+  "spend": "31.46",
+  "impressions": "1615",
+  "reach": "857",
+  "inline_link_clicks": "27",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "27"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "350"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "1"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "350"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "5"
+   },
+   {
+    "action_type": "video_view",
+    "value": "322"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Central Region"
+ },
+ {
+  "campaign_name": "MOFU_Webinar_20260616-US Top 10 Admissions Strategy-SG_Sedifly",
+  "spend": "4.96",
+  "impressions": "239",
+  "reach": "114",
+  "inline_link_clicks": "5",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "5"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "1"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "43"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "1"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "43"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "0"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "0"
+   },
+   {
+    "action_type": "video_view",
+    "value": "37"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Johor"
+ },
+ {
+  "campaign_name": "MOFU_Webinar_20260616-US Top 10 Admissions Strategy-SG_Sedifly",
+  "spend": "1099.28",
+  "impressions": "95699",
+  "reach": "43098",
+  "inline_link_clicks": "755",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "755"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "286"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "65"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "17820"
+   },
+   {
+    "action_type": "like",
+    "value": "1"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "376"
+   },
+   {
+    "action_type": "comment",
+    "value": "2"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "17821"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "311"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "1"
+   },
+   {
+    "action_type": "post",
+    "value": "60"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "28"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_comment",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "28"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "221"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "102"
+   },
+   {
+    "action_type": "video_view",
+    "value": "16689"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Singapore"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260606-GH Summer_SG_Sedifly",
+  "spend": "53.946493",
+  "impressions": "2810",
+  "reach": "971",
+  "inline_link_clicks": "26",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "26"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "4"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "167"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "5"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "167"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "5"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "4"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "6"
+   },
+   {
+    "action_type": "video_view",
+    "value": "136"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Central Region"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260606-GH Summer_SG_Sedifly",
+  "spend": "1.749886",
+  "impressions": "149",
+  "reach": "49",
+  "inline_link_clicks": "0",
+  "actions": [
+   {
+    "action_type": "post_engagement",
+    "value": "6"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "6"
+   },
+   {
+    "action_type": "video_view",
+    "value": "6"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Johor"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260606-GH Summer_SG_Sedifly",
+  "spend": "1482.413621",
+  "impressions": "118368",
+  "reach": "29187",
+  "inline_link_clicks": "752",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "752"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "105"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "25"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "4569"
+   },
+   {
+    "action_type": "like",
+    "value": "1"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "139"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "4570"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "113"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_2_message_send",
+    "value": "1"
+   },
+   {
+    "action_type": "post",
+    "value": "18"
+   },
+   {
+    "action_type": "onsite_conversion.post_unsave",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "16"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "15"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "80"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "83"
+   },
+   {
+    "action_type": "video_view",
+    "value": "3678"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Singapore"
+ },
+ {
+  "campaign_name": "MOFU_eBook_202605-Top 5 Winning Strategies-SG_Sedifly",
+  "spend": "60.403584",
+  "impressions": "1687",
+  "reach": "457",
+  "inline_link_clicks": "22",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "22"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "3"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "48"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "1"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "48"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_2_message_send",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "6"
+   },
+   {
+    "action_type": "video_view",
+    "value": "25"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Central Region"
+ },
+ {
+  "campaign_name": "MOFU_eBook_202605-Top 5 Winning Strategies-SG_Sedifly",
+  "spend": "2.680603",
+  "impressions": "126",
+  "reach": "36",
+  "inline_link_clicks": "0",
+  "actions": [
+   {
+    "action_type": "post_engagement",
+    "value": "6"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "6"
+   },
+   {
+    "action_type": "video_view",
+    "value": "6"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Johor"
+ },
+ {
+  "campaign_name": "MOFU_eBook_202605-Top 5 Winning Strategies-SG_Sedifly",
+  "spend": "1671.065813",
+  "impressions": "87810",
+  "reach": "17047",
+  "inline_link_clicks": "808",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "808"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "61"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "28"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "18"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "1815"
+   },
+   {
+    "action_type": "like",
+    "value": "2"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "106"
+   },
+   {
+    "action_type": "comment",
+    "value": "1"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "1817"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "88"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_2_message_send",
+    "value": "10"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "25"
+   },
+   {
+    "action_type": "post",
+    "value": "15"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "29"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_comment",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_3_message_send",
+    "value": "9"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "29"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "43"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "75"
+   },
+   {
+    "action_type": "video_view",
+    "value": "901"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Singapore"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260606-GH Summer_SG_Sedifly – Traffic",
+  "spend": "183.74206",
+  "impressions": "16372",
+  "reach": "4588",
+  "inline_link_clicks": "141",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "141"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "3"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_block",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "2"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "449"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "5"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "449"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "3"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "1"
+   },
+   {
+    "action_type": "video_view",
+    "value": "303"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Singapore"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260606-GH Summer_SG_Sedifly – Traffic",
+  "spend": "47.66794",
+  "impressions": "3031",
+  "reach": "740",
+  "inline_link_clicks": "455",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "455"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "758"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "758"
+   },
+   {
+    "action_type": "video_view",
+    "value": "303"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Unknown"
+ },
+ {
+  "campaign_name": "MOFU_Webinar_20260801-US FAQ Jennifer-SG_Sedifly",
+  "spend": "0.24",
+  "impressions": "7",
+  "reach": "6",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Central Region"
+ },
+ {
+  "campaign_name": "MOFU_Webinar_20260801-US FAQ Jennifer-SG_Sedifly",
+  "spend": "0.09",
+  "impressions": "2",
+  "reach": "2",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Johor"
+ },
+ {
+  "campaign_name": "MOFU_Webinar_20260801-US FAQ Jennifer-SG_Sedifly",
+  "spend": "3.95",
+  "impressions": "229",
+  "reach": "207",
+  "inline_link_clicks": "3",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "3"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "28"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "28"
+   },
+   {
+    "action_type": "video_view",
+    "value": "25"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Singapore"
+ },
+ {
+  "campaign_name": "MOFU_Webinar_20260822-Cracking Ivy League & Oxbridge Admissions-SG_Sedifly - INSTANT FORM",
+  "spend": "117.29",
+  "impressions": "4189",
+  "reach": "2571",
+  "inline_link_clicks": "27",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "27"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "3"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "35"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "4"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "35"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "4"
+   },
+   {
+    "action_type": "post",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "3"
+   },
+   {
+    "action_type": "video_view",
+    "value": "4"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Singapore"
+ },
+ {
+  "campaign_name": "MOFU_Webinar_20260822-Cracking Ivy League & Oxbridge Admissions-SG_Sedifly - WIX",
+  "spend": "197.339998",
+  "impressions": "9369",
+  "reach": "3987",
+  "inline_link_clicks": "65",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "65"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "5"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "3"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "140"
+   },
+   {
+    "action_type": "like",
+    "value": "1"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "7"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "141"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "3"
+   },
+   {
+    "action_type": "onsite_conversion.post_unsave",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "2"
+   },
+   {
+    "action_type": "video_view",
+    "value": "68"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Singapore"
+ },
+ {
+  "campaign_name": "MOFU_Webinar_20260822-Cracking Ivy League & Oxbridge Admissions-SG_Sedifly - WIX",
+  "spend": "0.010002",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Unknown"
+ },
+ {
+  "campaign_name": "MOFU_Webinar_20260822-Cracking Ivy League & Oxbridge Admissions-SG_Sedifly - WIX - Copy",
+  "spend": "9.79",
+  "impressions": "628",
+  "reach": "524",
+  "inline_link_clicks": "1",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "1"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "1"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "2"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "1"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "2"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "1"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Singapore"
+ },
+ {
+  "campaign_name": "MOFU_202608_Roscoe Personal Statement Workshop_SG_Leads",
+  "spend": "207.820002",
+  "impressions": "5340",
+  "reach": "1700",
+  "inline_link_clicks": "37",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "37"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "5"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "374"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "7"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "374"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "7"
+   },
+   {
+    "action_type": "post",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "5"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "6"
+   },
+   {
+    "action_type": "video_view",
+    "value": "330"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Singapore"
+ },
+ {
+  "campaign_name": "MOFU_202608_Roscoe Personal Statement Workshop_SG_Leads",
+  "spend": "0.009998",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Unknown"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260902_George Baxter Webinar_Leads",
+  "spend": "428.349997",
+  "impressions": "34341",
+  "reach": "15620",
+  "inline_link_clicks": "383",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "383"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "13"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "7"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "2813"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "32"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "2813"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "24"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_2_message_send",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "1"
+   },
+   {
+    "action_type": "post",
+    "value": "9"
+   },
+   {
+    "action_type": "onsite_conversion.post_unsave",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "10"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_3_message_send",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "9"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "6"
+   },
+   {
+    "action_type": "video_view",
+    "value": "2398"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Singapore"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260902_George Baxter Webinar_Leads",
+  "spend": "0.120003",
+  "impressions": "19",
+  "reach": "12",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Unknown"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260902_George Baxter Webinar_Leads - FORM",
+  "spend": "57.5",
+  "impressions": "2959",
+  "reach": "1634",
+  "inline_link_clicks": "21",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "21"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "5"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "2"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "161"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "6"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "161"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "4"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "3"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "2"
+   },
+   {
+    "action_type": "video_view",
+    "value": "134"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Singapore"
+ },
+ {
+  "campaign_name": "MOFU_202609_Roscoe Personal Statement Workshop_SG_Leads",
+  "spend": "163.6",
+  "impressions": "4647",
+  "reach": "1615",
+  "inline_link_clicks": "20",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "20"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "1"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "40"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "40"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "2"
+   },
+   {
+    "action_type": "video_view",
+    "value": "20"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Singapore"
+ },
+ {
+  "campaign_name": "MOFU_202609_Roscoe Personal Statement Workshop_SG_Leads",
+  "spend": "0.07",
+  "impressions": "5",
+  "reach": "3",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Unknown"
+ },
+ {
+  "campaign_name": "MSA | Readiness Assessment | Messaging Test 01 | Sep26",
+  "spend": "713.40001",
+  "impressions": "35933",
+  "reach": "11184",
+  "inline_link_clicks": "370",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "370"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "18"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "12"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_block",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "18"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "4"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "499"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_call_placed",
+    "value": "1"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "33"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "499"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "26"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_2_message_send",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "16"
+   },
+   {
+    "action_type": "post",
+    "value": "8"
+   },
+   {
+    "action_type": "onsite_conversion.post_unsave",
+    "value": "3"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "7"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_3_message_send",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "4"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "14"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "15"
+   },
+   {
+    "action_type": "video_view",
+    "value": "96"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Singapore"
+ },
+ {
+  "campaign_name": "MSA | Readiness Assessment | Messaging Test 01 | Sep26",
+  "spend": "0.68999",
+  "impressions": "16",
+  "reach": "11",
+  "inline_link_clicks": "2",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "2"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "2"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "2"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Unknown"
+ },
+ {
+  "campaign_name": "MSA | Parents | Readiness Assessment | Test 01 | Sep26",
+  "spend": "396.79",
+  "impressions": "23938",
+  "reach": "11401",
+  "inline_link_clicks": "258",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "258"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "15"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "4"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "291"
+   },
+   {
+    "action_type": "like",
+    "value": "1"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "18"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "292"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "14"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "1"
+   },
+   {
+    "action_type": "post",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "11"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "3"
+   },
+   {
+    "action_type": "video_view",
+    "value": "15"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Singapore"
+ },
+ {
+  "campaign_name": "MSA | Parents | Readiness Assessment | Test 01 | Sep26",
+  "spend": "0.42",
+  "impressions": "37",
+  "reach": "16",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Unknown"
+ },
+ {
+  "campaign_name": "MSA Parent Webinar | Leads | SG | 2026-10-24",
+  "spend": "814.21",
+  "impressions": "36326",
+  "reach": "11486",
+  "inline_link_clicks": "281",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "281"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "22"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "17"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "25"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "3"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "317"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "35"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "317"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "32"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_2_message_send",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "24"
+   },
+   {
+    "action_type": "post",
+    "value": "6"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "7"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_3_message_send",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "7"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "19"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "31"
+   },
+   {
+    "action_type": "video_view",
+    "value": "1"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Singapore"
+ },
+ {
+  "campaign_name": "MSA Parent Webinar | Leads | SG | 2026-10-24",
+  "spend": "0.01",
+  "impressions": "2",
+  "reach": "2",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Unknown"
+ },
+ {
+  "campaign_name": "SG | Leads | Website+IF | Admissions Readiness | Oct26",
+  "spend": "395.16",
+  "impressions": "26632",
+  "reach": "7850",
+  "inline_link_clicks": "521",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "521"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "33"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "9"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "568"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "35"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "568"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "26"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "1"
+   },
+   {
+    "action_type": "post",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "24"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "1"
+   },
+   {
+    "action_type": "video_view",
+    "value": "12"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Singapore"
+ },
+ {
+  "campaign_name": "SG | Leads | Website+IF | Admissions Readiness | Oct26",
+  "spend": "0.56",
+  "impressions": "29",
+  "reach": "20",
+  "inline_link_clicks": "4",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "4"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "4"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "4"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Unknown"
+ },
+ {
+  "campaign_name": "NS Timing | Leads | SG | Web+IF | 2026 Q4",
+  "spend": "163.83",
+  "impressions": "14559",
+  "reach": "7466",
+  "inline_link_clicks": "127",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "127"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "13"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "4"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "4"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "157"
+   },
+   {
+    "action_type": "like",
+    "value": "1"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "17"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "158"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "13"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_2_message_send",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "4"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "4"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_3_message_send",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "4"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "9"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "3"
+   },
+   {
+    "action_type": "video_view",
+    "value": "13"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Singapore"
+ },
+ {
+  "campaign_name": "NS Timing | Leads | SG | Web+IF | 2026 Q4",
+  "spend": "0.05",
+  "impressions": "2",
+  "reach": "2",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Unknown"
+ },
+ {
+  "campaign_name": "SG | Admissions | Leads | Evergreen Grades | Oct26",
+  "spend": "94.56",
+  "impressions": "2842",
+  "reach": "1906",
+  "inline_link_clicks": "23",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "23"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "13"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "4"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "3"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "626"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "15"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "626"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "11"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_2_message_send",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "3"
+   },
+   {
+    "action_type": "post",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_unsave",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_3_message_send",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "0"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "10"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "2"
+   },
+   {
+    "action_type": "video_view",
+    "value": "588"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Singapore"
+ },
+ {
+  "campaign_name": "SG | Admissions | Leads | Evergreen Grades | Oct26",
+  "spend": "0.05",
+  "impressions": "2",
+  "reach": "2",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Unknown"
+ },
+ {
+  "campaign_name": "2026-11-15_Roscoe_G9-11_Webinar",
+  "spend": "34.86",
+  "impressions": "1566",
+  "reach": "801",
+  "inline_link_clicks": "12",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "12"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "1"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "19"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "4"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "19"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "4"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_2_message_send",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "1"
+   },
+   {
+    "action_type": "video_view",
+    "value": "3"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "region": "Singapore"
+ }
+]

@@ -1,0 +1,3976 @@
+[
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [BOFU] [IN: Professional Service]",
+  "spend": "0",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "desktop"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [BOFU] [IN: Professional Service]",
+  "spend": "1419.08",
+  "impressions": "137416",
+  "reach": "28255",
+  "inline_link_clicks": "981",
+  "actions": [
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "46"
+   },
+   {
+    "action_type": "link_click",
+    "value": "981"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "46"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "36"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "9"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "1505"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "57"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "1505"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "47"
+   },
+   {
+    "action_type": "post",
+    "value": "12"
+   },
+   {
+    "action_type": "onsite_conversion.post_unsave",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "9"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "8"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "27"
+   },
+   {
+    "action_type": "lead",
+    "value": "46"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "46"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "46"
+   },
+   {
+    "action_type": "video_view",
+    "value": "467"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "mobile_app"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [BOFU] [IN: Professional Service]",
+  "spend": "0.01",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "unknown"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [TOFU] [IN: Professional Service]",
+  "spend": "0",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "desktop"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [TOFU] [IN: Professional Service]",
+  "spend": "1784.54",
+  "impressions": "77438",
+  "reach": "19248",
+  "inline_link_clicks": "552",
+  "actions": [
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "62"
+   },
+   {
+    "action_type": "link_click",
+    "value": "552"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "62"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "203"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "4"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "29"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "20734"
+   },
+   {
+    "action_type": "like",
+    "value": "13"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "282"
+   },
+   {
+    "action_type": "comment",
+    "value": "1"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "20747"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "248"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_2_message_send",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "3"
+   },
+   {
+    "action_type": "post",
+    "value": "48"
+   },
+   {
+    "action_type": "onsite_conversion.post_unsave",
+    "value": "5"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "30"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_comment",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_3_message_send",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "25"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "174"
+   },
+   {
+    "action_type": "lead",
+    "value": "62"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "62"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_started_7d",
+    "value": "3"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "62"
+   },
+   {
+    "action_type": "video_view",
+    "value": "19900"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "mobile_app"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [Speedy Prep] [IN: Professional Service]",
+  "spend": "336.1",
+  "impressions": "18494",
+  "reach": "5237",
+  "inline_link_clicks": "69",
+  "actions": [
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "4"
+   },
+   {
+    "action_type": "link_click",
+    "value": "69"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "4"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "5"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "2"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "653"
+   },
+   {
+    "action_type": "like",
+    "value": "1"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "5"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "654"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "3"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "3"
+   },
+   {
+    "action_type": "lead",
+    "value": "4"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "4"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "4"
+   },
+   {
+    "action_type": "video_view",
+    "value": "579"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "mobile_app"
+ },
+ {
+  "campaign_name": "Sedifly - MOFU_2026-01-12_New Year Event",
+  "spend": "1141.53",
+  "impressions": "59094",
+  "reach": "15416",
+  "inline_link_clicks": "234",
+  "actions": [
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "24"
+   },
+   {
+    "action_type": "link_click",
+    "value": "234"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "24"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "15"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "4"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "261"
+   },
+   {
+    "action_type": "like",
+    "value": "4"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "23"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "265"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "19"
+   },
+   {
+    "action_type": "post",
+    "value": "6"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "11"
+   },
+   {
+    "action_type": "lead",
+    "value": "24"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "24"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "24"
+   },
+   {
+    "action_type": "video_view",
+    "value": "4"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "mobile_app"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [Awareness ] [IN: Professional Service]",
+  "spend": "0.1",
+  "impressions": "14",
+  "reach": "6",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "desktop"
+ },
+ {
+  "campaign_name": "QM - [OB: Lead (Meta Form)] [Awareness ] [IN: Professional Service]",
+  "spend": "962.42",
+  "impressions": "40280",
+  "reach": "14439",
+  "inline_link_clicks": "162",
+  "actions": [
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "13"
+   },
+   {
+    "action_type": "link_click",
+    "value": "162"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "13"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "4"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "5"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "166"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "4"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "166"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "0"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "0"
+   },
+   {
+    "action_type": "lead",
+    "value": "13"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "13"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_started_7d",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "13"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "mobile_app"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260315-Workshop_SG_Sedifly",
+  "spend": "1333.83",
+  "impressions": "49934",
+  "reach": "13923",
+  "inline_link_clicks": "203",
+  "actions": [
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "41"
+   },
+   {
+    "action_type": "link_click",
+    "value": "203"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "41"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_custom",
+    "value": "3"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "14"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "2"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "4381"
+   },
+   {
+    "action_type": "like",
+    "value": "1"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "35"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "4382"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "33"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_2_message_send",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "1"
+   },
+   {
+    "action_type": "post",
+    "value": "10"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "11"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "11"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "12"
+   },
+   {
+    "action_type": "lead",
+    "value": "41"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "41"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_started_7d",
+    "value": "1"
+   },
+   {
+    "action_type": "custom_event_actions_add_20_s_calls",
+    "value": "3"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "41"
+   },
+   {
+    "action_type": "video_view",
+    "value": "4143"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "mobile_app"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260315-Workshop_SG_Sedifly-SVLGF",
+  "spend": "505.47",
+  "impressions": "17670",
+  "reach": "6399",
+  "inline_link_clicks": "80",
+  "actions": [
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "12"
+   },
+   {
+    "action_type": "link_click",
+    "value": "80"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "12"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "4"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_block",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "3"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "1291"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "6"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "1291"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "3"
+   },
+   {
+    "action_type": "post",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "1"
+   },
+   {
+    "action_type": "lead",
+    "value": "12"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "12"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "12"
+   },
+   {
+    "action_type": "video_view",
+    "value": "1205"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "mobile_app"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260315-GH Dinner_SG_Sedifly",
+  "spend": "843.06",
+  "impressions": "27886",
+  "reach": "9178",
+  "inline_link_clicks": "331",
+  "actions": [
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "52"
+   },
+   {
+    "action_type": "link_click",
+    "value": "331"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "52"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "18"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "7"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "719"
+   },
+   {
+    "action_type": "like",
+    "value": "1"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "38"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "720"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "30"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "2"
+   },
+   {
+    "action_type": "post",
+    "value": "5"
+   },
+   {
+    "action_type": "onsite_conversion.post_unsave",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "15"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "14"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "11"
+   },
+   {
+    "action_type": "lead",
+    "value": "52"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "52"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_started_7d",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "52"
+   },
+   {
+    "action_type": "video_view",
+    "value": "350"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "mobile_app"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260315-GH Dinner_SG_Sedifly – Radius",
+  "spend": "222.45",
+  "impressions": "5546",
+  "reach": "3498",
+  "inline_link_clicks": "54",
+  "actions": [
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "8"
+   },
+   {
+    "action_type": "link_click",
+    "value": "54"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "8"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "4"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "1"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "88"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "8"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "88"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "7"
+   },
+   {
+    "action_type": "post",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "3"
+   },
+   {
+    "action_type": "lead",
+    "value": "8"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "8"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "8"
+   },
+   {
+    "action_type": "video_view",
+    "value": "26"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "mobile_app"
+ },
+ {
+  "campaign_name": "TOFU_Sedifly_Awareness Video_Preseed",
+  "spend": "1842.470002",
+  "impressions": "133562",
+  "reach": "37799",
+  "inline_link_clicks": "888",
+  "actions": [
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "98"
+   },
+   {
+    "action_type": "link_click",
+    "value": "888"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "98"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "559"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "122"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "29371"
+   },
+   {
+    "action_type": "like",
+    "value": "1"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "659"
+   },
+   {
+    "action_type": "comment",
+    "value": "4"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "29372"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "535"
+   },
+   {
+    "action_type": "post_uncomment",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "1"
+   },
+   {
+    "action_type": "post",
+    "value": "66"
+   },
+   {
+    "action_type": "onsite_conversion.post_unsave",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "30"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_comment",
+    "value": "3"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "29"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "437"
+   },
+   {
+    "action_type": "lead",
+    "value": "98"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "98"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_started_7d",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "98"
+   },
+   {
+    "action_type": "video_view",
+    "value": "27824"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "mobile_app"
+ },
+ {
+  "campaign_name": "TOFU_Sedifly_Awareness Video_Preseed",
+  "spend": "0.139998",
+  "impressions": "6",
+  "reach": "2",
+  "inline_link_clicks": "0",
+  "actions": [
+   {
+    "action_type": "post_engagement",
+    "value": "3"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "3"
+   },
+   {
+    "action_type": "video_view",
+    "value": "3"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "mobile_web"
+ },
+ {
+  "campaign_name": "TOFU_Sedifly_Awareness Video_Preseed",
+  "spend": "0",
+  "impressions": "0",
+  "reach": "0",
+  "inline_link_clicks": "0",
+  "actions": [
+   {
+    "action_type": "post_engagement",
+    "value": "1"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "1"
+   },
+   {
+    "action_type": "video_view",
+    "value": "1"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "unknown"
+ },
+ {
+  "campaign_name": "MOFU_Webinar_20260616-US Top 10 Admissions Strategy-SG_Sedifly",
+  "spend": "6.7",
+  "impressions": "182",
+  "reach": "70",
+  "inline_link_clicks": "0",
+  "actions": [
+   {
+    "action_type": "post_engagement",
+    "value": "16"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "16"
+   },
+   {
+    "action_type": "video_view",
+    "value": "16"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "desktop"
+ },
+ {
+  "campaign_name": "MOFU_Webinar_20260616-US Top 10 Admissions Strategy-SG_Sedifly",
+  "spend": "1126.4",
+  "impressions": "97208",
+  "reach": "43532",
+  "inline_link_clicks": "786",
+  "actions": [
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "107"
+   },
+   {
+    "action_type": "link_click",
+    "value": "786"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "107"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_custom",
+    "value": "3"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "287"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "66"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "18160"
+   },
+   {
+    "action_type": "like",
+    "value": "1"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "378"
+   },
+   {
+    "action_type": "comment",
+    "value": "2"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "18161"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "312"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "1"
+   },
+   {
+    "action_type": "post",
+    "value": "60"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "29"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_comment",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "29"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "221"
+   },
+   {
+    "action_type": "lead",
+    "value": "107"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "107"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_started_7d",
+    "value": "1"
+   },
+   {
+    "action_type": "custom_event_actions_add_20_s_calls",
+    "value": "3"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "107"
+   },
+   {
+    "action_type": "video_view",
+    "value": "16996"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "mobile_app"
+ },
+ {
+  "campaign_name": "MOFU_Webinar_20260616-US Top 10 Admissions Strategy-SG_Sedifly",
+  "spend": "2.6",
+  "impressions": "164",
+  "reach": "86",
+  "inline_link_clicks": "1",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "1"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "38"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "38"
+   },
+   {
+    "action_type": "video_view",
+    "value": "37"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "mobile_web"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260606-GH Summer_SG_Sedifly",
+  "spend": "1538.11",
+  "impressions": "121327",
+  "reach": "29624",
+  "inline_link_clicks": "778",
+  "actions": [
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "89"
+   },
+   {
+    "action_type": "link_click",
+    "value": "778"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "89"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_custom",
+    "value": "1"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "109"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "25"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "4742"
+   },
+   {
+    "action_type": "like",
+    "value": "1"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "144"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "4743"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "118"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_2_message_send",
+    "value": "1"
+   },
+   {
+    "action_type": "post",
+    "value": "18"
+   },
+   {
+    "action_type": "onsite_conversion.post_unsave",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "17"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "16"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "84"
+   },
+   {
+    "action_type": "lead",
+    "value": "89"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "89"
+   },
+   {
+    "action_type": "custom_event_actions_add_20_s_calls",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "89"
+   },
+   {
+    "action_type": "video_view",
+    "value": "3820"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "mobile_app"
+ },
+ {
+  "campaign_name": "MOFU_eBook_202605-Top 5 Winning Strategies-SG_Sedifly",
+  "spend": "0.8902",
+  "impressions": "36",
+  "reach": "20",
+  "inline_link_clicks": "0",
+  "actions": [
+   {
+    "action_type": "post_engagement",
+    "value": "1"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "1"
+   },
+   {
+    "action_type": "video_view",
+    "value": "1"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "desktop"
+ },
+ {
+  "campaign_name": "MOFU_eBook_202605-Top 5 Winning Strategies-SG_Sedifly",
+  "spend": "1732.969735",
+  "impressions": "89577",
+  "reach": "17374",
+  "inline_link_clicks": "830",
+  "actions": [
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "81"
+   },
+   {
+    "action_type": "link_click",
+    "value": "830"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "81"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "62"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "2"
+   },
+   {
+    "action_type": "landing_page_view",
+    "value": "1"
+   },
+   {
+    "action_type": "omni_landing_page_view",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "31"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "18"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "1868"
+   },
+   {
+    "action_type": "like",
+    "value": "2"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "107"
+   },
+   {
+    "action_type": "comment",
+    "value": "1"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "1870"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "89"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_2_message_send",
+    "value": "11"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "27"
+   },
+   {
+    "action_type": "post",
+    "value": "15"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "29"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_comment",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_3_message_send",
+    "value": "9"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "29"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "44"
+   },
+   {
+    "action_type": "lead",
+    "value": "81"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "81"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_started_7d",
+    "value": "27"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "81"
+   },
+   {
+    "action_type": "video_view",
+    "value": "931"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "mobile_app"
+ },
+ {
+  "campaign_name": "MOFU_eBook_202605-Top 5 Winning Strategies-SG_Sedifly",
+  "spend": "0.370083",
+  "impressions": "10",
+  "reach": "7",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "mobile_web"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260606-GH Summer_SG_Sedifly – Traffic",
+  "spend": "2.139908",
+  "impressions": "184",
+  "reach": "96",
+  "inline_link_clicks": "2",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "2"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "2"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "2"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "desktop"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260606-GH Summer_SG_Sedifly – Traffic",
+  "spend": "228.720116",
+  "impressions": "19162",
+  "reach": "5224",
+  "inline_link_clicks": "594",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "594"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "3"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_block",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "2"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "1205"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "5"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "1205"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "3"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_started_7d",
+    "value": "1"
+   },
+   {
+    "action_type": "video_view",
+    "value": "606"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "mobile_app"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260606-GH Summer_SG_Sedifly – Traffic",
+  "spend": "0.549976",
+  "impressions": "57",
+  "reach": "24",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "mobile_web"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260606-GH Summer_SG_Sedifly – Traffic",
+  "spend": "0",
+  "impressions": "0",
+  "reach": "0",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "unknown"
+ },
+ {
+  "campaign_name": "MOFU_Webinar_20260801-US FAQ Jennifer-SG_Sedifly",
+  "spend": "4.26",
+  "impressions": "237",
+  "reach": "214",
+  "inline_link_clicks": "3",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "3"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "28"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "28"
+   },
+   {
+    "action_type": "video_view",
+    "value": "25"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "mobile_app"
+ },
+ {
+  "campaign_name": "MOFU_Webinar_20260801-US FAQ Jennifer-SG_Sedifly",
+  "spend": "0.02",
+  "impressions": "1",
+  "reach": "1",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "mobile_web"
+ },
+ {
+  "campaign_name": "MOFU_Webinar_20260822-Cracking Ivy League & Oxbridge Admissions-SG_Sedifly - INSTANT FORM",
+  "spend": "0.789394",
+  "impressions": "19",
+  "reach": "12",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "desktop"
+ },
+ {
+  "campaign_name": "MOFU_Webinar_20260822-Cracking Ivy League & Oxbridge Admissions-SG_Sedifly - INSTANT FORM",
+  "spend": "115.811135",
+  "impressions": "4149",
+  "reach": "2531",
+  "inline_link_clicks": "27",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "27"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "3"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "35"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "4"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "35"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "4"
+   },
+   {
+    "action_type": "post",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "3"
+   },
+   {
+    "action_type": "video_view",
+    "value": "4"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "mobile_app"
+ },
+ {
+  "campaign_name": "MOFU_Webinar_20260822-Cracking Ivy League & Oxbridge Admissions-SG_Sedifly - INSTANT FORM",
+  "spend": "0.689471",
+  "impressions": "21",
+  "reach": "14",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "mobile_web"
+ },
+ {
+  "campaign_name": "MOFU_Webinar_20260822-Cracking Ivy League & Oxbridge Admissions-SG_Sedifly - WIX",
+  "spend": "5.760876",
+  "impressions": "359",
+  "reach": "212",
+  "inline_link_clicks": "1",
+  "actions": [
+   {
+    "action_type": "web_in_store_purchase",
+    "value": "1"
+   },
+   {
+    "action_type": "omni_purchase",
+    "value": "1"
+   },
+   {
+    "action_type": "link_click",
+    "value": "1"
+   },
+   {
+    "action_type": "initiate_checkout",
+    "value": "1"
+   },
+   {
+    "action_type": "offsite_purchase_add_20_s_calls",
+    "value": "1"
+   },
+   {
+    "action_type": "add_to_cart",
+    "value": "1"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_purchase",
+    "value": "1"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_initiate_checkout",
+    "value": "1"
+   },
+   {
+    "action_type": "offsite_initiate_checkout_add_20_s_calls",
+    "value": "1"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_add_to_cart",
+    "value": "1"
+   },
+   {
+    "action_type": "offsite_content_view_add_20_s_calls",
+    "value": "1"
+   },
+   {
+    "action_type": "landing_page_view",
+    "value": "1"
+   },
+   {
+    "action_type": "omni_landing_page_view",
+    "value": "1"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "3"
+   },
+   {
+    "action_type": "onsite_web_app_purchase",
+    "value": "1"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "3"
+   },
+   {
+    "action_type": "purchase",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_web_view_content",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_web_add_to_cart",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_web_app_view_content",
+    "value": "1"
+   },
+   {
+    "action_type": "view_content",
+    "value": "1"
+   },
+   {
+    "action_type": "web_app_in_store_purchase",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_web_app_add_to_cart",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_web_initiate_checkout",
+    "value": "1"
+   },
+   {
+    "action_type": "omni_initiated_checkout",
+    "value": "1"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_web_purchase",
+    "value": "1"
+   },
+   {
+    "action_type": "offsite_add_to_cart_add_20_s_calls",
+    "value": "1"
+   },
+   {
+    "action_type": "video_view",
+    "value": "2"
+   },
+   {
+    "action_type": "omni_add_to_cart",
+    "value": "1"
+   },
+   {
+    "action_type": "omni_view_content",
+    "value": "1"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_view_content",
+    "value": "1"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "desktop"
+ },
+ {
+  "campaign_name": "MOFU_Webinar_20260822-Cracking Ivy League & Oxbridge Admissions-SG_Sedifly - WIX",
+  "spend": "187.028431",
+  "impressions": "8808",
+  "reach": "3742",
+  "inline_link_clicks": "64",
+  "actions": [
+   {
+    "action_type": "web_in_store_purchase",
+    "value": "13"
+   },
+   {
+    "action_type": "omni_purchase",
+    "value": "13"
+   },
+   {
+    "action_type": "link_click",
+    "value": "64"
+   },
+   {
+    "action_type": "initiate_checkout",
+    "value": "10"
+   },
+   {
+    "action_type": "offsite_purchase_add_20_s_calls",
+    "value": "13"
+   },
+   {
+    "action_type": "add_to_cart",
+    "value": "11"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_purchase",
+    "value": "13"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_initiate_checkout",
+    "value": "10"
+   },
+   {
+    "action_type": "offsite_initiate_checkout_add_20_s_calls",
+    "value": "10"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_add_to_cart",
+    "value": "11"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "5"
+   },
+   {
+    "action_type": "offsite_content_view_add_20_s_calls",
+    "value": "61"
+   },
+   {
+    "action_type": "landing_page_view",
+    "value": "42"
+   },
+   {
+    "action_type": "onsite_web_lead",
+    "value": "5"
+   },
+   {
+    "action_type": "omni_landing_page_view",
+    "value": "42"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "3"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "136"
+   },
+   {
+    "action_type": "like",
+    "value": "1"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "7"
+   },
+   {
+    "action_type": "onsite_web_app_purchase",
+    "value": "13"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "137"
+   },
+   {
+    "action_type": "purchase",
+    "value": "13"
+   },
+   {
+    "action_type": "onsite_web_view_content",
+    "value": "61"
+   },
+   {
+    "action_type": "onsite_web_add_to_cart",
+    "value": "11"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "3"
+   },
+   {
+    "action_type": "onsite_web_app_view_content",
+    "value": "61"
+   },
+   {
+    "action_type": "onsite_conversion.post_unsave",
+    "value": "1"
+   },
+   {
+    "action_type": "view_content",
+    "value": "61"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "2"
+   },
+   {
+    "action_type": "web_app_in_store_purchase",
+    "value": "13"
+   },
+   {
+    "action_type": "onsite_web_app_add_to_cart",
+    "value": "11"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_web_initiate_checkout",
+    "value": "10"
+   },
+   {
+    "action_type": "omni_initiated_checkout",
+    "value": "10"
+   },
+   {
+    "action_type": "lead",
+    "value": "5"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "61"
+   },
+   {
+    "action_type": "onsite_web_purchase",
+    "value": "13"
+   },
+   {
+    "action_type": "offsite_add_to_cart_add_20_s_calls",
+    "value": "11"
+   },
+   {
+    "action_type": "video_view",
+    "value": "65"
+   },
+   {
+    "action_type": "omni_add_to_cart",
+    "value": "11"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_lead",
+    "value": "5"
+   },
+   {
+    "action_type": "offsite_lead_add_20_s_calls",
+    "value": "5"
+   },
+   {
+    "action_type": "omni_view_content",
+    "value": "61"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_view_content",
+    "value": "61"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "mobile_app"
+ },
+ {
+  "campaign_name": "MOFU_Webinar_20260822-Cracking Ivy League & Oxbridge Admissions-SG_Sedifly - WIX",
+  "spend": "4.560693",
+  "impressions": "203",
+  "reach": "137",
+  "inline_link_clicks": "0",
+  "actions": [
+   {
+    "action_type": "post_engagement",
+    "value": "1"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "1"
+   },
+   {
+    "action_type": "video_view",
+    "value": "1"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "mobile_web"
+ },
+ {
+  "campaign_name": "MOFU_Webinar_20260822-Cracking Ivy League & Oxbridge Admissions-SG_Sedifly - WIX - Copy",
+  "spend": "0.53",
+  "impressions": "11",
+  "reach": "10",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "desktop"
+ },
+ {
+  "campaign_name": "MOFU_Webinar_20260822-Cracking Ivy League & Oxbridge Admissions-SG_Sedifly - WIX - Copy",
+  "spend": "9.21",
+  "impressions": "610",
+  "reach": "504",
+  "inline_link_clicks": "1",
+  "actions": [
+   {
+    "action_type": "link_click",
+    "value": "1"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "1"
+   },
+   {
+    "action_type": "offsite_content_view_add_20_s_calls",
+    "value": "1"
+   },
+   {
+    "action_type": "landing_page_view",
+    "value": "1"
+   },
+   {
+    "action_type": "omni_landing_page_view",
+    "value": "1"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "2"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "1"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_web_view_content",
+    "value": "1"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_web_app_view_content",
+    "value": "1"
+   },
+   {
+    "action_type": "view_content",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "1"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "1"
+   },
+   {
+    "action_type": "omni_view_content",
+    "value": "1"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_view_content",
+    "value": "1"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "mobile_app"
+ },
+ {
+  "campaign_name": "MOFU_Webinar_20260822-Cracking Ivy League & Oxbridge Admissions-SG_Sedifly - WIX - Copy",
+  "spend": "0.05",
+  "impressions": "7",
+  "reach": "7",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "mobile_web"
+ },
+ {
+  "campaign_name": "MOFU_202608_Roscoe Personal Statement Workshop_SG_Leads",
+  "spend": "2.619496",
+  "impressions": "66",
+  "reach": "33",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "desktop"
+ },
+ {
+  "campaign_name": "MOFU_202608_Roscoe Personal Statement Workshop_SG_Leads",
+  "spend": "204.200699",
+  "impressions": "5234",
+  "reach": "1661",
+  "inline_link_clicks": "37",
+  "actions": [
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "8"
+   },
+   {
+    "action_type": "web_in_store_purchase",
+    "value": "3"
+   },
+   {
+    "action_type": "omni_purchase",
+    "value": "3"
+   },
+   {
+    "action_type": "link_click",
+    "value": "37"
+   },
+   {
+    "action_type": "omni_complete_registration",
+    "value": "2"
+   },
+   {
+    "action_type": "initiate_checkout",
+    "value": "3"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "6"
+   },
+   {
+    "action_type": "offsite_purchase_add_20_s_calls",
+    "value": "3"
+   },
+   {
+    "action_type": "add_to_cart",
+    "value": "3"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_purchase",
+    "value": "3"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_initiate_checkout",
+    "value": "3"
+   },
+   {
+    "action_type": "offsite_initiate_checkout_add_20_s_calls",
+    "value": "3"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_complete_registration",
+    "value": "2"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_add_to_cart",
+    "value": "3"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "5"
+   },
+   {
+    "action_type": "offsite_content_view_add_20_s_calls",
+    "value": "4"
+   },
+   {
+    "action_type": "offsite_complete_registration_add_20_s_calls",
+    "value": "2"
+   },
+   {
+    "action_type": "landing_page_view",
+    "value": "1"
+   },
+   {
+    "action_type": "omni_landing_page_view",
+    "value": "1"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "373"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "7"
+   },
+   {
+    "action_type": "onsite_web_app_purchase",
+    "value": "3"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "373"
+   },
+   {
+    "action_type": "purchase",
+    "value": "3"
+   },
+   {
+    "action_type": "onsite_web_view_content",
+    "value": "4"
+   },
+   {
+    "action_type": "complete_registration",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_web_add_to_cart",
+    "value": "3"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "7"
+   },
+   {
+    "action_type": "onsite_web_app_view_content",
+    "value": "4"
+   },
+   {
+    "action_type": "post",
+    "value": "1"
+   },
+   {
+    "action_type": "view_content",
+    "value": "4"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "1"
+   },
+   {
+    "action_type": "web_app_in_store_purchase",
+    "value": "3"
+   },
+   {
+    "action_type": "onsite_web_app_add_to_cart",
+    "value": "3"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "5"
+   },
+   {
+    "action_type": "onsite_web_initiate_checkout",
+    "value": "3"
+   },
+   {
+    "action_type": "omni_initiated_checkout",
+    "value": "3"
+   },
+   {
+    "action_type": "lead",
+    "value": "6"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "10"
+   },
+   {
+    "action_type": "onsite_web_purchase",
+    "value": "3"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "6"
+   },
+   {
+    "action_type": "offsite_add_to_cart_add_20_s_calls",
+    "value": "3"
+   },
+   {
+    "action_type": "video_view",
+    "value": "329"
+   },
+   {
+    "action_type": "omni_add_to_cart",
+    "value": "3"
+   },
+   {
+    "action_type": "omni_view_content",
+    "value": "4"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_view_content",
+    "value": "4"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "mobile_app"
+ },
+ {
+  "campaign_name": "MOFU_202608_Roscoe Personal Statement Workshop_SG_Leads",
+  "spend": "1.009806",
+  "impressions": "41",
+  "reach": "26",
+  "inline_link_clicks": "0",
+  "actions": [
+   {
+    "action_type": "post_engagement",
+    "value": "1"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "1"
+   },
+   {
+    "action_type": "video_view",
+    "value": "1"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "mobile_web"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260902_George Baxter Webinar_Leads",
+  "spend": "21.270496",
+  "impressions": "1531",
+  "reach": "866",
+  "inline_link_clicks": "5",
+  "actions": [
+   {
+    "action_type": "web_in_store_purchase",
+    "value": "2"
+   },
+   {
+    "action_type": "omni_purchase",
+    "value": "2"
+   },
+   {
+    "action_type": "link_click",
+    "value": "5"
+   },
+   {
+    "action_type": "initiate_checkout",
+    "value": "4"
+   },
+   {
+    "action_type": "offsite_purchase_add_20_s_calls",
+    "value": "2"
+   },
+   {
+    "action_type": "add_to_cart",
+    "value": "4"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_purchase",
+    "value": "2"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_initiate_checkout",
+    "value": "4"
+   },
+   {
+    "action_type": "offsite_initiate_checkout_add_20_s_calls",
+    "value": "4"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_add_to_cart",
+    "value": "4"
+   },
+   {
+    "action_type": "offsite_content_view_add_20_s_calls",
+    "value": "4"
+   },
+   {
+    "action_type": "landing_page_view",
+    "value": "4"
+   },
+   {
+    "action_type": "omni_landing_page_view",
+    "value": "4"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "17"
+   },
+   {
+    "action_type": "onsite_web_app_purchase",
+    "value": "2"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "17"
+   },
+   {
+    "action_type": "purchase",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_web_view_content",
+    "value": "4"
+   },
+   {
+    "action_type": "onsite_web_add_to_cart",
+    "value": "4"
+   },
+   {
+    "action_type": "onsite_web_app_view_content",
+    "value": "4"
+   },
+   {
+    "action_type": "view_content",
+    "value": "4"
+   },
+   {
+    "action_type": "web_app_in_store_purchase",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_web_app_add_to_cart",
+    "value": "4"
+   },
+   {
+    "action_type": "onsite_web_initiate_checkout",
+    "value": "4"
+   },
+   {
+    "action_type": "omni_initiated_checkout",
+    "value": "4"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "4"
+   },
+   {
+    "action_type": "onsite_web_purchase",
+    "value": "2"
+   },
+   {
+    "action_type": "offsite_add_to_cart_add_20_s_calls",
+    "value": "4"
+   },
+   {
+    "action_type": "video_view",
+    "value": "12"
+   },
+   {
+    "action_type": "omni_add_to_cart",
+    "value": "4"
+   },
+   {
+    "action_type": "omni_view_content",
+    "value": "4"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_view_content",
+    "value": "4"
+   },
+   {
+    "action_type": "offsite_conversion.custom.912068361963916",
+    "value": "2"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "desktop"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260902_George Baxter Webinar_Leads",
+  "spend": "393.699188",
+  "impressions": "31796",
+  "reach": "14399",
+  "inline_link_clicks": "373",
+  "actions": [
+   {
+    "action_type": "web_in_store_purchase",
+    "value": "35"
+   },
+   {
+    "action_type": "omni_purchase",
+    "value": "35"
+   },
+   {
+    "action_type": "link_click",
+    "value": "373"
+   },
+   {
+    "action_type": "initiate_checkout",
+    "value": "39"
+   },
+   {
+    "action_type": "offsite_purchase_add_20_s_calls",
+    "value": "35"
+   },
+   {
+    "action_type": "add_to_cart",
+    "value": "45"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_purchase",
+    "value": "35"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_initiate_checkout",
+    "value": "39"
+   },
+   {
+    "action_type": "offsite_initiate_checkout_add_20_s_calls",
+    "value": "39"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_add_to_cart",
+    "value": "45"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "13"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "1"
+   },
+   {
+    "action_type": "offsite_content_view_add_20_s_calls",
+    "value": "262"
+   },
+   {
+    "action_type": "landing_page_view",
+    "value": "228"
+   },
+   {
+    "action_type": "onsite_web_lead",
+    "value": "2"
+   },
+   {
+    "action_type": "omni_landing_page_view",
+    "value": "228"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "7"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "2772"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "31"
+   },
+   {
+    "action_type": "onsite_web_app_purchase",
+    "value": "35"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "2772"
+   },
+   {
+    "action_type": "purchase",
+    "value": "35"
+   },
+   {
+    "action_type": "onsite_web_view_content",
+    "value": "262"
+   },
+   {
+    "action_type": "onsite_web_add_to_cart",
+    "value": "45"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "23"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_2_message_send",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_web_app_view_content",
+    "value": "262"
+   },
+   {
+    "action_type": "post",
+    "value": "9"
+   },
+   {
+    "action_type": "onsite_conversion.post_unsave",
+    "value": "1"
+   },
+   {
+    "action_type": "view_content",
+    "value": "262"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "9"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_3_message_send",
+    "value": "1"
+   },
+   {
+    "action_type": "web_app_in_store_purchase",
+    "value": "35"
+   },
+   {
+    "action_type": "onsite_web_app_add_to_cart",
+    "value": "45"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "8"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "6"
+   },
+   {
+    "action_type": "onsite_web_initiate_checkout",
+    "value": "39"
+   },
+   {
+    "action_type": "omni_initiated_checkout",
+    "value": "39"
+   },
+   {
+    "action_type": "lead",
+    "value": "2"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "262"
+   },
+   {
+    "action_type": "onsite_web_purchase",
+    "value": "35"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_started_7d",
+    "value": "1"
+   },
+   {
+    "action_type": "offsite_add_to_cart_add_20_s_calls",
+    "value": "45"
+   },
+   {
+    "action_type": "video_view",
+    "value": "2368"
+   },
+   {
+    "action_type": "omni_add_to_cart",
+    "value": "45"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_lead",
+    "value": "2"
+   },
+   {
+    "action_type": "offsite_lead_add_20_s_calls",
+    "value": "2"
+   },
+   {
+    "action_type": "omni_view_content",
+    "value": "262"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_view_content",
+    "value": "262"
+   },
+   {
+    "action_type": "offsite_conversion.custom.912068361963916",
+    "value": "35"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "mobile_app"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260902_George Baxter Webinar_Leads",
+  "spend": "13.500315",
+  "impressions": "1033",
+  "reach": "516",
+  "inline_link_clicks": "5",
+  "actions": [
+   {
+    "action_type": "web_in_store_purchase",
+    "value": "1"
+   },
+   {
+    "action_type": "omni_purchase",
+    "value": "1"
+   },
+   {
+    "action_type": "link_click",
+    "value": "5"
+   },
+   {
+    "action_type": "initiate_checkout",
+    "value": "2"
+   },
+   {
+    "action_type": "offsite_purchase_add_20_s_calls",
+    "value": "1"
+   },
+   {
+    "action_type": "add_to_cart",
+    "value": "2"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_purchase",
+    "value": "1"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_initiate_checkout",
+    "value": "2"
+   },
+   {
+    "action_type": "offsite_initiate_checkout_add_20_s_calls",
+    "value": "2"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_add_to_cart",
+    "value": "2"
+   },
+   {
+    "action_type": "offsite_content_view_add_20_s_calls",
+    "value": "4"
+   },
+   {
+    "action_type": "landing_page_view",
+    "value": "3"
+   },
+   {
+    "action_type": "omni_landing_page_view",
+    "value": "3"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "24"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_web_app_purchase",
+    "value": "1"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "24"
+   },
+   {
+    "action_type": "purchase",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_web_view_content",
+    "value": "4"
+   },
+   {
+    "action_type": "onsite_web_add_to_cart",
+    "value": "2"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_web_app_view_content",
+    "value": "4"
+   },
+   {
+    "action_type": "view_content",
+    "value": "4"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "1"
+   },
+   {
+    "action_type": "web_app_in_store_purchase",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_web_app_add_to_cart",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_web_initiate_checkout",
+    "value": "2"
+   },
+   {
+    "action_type": "omni_initiated_checkout",
+    "value": "2"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "4"
+   },
+   {
+    "action_type": "onsite_web_purchase",
+    "value": "1"
+   },
+   {
+    "action_type": "offsite_add_to_cart_add_20_s_calls",
+    "value": "2"
+   },
+   {
+    "action_type": "video_view",
+    "value": "18"
+   },
+   {
+    "action_type": "omni_add_to_cart",
+    "value": "2"
+   },
+   {
+    "action_type": "omni_view_content",
+    "value": "4"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_view_content",
+    "value": "4"
+   },
+   {
+    "action_type": "offsite_conversion.custom.912068361963916",
+    "value": "1"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "mobile_web"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260902_George Baxter Webinar_Leads - FORM",
+  "spend": "0.18",
+  "impressions": "5",
+  "reach": "5",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "desktop"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260902_George Baxter Webinar_Leads - FORM",
+  "spend": "55.76",
+  "impressions": "2929",
+  "reach": "1623",
+  "inline_link_clicks": "21",
+  "actions": [
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "2"
+   },
+   {
+    "action_type": "web_in_store_purchase",
+    "value": "1"
+   },
+   {
+    "action_type": "omni_purchase",
+    "value": "1"
+   },
+   {
+    "action_type": "link_click",
+    "value": "21"
+   },
+   {
+    "action_type": "initiate_checkout",
+    "value": "1"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "2"
+   },
+   {
+    "action_type": "offsite_purchase_add_20_s_calls",
+    "value": "1"
+   },
+   {
+    "action_type": "add_to_cart",
+    "value": "1"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_purchase",
+    "value": "1"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_initiate_checkout",
+    "value": "1"
+   },
+   {
+    "action_type": "offsite_initiate_checkout_add_20_s_calls",
+    "value": "1"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_add_to_cart",
+    "value": "1"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "5"
+   },
+   {
+    "action_type": "offsite_content_view_add_20_s_calls",
+    "value": "1"
+   },
+   {
+    "action_type": "landing_page_view",
+    "value": "1"
+   },
+   {
+    "action_type": "omni_landing_page_view",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "2"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "161"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "6"
+   },
+   {
+    "action_type": "onsite_web_app_purchase",
+    "value": "1"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "161"
+   },
+   {
+    "action_type": "purchase",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_web_view_content",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_web_add_to_cart",
+    "value": "1"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "4"
+   },
+   {
+    "action_type": "onsite_web_app_view_content",
+    "value": "1"
+   },
+   {
+    "action_type": "view_content",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "1"
+   },
+   {
+    "action_type": "web_app_in_store_purchase",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_web_app_add_to_cart",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "3"
+   },
+   {
+    "action_type": "onsite_web_initiate_checkout",
+    "value": "1"
+   },
+   {
+    "action_type": "omni_initiated_checkout",
+    "value": "1"
+   },
+   {
+    "action_type": "lead",
+    "value": "2"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "3"
+   },
+   {
+    "action_type": "onsite_web_purchase",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "2"
+   },
+   {
+    "action_type": "offsite_add_to_cart_add_20_s_calls",
+    "value": "1"
+   },
+   {
+    "action_type": "video_view",
+    "value": "134"
+   },
+   {
+    "action_type": "omni_add_to_cart",
+    "value": "1"
+   },
+   {
+    "action_type": "omni_view_content",
+    "value": "1"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_view_content",
+    "value": "1"
+   },
+   {
+    "action_type": "offsite_conversion.custom.912068361963916",
+    "value": "1"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "mobile_app"
+ },
+ {
+  "campaign_name": "MOFU_Event_20260902_George Baxter Webinar_Leads - FORM",
+  "spend": "1.56",
+  "impressions": "25",
+  "reach": "13",
+  "inline_link_clicks": "0",
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "mobile_web"
+ },
+ {
+  "campaign_name": "MOFU_202609_Roscoe Personal Statement Workshop_SG_Leads",
+  "spend": "163.67",
+  "impressions": "4652",
+  "reach": "1615",
+  "inline_link_clicks": "20",
+  "actions": [
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "2"
+   },
+   {
+    "action_type": "link_click",
+    "value": "20"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "2"
+   },
+   {
+    "action_type": "landing_page_view",
+    "value": "2"
+   },
+   {
+    "action_type": "omni_landing_page_view",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "1"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "40"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "40"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "1"
+   },
+   {
+    "action_type": "lead",
+    "value": "2"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_started_7d",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "2"
+   },
+   {
+    "action_type": "video_view",
+    "value": "20"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "mobile_app"
+ },
+ {
+  "campaign_name": "MSA | Readiness Assessment | Messaging Test 01 | Sep26",
+  "spend": "714.09",
+  "impressions": "35949",
+  "reach": "11222",
+  "inline_link_clicks": "372",
+  "actions": [
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "15"
+   },
+   {
+    "action_type": "link_click",
+    "value": "372"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "15"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "18"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "12"
+   },
+   {
+    "action_type": "offsite_content_view_add_20_s_calls",
+    "value": "4"
+   },
+   {
+    "action_type": "landing_page_view",
+    "value": "15"
+   },
+   {
+    "action_type": "onsite_web_lead",
+    "value": "4"
+   },
+   {
+    "action_type": "omni_landing_page_view",
+    "value": "15"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_block",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "18"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "4"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "501"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_call_placed",
+    "value": "1"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "33"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "501"
+   },
+   {
+    "action_type": "onsite_web_view_content",
+    "value": "4"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "26"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_2_message_send",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "16"
+   },
+   {
+    "action_type": "onsite_web_app_view_content",
+    "value": "4"
+   },
+   {
+    "action_type": "post",
+    "value": "8"
+   },
+   {
+    "action_type": "onsite_conversion.post_unsave",
+    "value": "3"
+   },
+   {
+    "action_type": "view_content",
+    "value": "4"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "7"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_3_message_send",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "4"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "14"
+   },
+   {
+    "action_type": "lead",
+    "value": "19"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "19"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_started_7d",
+    "value": "16"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "15"
+   },
+   {
+    "action_type": "video_view",
+    "value": "96"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_lead",
+    "value": "4"
+   },
+   {
+    "action_type": "offsite_lead_add_20_s_calls",
+    "value": "4"
+   },
+   {
+    "action_type": "omni_view_content",
+    "value": "4"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_view_content",
+    "value": "4"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "mobile_app"
+ },
+ {
+  "campaign_name": "MSA | Parents | Readiness Assessment | Test 01 | Sep26",
+  "spend": "397.21",
+  "impressions": "23975",
+  "reach": "11404",
+  "inline_link_clicks": "258",
+  "actions": [
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "3"
+   },
+   {
+    "action_type": "link_click",
+    "value": "258"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "3"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "15"
+   },
+   {
+    "action_type": "landing_page_view",
+    "value": "26"
+   },
+   {
+    "action_type": "omni_landing_page_view",
+    "value": "26"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "4"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "291"
+   },
+   {
+    "action_type": "like",
+    "value": "1"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "18"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "292"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "14"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "1"
+   },
+   {
+    "action_type": "post",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "11"
+   },
+   {
+    "action_type": "lead",
+    "value": "3"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "3"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_started_7d",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "3"
+   },
+   {
+    "action_type": "video_view",
+    "value": "15"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "mobile_app"
+ },
+ {
+  "campaign_name": "MSA Parent Webinar | Leads | SG | 2026-10-24",
+  "spend": "814.22",
+  "impressions": "36328",
+  "reach": "11486",
+  "inline_link_clicks": "281",
+  "actions": [
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "31"
+   },
+   {
+    "action_type": "link_click",
+    "value": "281"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "31"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "22"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "17"
+   },
+   {
+    "action_type": "landing_page_view",
+    "value": "14"
+   },
+   {
+    "action_type": "onsite_web_lead",
+    "value": "4"
+   },
+   {
+    "action_type": "omni_landing_page_view",
+    "value": "14"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "25"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "3"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "317"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "35"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "317"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "32"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_2_message_send",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "24"
+   },
+   {
+    "action_type": "post",
+    "value": "6"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "7"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_3_message_send",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "7"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "19"
+   },
+   {
+    "action_type": "lead",
+    "value": "35"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "31"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_started_7d",
+    "value": "25"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "31"
+   },
+   {
+    "action_type": "video_view",
+    "value": "1"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_lead",
+    "value": "4"
+   },
+   {
+    "action_type": "offsite_lead_add_20_s_calls",
+    "value": "4"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "mobile_app"
+ },
+ {
+  "campaign_name": "SG | Leads | Website+IF | Admissions Readiness | Oct26",
+  "spend": "395.72",
+  "impressions": "26661",
+  "reach": "7854",
+  "inline_link_clicks": "525",
+  "actions": [
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "1"
+   },
+   {
+    "action_type": "link_click",
+    "value": "525"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "1"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "33"
+   },
+   {
+    "action_type": "offsite_content_view_add_20_s_calls",
+    "value": "1"
+   },
+   {
+    "action_type": "landing_page_view",
+    "value": "13"
+   },
+   {
+    "action_type": "omni_landing_page_view",
+    "value": "13"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "9"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "572"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "35"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "572"
+   },
+   {
+    "action_type": "onsite_web_view_content",
+    "value": "1"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "26"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_web_app_view_content",
+    "value": "1"
+   },
+   {
+    "action_type": "post",
+    "value": "1"
+   },
+   {
+    "action_type": "view_content",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "24"
+   },
+   {
+    "action_type": "lead",
+    "value": "1"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_started_7d",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "1"
+   },
+   {
+    "action_type": "video_view",
+    "value": "12"
+   },
+   {
+    "action_type": "omni_view_content",
+    "value": "1"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_view_content",
+    "value": "1"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "mobile_app"
+ },
+ {
+  "campaign_name": "NS Timing | Leads | SG | Web+IF | 2026 Q4",
+  "spend": "163.88",
+  "impressions": "14561",
+  "reach": "7470",
+  "inline_link_clicks": "127",
+  "actions": [
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "3"
+   },
+   {
+    "action_type": "link_click",
+    "value": "127"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "3"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "13"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "1"
+   },
+   {
+    "action_type": "landing_page_view",
+    "value": "1"
+   },
+   {
+    "action_type": "omni_landing_page_view",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "4"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "4"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "157"
+   },
+   {
+    "action_type": "like",
+    "value": "1"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "17"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "158"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "13"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_2_message_send",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "4"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "4"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_3_message_send",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "4"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "9"
+   },
+   {
+    "action_type": "lead",
+    "value": "3"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "3"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_started_7d",
+    "value": "4"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "3"
+   },
+   {
+    "action_type": "video_view",
+    "value": "13"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "mobile_app"
+ },
+ {
+  "campaign_name": "SG | Admissions | Leads | Evergreen Grades | Oct26",
+  "spend": "94.61",
+  "impressions": "2844",
+  "reach": "1906",
+  "inline_link_clicks": "23",
+  "actions": [
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "2"
+   },
+   {
+    "action_type": "link_click",
+    "value": "23"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "2"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "13"
+   },
+   {
+    "action_type": "landing_page_view",
+    "value": "1"
+   },
+   {
+    "action_type": "omni_landing_page_view",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "4"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "3"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "626"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "15"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "626"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "11"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_2_message_send",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "3"
+   },
+   {
+    "action_type": "post",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_unsave",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_3_message_send",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "0"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "10"
+   },
+   {
+    "action_type": "lead",
+    "value": "2"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_started_7d",
+    "value": "3"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "2"
+   },
+   {
+    "action_type": "video_view",
+    "value": "588"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "mobile_app"
+ },
+ {
+  "campaign_name": "2026-11-15_Roscoe_G9-11_Webinar",
+  "spend": "34.86",
+  "impressions": "1566",
+  "reach": "801",
+  "inline_link_clicks": "12",
+  "actions": [
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "1"
+   },
+   {
+    "action_type": "link_click",
+    "value": "12"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "1"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "1"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "19"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "4"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "19"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "4"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_2_message_send",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "2"
+   },
+   {
+    "action_type": "lead",
+    "value": "1"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_started_7d",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "1"
+   },
+   {
+    "action_type": "video_view",
+    "value": "3"
+   }
+  ],
+  "date_start": "2025-10-03",
+  "date_stop": "2026-11-03",
+  "device_platform": "mobile_app"
+ }
+]

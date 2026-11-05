@@ -101,6 +101,7 @@ When you don't know where something lives, look here. One question per line. Kee
 - Sunway TES? → `clients/sunway-tes/`
 - Kynare (physio + PT clinic, PJ and Mont Kiara)? → `clients/kynare/`
 - Kynare KPI (cost per signed client, NOT cost per lead)? → `clients/kynare/KPI.md`
+- Sedifly (Singapore US/UK admissions consultancy, Meta lead gen, S$2,000 a month from Nov 2026)? → `clients/sedifly/` (current plan: `01-strategy/2026-11-05-meta-launch-plan.pptx`; asks and decisions in `05-meetings/`)
 - (Full client list — see `clients/` directory)
 
 ## Playbooks

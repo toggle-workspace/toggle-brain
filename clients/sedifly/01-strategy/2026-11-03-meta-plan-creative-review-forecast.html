@@ -1,0 +1,329 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Sedifly Meta Plan</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400&display=swap" rel="stylesheet">
+<style>
+@page { size: 1280px 720px; margin: 0; }
+* { box-sizing: border-box; }
+html, body { margin: 0; padding: 0; background: #FFFFFF; }
+body { font-family: 'Inter Tight', Arial, sans-serif; color: #4A4A4A; -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+.page { width: 1280px; height: 720px; position: relative; overflow: hidden; padding: 34px 56px 0; background: #FFFFFF; page-break-after: always; break-after: page; }
+.page:last-child { page-break-after: auto; break-after: auto; }
+.mark { position: absolute; top: 18px; right: 56px; font-size: 10px; color: #9AA0A8; letter-spacing: .04em; }
+.kicker { font-size: 10.5px; letter-spacing: .14em; color: #3056C9; font-weight: 700; text-transform: uppercase; margin-top: 6px; }
+h1 { font-size: 29px; line-height: 1.12; color: #4A7BF7; font-weight: 700; margin: 6px 0 6px; letter-spacing: -.012em; }
+.sub { font-size: 13px; line-height: 1.45; color: #4A4A4A; max-width: 1060px; margin: 0 0 14px; }
+b, strong { color: #0F0F0F; font-weight: 600; }
+footer { position: absolute; bottom: 12px; left: 56px; right: 56px; font-size: 9.5px; color: #9AA0A8; display: flex; justify-content: space-between; }
+.band { position: absolute; left: 56px; right: 56px; bottom: 34px; background: #3056C9; color: #FFFFFF; border-radius: 6px; padding: 10px 16px; font-size: 12px; line-height: 1.45; }
+.band b { color: #FFFFFF; }
+table { border-collapse: collapse; width: 100%; font-size: 11.5px; line-height: 1.38; }
+th { background: #3056C9; color: #FFFFFF; font-weight: 600; text-align: left; padding: 7px 9px; font-size: 11px; }
+td { padding: 7px 9px; border-bottom: 1px solid #E4E6EE; vertical-align: top; color: #4A4A4A; }
+td.n, th.n { text-align: right; white-space: nowrap; }
+tr.total td { background: #DDE5FE; color: #0F0F0F; font-weight: 600; }
+tr.sub td { color: #4A4A4A; }
+td .hint { color: #4A4A4A; font-size: 10.5px; display: block; margin-top: 2px; }
+.blue { color: #3056C9; font-weight: 600; }
+.grid { display: grid; gap: 12px; }
+.card { background: #F2F3F6; border-radius: 6px; padding: 12px 14px; border-top: 4px solid #4A7BF7; font-size: 11.8px; line-height: 1.45; }
+.card h3 { font-size: 13px; color: #0F0F0F; margin: 0 0 5px; font-weight: 700; }
+.card p { margin: 0 0 6px; }
+.card p:last-child { margin-bottom: 0; }
+.callout { background: #DDE5FE; border-radius: 6px; padding: 12px 14px; font-size: 11.8px; line-height: 1.45; }
+.callout h3 { font-size: 13px; color: #0F0F0F; margin: 0 0 5px; font-weight: 700; }
+.t-teal { border-top-color: #2ECC9B; } .t-orange { border-top-color: #F28B4C; } .t-purple { border-top-color: #8E6BE6; } .t-pink { border-top-color: #F59EC9; } .t-slate { border-top-color: #2C2C36; }
+ul.dots { margin: 0; padding-left: 15px; }
+ul.dots li { margin: 0 0 5px; }
+ul.dots li::marker { color: #4A7BF7; }
+ol.num { margin: 0; padding-left: 17px; }
+ol.num li { margin: 0 0 5px; }
+.facts { display: inline-block; background: #DDE5FE; color: #3056C9; font-weight: 600; font-size: 11px; border-radius: 20px; padding: 4px 11px; margin-bottom: 10px; }
+.label { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; color: #3056C9; font-weight: 700; margin: 0 0 6px; }
+/* cover */
+.cover .brand { font-weight: 700; font-size: 15px; color: #0F0F0F; margin-top: 4px; }
+.cover .meta { margin-top: 70px; font-size: 13px; color: #4A4A4A; }
+.cover h1.big { font-size: 46px; color: #4A7BF7; margin: 8px 0 0; letter-spacing: -.02em; font-weight: 800; }
+.cover h2 { font-size: 34px; color: #0F0F0F; margin: 2px 0 14px; font-weight: 700; letter-spacing: -.015em; }
+.stat { background: #F2F3F6; border-radius: 6px; padding: 14px 16px; border-top: 4px solid #4A7BF7; }
+.stat .num { font-size: 30px; font-weight: 700; color: #0F0F0F; letter-spacing: -.01em; }
+.stat .num.focal { color: #4A7BF7; }
+.stat .lab { font-size: 12px; font-weight: 600; color: #0F0F0F; margin-top: 2px; }
+.stat .det { font-size: 11px; color: #4A4A4A; margin-top: 4px; line-height: 1.4; }
+.steps { display: grid; grid-template-columns: repeat(5, 1fr); gap: 8px; }
+.step { background: #F2F3F6; border-radius: 6px; padding: 10px 11px; font-size: 11px; line-height: 1.42; border-top: 4px solid #4A7BF7; }
+.step .no { display: inline-block; width: 20px; height: 20px; border-radius: 50%; background: #3056C9; color: #FFFFFF; font-size: 10.5px; font-weight: 700; text-align: center; line-height: 20px; margin-right: 6px; }
+.step h4 { margin: 0 0 5px; font-size: 12px; color: #0F0F0F; }
+</style>
+</head>
+<body>
+
+<!-- 1 · Cover -->
+<section class="page cover">
+  <div class="mark">[ toggle.solutions ]</div>
+  <div class="brand">[ toggle ]</div>
+  <div class="meta">Paid media plan · S$2,000 a month · 4 November 2026 · Prepared for Sedifly Pte Ltd</div>
+  <h1 class="big">SEDIFLY</h1>
+  <h2>Meta plan, creative review and first-month forecast</h2>
+  <p class="sub" style="max-width:900px">This document answers the four asks from 3 November: the Meta plan, the review of the Ke Yue Reel and the Joash interview, the setup for the Ke Yue case study campaign, and the first-month forecast with its assumptions, data sources and dependencies. Vik will send the invoice timing, payment terms and quotation separately.</p>
+  <div class="grid" style="grid-template-columns:repeat(4,1fr);margin-top:22px">
+    <div class="stat"><div class="num">S$2,000</div><div class="lab">Monthly media</div><div class="det">Three campaigns that all end at one conversion, the Admissions Readiness Check.</div></div>
+    <div class="stat t-teal" style="border-top-color:#2ECC9B"><div class="num">29 to 40</div><div class="lab">Readiness Check enquiries</div><div class="det">From month one's spend, at S$50 to S$69 per enquiry.</div></div>
+    <div class="stat" style="border-top-color:#F28B4C"><div class="num focal">14 to 26</div><div class="lab">Qualified enquiries</div><div class="det">Scored A or B on the form answers, at S$77 to S$143 each.</div></div>
+    <div class="stat" style="border-top-color:#8E6BE6"><div class="num">8 to 19</div><div class="lab">Consultations attended</div><div class="det">Counted from month one's enquiries, at S$105 to S$250 each.</div></div>
+  </div>
+  <div class="band"><b>Key dates:</b> launch on Tuesday 10 November, first weekly report on Monday 16 November, and a KPI review after 30 live days on Thursday 10 December. These dates hold if access and the open items on page 9 close by Friday 6 November.</div>
+  <footer><span>[ Prepared by Toggle Solutions ]</span><span>1 / 9</span></footer>
+</section>
+
+<!-- 2 · Meta plan -->
+<section class="page">
+  <div class="mark">[ toggle.solutions ]</div>
+  <div class="kicker">The Meta plan</div>
+  <h1>Three campaigns, one conversion, S$2,000 a month</h1>
+  <p class="sub">Every campaign ends at the same place, a booked Admissions Readiness Check, because Sedifly's priority is qualified enquiries over lead volume. Daily figures are the monthly budget over 30 days, and the priority order is the order we protect budget in.</p>
+  <table>
+    <tr><th style="width:4%">#</th><th style="width:22%">Campaign and its job</th><th style="width:27%">Ad sets and audience</th><th style="width:15%">Creative</th><th class="n" style="width:7%">Monthly</th><th class="n" style="width:6%">Daily</th><th class="n" style="width:5%">Share</th><th style="width:14%">Month-one output</th></tr>
+    <tr><td class="blue">1</td><td><b>Readiness Check, cold</b><span class="hint">Books Readiness Checks from families who do not know Sedifly yet.</span></td><td><b>1a Parents:</b> Singapore, ages 38 to 58, S$700<br><b>1b Applicants:</b> Singapore, ages 18 to 24 (JC and polytechnic graduates, NS, gap year, reapplicants), S$400</td><td>Ke Yue Reel and the Joash interview, tested against each other</td><td class="n">S$1,100</td><td class="n">S$36.67</td><td class="n">55%</td><td>20 to 24 enquiries</td></tr>
+    <tr><td class="blue">2</td><td><b>Ke Yue case study, cold</b><span class="hint">Trades the free 4-page case study for a scored lead, then moves A and B leads to a Readiness Check.</span></td><td>One ad set: Singapore, ages 18 to 58</td><td>Four statics (4:5 and 9:16) and the five-card carousel</td><td class="n">S$600</td><td class="n">S$20.00</td><td class="n">30%</td><td>24 to 40 case study leads, 2 to 6 become enquiries</td></tr>
+    <tr><td class="blue">3</td><td><b>Retargeting</b><span class="hint">Brings warm viewers back to book.</span></td><td>Viewers of 50% or more of either video, Instagram and Facebook engagers, form openers who did not submit, and case study leads who have not booked</td><td>Joash interview and a 15-second Reel cut</td><td class="n">S$300</td><td class="n">S$10.00</td><td class="n">15%</td><td>7 to 10 enquiries</td></tr>
+    <tr class="total"><td></td><td>Total working media</td><td>Paid to Meta in full</td><td></td><td class="n">S$2,000</td><td class="n">S$66.67</td><td class="n">100%</td><td>29 to 40 enquiries</td></tr>
+  </table>
+  <div class="grid" style="grid-template-columns:repeat(3,1fr);margin-top:14px">
+    <div class="card"><h3>Why the Readiness Check campaign gets 55%</h3><p>It is the one campaign that produces enquiries directly. Its two videos are also the creative test Sedifly asked for, so the test and the main line share one budget instead of splitting S$2,000 three more ways.</p></div>
+    <div class="card t-orange"><h3>What came out of the S$3,000 plan</h3><p>The masterclass registration cell (S$750) and the standalone creative test cell (S$450). Webinar registrants still join the retargeting pool through a HubSpot list. If the budget rises, the masterclass cell comes back first.</p></div>
+    <div class="card t-teal"><h3>Objective and bidding</h3><p>All three campaigns run on the Leads objective with Meta Instant Forms (Higher Intent) and highest-volume bidding. We add cost caps after week four, once the account has its own cost per qualified enquiry to set them against.</p></div>
+  </div>
+  <footer><span>Sedifly · Meta plan, creative review and forecast</span><span>2 / 9</span></footer>
+</section>
+
+<!-- 3 · Targeting and placements -->
+<section class="page">
+  <div class="mark">[ toggle.solutions ]</div>
+  <div class="kicker">Targeting and placements</div>
+  <h1>Audiences built for parents and applicants, with drift checked every week</h1>
+  <p class="sub">Sedifly's note on the previous campaign is the brief for this page: its targeting leaned toward B2B and C-suite audiences, and the team had little view of lead quality or conversions. Four controls answer the first half of that, and the weekly report answers the second.</p>
+  <div class="grid" style="grid-template-columns:repeat(2,1fr)">
+    <div class="card"><h3>1 · Age and location are hard limits</h3><p>Every ad set runs in Singapore only, with fixed age bands: 38 to 58 for parents and 18 to 24 for applicants. We switch Advantage+ audience off so Meta cannot widen the bands on its own. Meta does not allow ads to target anyone under 18, so we reach students in Sec 4 to JC2 through their parents.</p></div>
+    <div class="card t-orange"><h3>2 · We leave out job title, industry and income targeting</h3><p>Professional and income signals are the most likely source of the B2B and C-suite drift. Inside the age bands we keep detailed targeting open and let two things do the sorting: creative that names the reader's situation, and form questions that ask who is filling the form in.</p></div>
+    <div class="card t-teal"><h3>3 · Placements match the assets</h3><p>We run Instagram and Facebook Feeds, Stories and Reels only. Audience Network, Messenger and the right column stay off, because those placements produce the cheapest and weakest form fills. The 9:16 videos and statics serve Stories and Reels; the 4:5 statics and the carousel serve Feeds.</p></div>
+    <div class="card t-purple"><h3>4 · Exclusions keep cold budget on new families</h3><p>Current clients, past enquirers and anyone already booked in HubSpot are excluded from both cold campaigns. Case study leads move out of Campaign 2 the day they convert and into the retargeting pool, so Sedifly does not pay twice to reach the same family.</p></div>
+  </div>
+  <div class="callout" style="margin-top:12px"><h3>How Sedifly will see lead quality</h3>Every Monday report shows each ad set's leads by age, by the first form answer (parent, student, or student with a parent involved) and by HubSpot score. If more than 30% of an ad set's leads in a week fall outside the parent or applicant profile, we tighten that ad set the same week and record the change in the report.</div>
+  <footer><span>Sedifly · Meta plan, creative review and forecast</span><span>3 / 9</span></footer>
+</section>
+
+<!-- 4 · Reel review -->
+<section class="page">
+  <div class="mark">[ toggle.solutions ]</div>
+  <div class="kicker">Creative review 1 of 2 · The adapted organic Reel</div>
+  <h1>The Ke Yue Reel has a strong hook, but the offer arrives at 40 seconds</h1>
+  <div class="grid" style="grid-template-columns:37% 1fr;gap:18px;margin-top:8px">
+    <div>
+      <div class="facts">44.7 seconds · 9:16 · captions burned in · CTA: Readiness Check</div>
+      <div class="label">What works</div>
+      <ul class="dots" style="font-size:11.8px;line-height:1.45">
+        <li>The opening line, "What do you do when your dream school rejects you?", lands in the first two seconds and names the viewer's situation.</li>
+        <li>Ke Yue tells her own story: no top international school, a gap year, and advice that she was aiming too high. The UChicago letter at 37 seconds is proof a competitor cannot copy.</li>
+        <li>Burned-in captions carry the story for viewers who watch with the sound off.</li>
+      </ul>
+      <div class="label" style="margin-top:10px">Where it runs</div>
+      <p style="font-size:11.8px;line-height:1.45;margin:0">The Reel speaks to a student who has been rejected or is on a gap year, so it leads in the applicant ad set. In the parent ad set it runs with parent-facing primary text, for example "If your child's first round did not go to plan." Its strongest window opens in mid-December, when US Early Decision results arrive.</p>
+    </div>
+    <div>
+      <table>
+        <tr><th style="width:50%">Recommended edit</th><th>Why</th></tr>
+        <tr><td><b>1.</b> Show "Free Admissions Readiness Check" on screen from about 10 seconds, and again when the UChicago letter appears.</td><td>The call to action first appears at 40 seconds of 45. Most Reels viewers leave well before the end, so most will not see the ask in the current cut. Please also confirm the Readiness Check is free, since the site does not say so.</td></tr>
+        <tr><td><b>2.</b> Cut to about 30 seconds by removing the white text cards at 24 to 27 seconds and trimming the "12 months of watching" section. Export a 15-second version as well: hook, gap year line, letter, CTA.</td><td>A shorter cut keeps more viewers until the proof. The 15-second version serves Stories and retargeting.</td></tr>
+        <tr><td><b>3.</b> Label the letter shot with "Offer: University of Chicago".</td><td>The letter is on screen for about a second, and the seal alone is easy to miss. The outcome is the point of the Reel.</td></tr>
+        <tr><td><b>4.</b> Move the "AN UNDERDOG STORY" label from the bottom fifth of the frame into the top third.</td><td>On Reels, the caption, account name and button cover the bottom of the screen.</td></tr>
+        <tr><td><b>5.</b> Open the end card with the Readiness Check line already on it.</td><td>The final card shows for half a second before the call to action appears.</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="band"><b>Test budget:</b> about S$250 over the first 14 days, inside the Readiness Check campaign across both ad sets. At day 14 we keep and scale the Reel if its hook rate (3-second views over impressions) is 25% or higher and its cost per enquiry is at or under S$55. Day 30 confirms its cost per qualified enquiry. If Sedifly adds budget after that, a winning Reel takes it first.</div>
+  <footer><span>Sedifly · Meta plan, creative review and forecast</span><span>4 / 9</span></footer>
+</section>
+
+<!-- 5 · Joash interview review -->
+<section class="page">
+  <div class="mark">[ toggle.solutions ]</div>
+  <div class="kicker">Creative review 2 of 2 · The Joash interview ad</div>
+  <h1>The Joash interview carries founder authority, and it needs a result and the right CTA</h1>
+  <div class="grid" style="grid-template-columns:34% 1fr;gap:18px;margin-top:8px">
+    <div>
+      <div class="facts">29.4 seconds · 9:16 · captions burned in · CTA: free consultation</div>
+      <div class="label">What works</div>
+      <ul class="dots" style="font-size:11.8px;line-height:1.45">
+        <li>Joash speaks to camera, with a name and title lower third from the fourth second. A cold parent gets a face and a role to trust.</li>
+        <li>The message, that admissions officers read the applicant's story and contribution as well as grades, sets up the job the Readiness Check does.</li>
+      </ul>
+      <div class="label" style="margin-top:10px">Where it runs</div>
+      <p style="font-size:11.8px;line-height:1.45;margin:0">It runs in the parent ad set of the Readiness Check campaign and in retargeting. Founder authority works hardest on people who have already seen Sedifly once, so retargeting is where we expect it to earn most.</p>
+    </div>
+    <div>
+      <table>
+        <tr><th style="width:47%">Recommended edit</th><th>Why</th></tr>
+        <tr><td><b>1.</b> Open on Joash speaking, with "250+ offers from top US and UK universities" as text over the shot.</td><td>The first 2.5 seconds are a still green card. Those seconds decide whether a viewer stops scrolling, and a face holds attention better than a number on a plain background.</td></tr>
+        <tr><td><b>2.</b> Confirm the 250+ figure before launch.</td><td>sedifly.com and the ad copy approved in October both say 150+. The ads and the site need to state the same number, and Meta can ask for proof of a results claim.</td></tr>
+        <tr><td><b>3.</b> Add one named result before the end card, for example Ke Yue going from an unsuccessful first cycle to UChicago.</td><td>The ad is briefed as results-led, yet the script explains how admissions work and shows no student outcome.</td></tr>
+        <tr><td><b>4.</b> Change the end card from "Book a free consultation" to "Take the free Admissions Readiness Check".</td><td>The form, the HubSpot stage and the other ads all use the Readiness Check name. One name for one offer keeps the promise and the reporting consistent.</td></tr>
+        <tr><td><b>5.</b> Fix the caption overlap at about 17 seconds, where two lines blend into "do wiing into college".</td><td>Viewers watching with the sound off read every caption.</td></tr>
+        <tr><td><b>6.</b> Confirm the interview's producer allows paid use, and how to credit it.</td><td>The Acumen and Davos Interviews backdrop is on screen throughout. Once cleared, a short "As featured on" credit at the start adds credibility.</td></tr>
+      </table>
+    </div>
+  </div>
+  <div class="band"><b>Test budget:</b> about S$250 in the cold parent ad set over the first 14 days, plus its share of the S$300 retargeting budget. The same day-14 bar applies as for the Reel: a hook rate of 25% or higher, and cost per enquiry at or under S$55 cold and S$38 in retargeting.</div>
+  <footer><span>Sedifly · Meta plan, creative review and forecast</span><span>5 / 9</span></footer>
+</section>
+
+<!-- 6 · Ke Yue case study -->
+<section class="page">
+  <div class="mark">[ toggle.solutions ]</div>
+  <div class="kicker">Ke Yue case study campaign · New</div>
+  <h1>The Ke Yue case study is a free download that feeds the Readiness Check</h1>
+  <p class="sub">A case study lead sits earlier in the decision than a Readiness Check enquiry. We judge this campaign on how many of its leads score A or B and go on to book, and its cost per download comes second.</p>
+  <div class="grid" style="grid-template-columns:54% 1fr;gap:16px">
+    <table>
+      <tr><th style="width:21%">Item</th><th>Setup</th></tr>
+      <tr><td><b>Objective</b></td><td>Leads, with a Meta Instant Form (Higher Intent, review screen before submit) synced to HubSpot in real time.</td></tr>
+      <tr><td><b>Audience</b></td><td>Singapore, ages 18 to 58, in one ad set so S$20 a day learns in one place. Advantage+ audience is off. Clients, past enquirers and existing case study leads are excluded.</td></tr>
+      <tr><td><b>Placements</b></td><td>Instagram and Facebook Feeds for the 4:5 statics and the carousel; Stories and Reels for the 9:16 statics.</td></tr>
+      <tr><td><b>Budget</b></td><td>S$600 a month, S$20 a day.</td></tr>
+      <tr><td><b>Form</b></td><td>Intro: "Free 4-page case study: how Ke Yue went from an unsuccessful first cycle to UChicago." Then the three Readiness Check questions (who is completing the form, the student's current level, target universities), name, email, phone, consent and the privacy policy link.</td></tr>
+      <tr><td><b>After the form</b></td><td>The thank-you screen links to the PDF. HubSpot emails the PDF at once and offers the Readiness Check on day 3. A Sedifly strategist contacts every A or B lead within 24 hours.</td></tr>
+    </table>
+    <div class="grid" style="gap:10px">
+      <div class="card"><h3>Creative read</h3>
+        <p>We expect "86.65 RP. 1490 SAT. Then she reapplied." and "Her profile wasn't weak." to lead, because both give a Singapore parent specifics to compare with their own child. The carousel suits Feeds, where its order (starting profile, diagnosis, changes, offers) rewards the swipe. The Hero static has no button and no number, so it runs as the control.</p></div>
+      <div class="card t-orange"><h3>Fix before launch</h3>
+        <ul class="dots">
+          <li><b>SAT score:</b> the ads say 1490, and the case study page shown in the eBook mockup says 1390. One of them needs correcting.</li>
+          <li><b>Typo:</b> the last carousel card reads "Once Cycle Later" in both the 4:5 and 1:1 sets. It should read "One Cycle Later".</li>
+          <li><b>9:16 safe zones:</b> on three of the four 9:16 statics the logo sits in the top tenth of the frame, and the profile reveal button sits in the bottom tenth with its arrow wrapped to a second line. Instagram's Stories and Reels interface covers both areas.</li>
+          <li><b>The PDF:</b> we need the 4-page case study itself, hosted at a link the form and the HubSpot email can open.</li>
+        </ul></div>
+    </div>
+  </div>
+  <div class="band"><b>Month-one targets:</b> S$15 to S$25 per case study lead (24 to 40 leads), 40% to 55% of leads scored A or B, and 10% to 15% of leads submitting a Readiness Check within 30 days.</div>
+  <footer><span>Sedifly · Meta plan, creative review and forecast</span><span>6 / 9</span></footer>
+</section>
+
+<!-- 7 · Forecast -->
+<section class="page">
+  <div class="mark">[ toggle.solutions ]</div>
+  <div class="kicker">First-month forecast</div>
+  <h1>S$2,000 in, traced to an attended consultation</h1>
+  <p class="sub">These are per-cohort figures: the enquiries that month one's spend produces, counted through to attendance even when the consultation falls in early month two. Low uses the weaker end of every rate, high uses the stronger end, and each step rounds down.</p>
+  <div class="grid" style="grid-template-columns:57% 1fr;gap:16px">
+    <table>
+      <tr><th style="width:40%">Stage</th><th>Rate applied</th><th class="n">Low</th><th class="n">High</th><th class="n">Cost per, low</th><th class="n">Cost per, high</th></tr>
+      <tr><td>Media invested</td><td></td><td class="n">S$2,000</td><td class="n">S$2,000</td><td></td><td></td></tr>
+      <tr class="sub"><td>Readiness Check enquiries, cold (S$1,100)</td><td>S$45 to S$55 each</td><td class="n">20</td><td class="n">24</td><td class="n">S$55</td><td class="n">S$45</td></tr>
+      <tr class="sub"><td>Readiness Check enquiries, retargeting (S$300)</td><td>S$28 to S$38 each</td><td class="n">7</td><td class="n">10</td><td class="n">S$38</td><td class="n">S$28</td></tr>
+      <tr class="sub"><td>Case study leads (S$600)</td><td>S$15 to S$25 each</td><td class="n">24</td><td class="n">40</td><td class="n">S$25</td><td class="n">S$15</td></tr>
+      <tr class="sub"><td style="padding-left:20px">who submit a Readiness Check through the HubSpot follow-up</td><td>10% to 15%</td><td class="n">2</td><td class="n">6</td><td></td><td></td></tr>
+      <tr class="total"><td>Total Readiness Check enquiries</td><td></td><td class="n">29</td><td class="n">40</td><td class="n">S$69</td><td class="n">S$50</td></tr>
+      <tr><td><b>Qualified</b>, scored A or B</td><td>50% to 65%</td><td class="n">14</td><td class="n">26</td><td class="n">S$143</td><td class="n">S$77</td></tr>
+      <tr><td><b>Readiness Check booked</b></td><td>75% to 90% of qualified</td><td class="n">10</td><td class="n">23</td><td class="n">S$200</td><td class="n">S$87</td></tr>
+      <tr><td><b>Consultation attended</b></td><td>80% to 83% of booked</td><td class="n">8</td><td class="n">19</td><td class="n">S$250</td><td class="n">S$105</td></tr>
+    </table>
+    <div class="grid" style="gap:10px">
+      <div class="card"><h3>Assumptions</h3>
+        <ol class="num">
+          <li>Cost per enquiry and the qualified, booked and attended rates are the bands Sedifly approved in the September proposal (slide 9), applied to S$2,000.</li>
+          <li>Tracking and the HubSpot sync are live and tested before the first ad spends.</li>
+          <li>Sedifly makes first contact within 5 minutes between 10:00 and 22:00 SGT. The booked rate depends on it.</li>
+          <li>The video edits are live by the end of week one, and the claims on page 9 are settled before launch.</li>
+          <li>Weeks one and two are Meta's learning phase, so cost per enquiry starts above these bands. Week four is the first fair read.</li>
+        </ol></div>
+      <div class="card t-teal"><h3>Data sources</h3>
+        <p>The September proposal bands; Toggle's live education accounts (a Malaysian private university group, March to June 2026), used for method because Malaysian costs run lower; and Meta's Singapore CPM range of S$18 to S$30 for these audiences. The case study rates are Toggle's estimate, since Sedifly has no gated-content history on Meta. The previous campaign's export would replace every band with Sedifly's own rates within three working days.</p></div>
+    </div>
+  </div>
+  <div class="band"><b>Against the S$3,000 plan:</b> September's forecast was 47 to 68 enquiries and 13 to 32 attended. This plan drops the masterclass cell, which produced enquiries of its own, so enquiries fall slightly more than the budget does.</div>
+  <footer><span>Sedifly · Meta plan, creative review and forecast</span><span>7 / 9</span></footer>
+</section>
+
+<!-- 8 · Tracking, reporting, optimization -->
+<section class="page">
+  <div class="mark">[ toggle.solutions ]</div>
+  <div class="kicker">Tracking, reporting and optimization</div>
+  <h1>Every lead is tracked from the form to the consultation</h1>
+  <div class="steps" style="margin-top:10px">
+    <div class="step"><h4><span class="no">1</span>Form</h4>Each campaign has its own Instant Form, so every HubSpot contact shows which campaign it came from.</div>
+    <div class="step" style="border-top-color:#2ECC9B"><h4><span class="no">2</span>HubSpot</h4>The lead arrives in real time through HubSpot's Meta Lead Ads sync. Toggle's lead sheet also records its campaign, ad set and ad.</div>
+    <div class="step" style="border-top-color:#F28B4C"><h4><span class="no">3</span>Score</h4>The three form answers score the lead A to D. A and B count as qualified (HubSpot stage MQL).</div>
+    <div class="step" style="border-top-color:#8E6BE6"><h4><span class="no">4</span>Booked and attended</h4>Sedifly marks the Readiness Check booked (SQL) and attended (Opportunity) in HubSpot within 24 hours.</div>
+    <div class="step" style="border-top-color:#F59EC9"><h4><span class="no">5</span>Back to Meta</h4>HubSpot's Conversions API sync sends qualified, booked and attended events to Meta, which shows cost per qualified enquiry in Ads Manager.</div>
+  </div>
+  <div class="grid" style="grid-template-columns:44% 1fr;gap:16px;margin-top:14px">
+    <table>
+      <tr><th style="width:30%">Reporting</th><th>What Sedifly gets</th></tr>
+      <tr><td><b>Weekly</b>, every Monday from 16 November</td><td>One page: spend, enquiries, qualified, booked and attended by campaign; cost per qualified enquiry; ads kept and cut; the audience quality breakdown; and the one decision we took that week, with the reason.</td></tr>
+      <tr><td><b>Day 14</b>, Tuesday 24 November</td><td>The creative call: the Reel against the Joash interview, and the leading Ke Yue statics.</td></tr>
+      <tr><td><b>Day 30</b>, Thursday 10 December</td><td>A KPI review against this forecast, with the initial KPIs reset on actual results.</td></tr>
+    </table>
+    <div class="card t-slate"><h3>Optimization criteria</h3>
+      <ol class="num">
+        <li><b>Days 1 to 7:</b> no budget or targeting changes unless something breaks (tracking, a disapproval, or zero delivery).</li>
+        <li><b>Ads:</b> we retire a video with a hook rate under 20% after 2,000 impressions, and a static with a link click-through rate under 1.0% after 1,500 impressions.</li>
+        <li><b>Ad sets:</b> above S$55 per enquiry cold, S$38 in retargeting or S$25 per case study lead for five straight days, we rotate creative first and then cut budget.</li>
+        <li><b>Quality over volume:</b> an ad or ad set with fewer than 35% of its leads qualified after 10 leads loses budget, even when its cost per enquiry looks cheap.</li>
+        <li><b>Reallocation:</b> from week three, a campaign holding cost per qualified enquiry 20% under the S$143 ceiling for seven days can take up to S$200 a month from the weakest one. Every move appears in that week's report.</li>
+        <li><b>Optimizing for quality:</b> once the account has about 100 qualified events, we test Meta's Conversion Leads goal so Meta bids for qualified leads instead of form fills.</li>
+      </ol></div>
+  </div>
+  <footer><span>Sedifly · Meta plan, creative review and forecast</span><span>8 / 9</span></footer>
+</section>
+
+<!-- 9 · Timeline, KPIs, dependencies -->
+<section class="page">
+  <div class="mark">[ toggle.solutions ]</div>
+  <div class="kicker">Launch, KPIs and what we need</div>
+  <h1>Live on 10 November if the open items close by Friday</h1>
+  <div class="grid" style="grid-template-columns:30% 34% 1fr;gap:16px;margin-top:10px">
+    <div>
+      <div class="label">Launch timeline</div>
+      <table>
+        <tr><td style="width:36%"><b>Wed 4 Nov</b></td><td>Sedifly reviews this plan and answers the open items.</td></tr>
+        <tr><td><b>Thu 5 to Mon 9 Nov</b></td><td>Toggle builds the forms, HubSpot sync, audiences and exclusions, and sends ad copy for approval. Sedifly sends the PDF and the edited videos.</td></tr>
+        <tr><td><b>Tue 10 Nov</b></td><td>All three campaigns go live.</td></tr>
+        <tr><td><b>Mon 16 Nov</b></td><td>First weekly report.</td></tr>
+        <tr><td><b>Tue 24 Nov</b></td><td>Day-14 creative call.</td></tr>
+        <tr><td><b>Mid-December</b></td><td>US Early Decision results arrive, and we shift weight toward the Reel.</td></tr>
+        <tr><td><b>Thu 10 Dec</b></td><td>30 live days and the KPI review.</td></tr>
+      </table>
+    </div>
+    <div>
+      <div class="label">Initial KPIs to agree</div>
+      <table>
+        <tr><th>KPI</th><th>Month-one target</th><th>Owner</th></tr>
+        <tr><td>Cost per qualified enquiry</td><td>S$77 to S$143</td><td>Toggle</td></tr>
+        <tr><td>Qualified rate (A or B)</td><td>50% or higher</td><td>Toggle</td></tr>
+        <tr><td>First contact</td><td>Within 5 minutes, 10:00 to 22:00 SGT</td><td>Sedifly</td></tr>
+        <tr><td>Booked, of qualified</td><td>75% or higher</td><td>Sedifly</td></tr>
+        <tr><td>Attended, of booked</td><td>80% or higher</td><td>Sedifly</td></tr>
+        <tr><td>HubSpot stages updated</td><td>Within 24 hours</td><td>Sedifly</td></tr>
+      </table>
+      <p style="font-size:11px;line-height:1.45;margin:8px 0 0">The three rates owned by Sedifly decide most of the gap between the low and high forecast, which is why we name them as KPIs alongside ours.</p>
+    </div>
+    <div class="card t-orange" style="font-size:11.4px"><h3>What we need from Sedifly</h3>
+      <ol class="num">
+        <li><b>Claims:</b> confirm 250+ against the 150+ on the site, Ke Yue's SAT score, and that the Readiness Check is free.</li>
+        <li><b>Assets:</b> the case study PDF, the edited Reel and interview cuts, and the corrected carousel card.</li>
+        <li><b>Permissions:</b> Ke Yue's written consent for paid ads, and the interview producer's approval for paid use.</li>
+        <li><b>HubSpot:</b> admin access, the Meta Lead Ads connection, the lifecycle stages, and a named owner for booked and attended updates.</li>
+        <li><b>Privacy policy:</b> a live page on sedifly.com to link in every form, as PDPA requires.</li>
+        <li><b>Meta:</b> admin access to the ad account, Page and Instagram account, and the status of the Pixel and Conversions API on sedifly.com.</li>
+        <li><b>Data:</b> the previous campaign's export, plus client and past-enquirer lists for the exclusions.</li>
+      </ol></div>
+  </div>
+  <footer><span>Sedifly · Meta plan, creative review and forecast</span><span>9 / 9</span></footer>
+</section>
+
+</body>
+</html>

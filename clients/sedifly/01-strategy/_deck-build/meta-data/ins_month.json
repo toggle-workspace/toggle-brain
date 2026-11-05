@@ -1,0 +1,3274 @@
+[
+ {
+  "spend": "164.05",
+  "impressions": "7617",
+  "reach": "3615",
+  "frequency": "2.107054",
+  "clicks": "148",
+  "inline_link_clicks": "76",
+  "ctr": "1.943022",
+  "inline_link_click_ctr": "0.997768",
+  "cpm": "21.537351",
+  "cpc": "1.108446",
+  "actions": [
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "5"
+   },
+   {
+    "action_type": "link_click",
+    "value": "76"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "5"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "11"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "2"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "868"
+   },
+   {
+    "action_type": "like",
+    "value": "2"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "14"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "870"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "12"
+   },
+   {
+    "action_type": "post",
+    "value": "3"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "9"
+   },
+   {
+    "action_type": "lead",
+    "value": "5"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "5"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "5"
+   },
+   {
+    "action_type": "video_view",
+    "value": "778"
+   }
+  ],
+  "cost_per_action_type": [
+   {
+    "action_type": "offsite_submit_application_add_meta_leads",
+    "value": "32.81"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "32.81"
+   },
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "32.81"
+   },
+   {
+    "action_type": "video_view",
+    "value": "0.210861"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "0.188998"
+   },
+   {
+    "action_type": "lead",
+    "value": "32.81"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "32.81"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "11.717857"
+   },
+   {
+    "action_type": "link_click",
+    "value": "2.158553"
+   },
+   {
+    "action_type": "like",
+    "value": "82.025"
+   },
+   {
+    "action_type": "offsite_contact_website_add_meta_leads",
+    "value": "32.81"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "0.188563"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "32.81"
+   }
+  ],
+  "video_thruplay_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "128"
+   }
+  ],
+  "video_p25_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "170"
+   }
+  ],
+  "video_p50_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "72"
+   }
+  ],
+  "video_p75_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "50"
+   }
+  ],
+  "video_p100_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "26"
+   }
+  ],
+  "date_start": "2025-11-01",
+  "date_stop": "2025-11-30"
+ },
+ {
+  "spend": "1448.52",
+  "impressions": "103878",
+  "reach": "21749",
+  "frequency": "4.77622",
+  "clicks": "1277",
+  "inline_link_clicks": "711",
+  "ctr": "1.229327",
+  "inline_link_click_ctr": "0.684457",
+  "cpm": "13.944435",
+  "cpc": "1.134315",
+  "actions": [
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "54"
+   },
+   {
+    "action_type": "link_click",
+    "value": "711"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "54"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "45"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "11"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "5964"
+   },
+   {
+    "action_type": "like",
+    "value": "7"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "63"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "5971"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "50"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_2_message_send",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "1"
+   },
+   {
+    "action_type": "post",
+    "value": "11"
+   },
+   {
+    "action_type": "onsite_conversion.post_unsave",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "7"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_3_message_send",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "5"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "34"
+   },
+   {
+    "action_type": "lead",
+    "value": "54"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "54"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_started_7d",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "54"
+   },
+   {
+    "action_type": "video_view",
+    "value": "5190"
+   }
+  ],
+  "cost_per_action_type": [
+   {
+    "action_type": "offsite_submit_application_add_meta_leads",
+    "value": "26.824444"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "26.824444"
+   },
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "26.824444"
+   },
+   {
+    "action_type": "video_view",
+    "value": "0.279098"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_started_7d",
+    "value": "1448.52"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "1448.52"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_2_message_send",
+    "value": "1448.52"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "0.242877"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "1448.52"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_3_message_send",
+    "value": "1448.52"
+   },
+   {
+    "action_type": "lead",
+    "value": "26.824444"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "26.824444"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "22.992381"
+   },
+   {
+    "action_type": "link_click",
+    "value": "2.0373"
+   },
+   {
+    "action_type": "like",
+    "value": "206.931429"
+   },
+   {
+    "action_type": "offsite_contact_website_add_meta_leads",
+    "value": "26.824444"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "0.242593"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "26.824444"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "1448.52"
+   }
+  ],
+  "video_thruplay_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "1181"
+   }
+  ],
+  "video_p25_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "2181"
+   }
+  ],
+  "video_p50_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "1070"
+   }
+  ],
+  "video_p75_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "746"
+   }
+  ],
+  "video_p100_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "447"
+   }
+  ],
+  "date_start": "2025-12-01",
+  "date_stop": "2025-12-31"
+ },
+ {
+  "spend": "1585.68",
+  "impressions": "77599",
+  "reach": "24408",
+  "frequency": "3.179245",
+  "clicks": "977",
+  "inline_link_clicks": "512",
+  "ctr": "1.259037",
+  "inline_link_click_ctr": "0.659802",
+  "cpm": "20.434284",
+  "cpc": "1.623009",
+  "actions": [
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "31"
+   },
+   {
+    "action_type": "link_click",
+    "value": "512"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "31"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "47"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "6"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "4057"
+   },
+   {
+    "action_type": "like",
+    "value": "4"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "66"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "4061"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "59"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "1"
+   },
+   {
+    "action_type": "post",
+    "value": "9"
+   },
+   {
+    "action_type": "onsite_conversion.post_unsave",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "10"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "9"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "41"
+   },
+   {
+    "action_type": "lead",
+    "value": "31"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "31"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_started_7d",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "31"
+   },
+   {
+    "action_type": "video_view",
+    "value": "3479"
+   }
+  ],
+  "cost_per_action_type": [
+   {
+    "action_type": "offsite_submit_application_add_meta_leads",
+    "value": "51.150968"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "51.150968"
+   },
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "51.150968"
+   },
+   {
+    "action_type": "video_view",
+    "value": "0.455786"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_started_7d",
+    "value": "1585.68"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "1585.68"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "0.39085"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "1585.68"
+   },
+   {
+    "action_type": "lead",
+    "value": "51.150968"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "51.150968"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "24.025455"
+   },
+   {
+    "action_type": "link_click",
+    "value": "3.097031"
+   },
+   {
+    "action_type": "like",
+    "value": "396.42"
+   },
+   {
+    "action_type": "offsite_contact_website_add_meta_leads",
+    "value": "51.150968"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "0.390465"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "51.150968"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "1585.68"
+   }
+  ],
+  "video_thruplay_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "704"
+   }
+  ],
+  "video_p25_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "918"
+   }
+  ],
+  "video_p50_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "445"
+   }
+  ],
+  "video_p75_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "316"
+   }
+  ],
+  "video_p100_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "162"
+   }
+  ],
+  "date_start": "2026-01-01",
+  "date_stop": "2026-01-31"
+ },
+ {
+  "spend": "1409.14",
+  "impressions": "73334",
+  "reach": "20326",
+  "frequency": "3.607891",
+  "clicks": "692",
+  "inline_link_clicks": "357",
+  "ctr": "0.943628",
+  "inline_link_click_ctr": "0.486814",
+  "cpm": "19.215371",
+  "cpc": "2.036329",
+  "actions": [
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "44"
+   },
+   {
+    "action_type": "link_click",
+    "value": "357"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "44"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "45"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "14"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "5005"
+   },
+   {
+    "action_type": "like",
+    "value": "4"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "71"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "5009"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "56"
+   },
+   {
+    "action_type": "post",
+    "value": "13"
+   },
+   {
+    "action_type": "onsite_conversion.post_unsave",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "13"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "12"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "31"
+   },
+   {
+    "action_type": "lead",
+    "value": "44"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "44"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "44"
+   },
+   {
+    "action_type": "video_view",
+    "value": "4577"
+   }
+  ],
+  "cost_per_action_type": [
+   {
+    "action_type": "offsite_submit_application_add_meta_leads",
+    "value": "32.025909"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "32.025909"
+   },
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "32.025909"
+   },
+   {
+    "action_type": "video_view",
+    "value": "0.307874"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "0.281546"
+   },
+   {
+    "action_type": "lead",
+    "value": "32.025909"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "32.025909"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "19.847042"
+   },
+   {
+    "action_type": "link_click",
+    "value": "3.947171"
+   },
+   {
+    "action_type": "like",
+    "value": "352.285"
+   },
+   {
+    "action_type": "offsite_contact_website_add_meta_leads",
+    "value": "32.025909"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "0.281322"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "32.025909"
+   }
+  ],
+  "video_thruplay_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "836"
+   }
+  ],
+  "video_p25_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "1265"
+   }
+  ],
+  "video_p50_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "601"
+   }
+  ],
+  "video_p75_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "361"
+   }
+  ],
+  "video_p100_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "183"
+   }
+  ],
+  "date_start": "2026-02-01",
+  "date_stop": "2026-02-28"
+ },
+ {
+  "spend": "3285.01",
+  "impressions": "139190",
+  "reach": "31006",
+  "frequency": "4.489131",
+  "clicks": "1755",
+  "inline_link_clicks": "874",
+  "ctr": "1.260866",
+  "inline_link_click_ctr": "0.627919",
+  "cpm": "23.600905",
+  "cpc": "1.871801",
+  "actions": [
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "111"
+   },
+   {
+    "action_type": "link_click",
+    "value": "874"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "111"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_custom",
+    "value": "3"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "88"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_block",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "4"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "18"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "9224"
+   },
+   {
+    "action_type": "like",
+    "value": "1"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "156"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "9225"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "136"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_2_message_send",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "3"
+   },
+   {
+    "action_type": "post",
+    "value": "32"
+   },
+   {
+    "action_type": "onsite_conversion.post_unsave",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "36"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "34"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "70"
+   },
+   {
+    "action_type": "lead",
+    "value": "111"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "111"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_started_7d",
+    "value": "3"
+   },
+   {
+    "action_type": "custom_event_actions_add_20_s_calls",
+    "value": "3"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "111"
+   },
+   {
+    "action_type": "video_view",
+    "value": "8194"
+   }
+  ],
+  "cost_per_action_type": [
+   {
+    "action_type": "offsite_submit_application_add_meta_leads",
+    "value": "29.594685"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "29.594685"
+   },
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "29.594685"
+   },
+   {
+    "action_type": "video_view",
+    "value": "0.400904"
+   },
+   {
+    "action_type": "custom_event_actions_add_20_s_calls",
+    "value": "1095.003333"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_started_7d",
+    "value": "1095.003333"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "1642.505"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_2_message_send",
+    "value": "1642.505"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "0.356137"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "821.2525"
+   },
+   {
+    "action_type": "lead",
+    "value": "29.594685"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "29.594685"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "21.057756"
+   },
+   {
+    "action_type": "link_click",
+    "value": "3.758593"
+   },
+   {
+    "action_type": "like",
+    "value": "3285.01"
+   },
+   {
+    "action_type": "offsite_contact_website_add_meta_leads",
+    "value": "29.594685"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "0.356099"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "29.594685"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "1095.003333"
+   }
+  ],
+  "video_thruplay_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "1698"
+   }
+  ],
+  "video_p25_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "2945"
+   }
+  ],
+  "video_p50_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "1616"
+   }
+  ],
+  "video_p75_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "604"
+   }
+  ],
+  "video_p100_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "341"
+   }
+  ],
+  "date_start": "2026-03-01",
+  "date_stop": "2026-03-31"
+ },
+ {
+  "spend": "1008.39",
+  "impressions": "52086",
+  "reach": "14134",
+  "frequency": "3.685156",
+  "clicks": "551",
+  "inline_link_clicks": "239",
+  "ctr": "1.057866",
+  "inline_link_click_ctr": "0.458857",
+  "cpm": "19.360097",
+  "cpc": "1.830109",
+  "actions": [
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "39"
+   },
+   {
+    "action_type": "link_click",
+    "value": "239"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "39"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "110"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "20"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "7469"
+   },
+   {
+    "action_type": "like",
+    "value": "2"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "140"
+   },
+   {
+    "action_type": "comment",
+    "value": "1"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "7471"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "120"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_2_message_send",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "2"
+   },
+   {
+    "action_type": "post",
+    "value": "21"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "8"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_comment",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "8"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "90"
+   },
+   {
+    "action_type": "lead",
+    "value": "39"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "39"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_started_7d",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "39"
+   },
+   {
+    "action_type": "video_view",
+    "value": "7090"
+   }
+  ],
+  "cost_per_action_type": [
+   {
+    "action_type": "offsite_submit_application_add_meta_leads",
+    "value": "25.856154"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "25.856154"
+   },
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "25.856154"
+   },
+   {
+    "action_type": "video_view",
+    "value": "0.142227"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_started_7d",
+    "value": "504.195"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "1008.39"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_2_message_send",
+    "value": "1008.39"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "0.13501"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "504.195"
+   },
+   {
+    "action_type": "lead",
+    "value": "25.856154"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "25.856154"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "7.202786"
+   },
+   {
+    "action_type": "link_click",
+    "value": "4.219205"
+   },
+   {
+    "action_type": "like",
+    "value": "504.195"
+   },
+   {
+    "action_type": "offsite_contact_website_add_meta_leads",
+    "value": "25.856154"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "0.134974"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "25.856154"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "504.195"
+   }
+  ],
+  "video_thruplay_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "1574"
+   }
+  ],
+  "video_p25_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "2357"
+   }
+  ],
+  "video_p50_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "1257"
+   }
+  ],
+  "video_p75_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "891"
+   }
+  ],
+  "video_p100_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "504"
+   }
+  ],
+  "date_start": "2026-04-01",
+  "date_stop": "2026-04-30"
+ },
+ {
+  "spend": "2742.74",
+  "impressions": "224695",
+  "reach": "58499",
+  "frequency": "3.841006",
+  "clicks": "2814",
+  "inline_link_clicks": "2000",
+  "ctr": "1.252364",
+  "inline_link_click_ctr": "0.890095",
+  "cpm": "12.206502",
+  "cpc": "0.974677",
+  "actions": [
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "203"
+   },
+   {
+    "action_type": "link_click",
+    "value": "2000"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "203"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_custom",
+    "value": "4"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "457"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "9"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "99"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "26849"
+   },
+   {
+    "action_type": "like",
+    "value": "1"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "589"
+   },
+   {
+    "action_type": "comment",
+    "value": "3"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "26850"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "488"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_2_message_send",
+    "value": "5"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "8"
+   },
+   {
+    "action_type": "post",
+    "value": "81"
+   },
+   {
+    "action_type": "onsite_conversion.post_unsave",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "48"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_comment",
+    "value": "3"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_3_message_send",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "46"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "358"
+   },
+   {
+    "action_type": "lead",
+    "value": "203"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "203"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_started_7d",
+    "value": "8"
+   },
+   {
+    "action_type": "custom_event_actions_add_20_s_calls",
+    "value": "4"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "203"
+   },
+   {
+    "action_type": "video_view",
+    "value": "24260"
+   }
+  ],
+  "cost_per_action_type": [
+   {
+    "action_type": "offsite_submit_application_add_meta_leads",
+    "value": "13.511034"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "13.511034"
+   },
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "13.511034"
+   },
+   {
+    "action_type": "video_view",
+    "value": "0.113056"
+   },
+   {
+    "action_type": "custom_event_actions_add_20_s_calls",
+    "value": "685.685"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_started_7d",
+    "value": "342.8425"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "2742.74"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_2_message_send",
+    "value": "548.548"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "0.102154"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "304.748889"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_3_message_send",
+    "value": "1371.37"
+   },
+   {
+    "action_type": "lead",
+    "value": "13.511034"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "13.511034"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "4.656604"
+   },
+   {
+    "action_type": "link_click",
+    "value": "1.37137"
+   },
+   {
+    "action_type": "like",
+    "value": "2742.74"
+   },
+   {
+    "action_type": "offsite_contact_website_add_meta_leads",
+    "value": "13.511034"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "0.10215"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "13.511034"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "342.8425"
+   }
+  ],
+  "video_thruplay_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "5436"
+   }
+  ],
+  "video_p25_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "13207"
+   }
+  ],
+  "video_p50_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "8046"
+   }
+  ],
+  "video_p75_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "4753"
+   }
+  ],
+  "video_p100_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "1835"
+   }
+  ],
+  "date_start": "2026-05-01",
+  "date_stop": "2026-05-31"
+ },
+ {
+  "spend": "1058.59",
+  "impressions": "75437",
+  "reach": "23020",
+  "frequency": "3.27702",
+  "clicks": "1021",
+  "inline_link_clicks": "621",
+  "ctr": "1.353447",
+  "inline_link_click_ctr": "0.823203",
+  "cpm": "14.032769",
+  "cpc": "1.036817",
+  "actions": [
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "54"
+   },
+   {
+    "action_type": "link_click",
+    "value": "621"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "54"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "118"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_block",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "8"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "36"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "5798"
+   },
+   {
+    "action_type": "like",
+    "value": "2"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "151"
+   },
+   {
+    "action_type": "comment",
+    "value": "1"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "5800"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "114"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_2_message_send",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "7"
+   },
+   {
+    "action_type": "post",
+    "value": "17"
+   },
+   {
+    "action_type": "onsite_conversion.post_unsave",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "15"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_comment",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_3_message_send",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "14"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "82"
+   },
+   {
+    "action_type": "lead",
+    "value": "54"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "54"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_started_7d",
+    "value": "8"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "54"
+   },
+   {
+    "action_type": "video_view",
+    "value": "5026"
+   }
+  ],
+  "cost_per_action_type": [
+   {
+    "action_type": "offsite_submit_application_add_meta_leads",
+    "value": "19.603519"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "19.603519"
+   },
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "19.603519"
+   },
+   {
+    "action_type": "video_view",
+    "value": "0.210623"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_started_7d",
+    "value": "132.32375"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "1058.59"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_2_message_send",
+    "value": "1058.59"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "0.182578"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "132.32375"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_3_message_send",
+    "value": "1058.59"
+   },
+   {
+    "action_type": "lead",
+    "value": "19.603519"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "19.603519"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "7.01053"
+   },
+   {
+    "action_type": "link_click",
+    "value": "1.704654"
+   },
+   {
+    "action_type": "like",
+    "value": "529.295"
+   },
+   {
+    "action_type": "offsite_contact_website_add_meta_leads",
+    "value": "19.603519"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "0.182516"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "19.603519"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "151.227143"
+   }
+  ],
+  "video_thruplay_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "896"
+   }
+  ],
+  "video_p25_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "1275"
+   }
+  ],
+  "video_p50_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "735"
+   }
+  ],
+  "video_p75_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "398"
+   }
+  ],
+  "video_p100_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "218"
+   }
+  ],
+  "date_start": "2026-06-01",
+  "date_stop": "2026-06-30"
+ },
+ {
+  "spend": "617.39",
+  "impressions": "39286",
+  "reach": "11304",
+  "frequency": "3.475407",
+  "clicks": "493",
+  "inline_link_clicks": "268",
+  "ctr": "1.2549",
+  "inline_link_click_ctr": "0.682177",
+  "cpm": "15.715268",
+  "cpc": "1.252312",
+  "actions": [
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "27"
+   },
+   {
+    "action_type": "link_click",
+    "value": "268"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "27"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "95"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "25"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "5106"
+   },
+   {
+    "action_type": "like",
+    "value": "2"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "118"
+   },
+   {
+    "action_type": "comment",
+    "value": "2"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "5108"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "93"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "1"
+   },
+   {
+    "action_type": "post",
+    "value": "13"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "8"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_comment",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "8"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "70"
+   },
+   {
+    "action_type": "lead",
+    "value": "27"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "27"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_started_7d",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "27"
+   },
+   {
+    "action_type": "video_view",
+    "value": "4720"
+   }
+  ],
+  "cost_per_action_type": [
+   {
+    "action_type": "offsite_submit_application_add_meta_leads",
+    "value": "22.866296"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "22.866296"
+   },
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "22.866296"
+   },
+   {
+    "action_type": "video_view",
+    "value": "0.130803"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_started_7d",
+    "value": "617.39"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "617.39"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "0.120915"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "617.39"
+   },
+   {
+    "action_type": "lead",
+    "value": "22.866296"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "22.866296"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "5.232119"
+   },
+   {
+    "action_type": "link_click",
+    "value": "2.303694"
+   },
+   {
+    "action_type": "like",
+    "value": "308.695"
+   },
+   {
+    "action_type": "offsite_contact_website_add_meta_leads",
+    "value": "22.866296"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "0.120867"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "22.866296"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "617.39"
+   }
+  ],
+  "video_thruplay_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "817"
+   }
+  ],
+  "video_p25_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "1078"
+   }
+  ],
+  "video_p50_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "518"
+   }
+  ],
+  "video_p75_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "338"
+   }
+  ],
+  "video_p100_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "169"
+   }
+  ],
+  "date_start": "2026-07-01",
+  "date_stop": "2026-07-31"
+ },
+ {
+  "spend": "1473.29",
+  "impressions": "83098",
+  "reach": "27184",
+  "frequency": "3.056872",
+  "clicks": "1156",
+  "inline_link_clicks": "787",
+  "ctr": "1.391129",
+  "inline_link_click_ctr": "0.947075",
+  "cpm": "17.729548",
+  "cpc": "1.274472",
+  "actions": [
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "41"
+   },
+   {
+    "action_type": "web_in_store_purchase",
+    "value": "44"
+   },
+   {
+    "action_type": "omni_purchase",
+    "value": "44"
+   },
+   {
+    "action_type": "link_click",
+    "value": "787"
+   },
+   {
+    "action_type": "omni_complete_registration",
+    "value": "2"
+   },
+   {
+    "action_type": "initiate_checkout",
+    "value": "44"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "39"
+   },
+   {
+    "action_type": "offsite_purchase_add_20_s_calls",
+    "value": "44"
+   },
+   {
+    "action_type": "add_to_cart",
+    "value": "49"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_purchase",
+    "value": "44"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_initiate_checkout",
+    "value": "44"
+   },
+   {
+    "action_type": "offsite_initiate_checkout_add_20_s_calls",
+    "value": "44"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_complete_registration",
+    "value": "2"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_add_to_cart",
+    "value": "49"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "170"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "1"
+   },
+   {
+    "action_type": "offsite_content_view_add_20_s_calls",
+    "value": "285"
+   },
+   {
+    "action_type": "offsite_complete_registration_add_20_s_calls",
+    "value": "2"
+   },
+   {
+    "action_type": "landing_page_view",
+    "value": "227"
+   },
+   {
+    "action_type": "onsite_web_lead",
+    "value": "5"
+   },
+   {
+    "action_type": "omni_landing_page_view",
+    "value": "227"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "7"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "37"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "9048"
+   },
+   {
+    "action_type": "like",
+    "value": "1"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "225"
+   },
+   {
+    "action_type": "comment",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_web_app_purchase",
+    "value": "44"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "9049"
+   },
+   {
+    "action_type": "purchase",
+    "value": "44"
+   },
+   {
+    "action_type": "onsite_web_view_content",
+    "value": "285"
+   },
+   {
+    "action_type": "complete_registration",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_web_add_to_cart",
+    "value": "49"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "185"
+   },
+   {
+    "action_type": "post_uncomment",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_2_message_send",
+    "value": "3"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "7"
+   },
+   {
+    "action_type": "onsite_web_app_view_content",
+    "value": "285"
+   },
+   {
+    "action_type": "post",
+    "value": "26"
+   },
+   {
+    "action_type": "onsite_conversion.post_unsave",
+    "value": "2"
+   },
+   {
+    "action_type": "view_content",
+    "value": "285"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "28"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_comment",
+    "value": "0"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_3_message_send",
+    "value": "3"
+   },
+   {
+    "action_type": "web_app_in_store_purchase",
+    "value": "44"
+   },
+   {
+    "action_type": "onsite_web_app_add_to_cart",
+    "value": "49"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "26"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "133"
+   },
+   {
+    "action_type": "onsite_web_initiate_checkout",
+    "value": "44"
+   },
+   {
+    "action_type": "omni_initiated_checkout",
+    "value": "44"
+   },
+   {
+    "action_type": "lead",
+    "value": "44"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "324"
+   },
+   {
+    "action_type": "onsite_web_purchase",
+    "value": "44"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_started_7d",
+    "value": "7"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "39"
+   },
+   {
+    "action_type": "offsite_add_to_cart_add_20_s_calls",
+    "value": "49"
+   },
+   {
+    "action_type": "video_view",
+    "value": "8036"
+   },
+   {
+    "action_type": "omni_add_to_cart",
+    "value": "49"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_lead",
+    "value": "5"
+   },
+   {
+    "action_type": "offsite_lead_add_20_s_calls",
+    "value": "5"
+   },
+   {
+    "action_type": "omni_view_content",
+    "value": "285"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_view_content",
+    "value": "285"
+   },
+   {
+    "action_type": "offsite_conversion.custom.912068361963916",
+    "value": "27"
+   }
+  ],
+  "cost_per_action_type": [
+   {
+    "action_type": "web_in_store_purchase",
+    "value": "33.483864"
+   },
+   {
+    "action_type": "omni_purchase",
+    "value": "33.483864"
+   },
+   {
+    "action_type": "initiate_checkout",
+    "value": "33.483864"
+   },
+   {
+    "action_type": "offsite_submit_application_add_meta_leads",
+    "value": "37.776667"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "37.776667"
+   },
+   {
+    "action_type": "offsite_initiate_checkout_add_20_s_calls",
+    "value": "33.483864"
+   },
+   {
+    "action_type": "offsite_content_view_add_20_s_calls",
+    "value": "5.169439"
+   },
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "35.933902"
+   },
+   {
+    "action_type": "offsite_complete_registration_add_20_s_calls",
+    "value": "736.645"
+   },
+   {
+    "action_type": "omni_view_content",
+    "value": "5.169439"
+   },
+   {
+    "action_type": "offsite_lead_add_20_s_calls",
+    "value": "294.658"
+   },
+   {
+    "action_type": "offsite_purchase_add_20_s_calls",
+    "value": "33.483864"
+   },
+   {
+    "action_type": "video_view",
+    "value": "0.183336"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_started_7d",
+    "value": "210.47"
+   },
+   {
+    "action_type": "onsite_web_purchase",
+    "value": "33.483864"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "1473.29"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_2_message_send",
+    "value": "491.096667"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "0.16283"
+   },
+   {
+    "action_type": "omni_complete_registration",
+    "value": "736.645"
+   },
+   {
+    "action_type": "onsite_web_initiate_checkout",
+    "value": "33.483864"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "210.47"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_3_message_send",
+    "value": "491.096667"
+   },
+   {
+    "action_type": "view_content",
+    "value": "5.169439"
+   },
+   {
+    "action_type": "lead",
+    "value": "33.483864"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "37.776667"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "6.547956"
+   },
+   {
+    "action_type": "link_click",
+    "value": "1.872033"
+   },
+   {
+    "action_type": "like",
+    "value": "1473.29"
+   },
+   {
+    "action_type": "offsite_contact_website_add_meta_leads",
+    "value": "37.776667"
+   },
+   {
+    "action_type": "purchase",
+    "value": "33.483864"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "0.162812"
+   },
+   {
+    "action_type": "complete_registration",
+    "value": "736.645"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "4.547191"
+   },
+   {
+    "action_type": "omni_landing_page_view",
+    "value": "6.490264"
+   },
+   {
+    "action_type": "add_to_cart",
+    "value": "30.067143"
+   },
+   {
+    "action_type": "onsite_web_lead",
+    "value": "294.658"
+   },
+   {
+    "action_type": "landing_page_view",
+    "value": "6.490264"
+   },
+   {
+    "action_type": "offsite_add_to_cart_add_20_s_calls",
+    "value": "30.067143"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "210.47"
+   },
+   {
+    "action_type": "omni_initiated_checkout",
+    "value": "33.483864"
+   },
+   {
+    "action_type": "omni_add_to_cart",
+    "value": "30.067143"
+   },
+   {
+    "action_type": "offsite_conversion.custom.912068361963916",
+    "value": "54.566296"
+   }
+  ],
+  "video_thruplay_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "1947"
+   }
+  ],
+  "video_p25_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "4308"
+   }
+  ],
+  "video_p50_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "2446"
+   }
+  ],
+  "video_p75_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "1734"
+   }
+  ],
+  "video_p100_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "1318"
+   }
+  ],
+  "date_start": "2026-08-01",
+  "date_stop": "2026-08-31"
+ },
+ {
+  "spend": "1515.26",
+  "impressions": "89817",
+  "reach": "32215",
+  "frequency": "2.788049",
+  "clicks": "1161",
+  "inline_link_clicks": "811",
+  "ctr": "1.292628",
+  "inline_link_click_ctr": "0.902947",
+  "cpm": "16.870526",
+  "cpc": "1.305134",
+  "actions": [
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "44"
+   },
+   {
+    "action_type": "web_in_store_purchase",
+    "value": "12"
+   },
+   {
+    "action_type": "omni_purchase",
+    "value": "12"
+   },
+   {
+    "action_type": "link_click",
+    "value": "811"
+   },
+   {
+    "action_type": "initiate_checkout",
+    "value": "16"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "44"
+   },
+   {
+    "action_type": "offsite_purchase_add_20_s_calls",
+    "value": "12"
+   },
+   {
+    "action_type": "add_to_cart",
+    "value": "18"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_purchase",
+    "value": "12"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_initiate_checkout",
+    "value": "16"
+   },
+   {
+    "action_type": "offsite_initiate_checkout_add_20_s_calls",
+    "value": "16"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_add_to_cart",
+    "value": "18"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "125"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "13"
+   },
+   {
+    "action_type": "offsite_content_view_add_20_s_calls",
+    "value": "55"
+   },
+   {
+    "action_type": "landing_page_view",
+    "value": "90"
+   },
+   {
+    "action_type": "onsite_web_lead",
+    "value": "6"
+   },
+   {
+    "action_type": "omni_landing_page_view",
+    "value": "90"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_block",
+    "value": "2"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "25"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "27"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "6434"
+   },
+   {
+    "action_type": "like",
+    "value": "1"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "170"
+   },
+   {
+    "action_type": "onsite_web_app_purchase",
+    "value": "12"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "6435"
+   },
+   {
+    "action_type": "purchase",
+    "value": "12"
+   },
+   {
+    "action_type": "onsite_web_view_content",
+    "value": "55"
+   },
+   {
+    "action_type": "onsite_web_add_to_cart",
+    "value": "18"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "141"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_2_message_send",
+    "value": "3"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "21"
+   },
+   {
+    "action_type": "onsite_web_app_view_content",
+    "value": "55"
+   },
+   {
+    "action_type": "post",
+    "value": "26"
+   },
+   {
+    "action_type": "onsite_conversion.post_unsave",
+    "value": "2"
+   },
+   {
+    "action_type": "view_content",
+    "value": "55"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "19"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_3_message_send",
+    "value": "5"
+   },
+   {
+    "action_type": "web_app_in_store_purchase",
+    "value": "12"
+   },
+   {
+    "action_type": "onsite_web_app_add_to_cart",
+    "value": "18"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "17"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "98"
+   },
+   {
+    "action_type": "onsite_web_initiate_checkout",
+    "value": "16"
+   },
+   {
+    "action_type": "omni_initiated_checkout",
+    "value": "16"
+   },
+   {
+    "action_type": "lead",
+    "value": "50"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "99"
+   },
+   {
+    "action_type": "onsite_web_purchase",
+    "value": "12"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_started_7d",
+    "value": "21"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "44"
+   },
+   {
+    "action_type": "offsite_add_to_cart_add_20_s_calls",
+    "value": "18"
+   },
+   {
+    "action_type": "video_view",
+    "value": "5453"
+   },
+   {
+    "action_type": "omni_add_to_cart",
+    "value": "18"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_lead",
+    "value": "6"
+   },
+   {
+    "action_type": "offsite_lead_add_20_s_calls",
+    "value": "6"
+   },
+   {
+    "action_type": "omni_view_content",
+    "value": "55"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_view_content",
+    "value": "55"
+   },
+   {
+    "action_type": "offsite_conversion.custom.912068361963916",
+    "value": "12"
+   }
+  ],
+  "cost_per_action_type": [
+   {
+    "action_type": "web_in_store_purchase",
+    "value": "126.271667"
+   },
+   {
+    "action_type": "omni_purchase",
+    "value": "126.271667"
+   },
+   {
+    "action_type": "initiate_checkout",
+    "value": "94.70375"
+   },
+   {
+    "action_type": "offsite_submit_application_add_meta_leads",
+    "value": "34.437727"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "34.437727"
+   },
+   {
+    "action_type": "offsite_initiate_checkout_add_20_s_calls",
+    "value": "94.70375"
+   },
+   {
+    "action_type": "offsite_content_view_add_20_s_calls",
+    "value": "27.550182"
+   },
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "34.437727"
+   },
+   {
+    "action_type": "omni_view_content",
+    "value": "27.550182"
+   },
+   {
+    "action_type": "offsite_lead_add_20_s_calls",
+    "value": "252.543333"
+   },
+   {
+    "action_type": "offsite_purchase_add_20_s_calls",
+    "value": "126.271667"
+   },
+   {
+    "action_type": "video_view",
+    "value": "0.277876"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_started_7d",
+    "value": "72.155238"
+   },
+   {
+    "action_type": "onsite_web_purchase",
+    "value": "126.271667"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "116.558462"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_2_message_send",
+    "value": "505.086667"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "0.235508"
+   },
+   {
+    "action_type": "onsite_web_initiate_checkout",
+    "value": "94.70375"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "60.6104"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_3_message_send",
+    "value": "303.052"
+   },
+   {
+    "action_type": "view_content",
+    "value": "27.550182"
+   },
+   {
+    "action_type": "lead",
+    "value": "30.3052"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "34.437727"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "8.913294"
+   },
+   {
+    "action_type": "link_click",
+    "value": "1.868385"
+   },
+   {
+    "action_type": "like",
+    "value": "1515.26"
+   },
+   {
+    "action_type": "offsite_contact_website_add_meta_leads",
+    "value": "34.437727"
+   },
+   {
+    "action_type": "purchase",
+    "value": "126.271667"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "0.235472"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "15.305657"
+   },
+   {
+    "action_type": "omni_landing_page_view",
+    "value": "16.836222"
+   },
+   {
+    "action_type": "add_to_cart",
+    "value": "84.181111"
+   },
+   {
+    "action_type": "onsite_web_lead",
+    "value": "252.543333"
+   },
+   {
+    "action_type": "landing_page_view",
+    "value": "16.836222"
+   },
+   {
+    "action_type": "offsite_add_to_cart_add_20_s_calls",
+    "value": "84.181111"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "72.155238"
+   },
+   {
+    "action_type": "omni_initiated_checkout",
+    "value": "94.70375"
+   },
+   {
+    "action_type": "omni_add_to_cart",
+    "value": "84.181111"
+   },
+   {
+    "action_type": "offsite_conversion.custom.912068361963916",
+    "value": "126.271667"
+   }
+  ],
+  "video_thruplay_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "630"
+   }
+  ],
+  "video_p25_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "1168"
+   }
+  ],
+  "video_p50_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "500"
+   }
+  ],
+  "video_p75_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "292"
+   }
+  ],
+  "video_p100_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "163"
+   }
+  ],
+  "date_start": "2026-09-01",
+  "date_stop": "2026-09-30"
+ },
+ {
+  "spend": "2485.02",
+  "impressions": "131359",
+  "reach": "38107",
+  "frequency": "3.447109",
+  "clicks": "2072",
+  "inline_link_clicks": "1432",
+  "ctr": "1.577357",
+  "inline_link_click_ctr": "1.090142",
+  "cpm": "18.917775",
+  "cpc": "1.199334",
+  "actions": [
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "51"
+   },
+   {
+    "action_type": "link_click",
+    "value": "1432"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "51"
+   },
+   {
+    "action_type": "post_reaction",
+    "value": "160"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "18"
+   },
+   {
+    "action_type": "offsite_content_view_add_20_s_calls",
+    "value": "3"
+   },
+   {
+    "action_type": "landing_page_view",
+    "value": "37"
+   },
+   {
+    "action_type": "onsite_web_lead",
+    "value": "4"
+   },
+   {
+    "action_type": "omni_landing_page_view",
+    "value": "37"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "39"
+   },
+   {
+    "action_type": "onsite_conversion.post_unlike",
+    "value": "39"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "5310"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_call_placed",
+    "value": "1"
+   },
+   {
+    "action_type": "like",
+    "value": "1"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "202"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "5311"
+   },
+   {
+    "action_type": "onsite_web_view_content",
+    "value": "3"
+   },
+   {
+    "action_type": "post_interaction_net",
+    "value": "161"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_2_message_send",
+    "value": "7"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "36"
+   },
+   {
+    "action_type": "onsite_web_app_view_content",
+    "value": "3"
+   },
+   {
+    "action_type": "post",
+    "value": "19"
+   },
+   {
+    "action_type": "onsite_conversion.post_unsave",
+    "value": "2"
+   },
+   {
+    "action_type": "view_content",
+    "value": "3"
+   },
+   {
+    "action_type": "onsite_conversion.post_save",
+    "value": "23"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_3_message_send",
+    "value": "4"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_save",
+    "value": "21"
+   },
+   {
+    "action_type": "onsite_conversion.post_net_like",
+    "value": "121"
+   },
+   {
+    "action_type": "lead",
+    "value": "55"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "54"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_started_7d",
+    "value": "38"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "51"
+   },
+   {
+    "action_type": "video_view",
+    "value": "3676"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_lead",
+    "value": "4"
+   },
+   {
+    "action_type": "offsite_lead_add_20_s_calls",
+    "value": "4"
+   },
+   {
+    "action_type": "omni_view_content",
+    "value": "3"
+   },
+   {
+    "action_type": "offsite_conversion.fb_pixel_view_content",
+    "value": "3"
+   }
+  ],
+  "cost_per_action_type": [
+   {
+    "action_type": "offsite_submit_application_add_meta_leads",
+    "value": "48.725882"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "48.725882"
+   },
+   {
+    "action_type": "offsite_content_view_add_20_s_calls",
+    "value": "828.34"
+   },
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "48.725882"
+   },
+   {
+    "action_type": "omni_view_content",
+    "value": "828.34"
+   },
+   {
+    "action_type": "offsite_lead_add_20_s_calls",
+    "value": "621.255"
+   },
+   {
+    "action_type": "video_view",
+    "value": "0.676012"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_started_7d",
+    "value": "65.395263"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_replied_7d",
+    "value": "138.056667"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_2_message_send",
+    "value": "355.002857"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "0.467989"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "63.718462"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_depth_3_message_send",
+    "value": "621.255"
+   },
+   {
+    "action_type": "view_content",
+    "value": "828.34"
+   },
+   {
+    "action_type": "lead",
+    "value": "45.182182"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "48.725882"
+   },
+   {
+    "action_type": "post_interaction_gross",
+    "value": "12.302079"
+   },
+   {
+    "action_type": "link_click",
+    "value": "1.735349"
+   },
+   {
+    "action_type": "like",
+    "value": "2485.02"
+   },
+   {
+    "action_type": "offsite_contact_website_add_meta_leads",
+    "value": "48.725882"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "0.467901"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_user_call_placed",
+    "value": "2485.02"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "46.018889"
+   },
+   {
+    "action_type": "omni_landing_page_view",
+    "value": "67.162703"
+   },
+   {
+    "action_type": "onsite_web_lead",
+    "value": "621.255"
+   },
+   {
+    "action_type": "landing_page_view",
+    "value": "67.162703"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "69.028333"
+   }
+  ],
+  "video_thruplay_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "648"
+   }
+  ],
+  "video_p25_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "970"
+   }
+  ],
+  "video_p50_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "551"
+   }
+  ],
+  "video_p75_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "333"
+   }
+  ],
+  "video_p100_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "165"
+   }
+  ],
+  "date_start": "2026-10-01",
+  "date_stop": "2026-10-31"
+ },
+ {
+  "spend": "38.26",
+  "impressions": "1475",
+  "reach": "953",
+  "frequency": "1.547744",
+  "clicks": "17",
+  "inline_link_clicks": "12",
+  "ctr": "1.152542",
+  "inline_link_click_ctr": "0.813559",
+  "cpm": "25.938983",
+  "cpc": "2.250588",
+  "actions": [
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "1"
+   },
+   {
+    "action_type": "link_click",
+    "value": "12"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "1"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "149"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "149"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "1"
+   },
+   {
+    "action_type": "lead",
+    "value": "1"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_started_7d",
+    "value": "1"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "1"
+   },
+   {
+    "action_type": "video_view",
+    "value": "137"
+   }
+  ],
+  "cost_per_action_type": [
+   {
+    "action_type": "offsite_submit_application_add_meta_leads",
+    "value": "38.26"
+   },
+   {
+    "action_type": "offsite_search_add_meta_leads",
+    "value": "38.26"
+   },
+   {
+    "action_type": "offsite_complete_registration_add_meta_leads",
+    "value": "38.26"
+   },
+   {
+    "action_type": "video_view",
+    "value": "0.27927"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_conversation_started_7d",
+    "value": "38.26"
+   },
+   {
+    "action_type": "post_engagement",
+    "value": "0.256779"
+   },
+   {
+    "action_type": "onsite_conversion.total_messaging_connection",
+    "value": "38.26"
+   },
+   {
+    "action_type": "lead",
+    "value": "38.26"
+   },
+   {
+    "action_type": "onsite_conversion.lead_grouped",
+    "value": "38.26"
+   },
+   {
+    "action_type": "link_click",
+    "value": "3.188333"
+   },
+   {
+    "action_type": "offsite_contact_website_add_meta_leads",
+    "value": "38.26"
+   },
+   {
+    "action_type": "page_engagement",
+    "value": "0.256779"
+   },
+   {
+    "action_type": "offsite_content_view_add_meta_leads",
+    "value": "38.26"
+   },
+   {
+    "action_type": "onsite_conversion.messaging_first_reply",
+    "value": "38.26"
+   }
+  ],
+  "video_thruplay_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "45"
+   }
+  ],
+  "video_p25_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "71"
+   }
+  ],
+  "video_p50_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "46"
+   }
+  ],
+  "video_p75_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "20"
+   }
+  ],
+  "video_p100_watched_actions": [
+   {
+    "action_type": "video_view",
+    "value": "11"
+   }
+  ],
+  "date_start": "2026-11-01",
+  "date_stop": "2026-11-03"
+ }
+]

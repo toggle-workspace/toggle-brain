@@ -1,0 +1,82 @@
+[
+ {
+  "name": "WARM | Facebook Engagers | 365D",
+  "subtype": "ENGAGEMENT",
+  "approximate_count_lower_bound": 1300,
+  "approximate_count_upper_bound": 1600,
+  "time_created": 1791255242,
+  "rule": "{\"inclusions\":{\"operator\":\"or\",\"rules\":[{\"event_sources\":[{\"type\":\"page\",\"id\":791241587414895}],\"retention_seconds\":31536000,\"filter\":{\"operator\":\"and\",\"filters\":[{\"field\":\"event\",\"operator\":\"eq\",\"value\":\"page_engaged\"}]}}]}}",
+  "id": "120256206469010569"
+ },
+ {
+  "name": "WARM | Instagram Engagers | 365D",
+  "subtype": "IG_BUSINESS",
+  "approximate_count_lower_bound": 3300,
+  "approximate_count_upper_bound": 3900,
+  "time_created": 1791255227,
+  "rule": "{\"inclusions\":{\"operator\":\"or\",\"rules\":[{\"event_sources\":[{\"type\":\"ig_business\",\"id\":9928570970559060}],\"retention_seconds\":15552000,\"filter\":{\"operator\":\"and\",\"filters\":[{\"field\":\"event\",\"operator\":\"eq\",\"value\":\"ig_business_profile_all\"}]}}]}}",
+  "id": "120256206467920569"
+ },
+ {
+  "name": "WARM | Website Visitors | 180D",
+  "subtype": "WEBSITE",
+  "approximate_count_lower_bound": 20,
+  "approximate_count_upper_bound": 20,
+  "time_created": 1791255197,
+  "rule": "{\"inclusions\":{\"operator\":\"or\",\"rules\":[{\"event_sources\":[{\"type\":\"pixel\",\"id\":2775554906120615}],\"retention_seconds\":15552000,\"filter\":{\"operator\":\"and\",\"filters\":[{\"field\":\"url\",\"operator\":\"i_contains\",\"value\":\"\"}]},\"template\":\"ALL_VISITORS\"}]}}",
+  "id": "120256206466190569"
+ },
+ {
+  "name": "Sedifly Meta Warm Audience Roscoe",
+  "subtype": "CUSTOM",
+  "approximate_count_lower_bound": 1000,
+  "approximate_count_upper_bound": 1000,
+  "time_created": 1787225628,
+  "id": "120255577346440569"
+ },
+ {
+  "name": "3s Video Watchers",
+  "subtype": "ENGAGEMENT",
+  "approximate_count_lower_bound": 25400,
+  "approximate_count_upper_bound": 29800,
+  "time_created": 1787225269,
+  "rule": "[{\"event_name\":\"video_watched\",\"object_id\":4481551105458052},{\"event_name\":\"video_watched\",\"object_id\":1776308819998774},{\"event_name\":\"video_watched\",\"object_id\":2037943467155821},{\"event_name\":\"video_watched\",\"object_id\":955999200379338},{\"event_name\":\"video_watched\",\"object_id\":4437117466553809},{\"event_name\":\"video_watched\",\"object_id\":1636991891343757},{\"event_name\":\"video_watched\",\"object_id\":1281013353566126},{\"event_name\":\"video_watched\",\"object_id\":924597810576940},{\"event_name\":\"video_watched\",\"object_id\":869677326144149},{\"event_name\":\"video_watched\",\"object_id\":1275962778025131},{\"event_name\":\"video_watched\",\"object_id\":1472017437755933},{\"event_name\":\"video_watched\",\"object_id\":2423546141441300},{\"event_name\":\"video_watched\",\"object_id\":888190957562459},{\"event_name\":\"video_watched\",\"object_id\":2739706639734757},{\"event_name\":\"video_watched\",\"object_id\":1864623907447507},{\"event_name\":\"video_watched\",\"object_id\":946918827723590},{\"event_name\":\"video_watched\",\"object_id\":770894225702452},{\"event_name\":\"video_watched\",\"object_id\":3276682659175725},{\"event_name\":\"video_watched\",\"object_id\":2275763799592049},{\"event_name\":\"video_watched\",\"object_id\":1659108835472876},{\"event_name\":\"video_watched\",\"object_id\":1949906275917736},{\"event_name\":\"video_watched\",\"object_id\":1994884657870762},{\"event_name\":\"video_watched\",\"object_id\":1015888461110902},{\"event_name\":\"video_watched\",\"object_id\":2247481462454033},{\"event_name\":\"video_watched\",\"object_id\":1482486566951677},{\"event_name\":\"video_watched\",\"object_id\":1428442521942314},{\"event_name\":\"video_watched\",\"object_id\":1916324249008029},{\"event_name\":\"video_watched\",\"object_id\":2072344099999435},{\"event_name\":\"video_watched\",\"object_id\":1748680699839737},{\"event_name\":\"video_watched\",\"object_id\":1462875148116845},{\"event_name\":\"video_watched\",\"object_id\":2406626266426145},{\"event_name\":\"video_watched\",\"object_id\":1463547401960764},{\"event_name\":\"video_watched\",\"object_id\":946404161665896},{\"event_name\":\"video_watched\",\"object_id\":1586677019419670},{\"event_name\":\"video_watched\",\"object_id\":1343768887489755},{\"event_name\":\"video_watched\",\"object_id\":831711802948960}]",
+  "id": "120255577286980569"
+ },
+ {
+  "name": "Website Visitors",
+  "subtype": "WEBSITE",
+  "approximate_count_lower_bound": 20,
+  "approximate_count_upper_bound": 20,
+  "time_created": 1787225219,
+  "rule": "{\"inclusions\":{\"operator\":\"or\",\"rules\":[{\"event_sources\":[{\"type\":\"pixel\",\"id\":2775554906120615}],\"retention_seconds\":2592000,\"filter\":{\"operator\":\"and\",\"filters\":[{\"field\":\"url\",\"operator\":\"i_contains\",\"value\":\"\"}]},\"template\":\"ALL_VISITORS\"}]}}",
+  "id": "120255577279540569"
+ },
+ {
+  "name": "Sedifly Facebook Engagers",
+  "subtype": "ENGAGEMENT",
+  "approximate_count_lower_bound": 1100,
+  "approximate_count_upper_bound": 1300,
+  "time_created": 1787225177,
+  "rule": "{\"inclusions\":{\"operator\":\"or\",\"rules\":[{\"event_sources\":[{\"type\":\"page\",\"id\":791241587414895}],\"retention_seconds\":31536000,\"filter\":{\"operator\":\"and\",\"filters\":[{\"field\":\"event\",\"operator\":\"eq\",\"value\":\"page_engaged\"}]}}]}}",
+  "id": "120255577273840569"
+ },
+ {
+  "name": "Sedifly Instagram Engagers",
+  "subtype": "IG_BUSINESS",
+  "approximate_count_lower_bound": 3000,
+  "approximate_count_upper_bound": 3500,
+  "time_created": 1787225152,
+  "rule": "{\"inclusions\":{\"operator\":\"or\",\"rules\":[{\"event_sources\":[{\"type\":\"ig_business\",\"id\":9928570970559060}],\"retention_seconds\":15552000,\"filter\":{\"operator\":\"and\",\"filters\":[{\"field\":\"event\",\"operator\":\"eq\",\"value\":\"ig_business_profile_all\"}]}}]}}",
+  "id": "120255577270200569"
+ },
+ {
+  "name": "Sedifly Instagram Engagement Retarget",
+  "subtype": "IG_BUSINESS",
+  "approximate_count_lower_bound": 5000,
+  "approximate_count_upper_bound": 5900,
+  "time_created": 1778769447,
+  "rule": "{\"inclusions\":{\"operator\":\"or\",\"rules\":[{\"event_sources\":[{\"type\":\"ig_business\",\"id\":9928570970559060}],\"retention_seconds\":31536000,\"filter\":{\"operator\":\"and\",\"filters\":[{\"field\":\"event\",\"operator\":\"eq\",\"value\":\"ig_business_profile_all\"}]}},{\"event_sources\":[{\"type\":\"ig_business\",\"id\":9928570970559060}],\"retention_seconds\":31536000,\"filter\":{\"operator\":\"and\",\"filters\":[{\"field\":\"event\",\"operator\":\"eq\",\"value\":\"ig_business_profile_visit\"}]}}]}}",
+  "id": "120251040295830569"
+ }
+]
