@@ -1,0 +1,3 @@
+﻿const J=require('jszip'),fs=require('fs');
+async function txt(f){const z=await J.loadAsync(fs.readFileSync(f));const out={};for(const n of Object.keys(z.files).filter(n=>/^ppt\/slides\/slide\d+\.xml$/.test(n))){const x=await z.file(n).async('string');out[+n.match(/\d+/)[0]]=[...x.matchAll(/<a:t>([^<]*)<\/a:t>/g)].map(m=>m[1]);}return out;}
+(async()=>{const a=await txt(process.argv[2]),b=await txt(process.argv[3]);for(const k of Object.keys(b).sort((x,y)=>x-y)){const A=new Set(a[k]||[]),B=new Set(b[k]);const add=[...B].filter(t=>!A.has(t)),rem=[...A].filter(t=>!B.has(t));if(add.length||rem.length){console.log('== slide',k);rem.forEach(t=>console.log('  source:',t));add.forEach(t=>console.log('  saved :',t));}}})();

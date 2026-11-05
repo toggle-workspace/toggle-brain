@@ -1,0 +1,7 @@
+{
+  "dependencies": {
+    "exceljs": "^4.4.0",
+    "jszip": "^3.10.2",
+    "pptxgenjs": "^3.12.0"
+  }
+}

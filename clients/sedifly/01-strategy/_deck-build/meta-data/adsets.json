@@ -1,0 +1,5090 @@
+[
+ {
+  "name": "Student Angle",
+  "campaign_id": "120256353573130569",
+  "status": "ACTIVE",
+  "effective_status": "ACTIVE",
+  "optimization_goal": "OFFSITE_CONVERSIONS",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "WEBSITE_AND_LEAD_FORM",
+  "daily_budget": "1500",
+  "lifetime_budget": "0",
+  "start_time": "2026-10-16T12:05:25+0800",
+  "end_time": "2026-11-15T00:00:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "age_range": [
+    18,
+    55
+   ],
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "frequently_in",
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1,
+    "individual_setting": {
+     "age": 1,
+     "gender": 1
+    }
+   }
+  },
+  "promoted_object": {
+   "pixel_id": "2775554906120615",
+   "custom_event_type": "LEAD",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-10-16T12:05:25+0800",
+  "id": "120256354094660569"
+ },
+ {
+  "name": "Parent angle: Grades and CCAs",
+  "campaign_id": "120256353573130569",
+  "status": "ACTIVE",
+  "effective_status": "ACTIVE",
+  "optimization_goal": "OFFSITE_CONVERSIONS",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "WEBSITE_AND_LEAD_FORM",
+  "daily_budget": "1500",
+  "lifetime_budget": "0",
+  "start_time": "2026-10-16T12:46:39+0800",
+  "end_time": "2026-11-15T00:00:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "age_range": [
+    35,
+    55
+   ],
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "frequently_in",
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1,
+    "individual_setting": {
+     "age": 1,
+     "gender": 1
+    }
+   }
+  },
+  "promoted_object": {
+   "pixel_id": "2775554906120615",
+   "custom_event_type": "LEAD",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-10-16T12:46:38+0800",
+  "id": "120256353573110569"
+ },
+ {
+  "name": "Parents Ad Set",
+  "campaign_id": "120256342662220569",
+  "status": "ACTIVE",
+  "effective_status": "CAMPAIGN_PAUSED",
+  "optimization_goal": "OFFSITE_CONVERSIONS",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "WEBSITE_AND_LEAD_FORM",
+  "start_time": "2026-10-15T19:42:27+0800",
+  "end_time": "2026-10-28T00:00:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "age_range": [
+    35,
+    55
+   ],
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "frequently_in",
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1,
+    "individual_setting": {
+     "age": 1,
+     "gender": 1
+    }
+   }
+  },
+  "promoted_object": {
+   "pixel_id": "2775554906120615",
+   "custom_event_type": "LEAD",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-10-15T19:42:26+0800",
+  "id": "120256342662230569"
+ },
+ {
+  "name": "SG | Prospecting | Web+IF | NS Timing",
+  "campaign_id": "120256212609350569",
+  "status": "ACTIVE",
+  "effective_status": "CAMPAIGN_PAUSED",
+  "optimization_goal": "OFFSITE_CONVERSIONS",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "WEBSITE_AND_LEAD_FORM",
+  "start_time": "2026-10-07T10:19:38+0800",
+  "end_time": "2026-10-14T00:00:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "age_range": [
+    18,
+    65
+   ],
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "frequently_in",
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1,
+    "individual_setting": {
+     "age": 1,
+     "gender": 1
+    }
+   }
+  },
+  "promoted_object": {
+   "pixel_id": "2775554906120615",
+   "custom_event_type": "LEAD",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-10-07T10:19:38+0800",
+  "id": "120256212609360569"
+ },
+ {
+  "name": "WARM | Website+IF | SG | Retargeting",
+  "campaign_id": "120256206011020569",
+  "status": "PAUSED",
+  "effective_status": "PAUSED",
+  "optimization_goal": "OFFSITE_CONVERSIONS",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "WEBSITE_AND_LEAD_FORM",
+  "start_time": "2026-10-06T11:50:13+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "age_range": [
+    18,
+    65
+   ],
+   "custom_audiences": [
+    {
+     "id": "120255577286980569",
+     "name": "3s Video Watchers"
+    },
+    {
+     "id": "120256206466190569",
+     "name": "WARM | Website Visitors | 180D"
+    },
+    {
+     "id": "120256206467920569",
+     "name": "WARM | Instagram Engagers | 365D"
+    },
+    {
+     "id": "120256206469010569",
+     "name": "WARM | Facebook Engagers | 365D"
+    }
+   ],
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "frequently_in",
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_relaxation_types": {
+    "lookalike": 0,
+    "custom_audience": 0
+   },
+   "targeting_automation": {
+    "advantage_audience": 0,
+    "individual_setting": {
+     "age": 1,
+     "gender": 1
+    }
+   }
+  },
+  "promoted_object": {
+   "pixel_id": "2775554906120615",
+   "custom_event_type": "LEAD",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-10-06T11:50:13+0800",
+  "id": "120256206894350569"
+ },
+ {
+  "name": "COLD | Website+IF | SG | 18+",
+  "campaign_id": "120256206011020569",
+  "status": "PAUSED",
+  "effective_status": "PAUSED",
+  "optimization_goal": "OFFSITE_CONVERSIONS",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "WEBSITE_AND_LEAD_FORM",
+  "start_time": "2026-10-06T11:50:15+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "age_range": [
+    18,
+    65
+   ],
+   "excluded_custom_audiences": [
+    {
+     "id": "120255577286980569",
+     "name": "3s Video Watchers"
+    },
+    {
+     "id": "120256206466190569",
+     "name": "WARM | Website Visitors | 180D"
+    },
+    {
+     "id": "120256206467920569",
+     "name": "WARM | Instagram Engagers | 365D"
+    },
+    {
+     "id": "120256206469010569",
+     "name": "WARM | Facebook Engagers | 365D"
+    }
+   ],
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "frequently_in",
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1,
+    "individual_setting": {
+     "age": 1,
+     "gender": 1
+    }
+   }
+  },
+  "promoted_object": {
+   "pixel_id": "2775554906120615",
+   "custom_event_type": "LEAD",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-10-06T11:50:13+0800",
+  "id": "120256206011040569"
+ },
+ {
+  "name": "B | Prioritization | Website + Instant Form | SG Parents",
+  "campaign_id": "120256162363750569",
+  "status": "PAUSED",
+  "effective_status": "PAUSED",
+  "optimization_goal": "OFFSITE_CONVERSIONS",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "WEBSITE_AND_LEAD_FORM",
+  "start_time": "2026-10-05T18:33:55+0800",
+  "end_time": "2026-10-24T00:00:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "age_range": [
+    35,
+    65
+   ],
+   "flexible_spec": [
+    {
+     "interests": [
+      {
+       "id": "6003113030700",
+       "name": "Medical education"
+      },
+      {
+       "id": "6003270811593",
+       "name": "Higher education (education)"
+      },
+      {
+       "id": "6003324279606",
+       "name": "International school (primary and secondary education)"
+      },
+      {
+       "id": "6003382042002",
+       "name": "dental school (higher education)"
+      },
+      {
+       "id": "6003472520687",
+       "name": "medical school (higher education)"
+      },
+      {
+       "id": "6003605316673",
+       "name": "Residency (medicine)"
+      }
+     ],
+     "education_majors": [
+      {
+       "id": "108667855825051",
+       "name": "Medical school"
+      },
+      {
+       "id": "562617777194704",
+       "name": "A'Level,s"
+      }
+     ],
+     "education_schools": [
+      {
+       "id": "106469909390302",
+       "name": "UCL Medical School"
+      }
+     ],
+     "family_statuses": [
+      {
+       "id": "6023005681983",
+       "name": "Parents with teenagers (13-17 years)"
+      }
+     ],
+     "work_positions": [
+      {
+       "id": "109612835732503",
+       "name": "Internship (medicine)"
+      }
+     ]
+    }
+   ],
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "frequently_in",
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1,
+    "individual_setting": {
+     "age": 1,
+     "gender": 1
+    }
+   }
+  },
+  "promoted_object": {
+   "pixel_id": "2775554906120615",
+   "custom_event_type": "LEAD",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-10-05T18:33:55+0800",
+  "id": "120256196203540569"
+ },
+ {
+  "name": "A | Diagnostic | Website + Instant Form | SG Parents",
+  "campaign_id": "120256162363750569",
+  "status": "ACTIVE",
+  "effective_status": "CAMPAIGN_PAUSED",
+  "optimization_goal": "OFFSITE_CONVERSIONS",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "WEBSITE_AND_LEAD_FORM",
+  "start_time": "2026-10-05T18:33:37+0800",
+  "end_time": "2026-10-24T00:00:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "age_range": [
+    35,
+    65
+   ],
+   "flexible_spec": [
+    {
+     "interests": [
+      {
+       "id": "6003113030700",
+       "name": "Medical education"
+      },
+      {
+       "id": "6003270811593",
+       "name": "Higher education (education)"
+      },
+      {
+       "id": "6003324279606",
+       "name": "International school (primary and secondary education)"
+      },
+      {
+       "id": "6003382042002",
+       "name": "dental school (higher education)"
+      },
+      {
+       "id": "6003472520687",
+       "name": "medical school (higher education)"
+      },
+      {
+       "id": "6003605316673",
+       "name": "Residency (medicine)"
+      }
+     ],
+     "education_majors": [
+      {
+       "id": "108667855825051",
+       "name": "Medical school"
+      },
+      {
+       "id": "562617777194704",
+       "name": "A'Level,s"
+      }
+     ],
+     "education_schools": [
+      {
+       "id": "106469909390302",
+       "name": "UCL Medical School"
+      }
+     ],
+     "family_statuses": [
+      {
+       "id": "6023005681983",
+       "name": "Parents with teenagers (13-17 years)"
+      }
+     ],
+     "work_positions": [
+      {
+       "id": "109612835732503",
+       "name": "Internship (medicine)"
+      }
+     ]
+    }
+   ],
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "frequently_in",
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1,
+    "individual_setting": {
+     "age": 1,
+     "gender": 1
+    }
+   }
+  },
+  "promoted_object": {
+   "pixel_id": "2775554906120615",
+   "custom_event_type": "LEAD",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-10-05T18:33:37+0800",
+  "id": "120256162363760569"
+ },
+ {
+  "name": "A | Hidden gaps | SG 35-54 | Broad",
+  "campaign_id": "120256036587060569",
+  "status": "PAUSED",
+  "effective_status": "PAUSED",
+  "optimization_goal": "OFFSITE_CONVERSIONS",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "WEBSITE_AND_LEAD_FORM",
+  "start_time": "2026-09-28T17:51:58+0800",
+  "end_time": "2026-10-05T23:59:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "age_range": [
+    35,
+    54
+   ],
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "frequently_in",
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1,
+    "individual_setting": {
+     "age": 1,
+     "gender": 1
+    }
+   }
+  },
+  "promoted_object": {
+   "pixel_id": "2775554906120615",
+   "custom_event_type": "LEAD",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-09-28T17:51:57+0800",
+  "id": "120256036587120569"
+ },
+ {
+  "name": "C | Early planning | SG 35-54 | Broad",
+  "campaign_id": "120256036587060569",
+  "status": "ACTIVE",
+  "effective_status": "CAMPAIGN_PAUSED",
+  "optimization_goal": "OFFSITE_CONVERSIONS",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "WEBSITE_AND_LEAD_FORM",
+  "start_time": "2026-09-28T17:51:33+0800",
+  "end_time": "2026-10-05T23:59:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "age_range": [
+    35,
+    54
+   ],
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "frequently_in",
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1,
+    "individual_setting": {
+     "age": 1,
+     "gender": 1
+    }
+   }
+  },
+  "promoted_object": {
+   "pixel_id": "2775554906120615",
+   "custom_event_type": "LEAD",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-09-28T17:51:32+0800",
+  "id": "120256036587100569"
+ },
+ {
+  "name": "B | Roadmap | SG 35-54 | Broad",
+  "campaign_id": "120256036587060569",
+  "status": "ACTIVE",
+  "effective_status": "CAMPAIGN_PAUSED",
+  "optimization_goal": "OFFSITE_CONVERSIONS",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "WEBSITE_AND_LEAD_FORM",
+  "start_time": "2026-09-28T17:51:57+0800",
+  "end_time": "2026-10-05T23:59:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "age_range": [
+    35,
+    54
+   ],
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "frequently_in",
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1,
+    "individual_setting": {
+     "age": 1,
+     "gender": 1
+    }
+   }
+  },
+  "promoted_object": {
+   "pixel_id": "2775554906120615",
+   "custom_event_type": "LEAD",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-09-28T17:51:57+0800",
+  "id": "120256036587070569"
+ },
+ {
+  "name": "C | Prioritisation | SG 18-24 | Broad",
+  "campaign_id": "120256027176360569",
+  "status": "PAUSED",
+  "effective_status": "PAUSED",
+  "optimization_goal": "OFFSITE_CONVERSIONS",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "WEBSITE_AND_LEAD_FORM",
+  "start_time": "2026-09-22T23:30:02+0800",
+  "end_time": "2026-10-31T23:59:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "age_range": [
+    18,
+    24
+   ],
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "frequently_in",
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1,
+    "individual_setting": {
+     "age": 1,
+     "gender": 1
+    }
+   }
+  },
+  "promoted_object": {
+   "pixel_id": "2775554906120615",
+   "custom_event_type": "LEAD",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-09-22T23:30:02+0800",
+  "id": "120256027776660569"
+ },
+ {
+  "name": "B | Planning | SG 18-24 | Broad",
+  "campaign_id": "120256027176360569",
+  "status": "PAUSED",
+  "effective_status": "PAUSED",
+  "optimization_goal": "OFFSITE_CONVERSIONS",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "WEBSITE_AND_LEAD_FORM",
+  "start_time": "2026-09-22T23:29:49+0800",
+  "end_time": "2026-10-13T23:59:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "age_range": [
+    18,
+    24
+   ],
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "frequently_in",
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1,
+    "individual_setting": {
+     "age": 1,
+     "gender": 1
+    }
+   }
+  },
+  "promoted_object": {
+   "pixel_id": "2775554906120615",
+   "custom_event_type": "LEAD",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-09-22T23:29:46+0800",
+  "id": "120256027770430569"
+ },
+ {
+  "name": "A | Diagnostic | SG 18-24 | Broad",
+  "campaign_id": "120256027176360569",
+  "status": "PAUSED",
+  "effective_status": "PAUSED",
+  "optimization_goal": "OFFSITE_CONVERSIONS",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "WEBSITE_AND_LEAD_FORM",
+  "start_time": "2026-09-22T23:29:47+0800",
+  "end_time": "2026-10-31T23:59:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "age_range": [
+    18,
+    24
+   ],
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "frequently_in",
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1,
+    "individual_setting": {
+     "age": 1,
+     "gender": 1
+    }
+   }
+  },
+  "promoted_object": {
+   "pixel_id": "2775554906120615",
+   "custom_event_type": "LEAD",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-09-22T23:29:46+0800",
+  "id": "120256027176370569"
+ },
+ {
+  "name": "Warm_RTG_SG",
+  "campaign_id": "120255964729120569",
+  "status": "ACTIVE",
+  "effective_status": "CAMPAIGN_PAUSED",
+  "optimization_goal": "OFFSITE_CONVERSIONS",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "WEBSITE_AND_LEAD_FORM",
+  "start_time": "2026-09-17T19:13:41+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "age_range": [
+    35,
+    55
+   ],
+   "custom_audiences": [
+    {
+     "id": "120255577270200569",
+     "name": "Sedifly Instagram Engagers"
+    },
+    {
+     "id": "120255577273840569",
+     "name": "Sedifly Facebook Engagers"
+    },
+    {
+     "id": "120255577279540569",
+     "name": "Website Visitors"
+    },
+    {
+     "id": "120255577286980569",
+     "name": "3s Video Watchers"
+    },
+    {
+     "id": "120255577346440569",
+     "name": "Sedifly Meta Warm Audience Roscoe"
+    }
+   ],
+   "flexible_spec": [
+    {
+     "interests": [
+      {
+       "id": "6003089918015",
+       "name": "University (higher education)"
+      },
+      {
+       "id": "6003126882382",
+       "name": "College admissions in the United States"
+      },
+      {
+       "id": "6003283735711",
+       "name": "Harvard University"
+      },
+      {
+       "id": "6003659424716",
+       "name": "International education"
+      },
+      {
+       "id": "6781916710918",
+       "name": "United States colleges and universities (higher education)"
+      }
+     ]
+    }
+   ],
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "frequently_in",
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1,
+    "individual_setting": {
+     "age": 1,
+     "gender": 1
+    }
+   }
+  },
+  "promoted_object": {
+   "pixel_id": "2775554906120615",
+   "custom_event_type": "LEAD",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-09-17T19:13:39+0800",
+  "id": "120255964729190569"
+ },
+ {
+  "name": "Cold_Parents_SG_35-55",
+  "campaign_id": "120255964729120569",
+  "status": "ACTIVE",
+  "effective_status": "CAMPAIGN_PAUSED",
+  "optimization_goal": "OFFSITE_CONVERSIONS",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "WEBSITE_AND_LEAD_FORM",
+  "start_time": "2026-09-17T19:13:39+0800",
+  "end_time": "2026-09-24T20:00:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "age_range": [
+    35,
+    55
+   ],
+   "flexible_spec": [
+    {
+     "interests": [
+      {
+       "id": "6003089918015",
+       "name": "University (higher education)"
+      },
+      {
+       "id": "6003126882382",
+       "name": "College admissions in the United States"
+      },
+      {
+       "id": "6003283735711",
+       "name": "Harvard University"
+      },
+      {
+       "id": "6003659424716",
+       "name": "International education"
+      },
+      {
+       "id": "6781916710918",
+       "name": "United States colleges and universities (higher education)"
+      }
+     ]
+    }
+   ],
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "frequently_in",
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1,
+    "individual_setting": {
+     "age": 1,
+     "gender": 1
+    }
+   }
+  },
+  "promoted_object": {
+   "pixel_id": "2775554906120615",
+   "custom_event_type": "LEAD",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-09-17T19:13:39+0800",
+  "id": "120255964729180569"
+ },
+ {
+  "name": "SG | Prospecting + Warm | FORM | Advantage+",
+  "campaign_id": "120255635699740569",
+  "status": "ACTIVE",
+  "effective_status": "CAMPAIGN_PAUSED",
+  "optimization_goal": "QUALITY_LEAD",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "ON_AD",
+  "start_time": "2026-08-24T21:41:12+0800",
+  "end_time": "2026-09-02T19:00:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "age_range": [
+    18,
+    54
+   ],
+   "flexible_spec": [
+    {
+     "interests": [
+      {
+       "id": "6003066390470",
+       "name": "Universities in the United Kingdom"
+      },
+      {
+       "id": "6003089918015",
+       "name": "University (higher education)"
+      },
+      {
+       "id": "6003126882382",
+       "name": "College admissions in the United States"
+      },
+      {
+       "id": "6003166852230",
+       "name": "International student (higher education)"
+      },
+      {
+       "id": "6003175366702",
+       "name": "University (higher education)"
+      },
+      {
+       "id": "6003183524012",
+       "name": "University of Cambridge"
+      },
+      {
+       "id": "6003246559157",
+       "name": "Study Abroad"
+      },
+      {
+       "id": "6003257791088",
+       "name": "Princeton University"
+      },
+      {
+       "id": "6003270811593",
+       "name": "Higher education (education)"
+      },
+      {
+       "id": "6003283735711",
+       "name": "Harvard University"
+      },
+      {
+       "id": "6003288148151",
+       "name": "Stanford University"
+      },
+      {
+       "id": "6003324279606",
+       "name": "International school (primary and secondary education)"
+      },
+      {
+       "id": "6003406550725",
+       "name": "Study abroad in the United States"
+      },
+      {
+       "id": "6003515208242",
+       "name": "University of Oxford"
+      },
+      {
+       "id": "6003659424716",
+       "name": "International education"
+      },
+      {
+       "id": "6005809076210",
+       "name": "University and college admission"
+      }
+     ]
+    }
+   ],
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1,
+    "individual_setting": {
+     "age": 1,
+     "gender": 1
+    }
+   }
+  },
+  "promoted_object": {
+   "page_id": "791241587414895",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-08-24T21:41:12+0800",
+  "id": "120255635699720569"
+ },
+ {
+  "name": "SG | Prospecting + Warm | Website | Advantage+",
+  "campaign_id": "120255634834280569",
+  "status": "ACTIVE",
+  "effective_status": "CAMPAIGN_PAUSED",
+  "optimization_goal": "OFFSITE_CONVERSIONS",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "UNDEFINED",
+  "start_time": "2026-08-24T20:57:10+0800",
+  "end_time": "2026-09-02T19:00:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "age_range": [
+    18,
+    54
+   ],
+   "flexible_spec": [
+    {
+     "interests": [
+      {
+       "id": "6003066390470",
+       "name": "Universities in the United Kingdom"
+      },
+      {
+       "id": "6003089918015",
+       "name": "University (higher education)"
+      },
+      {
+       "id": "6003126882382",
+       "name": "College admissions in the United States"
+      },
+      {
+       "id": "6003166852230",
+       "name": "International student (higher education)"
+      },
+      {
+       "id": "6003175366702",
+       "name": "University (higher education)"
+      },
+      {
+       "id": "6003183524012",
+       "name": "University of Cambridge"
+      },
+      {
+       "id": "6003246559157",
+       "name": "Study Abroad"
+      },
+      {
+       "id": "6003257791088",
+       "name": "Princeton University"
+      },
+      {
+       "id": "6003270811593",
+       "name": "Higher education (education)"
+      },
+      {
+       "id": "6003283735711",
+       "name": "Harvard University"
+      },
+      {
+       "id": "6003288148151",
+       "name": "Stanford University"
+      },
+      {
+       "id": "6003324279606",
+       "name": "International school (primary and secondary education)"
+      },
+      {
+       "id": "6003406550725",
+       "name": "Study abroad in the United States"
+      },
+      {
+       "id": "6003515208242",
+       "name": "University of Oxford"
+      },
+      {
+       "id": "6003659424716",
+       "name": "International education"
+      },
+      {
+       "id": "6005809076210",
+       "name": "University and college admission"
+      }
+     ]
+    }
+   ],
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1,
+    "individual_setting": {
+     "age": 1,
+     "gender": 1
+    }
+   }
+  },
+  "promoted_object": {
+   "pixel_id": "2775554906120615",
+   "custom_event_type": "PURCHASE",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-08-24T20:57:10+0800",
+  "id": "120255634834290569"
+ },
+ {
+  "name": "Warm_RTG_SG",
+  "campaign_id": "120255576216160569",
+  "status": "PAUSED",
+  "effective_status": "PAUSED",
+  "optimization_goal": "OFFSITE_CONVERSIONS",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "WEBSITE_AND_LEAD_FORM",
+  "start_time": "2026-08-20T19:40:10+0800",
+  "end_time": "2026-08-28T19:00:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "age_range": [
+    35,
+    55
+   ],
+   "custom_audiences": [
+    {
+     "id": "120255577270200569",
+     "name": "Sedifly Instagram Engagers"
+    },
+    {
+     "id": "120255577273840569",
+     "name": "Sedifly Facebook Engagers"
+    },
+    {
+     "id": "120255577279540569",
+     "name": "Website Visitors"
+    },
+    {
+     "id": "120255577286980569",
+     "name": "3s Video Watchers"
+    },
+    {
+     "id": "120255577346440569",
+     "name": "Sedifly Meta Warm Audience Roscoe"
+    }
+   ],
+   "flexible_spec": [
+    {
+     "interests": [
+      {
+       "id": "6003089918015",
+       "name": "University (higher education)"
+      },
+      {
+       "id": "6003126882382",
+       "name": "College admissions in the United States"
+      },
+      {
+       "id": "6003283735711",
+       "name": "Harvard University"
+      },
+      {
+       "id": "6003659424716",
+       "name": "International education"
+      },
+      {
+       "id": "6781916710918",
+       "name": "United States colleges and universities (higher education)"
+      }
+     ]
+    }
+   ],
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1,
+    "individual_setting": {
+     "age": 1,
+     "gender": 1
+    }
+   }
+  },
+  "promoted_object": {
+   "pixel_id": "2775554906120615",
+   "custom_event_type": "LEAD",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-08-20T19:40:10+0800",
+  "id": "120255577261460569"
+ },
+ {
+  "name": "Cold_Parents_SG_35-55",
+  "campaign_id": "120255576216160569",
+  "status": "ACTIVE",
+  "effective_status": "CAMPAIGN_PAUSED",
+  "optimization_goal": "OFFSITE_CONVERSIONS",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "WEBSITE_AND_LEAD_FORM",
+  "start_time": "2026-08-20T19:40:40+0800",
+  "end_time": "2026-08-28T19:00:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "age_range": [
+    35,
+    55
+   ],
+   "flexible_spec": [
+    {
+     "interests": [
+      {
+       "id": "6003089918015",
+       "name": "University (higher education)"
+      },
+      {
+       "id": "6003126882382",
+       "name": "College admissions in the United States"
+      },
+      {
+       "id": "6003283735711",
+       "name": "Harvard University"
+      },
+      {
+       "id": "6003659424716",
+       "name": "International education"
+      },
+      {
+       "id": "6781916710918",
+       "name": "United States colleges and universities (higher education)"
+      }
+     ]
+    }
+   ],
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1,
+    "individual_setting": {
+     "age": 1,
+     "gender": 1
+    }
+   }
+  },
+  "promoted_object": {
+   "pixel_id": "2775554906120615",
+   "custom_event_type": "LEAD",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-08-20T19:40:40+0800",
+  "id": "120255576216150569"
+ },
+ {
+  "name": "SG_18-54_Wix_48h",
+  "campaign_id": "120255443943100569",
+  "status": "PAUSED",
+  "effective_status": "PAUSED",
+  "optimization_goal": "OFFSITE_CONVERSIONS",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "UNDEFINED",
+  "start_time": "2026-08-14T11:47:54+0800",
+  "end_time": "2026-08-16T12:00:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "age_range": [
+    18,
+    65
+   ],
+   "custom_audiences": [
+    {
+     "id": "120251040295830569",
+     "name": "Sedifly Instagram Engagement Retarget"
+    }
+   ],
+   "flexible_spec": [
+    {
+     "interests": [
+      {
+       "id": "6003246559157",
+       "name": "Study Abroad"
+      },
+      {
+       "id": "6003270811593",
+       "name": "Higher education (education)"
+      },
+      {
+       "id": "6003324279606",
+       "name": "International school (primary and secondary education)"
+      },
+      {
+       "id": "6003406550725",
+       "name": "Study abroad in the United States"
+      },
+      {
+       "id": "6003954253466",
+       "name": "Study abroad organization"
+      },
+      {
+       "id": "6004055349148",
+       "name": "Test preparation"
+      },
+      {
+       "id": "6015508263041",
+       "name": "SAT"
+      }
+     ]
+    }
+   ],
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1,
+    "individual_setting": {
+     "age": 1,
+     "gender": 1
+    }
+   }
+  },
+  "promoted_object": {
+   "pixel_id": "2775554906120615",
+   "custom_event_type": "LEAD",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-08-14T11:47:54+0800",
+  "id": "120255443943080569"
+ },
+ {
+  "name": "SG_18-54_Wix_48h",
+  "campaign_id": "120255422572880569",
+  "status": "ACTIVE",
+  "effective_status": "CAMPAIGN_PAUSED",
+  "optimization_goal": "OFFSITE_CONVERSIONS",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "UNDEFINED",
+  "start_time": "2026-08-13T13:45:49+0800",
+  "end_time": "2026-08-22T10:00:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "age_range": [
+    18,
+    65
+   ],
+   "custom_audiences": [
+    {
+     "id": "120251040295830569",
+     "name": "Sedifly Instagram Engagement Retarget"
+    }
+   ],
+   "flexible_spec": [
+    {
+     "interests": [
+      {
+       "id": "6003246559157",
+       "name": "Study Abroad"
+      },
+      {
+       "id": "6003270811593",
+       "name": "Higher education (education)"
+      },
+      {
+       "id": "6003324279606",
+       "name": "International school (primary and secondary education)"
+      },
+      {
+       "id": "6003406550725",
+       "name": "Study abroad in the United States"
+      },
+      {
+       "id": "6003954253466",
+       "name": "Study abroad organization"
+      },
+      {
+       "id": "6004055349148",
+       "name": "Test preparation"
+      },
+      {
+       "id": "6015508263041",
+       "name": "SAT"
+      }
+     ]
+    }
+   ],
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1,
+    "individual_setting": {
+     "age": 1,
+     "gender": 1
+    }
+   }
+  },
+  "promoted_object": {
+   "pixel_id": "2775554906120615",
+   "custom_event_type": "LEAD",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-08-13T13:45:49+0800",
+  "id": "120255422572870569"
+ },
+ {
+  "name": "SG_18-54_InstantForm_48h",
+  "campaign_id": "120255110036130569",
+  "status": "PAUSED",
+  "effective_status": "PAUSED",
+  "optimization_goal": "LEAD_GENERATION",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "LEAD_FORM_MESSENGER",
+  "start_time": "2026-08-12T21:54:34+0800",
+  "end_time": "2026-08-14T23:00:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "age_range": [
+    18,
+    65
+   ],
+   "custom_audiences": [
+    {
+     "id": "120251040295830569",
+     "name": "Sedifly Instagram Engagement Retarget"
+    }
+   ],
+   "flexible_spec": [
+    {
+     "interests": [
+      {
+       "id": "6003246559157",
+       "name": "Study Abroad"
+      },
+      {
+       "id": "6003270811593",
+       "name": "Higher education (education)"
+      },
+      {
+       "id": "6003324279606",
+       "name": "International school (primary and secondary education)"
+      },
+      {
+       "id": "6003406550725",
+       "name": "Study abroad in the United States"
+      },
+      {
+       "id": "6003954253466",
+       "name": "Study abroad organization"
+      },
+      {
+       "id": "6004055349148",
+       "name": "Test preparation"
+      },
+      {
+       "id": "6015508263041",
+       "name": "SAT"
+      }
+     ]
+    }
+   ],
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1,
+    "individual_setting": {
+     "age": 1,
+     "gender": 1
+    }
+   }
+  },
+  "promoted_object": {
+   "page_id": "791241587414895",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-08-12T21:54:34+0800",
+  "id": "120255407564040569"
+ },
+ {
+  "name": "Advantage+ - Copy",
+  "campaign_id": "120254979017830569",
+  "status": "ACTIVE",
+  "effective_status": "CAMPAIGN_PAUSED",
+  "optimization_goal": "QUALITY_LEAD",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "ON_AD",
+  "start_time": "2026-07-27T17:30:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "geo_locations": {
+    "cities": [
+     {
+      "country": "SG",
+      "distance_unit": "kilometer",
+      "key": "2160986",
+      "name": "Singapore",
+      "radius": 17,
+      "region": "Singapore",
+      "region_id": "5073"
+     }
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   }
+  },
+  "promoted_object": {
+   "page_id": "791241587414895",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-07-27T17:25:17+0800",
+  "id": "120255010443470569"
+ },
+ {
+  "name": "Advantage+",
+  "campaign_id": "120251561866030569",
+  "status": "ACTIVE",
+  "effective_status": "CAMPAIGN_PAUSED",
+  "optimization_goal": "OFFSITE_CONVERSIONS",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "UNDEFINED",
+  "start_time": "2026-05-22T16:47:03+0800",
+  "end_time": "2026-06-06T13:00:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "age_range": [
+    18,
+    65
+   ],
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1,
+    "individual_setting": {
+     "age": 1,
+     "gender": 1
+    }
+   }
+  },
+  "promoted_object": {
+   "pixel_id": "1404185611430920",
+   "custom_event_type": "OTHER",
+   "custom_event_str": "Qualified",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-05-22T16:47:03+0800",
+  "id": "120251561866100569"
+ },
+ {
+  "name": "Ad Set 2 - [Stacked Interest] [Spec: Parents]",
+  "campaign_id": "120251561866030569",
+  "status": "ACTIVE",
+  "effective_status": "CAMPAIGN_PAUSED",
+  "optimization_goal": "OFFSITE_CONVERSIONS",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "UNDEFINED",
+  "start_time": "2026-05-22T16:47:55+0800",
+  "end_time": "2026-06-06T13:00:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "age_range": [
+    18,
+    65
+   ],
+   "flexible_spec": [
+    {
+     "interests": [
+      {
+       "id": "6002974787459",
+       "name": "Van Cleef & Arpels"
+      },
+      {
+       "id": "6003069363782",
+       "name": "Ferrari (vehicles)"
+      },
+      {
+       "id": "6003097813972",
+       "name": "Aman Resorts"
+      },
+      {
+       "id": "6003121362334",
+       "name": "McLaren Automotive"
+      },
+      {
+       "id": "6003157994884",
+       "name": "Marina Bay Sands"
+      },
+      {
+       "id": "6003175076849",
+       "name": "Four Seasons Hotels and Resorts"
+      },
+      {
+       "id": "6003183524012",
+       "name": "University of Cambridge"
+      },
+      {
+       "id": "6003202336613",
+       "name": "Hermès (clothing)"
+      },
+      {
+       "id": "6003279451780",
+       "name": "Chanel (fashion brand)"
+      },
+      {
+       "id": "6003283735711",
+       "name": "Harvard University"
+      },
+      {
+       "id": "6003288148151",
+       "name": "Stanford University"
+      },
+      {
+       "id": "6003293721530",
+       "name": "Mercedes-Benz (vehicles)"
+      },
+      {
+       "id": "6003341532387",
+       "name": "Hyatt"
+      },
+      {
+       "id": "6003382700604",
+       "name": "Audemars Piguet"
+      },
+      {
+       "id": "6003495081227",
+       "name": "Ritz-Carlton Hotel Company"
+      },
+      {
+       "id": "6003515208242",
+       "name": "University of Oxford"
+      },
+      {
+       "id": "6003587678073",
+       "name": "Rolex (watches)"
+      },
+      {
+       "id": "6003595635263",
+       "name": "Hilton Hotels & Resorts"
+      },
+      {
+       "id": "6003762134517",
+       "name": "Cartier (jeweller)"
+      },
+      {
+       "id": "6003833310052",
+       "name": "Marriott Hotels & Resorts"
+      },
+      {
+       "id": "6004952336421",
+       "name": "Richard Mille"
+      },
+      {
+       "id": "6818631932668",
+       "name": "United States business schools (higher education)"
+      }
+     ],
+     "family_statuses": [
+      {
+       "id": "6002714398372",
+       "name": "Parents (All)"
+      },
+      {
+       "id": "6023005681983",
+       "name": "Parents with teenagers (13-17 years)"
+      }
+     ]
+    }
+   ],
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1,
+    "individual_setting": {
+     "age": 1,
+     "gender": 1
+    }
+   }
+  },
+  "promoted_object": {
+   "pixel_id": "1404185611430920",
+   "custom_event_type": "OTHER",
+   "custom_event_str": "Qualified",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-05-22T16:47:55+0800",
+  "id": "120251561866020569"
+ },
+ {
+  "name": "Ad Set 2 - [Spec: Students + Retarget]",
+  "campaign_id": "120251040671680569",
+  "status": "PAUSED",
+  "effective_status": "PAUSED",
+  "optimization_goal": "LEAD_GENERATION",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "ON_AD",
+  "start_time": "2026-05-15T00:00:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "age_range": [
+    18,
+    24
+   ],
+   "custom_audiences": [
+    {
+     "id": "120251040295830569",
+     "name": "Sedifly Instagram Engagement Retarget"
+    }
+   ],
+   "geo_locations": {
+    "cities": [
+     {
+      "country": "SG",
+      "distance_unit": "kilometer",
+      "key": "2160986",
+      "name": "Singapore",
+      "radius": 17,
+      "region": "Singapore",
+      "region_id": "5073"
+     }
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   },
+   "targeting_relaxation_types": {
+    "lookalike": 0,
+    "custom_audience": 1
+   },
+   "targeting_automation": {
+    "advantage_audience": 0,
+    "individual_setting": {
+     "age": 1,
+     "geo": 1
+    }
+   }
+  },
+  "promoted_object": {
+   "page_id": "791241587414895",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-05-14T23:29:19+0800",
+  "id": "120251042238210569"
+ },
+ {
+  "name": "Ad Set 2 - [Stacked Interest] [Spec: Parents]",
+  "campaign_id": "120251040671680569",
+  "status": "ACTIVE",
+  "effective_status": "ACTIVE",
+  "optimization_goal": "LEAD_GENERATION",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "ON_AD",
+  "start_time": "2026-05-14T23:29:14+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "age_range": [
+    45,
+    60
+   ],
+   "flexible_spec": [
+    {
+     "interests": [
+      {
+       "id": "6002974787459",
+       "name": "Van Cleef & Arpels"
+      },
+      {
+       "id": "6003069363782",
+       "name": "Ferrari (vehicles)"
+      },
+      {
+       "id": "6003097813972",
+       "name": "Aman Resorts"
+      },
+      {
+       "id": "6003121362334",
+       "name": "McLaren Automotive"
+      },
+      {
+       "id": "6003157994884",
+       "name": "Marina Bay Sands"
+      },
+      {
+       "id": "6003175076849",
+       "name": "Four Seasons Hotels and Resorts"
+      },
+      {
+       "id": "6003183524012",
+       "name": "University of Cambridge"
+      },
+      {
+       "id": "6003202336613",
+       "name": "Hermès (clothing)"
+      },
+      {
+       "id": "6003279451780",
+       "name": "Chanel (fashion brand)"
+      },
+      {
+       "id": "6003283735711",
+       "name": "Harvard University"
+      },
+      {
+       "id": "6003288148151",
+       "name": "Stanford University"
+      },
+      {
+       "id": "6003293721530",
+       "name": "Mercedes-Benz (vehicles)"
+      },
+      {
+       "id": "6003341532387",
+       "name": "Hyatt"
+      },
+      {
+       "id": "6003382700604",
+       "name": "Audemars Piguet"
+      },
+      {
+       "id": "6003495081227",
+       "name": "Ritz-Carlton Hotel Company"
+      },
+      {
+       "id": "6003515208242",
+       "name": "University of Oxford"
+      },
+      {
+       "id": "6003587678073",
+       "name": "Rolex (watches)"
+      },
+      {
+       "id": "6003595635263",
+       "name": "Hilton Hotels & Resorts"
+      },
+      {
+       "id": "6003762134517",
+       "name": "Cartier (jeweller)"
+      },
+      {
+       "id": "6003833310052",
+       "name": "Marriott Hotels & Resorts"
+      },
+      {
+       "id": "6004952336421",
+       "name": "Richard Mille"
+      },
+      {
+       "id": "6818631932668",
+       "name": "United States business schools (higher education)"
+      }
+     ],
+     "family_statuses": [
+      {
+       "id": "6002714398372",
+       "name": "Parents (All)"
+      },
+      {
+       "id": "6023005681983",
+       "name": "Parents with teenagers (13-17 years)"
+      }
+     ]
+    }
+   ],
+   "geo_locations": {
+    "cities": [
+     {
+      "country": "SG",
+      "distance_unit": "kilometer",
+      "key": "2160986",
+      "name": "Singapore",
+      "radius": 17,
+      "region": "Singapore",
+      "region_id": "5073"
+     }
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1,
+    "individual_setting": {
+     "geo": 1
+    }
+   }
+  },
+  "promoted_object": {
+   "page_id": "791241587414895",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-05-14T23:29:14+0800",
+  "id": "120251040671770569"
+ },
+ {
+  "name": "Advantage+",
+  "campaign_id": "120251040671680569",
+  "status": "PAUSED",
+  "effective_status": "PAUSED",
+  "optimization_goal": "LEAD_GENERATION",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "ON_AD",
+  "start_time": "2026-05-15T00:00:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "geo_locations": {
+    "cities": [
+     {
+      "country": "SG",
+      "distance_unit": "kilometer",
+      "key": "2160986",
+      "name": "Singapore",
+      "radius": 17,
+      "region": "Singapore",
+      "region_id": "5073"
+     }
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   },
+   "targeting_relaxation_types": {
+    "lookalike": 0,
+    "custom_audience": 0
+   },
+   "targeting_automation": {
+    "advantage_audience": 0,
+    "individual_setting": {
+     "geo": 1
+    }
+   }
+  },
+  "promoted_object": {
+   "page_id": "791241587414895",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-05-14T23:29:14+0800",
+  "id": "120251040671740569"
+ },
+ {
+  "name": "Advantage+",
+  "campaign_id": "120249494435980569",
+  "status": "PAUSED",
+  "effective_status": "PAUSED",
+  "optimization_goal": "LEAD_GENERATION",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "ON_AD",
+  "start_time": "2026-04-23T15:00:00+0800",
+  "end_time": "2026-05-16T08:00:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "geo_locations": {
+    "cities": [
+     {
+      "country": "SG",
+      "distance_unit": "kilometer",
+      "key": "2160986",
+      "name": "Singapore",
+      "radius": 17,
+      "region": "Singapore",
+      "region_id": "5073"
+     }
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   }
+  },
+  "promoted_object": {
+   "page_id": "791241587414895",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-04-23T14:39:25+0800",
+  "id": "120249494436060569"
+ },
+ {
+  "name": "Ad Set 2 - [Stacked Interest] [Spec: Parents]",
+  "campaign_id": "120249494435980569",
+  "status": "ACTIVE",
+  "effective_status": "CAMPAIGN_PAUSED",
+  "optimization_goal": "LEAD_GENERATION",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "ON_AD",
+  "start_time": "2026-04-23T15:00:00+0800",
+  "end_time": "2026-05-16T08:00:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "age_range": [
+    45,
+    60
+   ],
+   "flexible_spec": [
+    {
+     "interests": [
+      {
+       "id": "6002974787459",
+       "name": "Van Cleef & Arpels"
+      },
+      {
+       "id": "6003069363782",
+       "name": "Ferrari (vehicles)"
+      },
+      {
+       "id": "6003097813972",
+       "name": "Aman Resorts"
+      },
+      {
+       "id": "6003121362334",
+       "name": "McLaren Automotive"
+      },
+      {
+       "id": "6003157994884",
+       "name": "Marina Bay Sands"
+      },
+      {
+       "id": "6003175076849",
+       "name": "Four Seasons Hotels and Resorts"
+      },
+      {
+       "id": "6003183524012",
+       "name": "University of Cambridge"
+      },
+      {
+       "id": "6003202336613",
+       "name": "Hermès (clothing)"
+      },
+      {
+       "id": "6003279451780",
+       "name": "Chanel (fashion brand)"
+      },
+      {
+       "id": "6003283735711",
+       "name": "Harvard University"
+      },
+      {
+       "id": "6003288148151",
+       "name": "Stanford University"
+      },
+      {
+       "id": "6003293721530",
+       "name": "Mercedes-Benz (vehicles)"
+      },
+      {
+       "id": "6003341532387",
+       "name": "Hyatt"
+      },
+      {
+       "id": "6003382700604",
+       "name": "Audemars Piguet"
+      },
+      {
+       "id": "6003495081227",
+       "name": "Ritz-Carlton Hotel Company"
+      },
+      {
+       "id": "6003515208242",
+       "name": "University of Oxford"
+      },
+      {
+       "id": "6003587678073",
+       "name": "Rolex (watches)"
+      },
+      {
+       "id": "6003595635263",
+       "name": "Hilton Hotels & Resorts"
+      },
+      {
+       "id": "6003762134517",
+       "name": "Cartier (jeweller)"
+      },
+      {
+       "id": "6003833310052",
+       "name": "Marriott Hotels & Resorts"
+      },
+      {
+       "id": "6004952336421",
+       "name": "Richard Mille"
+      },
+      {
+       "id": "6818631932668",
+       "name": "United States business schools (higher education)"
+      }
+     ],
+     "family_statuses": [
+      {
+       "id": "6002714398372",
+       "name": "Parents (All)"
+      },
+      {
+       "id": "6023005681983",
+       "name": "Parents with teenagers (13-17 years)"
+      }
+     ]
+    }
+   ],
+   "geo_locations": {
+    "cities": [
+     {
+      "country": "SG",
+      "distance_unit": "kilometer",
+      "key": "2160986",
+      "name": "Singapore",
+      "radius": 17,
+      "region": "Singapore",
+      "region_id": "5073"
+     }
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1,
+    "individual_setting": {
+     "geo": 1
+    }
+   }
+  },
+  "promoted_object": {
+   "page_id": "791241587414895",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-04-23T14:43:54+0800",
+  "id": "120249494436050569"
+ },
+ {
+  "name": "Ad Set 2 - [Stacked Interest] [Spec: Parents]",
+  "campaign_id": "120249129230160569",
+  "status": "PAUSED",
+  "effective_status": "PAUSED",
+  "optimization_goal": "LEAD_GENERATION",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "ON_AD",
+  "start_time": "2026-04-16T17:05:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "flexible_spec": [
+    {
+     "interests": [
+      {
+       "id": "6002959721920",
+       "name": "McLaren"
+      },
+      {
+       "id": "6002974787459",
+       "name": "Van Cleef & Arpels"
+      },
+      {
+       "id": "6003069363782",
+       "name": "Ferrari (vehicles)"
+      },
+      {
+       "id": "6003097813972",
+       "name": "Aman Resorts"
+      },
+      {
+       "id": "6003121362334",
+       "name": "McLaren Automotive"
+      },
+      {
+       "id": "6003157994884",
+       "name": "Marina Bay Sands"
+      },
+      {
+       "id": "6003175076849",
+       "name": "Four Seasons Hotels and Resorts"
+      },
+      {
+       "id": "6003183524012",
+       "name": "University of Cambridge"
+      },
+      {
+       "id": "6003202336613",
+       "name": "Hermès (clothing)"
+      },
+      {
+       "id": "6003279451780",
+       "name": "Chanel (fashion brand)"
+      },
+      {
+       "id": "6003283735711",
+       "name": "Harvard University"
+      },
+      {
+       "id": "6003288148151",
+       "name": "Stanford University"
+      },
+      {
+       "id": "6003293721530",
+       "name": "Mercedes-Benz (vehicles)"
+      },
+      {
+       "id": "6003341532387",
+       "name": "Hyatt"
+      },
+      {
+       "id": "6003382700604",
+       "name": "Audemars Piguet"
+      },
+      {
+       "id": "6003495081227",
+       "name": "Ritz-Carlton Hotel Company"
+      },
+      {
+       "id": "6003515208242",
+       "name": "University of Oxford"
+      },
+      {
+       "id": "6003587678073",
+       "name": "Rolex (watches)"
+      },
+      {
+       "id": "6003595635263",
+       "name": "Hilton Hotels & Resorts"
+      },
+      {
+       "id": "6003762134517",
+       "name": "Cartier (jeweller)"
+      },
+      {
+       "id": "6003833310052",
+       "name": "Marriott Hotels & Resorts"
+      },
+      {
+       "id": "6004952336421",
+       "name": "Richard Mille"
+      },
+      {
+       "id": "6818631932668",
+       "name": "United States business schools (higher education)"
+      }
+     ],
+     "family_statuses": [
+      {
+       "id": "6002714398372",
+       "name": "Parents (All)"
+      },
+      {
+       "id": "6023005681983",
+       "name": "Parents with teenagers (13-17 years)"
+      }
+     ]
+    }
+   ],
+   "geo_locations": {
+    "places": [
+     {
+      "key": "101462275905128",
+      "name": "Chatsworth Park GCBA•Singapore Good Class Bungalows",
+      "distance_unit": "kilometer",
+      "latitude": 1.2991284819652,
+      "longitude": 103.82004,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "102442923169769",
+      "name": "Stamford American International School",
+      "distance_unit": "kilometer",
+      "latitude": 1.3371,
+      "longitude": 103.86969,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "104057822963891",
+      "name": "Sentosa Cove",
+      "distance_unit": "kilometer",
+      "latitude": 1.2473369635912,
+      "longitude": 103.84159728217,
+      "radius": 1,
+      "primary_city_id": 2160789,
+      "region_id": 4292,
+      "country": "SG"
+     },
+     {
+      "key": "106077659423499",
+      "name": "United World College of South East Asia",
+      "distance_unit": "kilometer",
+      "latitude": 1.3584394766352,
+      "longitude": 103.93143184033,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "107604985526714",
+      "name": "Westbourne College Singapore",
+      "distance_unit": "kilometer",
+      "latitude": 1.2928410868778,
+      "longitude": 103.82721662521,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "108725471847258",
+      "name": "Nassim Road GCBA•Singapore Good Class Bungalows",
+      "distance_unit": "kilometer",
+      "latitude": 1.31533,
+      "longitude": 103.81826,
+      "radius": 1.5,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "110384695050296",
+      "name": "Windsor Park GCBA•Singapore Good Class Bungalows",
+      "distance_unit": "kilometer",
+      "latitude": 1.3566395926348,
+      "longitude": 103.82552,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "111150948444769",
+      "name": "Ridout Park GCBA•Singapore Good Class Bungalows",
+      "distance_unit": "kilometer",
+      "latitude": 1.3064068916623,
+      "longitude": 103.80766333485,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "117694646298197",
+      "name": "Brighton College Singapore",
+      "distance_unit": "kilometer",
+      "latitude": 1.3498920561185,
+      "longitude": 103.8590399814,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "130840303635477",
+      "name": "Singapore American School",
+      "distance_unit": "kilometer",
+      "latitude": 1.4261514915112,
+      "longitude": 103.77500849843,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "142521662589073",
+      "name": "Sentosa Cove Singapore",
+      "distance_unit": "kilometer",
+      "latitude": 1.247091967783,
+      "longitude": 103.84129856746,
+      "radius": 1,
+      "primary_city_id": 2160789,
+      "region_id": 4292,
+      "country": "SG"
+     },
+     {
+      "key": "186622891399869",
+      "name": "Hwa Chong International School",
+      "distance_unit": "kilometer",
+      "latitude": 1.32626,
+      "longitude": 103.80115,
+      "radius": 2,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "240557299678372",
+      "name": "Dulwich College Singapore",
+      "distance_unit": "kilometer",
+      "latitude": 1.3521027729035,
+      "longitude": 103.73876737812,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "359652544093917",
+      "name": "EtonHouse International Schools and Pre-Schools",
+      "distance_unit": "kilometer",
+      "latitude": 1.31237,
+      "longitude": 103.83304,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "477120949489604",
+      "name": "North London Collegiate School - Singapore",
+      "distance_unit": "kilometer",
+      "latitude": 1.2820026141993,
+      "longitude": 103.80956676293,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "771860109498951",
+      "name": "Dover Court International School",
+      "distance_unit": "kilometer",
+      "latitude": 1.3062481843808,
+      "longitude": 103.77950453996,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "82032323742",
+      "name": "Marina Bay Singapore",
+      "distance_unit": "kilometer",
+      "latitude": 1.28221,
+      "longitude": 103.85845,
+      "radius": 2,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     }
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   }
+  },
+  "promoted_object": {
+   "page_id": "791241587414895",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-04-16T17:05:00+0800",
+  "id": "120249129230220569"
+ },
+ {
+  "name": "Advantage+",
+  "campaign_id": "120249129230160569",
+  "status": "PAUSED",
+  "effective_status": "PAUSED",
+  "optimization_goal": "LEAD_GENERATION",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "ON_AD",
+  "start_time": "2026-04-16T18:00:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "flexible_spec": [
+    {
+     "interests": [
+      {
+       "id": "6002959721920",
+       "name": "McLaren"
+      },
+      {
+       "id": "6002974787459",
+       "name": "Van Cleef & Arpels"
+      },
+      {
+       "id": "6003069363782",
+       "name": "Ferrari (vehicles)"
+      },
+      {
+       "id": "6003097813972",
+       "name": "Aman Resorts"
+      },
+      {
+       "id": "6003157994884",
+       "name": "Marina Bay Sands"
+      },
+      {
+       "id": "6003175076849",
+       "name": "Four Seasons Hotels and Resorts"
+      },
+      {
+       "id": "6003183524012",
+       "name": "University of Cambridge"
+      },
+      {
+       "id": "6003202336613",
+       "name": "Hermès (clothing)"
+      },
+      {
+       "id": "6003279451780",
+       "name": "Chanel (fashion brand)"
+      },
+      {
+       "id": "6003283735711",
+       "name": "Harvard University"
+      },
+      {
+       "id": "6003288148151",
+       "name": "Stanford University"
+      },
+      {
+       "id": "6003293721530",
+       "name": "Mercedes-Benz (vehicles)"
+      },
+      {
+       "id": "6003341532387",
+       "name": "Hyatt"
+      },
+      {
+       "id": "6003382700604",
+       "name": "Audemars Piguet"
+      },
+      {
+       "id": "6003495081227",
+       "name": "Ritz-Carlton Hotel Company"
+      },
+      {
+       "id": "6003515208242",
+       "name": "University of Oxford"
+      },
+      {
+       "id": "6003587678073",
+       "name": "Rolex (watches)"
+      },
+      {
+       "id": "6003595635263",
+       "name": "Hilton Hotels & Resorts"
+      },
+      {
+       "id": "6003762134517",
+       "name": "Cartier (jeweller)"
+      },
+      {
+       "id": "6003833310052",
+       "name": "Marriott Hotels & Resorts"
+      },
+      {
+       "id": "6004952336421",
+       "name": "Richard Mille"
+      },
+      {
+       "id": "6818631932668",
+       "name": "United States business schools (higher education)"
+      }
+     ]
+    }
+   ],
+   "geo_locations": {
+    "places": [
+     {
+      "key": "101462275905128",
+      "name": "Chatsworth Park GCBA•Singapore Good Class Bungalows",
+      "distance_unit": "kilometer",
+      "latitude": 1.2991284819652,
+      "longitude": 103.82004,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "102442923169769",
+      "name": "Stamford American International School",
+      "distance_unit": "kilometer",
+      "latitude": 1.3371,
+      "longitude": 103.86969,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "106077659423499",
+      "name": "United World College of South East Asia",
+      "distance_unit": "kilometer",
+      "latitude": 1.3584394766352,
+      "longitude": 103.93143184033,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "107604985526714",
+      "name": "Westbourne College Singapore",
+      "distance_unit": "kilometer",
+      "latitude": 1.2928410868778,
+      "longitude": 103.82721662521,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "108725471847258",
+      "name": "Nassim Road GCBA•Singapore Good Class Bungalows",
+      "distance_unit": "kilometer",
+      "latitude": 1.31533,
+      "longitude": 103.81826,
+      "radius": 1.5,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "110384695050296",
+      "name": "Windsor Park GCBA•Singapore Good Class Bungalows",
+      "distance_unit": "kilometer",
+      "latitude": 1.3566395926348,
+      "longitude": 103.82552,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "111150948444769",
+      "name": "Ridout Park GCBA•Singapore Good Class Bungalows",
+      "distance_unit": "kilometer",
+      "latitude": 1.3064068916623,
+      "longitude": 103.80766333485,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "117694646298197",
+      "name": "Brighton College Singapore",
+      "distance_unit": "kilometer",
+      "latitude": 1.3498920561185,
+      "longitude": 103.8590399814,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "130840303635477",
+      "name": "Singapore American School",
+      "distance_unit": "kilometer",
+      "latitude": 1.4261514915112,
+      "longitude": 103.77500849843,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "142521662589073",
+      "name": "Sentosa Cove Singapore",
+      "distance_unit": "kilometer",
+      "latitude": 1.247091967783,
+      "longitude": 103.84129856746,
+      "radius": 1,
+      "primary_city_id": 2160789,
+      "region_id": 4292,
+      "country": "SG"
+     },
+     {
+      "key": "186622891399869",
+      "name": "Hwa Chong International School",
+      "distance_unit": "kilometer",
+      "latitude": 1.32626,
+      "longitude": 103.80115,
+      "radius": 2,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "240557299678372",
+      "name": "Dulwich College Singapore",
+      "distance_unit": "kilometer",
+      "latitude": 1.3521027729035,
+      "longitude": 103.73876737812,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "359652544093917",
+      "name": "EtonHouse International Schools and Pre-Schools",
+      "distance_unit": "kilometer",
+      "latitude": 1.31237,
+      "longitude": 103.83304,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "477120949489604",
+      "name": "North London Collegiate School - Singapore",
+      "distance_unit": "kilometer",
+      "latitude": 1.2820026141993,
+      "longitude": 103.80956676293,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "771860109498951",
+      "name": "Dover Court International School",
+      "distance_unit": "kilometer",
+      "latitude": 1.3062481843808,
+      "longitude": 103.77950453996,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "82032323742",
+      "name": "Marina Bay Singapore",
+      "distance_unit": "kilometer",
+      "latitude": 1.28221,
+      "longitude": 103.85845,
+      "radius": 2,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     }
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1
+   }
+  },
+  "promoted_object": {
+   "page_id": "791241587414895",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-04-16T17:07:51+0800",
+  "id": "120249129230150569"
+ },
+ {
+  "name": "Advantage+",
+  "campaign_id": "120247203345550569",
+  "status": "ACTIVE",
+  "effective_status": "CAMPAIGN_PAUSED",
+  "optimization_goal": "LEAD_GENERATION",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "ON_AD",
+  "start_time": "2026-03-09T22:00:00+0800",
+  "end_time": "2026-03-15T12:00:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "flexible_spec": [
+    {
+     "interests": [
+      {
+       "id": "6002974787459",
+       "name": "Van Cleef & Arpels"
+      },
+      {
+       "id": "6003069363782",
+       "name": "Ferrari (vehicles)"
+      },
+      {
+       "id": "6003097813972",
+       "name": "Aman Resorts"
+      },
+      {
+       "id": "6003121362334",
+       "name": "McLaren Automotive"
+      },
+      {
+       "id": "6003157994884",
+       "name": "Marina Bay Sands"
+      },
+      {
+       "id": "6003175076849",
+       "name": "Four Seasons Hotels and Resorts"
+      },
+      {
+       "id": "6003183524012",
+       "name": "University of Cambridge"
+      },
+      {
+       "id": "6003202336613",
+       "name": "Hermès (clothing)"
+      },
+      {
+       "id": "6003279451780",
+       "name": "Chanel (fashion brand)"
+      },
+      {
+       "id": "6003283735711",
+       "name": "Harvard University"
+      },
+      {
+       "id": "6003288148151",
+       "name": "Stanford University"
+      },
+      {
+       "id": "6003293721530",
+       "name": "Mercedes-Benz (vehicles)"
+      },
+      {
+       "id": "6003341532387",
+       "name": "Hyatt"
+      },
+      {
+       "id": "6003382700604",
+       "name": "Audemars Piguet"
+      },
+      {
+       "id": "6003495081227",
+       "name": "Ritz-Carlton Hotel Company"
+      },
+      {
+       "id": "6003515208242",
+       "name": "University of Oxford"
+      },
+      {
+       "id": "6003587678073",
+       "name": "Rolex (watches)"
+      },
+      {
+       "id": "6003595635263",
+       "name": "Hilton Hotels & Resorts"
+      },
+      {
+       "id": "6003762134517",
+       "name": "Cartier (jeweller)"
+      },
+      {
+       "id": "6003833310052",
+       "name": "Marriott Hotels & Resorts"
+      },
+      {
+       "id": "6004952336421",
+       "name": "Richard Mille"
+      },
+      {
+       "id": "6818631932668",
+       "name": "United States business schools (higher education)"
+      }
+     ]
+    }
+   ],
+   "geo_locations": {
+    "places": [
+     {
+      "key": "129522627076360",
+      "name": "Marina Bay Sands",
+      "distance_unit": "kilometer",
+      "latitude": 1.283705,
+      "longitude": 103.860733,
+      "radius": 5,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     }
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1
+   }
+  },
+  "promoted_object": {
+   "page_id": "791241587414895",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-03-09T21:32:56+0800",
+  "id": "120247203345610569"
+ },
+ {
+  "name": "Ad Set 2 - [Stacked Interest] [Spec: Parents]",
+  "campaign_id": "120247203345550569",
+  "status": "ACTIVE",
+  "effective_status": "CAMPAIGN_PAUSED",
+  "optimization_goal": "LEAD_GENERATION",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "ON_AD",
+  "start_time": "2026-03-09T22:00:00+0800",
+  "end_time": "2026-03-14T20:00:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "age_range": [
+    45,
+    60
+   ],
+   "flexible_spec": [
+    {
+     "interests": [
+      {
+       "id": "6002974787459",
+       "name": "Van Cleef & Arpels"
+      },
+      {
+       "id": "6003069363782",
+       "name": "Ferrari (vehicles)"
+      },
+      {
+       "id": "6003097813972",
+       "name": "Aman Resorts"
+      },
+      {
+       "id": "6003121362334",
+       "name": "McLaren Automotive"
+      },
+      {
+       "id": "6003157994884",
+       "name": "Marina Bay Sands"
+      },
+      {
+       "id": "6003175076849",
+       "name": "Four Seasons Hotels and Resorts"
+      },
+      {
+       "id": "6003183524012",
+       "name": "University of Cambridge"
+      },
+      {
+       "id": "6003202336613",
+       "name": "Hermès (clothing)"
+      },
+      {
+       "id": "6003279451780",
+       "name": "Chanel (fashion brand)"
+      },
+      {
+       "id": "6003283735711",
+       "name": "Harvard University"
+      },
+      {
+       "id": "6003288148151",
+       "name": "Stanford University"
+      },
+      {
+       "id": "6003293721530",
+       "name": "Mercedes-Benz (vehicles)"
+      },
+      {
+       "id": "6003341532387",
+       "name": "Hyatt"
+      },
+      {
+       "id": "6003382700604",
+       "name": "Audemars Piguet"
+      },
+      {
+       "id": "6003495081227",
+       "name": "Ritz-Carlton Hotel Company"
+      },
+      {
+       "id": "6003515208242",
+       "name": "University of Oxford"
+      },
+      {
+       "id": "6003587678073",
+       "name": "Rolex (watches)"
+      },
+      {
+       "id": "6003595635263",
+       "name": "Hilton Hotels & Resorts"
+      },
+      {
+       "id": "6003762134517",
+       "name": "Cartier (jeweller)"
+      },
+      {
+       "id": "6003833310052",
+       "name": "Marriott Hotels & Resorts"
+      },
+      {
+       "id": "6004952336421",
+       "name": "Richard Mille"
+      },
+      {
+       "id": "6818631932668",
+       "name": "United States business schools (higher education)"
+      }
+     ],
+     "family_statuses": [
+      {
+       "id": "6002714398372",
+       "name": "Parents (All)"
+      },
+      {
+       "id": "6023005681983",
+       "name": "Parents with teenagers (13-17 years)"
+      }
+     ]
+    }
+   ],
+   "geo_locations": {
+    "places": [
+     {
+      "key": "129522627076360",
+      "name": "Marina Bay Sands",
+      "distance_unit": "kilometer",
+      "latitude": 1.283705,
+      "longitude": 103.860733,
+      "radius": 5,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     }
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1
+   }
+  },
+  "promoted_object": {
+   "page_id": "791241587414895",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-03-09T21:32:19+0800",
+  "id": "120247203345560569"
+ },
+ {
+  "name": "Advantage+",
+  "campaign_id": "120246965106380569",
+  "status": "ACTIVE",
+  "effective_status": "CAMPAIGN_PAUSED",
+  "optimization_goal": "LEAD_GENERATION",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "ON_AD",
+  "start_time": "2026-03-05T13:30:00+0800",
+  "end_time": "2026-03-15T12:00:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "flexible_spec": [
+    {
+     "interests": [
+      {
+       "id": "6002959721920",
+       "name": "McLaren"
+      },
+      {
+       "id": "6002974787459",
+       "name": "Van Cleef & Arpels"
+      },
+      {
+       "id": "6003069363782",
+       "name": "Ferrari (vehicles)"
+      },
+      {
+       "id": "6003097813972",
+       "name": "Aman Resorts"
+      },
+      {
+       "id": "6003157994884",
+       "name": "Marina Bay Sands"
+      },
+      {
+       "id": "6003175076849",
+       "name": "Four Seasons Hotels and Resorts"
+      },
+      {
+       "id": "6003183524012",
+       "name": "University of Cambridge"
+      },
+      {
+       "id": "6003202336613",
+       "name": "Hermès (clothing)"
+      },
+      {
+       "id": "6003279451780",
+       "name": "Chanel (fashion brand)"
+      },
+      {
+       "id": "6003283735711",
+       "name": "Harvard University"
+      },
+      {
+       "id": "6003288148151",
+       "name": "Stanford University"
+      },
+      {
+       "id": "6003293721530",
+       "name": "Mercedes-Benz (vehicles)"
+      },
+      {
+       "id": "6003341532387",
+       "name": "Hyatt"
+      },
+      {
+       "id": "6003382700604",
+       "name": "Audemars Piguet"
+      },
+      {
+       "id": "6003495081227",
+       "name": "Ritz-Carlton Hotel Company"
+      },
+      {
+       "id": "6003515208242",
+       "name": "University of Oxford"
+      },
+      {
+       "id": "6003587678073",
+       "name": "Rolex (watches)"
+      },
+      {
+       "id": "6003595635263",
+       "name": "Hilton Hotels & Resorts"
+      },
+      {
+       "id": "6003762134517",
+       "name": "Cartier (jeweller)"
+      },
+      {
+       "id": "6003833310052",
+       "name": "Marriott Hotels & Resorts"
+      },
+      {
+       "id": "6004952336421",
+       "name": "Richard Mille"
+      },
+      {
+       "id": "6818631932668",
+       "name": "United States business schools (higher education)"
+      }
+     ]
+    }
+   ],
+   "geo_locations": {
+    "places": [
+     {
+      "key": "101462275905128",
+      "name": "Chatsworth Park GCBA•Singapore Good Class Bungalows",
+      "distance_unit": "kilometer",
+      "latitude": 1.2991284819652,
+      "longitude": 103.82004,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "102442923169769",
+      "name": "Stamford American International School",
+      "distance_unit": "kilometer",
+      "latitude": 1.3371,
+      "longitude": 103.86969,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "106077659423499",
+      "name": "United World College of South East Asia",
+      "distance_unit": "kilometer",
+      "latitude": 1.3584394766352,
+      "longitude": 103.93143184033,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "107604985526714",
+      "name": "Westbourne College Singapore",
+      "distance_unit": "kilometer",
+      "latitude": 1.2928410868778,
+      "longitude": 103.82721662521,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "108725471847258",
+      "name": "Nassim Road GCBA•Singapore Good Class Bungalows",
+      "distance_unit": "kilometer",
+      "latitude": 1.31533,
+      "longitude": 103.81826,
+      "radius": 1.5,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "110384695050296",
+      "name": "Windsor Park GCBA•Singapore Good Class Bungalows",
+      "distance_unit": "kilometer",
+      "latitude": 1.3566395926348,
+      "longitude": 103.82552,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "111150948444769",
+      "name": "Ridout Park GCBA•Singapore Good Class Bungalows",
+      "distance_unit": "kilometer",
+      "latitude": 1.3064068916623,
+      "longitude": 103.80766333485,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "117694646298197",
+      "name": "Brighton College Singapore",
+      "distance_unit": "kilometer",
+      "latitude": 1.3498920561185,
+      "longitude": 103.8590399814,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "130840303635477",
+      "name": "Singapore American School",
+      "distance_unit": "kilometer",
+      "latitude": 1.4261514915112,
+      "longitude": 103.77500849843,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "142521662589073",
+      "name": "Sentosa Cove Singapore",
+      "distance_unit": "kilometer",
+      "latitude": 1.247091967783,
+      "longitude": 103.84129856746,
+      "radius": 1,
+      "primary_city_id": 2160789,
+      "region_id": 4292,
+      "country": "SG"
+     },
+     {
+      "key": "186622891399869",
+      "name": "Hwa Chong International School",
+      "distance_unit": "kilometer",
+      "latitude": 1.32626,
+      "longitude": 103.80115,
+      "radius": 2,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "240557299678372",
+      "name": "Dulwich College Singapore",
+      "distance_unit": "kilometer",
+      "latitude": 1.3521027729035,
+      "longitude": 103.73876737812,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "359652544093917",
+      "name": "EtonHouse International Schools and Pre-Schools",
+      "distance_unit": "kilometer",
+      "latitude": 1.31237,
+      "longitude": 103.83304,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "477120949489604",
+      "name": "North London Collegiate School - Singapore",
+      "distance_unit": "kilometer",
+      "latitude": 1.2820026141993,
+      "longitude": 103.80956676293,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "771860109498951",
+      "name": "Dover Court International School",
+      "distance_unit": "kilometer",
+      "latitude": 1.3062481843808,
+      "longitude": 103.77950453996,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "82032323742",
+      "name": "Marina Bay Singapore",
+      "distance_unit": "kilometer",
+      "latitude": 1.28221,
+      "longitude": 103.85845,
+      "radius": 2,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     }
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1
+   }
+  },
+  "promoted_object": {
+   "page_id": "791241587414895",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-03-05T13:23:37+0800",
+  "id": "120246966646090569"
+ },
+ {
+  "name": "Ad Set 2 - [Stacked Interest] [Spec: Parents]",
+  "campaign_id": "120246965106380569",
+  "status": "ACTIVE",
+  "effective_status": "CAMPAIGN_PAUSED",
+  "optimization_goal": "LEAD_GENERATION",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "ON_AD",
+  "start_time": "2026-03-05T13:30:00+0800",
+  "end_time": "2026-03-14T20:00:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "age_range": [
+    45,
+    60
+   ],
+   "flexible_spec": [
+    {
+     "interests": [
+      {
+       "id": "6002974787459",
+       "name": "Van Cleef & Arpels"
+      },
+      {
+       "id": "6003069363782",
+       "name": "Ferrari (vehicles)"
+      },
+      {
+       "id": "6003097813972",
+       "name": "Aman Resorts"
+      },
+      {
+       "id": "6003121362334",
+       "name": "McLaren Automotive"
+      },
+      {
+       "id": "6003157994884",
+       "name": "Marina Bay Sands"
+      },
+      {
+       "id": "6003175076849",
+       "name": "Four Seasons Hotels and Resorts"
+      },
+      {
+       "id": "6003183524012",
+       "name": "University of Cambridge"
+      },
+      {
+       "id": "6003202336613",
+       "name": "Hermès (clothing)"
+      },
+      {
+       "id": "6003279451780",
+       "name": "Chanel (fashion brand)"
+      },
+      {
+       "id": "6003283735711",
+       "name": "Harvard University"
+      },
+      {
+       "id": "6003288148151",
+       "name": "Stanford University"
+      },
+      {
+       "id": "6003293721530",
+       "name": "Mercedes-Benz (vehicles)"
+      },
+      {
+       "id": "6003341532387",
+       "name": "Hyatt"
+      },
+      {
+       "id": "6003382700604",
+       "name": "Audemars Piguet"
+      },
+      {
+       "id": "6003495081227",
+       "name": "Ritz-Carlton Hotel Company"
+      },
+      {
+       "id": "6003515208242",
+       "name": "University of Oxford"
+      },
+      {
+       "id": "6003587678073",
+       "name": "Rolex (watches)"
+      },
+      {
+       "id": "6003595635263",
+       "name": "Hilton Hotels & Resorts"
+      },
+      {
+       "id": "6003762134517",
+       "name": "Cartier (jeweller)"
+      },
+      {
+       "id": "6003833310052",
+       "name": "Marriott Hotels & Resorts"
+      },
+      {
+       "id": "6004952336421",
+       "name": "Richard Mille"
+      },
+      {
+       "id": "6818631932668",
+       "name": "United States business schools (higher education)"
+      }
+     ],
+     "family_statuses": [
+      {
+       "id": "6002714398372",
+       "name": "Parents (All)"
+      },
+      {
+       "id": "6023005681983",
+       "name": "Parents with teenagers (13-17 years)"
+      }
+     ]
+    }
+   ],
+   "geo_locations": {
+    "custom_locations": [
+     {
+      "name": "Orchard Rd, Singapore, Singapore, Singapore",
+      "address_string": "Orchard Rd, Singapore, Singapore, Singapore",
+      "distance_unit": "kilometer",
+      "latitude": 1.30348,
+      "longitude": 103.83625,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     }
+    ],
+    "places": [
+     {
+      "key": "101462275905128",
+      "name": "Chatsworth Park GCBA•Singapore Good Class Bungalows",
+      "distance_unit": "kilometer",
+      "latitude": 1.2991284819652,
+      "longitude": 103.82004,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "102442923169769",
+      "name": "Stamford American International School",
+      "distance_unit": "kilometer",
+      "latitude": 1.3371,
+      "longitude": 103.86969,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "106077659423499",
+      "name": "United World College of South East Asia",
+      "distance_unit": "kilometer",
+      "latitude": 1.3584394766352,
+      "longitude": 103.93143184033,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "107604985526714",
+      "name": "Westbourne College Singapore",
+      "distance_unit": "kilometer",
+      "latitude": 1.2928410868778,
+      "longitude": 103.82721662521,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "108725471847258",
+      "name": "Nassim Road GCBA•Singapore Good Class Bungalows",
+      "distance_unit": "kilometer",
+      "latitude": 1.31533,
+      "longitude": 103.81826,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "110384695050296",
+      "name": "Windsor Park GCBA•Singapore Good Class Bungalows",
+      "distance_unit": "kilometer",
+      "latitude": 1.3566395926348,
+      "longitude": 103.82552,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "111150948444769",
+      "name": "Ridout Park GCBA•Singapore Good Class Bungalows",
+      "distance_unit": "kilometer",
+      "latitude": 1.3064068916623,
+      "longitude": 103.80766333485,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "117694646298197",
+      "name": "Brighton College Singapore",
+      "distance_unit": "kilometer",
+      "latitude": 1.3498920561185,
+      "longitude": 103.8590399814,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "130840303635477",
+      "name": "Singapore American School",
+      "distance_unit": "kilometer",
+      "latitude": 1.4261514915112,
+      "longitude": 103.77500849843,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "142521662589073",
+      "name": "Sentosa Cove Singapore",
+      "distance_unit": "kilometer",
+      "latitude": 1.247091967783,
+      "longitude": 103.84129856746,
+      "radius": 1,
+      "primary_city_id": 2160789,
+      "region_id": 4292,
+      "country": "SG"
+     },
+     {
+      "key": "170451096347302",
+      "name": "Tanglin Trust School",
+      "distance_unit": "kilometer",
+      "latitude": 1.2973013899803,
+      "longitude": 103.79250009208,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "186622891399869",
+      "name": "Hwa Chong International School",
+      "distance_unit": "kilometer",
+      "latitude": 1.32626,
+      "longitude": 103.80115,
+      "radius": 2,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "240557299678372",
+      "name": "Dulwich College Singapore",
+      "distance_unit": "kilometer",
+      "latitude": 1.3521027729035,
+      "longitude": 103.73876737812,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "359652544093917",
+      "name": "EtonHouse International Schools and Pre-Schools",
+      "distance_unit": "kilometer",
+      "latitude": 1.31237,
+      "longitude": 103.83304,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "452510218102361",
+      "name": "Chatsworth International School (Official)",
+      "distance_unit": "kilometer",
+      "latitude": 1.34587,
+      "longitude": 103.79134,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "477120949489604",
+      "name": "North London Collegiate School - Singapore",
+      "distance_unit": "kilometer",
+      "latitude": 1.2820026141993,
+      "longitude": 103.80956676293,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "771860109498951",
+      "name": "Dover Court International School",
+      "distance_unit": "kilometer",
+      "latitude": 1.3062481843808,
+      "longitude": 103.77950453996,
+      "radius": 1,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     },
+     {
+      "key": "82032323742",
+      "name": "Marina Bay Singapore",
+      "distance_unit": "kilometer",
+      "latitude": 1.28221,
+      "longitude": 103.85845,
+      "radius": 2,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     }
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1
+   }
+  },
+  "promoted_object": {
+   "page_id": "791241587414895",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-03-05T13:19:49+0800",
+  "id": "120246965106480569"
+ },
+ {
+  "name": "Ad Set 3 - [Stacked Interest] [Spec: Students]",
+  "campaign_id": "120246964620410569",
+  "status": "ACTIVE",
+  "effective_status": "CAMPAIGN_PAUSED",
+  "optimization_goal": "LEAD_GENERATION",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "ON_AD",
+  "start_time": "2026-03-05T13:00:00+0800",
+  "end_time": "2026-03-14T20:00:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "age_range": [
+    18,
+    22
+   ],
+   "flexible_spec": [
+    {
+     "interests": [
+      {
+       "id": "6003089918015",
+       "name": "University (higher education)"
+      },
+      {
+       "id": "6003166852230",
+       "name": "International student (higher education)"
+      },
+      {
+       "id": "6003232228485",
+       "name": "High school (primary and secondary education)"
+      },
+      {
+       "id": "6003270811593",
+       "name": "Higher education (education)"
+      },
+      {
+       "id": "6003327060545",
+       "name": "Education (social concept)"
+      },
+      {
+       "id": "6003347204074",
+       "name": "Student exchange program"
+      },
+      {
+       "id": "6003954253466",
+       "name": "Study abroad organization"
+      }
+     ],
+     "education_statuses": [
+      3,
+      4
+     ]
+    }
+   ],
+   "geo_locations": {
+    "places": [
+     {
+      "key": "299754664055592",
+      "name": "THE COCOON SPACE",
+      "distance_unit": "kilometer",
+      "latitude": 1.301089,
+      "longitude": 103.8391564,
+      "radius": 4,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     }
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1
+   }
+  },
+  "promoted_object": {
+   "page_id": "791241587414895",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-03-05T12:36:45+0800",
+  "id": "120246965053700569"
+ },
+ {
+  "name": "Advantage+",
+  "campaign_id": "120246964620410569",
+  "status": "ACTIVE",
+  "effective_status": "CAMPAIGN_PAUSED",
+  "optimization_goal": "LEAD_GENERATION",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "ON_AD",
+  "start_time": "2026-03-05T13:00:00+0800",
+  "end_time": "2026-03-14T20:00:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "geo_locations": {
+    "places": [
+     {
+      "key": "299754664055592",
+      "name": "THE COCOON SPACE",
+      "distance_unit": "kilometer",
+      "latitude": 1.301089,
+      "longitude": 103.8391564,
+      "radius": 4,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     }
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1
+   }
+  },
+  "promoted_object": {
+   "page_id": "791241587414895",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-03-05T12:37:27+0800",
+  "id": "120246964620400569"
+ },
+ {
+  "name": "Ad Set 2 - [Stacked Interest] [Spec: Parents]",
+  "campaign_id": "120246964620410569",
+  "status": "ACTIVE",
+  "effective_status": "CAMPAIGN_PAUSED",
+  "optimization_goal": "LEAD_GENERATION",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "ON_AD",
+  "start_time": "2026-03-05T13:00:00+0800",
+  "end_time": "2026-03-14T20:00:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "age_range": [
+    45,
+    60
+   ],
+   "flexible_spec": [
+    {
+     "family_statuses": [
+      {
+       "id": "6002714398372",
+       "name": "Parents (All)"
+      },
+      {
+       "id": "6023005681983",
+       "name": "Parents with teenagers (13-17 years)"
+      }
+     ]
+    }
+   ],
+   "geo_locations": {
+    "places": [
+     {
+      "key": "299754664055592",
+      "name": "THE COCOON SPACE",
+      "distance_unit": "kilometer",
+      "latitude": 1.301089,
+      "longitude": 103.8391564,
+      "radius": 4,
+      "primary_city_id": 2160986,
+      "region_id": 5073,
+      "country": "SG"
+     }
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1
+   }
+  },
+  "promoted_object": {
+   "page_id": "791241587414895",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-03-05T12:37:51+0800",
+  "id": "120246964620330569"
+ },
+ {
+  "name": "Ad Set 2 - [Stacked Interest] [Spec: Parents]",
+  "campaign_id": "120246579475170569",
+  "status": "ACTIVE",
+  "effective_status": "CAMPAIGN_PAUSED",
+  "optimization_goal": "QUALITY_LEAD",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "ON_AD",
+  "start_time": "2026-02-25T01:00:00+0800",
+  "end_time": "2026-03-14T20:00:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "age_range": [
+    45,
+    60
+   ],
+   "flexible_spec": [
+    {
+     "family_statuses": [
+      {
+       "id": "6002714398372",
+       "name": "Parents (All)"
+      },
+      {
+       "id": "6023005681983",
+       "name": "Parents with teenagers (13-17 years)"
+      }
+     ]
+    }
+   ],
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1
+   }
+  },
+  "promoted_object": {
+   "page_id": "791241587414895",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-02-25T00:44:29+0800",
+  "id": "120246579475140569"
+ },
+ {
+  "name": "Ad Set 3 - [Stacked Interest] [Spec: Students]",
+  "campaign_id": "120246579475170569",
+  "status": "ACTIVE",
+  "effective_status": "CAMPAIGN_PAUSED",
+  "optimization_goal": "QUALITY_LEAD",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "ON_AD",
+  "start_time": "2026-02-25T00:42:13+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "age_range": [
+    18,
+    22
+   ],
+   "flexible_spec": [
+    {
+     "interests": [
+      {
+       "id": "6003089918015",
+       "name": "University (higher education)"
+      },
+      {
+       "id": "6003166852230",
+       "name": "International student (higher education)"
+      },
+      {
+       "id": "6003232228485",
+       "name": "High school (primary and secondary education)"
+      },
+      {
+       "id": "6003270811593",
+       "name": "Higher education (education)"
+      },
+      {
+       "id": "6003327060545",
+       "name": "Education (social concept)"
+      },
+      {
+       "id": "6003347204074",
+       "name": "Student exchange program"
+      },
+      {
+       "id": "6003954253466",
+       "name": "Study abroad organization"
+      }
+     ],
+     "education_statuses": [
+      3,
+      4
+     ]
+    }
+   ],
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1
+   }
+  },
+  "promoted_object": {
+   "page_id": "791241587414895",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-02-25T00:42:13+0800",
+  "id": "120246579475130569"
+ },
+ {
+  "name": "Advantage+",
+  "campaign_id": "120246579475170569",
+  "status": "ACTIVE",
+  "effective_status": "CAMPAIGN_PAUSED",
+  "optimization_goal": "QUALITY_LEAD",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "ON_AD",
+  "start_time": "2026-02-25T01:00:00+0800",
+  "end_time": "2026-03-14T20:00:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1
+   }
+  },
+  "promoted_object": {
+   "page_id": "791241587414895",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-02-25T00:04:54+0800",
+  "id": "120246579475110569"
+ },
+ {
+  "name": "Ad Set 3 - [Stacked Interest] [Spec: Students ]",
+  "campaign_id": "120244895643510569",
+  "status": "PAUSED",
+  "effective_status": "PAUSED",
+  "optimization_goal": "QUALITY_LEAD",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "ON_AD",
+  "start_time": "2026-01-15T12:44:55+0800",
+  "targeting": {
+   "age_max": 22,
+   "age_min": 18,
+   "flexible_spec": [
+    {
+     "interests": [
+      {
+       "id": "6003089918015",
+       "name": "University (higher education)"
+      },
+      {
+       "id": "6003166852230",
+       "name": "International student (higher education)"
+      },
+      {
+       "id": "6003175366702",
+       "name": "University (higher education)"
+      },
+      {
+       "id": "6003270811593",
+       "name": "Higher education (education)"
+      },
+      {
+       "id": "6003327060545",
+       "name": "Education (social concept)"
+      },
+      {
+       "id": "6003347204074",
+       "name": "Student exchange program"
+      },
+      {
+       "id": "6003954253466",
+       "name": "Study abroad organization"
+      }
+     ],
+     "education_statuses": [
+      3,
+      4
+     ]
+    }
+   ],
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 0
+   }
+  },
+  "promoted_object": {
+   "page_id": "791241587414895",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-01-15T12:44:54+0800",
+  "id": "120244895691700569"
+ },
+ {
+  "name": "Ad Set 2 - [Stacked Interest] [Spec: ]",
+  "campaign_id": "120244895643510569",
+  "status": "PAUSED",
+  "effective_status": "PAUSED",
+  "optimization_goal": "QUALITY_LEAD",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "ON_AD",
+  "start_time": "2026-01-15T12:44:54+0800",
+  "targeting": {
+   "age_max": 60,
+   "age_min": 40,
+   "flexible_spec": [
+    {
+     "family_statuses": [
+      {
+       "id": "6002714398372",
+       "name": "Parents (All)"
+      },
+      {
+       "id": "6023005681983",
+       "name": "Parents with teenagers (13-17 years)"
+      }
+     ]
+    }
+   ],
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 0
+   }
+  },
+  "promoted_object": {
+   "page_id": "791241587414895",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-01-15T12:44:54+0800",
+  "id": "120244895685650569"
+ },
+ {
+  "name": "Advantage+",
+  "campaign_id": "120244895643510569",
+  "status": "ACTIVE",
+  "effective_status": "CAMPAIGN_PAUSED",
+  "optimization_goal": "QUALITY_LEAD",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "ON_AD",
+  "start_time": "2026-01-15T12:44:56+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1
+   }
+  },
+  "promoted_object": {
+   "page_id": "791241587414895",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2026-01-15T12:44:54+0800",
+  "id": "120244895643490569"
+ },
+ {
+  "name": "Advantage+",
+  "campaign_id": "120243930783400569",
+  "status": "PAUSED",
+  "effective_status": "PAUSED",
+  "optimization_goal": "QUALITY_LEAD",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "ON_AD",
+  "start_time": "2025-12-23T20:35:02+0800",
+  "end_time": "2026-01-12T12:00:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   }
+  },
+  "promoted_object": {
+   "page_id": "791241587414895",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2025-12-23T20:35:02+0800",
+  "id": "120243930783340569"
+ },
+ {
+  "name": "Ad Set 3 - [Stacked Interest] [Spec: Students]",
+  "campaign_id": "120243930783400569",
+  "status": "PAUSED",
+  "effective_status": "PAUSED",
+  "optimization_goal": "QUALITY_LEAD",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "ON_AD",
+  "start_time": "2025-12-23T22:00:00+0800",
+  "end_time": "2026-01-12T12:00:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "age_range": [
+    18,
+    22
+   ],
+   "flexible_spec": [
+    {
+     "interests": [
+      {
+       "id": "6003089918015",
+       "name": "University (higher education)"
+      },
+      {
+       "id": "6003166852230",
+       "name": "International student (higher education)"
+      },
+      {
+       "id": "6003232228485",
+       "name": "High school (primary and secondary education)"
+      },
+      {
+       "id": "6003270811593",
+       "name": "Higher education (education)"
+      },
+      {
+       "id": "6003327060545",
+       "name": "Education (social concept)"
+      },
+      {
+       "id": "6003347204074",
+       "name": "Student exchange program"
+      },
+      {
+       "id": "6003954253466",
+       "name": "Study abroad organization"
+      }
+     ],
+     "education_statuses": [
+      3,
+      4
+     ]
+    }
+   ],
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1
+   }
+  },
+  "promoted_object": {
+   "page_id": "791241587414895",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2025-12-23T20:15:23+0800",
+  "id": "120243930783310569"
+ },
+ {
+  "name": "Ad Set 2 - [Stacked Interest] [Spec: Parents]",
+  "campaign_id": "120243930783400569",
+  "status": "ACTIVE",
+  "effective_status": "CAMPAIGN_PAUSED",
+  "optimization_goal": "QUALITY_LEAD",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "ON_AD",
+  "start_time": "2025-12-23T20:33:46+0800",
+  "end_time": "2026-01-12T12:00:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "age_range": [
+    45,
+    60
+   ],
+   "flexible_spec": [
+    {
+     "family_statuses": [
+      {
+       "id": "6002714398372",
+       "name": "Parents (All)"
+      },
+      {
+       "id": "6023005681983",
+       "name": "Parents with teenagers (13-17 years)"
+      }
+     ]
+    }
+   ],
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1
+   }
+  },
+  "promoted_object": {
+   "page_id": "791241587414895",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2025-12-23T20:33:46+0800",
+  "id": "120243930783290569"
+ },
+ {
+  "name": "Ad Set 2 - [Stacked Interest] [Spec: Parents] – Copy",
+  "campaign_id": "120242317032640569",
+  "status": "ACTIVE",
+  "effective_status": "CAMPAIGN_PAUSED",
+  "optimization_goal": "LEAD_GENERATION",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "ON_AD",
+  "start_time": "2025-12-01T12:57:13+0800",
+  "end_time": "2025-12-15T00:00:00+0800",
+  "targeting": {
+   "age_max": 25,
+   "age_min": 18,
+   "flexible_spec": [
+    {
+     "interests": [
+      {
+       "id": "6003089918015",
+       "name": "University (higher education)"
+      },
+      {
+       "id": "6003134676700",
+       "name": "Graduate school (higher education)"
+      },
+      {
+       "id": "6003166852230",
+       "name": "International student (higher education)"
+      },
+      {
+       "id": "6003232228485",
+       "name": "High school (primary and secondary education)"
+      },
+      {
+       "id": "6003327060545",
+       "name": "Education (social concept)"
+      },
+      {
+       "id": "6003347204074",
+       "name": "Student exchange program"
+      },
+      {
+       "id": "6003954253466",
+       "name": "Study abroad organization"
+      }
+     ],
+     "education_statuses": [
+      3
+     ]
+    }
+   ],
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 0
+   }
+  },
+  "promoted_object": {
+   "page_id": "791241587414895",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2025-12-01T12:57:13+0800",
+  "id": "120242317136050569"
+ },
+ {
+  "name": "Ad Set 2 - [Stacked Interest] [Spec: Parents]",
+  "campaign_id": "120242317032640569",
+  "status": "ACTIVE",
+  "effective_status": "CAMPAIGN_PAUSED",
+  "optimization_goal": "LEAD_GENERATION",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "ON_AD",
+  "start_time": "2025-12-01T12:57:14+0800",
+  "end_time": "2025-12-15T00:00:00+0800",
+  "targeting": {
+   "age_max": 60,
+   "age_min": 45,
+   "flexible_spec": [
+    {
+     "family_statuses": [
+      {
+       "id": "6002714398372",
+       "name": "Parents (All)"
+      },
+      {
+       "id": "6023005681983",
+       "name": "Parents with teenagers (13-17 years)"
+      }
+     ]
+    }
+   ],
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 0
+   }
+  },
+  "promoted_object": {
+   "page_id": "791241587414895",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2025-12-01T12:57:13+0800",
+  "id": "120242317120970569"
+ },
+ {
+  "name": "Advantage+",
+  "campaign_id": "120242317032640569",
+  "status": "ACTIVE",
+  "effective_status": "CAMPAIGN_PAUSED",
+  "optimization_goal": "LEAD_GENERATION",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "ON_AD",
+  "start_time": "2025-12-01T12:57:29+0800",
+  "end_time": "2025-12-15T00:00:00+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1
+   }
+  },
+  "promoted_object": {
+   "page_id": "791241587414895",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2025-12-01T12:57:29+0800",
+  "id": "120242317032630569"
+ },
+ {
+  "name": "Advantage+",
+  "campaign_id": "120241727287650569",
+  "status": "ACTIVE",
+  "effective_status": "CAMPAIGN_PAUSED",
+  "optimization_goal": "LEAD_GENERATION",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "ON_AD",
+  "start_time": "2025-11-21T15:33:16+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1
+   }
+  },
+  "promoted_object": {
+   "page_id": "791241587414895",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2025-11-21T15:33:16+0800",
+  "id": "120241727287770569"
+ },
+ {
+  "name": "Ad Set 2 - [Stacked Interest] [Spec: Parents]",
+  "campaign_id": "120241727287650569",
+  "status": "PAUSED",
+  "effective_status": "PAUSED",
+  "optimization_goal": "LEAD_GENERATION",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "ON_AD",
+  "start_time": "2025-11-21T15:33:22+0800",
+  "targeting": {
+   "age_max": 60,
+   "age_min": 45,
+   "flexible_spec": [
+    {
+     "family_statuses": [
+      {
+       "id": "6002714398372",
+       "name": "Parents (All)"
+      },
+      {
+       "id": "6023005681983",
+       "name": "Parents with teenagers (13-17 years)"
+      }
+     ]
+    }
+   ],
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 0
+   }
+  },
+  "promoted_object": {
+   "page_id": "791241587414895",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2025-11-21T15:33:22+0800",
+  "id": "120241727287740569"
+ },
+ {
+  "name": "Ad Set 3 - [Stacked Interest] [Spec: Students]",
+  "campaign_id": "120241727287650569",
+  "status": "PAUSED",
+  "effective_status": "PAUSED",
+  "optimization_goal": "LEAD_GENERATION",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "ON_AD",
+  "start_time": "2025-11-21T15:33:16+0800",
+  "targeting": {
+   "age_max": 22,
+   "age_min": 18,
+   "flexible_spec": [
+    {
+     "interests": [
+      {
+       "id": "6003089918015",
+       "name": "University (higher education)"
+      },
+      {
+       "id": "6003166852230",
+       "name": "International student (higher education)"
+      },
+      {
+       "id": "6003232228485",
+       "name": "High school (primary and secondary education)"
+      },
+      {
+       "id": "6003270811593",
+       "name": "Higher education (education)"
+      },
+      {
+       "id": "6003327060545",
+       "name": "Education (social concept)"
+      },
+      {
+       "id": "6003347204074",
+       "name": "Student exchange program"
+      },
+      {
+       "id": "6003954253466",
+       "name": "Study abroad organization"
+      }
+     ],
+     "education_statuses": [
+      3,
+      4
+     ]
+    }
+   ],
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 0
+   }
+  },
+  "promoted_object": {
+   "page_id": "791241587414895",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2025-11-21T15:33:16+0800",
+  "id": "120241727287730569"
+ },
+ {
+  "name": "Ad Set 3 - [Stacked Interest] [Spec: Students]",
+  "campaign_id": "120241717096810569",
+  "status": "ACTIVE",
+  "effective_status": "CAMPAIGN_PAUSED",
+  "optimization_goal": "LEAD_GENERATION",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "ON_AD",
+  "start_time": "2025-11-21T14:06:32+0800",
+  "targeting": {
+   "age_max": 22,
+   "age_min": 18,
+   "flexible_spec": [
+    {
+     "interests": [
+      {
+       "id": "6003089918015",
+       "name": "University (higher education)"
+      },
+      {
+       "id": "6003166852230",
+       "name": "International student (higher education)"
+      },
+      {
+       "id": "6003232228485",
+       "name": "High school (primary and secondary education)"
+      },
+      {
+       "id": "6003270811593",
+       "name": "Higher education (education)"
+      },
+      {
+       "id": "6003327060545",
+       "name": "Education (social concept)"
+      },
+      {
+       "id": "6003347204074",
+       "name": "Student exchange program"
+      },
+      {
+       "id": "6003954253466",
+       "name": "Study abroad organization"
+      }
+     ],
+     "education_statuses": [
+      3,
+      4
+     ]
+    }
+   ],
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 0
+   }
+  },
+  "promoted_object": {
+   "page_id": "791241587414895",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2025-11-21T14:06:31+0800",
+  "id": "120241718095780569"
+ },
+ {
+  "name": "Ad Set 2 - [Stacked Interest] [Spec: Parents]",
+  "campaign_id": "120241717096810569",
+  "status": "ACTIVE",
+  "effective_status": "CAMPAIGN_PAUSED",
+  "optimization_goal": "LEAD_GENERATION",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "ON_AD",
+  "start_time": "2025-11-21T14:06:38+0800",
+  "targeting": {
+   "age_max": 60,
+   "age_min": 45,
+   "flexible_spec": [
+    {
+     "family_statuses": [
+      {
+       "id": "6002714398372",
+       "name": "Parents (All)"
+      },
+      {
+       "id": "6023005681983",
+       "name": "Parents with teenagers (13-17 years)"
+      }
+     ]
+    }
+   ],
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 0
+   }
+  },
+  "promoted_object": {
+   "page_id": "791241587414895",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2025-11-21T14:06:38+0800",
+  "id": "120241718083490569"
+ },
+ {
+  "name": "Advantage+",
+  "campaign_id": "120241717096810569",
+  "status": "ACTIVE",
+  "effective_status": "CAMPAIGN_PAUSED",
+  "optimization_goal": "LEAD_GENERATION",
+  "billing_event": "IMPRESSIONS",
+  "destination_type": "ON_AD",
+  "start_time": "2025-11-21T14:06:32+0800",
+  "targeting": {
+   "age_max": 65,
+   "age_min": 18,
+   "geo_locations": {
+    "countries": [
+     "SG"
+    ],
+    "location_types": [
+     "home",
+     "recent"
+    ]
+   },
+   "brand_safety_content_filter_levels": [
+    "FACEBOOK_RELAXED",
+    "AN_RELAXED"
+   ],
+   "targeting_automation": {
+    "advantage_audience": 1
+   }
+  },
+  "promoted_object": {
+   "page_id": "791241587414895",
+   "smart_pse_enabled": false
+  },
+  "created_time": "2025-11-21T14:06:31+0800",
+  "id": "120241717096800569"
+ }
+]

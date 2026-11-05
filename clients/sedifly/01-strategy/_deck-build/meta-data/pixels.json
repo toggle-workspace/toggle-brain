@@ -1,0 +1,22 @@
+[
+ {
+  "name": "Conversion Pixel",
+  "last_fired_time": "2026-10-19T05:42:04+0000",
+  "creation_time": "2025-12-23T11:43:43+0000",
+  "is_unavailable": false,
+  "id": "1404185611430920"
+ },
+ {
+  "name": "Sedifly",
+  "creation_time": "2026-08-04T22:37:18+0000",
+  "is_unavailable": false,
+  "id": "1759018438708374"
+ },
+ {
+  "name": "Sedifly - CURRENT",
+  "last_fired_time": "2026-11-02T21:42:20+0000",
+  "creation_time": "2025-11-08T11:55:34+0000",
+  "is_unavailable": false,
+  "id": "2775554906120615"
+ }
+]

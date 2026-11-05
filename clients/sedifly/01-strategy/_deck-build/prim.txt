@@ -1,0 +1,130 @@
+﻿const PptxGenJS = require('pptxgenjs');
+const path = require('path');
+
+const OUT = process.env.OUT || 'C:/Users/Jordan/Desktop/Sedifly/Sedifly - Meta Plan and Creative Review - Nov 2026 - rev-2.pptx';
+const IMG = (n) => path.join(__dirname, 'img', n).split(path.sep).join('/');
+const WORDMARK = 'C:/Users/Jordan/Desktop/Claude Code/toggle-brain/assets/logos/toggle-wordmark-black.png';
+
+const C = {
+  paper: 'F4F8FD', lift: 'FFFFFF', ink: '0E1B33', ink2: '4A5A75', ink3: '8794AC',
+  line: 'D5E2F0', soft: 'E7EFF9', accent: '2A6BE0', deep: '1B4CB0', wash: 'E3EDFC',
+  aqua: '8CE0EC', teal: '1FA5B8', amber: 'D2971E', alert: 'DB4A45',
+};
+const SERIF = 'Instrument Serif', SANS = 'Instrument Sans', SANS6 = 'Instrument Sans SemiBold', MONO = 'JetBrains Mono';
+const W = 13.333, H = 7.5, M = 0.667, CW = W - 2 * M, BOTTOM = 6.72;
+const px = (n) => n / 96;
+
+const pptx = new PptxGenJS();
+pptx.defineLayout({ name: 'SW', width: W, height: H });
+pptx.layout = 'SW';
+pptx.author = 'Toggle Solutions';
+pptx.title = 'Meta plan for Sedifly, rev-2';
+
+// ------------------------------------------------------------ primitives
+function T(s, text, o) {
+  if (!(o.w > 0) || !(o.h > 0)) throw new Error('bad box: ' + JSON.stringify(text).slice(0, 50));
+  s.addText(text, Object.assign({ fontFace: SANS, fontSize: 10, color: C.ink2, margin: 0, valign: 'top', lineSpacingMultiple: 1.15 }, o));
+}
+function box(s, x, y, w, h, kind = 'card', r = px(14)) {
+  const fill = { card: C.lift, wash: C.wash, ink: C.ink, paper: C.paper }[kind];
+  const line = kind === 'card' ? { color: C.line, width: 0.75 } : { type: 'none' };
+  s.addShape(pptx.ShapeType.roundRect, { x, y, w, h, rectRadius: r, fill: { color: fill }, line });
+}
+function hr(s, x, y, w, color = C.soft, h = 0.01) {
+  s.addShape(pptx.ShapeType.rect, { x, y, w, h, fill: { color }, line: { type: 'none' } });
+}
+function mono(s, text, x, y, w, color = C.ink3, size = 7.5) {
+  T(s, text.toUpperCase(), { x, y, w, h: 0.18, fontFace: MONO, bold: true, fontSize: size, charSpacing: 1.2, color });
+}
+// rough line count for wrapped text
+function lines(text, w, size, em = 0.47) {
+  const cpl = Math.max(8, Math.floor((w * 72) / (em * size)));
+  return String(text).split('\n').reduce((a, p) => a + Math.max(1, Math.ceil(p.length / cpl)), 0);
+}
+function textH(text, w, size, ls = 1.3, em = 0.5) { return (lines(text, w, size, em) * size * ls) / 72; }
+
+let page = 0;
+function slide() {
+  const s = pptx.addSlide();
+  s.background = { color: C.paper };
+  page += 1;
+  if (page > 1) T(s, String(page).padStart(2, '0'), { x: W - M - 1, y: H - 0.42, w: 1, h: 0.18, fontFace: MONO, fontSize: 7.5, color: C.ink3, align: 'right', charSpacing: 1.5 });
+  return s;
+}
+// eyebrow + serif headline with italic blue phrase + kicker. Returns content top.
+function head(s, eyebrow, plain, em, kicker) {
+  let y = 0.58;
+  s.addShape(pptx.ShapeType.ellipse, { x: M, y: y + 0.055, w: 0.065, h: 0.065, fill: { color: C.accent }, line: { type: 'none' } });
+  T(s, eyebrow.toUpperCase(), { x: M + 0.13, y, w: CW - 0.2, h: 0.18, fontFace: MONO, bold: true, fontSize: 8.25, charSpacing: 1.6, color: C.accent });
+  y += 0.3;
+  s.addText([
+    { text: plain, options: { fontFace: SERIF, color: C.ink } },
+    { text: em, options: { fontFace: SERIF, italic: true, color: C.accent } },
+  ], { x: M, y, w: CW, h: 0.62, fontSize: 39, margin: 0, valign: 'top', lineSpacingMultiple: 0.95 });
+  y += 0.7;
+  if (kicker) {
+    const kh = textH(kicker, CW, 12.75, 1.45, 0.48) + 0.02;
+    T(s, kicker, { x: M, y, w: CW, h: kh, fontSize: 12.75, lineSpacingMultiple: 1.4 });
+    y += kh + 0.24;
+  }
+  return y;
+}
+// key/value rows like the SignWell timeline cards
+function rows(s, items, x, y, w, { keyW = 0.95, size = 9.6, gap = 0.07 } = {}) {
+  items.forEach(([k, v], i) => {
+    if (i) hr(s, x, y, w);
+    const yy = y + (i ? gap : 0);
+    const vh = textH(v, w - keyW, size, 1.32, 0.54) + 0.03;
+    T(s, k.toUpperCase(), { x, y: yy + 0.02, w: keyW - 0.08, h: 0.16, fontFace: MONO, bold: true, fontSize: 6.6, charSpacing: 0.8, color: C.ink3 });
+    T(s, v, { x: x + keyW, y: yy, w: w - keyW, h: vh + 0.1, fontSize: size, lineSpacingMultiple: 1.3 });
+    y = yy + vh + gap;
+  });
+  return y;
+}
+// square-dot bullets
+// native PowerPoint bullets in one text box; fix-bullets3.js colors the square by its code point
+const DOTCODE = { [C.accent]: '25A0', [C.amber]: '25FC', [C.aqua]: '25FE', [C.teal]: '25FE' };
+function bullets(s, items, x, y, w, { size = 10, gap = 0.08, dot = C.accent, color = C.ink2, h } = {}) {
+  const est = items.reduce((a, t) => a + textH(t, w - 0.2, size, 1.32, 0.52) + gap, 0);
+  const paras = items.map((t, i) => ({ text: t, options: { bullet: { characterCode: DOTCODE[dot] || '25A0', indent: 14 }, paraSpaceAfter: i === items.length - 1 ? 0 : Math.round(gap * 72), breakLine: i < items.length - 1 } }));
+  s.addText(paras, { x: x - 0.02, y, w: w + 0.02, h: h || est + 0.3, fontFace: SANS, fontSize: size, color, margin: 0, valign: 'top', lineSpacingMultiple: 1.3 });
+  return y + est;
+}
+function chip(s, text, x, y, color = C.ink2, fill = C.paper, line = C.line) {
+  const w = text.length * 0.068 + 0.26;
+  s.addShape(pptx.ShapeType.roundRect, { x, y, w, h: 0.26, rectRadius: px(7), fill: { color: fill }, line: { color: line, width: 0.75 } });
+  T(s, text, { x, y: y + 0.055, w, h: 0.17, fontFace: MONO, bold: true, fontSize: 7.8, color, align: 'center' });
+  return w;
+}
+function band(s, plain, em, y = BOTTOM - 0.56) {
+  s.addShape(pptx.ShapeType.roundRect, { x: M, y, w: CW, h: 0.56, rectRadius: px(12), fill: { color: C.ink }, line: { type: 'none' } });
+  s.addText([
+    { text: plain, options: { color: C.paper } },
+    { text: em, options: { italic: true, color: C.aqua } },
+  ], { x: M + 0.23, y: y + 0.13, w: CW - 0.46, h: 0.34, fontFace: SERIF, fontSize: 17, margin: 0, valign: 'top' });
+}
+function frame(s, img, x, y, w, h, time, warn) {
+  s.addImage({ path: IMG(img), x, y, w, h, rounding: false });
+  s.addShape(pptx.ShapeType.rect, { x, y, w, h, fill: { color: C.paper, transparency: 100 }, line: { color: warn ? C.amber : C.line, width: warn ? 2 : 0.75 } });
+  if (time) {
+    s.addShape(pptx.ShapeType.roundRect, { x: x + 0.07, y: y + 0.07, w: 0.5, h: 0.22, rectRadius: 0.04, fill: { color: warn ? C.amber : C.ink }, line: { type: 'none' } });
+    T(s, time, { x: x + 0.07, y: y + 0.11, w: 0.5, h: 0.15, fontFace: MONO, bold: true, fontSize: 7.8, color: C.lift, align: 'center' });
+  }
+}
+// SignWell table: mono header over a 1.5pt ink rule, hairline rows
+function table(s, x, y, w, cols, data, { size = 10, rowH = 0.3, boldFirst = true, totalRow = -1 } = {}) {
+  const none = { type: 'none' };
+  const head = cols.map((c) => ({
+    text: c.label.toUpperCase(),
+    options: { fontFace: MONO, bold: true, fontSize: 7.2, color: C.ink3, charSpacing: 1, align: c.align || 'left', valign: 'bottom', margin: [2, 6, 4, 6], border: [none, none, { pt: 1.5, color: C.ink }, none] },
+  }));
+  const body = data.map((r, ri) => r.map((v, ci) => ({
+    text: String(v),
+    options: {
+      fontFace: (ci === 0 && boldFirst) || ri === totalRow ? SANS6 : SANS, fontSize: size,
+      color: (ci === 0 && boldFirst) || ri === totalRow ? C.ink : C.ink2, align: cols[ci].align || 'left', valign: 'middle', margin: [3, 6, 3, 6],
+      border: [none, none, ri === totalRow ? { pt: 1.5, color: C.ink } : { pt: 0.75, color: C.line }, none],
+    },
+  })));
+  s.addTable([head, ...body], { x, y, w, colW: cols.map((c) => (c.w / 100) * w), rowH: [0.3, ...data.map(() => rowH)], autoPage: false });
+}
