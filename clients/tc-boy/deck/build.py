@@ -12,6 +12,8 @@ HERE = pathlib.Path(__file__).parent
 P = HERE / "parts"
 read = lambda n: (P / n).read_text(encoding="utf-8")
 
+import base64
+TC_LOGO = "data:image/png;base64," + base64.b64encode((P / "tcboy-logo.png").read_bytes()).decode()
 content = read("content.js")
 if "\u2014" in content or "\u2013" in content:
     sys.exit("em or en dash found in content.js")
@@ -28,12 +30,14 @@ body = f"""<div id="prog" aria-hidden="true"></div>
 {read("wordmark.html")}
 <script>
 {read("head.js")}
+{read("mapdata.js")}
+const TC_LOGO="{TC_LOGO}";
 {content}
 {read("engine.js")}
 </script>"""
 
 head = f"""<title>TC Boy 2027 Plan</title>
-<meta name="description" content="Toggle's 2027 online growth and media plan for TC Boy: the protein opportunity, the shop fixes, RM100,000 of paid media inside RM200,000, Threads, creators and the June checkpoint.">
+<meta name="description" content="Toggle's 2027 online growth and media plan for TC Boy: healthier everyday eating, official marketplace stores, RM100,000 of paid media inside RM200,000, the Malaysia reach map, creators and the June checkpoint.">
 {read("fonts.html")}
 <style>
 {read("zaid.css")}

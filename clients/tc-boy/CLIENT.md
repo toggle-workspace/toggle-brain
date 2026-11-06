@@ -39,8 +39,8 @@ Penang canned food brand (tuna, sardines, baked beans, sea coconut, pineapple). 
 ## Work on file
 - `01-strategy/2026-11-05-pre-planning.md`: pre-planning ahead of the proposal deck (audit, market, thesis, budget frame, open questions)
 - `01-strategy/TC-Boy-Toggle-2027-Proposal-Nov-2026.pptx`: proposal deck v1, 15 slides, house style. Built by `01-strategy/_build/build_deck.py`.
-- `deck/TC-Boy-2027-Deck.html`: interactive HTML proposal deck, 16 slides, built from `deck/parts/` with `deck/build.py` (engine, fonts and base styles shared with the INFOM and education decks). Supersedes the PPTX as the presenting version.
-- `00-brief/TC-Boy-Onboarding-Questionnaire-Nov-2026.docx`: 27-question onboarding form for the TC Boy PIC, return by 13 Nov 2026. Uploaded to Drive, Client Proposals > Documents (file id 1k8vlFni7LfvZivolyniePV7BvJgWA0cq). Built by `01-strategy/_build/build_questionnaire.py`.
+- `deck/TC-Boy-2027-Deck.html`: interactive HTML proposal deck, 17 slides (revised 6 Nov 2026: marketplace-first, mass healthier positioning, tcboy.com as optional add-on, Malaysia takeover map), built from `deck/parts/` with `deck/build.py` (engine, fonts and base styles shared with the INFOM and education decks). Supersedes the PPTX as the presenting version.
+- `00-brief/TC-Boy-Onboarding-Questionnaire-Nov-2026.docx`: 9-question, one-page onboarding form for the TC Boy PIC (cut from 27 on 6 Nov 2026; budget, product and brand questions are covered in the session, not the form), return by 13 Nov 2026. Uploaded to Drive, Client Proposals > Documents (file id 1k8vlFni7LfvZivolyniePV7BvJgWA0cq). Built by `01-strategy/_build/build_questionnaire.py`.
 - `01-strategy/2026-11-05-threads-playbook.md`: Threads scan (how Malaysian brands use it, ad options, TC Boy's role for it, media split)
 
 ## Billing

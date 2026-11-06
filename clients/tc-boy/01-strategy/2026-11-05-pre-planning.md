@@ -12,6 +12,19 @@ This is the internal groundwork for the 2027 proposal deck. It covers what TC Bo
 
 ---
 
+## Revision, 6 November 2026 (Yi Yang's deck feedback)
+
+This revision supersedes the sections below wherever they conflict. The HTML deck (`deck/TC-Boy-2027-Deck.html`) reflects it; the PPTX deck does not yet.
+
+1. **Positioning is mass-market healthier everyday eating, not fitness.** No gym, running or HYROX focus. Creators are nutritionists, home cooks, busy parents and office-lunch creators.
+2. **E-commerce means the marketplaces.** TC Boy does sell on Shopee, through a shop called "TCBM Online Store" (found 6 November 2026; Mall badge not confirmed). Lazada has resellers only, and TikTok Shop has no storefront. The plan builds three official stores.
+3. **tcboy.com is an optional add-on** that Toggle's web team can fix or rebuild, quoted separately and outside the RM200,000.
+4. **Paid media split (RM100,000):** TikTok and TikTok Shop RM36,000, Shopee RM22,000, Lazada RM10,000, Facebook and Instagram RM22,000, Threads RM6,000, Google RM4,000 (brand search to the stores only). 68% goes to TikTok Shop, Shopee and Lazada.
+5. **The fee breakdown slide is out of the client deck.** The RM200,000 split in section 8 stays internal.
+6. **Reach model for the takeover map:** about 14.1M ad views, 7.4M people reached (summed across platforms) and 85,000 store visits from search ads on the base plan. With the full RM60,000 top-up, about 22.6M views. Costs per 1,000 views come from Toggle's 2026 Malaysian media plans (`clients/COO/saji/01-strategy/media-plan-and-findings-rev2-2026-09-15.md`).
+
+---
+
 ## 1. Headline findings
 
 1. **Nobody in Malaysian canned fish owns fitness.** Ayam Brand calls its tuna "an excellent and affordable source of lean protein", but it has no gym, athlete or race partnership. Yeo's is pushing flavor (Teriyaki Tuna, October 2026). The fitness lane is open.

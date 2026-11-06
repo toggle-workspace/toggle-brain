@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="robots" content="noindex,nofollow">
 <title>TC Boy 2027 Plan</title>
-<meta name="description" content="Toggle's 2027 online growth and media plan for TC Boy: the protein opportunity, the shop fixes, RM100,000 of paid media inside RM200,000, Threads, creators and the June checkpoint.">
+<meta name="description" content="Toggle's 2027 online growth and media plan for TC Boy: healthier everyday eating, official marketplace stores, RM100,000 of paid media inside RM200,000, the Malaysia reach map, creators and the June checkpoint.">
 <style>
 @font-face {
   font-family: 'Instrument Sans';
@@ -1159,12 +1159,12 @@ body.planning #plan{display:flex}
 .bside p{margin:6px 0 0;font-size:15.5px;line-height:1.5}
 
 /* platforms */
-.cjobs{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr 1fr;gap:10px;padding-top:8px}
+.cjobs{display:grid;grid-template-columns:1.25fr 1fr 1fr 1fr 1fr 1fr;gap:10px;padding-top:8px}
 .cjob{text-align:left;background:var(--paper-lift);border:1px solid var(--line);border-radius:16px;padding:16px 18px;display:flex;flex-direction:column;gap:8px;transition:transform .4s var(--ease),border-color .3s,box-shadow .3s;position:relative}
 .cjob:hover{transform:translateY(-4px);border-color:var(--ink-3)}
 .cjob[aria-pressed="true"]{border-color:var(--ink);box-shadow:0 22px 40px -24px rgba(14,27,51,.4)}
 .cjob .jn{font-weight:600;font-size:16.5px}
-.cjob .jj{font-family:var(--serif);font-size:40px;line-height:1;letter-spacing:-.02em}
+.cjob .jj{font-family:var(--serif);font-size:36px;line-height:1;letter-spacing:-.02em}
 .cjob .sh{height:8px;border-radius:4px;background:var(--line-soft);overflow:hidden;margin-top:auto}
 .cjob .sh i{display:block;height:100%;background:var(--accent);border-radius:4px;width:0;transition:width 1s var(--ease) .3s}
 .cjob .sv{font-family:var(--mono);font-size:11px;color:var(--ink-3);letter-spacing:.06em}
@@ -1278,6 +1278,112 @@ body.planning #plan{display:flex}
 .srclist{columns:2;column-gap:48px;margin:30px 0 0;padding-left:22px;font-size:14px;line-height:1.5;color:var(--ink-2)}
 .srclist li{break-inside:avoid;margin-bottom:7px}
 
+/* cover: no ribbed glass panel and no pink glow (Yi Yang, 6 Nov 2026).
+   zaid.css draws both as .cover::before and .cover::after; switch them off. */
+.cover::before,.cover::after{display:none!important}
+
+
+/* ===== revision 6 Nov 2026: marketplace-first, healthier everyday, takeover map ===== */
+
+/* marketplace status cards */
+.mstat{display:grid;gap:12px}
+.mstat div{background:var(--paper-lift);border:1px solid var(--line);border-radius:16px;padding:18px 22px;display:grid;grid-template-columns:1fr auto;gap:4px 16px;align-items:baseline}
+.mstat b{font-size:19px;font-weight:600}
+.mstat .st{font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;padding:4px 10px;border-radius:999px;background:var(--warn-wash);color:#8A5F0C;white-space:nowrap}
+.mstat .st.ok{background:var(--accent-wash);color:var(--accent-deep)}
+.mstat span.d{grid-column:1/-1;font-size:15px;color:var(--ink-2);line-height:1.45}
+
+/* official store mockup */
+.store{display:grid;grid-template-columns:430px 1fr;gap:30px;height:100%}
+.sphone{background:#fff;border:1px solid var(--line);border-radius:30px;overflow:hidden;box-shadow:0 30px 60px -36px rgba(14,27,51,.45);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#1a1a1a}
+.sphone .sh{padding:18px 20px 16px;color:#fff;background:var(--tint,#2A6BE0)}
+.sphone .sh .row{display:flex;align-items:center;gap:12px}
+.sphone .lg{width:46px;height:46px;border-radius:50%;background:#fff;color:var(--tint,#2A6BE0);display:grid;place-items:center;font-weight:800;font-size:13px;letter-spacing:-.02em}
+.sphone .nm{font-weight:700;font-size:17px}
+.sphone .bdg{display:inline-block;font-size:10.5px;font-weight:700;padding:2px 7px;border-radius:4px;background:#fff;color:var(--tint,#2A6BE0);margin-right:6px}
+.sphone .sub{font-size:12px;opacity:.9;margin-top:3px}
+.sphone .vch{display:flex;gap:8px;padding:12px 16px;border-bottom:1px solid #eee}
+.sphone .vch span{flex:1;border:1px dashed var(--tint,#2A6BE0);color:var(--tint,#2A6BE0);border-radius:6px;padding:7px 8px;font-size:12px;font-weight:600;text-align:center}
+.sphone .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:14px 16px 18px}
+.sphone .it{border:1px solid #eee;border-radius:10px;overflow:hidden}
+.sphone .it .im{height:84px;background:linear-gradient(135deg,#EEF3FB,#DCE7F7);display:grid;place-items:center;font-family:var(--serif);font-size:30px;color:#4A5A75}
+.sphone .it .tx{padding:8px 10px 10px;font-size:12.5px;line-height:1.35;font-weight:600}
+.sphone .it .tg{display:inline-block;margin-top:5px;font-size:10.5px;font-weight:700;color:var(--tint,#2A6BE0)}
+.sside{display:flex;flex-direction:column;gap:12px}
+.sside .card{padding:18px 22px}
+.sside h3{font-family:var(--serif);font-weight:400;font-size:38px;line-height:1.02;margin:6px 0 0;letter-spacing:-.02em}
+.sside p{margin:6px 0 0;font-size:16px;line-height:1.5}
+
+/* optional add-on */
+.addon{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:34px}
+.addon .card{padding:24px 28px}
+.addon .afl{display:grid;gap:10px;margin-top:10px}
+.addon .afl div{display:grid;grid-template-columns:150px 1fr;gap:14px;align-items:baseline;padding:10px 0;border-top:1px solid var(--line-soft)}
+.addon .afl b{font-family:var(--serif);font-weight:400;font-size:30px;line-height:1;color:#A6720E}
+.addon .afl span{font-size:15.5px;line-height:1.45;color:var(--ink-2)}
+.addon .agl{display:grid;gap:10px;margin-top:12px}
+.addon .agl div{display:flex;gap:12px;font-size:16.5px;line-height:1.45}
+.addon .agl div::before{content:"";flex:none;width:9px;height:9px;border-radius:3px;background:var(--accent);margin-top:8px}
+.optag{display:inline-flex;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;padding:6px 12px;border-radius:999px;border:1px dashed var(--ink-3);color:var(--ink-2)}
+
+/* the build-up */
+.ramp{display:flex;flex-direction:column;gap:14px;height:100%}
+.rchart{position:relative;background:var(--paper-lift);border:1px solid var(--line);border-radius:18px;padding:18px 0 6px}
+.rchart svg{width:100%;height:300px;display:block;overflow:visible}
+.rchart .ln{fill:none;stroke:var(--accent);stroke-width:3.5;stroke-linecap:round;stroke-linejoin:round;stroke-dasharray:1;stroke-dashoffset:1;transition:stroke-dashoffset 2.6s var(--ease)}
+.rchart .ar{fill:url(#rampFill);opacity:0;transition:opacity 1.2s ease 1.2s}
+.rchart.go .ln{stroke-dashoffset:0}.rchart.go .ar{opacity:1}
+.rchart .pk{opacity:0;transform:scale(.4);transform-box:fill-box;transform-origin:center;transition:opacity .4s,transform .5s var(--ease)}
+.rchart.go .pk{opacity:1;transform:scale(1)}
+.rchart .pk circle{fill:var(--paper-lift);stroke:var(--accent);stroke-width:3}
+.rchart .pk.big circle{fill:var(--pop);stroke:var(--pop)}
+.rchart .pk text{font-family:var(--mono);font-size:13px;font-weight:700;fill:var(--ink-2);text-anchor:middle}
+.rchart .mo{font-family:var(--mono);font-size:12px;fill:var(--ink-3);text-anchor:middle;letter-spacing:.08em}
+.rchart .ck line{stroke:var(--ink-3);stroke-width:1.5;stroke-dasharray:5 5}
+.rchart .ck text{font-family:var(--mono);font-size:11px;fill:var(--ink-2);letter-spacing:.1em}
+.rstages{display:grid;grid-template-columns:1fr 2fr 3fr 3fr 3fr;gap:8px}
+.rst{text-align:left;border:1px solid var(--line);background:var(--paper-lift);border-radius:14px;padding:12px 14px;transition:border-color .3s,box-shadow .3s}
+.rst[aria-pressed="true"]{border-color:var(--ink);box-shadow:0 18px 34px -24px rgba(14,27,51,.45)}
+.rst .n{display:block;font-family:var(--mono);font-size:10.5px;font-weight:700;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.rst .t{display:block;font-family:var(--serif);font-size:23px;line-height:1.05;margin-top:4px}
+.rst:last-child .n{color:var(--pop-deep)}
+.rpanel{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:12px}
+.rpanel .card{padding:16px 20px}
+.rpanel p{margin:6px 0 0;font-size:15.5px;line-height:1.5}
+
+/* the takeover */
+.tko{display:grid;grid-template-columns:1fr 330px;gap:24px;height:100%}
+.tmap{position:relative;background:var(--ink);background-image:var(--glow-dark);border-radius:20px;padding:26px 26px 18px;display:flex;flex-direction:column}
+.tmap svg{width:100%;height:auto;display:block}
+.tmap .d{fill:rgba(234,241,250,.16);transition:fill .5s ease}
+.tmap .d.on{fill:var(--aqua)}
+.tmap .d.nw{fill:var(--pop)}
+.tmap .hm circle{fill:none;stroke:var(--pop);stroke-width:2}
+.tmap .hm text{font-family:var(--mono);font-size:10px;fill:#EAF1FA;letter-spacing:.08em}
+.tbar{display:flex;align-items:center;gap:14px;margin-top:auto;padding-top:14px}
+.tplay{border:0;border-radius:999px;background:var(--pop);color:#fff;font-family:var(--mono);font-size:11px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;padding:10px 18px}
+.tmonths{flex:1;display:grid;grid-template-columns:repeat(12,1fr);gap:4px}
+.tmonths span{font-family:var(--mono);font-size:10.5px;text-align:center;color:rgba(234,241,250,.4);padding-top:6px;border-top:3px solid rgba(255,255,255,.12);transition:.3s}
+.tmonths span.on{color:#EAF1FA;border-top-color:var(--aqua)}
+.tmonths span.now{color:var(--pop);border-top-color:var(--pop)}
+.tmap .seg{background:rgba(255,255,255,.08);border-color:rgba(255,255,255,.14)}
+.tmap .seg button{color:rgba(234,241,250,.7)}
+.tmap .seg button[aria-pressed="true"]{background:#EAF1FA;color:var(--ink)}
+.kside{display:flex;flex-direction:column;gap:10px}
+.kside .card{padding:14px 18px}
+.tnum{font-family:var(--serif);font-size:44px;line-height:1;letter-spacing:-.02em;color:var(--ink);font-variant-numeric:tabular-nums;margin-top:4px}
+.tnum.a{color:var(--accent)}
+.kside small{display:block;font-size:13px;color:var(--ink-3);line-height:1.35;margin-top:4px}
+.aud{display:grid;gap:6px;margin-top:8px}
+.aud div{display:grid;grid-template-columns:96px 1fr 52px;gap:8px;align-items:center;font-size:13px}
+.aud i{display:block;height:7px;border-radius:4px;background:var(--accent);width:0;transition:width 1s var(--ease) .4s}
+.aud b{font-family:var(--mono);font-size:11.5px;text-align:right}
+
+/* TC BOY logo: cover lockup and the store mockup header only */
+.lockup .tcl{height:54px;width:auto;display:block}
+.sphone .lg{width:auto;height:46px;border-radius:10px;padding:6px 10px;background:#fff;display:grid;place-items:center}
+.sphone .lg img{height:30px;width:auto;display:block}
+
 </style>
 </head>
 <body>
@@ -1329,10 +1435,17 @@ function countUp(el,to,suf,pre="",dec=0){
   requestAnimationFrame(tick);
 }
 
+/* Malaysia dot map for the takeover exhibit. Generated from Natural Earth via world-atlas@2.0.2
+   (countries-50m, id 458), equirectangular at 4N, one dot every 6.5 units, sorted by distance
+   from Bukit Mertajam (TC Boy's home) with light jitter so the fill spreads outward. */
+const MYMAP={w:900,h:312,home:[46,100],dots:[49,101,46,94,52,94,46,108,56,101,52,108,42,88,49,88,36,101,59,94,56,88,49,114,62,101,59,108,56,114,46,82,65,108,65,94,62,88,52,120,52,82,68,88,59,120,62,114,65,82,68,101,56,75,59,82,72,108,75,88,56,127,49,75,75,101,52,68,72,94,62,75,42,75,68,114,78,108,46,68,62,127,65,120,78,94,82,88,85,108,72,120,82,114,68,75,59,134,75,127,59,68,75,114,56,62,56,140,49,62,88,88,85,82,82,101,85,120,65,134,42,62,65,68,39,56,68,127,78,120,68,140,72,68,33,56,59,56,46,56,62,140,85,94,78,134,72,134,91,94,91,120,59,146,62,62,91,82,36,49,68,62,94,101,98,108,88,114,98,94,94,88,88,101,101,88,91,134,20,56,72,146,52,56,82,127,88,127,68,153,42,49,91,108,98,82,101,114,85,134,94,114,101,101,82,140,75,140,94,127,91,146,49,49,65,146,98,134,104,108,98,120,104,134,111,120,88,153,104,120,88,140,104,82,13,56,62,153,114,75,68,166,104,94,91,160,108,127,78,146,75,153,94,140,75,166,82,166,72,172,120,101,114,140,120,88,101,127,62,166,124,82,117,134,117,82,78,172,85,146,111,82,98,146,78,160,108,88,120,114,111,108,108,101,108,114,82,153,111,134,65,160,114,88,127,101,101,140,94,166,114,101,124,134,117,108,108,140,114,127,124,108,72,160,111,94,88,166,127,88,127,75,85,160,120,62,82,179,120,75,134,101,88,179,117,94,124,68,114,114,101,166,134,75,114,153,94,153,137,120,101,153,104,146,104,160,111,172,124,120,120,127,117,120,130,82,117,146,108,166,134,88,124,146,98,160,124,94,130,108,130,134,134,114,85,186,117,68,134,127,85,172,130,146,120,153,137,82,98,172,137,134,143,94,130,160,146,88,75,179,140,88,111,146,127,62,108,153,150,108,124,160,150,120,120,140,130,94,137,108,127,114,94,179,127,153,130,120,140,114,130,68,111,160,153,101,104,172,114,179,91,172,134,140,98,198,127,179,78,186,114,166,117,160,108,179,127,140,137,94,101,192,127,127,111,186,143,146,117,172,104,198,101,179,94,192,153,140,143,82,143,160,120,192,160,114,111,198,88,205,140,140,104,186,150,94,140,101,156,94,143,134,143,108,91,186,156,146,134,166,140,127,98,186,163,108,146,153,124,186,146,101,143,120,150,134,146,127,140,153,134,179,120,166,172,127,140,166,120,179,156,108,127,166,94,218,160,127,146,140,166,153,88,192,153,127,137,186,169,108,137,146,172,140,98,212,146,114,150,146,156,172,124,198,163,120,160,153,153,153,166,140,150,172,166,127,91,198,134,153,166,114,153,114,150,160,169,120,143,186,166,166,156,160,124,172,179,127,172,153,153,166,146,166,140,179,130,172,137,160,117,224,134,192,176,146,163,160,114,192,163,172,156,134,124,212,156,120,160,101,111,212,160,192,160,166,114,218,108,192,127,205,163,146,94,205,140,192,163,134,117,186,153,192,101,205,172,114,127,218,111,224,137,172,104,212,160,140,127,192,179,140,130,212,134,205,146,192,156,186,153,205,130,186,143,198,143,212,137,212,91,212,172,166,120,205,176,120,150,198,108,205,134,218,101,218,120,218,140,205,114,205,169,134,120,231,166,101,117,198,172,179,108,218,143,172,153,179,130,198,140,218,160,205,176,186,127,231,166,192,117,212,137,238,166,179,166,218,169,172,150,186,146,179,169,160,169,198,130,224,179,205,140,244,176,134,160,218,169,146,172,192,169,224,169,186,137,198,153,231,150,238,172,205,134,231,163,212,163,224,143,224,160,179,124,238,176,172,179,153,146,205,163,198,156,250,146,244,146,231,134,244,146,218,160,231,156,212,179,231,169,212,153,244,130,238,140,231,114,231,176,160,176,238,163,250,172,218,163,186,156,224,124,224,186,218,153,218,156,198,137,224,150,212,195,224,166,205,150,250,198,231,176,198,169,250,143,238,179,244,169,264,150,224,192,244,153,257,176,224,182,264,179,192,163,264,202,238,169,238,179,218,143,250,156,238,198,257,166,231,189,238,176,264,182,224,202,250,182,238,186,257,166,257,186,231,163,238,176,212,166,244,182,250,160,257,208,250,172,231,176,250,189,264,160,244,189,250,192,231,198,244,189,224,172,244,186,270,186,244,179,257,212,257,205,244,212,270,205,257,172,257,195,238,198,270,189,276,195,250,195,264,202,264,179,270,192,270,192,257,182,276,215,264,208,264,215,276,478,270,458,257,465,270,481,276,498,270,462,264,488,276,491,296,491,270,520,276,475,276,488,290,530,257,540,250,517,283,546,250,501,276,543,257,536,283,524,270,475,264,504,283,484,283,550,270,468,264,550,231,556,270,569,218,530,283,553,224,562,283,507,276,514,290,543,270,501,290,572,264,550,218,559,250,472,270,588,205,468,276,576,218,553,290,533,290,569,244,533,276,562,257,543,218,543,283,559,238,579,224,527,290,540,264,494,290,514,276,566,212,540,224,536,244,540,276,592,212,498,283,559,264,559,224,588,270,536,270,569,257,602,218,624,198,572,250,621,231,553,250,611,238,592,238,478,283,624,212,491,283,614,192,559,276,576,231,611,224,621,257,553,276,592,250,546,224,608,218,579,264,533,264,566,250,585,264,494,276,605,224,611,250,602,257,533,224,634,205,637,224,654,179,631,276,559,212,628,270,504,296,484,270,647,257,657,198,640,205,582,218,550,244,637,212,602,244,533,250,546,290,498,296,550,257,602,205,624,186,637,250,647,166,660,192,628,192,562,218,566,224,582,231,631,238,654,244,631,250,562,231,618,198,670,172,611,198,556,231,628,179,572,238,556,244,588,244,650,186,510,296,507,290,546,264,628,205,608,257,644,212,624,250,527,264,595,231,585,224,640,244,569,283,676,250,510,283,614,257,628,218,546,238,572,276,683,186,654,270,602,270,644,160,611,264,536,257,631,212,673,270,598,212,657,238,569,231,631,264,582,257,640,231,524,283,533,238,540,290,660,140,618,238,689,186,588,218,692,127,546,276,634,218,543,231,579,250,676,186,595,205,608,231,621,244,666,270,579,212,663,186,634,192,559,290,556,218,676,160,624,264,576,257,654,153,680,231,621,218,647,179,706,179,588,231,644,238,706,192,569,270,614,231,666,231,605,250,683,160,553,238,585,250,663,198,562,270,543,244,666,153,631,186,582,244,673,166,657,160,676,224,550,283,647,218,520,290,530,270,666,205,722,94,686,231,660,270,699,231,595,218,673,153,728,94,728,146,686,192,735,146,572,212,676,238,588,257,540,238,576,270,689,160,683,172,666,244,595,270,680,179,709,172,680,166,598,250,699,153,631,224,725,127,686,166,634,244,650,224,670,250,744,101,657,186,692,218,712,205,562,244,602,231,660,218,614,244,634,231,689,224,741,134,722,120,637,276,654,192,582,270,751,114,699,179,556,257,718,127,683,238,722,134,689,212,670,160,553,264,566,264,657,172,696,198,670,212,673,192,709,160,572,224,647,205,709,146,592,224,592,264,644,276,654,166,751,75,754,120,660,205,741,120,634,283,614,218,566,238,738,101,666,218,696,134,663,250,673,179,628,231,712,127,595,244,598,238,660,179,556,283,770,114,673,205,660,231,663,146,702,172,666,192,758,140,689,134,715,120,732,114,715,172,686,218,605,212,595,257,605,264,566,276,579,238,585,238,624,276,692,192,670,198,637,186,689,198,644,172,764,88,576,244,644,198,692,166,748,120,663,160,663,172,654,218,585,212,663,238,666,257,696,186,735,120,611,212,637,172,673,231,650,160,780,82,657,212,706,153,640,179,683,212,712,179,770,88,631,198,764,75,670,264,787,42,624,238,660,166,796,140,644,250,696,224,764,140,608,270,735,94,680,257,644,264,770,49,614,205,787,56,741,94,598,224,699,166,692,231,725,114,628,244,725,101,803,88,793,56,702,198,605,238,718,140,614,270,654,140,790,75,692,153,761,120,663,224,796,114,598,264,796,36,608,205,793,30,712,192,738,114,640,257,618,212,800,68,654,205,780,134,813,120,777,127,650,172,758,127,803,140,666,179,702,160,800,42,689,238,751,127,790,62,640,192,634,257,718,179,618,276,650,264,618,264,618,224,647,244,621,192,657,264,647,231,680,205,608,244,712,140,826,120,816,49,647,192,631,172,618,250,709,198,770,75,621,205,621,270,673,244,657,146,777,49,770,140,628,257,686,244,689,250,654,231,764,127,637,198,796,88,722,146,634,179,725,140,624,224,686,179,842,127,640,283,836,88,650,238,800,16,637,238,634,270,660,257,836,114,767,120,800,120,640,166,696,172,657,250,686,205,683,250,822,114,793,94,810,62,644,186,777,62,796,101,774,120,784,88,826,82,728,120,676,172,800,56,637,264,640,218,644,224,735,108,806,94,660,244,790,127,666,166,800,94,650,250,654,257,852,134,673,257,650,198,777,114,822,88,692,140,787,120,784,140,640,270,732,101,683,264,777,88,660,153,826,146,751,88,702,146,670,224,813,94,657,224,852,82,803,101,699,127,706,205,774,56,650,212,761,108,761,94,692,205,718,101,683,224,764,114,722,172,777,75,673,218,647,270,842,101,758,88,741,108,663,212,699,218,816,101,676,212,787,94,858,94,816,127,810,140,793,16,767,68,696,212,819,120,810,101,770,127,777,101,790,36,676,264,758,62,761,82,670,186,735,134,855,114,670,238,680,192,715,186,813,146,758,114,764,101,744,140,680,270,732,140,676,198,806,120,784,127,829,101,696,146,829,114,689,172,754,68,728,134,774,108,865,108,699,205,663,264,884,108,829,75,819,56,774,42,871,108,696,160,683,198,761,68,796,62,761,56,692,179,793,42,744,127,803,49,845,134,787,68,839,108,751,140,793,108,780,108,702,224,728,108,699,192,829,127,712,166,796,75,680,218,702,186,836,140,777,36,813,82,748,94,718,192,761,134,758,101,680,244,725,153,709,186,744,114,767,108,780,56,787,134,790,114,767,82,848,114,793,120,699,140,709,120,738,140,754,82,793,134,819,82,839,146,806,146,832,146,715,146,718,166,813,56,718,153,767,56,706,166,800,146,715,160,702,212,806,108,836,127,732,127,748,108,712,153,790,140,800,108,715,198,738,88,784,114,774,82,784,49,715,134,803,75,758,75,738,127,796,49,836,75,836,101,780,30,767,134,748,134,855,101,810,127,770,62,816,88,722,160,722,186,787,108,793,68,777,140,839,94,780,120,754,134,829,88,819,134,848,140,754,108,862,114,822,101,774,134,748,82,764,62,842,140,813,68,855,140,744,88,819,94,774,68,806,56,842,88,751,101,839,120,754,94,862,101,806,68,822,153,793,82,816,140,845,108,881,101,767,94,803,62,790,101,878,108,790,88,770,101,819,108,784,101,784,75,822,140,829,140,806,82,810,114,787,82,832,134,800,134,806,134,845,82,780,68,774,94,780,94,845,94,800,82,839,134,832,120,868,101,813,134,816,75,784,62,790,49,810,75,796,127,865,94,822,75,842,114,803,127,832,94,810,88,803,114,826,108,813,108,826,134,826,94,810,49,852,94,816,114,822,127,832,108,858,108,855,88,848,101,874,114,852,108,848,88,868,114,871,94,874,101,888,101]};
+
+const TC_LOGO="data:image/png;base64,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";
 /* =========================================================================
-   DECK CONTENT. Every figure traces to the sources slide, and to
-   clients/tc-boy/01-strategy/2026-11-05-pre-planning.md and
-   2026-11-05-threads-playbook.md. Budget figures match the PPTX deck.
+   DECK CONTENT, revision of 6 November 2026. Marketplace-first, healthier
+   everyday positioning for the mass market, tcboy.com as an optional
+   add-on. Every figure traces to the sources slide and to
+   clients/tc-boy/01-strategy/2026-11-05-pre-planning.md.
    ========================================================================= */
 const q=new URLSearchParams(location.search);
 const PARTNER=(q.get("for")||"TC Boy").slice(0,40);
@@ -1340,43 +1453,44 @@ const DECK_NAME="TC Boy 2027 plan · Toggle";
 const BODY={},INITS=[];
 const SYSTEM=[];
 const rm=n=>"RM"+fmt(n);
+const mil=n=>(n/1e6).toFixed(1)+"M";
 
 /* =========================================================================
    THE MARKET · DEMAND TILES
    ========================================================================= */
 const DEMAND=[
-  {v:42000,c:"runners registered for the 2025 KL Standard Chartered Marathon, which sold out in under four hours.",s:"The Sun · 2025"},
-  {v:100,suf:"+",c:"Anytime Fitness clubs in Malaysia by January 2026, with another 100 planned.",s:"Free Malaysia Today · Jan 2026"},
+  {v:47,suf:"%",c:"of Malaysian online shoppers now buy groceries online, up from 34% a year earlier.",s:"Ipsos · Jul 2026"},
+  {v:12.57,pre:"RM",dec:2,c:"average cost of a balanced home-cooked meal. Cost is the main thing keeping families from eating to the healthy-plate guide.",s:"Galen Centre and UiTM · Sep 2025"},
   {v:28,suf:"g",c:"protein per 100g in the RM4 sardine can a Malaysian called \"my new protein source\". No brand was named.",s:"WorldOfBuzz · Jan 2026"},
-  {v:47,suf:"%",c:"of Malaysian online shoppers now buy groceries online, up from 34% a year earlier.",s:"Ipsos · Jul 2026"}
+  {v:56,suf:"%",c:"more protein claimed by Marigold HL Advance. Household brands are bringing protein to everyday groceries.",s:"Mini Me Insights"}
 ];
 
 /* =========================================================================
    THE MARKET · POSITIONING MAP
    ========================================================================= */
 BODY.map={
-  title:'Everyone says protein. <em>Nobody shows up at the gym.</em>',
-  kicker:'Each brand sits by how loudly it claims protein and how visible it is in sport. Click a brand, then switch to 2027.',
+  title:'The healthier everyday can <em>is still up for grabs</em>.',
+  kicker:'Each brand sits by how loudly it claims protein and how much it is seen as part of everyday healthier eating. Click a brand, then switch to 2027.',
   body:`<div class="pmap"><div class="pplot" id="pplot"><div class="q"></div><span class="ql">Open space</span><div class="vl"></div><div class="hl"></div>
-      <span class="ax x">How loudly the brand claims protein &#8594;</span><span class="ax y">Seen in sport and fitness &#8594;</span></div>
+      <span class="ax x">How loudly the brand claims protein &#8594;</span><span class="ax y">Seen as healthier everyday food &#8594;</span></div>
     <div class="pside"><div class="seg" id="pSeg" style="width:fit-content"><button type="button" data-v="0" aria-pressed="true">Today</button><button type="button" data-v="1" aria-pressed="false">TC Boy in 2027</button></div>
       <div class="card" id="pCard" aria-live="polite"></div></div></div>`,
-  src:'Positions are Toggle\'s reading of each brand\'s public messaging and partnerships, checked 5 November 2026. Ayam Brand quote: Malaysian Foodie, November 2024. Yeo\'s launch: The Star, October 2026. Regional precedent: Century Tuna "Superbods" in the Philippines.'
+  src:'Positions are Toggle\'s reading of each brand\'s public messaging, checked 5 and 6 November 2026. Ayam Brand: Malaysian Foodie, November 2024. Yeo\'s: The Star, October 2026. TC Boy on Shopee: TCBM Online Store listings, checked 6 November 2026.'
 };
 const BRANDS=[
-  {n:"Ayam Brand",x:78,y:24,say:'"An excellent and affordable source of lean protein."',sport:"Community fitness workshops as CSR. No gym, athlete or race partner found.",mk:"Official Shopee and Lazada stores."},
-  {n:"Yeo's",x:22,y:12,say:"Teriyaki and spicy tuna, launched with a roadshow in October 2026.",sport:"None found. The story is flavor.",mk:"Not checked."},
-  {n:"King Cup",x:14,y:30,say:"Local taste and value in sardines and mackerel.",sport:"None found.",mk:"Not checked."},
-  {n:"Adabi",x:30,y:40,say:"Heritage spice brand with sardine curry.",sport:"None found.",mk:"Not checked."},
-  {n:"Rex",x:40,y:12,say:"Penang tuna maker, halal certified.",sport:"None found.",mk:"Not checked."},
-  {n:"TC Boy today",x:58,y:15,tc:1,say:'"High in protein" on product pages, with no grams shown.',sport:"None yet.",mk:"No official store found on Shopee, Lazada or TikTok Shop."},
-  {n:"TC Boy in 2027",x:84,y:80,goal:1,say:"Protein grams on every can, a 12-can protein pack and straight answers on Threads.",sport:"Trainers, run clubs and HYROX athletes using the product on camera.",mk:"Official stores on Shopee, Lazada and TikTok Shop."}
+  {n:"Ayam Brand",x:76,y:48,say:'"An excellent and affordable source of lean protein."',life:"Runs a yearly community campaign for a healthier Malaysia, the 17th in 2024. It speaks through events more than everyday online content.",mk:"Official Shopee and Lazada stores."},
+  {n:"Yeo's",x:22,y:14,say:"Teriyaki and spicy tuna, launched with a roadshow in October 2026.",life:"None found. The story is flavor.",mk:"Not checked."},
+  {n:"King Cup",x:14,y:28,say:"Local taste and value in sardines and mackerel.",life:"None found.",mk:"Not checked."},
+  {n:"Adabi",x:30,y:36,say:"Heritage spice brand with sardine curry.",life:"None found.",mk:"Not checked."},
+  {n:"Rex",x:40,y:12,say:"Penang tuna maker, halal certified.",life:"None found.",mk:"Not checked."},
+  {n:"TC Boy today",x:58,y:16,tc:1,say:'"High in protein" on product pages, with no grams shown.',life:"Recipes, hampers and giveaways on social, with no healthier-living angle yet.",mk:"Sells on Shopee through TCBM Online Store. Lazada resellers only, one at RM15.99 a can. No TikTok Shop storefront found."},
+  {n:"TC Boy in 2027",x:84,y:82,goal:1,say:"Protein grams on every can, and a healthier everyday pack.",life:"Home cooks, nutritionists and busy parents showing quick, healthier meals every week.",mk:"Official stores on Shopee, Lazada and TikTok Shop."}
 ];
 function initMap(){
   const plot=$("#pplot");
   plot.insertAdjacentHTML("beforeend",BRANDS.map((b,i)=>`<button type="button" class="pdot${b.tc?" tc":""}${b.goal?" goal hide":""}" data-i="${i}" aria-pressed="false" style="left:${b.x}%;bottom:${b.y}%"><i></i><span>${b.n}</span></button>`).join(""));
   const show=i=>{const b=BRANDS[i];$$(".pdot",plot).forEach(d=>d.setAttribute("aria-pressed",+d.dataset.i===i));
-    $("#pCard").innerHTML=`<span class="mono">${b.goal?"The 2027 target":"What they say"}</span><h3>${b.n}</h3><p>${b.say}</p><span class="mono pm">Sport and fitness</span><p>${b.sport}</p><span class="mono pm">Marketplaces</span><p>${b.mk}</p>`};
+    $("#pCard").innerHTML=`<span class="mono">${b.goal?"The 2027 target":"What they say"}</span><h3>${b.n}</h3><p>${b.say}</p><span class="mono pm">Healthier everyday eating</span><p>${b.life}</p><span class="mono pm">Marketplaces</span><p>${b.mk}</p>`};
   plot.addEventListener("click",e=>{const d=e.target.closest(".pdot");if(d)show(+d.dataset.i)});
   seg($("#pSeg"),b=>{const on=b.dataset.v==="1";$(".pdot.goal",plot).classList.toggle("hide",!on);show(on?6:5)});
   show(5);
@@ -1384,81 +1498,150 @@ function initMap(){
 INITS.push(initMap);
 
 /* =========================================================================
-   THE SHOP · BUYER JOURNEY
+   THE MARKETPLACES · OFFICIAL STORE MOCKUP
    ========================================================================= */
-BODY.shop={
-  title:'A gym-goer tries to buy six cans <em>and cannot</em>.',
-  kicker:'Five steps a first-time buyer takes on tcboy.com today, and what we change in the first quarter. Click a step.',
-  body:`<div class="jsteps" id="jsteps"></div><div class="jpanel" id="jPanel" aria-live="polite"></div>`,
-  src:'Source: tcboy.com product feed, page source and shipping policy, checked 5 November 2026. 43 SKUs in the feed; tuna and sardines are sold by the carton.'
+BODY.store={
+  title:'Three official stores, <em>one TC Boy shelf</em>.',
+  kicker:'What we build on Shopee, Lazada and TikTok Shop in the first 60 days, so shoppers buy from TC Boy and not from resellers. Switch the store.',
+  body:`<div class="store"><div class="sphone" id="sPhone" aria-live="polite"></div>
+    <div class="sside"><div class="seg" id="sSeg" style="width:fit-content"><button type="button" data-v="0" aria-pressed="true">Shopee</button><button type="button" data-v="1" aria-pressed="false">Lazada</button><button type="button" data-v="2" aria-pressed="false">TikTok Shop</button></div>
+      <div class="card"><span class="mono">Today</span><p id="sNow"></p></div>
+      <div class="card"><span class="mono">What we build</span><h3 id="sBuild"></h3><p id="sBuildP"></p></div>
+      <div class="card"><span class="mono">How shoppers find it</span><p id="sFind"></p></div></div></div>`,
+  src:'Mockup. Store layouts are illustrative, with no platform branding. Official store status depends on each platform\'s brand approval. Pack sizes follow the plan; prices are set with TC Boy. Today: TCBM Online Store listings on Shopee and Lazada listings, checked 5 and 6 November 2026.'
 };
-const STEPS=[
-  {t:"Find",f:"Search sees one page",nb:"1 title",now:'Every page carries the same title, "TCBOY", so Google cannot tell tuna from sea coconut. The 2018 site at tcboy.tropicalgrp.com still competes in search.',fb:"43 pages",fix:"A unique title and product markup for each of the 43 products, using data already stored in your back end. The 2018 site redirects to the new one."},
-  {t:"Choose",f:"Cartons only",nb:"RM326",now:"Tuna and sardines sell by the carton. The smallest tuna order is 48 cans at RM326.40, which is a lot to ask of a first-time buyer.",fb:"6 · 12 · 24",fix:"Packs of 6, 12 and 24 cans, plus a 12-can protein pack, with protein grams shown on every listing."},
-  {t:"Sign up",f:"OTP before the cart",nb:"OTP",now:"Shoppers must register with a phone OTP before anything goes into the cart.",fb:"Guest",fix:"Guest checkout for first-time buyers, with sign-up offered after the order."},
-  {t:"Track",f:"Ads cannot learn",nb:"0 pixels",now:"The site runs Google Analytics only. No Meta or TikTok pixel is installed, so ads cannot learn who buys.",fb:"Week 1",fix:"Tag manager, Meta Pixel with server-side conversions and the TikTok pixel, verified before any media goes live."},
-  {t:"Receive",f:"A week to arrive",nb:"7 to 8 days",now:"Delivery takes 7 to 8 days to Peninsular Malaysia and 8 to 10 days to Sabah and Sarawak, with no self-collection.",fb:"3 stores",fix:"Official Shopee, Lazada and TikTok Shop stores, which plug into each platform's own delivery network."}
+const STORES=[
+  {tint:"#E2562F",badge:"Mall",sub:"Official store · Ships from Penang",now:"TC Boy sells through TCBM Online Store. We could not confirm a Mall badge, and the listings carry no protein grams or bundles.",
+   build:"An upgraded official store",bp:"The TCBM shop becomes the official TC Boy store, with bundles, protein grams on every listing and store vouchers.",
+   find:"Shopee search ads on \"tuna\" and \"makanan tin\", store vouchers, Shopee Live on sale days, and affiliates who earn on each sale."},
+  {tint:"#2B3FA8",badge:"LazMall",sub:"Flagship store · 100% authentic",now:"We found resellers only. One lists the 150g spring water tuna at RM15.99, more than double TC Boy's RM6.80.",
+   build:"A new LazMall flagship",bp:"An official store that takes the price back from resellers, with the same packs and listings as Shopee.",
+   find:"Sponsored search and discovery ads, concentrated on the double-date mega sales where Lazada traffic peaks."},
+  {tint:"#121212",badge:"Official",sub:"TikTok Shop · Free returns",now:"The @tcboy.official account is already set up as a seller, but we found no storefront selling TC Boy.",
+   build:"A TikTok Shop storefront",bp:"The existing seller account opens its shop, so every video and creator post can carry a buy button.",
+   find:"GMV Max campaigns, creator affiliates paid on each sale, and LIVE selling on sale days."}
 ];
-function initShop(){
-  $("#jsteps").innerHTML=STEPS.map((s,i)=>`<button type="button" class="jstep" data-i="${i}" aria-pressed="${i===1}"><span class="n">STEP ${i+1}</span><span class="t">${s.t}</span><span class="f">${s.f}</span></button>`).join("");
-  const show=i=>{const s=STEPS[i];$$(".jstep").forEach(b=>b.setAttribute("aria-pressed",+b.dataset.i===i));
-    $("#jPanel").innerHTML=`<div class="card jnow"><span class="mono">Today</span><div class="bn">${s.nb}</div><p>${s.now}</p></div><div class="card jfix"><span class="mono">By the end of Q1</span><div class="bn">${s.fb}</div><p>${s.fix}</p></div>`};
-  $("#jsteps").addEventListener("click",e=>{const b=e.target.closest(".jstep");if(b)show(+b.dataset.i)});show(1);
+const SKU=[["6","Tuna in mineral water","6-can pack"],["12","Healthier everyday pack","12 cans · protein grams on label"],["3","Sardines in tomato sauce","3-can pack"],["24","Family pantry box","24 cans · tuna and sardines"]];
+function initStore(){
+  const draw=i=>{const s=STORES[i];
+    $("#sPhone").style.setProperty("--tint",s.tint);
+    $("#sPhone").innerHTML=`<div class="sh"><div class="row"><div class="lg"><img src="${TC_LOGO}" alt="TC BOY"></div><div><div class="nm"><span class="bdg">${s.badge}</span>TC BOY Official</div><div class="sub">${s.sub}</div></div></div></div>
+      <div class="vch"><span>Store voucher</span><span>Bundle deal</span><span>Free shipping</span></div>
+      <div class="grid">${SKU.map(k=>`<div class="it"><div class="im">&times;${k[0]}</div><div class="tx">${k[1]}<br><span class="tg">${k[2]}</span></div></div>`).join("")}</div>`;
+    $("#sNow").textContent=s.now;$("#sBuild").textContent=s.build;$("#sBuildP").textContent=s.bp;$("#sFind").textContent=s.find};
+  seg($("#sSeg"),b=>draw(+b.dataset.v));draw(0);
 }
-INITS.push(initShop);
+INITS.push(initStore);
 
 /* =========================================================================
-   THE MEDIA · BUDGET
+   THE PLAN · THE BUILD-UP
    ========================================================================= */
-BODY.budget={
-  title:'Half of the RM200,000 <em>goes straight into media</em>.',
-  kicker:'Everything fits inside RM200,000, with nothing billed on top. Drag the slider to see what the June checkpoint can add.',
-  body:`<div class="bud"><div><div class="stack" id="bStack"></div><div class="blist" id="bList"></div></div>
-    <div class="bside"><div class="card"><span class="mono">Checkpoint top-up, paid media only</span><input type="range" id="bTop" min="0" max="60000" step="10000" value="0" aria-label="Checkpoint top-up"><div style="display:flex;justify-content:space-between" class="small"><span>RM0</span><span>RM30,000</span><span>RM60,000</span></div></div>
-      <div class="card" style="margin-top:14px"><span class="mono">Total for 2027</span><div class="bnum" id="bTot"></div><p class="mono" style="margin-top:14px">Share in paid media</p><div class="bnum m" id="bShare"></div><p id="bNote"></p></div></div></div>`,
-  src:'Fee lines are indicative until the quotation and exclude SST. Agency management covers 12 months of strategy, media buying, marketplace operations, Threads community management and monthly reporting. TikTok Shop affiliate commission comes out of each sale, so it never draws on this budget.'
+BODY.ramp={
+  title:'From kickstart <em>to 11.11 and 12.12</em>.',
+  kicker:'How 2027 builds, from the first week with Toggle to the year\'s biggest sale days. The line shows the shape we plan for, not a sales forecast. Click a stage.',
+  body:`<div class="ramp"><div class="rchart" id="rChart"></div><div class="rstages" id="rStages"></div><div class="rpanel" id="rPanel" aria-live="polite"></div></div>`,
+  src:'Illustrative. The line is an index of planned marketplace activity, peaking at 11.11 = 100. Media figures are the base plan; the top-up applies only if the June checkpoint gates are met. Provisional 2027 dates: CNY about 6 February, Ramadan about 8 February to 9 March.'
 };
-const BUD=[
-  {k:"Paid media",v:100000,c:"var(--accent)",d:"TikTok, Shopee, Lazada, Meta, Threads and Google",media:1},
-  {k:"Agency management",v:48000,c:"var(--deep)",d:"About RM4,000 a month for 12 months"},
-  {k:"E-commerce setup",v:18000,c:"var(--sky)",d:"Tracking, three official stores, listings, site fixes"},
-  {k:"Content production",v:18000,c:"var(--ink-3)",d:"Two shoot days, recipe and fitness videos, ad variants"},
-  {k:"Creator seeding",v:16000,c:"var(--pop)",d:"Product packs and flat fees for fitness creators"}
+const RAMP=[8,22,26,30,34,44,46,54,66,74,100,88];
+const RPEAK={1:"CNY",2:"Raya",5:"6.6",8:"9.9",9:"10.10",10:"11.11",11:"12.12"};
+const STAGES=[
+  {n:"Weeks 1 to 6",t:"Kickstart",what:"Onboarding, tracking, the three official stores, and first listings with protein grams in packs of 6, 12 and 24.",win:"All three stores live by the end of February.",med:"RM5,000 in January, mostly store traffic tests."},
+  {n:"Feb to Mar",t:"First sales",what:"CNY on about 6 February, then Ramadan and Raya. Hamper bundles and sahur and iftar packs. The first festive sales teach the ads who buys.",win:"First festive sales on all three stores.",med:"RM19,000 across February and March."},
+  {n:"Apr to Jun",t:"Healthier everyday launch",what:"The healthier everyday pack launches with home cooks, nutritionists and busy-parent creators, across 4.4, 5.5 and 6.6.",win:"The June checkpoint, against the gates we agree now.",med:"RM22,000 across the quarter."},
+  {n:"Jul to Sep",t:"Scale what works",what:"Media moves to the stores, channels and creators that sold. Merdeka carries the homegrown story into 9.9.",win:"Top-up media starts in September if the gates are met.",med:"RM23,000, up to RM35,000 with the top-up."},
+  {n:"Oct to Dec",t:"Peak sales",what:"10.10, 11.11 and 12.12, the biggest sale days of the year, with year-end hampers and pantry boxes.",win:"11.11, the biggest single sales day of the year.",med:"RM31,000, up to RM79,000 with the top-up."}
 ];
-function initBudget(){
-  const r=$("#bTop");
-  const draw=()=>{const top=+r.value,tot=200000+top;
-    $("#bStack").innerHTML=BUD.map(b=>{const v=b.media?b.v+top:b.v;return `<i style="flex-grow:${v};background:${b.c}">${v/tot>.12?Math.round(v/tot*100)+"%":""}</i>`}).join("");
-    $("#bList").innerHTML=BUD.map(b=>{const v=b.media?b.v+top:b.v;return `<div><i class="sw" style="background:${b.c}"></i><b>${b.k}<small>${b.d}</small></b><span class="rm">${rm(v)}</span><span class="pc">${Math.round(v/tot*100)}%</span></div>`}).join("");
-    $("#bTot").textContent=rm(tot);$("#bShare").textContent=Math.round((100000+top)/tot*100)+"%";
-    $("#bNote").textContent=top?`The extra ${rm(top)} goes into 9.9, 10.10, 11.11 and 12.12, with no change to fees.`:"The base plan. Fees stay fixed if the checkpoint adds media.";};
-  r.addEventListener("input",draw);draw();
+const SPAN=[[0,1],[1,3],[3,6],[6,9],[9,12]];
+function initRamp(){
+  const W=1200,H=300,X=i=>(i+.5)*100,Y=v=>262-v*2.3;
+  const pts=RAMP.map((v,i)=>[X(i),Y(v)]);
+  const d="M"+X(0)+",262 L"+pts.map(p=>p.join(",")).join(" L");
+  const area=d+" L"+X(11)+",262 Z";
+  $("#rChart").innerHTML=`<svg viewBox="0 0 ${W} ${H}" preserveAspectRatio="none" aria-hidden="true"><defs><linearGradient id="rampFill" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="rgba(42,107,224,.28)"/><stop offset="1" stop-color="rgba(42,107,224,0)"/></linearGradient></defs>
+    <path class="ar" d="${area}"/><path class="ln" pathLength="1" d="${d}"/>
+    <g class="ck"><line x1="600" y1="20" x2="600" y2="262"/><text x="610" y="32">JUNE CHECKPOINT</text></g>
+    ${pts.map((p,i)=>RPEAK[i]?`<g class="pk${i===10?" big":""}" style="transition-delay:${.5+i*.16}s"><circle cx="${p[0]}" cy="${p[1]}" r="${i===10?9:7}"/><text x="${p[0]}" y="${p[1]-18}">${RPEAK[i]}</text></g>`:"").join("")}
+    ${["Jan","Feb","Mar","Apr","May","Jun","Jul","Aug","Sep","Oct","Nov","Dec"].map((m,i)=>`<text class="mo" x="${X(i)}" y="290">${m.toUpperCase()}</text>`).join("")}</svg>`;
+  $("#rStages").innerHTML=STAGES.map((s,i)=>`<button type="button" class="rst" data-i="${i}" aria-pressed="${i===0}"><span class="n">${s.n}</span><span class="t">${s.t}</span></button>`).join("");
+  const show=i=>{const s=STAGES[i];$$(".rst").forEach(b=>b.setAttribute("aria-pressed",+b.dataset.i===i));
+    $("#rPanel").innerHTML=`<div class="card"><span class="mono">What happens</span><p>${s.what}</p></div><div class="card"><span class="mono">Milestone</span><p>${s.win}</p></div><div class="card"><span class="mono">Paid media</span><p>${s.med}</p></div>`};
+  $("#rStages").addEventListener("click",e=>{const b=e.target.closest(".rst");if(b)show(+b.dataset.i)});show(0);
+  onOpen($("#rChart"),()=>setTimeout(()=>$("#rChart").classList.add("go"),80),()=>$("#rChart").classList.remove("go"));
 }
-INITS.push(initBudget);
+INITS.push(initRamp);
 
 /* =========================================================================
    THE MEDIA · PLATFORMS
    ========================================================================= */
 BODY.media={
-  title:'Media follows <em>where Malaysians buy groceries</em>.',
-  kicker:'RM100,000 across five platforms, weighted toward the point of sale. About 60% is bought against sales, so most of it is judged in ringgit. Click a platform.',
+  title:'Media follows <em>where Malaysians shop</em>.',
+  kicker:'RM100,000 of paid media inside the RM200,000, weighted to the marketplaces: 68% goes to TikTok Shop, Shopee and Lazada. Click a platform.',
   body:`<div class="cjobs" id="cjobs"></div><div class="cjpanel" id="cjPanel" aria-live="polite"></div>`,
-  src:'Platform reach: Ipsos, July 2026 (Shopee 71% and TikTok Shop 62% of Malaysian online shoppers); DataReportal Digital 2026 Malaysia (Threads ad reach 3.6 million). Split by objective: about 60% sales, 25% consideration among fitness audiences, 15% reach and tests.'
+  src:'Platform use: Ipsos, July 2026 (Shopee 71% and TikTok Shop 62% of Malaysian online shoppers). Threads ad reach: DataReportal Digital 2026 Malaysia. Google stays small because the stores, not tcboy.com, carry the sales in this plan.'
 };
 const PLAT=[
-  {n:"TikTok",v:36000,who:"Active Malaysians aged 18 to 35. 62% of online shoppers now use TikTok Shop, up from 43% in 2024.",run:"GMV Max campaigns on TikTok Shop, Spark Ads that boost creator posts, and live selling on sale days.",m:"TikTok Shop sales and return on ad spend, weekly."},
-  {n:"Shopee and Lazada",v:26000,who:"Shoppers already searching for \"tuna\", \"makanan tin\" and \"high protein\". 71% of online shoppers use Shopee.",run:"Search and discovery ads on the official stores, plus boosts on the double-date sale days.",m:"Store sales, return on ad spend, and rank on category searches."},
-  {n:"Facebook and Instagram",v:22000,who:"Family meal planners and festive buyers, the core TC Boy customer today.",run:"CNY, Ramadan and Raya hamper campaigns, catalog ads, and retargeting of store visitors.",m:"Purchases tracked by the Pixel and server-side conversions."},
-  {n:"Google",v:10000,who:"People searching for high-protein food, canned tuna, or TC Boy by name.",run:"Search and Shopping ads that send buyers to the site and the official stores.",m:"Cost per sale and branded search volume."},
-  {n:"Threads",v:6000,who:"About 3.6 million Malaysians reachable with Threads ads, where the brand conversation happens.",run:"Two placement tests beside Instagram, in Q2 around the protein pack launch and in Q4 around 11.11.",m:"Cost and click rate against Instagram feed, read from the placement breakdown."}
+  {n:"TikTok and TikTok Shop",v:36000,who:"Malaysians who discover food on their feed. 62% of online shoppers now use TikTok Shop, up from 43% in 2024.",run:"GMV Max on the new TikTok Shop, Spark Ads that boost creator posts, and LIVE selling on sale days.",m:"TikTok Shop sales and return on ad spend, weekly."},
+  {n:"Shopee",v:22000,who:"71% of Malaysian online shoppers use Shopee, many already searching \"tuna\" and \"makanan tin\".",run:"Search and discovery ads, store vouchers and sale-day boosts on the upgraded official store.",m:"Store sales, return on ad spend, and rank on category searches."},
+  {n:"Lazada",v:10000,who:"Grocery shoppers who buy on Lazada, today served only by resellers.",run:"Sponsored search and discovery on the new LazMall store, concentrated on mega sale days.",m:"Store sales and return on ad spend."},
+  {n:"Facebook and Instagram",v:22000,who:"Family meal planners and festive buyers, the core TC Boy customer today.",run:"Reels with quick, healthier recipes, hamper campaigns, and catalog ads that link to the stores.",m:"Store visits and purchases, tracked with the Pixel."},
+  {n:"Threads",v:6000,who:"About 3.6 million Malaysians reachable with Threads ads.",run:"Two placement tests beside Instagram, in Q2 and Q4.",m:"Cost and click rate against Instagram feed."},
+  {n:"Google",v:4000,who:"People searching for TC Boy by name.",run:"Brand search ads that point to the official stores.",m:"Clicks to the stores."}
 ];
 function initMedia(){
-  $("#cjobs").innerHTML=PLAT.map((c,i)=>`<button type="button" class="cjob${i===0?" lead":""}" data-i="${i}" aria-pressed="${i===0}"><span class="jn">${c.n}</span><span class="jj">${rm(c.v)}</span><span class="sv">${c.v/1000}% of paid media</span><span class="sh"><i data-w="${c.v/1000/0.36}"></i></span></button>`).join("");
+  $("#cjobs").innerHTML=PLAT.map((c,i)=>`<button type="button" class="cjob${i===0?" lead":""}" data-i="${i}" aria-pressed="${i===0}"><span class="jn">${c.n}</span><span class="jj">${rm(c.v)}</span><span class="sv">${c.v/1000}% of paid media</span><span class="sh"><i data-w="${c.v/360}"></i></span></button>`).join("");
   const show=i=>{const c=PLAT[i];$$(".cjob").forEach(b=>b.setAttribute("aria-pressed",+b.dataset.i===i));
     $("#cjPanel").innerHTML=`<div class="card"><p class="mono">Who it reaches</p><p>${c.who}</p></div><div class="card"><p class="mono">What runs here</p><p>${c.run}</p></div><div class="card"><p class="mono">Measured on</p><p>${c.m}</p></div>`};
   $("#cjobs").addEventListener("click",e=>{const b=e.target.closest(".cjob");if(b)show(+b.dataset.i)});show(0);
 }
 INITS.push(initMedia);
+
+/* =========================================================================
+   THE MEDIA · MALAYSIA TAKEOVER
+   Ad views use Toggle's 2026 Malaysian planning costs per 1,000 views
+   (clients/COO/saji media plan): TikTok sales RM15 on RM16,000 and Spark or
+   video RM2.60 on RM20,000; Meta sales RM22 on RM10,000 and Reels RM3.50
+   on RM12,000; Threads RM4.00 on RM6,000. That is 14.14M views from the
+   RM64,000 social budget, about 221 views per ringgit. Reach divides views
+   by a frequency of 1.9, summed across platforms. Store visits: RM32,000 of
+   marketplace ads at RM0.40 a click and RM4,000 of Google at RM0.80.
+   ========================================================================= */
+BODY.takeover={
+  title:'A Malaysia takeover, <em>one month at a time</em>.',
+  kicker:'Press play to watch 2027 build from Penang outward. Each dot is an equal share of Malaysia\'s 36.1 million people; a dot lights up for every share\'s worth of TC Boy ad views. Switch on the checkpoint top-up.',
+  body:`<div class="tko"><div class="tmap"><svg id="tSvg" viewBox="0 0 ${MYMAP.w} ${MYMAP.h+14}" aria-label="Map of Malaysia filling with TC Boy ad views"></svg>
+      <div class="tbar"><button type="button" class="tplay" id="tPlay">&#9654; Play 2027</button><div class="tmonths" id="tMonths"></div>
+      <div class="seg" id="tSeg"><button type="button" data-v="0" aria-pressed="true">Base</button><button type="button" data-v="30" aria-pressed="false">+RM30K</button><button type="button" data-v="60" aria-pressed="false">+RM60K</button></div></div></div>
+    <div class="kside"><div class="card"><span class="mono" id="tMon">January 2027</span><div class="tnum a" id="tViews">0</div><small>TC Boy ad views so far</small></div>
+      <div class="card"><div class="tnum" id="tReach">0</div><small>Malaysians reached, estimated</small></div>
+      <div class="card"><div class="tnum" id="tVisits">0</div><small>shopper visits to the official stores from search ads</small></div>
+      <div class="card"><span class="mono">Who these platforms can reach</span><div class="aud" id="tAud"></div></div></div></div>`,
+  src:'Illustrative. Ad views use Toggle\'s 2026 Malaysian planning costs per 1,000 views (TikTok video RM2.60, Meta Reels RM3.50, Threads RM4.00, sales campaigns RM15 to RM22). Reach assumes 1.9 views per person per platform, summed across platforms. Store visits assume RM0.40 a click on Shopee and Lazada and RM0.80 on Google. Creator and organic reach come on top. Audiences and population: DataReportal Digital 2026 Malaysia; TikTok counts adults 18 and over.'
+};
+const POP=36.1e6,VPR=14142000/64000,VIS=85000/36000,FREQ=1.9;
+const FLIGHT=[5,10,9,8,6,8,6,8,9,9,12,10],TOPW=[0,0,0,0,0,0,0,0,12,12,22,14];
+const AUD=[["TikTok",30.7],["Facebook",23.0],["Instagram",16.1],["Threads",3.6]];
+function initTakeover(){
+  const svg=$("#tSvg"),D=MYMAP.dots,N=D.length/2;let top=0,timer=null,shown=-1;
+  svg.innerHTML=Array.from({length:N},(_,i)=>`<circle class="d" cx="${D[2*i]}" cy="${D[2*i+1]}" r="2.5"/>`).join("")+
+    `<g class="hm"><circle cx="${MYMAP.home[0]}" cy="${MYMAP.home[1]}" r="8"/><line x1="${MYMAP.home[0]+8}" y1="${MYMAP.home[1]-6}" x2="236" y2="34" stroke="#FF4F9A" stroke-width="1.2"/><text x="242" y="38">BUKIT MERTAJAM, HOME OF TC BOY</text></g>`;
+  const C=$$("circle.d",svg);
+  $("#tMonths").innerHTML=["J","F","M","A","M","J","J","A","S","O","N","D"].map(m=>`<span>${m}</span>`).join("");
+  $("#tAud").innerHTML=AUD.map(a=>`<div><span>${a[0]}</span><i data-w="${a[1]/30.7*100}"></i><b>${a[1]}M</b></div>`).join("");
+  const at=m=>{let v=0,s=0;for(let i=0;i<=m;i++){const k=FLIGHT[i]+TOPW[i]*top/60;v+=k*640*VPR;s+=k*360*VIS}return{v,s}};
+  const MON=["January","February","March","April","May","June","July","August","September","October","November","December"];
+  const paint=(m,fresh)=>{const prev=m>0?at(m-1).v:0,{v,s}=at(m),lit=Math.min(N,Math.round(v/POP*N)),was=Math.min(N,Math.round(prev/POP*N));
+    C.forEach((c,i)=>{c.classList.toggle("on",i<lit);c.classList.toggle("nw",fresh&&i>=was&&i<lit)});
+    $$("#tMonths span").forEach((e,i)=>{e.classList.toggle("on",i<m);e.classList.toggle("now",i===m)});
+    $("#tMon").textContent=MON[m]+" 2027";$("#tViews").textContent=mil(v);$("#tReach").textContent=mil(v/FREQ);$("#tVisits").textContent=fmt(Math.round(s/1000)*1000);shown=m};
+  const stop=()=>{clearInterval(timer);timer=null};
+  const play=()=>{stop();let m=0;paint(0,true);if(REDUCED||PRINTING){paint(11,false);return}
+    timer=setInterval(()=>{m++;if(m>11){stop();C.forEach(c=>c.classList.remove("nw"));return}paint(m,true)},650)};
+  $("#tPlay").addEventListener("click",play);
+  seg($("#tSeg"),b=>{top=+b.dataset.v;if(!timer)paint(shown<0?11:shown,false)});
+  paint(11,false);
+  onOpen(svg,()=>setTimeout(play,500),stop);
+}
+INITS.push(initTakeover);
 
 /* =========================================================================
    THE MEDIA · FLIGHTING
@@ -1472,18 +1655,18 @@ BODY.flight={
   src:'Provisional 2027 dates: CNY about 6 February, Ramadan about 8 February to 9 March, Hari Raya about 10 March (Calendarific). Mega sale dates follow Shopee and Lazada\'s usual double-date calendar.'
 };
 const MONTHS=[
-  ["Jan",5,0,"Tracking and the official stores go live. Pre-CNY hamper ads on Facebook and Instagram."],
+  ["Jan",5,0,"The official stores go live and tracking is verified. Pre-CNY hamper ads."],
   ["Feb",10,0,"CNY (about 6 February) and the start of Ramadan (about 8 February). Hamper and sahur bundles."],
   ["Mar",9,0,"Hari Raya (about 10 March) and 3.3. Festive bundles, then the first creator seeding."],
-  ["Apr",8,0,"The protein pack launches on TikTok Shop and the official stores, around 4.4."],
-  ["May",6,0,"The creator program scales, with run club partners. 5.5 sale."],
+  ["Apr",8,0,"The healthier everyday pack launches on all three stores, around 4.4."],
+  ["May",6,0,"Creators scale: home cooks, nutritionists and busy parents. 5.5 sale."],
   ["Jun",8,0,"6.6 sale. The checkpoint review runs in the first week of July on January to June data."],
-  ["Jul",6,0,"Media moves toward the channels that cleared the gates. 7.7 sale."],
-  ["Aug",8,0,"Merdeka and the \"homegrown protein\" angle. 8.8 sale."],
+  ["Jul",6,0,"Media moves toward the stores and creators that sold. 7.7 sale."],
+  ["Aug",8,0,"Merdeka and the homegrown story. 8.8 sale."],
   ["Sep",9,12,"9.9 sale. Any checkpoint top-up starts here."],
-  ["Oct",9,12,"10.10 sale and race season content."],
-  ["Nov",12,22,"11.11, the largest sale day of the year."],
-  ["Dec",10,14,"12.12 and year-end gym and hamper bundles."]
+  ["Oct",9,12,"10.10 sale and year-end pantry box content."],
+  ["Nov",12,22,"11.11, the biggest sale day of the year."],
+  ["Dec",10,14,"12.12 and year-end hampers."]
 ];
 function initFlight(){
   const box=$("#fBars");let top=0,sel=10;const MAX=34;
@@ -1505,23 +1688,23 @@ INITS.push(initFlight);
 BODY.threads={
   title:'No canned brand speaks on Threads. <em>TC Boy can be first.</em>',
   kicker:'Malaysian brands such as Watsons, Lotus\'s and Mydin made Threads a banter channel, and packaged food stayed away. Switch the post type.',
-  body:`<div class="thr"><div><div class="seg" id="tSeg" style="width:fit-content;margin-bottom:14px"><button type="button" data-v="0" aria-pressed="true">Cheap protein</button><button type="button" data-v="1" aria-pressed="false">Straight answers</button><button type="button" data-v="2" aria-pressed="false">Offer day</button></div><div class="tphone" id="tPhone" aria-live="polite"></div></div>
+  body:`<div class="thr"><div><div class="seg" id="tSeg2" style="width:fit-content;margin-bottom:14px"><button type="button" data-v="0" aria-pressed="true">Easy healthier meals</button><button type="button" data-v="1" aria-pressed="false">Straight answers</button><button type="button" data-v="2" aria-pressed="false">Offer day</button></div><div class="tphone" id="tPhone" aria-live="polite"></div></div>
     <div class="tside"><div class="card"><span class="mono">What Malaysian brands get</span><p><b>280K</b> people follow Watsons Malaysia on Threads, and it answers mentions in BM. One Lotus's Buy 1 Free 1 post drew <b>1.5K</b> likes against 19 to 48 on its ordinary posts.</p></div>
       <div class="card"><span class="mono">How TC Boy posts</span><div class="trules"><div>A warm, cheeky persona in BM and Manglish, one to three posts a day.</div><div>A person approves every reply before it goes out.</div><div>Bodies, race, religion and royalty never become the joke.</div><div>Offer posts link to the official stores with tracked links.</div></div></div></div></div>`,
-  src:'Mockup. Follower and like counts from logged-out profile views, 5 November 2026. The protein figure in the first post will come from TC Boy\'s nutrition panel. Threads ad reach in Malaysia: DataReportal Digital 2026.'
+  src:'Mockup. Follower and like counts from logged-out profile views, 5 November 2026. Threads ad reach in Malaysia: DataReportal Digital 2026.'
 };
 const POSTS=[
-  [{a:"TC",n:"tcboymalaysia",t:"Leg day done. Dinner is one can of tuna in mineral water, a scoop of rice and five minutes. Protein settle, wallet pun selamat."},
-   {a:"AI",u:1,n:"aina.runs",t:"Okay but which one for meal prep, brine or mineral water?",re:1},
-   {a:"TC",n:"tcboymalaysia",t:"Mineral water if you want it clean, EVOO if you want it tasty. Both have the protein grams printed on the can now.",re:1}],
-  [{a:"HZ",u:1,n:"hafiz_lifts",t:"Tuna tin ni banyak garam tak? Gym coach I cakap kena jaga sodium."},
+  [{a:"TC",n:"tcboymalaysia",t:"Office lunch in five minutes: one can of tuna in mineral water, cucumber, a squeeze of lime and rice. Kenyang, sedap, tak mahal."},
+   {a:"NA",u:1,n:"nadia.wfh",t:"Okay this is my WFH lunch from now on",re:1},
+   {a:"TC",n:"tcboymalaysia",t:"Try it with our lemon pepper tuna next. The recipe is on the listing in our store.",re:1}],
+  [{a:"HZ",u:1,n:"hafiz.cooks",t:"Tuna tin ni banyak garam tak? Doktor I cakap kena jaga garam."},
    {a:"TC",n:"tcboymalaysia",t:"Soalan bagus. Pick our tuna in mineral water and check the sodium line on the label. We are posting the full nutrition panel for every can this week, so you can compare yourself.",re:1}],
-  [{a:"TC",n:"tcboymalaysia",t:"11.11 is here. The 12-can protein pack is on our official Shopee, Lazada and TikTok Shop stores. Meal prep for the whole month, sorted."},
-   {a:"SY",u:1,n:"syaz.eats",t:"Finally I don't need to buy a whole carton of 48 haha",re:1}]
+  [{a:"TC",n:"tcboymalaysia",t:"11.11 is here. The healthier everyday pack is on our official Shopee, Lazada and TikTok Shop stores. Lunches for the whole month, sorted."},
+   {a:"SY",u:1,n:"syaz.eats",t:"Finally I can buy a small pack instead of a whole carton haha",re:1}]
 ];
 function initThreads(){
   const draw=i=>{$("#tPhone").innerHTML=POSTS[i].map(p=>`<div class="tp${p.re?" reply":""}"><div class="av${p.u?" u":""}">${p.a}</div><div><div class="nm">${p.n}<span>${p.u?"2h":"1h"}</span></div><div class="tx">${p.t}</div><div class="re"><span>Like</span><span>Reply</span><span>Repost</span></div></div></div>`).join("")};
-  seg($("#tSeg"),b=>draw(+b.dataset.v));draw(0);
+  seg($("#tSeg2"),b=>draw(+b.dataset.v));draw(0);
 }
 INITS.push(initThreads);
 
@@ -1536,9 +1719,9 @@ BODY.gate={
 };
 const GATES=[
   {k:"Foundation",d:"Three official stores live and tracking verified by the end of February.",must:1},
-  {k:"Sales",d:"Online sales ahead of your 2026 baseline, and marketplace ads at or above the agreed return."},
-  {k:"Product",d:"The protein pack reaches its agreed share of online orders, and repeat buyers grow."},
-  {k:"Brand",d:"Fitness creator content and the Threads following reach their agreed targets."}
+  {k:"Sales",d:"Marketplace sales ahead of your 2026 baseline, and ads at or above the agreed return."},
+  {k:"Product",d:"The healthier everyday pack reaches its agreed share of orders, and repeat buyers grow."},
+  {k:"Brand",d:"Creator content views and the Threads following reach their agreed targets."}
 ];
 function initGate(){
   const st=[1,1,0,0];
@@ -1546,7 +1729,7 @@ function initGate(){
   const draw=()=>{const others=st[1]+st[2]+st[3];let h,p,a;
     if(!st[0]){h="Fix the foundation first.";p="H2 runs at the base budget, and the first job is getting the stores and tracking right.";a="RM0"}
     else if(others>=2){h="Add media for the big sale days.";p="TC Boy adds paid media to 9.9, 10.10, 11.11 and 12.12, with no change to fees.";a="+RM30,000 to RM60,000"}
-    else{h="Hold the budget and move the media.";p="H2 runs at base, and media moves toward the channels that cleared their gates.";a="RM0"}
+    else{h="Hold the budget and move the media.";p="H2 runs at base, and media moves toward the stores and channels that cleared their gates.";a="RM0"}
     $("#gOut").innerHTML=`<span class="mono">The decision</span><h3>${h}</h3><p>${p}</p><div class="amt">${a}</div>`};
   $("#gList").addEventListener("click",e=>{const b=e.target.closest(".gate");if(!b)return;const i=+b.dataset.i;st[i]=st[i]?0:1;b.setAttribute("aria-pressed",!!st[i]);draw()});draw();
 }
@@ -1555,24 +1738,25 @@ INITS.push(initGate);
 /* =========================================================================
    SLIDES
    ========================================================================= */
-const XS={map:["The market","Competitors","ill"],shop:["The shop","Buyer journey","v"],budget:["The media","Budget","ill"],media:["The media","Platforms","ill"],flight:["The media","Monthly spend","ill"],threads:["The voice","Threads","mock"],gate:["The plan","Checkpoint","ill"]};
+const XS={map:["The market","Competitors","ill"],store:["The marketplaces","Official stores","mock"],ramp:["The plan","The build-up","ill"],media:["The media","Platforms","ill"],takeover:["The media","Malaysia takeover","ill"],flight:["The media","Monthly spend","ill"],threads:["The voice","Threads","mock"],gate:["The plan","Checkpoint","ill"]};
 const xslide=id=>{const b=BODY[id],[sec,name,bd]=XS[id];
   return `<section class="slide ex" id="ex-${id}" data-sec="${sec}" data-title="${name}"><header class="xh"><div><div class="kick">${sec} · ${name} ${BADGE[bd]}</div><h2 class="xt">${b.title}</h2></div><p class="xk">${b.kicker}</p></header><div class="xb"><div class="fit">${b.body}</div></div><p class="xs">${b.src}</p></section>`};
 
 const SOURCES=[
   "TC Boy: tcboy.com product feed, page source and shipping policy, checked 5 November 2026.",
+  "TC Boy on Shopee: TCBM Online Store listings for TC BOY tuna, found 6 November 2026. Mall status not confirmed.",
   "Lazada listings for TC Boy 150g tuna (Emporium Mall reseller, RM15.99; trending listing, RM6.90), checked 5 November 2026.",
-  "Ayam Brand protein positioning: Malaysian Foodie, November 2024 and September 2025.",
-  "Yeo's Teriyaki Tuna launch: The Star, 3 October 2026.",
-  "Century Tuna \"Superbods\": Lazada Brand Wiki, Philippines.",
-  "Anytime Fitness growth: Free Malaysia Today, 26 January 2026.",
-  "KL Standard Chartered Marathon 2025 registrations: The Sun, 2025.",
-  "HYROX Kuala Lumpur, 11 to 13 December 2026 at MITEC: SAYS and The Rakyat Post, 2026.",
+  "Online grocery and platform use: Ipsos survey via Malay Mail, 16 July 2026.",
+  "Cost of a balanced home-cooked meal: Galen Centre and UiTM survey, via Free Malaysia Today, 8 September 2025.",
   "Viral RM4 sardine protein post: WorldOfBuzz, 26 January 2026.",
-  "Platform usage and online grocery: Ipsos survey via Malay Mail, 16 July 2026.",
-  "Threads ad reach in Malaysia: DataReportal, Digital 2026 Malaysia.",
+  "Marigold HL Advance protein claim: Mini Me Insights.",
+  "Ayam Brand protein positioning and healthier Malaysia campaign: Malaysian Foodie, November 2024.",
+  "Yeo's Teriyaki Tuna launch: The Star, 3 October 2026.",
+  "Population, platform ad audiences and Threads ad reach: DataReportal, Digital 2026 Malaysia.",
+  "Planning costs per 1,000 ad views: Toggle's 2026 Malaysian media plans.",
   "Malaysian brands on Threads: Marketing-Interactive, 28 November 2025 and 24 June 2026; The Rakyat Post, 19 November and 2 December 2025.",
   "Food claim rules: Food Regulations 1985, Regulations 18 to 18E, Fifth A Schedule.",
+  "Malaysia map: Natural Earth via world-atlas 2.0.2.",
   "Toggle case studies, 2025: Al Hidayah Publications, EduKids, Kualesa.",
   "Provisional 2027 holiday dates: Calendarific."
 ];
@@ -1591,90 +1775,100 @@ const SLIDES=[
       <path fill="url(#wv3)" opacity=".8" d="M0,438 C268,378 512,506 812,448 C1090,394 1272,340 1440,388 L1440,620 L0,620 Z"><animate attributeName="d" dur="15s" repeatCount="indefinite" calcMode="spline" keyTimes="0;.33;.66;1" keySplines=".45 0 .55 1;.45 0 .55 1;.45 0 .55 1" values="M0,438 C268,378 512,506 812,448 C1090,394 1272,340 1440,388 L1440,620 L0,620 Z;M0,410 C250,470 540,420 840,404 C1110,390 1290,430 1440,360 L1440,620 L0,620 Z;M0,462 C290,410 490,452 790,486 C1070,516 1250,372 1440,414 L1440,620 L0,620 Z;M0,438 C268,378 512,506 812,448 C1090,394 1272,340 1440,388 L1440,620 L0,620 Z"/></path>
     </svg>
   </div>
-  <div class="lockup"><svg viewBox="0 0 1432 392" aria-label="Toggle"><use href="#wm"/></svg></div>
-  <h1>The everyday protein <em>of active Malaysians</em></h1>
-  <p class="prep">Prepared for ${esc(PARTNER)} · 2027 online growth and media plan · November 2026</p></section>`,
+  <div class="lockup"><svg viewBox="0 0 1432 392" aria-label="Toggle"><use href="#wm"/></svg><span class="x">&times;</span><img class="tcl" src="${TC_LOGO}" alt="TC BOY"></div>
+  <h1>The healthier everyday can <em>for every Malaysian home</em></h1>
+  <p class="prep">Prepared for ${esc(PARTNER)} · 2027 marketplace growth and media plan · November 2026</p></section>`,
 
 /* 2 demand */
 `<section class="slide dark" data-sec="The market" data-title="The demand" id="s-demand"><div class="kick">The market · Malaysia, 2025 to 2026</div>
-  <h2 class="sttl" style="font-size:76px;max-width:1350px">Malaysians already eat canned fish <em>for protein</em>.</h2>
-  <p class="body" style="max-width:1050px;margin-top:22px">The fitness crowd is growing, and it already reaches for a can. <b>Nobody has told them which one.</b></p>
-  <div class="tiles">${DEMAND.map(t=>`<div><div class="big" data-count="${t.v}" data-pre="" data-suf="${t.suf||""}">0</div><p class="cap">${t.c}</p><span class="sr">${t.s}</span></div>`).join("")}</div></section>`,
+  <h2 class="sttl" style="font-size:74px;max-width:1380px">Malaysians want to <em>eat better, easily</em>.</h2>
+  <p class="body" style="max-width:1080px;margin-top:22px">Healthier eating has gone mainstream, and more of the shopping happens online. <b>A can of tuna is protein that is cheap, halal and ready in minutes.</b></p>
+  <div class="tiles">${DEMAND.map(t=>`<div><div class="big" data-count="${t.v}" data-pre="${t.pre||""}" data-suf="${t.suf||""}" data-dec="${t.dec||0}">0</div><p class="cap">${t.c}</p><span class="sr">${t.s}</span></div>`).join("")}</div></section>`,
 
 "@ex:map",
-"@ex:shop",
 
-/* 5 marketplaces */
-`<section class="slide white" data-sec="The shop" data-title="Marketplace prices" id="s-mk"><div class="kick">The shop · Marketplaces ${BADGE.v}</div>
-  <h2 class="sttl" style="font-size:66px;max-width:1350px">Resellers set your price <em>on the marketplaces</em>.</h2>
-  <p class="body" style="max-width:1100px;margin-top:18px">We found no official TC Boy store on Shopee, Lazada or TikTok Shop. The same 150g can of tuna sells for more than double on one Lazada listing.</p>
+/* 4 marketplaces */
+`<section class="slide white" data-sec="The marketplaces" data-title="Marketplaces today" id="s-mk"><div class="kick">The marketplaces · Today ${BADGE.v}</div>
+  <h2 class="sttl" style="font-size:64px;max-width:1380px">Your marketplace shelf is thin, <em>and resellers fill the gap</em>.</h2>
+  <p class="body" style="max-width:1150px;margin-top:18px">TC Boy sells on Shopee through TCBM Online Store, but Lazada has resellers only and TikTok Shop has no storefront. The same 150g can of tuna sells for more than double on one Lazada listing.</p>
   <div class="mk2"><div class="pbars">
     <div class="pbar"><div class="lb"><b>tcboy.com, per can inside a 48-can carton</b><span>RM6.80</span></div><div class="tr"><i data-w="42.5"></i></div></div>
     <div class="pbar mid"><div class="lb"><b>Lazada trending listing, seller unknown</b><span>RM6.90</span></div><div class="tr"><i data-w="43.1"></i></div><div class="sm">122 sold in 30 days</div></div>
     <div class="pbar hi"><div class="lb"><b>Lazada reseller, Emporium Mall</b><span>RM15.99</span></div><div class="tr"><i data-w="100"></i></div></div></div>
-    <div class="mkstats"><div><b>71%</b><span>of Malaysian online shoppers use Shopee.</span></div><div><b>62%</b><span>use TikTok Shop, up from 43% in 2024.</span></div></div></div>
-  <p class="xs" style="margin-top:auto">Lazada listings checked 5 November 2026. Platform usage: Ipsos, July 2026. Please tell us about any authorized sellers.</p></section>`,
+    <div class="mstat"><div><b>Shopee</b><span class="st ok">TCBM Online Store</span><span class="d">71% of online shoppers use Shopee. Mall badge not confirmed, and no bundles or protein grams.</span></div>
+      <div><b>Lazada</b><span class="st">Resellers only</span><span class="d">No LazMall store found, so resellers set the price.</span></div>
+      <div><b>TikTok Shop</b><span class="st">No storefront</span><span class="d">62% of online shoppers use it. The seller account exists but sells nothing.</span></div></div></div>
+  <p class="xs" style="margin-top:auto">Listings checked 5 and 6 November 2026. Platform use: Ipsos, July 2026. Please tell us about any authorized sellers.</p></section>`,
 
-/* 6 the plan */
+"@ex:store",
+
+/* 6 optional add-on */
+`<section class="slide alt" data-sec="The marketplaces" data-title="Optional: tcboy.com"><div class="kick">The marketplaces · Optional add-on</div>
+  <h2 class="sttl" style="font-size:64px;max-width:1380px">An optional add-on: <em>a tcboy.com that sells</em>.</h2>
+  <p class="body" style="max-width:1150px;margin-top:18px">The marketplaces carry the 2027 plan. If you want your own site to sell as well, Toggle's web team can fix or rebuild it. <span class="optag">Quoted separately, outside the RM200,000</span></p>
+  <div class="addon"><div class="card"><span class="mono">What a shopper meets today</span><div class="afl">
+      <div><b>RM326</b><span>The smallest tuna order is a 48-can carton.</span></div>
+      <div><b>OTP</b><span>Shoppers must register before anything goes in the cart.</span></div>
+      <div><b>1 title</b><span>Every page has the same title, so Google sees one page.</span></div>
+      <div><b>0 pixels</b><span>No Meta or TikTok pixel, so ads cannot learn who buys.</span></div></div></div>
+    <div class="card"><span class="mono">What the add-on covers</span><div class="agl">
+      <div>Packs of 6, 12 and 24 cans, and guest checkout.</div>
+      <div>Product pages Google can read, with protein grams and recipes.</div>
+      <div>Meta and TikTok pixels, so site visitors join the ad audiences.</div>
+      <div>A Bahasa Malaysia version, and the old 2018 site redirected.</div></div></div></div>
+  <p class="xs" style="margin-top:auto">Source: tcboy.com product feed and page source, checked 5 November 2026.</p></section>`,
+
+/* 7 the plan */
 `<section class="slide dark" data-sec="The plan" data-title="The plan" style="justify-content:center;padding-bottom:110px"><div class="kick">The plan · 2027</div>
-  <h2 class="sttl" style="font-size:84px;max-width:1350px;margin-top:22px">Fix the shop, prove the protein, <em>then scale</em>.</h2>
+  <h2 class="sttl" style="font-size:84px;max-width:1380px;margin-top:22px">Open the stores, show the protein, <em>then scale</em>.</h2>
   <div class="moves">
-    <div><span class="mono">01 · Q1</span><h3>Fix the shop</h3><p>Tracking, official stores on Shopee, Lazada and TikTok Shop, and packs of 6, 12 and 24 cans.</p></div>
-    <div><span class="mono">02 · Q2</span><h3>Prove the protein</h3><p>Protein grams on every listing, and a 12-can protein pack built on the tuna range.</p></div>
-    <div><span class="mono">03 · Q2 onward</span><h3>Borrow credibility</h3><p>Trainers, run clubs and HYROX athletes, paid partly by commission on sales.</p></div>
-    <div><span class="mono">04 · All year</span><h3>Keep the family buyer</h3><p>CNY, Ramadan and Raya hampers hold the core customer while the new one grows.</p></div></div></section>`,
+    <div><span class="mono">01 · Q1</span><h3>Open the official stores</h3><p>Shopee, Lazada and TikTok Shop, with packs of 6, 12 and 24 cans.</p></div>
+    <div><span class="mono">02 · Q2</span><h3>Show the protein</h3><p>Protein grams on every listing, and a healthier everyday pack built on the tuna range.</p></div>
+    <div><span class="mono">03 · Q2 onward</span><h3>Everyday creators</h3><p>Home cooks, nutritionists and busy parents, paid partly by commission on sales.</p></div>
+    <div><span class="mono">04 · All year</span><h3>Keep the festive buyer</h3><p>CNY, Ramadan and Raya hampers hold the core customer while new ones arrive.</p></div></div></section>`,
 
-/* 7 the year */
-`<section class="slide alt" data-sec="The plan" data-title="The year"><div class="kick">The plan · Four quarters</div>
-  <h2 class="sttl" style="font-size:66px;max-width:1350px">The shop opens <em>before the festive peak</em>.</h2>
-  <p class="body" style="max-width:1100px;margin-top:18px">Festive demand arrives in February, a few weeks after kickoff, so the first 60 days go to the stores and the tracking.</p>
-  <div class="qtr">
-    <div><span class="mono">Q1 · Jan to Mar</span><h3>Foundation and festive</h3><p>Tracking and three official stores live by the end of February. CNY, Ramadan and Raya hampers.</p><div class="dates"><span>CNY</span><span>Ramadan</span><span>Raya</span><span>3.3</span></div></div>
-    <div><span class="mono">Q2 · Apr to Jun</span><h3>Protein launch</h3><p>The protein pack, the creator program and run club partners. Checkpoint at the end of June.</p><div class="dates"><span>4.4</span><span>5.5</span><span>6.6</span></div></div>
-    <div><span class="mono">Q3 · Jul to Sep</span><h3>Scale what worked</h3><p>Media moves to the winning channels, with Merdeka as the "homegrown protein" moment.</p><div class="dates"><span>7.7</span><span>8.8</span><span>Merdeka</span><span>9.9</span></div></div>
-    <div><span class="mono">Q4 · Oct to Dec</span><h3>Peak sales</h3><p>The year's biggest sale days, then year-end gym and hamper bundles.</p><div class="dates"><span>10.10</span><span>11.11</span><span>12.12</span></div></div></div></section>`,
-
-"@ex:budget",
+"@ex:ramp",
 "@ex:media",
+"@ex:takeover",
 "@ex:flight",
 "@ex:threads",
 
-/* 12 creators */
+/* creators */
 `<section class="slide white" data-sec="The voice" data-title="Creators"><div class="kick">The voice · Creators</div>
-  <h2 class="sttl" style="font-size:66px;max-width:1350px">Creators who train <em>carry the protein message</em>.</h2>
-  <p class="body" style="max-width:1100px;margin-top:18px">Three tiers, each with one job, and every script checked against Malaysian food claim rules before it posts.</p>
+  <h2 class="sttl" style="font-size:64px;max-width:1380px">Everyday creators <em>carry the healthier message</em>.</h2>
+  <p class="body" style="max-width:1150px;margin-top:18px">Three tiers, each with one job, and every script checked against Malaysian food claim rules before it posts.</p>
   <div class="tiers">
-    <div><span class="mono">Credible voice</span><div class="cnt">1 to 2</div><h3>Dietitians or doctors</h3><p>Explain protein per can, and answer the sodium and mercury questions honestly.</p><span class="pay">Flat fee</span></div>
-    <div><span class="mono">Trainers and athletes</span><div class="cnt">5 to 8</div><h3>Trainers, runners, HYROX athletes</h3><p>Show TC Boy inside real meal prep and race week routines.</p><span class="pay">Fee plus product</span></div>
-    <div><span class="mono">Everyday affiliates</span><div class="cnt">30 to 50</div><h3>TikTok Shop affiliates</h3><p>Post, tag and sell the protein pack, earning a share of each sale.</p><span class="pay">Commission per sale</span></div></div>
-  <div class="saynot"><div class="y"><span class="mono">What creators say</span>"Protein helps build and repair body tissues."</div><div class="n"><span class="mono">What creators never say</span>"Builds muscle", "melts fat", or anything about someone's body.</div></div>
-  <p class="xs" style="margin-top:12px">Food Regulations 1985, Regulation 18E lists the permitted protein function claims. Muscle and performance claims need separate approval.</p></section>`,
+    <div><span class="mono">Credible voice</span><div class="cnt">1 to 2</div><h3>Nutritionists or dietitians</h3><p>Explain protein per can, and answer the sodium and mercury questions honestly.</p><span class="pay">Flat fee</span></div>
+    <div><span class="mono">Everyday cooks</span><div class="cnt">6 to 10</div><h3>Home cooks, busy parents, office-lunch creators</h3><p>Show TC Boy in quick, healthier meals people already make at home.</p><span class="pay">Fee plus product</span></div>
+    <div><span class="mono">Affiliates</span><div class="cnt">30 to 50</div><h3>TikTok Shop and Shopee affiliates</h3><p>Post, tag and sell the healthier everyday pack, earning a share of each sale.</p><span class="pay">Commission per sale</span></div></div>
+  <div class="saynot"><div class="y"><span class="mono">What creators say</span>"Protein helps build and repair body tissues."</div><div class="n"><span class="mono">What creators never say</span>"Builds muscle", "melts fat", "cures" anything, or a joke about someone's body.</div></div>
+  <p class="xs" style="margin-top:12px">Food Regulations 1985, Regulation 18E lists the permitted protein function claims. Other health claims need separate approval.</p></section>`,
 
 "@ex:gate",
 
-/* 14 proof */
+/* proof */
 `<section class="slide alt" data-sec="Close" data-title="Our work"><div class="kick">Close · Our work</div>
-  <h2 class="sttl" style="font-size:66px;max-width:1350px">We have grown online stores <em>like this before</em>.</h2>
+  <h2 class="sttl" style="font-size:66px;max-width:1350px">We have grown marketplace stores <em>like this before</em>.</h2>
   <p class="body" style="max-width:1100px;margin-top:18px">Three e-commerce brands in 2025. Each one tested small first, then put money behind what sold.</p>
   <div class="prf">
     <div><b>11.5x</b><h3>Return on TikTok Shop ads, Al Hidayah</h3><p>A tiered GMV Max setup with affiliate creators lifted revenue 300% and orders 200% in four months.</p><span class="mono">TikTok Shop · Malaysia · 2025</span></div>
     <div><b>6x</b><h3>TikTok return on ad spend, EduKids</h3><p>Target met by month two, and a newly launched website grew to RM14,000 a month at a 5.5% conversion rate.</p><span class="mono">TikTok and Meta · Malaysia · 2025</span></div>
     <div><b>+45%</b><h3>Return on ad spend, Kualesa</h3><p>Creative tests at low spend first, then Google, TikTok and Meta at scale across five markets, holding 2.0x.</p><span class="mono">Multi-channel · ASEAN · 2025</span></div></div></section>`,
 
-/* 15 next step */
+/* next step */
 `<section class="slide dark" data-sec="Close" data-title="Next step" style="justify-content:center;padding-bottom:110px"><div class="kick">Next step</div>
   <h2 class="sttl" style="font-size:84px;max-width:1350px;margin-top:22px">One questionnaire, <em>then one working session</em>.</h2>
   <p class="body" style="max-width:1000px;margin-top:28px">Return the onboarding questionnaire by Friday, 13 November, and we book a session that week to turn this draft into the final plan.</p>
-  <div class="asks"><div><span class="mono">${esc(PARTNER)} brings</span><p>Confirmation that the RM200,000 includes media, 2026 online sales by channel, and the nutrition panel for each product.</p></div><div><span class="mono">Toggle brings</span><p>The checked marketplace and Threads audit, a creator shortlist, and the first 90 days, week by week.</p></div><div><span class="mono">We leave with</span><p>Agreed checkpoint targets, a confirmed budget split, and a January start date.</p></div></div>
+  <div class="asks"><div><span class="mono">${esc(PARTNER)} brings</span><p>Confirmation that the RM200,000 includes media, 2026 marketplace sales by platform, and the nutrition panel for each product.</p></div><div><span class="mono">Toggle brings</span><p>A checked audit of the Shopee store and Threads, a creator shortlist, and the first 90 days, week by week.</p></div><div><span class="mono">We leave with</span><p>Agreed checkpoint targets, a confirmed media split, and a January start date.</p></div></div>
   <div class="contact" style="margin-top:26px"><div><span class="mono">Toggle Solutions</span><p>hello@toggle.solutions</p></div><div><span class="mono">Viknesh</span><p>+60 12 568 8681</p></div><div><span class="mono">On the web</span><p>toggle.solutions</p></div></div></section>`,
 
-/* 16 sources */
+/* sources */
 `<section class="slide white" data-sec="Close" data-title="Sources"><div class="kick">Sources</div><h2 class="sttl" style="font-size:52px">Where <em>every number</em> comes from.</h2>
   <ol class="srclist">${SOURCES.map(s=>`<li>${s}</li>`).join("")}</ol></section>`
 ];
 
 /* demand numbers count up when the slide opens */
-INITS.push(function initDemand(){onOpen($("#s-demand .tiles"),()=>$$("#s-demand [data-count]").forEach(el=>countUp(el,+el.dataset.count,el.dataset.suf,el.dataset.pre)))});
+INITS.push(function initDemand(){onOpen($("#s-demand .tiles"),()=>$$("#s-demand [data-count]").forEach(el=>countUp(el,+el.dataset.count,el.dataset.suf,el.dataset.pre,+el.dataset.dec)))});
 
 /* =========================================================================
    DECK ENGINE, lifted from the education deck (Zaid, November 2026) via the
