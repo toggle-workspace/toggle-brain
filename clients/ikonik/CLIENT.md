@@ -11,9 +11,18 @@
 - **Geo target:** Klang Valley
 
 ## Scope (proposed)
-- Patient lead generation — TikTok + Meta paid, WhatsApp-first capture, full-funnel tracking
-- **Pricing:** RM3,000/month retainer × 6-month contract (RM18,000 total, ex-SST); ad spend separate, billed direct to client
-- Proposal: `01-strategy/IKONIK-Proposal-Lead-Generation-RM3K-x-6-Months.html`
+- Patient lead generation — TikTok (primary) + Google + Meta paid, WhatsApp-first capture, full-funnel tracking
+- **Client feedback (Jul 14, pre-pitch):** wants daily-enquiry numbers — target **200 enquiries/day from TikTok** (their organic livestreams already pull up to 200/stream); deck reworked to 12 slides around this. Media model: TikTok RM1,000/day (~RM30K/mo) at ~RM4–6/enquiry + Google RM3K + Meta RM3K = **RM36K/mo at full scale, ramp from RM18K** (under the RM50K rate ceiling). Goal framing: 2× monthly lead volume.
+- **Quotation pricing (Jul 15 — performance-based, supersedes RM6K flat):**
+  - **Base servicing fee RM3,000/month** (all 3 platforms) + **tiered performance fee** on avg daily PAID enquiries (organic excluded, from Month 2): <60/day = base only RM3K · 60–99 = +RM1.5K (RM4.5K) · **100–139 target (≥75 quality) = +RM3K (RM6K)** · 140+ = +RM4.5K (RM7.5K cap). Tiers reinstated Jul 16 at client's request ("make it fair") after media budget fixed at RM18K
+  - **Media budget: RM18K/month fixed** (TikTok RM500/day ≈ RM15K + Google RM1.5K + Meta RM1.5K) → target +100 paid enquiries/day, ≥75 quality (halved from 200/day when media halved from RM36K)
+  - Conditions: unique paid enquiries via tracker+platform data; tiers assume media funded at plan, pro-rate otherwise; quality bar applies at target tier & above; performance fee invoiced monthly in arrears
+  - **Term: 3-month agreement** (RM9K base + bonuses). **6-month incentive:** 1 month of BASE fee free (bonuses still payable); excludes add-ons & media
+  - **Rate condition:** structure valid up to RM50K/month combined ad spend; above that, re-quoted
+  - Optional add-ons: landing page & conversion tracking RM1,000 first page / RM500 per subsequent page · static creative package RM3,000 per 10 statics × 2 sizings
+  - Free value-adds (expertise, not charged): content strategy & direction · lead tracking & sales feedback loop
+- Scope doc for admin quote prep: `quotes/IKONIK-Quotation-Scope-Summary-Jul-2026.docx` (detailed annex alongside)
+- Earlier proposal (RM3K framing, superseded): `01-strategy/IKONIK-Proposal-Lead-Generation-RM3K-x-6-Months.html`
 
 ## Facts (from site, verified 2026-08-04)
 

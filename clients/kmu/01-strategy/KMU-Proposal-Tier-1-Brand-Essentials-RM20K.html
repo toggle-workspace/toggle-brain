@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>KMU — Brand Essentials Programme · Toggle Solutions</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap');
+
+  /* Toggle design tokens — proposal-legal hexes only */
+  :root{
+    --blue:#4A7BF7;
+    --blue-deep:#3056C9;
+    --ink:#0F0F0F;
+    --body:#4A4A4A;
+    --caption:#9AA0A8;
+    --card:#F2F3F6;
+    --callout:#DDE5FE;
+    --border:#E4E6EE;
+    --teal:#2ECC9B;
+    --orange:#F28B4C;
+    --purple:#8E6BE6;
+    --slate:#2C2C36;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter Tight',-apple-system,'Segoe UI',sans-serif;color:var(--body);background:#9AA0A8;font-size:10pt;line-height:1.5}
+
+  .page{width:210mm;min-height:297mm;background:#fff;margin:8mm auto;padding:16mm 18mm 14mm;position:relative;display:flex;flex-direction:column}
+  @media print{
+    body{background:#fff}
+    .page{margin:0;box-shadow:none;page-break-after:always}
+    .page:last-child{page-break-after:auto}
+  }
+  @page{size:A4;margin:0}
+
+  .watermark{position:absolute;top:10mm;right:18mm;font-size:7pt;color:var(--caption);letter-spacing:.06em}
+  .pagenum{position:absolute;bottom:8mm;right:18mm;font-size:7pt;color:var(--caption)}
+  .footer-line{position:absolute;bottom:8mm;left:18mm;font-size:7pt;color:var(--caption)}
+
+  .wordmark{font-weight:800;font-size:12pt;color:var(--ink);letter-spacing:-.01em}
+  .wordmark .bkt{color:var(--blue)}
+
+  .kicker{font-size:8pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-deep);margin-bottom:2mm}
+  h1{font-size:20pt;font-weight:800;color:var(--ink);line-height:1.15;letter-spacing:-.02em}
+  h1 .b{color:var(--blue)}
+  h2{font-size:14.5pt;font-weight:800;color:var(--blue);letter-spacing:-.01em;margin-bottom:3mm}
+  h3{font-size:10.5pt;font-weight:700;color:var(--ink);margin-bottom:1.5mm}
+  p{margin-bottom:2.5mm}
+  strong{color:var(--ink)}
+
+  .band{background:var(--blue-deep);color:#fff;font-weight:700;font-size:9pt;padding:2.2mm 4mm;border-radius:2mm;margin:3mm 0}
+  .callout{background:var(--callout);border-radius:2.5mm;padding:4mm 5mm;margin:3mm 0}
+
+  table{width:100%;border-collapse:collapse;margin:2.5mm 0;font-size:8.5pt}
+  th{background:var(--blue-deep);color:#fff;font-weight:700;text-align:left;padding:2mm 2.5mm;font-size:8pt}
+  td{padding:1.8mm 2.5mm;border-bottom:.35mm solid var(--border);vertical-align:top}
+  tr:nth-child(even) td{background:var(--card)}
+  td.num{font-weight:700;color:var(--blue-deep);white-space:nowrap}
+
+  .statrow{display:flex;gap:4mm;margin:4mm 0}
+  .stat{flex:1;background:var(--card);border-radius:2.5mm;padding:3.5mm 4mm;border-top:1.4mm solid var(--blue)}
+  .stat .v{font-size:17pt;font-weight:800;color:var(--ink);letter-spacing:-.02em}
+  .stat .v.focal{color:var(--blue)}
+  .stat .l{font-size:7.5pt;font-weight:600;color:var(--body);margin-top:.5mm}
+
+  .phasecard{background:var(--card);border-radius:2.5mm;padding:3.5mm 4.5mm;margin-bottom:3mm;border-left:1.6mm solid var(--blue);page-break-inside:avoid}
+  .phasecard.p2{border-left-color:var(--teal)}
+  .phasecard.p3{border-left-color:var(--orange)}
+  .phead{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:1.5mm}
+  .ptitle{font-size:10.5pt;font-weight:800;color:var(--ink)}
+  .pmeta{font-size:8pt;font-weight:700;color:var(--blue-deep);white-space:nowrap}
+  .pill{display:inline-block;background:var(--blue-deep);color:#fff;font-weight:700;font-size:7.5pt;padding:.8mm 3mm;border-radius:5mm}
+  ul{margin:1mm 0 2mm 4.5mm}
+  li{margin-bottom:1mm}
+  .small{font-size:8pt;color:var(--body)}
+  .cap{font-size:7.5pt;color:var(--caption)}
+
+  /* Gantt — 10 week columns */
+  .gantt{margin:3mm 0}
+  .grow{display:grid;grid-template-columns:34mm repeat(10,1fr);align-items:center;margin-bottom:1.6mm}
+  .glabel{font-size:8pt;font-weight:700;color:var(--ink);padding-right:2mm}
+  .gbar{height:4.5mm;border-radius:1mm}
+  .gaxis{display:grid;grid-template-columns:34mm repeat(10,1fr);font-size:6.5pt;color:var(--caption);margin-bottom:1mm}
+  .gaxis span{text-align:center}
+</style>
+</head>
+<body>
+
+<!-- ============ PAGE 1 — COVER / WHAT THIS IS ============ -->
+<div class="page">
+  <div class="watermark">[ toggle.solutions ]</div>
+  <div class="wordmark"><span class="bkt">[</span> toggle <span class="bkt">]</span> <span style="font-weight:500;color:var(--body);font-size:9pt">× Code of Origin</span></div>
+
+  <div style="margin-top:14mm">
+    <div class="kicker">Proposal · July 2026 · Prepared for Dewei Ng &amp; the KMU team</div>
+    <h1><span class="b">KMU</span><br>Brand Essentials Programme</h1>
+    <p style="margin-top:3mm;font-size:10.5pt">The three things KMU asked for — identity, photography, corporate profile — in one focused RM20,000 programme.</p>
+  </div>
+
+  <div class="statrow">
+    <div class="stat"><div class="v focal">RM20K</div><div class="l">Total programme budget, ex-SST</div></div>
+    <div class="stat"><div class="v">3</div><div class="l">Phases, each independently approved — commit one at a time</div></div>
+    <div class="stat"><div class="v">~10 wks</div><div class="l">Kickoff Aug 2026 → identity + profile in hand by mid-Oct</div></div>
+  </div>
+
+  <h2 style="margin-top:5mm">What this programme is</h2>
+  <p>KMU has spent 25+ years becoming the largest player in its field in Malaysia — but the materials in the room no longer match the company behind them. The website and profile booklets are outdated, and the brand has recognition without a distinct identity.</p>
+  <p>Brand Essentials fixes the three most visible gaps first, at a quarter of a full rebranding programme's investment:</p>
+
+  <div class="phasecard"><h3>1 · A refreshed, unified identity</h3>
+  <p class="small" style="margin:0">Logo refinement (<strong>refine, not replace</strong> — 25 years of recognition is an asset), colour, typography, and a lite guidelines document so every department reproduces the brand correctly.</p></div>
+
+  <div class="phasecard p2"><h3>2 · Professional site photography</h3>
+  <p class="small" style="margin:0">Underground work is hard to shoot — which is exactly why professionally-shot underground work is a differentiator nobody else in the field has. One focused shoot day, done right.</p></div>
+
+  <div class="phasecard p3"><h3>3 · A tender-ready corporate profile</h3>
+  <p class="small" style="margin:0">A 12–16 page profile booklet built on the new identity and new imagery — the document KMU actually takes into government and corporate tenders.</p></div>
+
+  <div class="callout">
+    <p class="small" style="margin:0"><strong>Every deliverable is a building block of the full rebranding programme.</strong> Nothing here is throwaway — commission the full programme within 6 months and we scope only the delta. KMU never pays twice for the same work.</p>
+  </div>
+
+  <div class="footer-line">Toggle Solutions × Code of Origin · Confidential — prepared for KMU</div>
+  <div class="pagenum">1 / 4</div>
+</div>
+
+<!-- ============ PAGE 2 — PHASE DETAIL ============ -->
+<div class="page">
+  <div class="watermark">[ toggle.solutions ]</div>
+  <div class="kicker">Phase Detail</div>
+  <h2>Three phases, each gated by your sign-off</h2>
+
+  <div class="phasecard">
+    <div class="phead"><span class="ptitle">Phase 1 · Brand Foundations</span><span class="pmeta">Weeks 1–5</span></div>
+    <p class="small">Strategy-lite plus the identity itself — enough thinking to design correctly, without the full discovery programme.</p>
+    <ul class="small">
+      <li>Kickoff workshop + <strong>2 stakeholder interviews</strong> (leadership, tender/BD team)</li>
+      <li>Rapid audit of current materials + Gamuda-reference positioning review</li>
+      <li><strong>Positioning statement, brand persona, boilerplate copy, 1 tagline direction</strong></li>
+      <li><strong>Logo refinement — 1 design direction, 2 revision rounds</strong> · colour system · typography</li>
+      <li>Core applications: letterhead, email signature system, PowerPoint cover/master slide</li>
+    </ul>
+    <p class="small" style="margin:0"><strong>You receive:</strong> Brand Guidelines Lite (~15–20 pages) + master asset pack with all source files. <span class="pill">GATE: identity sign-off before production</span></p>
+  </div>
+
+  <div class="phasecard p2">
+    <div class="phead"><span class="ptitle">Phase 2 · Photography Essentials</span><span class="pmeta">Weeks 4–7</span></div>
+    <p class="small">One focused shoot, planned tightly against the profile's exact image needs.</p>
+    <ul class="small">
+      <li>Pre-production: shot list mapped to the profile, 1 site recce, safety &amp; access coordination with KMU site teams</li>
+      <li><strong>1 shoot day on an active site + half-day corporate</strong> — leadership portraits, office</li>
+    </ul>
+    <p class="small" style="margin:0"><strong>You receive:</strong> 25–30 retouched, rights-cleared images organised as a starter brand library. <span class="pill">GATE: image selection accepted before layout</span></p>
+  </div>
+
+  <div class="phasecard p3">
+    <div class="phead"><span class="ptitle">Phase 3 · Corporate Profile</span><span class="pmeta">Weeks 6–10</span></div>
+    <p class="small">The commercial payoff — the document that goes into the next tender batch.</p>
+    <ul class="small">
+      <li><strong>Corporate profile booklet, 12–16 pages</strong> — print-ready + digital PDF, English master</li>
+      <li>Built on the Phase 1 identity and Phase 2 imagery</li>
+      <li>Print management support (print costs at cost, pass-through)</li>
+    </ul>
+  </div>
+
+  <div class="band">PROGRAMME TIMELINE — INDICATIVE, KICKOFF FIRST WEEK OF AUGUST 2026</div>
+
+  <div class="gantt">
+    <div class="gaxis"><span></span><span></span><span>Aug</span><span></span><span></span><span></span><span>Sep</span><span></span><span></span><span>Oct</span><span></span></div>
+    <div class="grow"><span class="glabel">P1 · Brand Foundations</span><div class="gbar" style="grid-column:2/7;background:var(--blue)"></div></div>
+    <div class="grow"><span class="glabel">P2 · Photography</span><div class="gbar" style="grid-column:5/9;background:var(--teal)"></div></div>
+    <div class="grow"><span class="glabel">P3 · Corporate Profile</span><div class="gbar" style="grid-column:7/12;background:var(--orange)"></div></div>
+  </div>
+  <p class="cap">Each column = 1 week (10 weeks total). Photography overlaps the identity work by design — the shoot is planned once visual direction is locked, so images land just in time for profile layout.</p>
+
+  <div class="callout">
+    <p class="small" style="margin:0"><strong>Complete by mid-October 2026</strong> — refreshed identity, image library, and a new corporate profile in hand well before the next tender batch.</p>
+  </div>
+
+  <div class="footer-line">Toggle Solutions × Code of Origin · Confidential — prepared for KMU</div>
+  <div class="pagenum">2 / 4</div>
+</div>
+
+<!-- ============ PAGE 3 — ESSENTIALS VS FULL ============ -->
+<div class="page">
+  <div class="watermark">[ toggle.solutions ]</div>
+  <div class="kicker">Choosing the Right Fit</div>
+  <h2>Essentials vs the full rebranding programme</h2>
+  <p class="small">Both options are on the table. Essentials moves fast on the most visible gaps; the full programme adds the strategic depth, organisation-wide rollout, and measurement that make a rebrand stick for the next 25 years.</p>
+
+  <table>
+    <tr><th style="width:32mm">Area</th><th>Brand Essentials — RM20,000</th><th>Full Programme — RM80,000</th></tr>
+    <tr><td><strong>Discovery</strong></td><td>2 interviews, rapid audit</td><td>5 interviews, full audit, benchmark scan, KMU↔PT KMU brand architecture</td></tr>
+    <tr><td><strong>Strategy</strong></td><td>Positioning + persona + boilerplate, 1 tagline direction</td><td>Full Brand Strategy Blueprint + messaging house, 3 tagline directions</td></tr>
+    <tr><td><strong>Identity</strong></td><td>1 logo direction, core colour &amp; type</td><td>2 design directions, full graphic language</td></tr>
+    <tr><td><strong>Guidelines</strong></td><td>Brand Guidelines Lite (~15–20pp)</td><td>Full Brand Playbook (40–60pp) + hoarding, vehicle/PPE livery, signage, social kit</td></tr>
+    <tr><td><strong>Photography</strong></td><td>1 site day + ½ corporate · 25–30 images</td><td>2 site days + 1 corporate day · 60–80 images</td></tr>
+    <tr><td><strong>Profile &amp; tender</strong></td><td>12–16pp corporate profile</td><td>24–32pp profile + capability statement + 6 case-study sheets + tender cover system</td></tr>
+    <tr><td><strong>Launch &amp; proof</strong></td><td>—</td><td>Internal launch kit + workshop, external launch assets, perception surveys + 6-month re-measure, 90-day brand QA</td></tr>
+    <tr><td><strong>Duration</strong></td><td>~10 weeks</td><td>~18 weeks</td></tr>
+  </table>
+
+  <div class="callout">
+    <h3>The honest recommendation</h3>
+    <p class="small" style="margin:0">If the immediate need is <strong>walking into the next tender with materials that match the company</strong>, Essentials covers it. If the goal is the one Dewei described — <em>"when I see something, I think of this company"</em>, aligned across every department and down to PT KMU in Indonesia, with numbers to show leadership what changed — that is what the full programme is built for. Starting with Essentials and upgrading later is a completely valid path: within 6 months we scope only the delta, so nothing is paid twice.</p>
+  </div>
+
+  <h3 style="margin-top:4mm">Optional add-ons to Essentials (quoted on request)</h3>
+  <ul class="small">
+    <li><strong>Extra site shoot day</strong> — best value if added while the crew is mobilised, retouching included</li>
+    <li><strong>Capability statement</strong> (4pp fast-scan version for tender annexes)</li>
+    <li><strong>Corporate website revamp</strong> · <strong>brand video</strong> · <strong>educational content retainer</strong> (~2 posts/week)</li>
+    <li><strong>BM / Bahasa Indonesia adaptations</strong> of the profile and guidelines</li>
+  </ul>
+
+  <div class="footer-line">Toggle Solutions × Code of Origin · Confidential — prepared for KMU</div>
+  <div class="pagenum">3 / 4</div>
+</div>
+
+<!-- ============ PAGE 4 — INVESTMENT & NEXT STEPS ============ -->
+<div class="page">
+  <div class="watermark">[ toggle.solutions ]</div>
+  <div class="kicker">Budget &amp; Next Steps</div>
+  <h2>Budget</h2>
+
+  <div class="statrow">
+    <div class="stat"><div class="v focal">RM 20,000</div><div class="l">Total programme budget, ex-SST</div></div>
+    <div class="stat"><div class="v">3</div><div class="l">Phases, each independently approved — commit one at a time</div></div>
+    <div class="stat"><div class="v">~10 wks</div><div class="l">Kickoff Aug 2026 → identity + profile in hand by mid-Oct</div></div>
+  </div>
+  <p class="cap">Budget is ex-SST and subject to change once the final scope is confirmed. Pass-through at cost: printing (P3), site travel/access outside Klang Valley (P2). A detailed phase-by-phase quotation follows on confirmation of scope; budget valid 30 days.</p>
+
+  <div class="callout">
+    <h3>The team</h3>
+    <p class="small" style="margin:0">Same senior team as the full programme: <strong>brand strategist (Toggle Solutions)</strong> on positioning and messaging; <strong>creative director + creatives (Code of Origin)</strong> on identity, guidelines, and production — including the in-house production team for site photography.</p>
+  </div>
+
+  <div class="band">NEXT STEPS</div>
+  <table>
+    <tr><td class="num" style="width:8mm">1</td><td>KMU reviews both options internally — Essentials (RM20,000) and the full programme (RM80,000)</td></tr>
+    <tr><td class="num">2</td><td>30-minute call to pick the fit and adjust phase scope if needed</td></tr>
+    <tr><td class="num">3</td><td>Sign off <strong>Phase 1 only</strong> — kickoff scheduled within 2 weeks of approval</td></tr>
+  </table>
+
+  <div class="callout" style="margin-top:4mm">
+    <h3>Your contacts</h3>
+    <p class="small" style="margin:0"><strong>Yi Yang Tee</strong> — Strategy Lead · yiyang@toggle.solutions &nbsp;·&nbsp; <strong>Viknesh</strong> — Business Development Director · (+60) 12 568 8681 &nbsp;·&nbsp; toggle.solutions</p>
+  </div>
+
+  <div class="footer-line">Toggle Solutions × Code of Origin · Confidential — prepared for KMU</div>
+  <div class="pagenum">4 / 4</div>
+</div>
+
+</body>
+</html>

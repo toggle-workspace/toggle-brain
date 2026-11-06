@@ -1,0 +1,46 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Toggle About · Concept A</title>
+<meta name="description" content="Toggle Solutions About page redesign, Concept A: Clean Room.">
+<script>
+  (function () {
+    var q = new URLSearchParams(location.search).get("theme"), t = null;
+    try { t = localStorage.getItem("toggle-theme"); } catch (e) {}
+    if (q === "light" || q === "dark") t = q;
+    if (t) document.documentElement.setAttribute("data-theme", t);
+  })();
+</script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter+Tight:ital,wght@0,400;0,500;0,600;0,700;1,500&family=Instrument+Serif:ital@0;1&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="a.css">
+</head>
+<body data-page="about">
+  <a class="skip" href="#main">Skip to content</a>
+  <header class="nav" id="nav"></header>
+  <main id="main">
+    <section class="ab-hero" id="ab-hero"></section>
+    <section class="stats-band" id="ab-stats" aria-label="Toggle in numbers"></section>
+    <section class="values" id="values"></section>
+    <section class="timeline" id="timeline"></section>
+    <section class="three" id="three"></section>
+    <section class="people" id="people"></section>
+    <section class="system" id="system"></section>
+    <section class="partners" id="partners"></section>
+    <section class="brands" id="brands"></section>
+    <section class="cta" id="contact"></section>
+  </main>
+  <footer class="foot" id="foot"></footer>
+  <div class="sheet" id="sheet" hidden></div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lenis@1.1.13/dist/lenis.min.js"></script>
+  <script src="../shared/wordmark.js"></script>
+  <script src="../shared/content.js"></script>
+  <script src="a.js"></script>
+</body>
+</html>

@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Toggle — Budget Guardrails Dashboard</title>
+<style>
+  :root{
+    --primary:#4A7BF7; --primary-deep:#3056C9;
+    --canvas:#FFFFFF; --card:#F2F3F6; --raised:#FFFFFF; --callout:#DDE5FE;
+    --ink:#0F0F0F; --body:#4A4A4A; --secondary:#6B7280; --muted:#9AA0A8;
+    --border:#E4E6EE; --border-strong:#9AA0A8;
+    --success:#0B6B4D; --warning:#A4541C; --error:#C03028;
+    --teal:#2ECC9B; --pink:#F59EC9; --purple:#8E6BE6; --orange:#F28B4C; --slate:#2C2C36;
+    --r:14px; --shadow:0 4px 12px rgba(10,18,36,.10);
+  }
+  *{box-sizing:border-box}
+  body{margin:0;background:#EEF1F8;color:var(--ink);
+    font-family:"Inter Tight",Inter,-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,sans-serif;
+    -webkit-font-smoothing:antialiased;line-height:1.45;padding:32px 20px 64px}
+  .wrap{max-width:1180px;margin:0 auto}
+  header.top{display:flex;justify-content:space-between;align-items:flex-end;flex-wrap:wrap;gap:16px;margin-bottom:8px}
+  .brandrow{display:flex;align-items:center;gap:12px}
+  .dot{width:14px;height:14px;border-radius:4px;background:var(--primary);box-shadow:0 0 0 4px rgba(74,123,247,.18)}
+  h1{font-size:30px;font-weight:800;letter-spacing:-.02em;margin:0}
+  .sub{color:var(--secondary);font-size:14px;margin-top:2px}
+  .tag{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+    color:#fff;background:var(--warning);padding:4px 10px;border-radius:999px}
+  .meta{font-size:12px;color:var(--secondary);text-align:right}
+  .meta a{color:var(--primary-deep);text-decoration:none}
+  .verdict{background:linear-gradient(90deg,#EAF0FE,#F7FAFF);border:1px solid #CBD8FB;border-left:5px solid var(--primary-deep);
+    border-radius:var(--r);padding:16px 20px;margin:18px 0 26px;font-size:15px}
+  .verdict b{color:var(--primary-deep)}
+  .grid{display:grid;gap:18px}
+  .kpis{grid-template-columns:repeat(4,1fr)}
+  .two{grid-template-columns:1.15fr .85fr}
+  .card{background:var(--canvas);border:1px solid var(--border);border-radius:var(--r);padding:20px 22px;box-shadow:var(--shadow)}
+  .card h2{font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:var(--secondary);margin:0 0 4px}
+  .card .hint{font-size:12.5px;color:var(--secondary);margin:0 0 16px}
+  .kpi .label{font-size:12px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--secondary)}
+  .kpi .num{font-size:34px;font-weight:800;letter-spacing:-.02em;margin:6px 0 2px}
+  .kpi .foot{font-size:12.5px;color:var(--body)}
+  .pill{display:inline-block;font-size:11px;font-weight:700;padding:2px 8px;border-radius:999px}
+  .pill.ok{background:#DCF1E9;color:var(--success)} .pill.warn{background:#F6E7D8;color:var(--warning)} .pill.bad{background:#F6DAD7;color:var(--error)}
+  svg{display:block;width:100%;height:auto;overflow:visible}
+  .legend{display:flex;flex-wrap:wrap;gap:14px;margin-top:12px;font-size:12.5px;color:var(--body)}
+  .legend i{display:inline-block;width:11px;height:11px;border-radius:3px;margin-right:6px;vertical-align:-1px}
+  table.lt{width:100%;border-collapse:collapse;font-size:13px;margin-top:2px}
+  table.lt th,table.lt td{text-align:left;padding:9px 10px;border-bottom:1px solid var(--border)}
+  table.lt th{font-size:11px;text-transform:uppercase;letter-spacing:.03em;color:var(--secondary);font-weight:700}
+  table.lt td.r,table.lt th.r{text-align:right;font-variant-numeric:tabular-nums}
+  .full{grid-template-columns:1fr}
+  footer{margin-top:28px;font-size:12px;color:var(--secondary);text-align:center}
+  .axis{font-size:11px;fill:var(--secondary)}
+  .barlabel{font-size:12px;font-weight:700;fill:var(--ink)}
+  .barval{font-size:12px;font-weight:800;fill:#fff}
+  @media(max-width:880px){.kpis{grid-template-columns:repeat(2,1fr)}.two{grid-template-columns:1fr}}
+</style>
+</head>
+<body>
+<div class="wrap">
+
+  <header class="top">
+    <div>
+      <div class="brandrow"><span class="dot"></span><h1>Budget Guardrails</h1><span class="tag">Draft · founder review</span></div>
+      <div class="sub">Toggle Solutions · operating baseline as of <b>26 Jun 2026</b> · phased founders, MRR RM80–90K</div>
+    </div>
+    <div class="meta">
+      Source of truth<br>
+      <a href="https://docs.google.com/spreadsheets/d/1BoU90qAQP96Z80dl1wcwYFEJ3wJ68IOl4-rLVozfeTc">Toggle_PL_Tracker_v3</a> ·
+      <a href="https://docs.google.com/spreadsheets/d/1f9FzzPHEBx6LvUVjS2QzW-qPGJyAw3Ts6lA_WlZ5jzQ">P&L Group 2026</a>
+    </div>
+  </header>
+
+  <div class="verdict">
+    <b>Healthy and cash-safe — manage margin, not runway.</b> Phasing founders in one at a time keeps October burn at ~RM44K.
+    At RM85K MRR that's <b>~48% EBITDA</b>; cash generates RM34–44K/month on a RM284K base, so the RM150K floor is never in play.
+    The two things to watch: <b>margin compression</b> at the low end of MRR, and <b>client concentration</b> (Audaura ~47%, rule is 35%).
+  </div>
+
+  <!-- KPI ROW -->
+  <div class="grid kpis" style="margin-bottom:18px">
+    <div class="card kpi"><div class="label">MRR (current)</div><div class="num">RM80–90K</div><div class="foot">vs RM144K plan target</div></div>
+    <div class="card kpi"><div class="label">Oct burn</div><div class="num">~RM44K</div><div class="foot">1 founder FT + rental, BD deferred</div></div>
+    <div class="card kpi"><div class="label">EBITDA @ RM85K</div><div class="num" style="color:var(--primary-deep)">~48%</div><div class="foot"><span class="pill warn">watch band</span> target ≥50%</div></div>
+    <div class="card kpi"><div class="label">Cash position</div><div class="num">RM284K</div><div class="foot">floor RM150K · runway unlimited</div></div>
+  </div>
+
+  <!-- ROW: burn breakdown + margin sensitivity -->
+  <div class="grid two" style="margin-bottom:18px">
+
+    <div class="card">
+      <h2>October burn by pillar</h2>
+      <p class="hint">Where the ~RM44K/month goes. People dominates; the variable + discretionary pillars stay small.</p>
+      <svg viewBox="0 0 560 250" role="img" aria-label="Burn by pillar">
+        <!-- bars -->
+        <!-- scale: max 36000 -> 430px, x start 150 -->
+        <g font-family="inherit">
+          <!-- People -->
+          <text x="142" y="34" text-anchor="end" class="barlabel">People &amp; Founders</text>
+          <rect x="150" y="20" width="430" height="24" rx="5" fill="var(--slate)"></rect>
+          <text x="166" y="37" class="barval">RM36,000 · 42%</text>
+          <!-- Office -->
+          <text x="142" y="74" text-anchor="end" class="barlabel">Office &amp; Facilities</text>
+          <rect x="150" y="60" width="37.6" height="24" rx="5" fill="var(--primary)"></rect>
+          <text x="195" y="77" class="barlabel" style="font-weight:700">RM3,150</text>
+          <!-- Freelancers -->
+          <text x="142" y="114" text-anchor="end" class="barlabel">Freelancers / Delivery</text>
+          <rect x="150" y="100" width="35.8" height="24" rx="5" fill="var(--teal)"></rect>
+          <text x="193" y="117" class="barlabel" style="font-weight:700">RM3,000</text>
+          <!-- Admin -->
+          <text x="142" y="154" text-anchor="end" class="barlabel">Admin / Other</text>
+          <rect x="150" y="140" width="14.9" height="24" rx="5" fill="var(--purple)"></rect>
+          <text x="172" y="157" class="barlabel" style="font-weight:700">RM1,250</text>
+          <!-- Software -->
+          <text x="142" y="194" text-anchor="end" class="barlabel">Software &amp; Tools</text>
+          <rect x="150" y="180" width="7.2" height="24" rx="5" fill="var(--orange)"></rect>
+          <text x="164" y="197" class="barlabel" style="font-weight:700">RM600</text>
+          <!-- Growth -->
+          <text x="142" y="234" text-anchor="end" class="barlabel">Growth &amp; Marketing</text>
+          <rect x="150" y="220" width="3" height="24" rx="5" fill="var(--pink)"></rect>
+          <text x="162" y="237" class="barlabel" style="font-weight:700;fill:var(--secondary)">RM0 (≤3% available)</text>
+        </g>
+      </svg>
+    </div>
+
+    <div class="card">
+      <h2>EBITDA margin vs MRR</h2>
+      <p class="hint">At fixed October burn (RM44K). Floor 45%, target 50%.</p>
+      <svg viewBox="0 0 380 250" role="img" aria-label="Margin vs MRR">
+        <!-- plot area: x 40..360, y 20..210 ; margin 40..56% mapped -->
+        <!-- gridlines/threshold: y for 50% and 45% -->
+        <!-- map m: y = 20 + (56-m)/(56-40)*190 -->
+        <!-- 50% -> 20+(6/16)*190=91.25 ; 45% -> 20+(11/16)*190=150.6 -->
+        <line x1="40" y1="91.25" x2="360" y2="91.25" stroke="var(--success)" stroke-dasharray="5 4" stroke-width="1.5"></line>
+        <text x="362" y="88" class="axis" fill="var(--success)" style="font-weight:700">50% target</text>
+        <line x1="40" y1="150.6" x2="360" y2="150.6" stroke="var(--warning)" stroke-dasharray="5 4" stroke-width="1.5"></line>
+        <text x="362" y="147" class="axis" fill="var(--warning)" style="font-weight:700">45% floor</text>
+        <!-- bars: 4 MRR points. width 50, gap. base y=210 -->
+        <!-- 80%:45.0 amber ; 85:48.2 amber ; 90:51.1 green ; 95:53.7 green -->
+        <!-- bar top y from margin -->
+        <g>
+          <!-- 80 -> y=150.6 -->
+          <rect x="55" y="150.6" width="52" height="59.4" rx="5" fill="var(--warning)"></rect>
+          <text x="81" y="144" text-anchor="middle" class="barlabel">45.0%</text>
+          <text x="81" y="226" text-anchor="middle" class="axis">RM80K</text>
+          <!-- 85 -> y=20+(56-48.2)/16*190=112.6 -->
+          <rect x="125" y="112.6" width="52" height="97.4" rx="5" fill="var(--warning)"></rect>
+          <text x="151" y="106" text-anchor="middle" class="barlabel">48.2%</text>
+          <text x="151" y="226" text-anchor="middle" class="axis" style="font-weight:700">RM85K</text>
+          <!-- 90 -> y=20+(56-51.1)/16*190=78.2 -->
+          <rect x="195" y="78.2" width="52" height="131.8" rx="5" fill="var(--success)"></rect>
+          <text x="221" y="71" text-anchor="middle" class="barlabel">51.1%</text>
+          <text x="221" y="226" text-anchor="middle" class="axis">RM90K</text>
+          <!-- 95 -> y=20+(56-53.7)/16*190=47.3 -->
+          <rect x="265" y="47.3" width="52" height="162.7" rx="5" fill="var(--success)"></rect>
+          <text x="291" y="40" text-anchor="middle" class="barlabel">53.7%</text>
+          <text x="291" y="226" text-anchor="middle" class="axis">RM95K</text>
+        </g>
+        <line x1="40" y1="210" x2="360" y2="210" stroke="var(--border-strong)" stroke-width="1"></line>
+      </svg>
+    </div>
+  </div>
+
+  <!-- ROW: readiness ladder full width -->
+  <div class="grid full" style="margin-bottom:18px">
+    <div class="card">
+      <h2>Founder full-time readiness ladder</h2>
+      <p class="hint">Each step is MRR-gated, not calendar-gated. Bars: cumulative monthly burn (slate) vs the MRR needed to hold the 50% margin target (blue). The gap is your surplus headroom. Climb in order — don't stack two steps in one quarter.</p>
+      <svg viewBox="0 0 1080 300" role="img" aria-label="Readiness ladder">
+        <!-- scale: value k, max 130 -> 200px tall. base y=250. y=250-(v/140*210) -->
+        <!-- gridlines at 0,35,70,105,140 -->
+        <g class="axis">
+          <line x1="70" y1="250" x2="1040" y2="250" stroke="var(--border-strong)"></line>
+          <line x1="70" y1="197.5" x2="1040" y2="197.5" stroke="var(--border)"></line>
+          <line x1="70" y1="145" x2="1040" y2="145" stroke="var(--border)"></line>
+          <line x1="70" y1="92.5" x2="1040" y2="92.5" stroke="var(--border)"></line>
+          <line x1="70" y1="40" x2="1040" y2="40" stroke="var(--border)"></line>
+          <text x="60" y="254" text-anchor="end">0</text>
+          <text x="60" y="201" text-anchor="end">35</text>
+          <text x="60" y="149" text-anchor="end">70</text>
+          <text x="60" y="96" text-anchor="end">105</text>
+          <text x="60" y="44" text-anchor="end">140</text>
+          <text x="30" y="150" text-anchor="middle" transform="rotate(-90 30 150)" style="font-weight:700">RM '000 / month</text>
+        </g>
+        <!-- 4 groups. group width 230, start 110 -->
+        <!-- helper heights: burn 44,50.5,57,65 ; mrr 88,101,114,130 -->
+        <!-- y(v)=250-(v/140*210) -->
+        <!-- 44->184 ; 50.5->174.25 ; 57->164.5 ; 65->152.5 -->
+        <!-- 88->118 ; 101->98.5 ; 114->79 ; 130->55 -->
+        <g>
+          <!-- STEP 1 -->
+          <rect x="120" y="184" width="74" height="66" rx="5" fill="var(--slate)"></rect>
+          <text x="157" y="178" text-anchor="middle" class="barlabel">44</text>
+          <rect x="204" y="118" width="74" height="132" rx="5" fill="var(--primary)"></rect>
+          <text x="241" y="112" text-anchor="middle" class="barlabel">88</text>
+          <text x="199" y="270" text-anchor="middle" style="font-weight:800;font-size:13px;fill:var(--ink)">#1 FT + rental</text>
+          <text x="199" y="287" text-anchor="middle" class="axis" fill="var(--success)" style="font-weight:700">● YOU ARE HERE (Oct '26)</text>
+
+          <!-- STEP 2 -->
+          <rect x="360" y="174.25" width="74" height="75.75" rx="5" fill="var(--slate)"></rect>
+          <text x="397" y="168" text-anchor="middle" class="barlabel">50.5</text>
+          <rect x="444" y="98.5" width="74" height="151.5" rx="5" fill="var(--primary)"></rect>
+          <text x="481" y="92" text-anchor="middle" class="barlabel">101</text>
+          <text x="439" y="270" text-anchor="middle" style="font-weight:800;font-size:13px;fill:var(--ink)">+ Founder #2 FT</text>
+          <text x="439" y="287" text-anchor="middle" class="axis">unlock at MRR ≥ RM101K</text>
+
+          <!-- STEP 3 -->
+          <rect x="600" y="164.5" width="74" height="85.5" rx="5" fill="var(--slate)"></rect>
+          <text x="637" y="158" text-anchor="middle" class="barlabel">57</text>
+          <rect x="684" y="79" width="74" height="171" rx="5" fill="var(--primary)"></rect>
+          <text x="721" y="73" text-anchor="middle" class="barlabel">114</text>
+          <text x="679" y="270" text-anchor="middle" style="font-weight:800;font-size:13px;fill:var(--ink)">+ Founder #3 FT</text>
+          <text x="679" y="287" text-anchor="middle" class="axis">unlock at MRR ≥ RM114K</text>
+
+          <!-- STEP 4 -->
+          <rect x="840" y="152.5" width="74" height="97.5" rx="5" fill="var(--slate)"></rect>
+          <text x="877" y="146" text-anchor="middle" class="barlabel">65</text>
+          <rect x="924" y="55" width="74" height="195" rx="5" fill="var(--primary)"></rect>
+          <text x="961" y="49" text-anchor="middle" class="barlabel">130</text>
+          <text x="919" y="270" text-anchor="middle" style="font-weight:800;font-size:13px;fill:var(--ink)">+ BD director</text>
+          <text x="919" y="287" text-anchor="middle" class="axis">deferred → MRR ≥ RM110K</text>
+        </g>
+      </svg>
+      <div class="legend">
+        <span><i style="background:var(--slate)"></i>Cumulative monthly burn</span>
+        <span><i style="background:var(--primary)"></i>MRR needed for 50% margin target</span>
+      </div>
+    </div>
+  </div>
+
+  <!-- ROW: concentration + current vs target -->
+  <div class="grid two">
+    <div class="card">
+      <h2>Client concentration risk</h2>
+      <p class="hint">Audaura (UNITAR) is ~47% of MRR — far over the 35% single-client ceiling. This is the #1 structural risk, not cost.</p>
+      <svg viewBox="0 0 560 130" role="img" aria-label="Concentration">
+        <!-- stacked bar full width 520 from x20. Audaura 47% -> 244.4 ; rest 53% -->
+        <rect x="20" y="30" width="244.4" height="46" rx="6" fill="var(--error)"></rect>
+        <rect x="264.4" y="30" width="275.6" height="46" rx="6" fill="var(--teal)"></rect>
+        <text x="142" y="59" text-anchor="middle" class="barval">Audaura ~47%</text>
+        <text x="402" y="59" text-anchor="middle" class="barval" style="fill:#0F0F0F">All other clients ~53%</text>
+        <!-- 35% marker: x = 20 + .35*520 = 202 -->
+        <line x1="202" y1="18" x2="202" y2="88" stroke="var(--ink)" stroke-width="2" stroke-dasharray="4 3"></line>
+        <text x="202" y="14" text-anchor="middle" class="barlabel" style="font-size:11px">35% max-safe</text>
+        <text x="202" y="104" text-anchor="middle" class="axis">single-client ceiling</text>
+      </svg>
+      <p class="hint" style="margin-top:10px">Landing 1–2 mid-size clients fixes concentration <b>and</b> unlocks Founder #2 — same lever. While over the line: cash floor lifts to RM200K, distributions stay conservative.</p>
+    </div>
+
+    <div class="card">
+      <h2>Current vs plan target</h2>
+      <p class="hint">Operate against the current column; plan toward the target.</p>
+      <table class="lt">
+        <tr><th>Metric</th><th class="r">Current</th><th class="r">Target</th></tr>
+        <tr><td>MRR / month</td><td class="r">RM80–90K</td><td class="r">RM144K</td></tr>
+        <tr><td>Full-time founders</td><td class="r">1 (Oct)</td><td class="r">3</td></tr>
+        <tr><td>BD director</td><td class="r">deferred</td><td class="r">RM7K + comm</td></tr>
+        <tr><td>Total burn / mo</td><td class="r">~RM44K</td><td class="r">RM66K</td></tr>
+        <tr><td>EBITDA margin</td><td class="r">~48%</td><td class="r">54%</td></tr>
+        <tr><td>Min cash floor</td><td class="r">RM150K</td><td class="r">RM150K</td></tr>
+      </table>
+      <p class="hint" style="margin-top:12px"><b>Master guardrail:</b> EBITDA margin target ≥50%, hard floor ≥45% (total OPEX ≤50–55% of revenue). The %-of-revenue pillar ceilings are the durable rule; RM caps scale with MRR.</p>
+    </div>
+  </div>
+
+  <footer>
+    Toggle Solutions · Budget Guardrails dashboard · figures derived from Toggle_PL_Tracker_v3 &amp; [P&amp;L] Toggle Group 2026 as of 26 Jun 2026.<br>
+    Companion to <b>budget-guardrails.md</b>. Re-derive RM caps when MRR moves materially.
+  </footer>
+
+</div>
+</body>
+</html>

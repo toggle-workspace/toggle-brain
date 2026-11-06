@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>KMU — Brand Core Programme · Toggle Solutions</title>
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;500;600;700;800&display=swap');
+
+  /* Toggle design tokens — proposal-legal hexes only */
+  :root{
+    --blue:#4A7BF7;
+    --blue-deep:#3056C9;
+    --ink:#0F0F0F;
+    --body:#4A4A4A;
+    --caption:#9AA0A8;
+    --card:#F2F3F6;
+    --callout:#DDE5FE;
+    --border:#E4E6EE;
+    --teal:#2ECC9B;
+    --orange:#F28B4C;
+    --purple:#8E6BE6;
+    --slate:#2C2C36;
+  }
+  *{margin:0;padding:0;box-sizing:border-box}
+  body{font-family:'Inter Tight',-apple-system,'Segoe UI',sans-serif;color:var(--body);background:#9AA0A8;font-size:10pt;line-height:1.5}
+
+  .page{width:210mm;min-height:297mm;background:#fff;margin:8mm auto;padding:16mm 18mm 14mm;position:relative;display:flex;flex-direction:column}
+  @media print{
+    body{background:#fff}
+    .page{margin:0;box-shadow:none;page-break-after:always}
+    .page:last-child{page-break-after:auto}
+  }
+  @page{size:A4;margin:0}
+
+  .watermark{position:absolute;top:10mm;right:18mm;font-size:7pt;color:var(--caption);letter-spacing:.06em}
+  .pagenum{position:absolute;bottom:8mm;right:18mm;font-size:7pt;color:var(--caption)}
+  .footer-line{position:absolute;bottom:8mm;left:18mm;font-size:7pt;color:var(--caption)}
+
+  .wordmark{font-weight:800;font-size:12pt;color:var(--ink);letter-spacing:-.01em}
+  .wordmark .bkt{color:var(--blue)}
+
+  .kicker{font-size:8pt;font-weight:700;letter-spacing:.14em;text-transform:uppercase;color:var(--blue-deep);margin-bottom:2mm}
+  h1{font-size:20pt;font-weight:800;color:var(--ink);line-height:1.15;letter-spacing:-.02em}
+  h1 .b{color:var(--blue)}
+  h2{font-size:14.5pt;font-weight:800;color:var(--blue);letter-spacing:-.01em;margin-bottom:3mm}
+  h3{font-size:10.5pt;font-weight:700;color:var(--ink);margin-bottom:1.5mm}
+  p{margin-bottom:2.5mm}
+  strong{color:var(--ink)}
+
+  .band{background:var(--blue-deep);color:#fff;font-weight:700;font-size:9pt;padding:2.2mm 4mm;border-radius:2mm;margin:3mm 0}
+  .callout{background:var(--callout);border-radius:2.5mm;padding:4mm 5mm;margin:3mm 0}
+
+  table{width:100%;border-collapse:collapse;margin:2.5mm 0;font-size:8.5pt}
+  th{background:var(--blue-deep);color:#fff;font-weight:700;text-align:left;padding:2mm 2.5mm;font-size:8pt}
+  td{padding:1.8mm 2.5mm;border-bottom:.35mm solid var(--border);vertical-align:top}
+  tr:nth-child(even) td{background:var(--card)}
+  td.num{font-weight:700;color:var(--blue-deep);white-space:nowrap}
+  td.hl{background:var(--callout) !important}
+
+  .statrow{display:flex;gap:4mm;margin:4mm 0}
+  .stat{flex:1;background:var(--card);border-radius:2.5mm;padding:3.5mm 4mm;border-top:1.4mm solid var(--blue)}
+  .stat .v{font-size:17pt;font-weight:800;color:var(--ink);letter-spacing:-.02em}
+  .stat .v.focal{color:var(--blue)}
+  .stat .l{font-size:7.5pt;font-weight:600;color:var(--body);margin-top:.5mm}
+
+  .phasecard{background:var(--card);border-radius:2.5mm;padding:3.5mm 4.5mm;margin-bottom:3mm;border-left:1.6mm solid var(--blue);page-break-inside:avoid}
+  .phasecard.p2{border-left-color:var(--teal)}
+  .phasecard.p3{border-left-color:var(--orange)}
+  .phasecard.p4{border-left-color:var(--purple)}
+  .phead{display:flex;justify-content:space-between;align-items:baseline;margin-bottom:1.5mm}
+  .ptitle{font-size:10.5pt;font-weight:800;color:var(--ink)}
+  .pmeta{font-size:8pt;font-weight:700;color:var(--blue-deep);white-space:nowrap}
+  .pill{display:inline-block;background:var(--blue-deep);color:#fff;font-weight:700;font-size:7.5pt;padding:.8mm 3mm;border-radius:5mm}
+  ul{margin:1mm 0 2mm 4.5mm}
+  li{margin-bottom:1mm}
+  .small{font-size:8pt;color:var(--body)}
+  .cap{font-size:7.5pt;color:var(--caption)}
+
+  /* Gantt — 13 week columns */
+  .gantt{margin:3mm 0}
+  .grow{display:grid;grid-template-columns:34mm repeat(13,1fr);align-items:center;margin-bottom:1.6mm}
+  .glabel{font-size:8pt;font-weight:700;color:var(--ink);padding-right:2mm}
+  .gbar{height:4.5mm;border-radius:1mm}
+  .gaxis{display:grid;grid-template-columns:34mm repeat(13,1fr);font-size:6.5pt;color:var(--caption);margin-bottom:1mm}
+  .gaxis span{text-align:center}
+</style>
+</head>
+<body>
+
+<!-- ============ PAGE 1 — COVER / WHAT THIS IS ============ -->
+<div class="page">
+  <div class="watermark">[ toggle.solutions ]</div>
+  <div class="wordmark"><span class="bkt">[</span> toggle <span class="bkt">]</span> <span style="font-weight:500;color:var(--body);font-size:9pt">× Code of Origin</span></div>
+
+  <div style="margin-top:14mm">
+    <div class="kicker">Proposal · July 2026 · Prepared for Dewei Ng &amp; the KMU team</div>
+    <h1><span class="b">KMU</span><br>Brand Core Programme</h1>
+    <p style="margin-top:3mm;font-size:10.5pt">The complete brand foundation — strategy, identity choice, a real brand guide, two shoot days, and tender-grade collateral — for RM35,000.</p>
+  </div>
+
+  <div class="statrow">
+    <div class="stat"><div class="v focal">RM35K</div><div class="l">Total programme budget, ex-SST</div></div>
+    <div class="stat"><div class="v">4</div><div class="l">Phases, each independently approved — commit one at a time</div></div>
+    <div class="stat"><div class="v">~13 wks</div><div class="l">Kickoff Aug 2026 → tender-ready by early November</div></div>
+  </div>
+
+  <h2 style="margin-top:5mm">What this programme is</h2>
+  <p>KMU has spent 25+ years becoming the largest player in its field in Malaysia — but the materials in the room no longer match the company behind them. Brand Core rebuilds the foundation properly, without the full programme's organisation-wide rollout and measurement:</p>
+
+  <div class="phasecard"><h3>Strategy you can defend internally</h3>
+  <p class="small" style="margin:0">Three stakeholder interviews (including a PT KMU voice), a benchmark snapshot against Gamuda-tier references, and a positioning + messaging core — so the identity is built on evidence, not taste.</p></div>
+
+  <div class="phasecard p2"><h3>A choice of identity directions — and a guide that makes it stick</h3>
+  <p class="small" style="margin:0"><strong>Two logo directions</strong> (refine, not replace — 25 years of recognition is an asset), full colour and type system, and a ~30-page Brand Guide with the deck template KMU presents tenders from.</p></div>
+
+  <div class="phasecard p3"><h3>Two shoot days that make underground work visible</h3>
+  <p class="small" style="margin:0">40–50 professionally retouched images across two sites plus leadership portraits — a differentiator nobody else in the field has.</p></div>
+
+  <div class="phasecard p4"><h3>The documents tenders are won with</h3>
+  <p class="small" style="margin:0">A 20–24 page corporate profile <strong>plus the 4-page capability statement</strong> — the fast-scan version evaluators actually read first.</p></div>
+
+  <div class="callout">
+    <p class="small" style="margin:0"><strong>Every deliverable is a building block of the full RM80,000 programme.</strong> Upgrade within 6 months and we scope only the delta — KMU never pays twice for the same work.</p>
+  </div>
+
+  <div class="footer-line">Toggle Solutions × Code of Origin · Confidential — prepared for KMU</div>
+  <div class="pagenum">1 / 4</div>
+</div>
+
+<!-- ============ PAGE 2 — PHASE DETAIL ============ -->
+<div class="page">
+  <div class="watermark">[ toggle.solutions ]</div>
+  <div class="kicker">Phase Detail</div>
+  <h2>Four phases, each gated by your sign-off</h2>
+
+  <div class="phasecard">
+    <div class="phead"><span class="ptitle">Phase 1 · Brand Strategy (condensed)</span><span class="pmeta">Weeks 1–4</span></div>
+    <ul class="small">
+      <li>Kickoff workshop + <strong>3 stakeholder interviews</strong> (leadership, tender/BD, PT KMU representative)</li>
+      <li>Audit of current materials + <strong>benchmark snapshot</strong> — Gamuda-tier references, key regional peers</li>
+      <li><strong>Positioning, brand persona, messaging core</strong> (brand story, message pillars, boilerplate) + <strong>2 tagline directions</strong></li>
+    </ul>
+    <p class="small" style="margin:0"><span class="pill">GATE: strategy sign-off before design</span></p>
+  </div>
+
+  <div class="phasecard p2">
+    <div class="phead"><span class="ptitle">Phase 2 · Visual Identity &amp; Brand Guide</span><span class="pmeta">Weeks 4–8</span></div>
+    <ul class="small">
+      <li>Logo refinement — <strong>2 design directions, 2 revision rounds</strong> · colour system · typography · core graphic language</li>
+      <li>Applications: letterhead &amp; stationery, email signature system, <strong>PowerPoint/tender deck template</strong>, social profile kit</li>
+      <li><strong>Brand Guide (~30 pages)</strong> — usage rules for internal teams, printers, and future vendors + master asset pack</li>
+    </ul>
+    <p class="small" style="margin:0"><span class="pill">GATE: identity sign-off before production</span></p>
+  </div>
+
+  <div class="phasecard p3">
+    <div class="phead"><span class="ptitle">Phase 3 · Photography &amp; Image Library</span><span class="pmeta">Weeks 7–10</span></div>
+    <ul class="small">
+      <li>Pre-production: shot list mapped to profile + deck needs, site recce, safety &amp; access coordination</li>
+      <li><strong>2 shoot days</strong> — 1 full day on an active site + 1 day split between a second site and corporate (leadership portraits, office)</li>
+      <li><strong>40–50 retouched, rights-cleared images</strong>, tagged as a reusable brand library</li>
+    </ul>
+    <p class="small" style="margin:0"><span class="pill">GATE: library accepted before profile layout</span></p>
+  </div>
+
+  <div class="phasecard p4">
+    <div class="phead"><span class="ptitle">Phase 4 · Corporate Profile &amp; Capability Statement</span><span class="pmeta">Weeks 10–13</span></div>
+    <ul class="small">
+      <li><strong>Corporate profile booklet, 20–24 pages</strong> — print-ready + interactive digital PDF, English master</li>
+      <li><strong>Capability statement (4 pages)</strong> — the fast-scan version for tender annexes and first meetings</li>
+      <li>Print management support (print costs at cost, pass-through)</li>
+    </ul>
+  </div>
+
+  <div class="band">PROGRAMME TIMELINE — INDICATIVE, KICKOFF FIRST WEEK OF AUGUST 2026</div>
+
+  <div class="gantt">
+    <div class="gaxis"><span></span><span></span><span>Aug</span><span></span><span></span><span></span><span>Sep</span><span></span><span></span><span></span><span>Oct</span><span></span><span></span><span>Nov</span></div>
+    <div class="grow"><span class="glabel">P1 · Strategy</span><div class="gbar" style="grid-column:2/6;background:var(--blue)"></div></div>
+    <div class="grow"><span class="glabel">P2 · Identity &amp; Guide</span><div class="gbar" style="grid-column:5/10;background:var(--teal)"></div></div>
+    <div class="grow"><span class="glabel">P3 · Photography</span><div class="gbar" style="grid-column:8/12;background:var(--orange)"></div></div>
+    <div class="grow"><span class="glabel">P4 · Profile &amp; Capability</span><div class="gbar" style="grid-column:11/15;background:var(--purple)"></div></div>
+  </div>
+  <p class="cap">Each column = 1 week (13 weeks total). Photography overlaps identity by design — the shoot is planned once visual direction is locked, so images land just in time for profile layout. <strong style="color:var(--body)">Complete by early November 2026.</strong></p>
+
+  <div class="footer-line">Toggle Solutions × Code of Origin · Confidential — prepared for KMU</div>
+  <div class="pagenum">2 / 4</div>
+</div>
+
+<!-- ============ PAGE 3 — THREE OPTIONS ============ -->
+<div class="page">
+  <div class="watermark">[ toggle.solutions ]</div>
+  <div class="kicker">Choosing the Right Fit</div>
+  <h2>Three ways to do this — side by side</h2>
+  <p class="small">All three options are on the table. Essentials moves fastest on the most visible gaps; Core builds the complete foundation; the full programme adds organisation-wide rollout and the measurement that shows leadership what changed.</p>
+
+  <table>
+    <tr><th style="width:26mm">Area</th><th>Essentials — RM20,000</th><th>Core — RM35,000</th><th>Full — RM80,000</th></tr>
+    <tr><td><strong>Discovery</strong></td><td>2 interviews, rapid audit</td><td class="hl">3 interviews, audit + benchmark snapshot</td><td>5 interviews, full audit + benchmark scan + KMU↔PT KMU architecture</td></tr>
+    <tr><td><strong>Strategy</strong></td><td>Positioning + persona, 1 tagline</td><td class="hl">+ messaging core, 2 taglines</td><td>Full blueprint + messaging house, 3 taglines</td></tr>
+    <tr><td><strong>Identity</strong></td><td>1 logo direction</td><td class="hl">2 logo directions + graphic language core</td><td>2 directions + full graphic language</td></tr>
+    <tr><td><strong>Guidelines</strong></td><td>Lite (~15–20pp)</td><td class="hl">Brand Guide (~30pp) + deck template + social kit</td><td>Full Playbook (40–60pp) + hoarding, livery, signage</td></tr>
+    <tr><td><strong>Photography</strong></td><td>1 site day + ½ corporate · 25–30 images</td><td class="hl">2 shoot days · 40–50 images</td><td>3 shoot days · 60–80 images</td></tr>
+    <tr><td><strong>Profile &amp; tender</strong></td><td>12–16pp profile</td><td class="hl">20–24pp profile + capability statement</td><td>24–32pp profile + capability statement + 6 case sheets + tender covers</td></tr>
+    <tr><td><strong>Launch &amp; proof</strong></td><td>—</td><td class="hl">—</td><td>Launch kit + workshop, perception surveys + 6-month re-measure, 90-day QA</td></tr>
+    <tr><td><strong>Duration</strong></td><td>~10 weeks</td><td class="hl">~13 weeks</td><td>~18 weeks</td></tr>
+  </table>
+
+  <div class="callout">
+    <h3>Where Core earns its extra RM15,000</h3>
+    <p class="small" style="margin:0">Four upgrades that matter in real use: <strong>a choice of two identity directions</strong> instead of one bet; <strong>a Brand Guide with the tender deck template</strong> — the asset KMU's teams will touch weekly; <strong>a second shoot day</strong>, doubling the image library across two sites; and <strong>the capability statement</strong>, the 4-page version tender evaluators actually read first. What it still defers to the full programme: the complete playbook and application suite, the tender kit extras, and the launch + perception measurement.</p>
+  </div>
+
+  <h3 style="margin-top:4mm">Optional add-ons to Core (quoted on request)</h3>
+  <ul class="small">
+    <li><strong>Extra site shoot day</strong> — best value if added while the crew is mobilised, retouching included</li>
+    <li><strong>Project case-study sheets</strong> (modular, per flagship project) · <strong>tender cover system</strong></li>
+    <li><strong>Launch &amp; measurement pack</strong> — internal rollout + perception baseline &amp; 6-month re-measure</li>
+    <li><strong>Corporate website revamp</strong> · <strong>brand video</strong> · <strong>educational content retainer</strong> (~2 posts/week) · <strong>BM / Bahasa Indonesia adaptations</strong></li>
+  </ul>
+
+  <div class="footer-line">Toggle Solutions × Code of Origin · Confidential — prepared for KMU</div>
+  <div class="pagenum">3 / 4</div>
+</div>
+
+<!-- ============ PAGE 4 — INVESTMENT & NEXT STEPS ============ -->
+<div class="page">
+  <div class="watermark">[ toggle.solutions ]</div>
+  <div class="kicker">Budget &amp; Next Steps</div>
+  <h2>Budget</h2>
+
+  <div class="statrow">
+    <div class="stat"><div class="v focal">RM 35,000</div><div class="l">Total programme budget, ex-SST</div></div>
+    <div class="stat"><div class="v">4</div><div class="l">Phases, each independently approved — commit one at a time</div></div>
+    <div class="stat"><div class="v">~13 wks</div><div class="l">Kickoff Aug 2026 → tender-ready by early November</div></div>
+  </div>
+  <p class="cap">Budget is ex-SST and subject to change once the final scope is confirmed. Pass-through at cost: printing (P4), site travel/access outside Klang Valley (P3). A detailed phase-by-phase quotation follows on confirmation of scope; budget valid 30 days.</p>
+
+  <div class="callout">
+    <h3>The team</h3>
+    <p class="small" style="margin:0">Same senior team as the full programme: <strong>2 brand strategists (Toggle Solutions)</strong> on discovery, positioning, and messaging; <strong>creative director + creatives (Code of Origin)</strong> on identity, the Brand Guide, and production — including the in-house production team for site photography.</p>
+  </div>
+
+  <div class="band">NEXT STEPS</div>
+  <table>
+    <tr><td class="num" style="width:8mm">1</td><td>KMU reviews the three options internally — RM20,000 / RM35,000 / RM80,000</td></tr>
+    <tr><td class="num">2</td><td>30-minute call to pick the fit and adjust phase scope if needed</td></tr>
+    <tr><td class="num">3</td><td>Sign off <strong>Phase 1 only</strong> — kickoff scheduled within 2 weeks of approval</td></tr>
+  </table>
+
+  <div class="callout" style="margin-top:4mm">
+    <h3>Your contacts</h3>
+    <p class="small" style="margin:0"><strong>Yi Yang Tee</strong> — Strategy Lead · yiyang@toggle.solutions &nbsp;·&nbsp; <strong>Viknesh</strong> — Business Development Director · (+60) 12 568 8681 &nbsp;·&nbsp; toggle.solutions</p>
+  </div>
+
+  <div class="footer-line">Toggle Solutions × Code of Origin · Confidential — prepared for KMU</div>
+  <div class="pagenum">4 / 4</div>
+</div>
+
+</body>
+</html>
